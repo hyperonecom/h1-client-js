@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Image', 'model/InlineObject16', 'model/InlineObject17', 'model/InlineObject18'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/Image', 'model/InlineObject16', 'model/InlineObject17', 'model/InlineObject18'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Image'), require('../model/InlineObject16'), require('../model/InlineObject17'), require('../model/InlineObject18'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/Image'), require('../model/InlineObject16'), require('../model/InlineObject17'), require('../model/InlineObject18'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.ImageApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Image, root.HyperOneApi.InlineObject16, root.HyperOneApi.InlineObject17, root.HyperOneApi.InlineObject18);
     }
-    root.HyperOneApi.ImageApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Image, root.HyperOneApi.InlineObject16, root.HyperOneApi.InlineObject17, root.HyperOneApi.InlineObject18);
-  }
 }(this, function(ApiClient, Image, InlineObject16, InlineObject17, InlineObject18) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Image service.
    * @module api/ImageApi
    * @version 1
    */
 
-  /**
-   * Constructs a new ImageApi. 
+    /**
+   * Constructs a new ImageApi.
    * @alias module:api/ImageApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the actionImageTransfer operation.
      * @callback module:api/ImageApi~actionImageTransferCallback
      * @param {String} error Error message, if any.
@@ -55,50 +55,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: transfer
      * Action transfer
      * @param {String} imageId ID of image
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject18} opts.inlineObject18 
+     * @param {module:model/InlineObject18} opts.inlineObject18
      * @param {module:api/ImageApi~actionImageTransferCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Image}
      */
-    this.actionImageTransfer = function(imageId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject18'];
+        this.actionImageTransfer = function(imageId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject18;
 
-      // verify the required parameter 'imageId' is set
-      if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling actionImageTransfer");
-      }
+            // verify the required parameter 'imageId' is set
+            if (imageId === undefined || imageId === null) {
+                throw new Error("Missing the required parameter 'imageId' when calling actionImageTransfer");
+            }
 
 
-      var pathParams = {
-        'imageId': imageId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                imageId: imageId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Image;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Image;
 
-      return this.apiClient.callApi(
-        '/image/{imageId}/actions/transfer', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/image/{imageId}/actions/transfer', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the createImage operation.
      * @callback module:api/ImageApi~createImageCallback
      * @param {String} error Error message, if any.
@@ -106,43 +106,43 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Create
      * Create image
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject16} opts.inlineObject16 
+     * @param {module:model/InlineObject16} opts.inlineObject16
      * @param {module:api/ImageApi~createImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Image}
      */
-    this.createImage = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject16'];
+        this.createImage = function(opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject16;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Image;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Image;
 
-      return this.apiClient.callApi(
-        '/image', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/image', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the deleteImage operation.
      * @callback module:api/ImageApi~deleteImageCallback
      * @param {String} error Error message, if any.
@@ -150,45 +150,45 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Delete by ID
      * @param {String} imageId ID of image
      * @param {module:api/ImageApi~deleteImageCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteImage = function(imageId, callback) {
-      var postBody = null;
+        this.deleteImage = function(imageId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'imageId' is set
-      if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling deleteImage");
-      }
+            // verify the required parameter 'imageId' is set
+            if (imageId === undefined || imageId === null) {
+                throw new Error("Missing the required parameter 'imageId' when calling deleteImage");
+            }
 
 
-      var pathParams = {
-        'imageId': imageId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                imageId: imageId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = [];
+            const returnType = null;
 
-      return this.apiClient.callApi(
-        '/image/{imageId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/image/{imageId}', 'DELETE',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the listImage operation.
      * @callback module:api/ImageApi~listImageCallback
      * @param {String} error Error message, if any.
@@ -196,7 +196,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List image
      * @param {Object} opts Optional parameters
@@ -204,36 +204,36 @@
      * @param {module:api/ImageApi~listImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Image>}
      */
-    this.listImage = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listImage = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'name': opts['name'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                name: opts.name,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Image];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Image];
 
-      return this.apiClient.callApi(
-        '/image', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/image', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showImage operation.
      * @callback module:api/ImageApi~showImageCallback
      * @param {String} error Error message, if any.
@@ -241,47 +241,47 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single image
      * @param {String} imageId ID of image
      * @param {module:api/ImageApi~showImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Image}
      */
-    this.showImage = function(imageId, callback) {
-      var postBody = null;
+        this.showImage = function(imageId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'imageId' is set
-      if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling showImage");
-      }
+            // verify the required parameter 'imageId' is set
+            if (imageId === undefined || imageId === null) {
+                throw new Error("Missing the required parameter 'imageId' when calling showImage");
+            }
 
 
-      var pathParams = {
-        'imageId': imageId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                imageId: imageId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Image;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Image;
 
-      return this.apiClient.callApi(
-        '/image/{imageId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/image/{imageId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the updateImage operation.
      * @callback module:api/ImageApi~updateImageCallback
      * @param {String} error Error message, if any.
@@ -289,49 +289,49 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Update by ID
      * Returns modified image
      * @param {String} imageId ID of image
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject17} opts.inlineObject17 
+     * @param {module:model/InlineObject17} opts.inlineObject17
      * @param {module:api/ImageApi~updateImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Image}
      */
-    this.updateImage = function(imageId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject17'];
+        this.updateImage = function(imageId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject17;
 
-      // verify the required parameter 'imageId' is set
-      if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling updateImage");
-      }
+            // verify the required parameter 'imageId' is set
+            if (imageId === undefined || imageId === null) {
+                throw new Error("Missing the required parameter 'imageId' when calling updateImage");
+            }
 
 
-      var pathParams = {
-        'imageId': imageId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                imageId: imageId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Image;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Image;
 
-      return this.apiClient.callApi(
-        '/image/{imageId}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/image/{imageId}', 'PATCH',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));

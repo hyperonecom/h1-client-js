@@ -14,72 +14,72 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/OrganisationorganisationIdBilling'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/OrganisationorganisationIdBilling'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./OrganisationorganisationIdBilling'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('./OrganisationorganisationIdBilling'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.InlineObject3 = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.OrganisationorganisationIdBilling);
     }
-    root.HyperOneApi.InlineObject3 = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.OrganisationorganisationIdBilling);
-  }
 }(this, function(ApiClient, OrganisationorganisationIdBilling) {
-  'use strict';
+    'use strict';
 
 
 
-  /**
+    /**
    * The InlineObject3 model module.
    * @module model/InlineObject3
    * @version 1
    */
 
-  /**
+    /**
    * Constructs a new <code>InlineObject3</code>.
    * @alias module:model/InlineObject3
    * @class
    */
-  var exports = function() {
-    var _this = this;
+    const exports = function() {
+        const _this = this;
 
-  };
+    };
 
-  /**
+    /**
    * Constructs a <code>InlineObject3</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/InlineObject3} obj Optional instance to populate.
    * @return {module:model/InlineObject3} The populated <code>InlineObject3</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    if (data) {
-      obj = obj || new exports();
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('billing')) {
-        obj['billing'] = OrganisationorganisationIdBilling.constructFromObject(data['billing']);
-      }
-    }
-    return obj;
-  }
+    exports.constructFromObject = function(data, obj) {
+        if (data) {
+            obj = obj || new exports();
+            if (data.hasOwnProperty('name')) {
+                obj.name = ApiClient.convertToType(data.name, 'String');
+            }
+            if (data.hasOwnProperty('billing')) {
+                obj.billing = OrganisationorganisationIdBilling.constructFromObject(data.billing);
+            }
+        }
+        return obj;
+    };
 
-  /**
+    /**
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-  /**
+    exports.prototype.name = undefined;
+    /**
    * @member {module:model/OrganisationorganisationIdBilling} billing
    */
-  exports.prototype['billing'] = undefined;
+    exports.prototype.billing = undefined;
 
 
 
-  return exports;
+    return exports;
 }));
 
 

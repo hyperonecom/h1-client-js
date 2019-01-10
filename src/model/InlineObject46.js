@@ -14,97 +14,97 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/VaultCredential'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/VaultCredential'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./VaultCredential'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('./VaultCredential'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.InlineObject46 = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.VaultCredential);
     }
-    root.HyperOneApi.InlineObject46 = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.VaultCredential);
-  }
 }(this, function(ApiClient, VaultCredential) {
-  'use strict';
+    'use strict';
 
 
 
-  /**
+    /**
    * The InlineObject46 model module.
    * @module model/InlineObject46
    * @version 1
    */
 
-  /**
+    /**
    * Constructs a new <code>InlineObject46</code>.
    * @alias module:model/InlineObject46
    * @class
-   * @param name {String} 
-   * @param service {String} 
+   * @param name {String}
+   * @param service {String}
    */
-  var exports = function(name, service) {
-    var _this = this;
+    const exports = function(name, service) {
+        const _this = this;
 
-    _this['name'] = name;
-    _this['service'] = service;
-  };
+        _this.name = name;
+        _this.service = service;
+    };
 
-  /**
+    /**
    * Constructs a <code>InlineObject46</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/InlineObject46} obj Optional instance to populate.
    * @return {module:model/InlineObject46} The populated <code>InlineObject46</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    if (data) {
-      obj = obj || new exports();
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('service')) {
-        obj['service'] = ApiClient.convertToType(data['service'], 'String');
-      }
-      if (data.hasOwnProperty('credential')) {
-        obj['credential'] = VaultCredential.constructFromObject(data['credential']);
-      }
-      if (data.hasOwnProperty('retention')) {
-        obj['retention'] = ApiClient.convertToType(data['retention'], 'Number');
-      }
-      if (data.hasOwnProperty('tag')) {
-        obj['tag'] = ApiClient.convertToType(data['tag'], Object);
-      }
-    }
-    return obj;
-  }
+    exports.constructFromObject = function(data, obj) {
+        if (data) {
+            obj = obj || new exports();
+            if (data.hasOwnProperty('name')) {
+                obj.name = ApiClient.convertToType(data.name, 'String');
+            }
+            if (data.hasOwnProperty('service')) {
+                obj.service = ApiClient.convertToType(data.service, 'String');
+            }
+            if (data.hasOwnProperty('credential')) {
+                obj.credential = VaultCredential.constructFromObject(data.credential);
+            }
+            if (data.hasOwnProperty('retention')) {
+                obj.retention = ApiClient.convertToType(data.retention, 'Number');
+            }
+            if (data.hasOwnProperty('tag')) {
+                obj.tag = ApiClient.convertToType(data.tag, Object);
+            }
+        }
+        return obj;
+    };
 
-  /**
+    /**
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-  /**
+    exports.prototype.name = undefined;
+    /**
    * @member {String} service
    */
-  exports.prototype['service'] = undefined;
-  /**
+    exports.prototype.service = undefined;
+    /**
    * @member {module:model/VaultCredential} credential
    */
-  exports.prototype['credential'] = undefined;
-  /**
+    exports.prototype.credential = undefined;
+    /**
    * @member {Number} retention
    */
-  exports.prototype['retention'] = undefined;
-  /**
+    exports.prototype.retention = undefined;
+    /**
    * @member {Object} tag
    */
-  exports.prototype['tag'] = undefined;
+    exports.prototype.tag = undefined;
 
 
 
-  return exports;
+    return exports;
 }));
 
 

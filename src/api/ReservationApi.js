@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineObject43', 'model/InlineObject44', 'model/InlineObject45', 'model/Reservation'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/InlineObject43', 'model/InlineObject44', 'model/InlineObject45', 'model/Reservation'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineObject43'), require('../model/InlineObject44'), require('../model/InlineObject45'), require('../model/Reservation'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/InlineObject43'), require('../model/InlineObject44'), require('../model/InlineObject45'), require('../model/Reservation'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.ReservationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject43, root.HyperOneApi.InlineObject44, root.HyperOneApi.InlineObject45, root.HyperOneApi.Reservation);
     }
-    root.HyperOneApi.ReservationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject43, root.HyperOneApi.InlineObject44, root.HyperOneApi.InlineObject45, root.HyperOneApi.Reservation);
-  }
 }(this, function(ApiClient, InlineObject43, InlineObject44, InlineObject45, Reservation) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Reservation service.
    * @module api/ReservationApi
    * @version 1
    */
 
-  /**
-   * Constructs a new ReservationApi. 
+    /**
+   * Constructs a new ReservationApi.
    * @alias module:api/ReservationApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the actionReservationAssign operation.
      * @callback module:api/ReservationApi~actionReservationAssignCallback
      * @param {String} error Error message, if any.
@@ -55,50 +55,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: assign
      * Action assign
      * @param {String} reservationId ID of reservation
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject45} opts.inlineObject45 
+     * @param {module:model/InlineObject45} opts.inlineObject45
      * @param {module:api/ReservationApi~actionReservationAssignCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Reservation}
      */
-    this.actionReservationAssign = function(reservationId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject45'];
+        this.actionReservationAssign = function(reservationId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject45;
 
-      // verify the required parameter 'reservationId' is set
-      if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling actionReservationAssign");
-      }
+            // verify the required parameter 'reservationId' is set
+            if (reservationId === undefined || reservationId === null) {
+                throw new Error("Missing the required parameter 'reservationId' when calling actionReservationAssign");
+            }
 
 
-      var pathParams = {
-        'reservationId': reservationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                reservationId: reservationId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Reservation;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Reservation;
 
-      return this.apiClient.callApi(
-        '/reservation/{reservationId}/actions/assign', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/reservation/{reservationId}/actions/assign', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionReservationExtend operation.
      * @callback module:api/ReservationApi~actionReservationExtendCallback
      * @param {String} error Error message, if any.
@@ -106,50 +106,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: extend
      * Action extend
      * @param {String} reservationId ID of reservation
      * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} opts.body
      * @param {module:api/ReservationApi~actionReservationExtendCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Reservation}
      */
-    this.actionReservationExtend = function(reservationId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['body'];
+        this.actionReservationExtend = function(reservationId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.body;
 
-      // verify the required parameter 'reservationId' is set
-      if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling actionReservationExtend");
-      }
+            // verify the required parameter 'reservationId' is set
+            if (reservationId === undefined || reservationId === null) {
+                throw new Error("Missing the required parameter 'reservationId' when calling actionReservationExtend");
+            }
 
 
-      var pathParams = {
-        'reservationId': reservationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                reservationId: reservationId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Reservation;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Reservation;
 
-      return this.apiClient.callApi(
-        '/reservation/{reservationId}/actions/extend', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/reservation/{reservationId}/actions/extend', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionReservationUnassign operation.
      * @callback module:api/ReservationApi~actionReservationUnassignCallback
      * @param {String} error Error message, if any.
@@ -157,50 +157,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: unassign
      * Action unassign
      * @param {String} reservationId ID of reservation
      * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} opts.body
      * @param {module:api/ReservationApi~actionReservationUnassignCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Reservation}
      */
-    this.actionReservationUnassign = function(reservationId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['body'];
+        this.actionReservationUnassign = function(reservationId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.body;
 
-      // verify the required parameter 'reservationId' is set
-      if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling actionReservationUnassign");
-      }
+            // verify the required parameter 'reservationId' is set
+            if (reservationId === undefined || reservationId === null) {
+                throw new Error("Missing the required parameter 'reservationId' when calling actionReservationUnassign");
+            }
 
 
-      var pathParams = {
-        'reservationId': reservationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                reservationId: reservationId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Reservation;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Reservation;
 
-      return this.apiClient.callApi(
-        '/reservation/{reservationId}/actions/unassign', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/reservation/{reservationId}/actions/unassign', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the createReservation operation.
      * @callback module:api/ReservationApi~createReservationCallback
      * @param {String} error Error message, if any.
@@ -208,43 +208,43 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Create
      * Create reservation
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject43} opts.inlineObject43 
+     * @param {module:model/InlineObject43} opts.inlineObject43
      * @param {module:api/ReservationApi~createReservationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Reservation}
      */
-    this.createReservation = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject43'];
+        this.createReservation = function(opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject43;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Reservation;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Reservation;
 
-      return this.apiClient.callApi(
-        '/reservation', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/reservation', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the deleteReservation operation.
      * @callback module:api/ReservationApi~deleteReservationCallback
      * @param {String} error Error message, if any.
@@ -252,45 +252,45 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Delete by ID
      * @param {String} reservationId ID of reservation
      * @param {module:api/ReservationApi~deleteReservationCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteReservation = function(reservationId, callback) {
-      var postBody = null;
+        this.deleteReservation = function(reservationId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'reservationId' is set
-      if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling deleteReservation");
-      }
+            // verify the required parameter 'reservationId' is set
+            if (reservationId === undefined || reservationId === null) {
+                throw new Error("Missing the required parameter 'reservationId' when calling deleteReservation");
+            }
 
 
-      var pathParams = {
-        'reservationId': reservationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                reservationId: reservationId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = [];
+            const returnType = null;
 
-      return this.apiClient.callApi(
-        '/reservation/{reservationId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/reservation/{reservationId}', 'DELETE',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the listReservation operation.
      * @callback module:api/ReservationApi~listReservationCallback
      * @param {String} error Error message, if any.
@@ -298,7 +298,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List reservation
      * @param {Object} opts Optional parameters
@@ -306,36 +306,36 @@
      * @param {module:api/ReservationApi~listReservationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Reservation>}
      */
-    this.listReservation = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listReservation = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'name': opts['name'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                name: opts.name,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Reservation];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Reservation];
 
-      return this.apiClient.callApi(
-        '/reservation', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/reservation', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showReservation operation.
      * @callback module:api/ReservationApi~showReservationCallback
      * @param {String} error Error message, if any.
@@ -343,47 +343,47 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single reservation
      * @param {String} reservationId ID of reservation
      * @param {module:api/ReservationApi~showReservationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Reservation}
      */
-    this.showReservation = function(reservationId, callback) {
-      var postBody = null;
+        this.showReservation = function(reservationId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'reservationId' is set
-      if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling showReservation");
-      }
+            // verify the required parameter 'reservationId' is set
+            if (reservationId === undefined || reservationId === null) {
+                throw new Error("Missing the required parameter 'reservationId' when calling showReservation");
+            }
 
 
-      var pathParams = {
-        'reservationId': reservationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                reservationId: reservationId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Reservation;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Reservation;
 
-      return this.apiClient.callApi(
-        '/reservation/{reservationId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/reservation/{reservationId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the updateReservation operation.
      * @callback module:api/ReservationApi~updateReservationCallback
      * @param {String} error Error message, if any.
@@ -391,49 +391,49 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Update by ID
      * Returns modified reservation
      * @param {String} reservationId ID of reservation
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject44} opts.inlineObject44 
+     * @param {module:model/InlineObject44} opts.inlineObject44
      * @param {module:api/ReservationApi~updateReservationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Reservation}
      */
-    this.updateReservation = function(reservationId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject44'];
+        this.updateReservation = function(reservationId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject44;
 
-      // verify the required parameter 'reservationId' is set
-      if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling updateReservation");
-      }
+            // verify the required parameter 'reservationId' is set
+            if (reservationId === undefined || reservationId === null) {
+                throw new Error("Missing the required parameter 'reservationId' when calling updateReservation");
+            }
 
 
-      var pathParams = {
-        'reservationId': reservationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                reservationId: reservationId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Reservation;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Reservation;
 
-      return this.apiClient.callApi(
-        '/reservation/{reservationId}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/reservation/{reservationId}', 'PATCH',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));

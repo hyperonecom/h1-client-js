@@ -14,67 +14,67 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
-  } else {
+        module.exports = factory(require('../ApiClient'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.InlineObject10 = factory(root.HyperOneApi.ApiClient);
     }
-    root.HyperOneApi.InlineObject10 = factory(root.HyperOneApi.ApiClient);
-  }
 }(this, function(ApiClient) {
-  'use strict';
+    'use strict';
 
 
 
-  /**
+    /**
    * The InlineObject10 model module.
    * @module model/InlineObject10
    * @version 1
    */
 
-  /**
+    /**
    * Constructs a new <code>InlineObject10</code>.
    * @alias module:model/InlineObject10
    * @class
-   * @param project {String} 
+   * @param project {String}
    */
-  var exports = function(project) {
-    var _this = this;
+    const exports = function(project) {
+        const _this = this;
 
-    _this['project'] = project;
-  };
+        _this.project = project;
+    };
 
-  /**
+    /**
    * Constructs a <code>InlineObject10</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/InlineObject10} obj Optional instance to populate.
    * @return {module:model/InlineObject10} The populated <code>InlineObject10</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    if (data) {
-      obj = obj || new exports();
-      if (data.hasOwnProperty('project')) {
-        obj['project'] = ApiClient.convertToType(data['project'], 'String');
-      }
-    }
-    return obj;
-  }
+    exports.constructFromObject = function(data, obj) {
+        if (data) {
+            obj = obj || new exports();
+            if (data.hasOwnProperty('project')) {
+                obj.project = ApiClient.convertToType(data.project, 'String');
+            }
+        }
+        return obj;
+    };
 
-  /**
+    /**
    * @member {String} project
    */
-  exports.prototype['project'] = undefined;
+    exports.prototype.project = undefined;
 
 
 
-  return exports;
+    return exports;
 }));
 
 

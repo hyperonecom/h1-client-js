@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineObject13', 'model/InlineObject14', 'model/InlineObject15', 'model/Netgw'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/InlineObject13', 'model/InlineObject14', 'model/InlineObject15', 'model/Netgw'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineObject13'), require('../model/InlineObject14'), require('../model/InlineObject15'), require('../model/Netgw'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/InlineObject13'), require('../model/InlineObject14'), require('../model/InlineObject15'), require('../model/Netgw'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.NetgwApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject13, root.HyperOneApi.InlineObject14, root.HyperOneApi.InlineObject15, root.HyperOneApi.Netgw);
     }
-    root.HyperOneApi.NetgwApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject13, root.HyperOneApi.InlineObject14, root.HyperOneApi.InlineObject15, root.HyperOneApi.Netgw);
-  }
 }(this, function(ApiClient, InlineObject13, InlineObject14, InlineObject15, Netgw) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Netgw service.
    * @module api/NetgwApi
    * @version 1
    */
 
-  /**
-   * Constructs a new NetgwApi. 
+    /**
+   * Constructs a new NetgwApi.
    * @alias module:api/NetgwApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the actionNetgwAttach operation.
      * @callback module:api/NetgwApi~actionNetgwAttachCallback
      * @param {String} error Error message, if any.
@@ -55,50 +55,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: attach
      * Action attach
      * @param {String} netgwId ID of netgw
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject15} opts.inlineObject15 
+     * @param {module:model/InlineObject15} opts.inlineObject15
      * @param {module:api/NetgwApi~actionNetgwAttachCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Netgw}
      */
-    this.actionNetgwAttach = function(netgwId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject15'];
+        this.actionNetgwAttach = function(netgwId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject15;
 
-      // verify the required parameter 'netgwId' is set
-      if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling actionNetgwAttach");
-      }
+            // verify the required parameter 'netgwId' is set
+            if (netgwId === undefined || netgwId === null) {
+                throw new Error("Missing the required parameter 'netgwId' when calling actionNetgwAttach");
+            }
 
 
-      var pathParams = {
-        'netgwId': netgwId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                netgwId: netgwId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Netgw;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Netgw;
 
-      return this.apiClient.callApi(
-        '/netgw/{netgwId}/actions/attach', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/netgw/{netgwId}/actions/attach', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionNetgwDetach operation.
      * @callback module:api/NetgwApi~actionNetgwDetachCallback
      * @param {String} error Error message, if any.
@@ -106,50 +106,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: detach
      * Action detach
      * @param {String} netgwId ID of netgw
      * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} opts.body
      * @param {module:api/NetgwApi~actionNetgwDetachCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Netgw}
      */
-    this.actionNetgwDetach = function(netgwId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['body'];
+        this.actionNetgwDetach = function(netgwId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.body;
 
-      // verify the required parameter 'netgwId' is set
-      if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling actionNetgwDetach");
-      }
+            // verify the required parameter 'netgwId' is set
+            if (netgwId === undefined || netgwId === null) {
+                throw new Error("Missing the required parameter 'netgwId' when calling actionNetgwDetach");
+            }
 
 
-      var pathParams = {
-        'netgwId': netgwId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                netgwId: netgwId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Netgw;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Netgw;
 
-      return this.apiClient.callApi(
-        '/netgw/{netgwId}/actions/detach', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/netgw/{netgwId}/actions/detach', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the createNetgw operation.
      * @callback module:api/NetgwApi~createNetgwCallback
      * @param {String} error Error message, if any.
@@ -157,43 +157,43 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Create
      * Create netgw
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject13} opts.inlineObject13 
+     * @param {module:model/InlineObject13} opts.inlineObject13
      * @param {module:api/NetgwApi~createNetgwCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Netgw}
      */
-    this.createNetgw = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject13'];
+        this.createNetgw = function(opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject13;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Netgw;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Netgw;
 
-      return this.apiClient.callApi(
-        '/netgw', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/netgw', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the deleteNetgw operation.
      * @callback module:api/NetgwApi~deleteNetgwCallback
      * @param {String} error Error message, if any.
@@ -201,45 +201,45 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Delete by ID
      * @param {String} netgwId ID of netgw
      * @param {module:api/NetgwApi~deleteNetgwCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteNetgw = function(netgwId, callback) {
-      var postBody = null;
+        this.deleteNetgw = function(netgwId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'netgwId' is set
-      if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling deleteNetgw");
-      }
+            // verify the required parameter 'netgwId' is set
+            if (netgwId === undefined || netgwId === null) {
+                throw new Error("Missing the required parameter 'netgwId' when calling deleteNetgw");
+            }
 
 
-      var pathParams = {
-        'netgwId': netgwId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                netgwId: netgwId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = [];
+            const returnType = null;
 
-      return this.apiClient.callApi(
-        '/netgw/{netgwId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/netgw/{netgwId}', 'DELETE',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the listNetgw operation.
      * @callback module:api/NetgwApi~listNetgwCallback
      * @param {String} error Error message, if any.
@@ -247,7 +247,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List netgw
      * @param {Object} opts Optional parameters
@@ -255,36 +255,36 @@
      * @param {module:api/NetgwApi~listNetgwCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Netgw>}
      */
-    this.listNetgw = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listNetgw = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'name': opts['name'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                name: opts.name,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Netgw];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Netgw];
 
-      return this.apiClient.callApi(
-        '/netgw', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/netgw', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showNetgw operation.
      * @callback module:api/NetgwApi~showNetgwCallback
      * @param {String} error Error message, if any.
@@ -292,47 +292,47 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single netgw
      * @param {String} netgwId ID of netgw
      * @param {module:api/NetgwApi~showNetgwCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Netgw}
      */
-    this.showNetgw = function(netgwId, callback) {
-      var postBody = null;
+        this.showNetgw = function(netgwId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'netgwId' is set
-      if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling showNetgw");
-      }
+            // verify the required parameter 'netgwId' is set
+            if (netgwId === undefined || netgwId === null) {
+                throw new Error("Missing the required parameter 'netgwId' when calling showNetgw");
+            }
 
 
-      var pathParams = {
-        'netgwId': netgwId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                netgwId: netgwId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Netgw;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Netgw;
 
-      return this.apiClient.callApi(
-        '/netgw/{netgwId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/netgw/{netgwId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the updateNetgw operation.
      * @callback module:api/NetgwApi~updateNetgwCallback
      * @param {String} error Error message, if any.
@@ -340,49 +340,49 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Update by ID
      * Returns modified netgw
      * @param {String} netgwId ID of netgw
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject14} opts.inlineObject14 
+     * @param {module:model/InlineObject14} opts.inlineObject14
      * @param {module:api/NetgwApi~updateNetgwCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Netgw}
      */
-    this.updateNetgw = function(netgwId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject14'];
+        this.updateNetgw = function(netgwId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject14;
 
-      // verify the required parameter 'netgwId' is set
-      if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling updateNetgw");
-      }
+            // verify the required parameter 'netgwId' is set
+            if (netgwId === undefined || netgwId === null) {
+                throw new Error("Missing the required parameter 'netgwId' when calling updateNetgw");
+            }
 
 
-      var pathParams = {
-        'netgwId': netgwId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                netgwId: netgwId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Netgw;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Netgw;
 
-      return this.apiClient.callApi(
-        '/netgw/{netgwId}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/netgw/{netgwId}', 'PATCH',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));

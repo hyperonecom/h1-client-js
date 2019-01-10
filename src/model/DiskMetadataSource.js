@@ -14,72 +14,72 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
-  } else {
+        module.exports = factory(require('../ApiClient'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.DiskMetadataSource = factory(root.HyperOneApi.ApiClient);
     }
-    root.HyperOneApi.DiskMetadataSource = factory(root.HyperOneApi.ApiClient);
-  }
 }(this, function(ApiClient) {
-  'use strict';
+    'use strict';
 
 
 
-  /**
+    /**
    * The DiskMetadataSource model module.
    * @module model/DiskMetadataSource
    * @version 1
    */
 
-  /**
+    /**
    * Constructs a new <code>DiskMetadataSource</code>.
    * @alias module:model/DiskMetadataSource
    * @class
    */
-  var exports = function() {
-    var _this = this;
+    const exports = function() {
+        const _this = this;
 
-  };
+    };
 
-  /**
+    /**
    * Constructs a <code>DiskMetadataSource</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/DiskMetadataSource} obj Optional instance to populate.
    * @return {module:model/DiskMetadataSource} The populated <code>DiskMetadataSource</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    if (data) {
-      obj = obj || new exports();
-      if (data.hasOwnProperty('filename')) {
-        obj['filename'] = ApiClient.convertToType(data['filename'], 'String');
-      }
-      if (data.hasOwnProperty('size')) {
-        obj['size'] = ApiClient.convertToType(data['size'], 'Number');
-      }
-    }
-    return obj;
-  }
+    exports.constructFromObject = function(data, obj) {
+        if (data) {
+            obj = obj || new exports();
+            if (data.hasOwnProperty('filename')) {
+                obj.filename = ApiClient.convertToType(data.filename, 'String');
+            }
+            if (data.hasOwnProperty('size')) {
+                obj.size = ApiClient.convertToType(data.size, 'Number');
+            }
+        }
+        return obj;
+    };
 
-  /**
+    /**
    * @member {String} filename
    */
-  exports.prototype['filename'] = undefined;
-  /**
+    exports.prototype.filename = undefined;
+    /**
    * @member {Number} size
    */
-  exports.prototype['size'] = undefined;
+    exports.prototype.size = undefined;
 
 
 
-  return exports;
+    return exports;
 }));
 
 

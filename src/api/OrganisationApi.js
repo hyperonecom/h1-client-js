@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineObject2', 'model/InlineObject3', 'model/InlineObject4', 'model/Organisation'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/InlineObject2', 'model/InlineObject3', 'model/InlineObject4', 'model/Organisation'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineObject2'), require('../model/InlineObject3'), require('../model/InlineObject4'), require('../model/Organisation'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/InlineObject2'), require('../model/InlineObject3'), require('../model/InlineObject4'), require('../model/Organisation'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.OrganisationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject2, root.HyperOneApi.InlineObject3, root.HyperOneApi.InlineObject4, root.HyperOneApi.Organisation);
     }
-    root.HyperOneApi.OrganisationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject2, root.HyperOneApi.InlineObject3, root.HyperOneApi.InlineObject4, root.HyperOneApi.Organisation);
-  }
 }(this, function(ApiClient, InlineObject2, InlineObject3, InlineObject4, Organisation) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Organisation service.
    * @module api/OrganisationApi
    * @version 1
    */
 
-  /**
-   * Constructs a new OrganisationApi. 
+    /**
+   * Constructs a new OrganisationApi.
    * @alias module:api/OrganisationApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the actionOrganisationTransferAccept operation.
      * @callback module:api/OrganisationApi~actionOrganisationTransferAcceptCallback
      * @param {String} error Error message, if any.
@@ -55,50 +55,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: transfer_accept
      * Action transfer_accept
      * @param {String} organisationId ID of organisation
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject4} opts.inlineObject4 
+     * @param {module:model/InlineObject4} opts.inlineObject4
      * @param {module:api/OrganisationApi~actionOrganisationTransferAcceptCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Organisation}
      */
-    this.actionOrganisationTransferAccept = function(organisationId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject4'];
+        this.actionOrganisationTransferAccept = function(organisationId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject4;
 
-      // verify the required parameter 'organisationId' is set
-      if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling actionOrganisationTransferAccept");
-      }
+            // verify the required parameter 'organisationId' is set
+            if (organisationId === undefined || organisationId === null) {
+                throw new Error("Missing the required parameter 'organisationId' when calling actionOrganisationTransferAccept");
+            }
 
 
-      var pathParams = {
-        'organisationId': organisationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                organisationId: organisationId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Organisation;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Organisation;
 
-      return this.apiClient.callApi(
-        '/organisation/{organisationId}/actions/transfer_accept', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/organisation/{organisationId}/actions/transfer_accept', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the createOrganisation operation.
      * @callback module:api/OrganisationApi~createOrganisationCallback
      * @param {String} error Error message, if any.
@@ -106,43 +106,43 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Create
      * Create organisation
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject2} opts.inlineObject2 
+     * @param {module:model/InlineObject2} opts.inlineObject2
      * @param {module:api/OrganisationApi~createOrganisationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Organisation}
      */
-    this.createOrganisation = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject2'];
+        this.createOrganisation = function(opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject2;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Organisation;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Organisation;
 
-      return this.apiClient.callApi(
-        '/organisation', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/organisation', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the listOrganisation operation.
      * @callback module:api/OrganisationApi~listOrganisationCallback
      * @param {String} error Error message, if any.
@@ -150,7 +150,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List organisation
      * @param {Object} opts Optional parameters
@@ -161,39 +161,39 @@
      * @param {module:api/OrganisationApi~listOrganisationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Organisation>}
      */
-    this.listOrganisation = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listOrganisation = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'name': opts['name'],
-        'billing.company': opts['billingCompany'],
-        '$limit': opts['limit'],
-        'active': opts['active'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                name: opts.name,
+                'billing.company': opts.billingCompany,
+                $limit: opts.limit,
+                active: opts.active,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Organisation];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Organisation];
 
-      return this.apiClient.callApi(
-        '/organisation', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/organisation', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showOrganisation operation.
      * @callback module:api/OrganisationApi~showOrganisationCallback
      * @param {String} error Error message, if any.
@@ -201,47 +201,47 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single organisation
      * @param {String} organisationId ID of organisation
      * @param {module:api/OrganisationApi~showOrganisationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Organisation}
      */
-    this.showOrganisation = function(organisationId, callback) {
-      var postBody = null;
+        this.showOrganisation = function(organisationId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'organisationId' is set
-      if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling showOrganisation");
-      }
+            // verify the required parameter 'organisationId' is set
+            if (organisationId === undefined || organisationId === null) {
+                throw new Error("Missing the required parameter 'organisationId' when calling showOrganisation");
+            }
 
 
-      var pathParams = {
-        'organisationId': organisationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                organisationId: organisationId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Organisation;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Organisation;
 
-      return this.apiClient.callApi(
-        '/organisation/{organisationId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/organisation/{organisationId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the updateOrganisation operation.
      * @callback module:api/OrganisationApi~updateOrganisationCallback
      * @param {String} error Error message, if any.
@@ -249,49 +249,49 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Update by ID
      * Returns modified organisation
      * @param {String} organisationId ID of organisation
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject3} opts.inlineObject3 
+     * @param {module:model/InlineObject3} opts.inlineObject3
      * @param {module:api/OrganisationApi~updateOrganisationCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Organisation}
      */
-    this.updateOrganisation = function(organisationId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject3'];
+        this.updateOrganisation = function(organisationId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject3;
 
-      // verify the required parameter 'organisationId' is set
-      if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling updateOrganisation");
-      }
+            // verify the required parameter 'organisationId' is set
+            if (organisationId === undefined || organisationId === null) {
+                throw new Error("Missing the required parameter 'organisationId' when calling updateOrganisation");
+            }
 
 
-      var pathParams = {
-        'organisationId': organisationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                organisationId: organisationId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Organisation;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Organisation;
 
-      return this.apiClient.callApi(
-        '/organisation/{organisationId}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/organisation/{organisationId}', 'PATCH',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));

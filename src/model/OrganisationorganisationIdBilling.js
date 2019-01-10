@@ -14,79 +14,79 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/OrganisationorganisationIdBillingAddress'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/OrganisationorganisationIdBillingAddress'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./OrganisationorganisationIdBillingAddress'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('./OrganisationorganisationIdBillingAddress'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.OrganisationorganisationIdBilling = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.OrganisationorganisationIdBillingAddress);
     }
-    root.HyperOneApi.OrganisationorganisationIdBilling = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.OrganisationorganisationIdBillingAddress);
-  }
 }(this, function(ApiClient, OrganisationorganisationIdBillingAddress) {
-  'use strict';
+    'use strict';
 
 
 
-  /**
+    /**
    * The OrganisationorganisationIdBilling model module.
    * @module model/OrganisationorganisationIdBilling
    * @version 1
    */
 
-  /**
+    /**
    * Constructs a new <code>OrganisationorganisationIdBilling</code>.
    * @alias module:model/OrganisationorganisationIdBilling
    * @class
    */
-  var exports = function() {
-    var _this = this;
+    const exports = function() {
+        const _this = this;
 
-  };
+    };
 
-  /**
+    /**
    * Constructs a <code>OrganisationorganisationIdBilling</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/OrganisationorganisationIdBilling} obj Optional instance to populate.
    * @return {module:model/OrganisationorganisationIdBilling} The populated <code>OrganisationorganisationIdBilling</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    if (data) {
-      obj = obj || new exports();
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
-      }
-      if (data.hasOwnProperty('company')) {
-        obj['company'] = ApiClient.convertToType(data['company'], 'String');
-      }
-      if (data.hasOwnProperty('address')) {
-        obj['address'] = OrganisationorganisationIdBillingAddress.constructFromObject(data['address']);
-      }
-    }
-    return obj;
-  }
+    exports.constructFromObject = function(data, obj) {
+        if (data) {
+            obj = obj || new exports();
+            if (data.hasOwnProperty('email')) {
+                obj.email = ApiClient.convertToType(data.email, 'String');
+            }
+            if (data.hasOwnProperty('company')) {
+                obj.company = ApiClient.convertToType(data.company, 'String');
+            }
+            if (data.hasOwnProperty('address')) {
+                obj.address = OrganisationorganisationIdBillingAddress.constructFromObject(data.address);
+            }
+        }
+        return obj;
+    };
 
-  /**
+    /**
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
-  /**
+    exports.prototype.email = undefined;
+    /**
    * @member {String} company
    */
-  exports.prototype['company'] = undefined;
-  /**
+    exports.prototype.company = undefined;
+    /**
    * @member {module:model/OrganisationorganisationIdBillingAddress} address
    */
-  exports.prototype['address'] = undefined;
+    exports.prototype.address = undefined;
 
 
 
-  return exports;
+    return exports;
 }));
 
 

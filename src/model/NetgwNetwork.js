@@ -14,205 +14,205 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
-  } else {
+        module.exports = factory(require('../ApiClient'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.NetgwNetwork = factory(root.HyperOneApi.ApiClient);
     }
-    root.HyperOneApi.NetgwNetwork = factory(root.HyperOneApi.ApiClient);
-  }
 }(this, function(ApiClient) {
-  'use strict';
+    'use strict';
 
 
 
-  /**
+    /**
    * The NetgwNetwork model module.
    * @module model/NetgwNetwork
    * @version 1
    */
 
-  /**
+    /**
    * Constructs a new <code>NetgwNetwork</code>.
    * @alias module:model/NetgwNetwork
    * @class
    */
-  var exports = function() {
-    var _this = this;
+    const exports = function() {
+        const _this = this;
 
-  };
+    };
 
-  /**
+    /**
    * Constructs a <code>NetgwNetwork</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/NetgwNetwork} obj Optional instance to populate.
    * @return {module:model/NetgwNetwork} The populated <code>NetgwNetwork</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    if (data) {
-      obj = obj || new exports();
-      if (data.hasOwnProperty('_id')) {
-        obj['_id'] = ApiClient.convertToType(data['_id'], 'String');
-      }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('services')) {
-        obj['services'] = ApiClient.convertToType(data['services'], 'String');
-      }
-      if (data.hasOwnProperty('flavour')) {
-        obj['flavour'] = ApiClient.convertToType(data['flavour'], 'String');
-      }
-      if (data.hasOwnProperty('modifiedOn')) {
-        obj['modifiedOn'] = ApiClient.convertToType(data['modifiedOn'], 'String');
-      }
-      if (data.hasOwnProperty('modifiedBy')) {
-        obj['modifiedBy'] = ApiClient.convertToType(data['modifiedBy'], 'String');
-      }
-      if (data.hasOwnProperty('createdBy')) {
-        obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'String');
-      }
-      if (data.hasOwnProperty('createdOn')) {
-        obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
-      }
-      if (data.hasOwnProperty('accessRights')) {
-        obj['accessRights'] = ApiClient.convertToType(data['accessRights'], 'String');
-      }
-      if (data.hasOwnProperty('processing')) {
-        obj['processing'] = ApiClient.convertToType(data['processing'], 'String');
-      }
-      if (data.hasOwnProperty('created')) {
-        obj['created'] = ApiClient.convertToType(data['created'], 'String');
-      }
-      if (data.hasOwnProperty('queue')) {
-        obj['queue'] = ApiClient.convertToType(data['queue'], 'String');
-      }
-      if (data.hasOwnProperty('state')) {
-        obj['state'] = ApiClient.convertToType(data['state'], 'String');
-      }
-      if (data.hasOwnProperty('tag')) {
-        obj['tag'] = ApiClient.convertToType(data['tag'], 'String');
-      }
-      if (data.hasOwnProperty('project')) {
-        obj['project'] = ApiClient.convertToType(data['project'], 'String');
-      }
-      if (data.hasOwnProperty('address')) {
-        obj['address'] = ApiClient.convertToType(data['address'], 'String');
-      }
-      if (data.hasOwnProperty('broadcast')) {
-        obj['broadcast'] = ApiClient.convertToType(data['broadcast'], 'String');
-      }
-      if (data.hasOwnProperty('gateway')) {
-        obj['gateway'] = ApiClient.convertToType(data['gateway'], 'String');
-      }
-      if (data.hasOwnProperty('vm')) {
-        obj['vm'] = ApiClient.convertToType(data['vm'], 'String');
-      }
-      if (data.hasOwnProperty('dns')) {
-        obj['dns'] = ApiClient.convertToType(data['dns'], 'String');
-      }
-      if (data.hasOwnProperty('netgw')) {
-        obj['netgw'] = ApiClient.convertToType(data['netgw'], 'String');
-      }
-    }
-    return obj;
-  }
+    exports.constructFromObject = function(data, obj) {
+        if (data) {
+            obj = obj || new exports();
+            if (data.hasOwnProperty('_id')) {
+                obj._id = ApiClient.convertToType(data._id, 'String');
+            }
+            if (data.hasOwnProperty('name')) {
+                obj.name = ApiClient.convertToType(data.name, 'String');
+            }
+            if (data.hasOwnProperty('services')) {
+                obj.services = ApiClient.convertToType(data.services, 'String');
+            }
+            if (data.hasOwnProperty('flavour')) {
+                obj.flavour = ApiClient.convertToType(data.flavour, 'String');
+            }
+            if (data.hasOwnProperty('modifiedOn')) {
+                obj.modifiedOn = ApiClient.convertToType(data.modifiedOn, 'String');
+            }
+            if (data.hasOwnProperty('modifiedBy')) {
+                obj.modifiedBy = ApiClient.convertToType(data.modifiedBy, 'String');
+            }
+            if (data.hasOwnProperty('createdBy')) {
+                obj.createdBy = ApiClient.convertToType(data.createdBy, 'String');
+            }
+            if (data.hasOwnProperty('createdOn')) {
+                obj.createdOn = ApiClient.convertToType(data.createdOn, 'String');
+            }
+            if (data.hasOwnProperty('accessRights')) {
+                obj.accessRights = ApiClient.convertToType(data.accessRights, 'String');
+            }
+            if (data.hasOwnProperty('processing')) {
+                obj.processing = ApiClient.convertToType(data.processing, 'String');
+            }
+            if (data.hasOwnProperty('created')) {
+                obj.created = ApiClient.convertToType(data.created, 'String');
+            }
+            if (data.hasOwnProperty('queue')) {
+                obj.queue = ApiClient.convertToType(data.queue, 'String');
+            }
+            if (data.hasOwnProperty('state')) {
+                obj.state = ApiClient.convertToType(data.state, 'String');
+            }
+            if (data.hasOwnProperty('tag')) {
+                obj.tag = ApiClient.convertToType(data.tag, 'String');
+            }
+            if (data.hasOwnProperty('project')) {
+                obj.project = ApiClient.convertToType(data.project, 'String');
+            }
+            if (data.hasOwnProperty('address')) {
+                obj.address = ApiClient.convertToType(data.address, 'String');
+            }
+            if (data.hasOwnProperty('broadcast')) {
+                obj.broadcast = ApiClient.convertToType(data.broadcast, 'String');
+            }
+            if (data.hasOwnProperty('gateway')) {
+                obj.gateway = ApiClient.convertToType(data.gateway, 'String');
+            }
+            if (data.hasOwnProperty('vm')) {
+                obj.vm = ApiClient.convertToType(data.vm, 'String');
+            }
+            if (data.hasOwnProperty('dns')) {
+                obj.dns = ApiClient.convertToType(data.dns, 'String');
+            }
+            if (data.hasOwnProperty('netgw')) {
+                obj.netgw = ApiClient.convertToType(data.netgw, 'String');
+            }
+        }
+        return obj;
+    };
 
-  /**
+    /**
    * @member {String} _id
    */
-  exports.prototype['_id'] = undefined;
-  /**
+    exports.prototype._id = undefined;
+    /**
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-  /**
+    exports.prototype.name = undefined;
+    /**
    * @member {String} services
    */
-  exports.prototype['services'] = undefined;
-  /**
+    exports.prototype.services = undefined;
+    /**
    * @member {String} flavour
    */
-  exports.prototype['flavour'] = undefined;
-  /**
+    exports.prototype.flavour = undefined;
+    /**
    * @member {String} modifiedOn
    */
-  exports.prototype['modifiedOn'] = undefined;
-  /**
+    exports.prototype.modifiedOn = undefined;
+    /**
    * @member {String} modifiedBy
    */
-  exports.prototype['modifiedBy'] = undefined;
-  /**
+    exports.prototype.modifiedBy = undefined;
+    /**
    * @member {String} createdBy
    */
-  exports.prototype['createdBy'] = undefined;
-  /**
+    exports.prototype.createdBy = undefined;
+    /**
    * @member {String} createdOn
    */
-  exports.prototype['createdOn'] = undefined;
-  /**
+    exports.prototype.createdOn = undefined;
+    /**
    * @member {String} accessRights
    */
-  exports.prototype['accessRights'] = undefined;
-  /**
+    exports.prototype.accessRights = undefined;
+    /**
    * @member {String} processing
    */
-  exports.prototype['processing'] = undefined;
-  /**
+    exports.prototype.processing = undefined;
+    /**
    * @member {String} created
    */
-  exports.prototype['created'] = undefined;
-  /**
+    exports.prototype.created = undefined;
+    /**
    * @member {String} queue
    */
-  exports.prototype['queue'] = undefined;
-  /**
+    exports.prototype.queue = undefined;
+    /**
    * @member {String} state
    */
-  exports.prototype['state'] = undefined;
-  /**
+    exports.prototype.state = undefined;
+    /**
    * @member {String} tag
    */
-  exports.prototype['tag'] = undefined;
-  /**
+    exports.prototype.tag = undefined;
+    /**
    * @member {String} project
    */
-  exports.prototype['project'] = undefined;
-  /**
+    exports.prototype.project = undefined;
+    /**
    * @member {String} address
    */
-  exports.prototype['address'] = undefined;
-  /**
+    exports.prototype.address = undefined;
+    /**
    * @member {String} broadcast
    */
-  exports.prototype['broadcast'] = undefined;
-  /**
+    exports.prototype.broadcast = undefined;
+    /**
    * @member {String} gateway
    */
-  exports.prototype['gateway'] = undefined;
-  /**
+    exports.prototype.gateway = undefined;
+    /**
    * @member {String} vm
    */
-  exports.prototype['vm'] = undefined;
-  /**
+    exports.prototype.vm = undefined;
+    /**
    * @member {String} dns
    */
-  exports.prototype['dns'] = undefined;
-  /**
+    exports.prototype.dns = undefined;
+    /**
    * @member {String} netgw
    */
-  exports.prototype['netgw'] = undefined;
+    exports.prototype.netgw = undefined;
 
 
 
-  return exports;
+    return exports;
 }));
 
 

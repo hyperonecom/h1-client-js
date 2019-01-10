@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineObject', 'model/InlineObject1', 'model/Project'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/InlineObject', 'model/InlineObject1', 'model/Project'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineObject'), require('../model/InlineObject1'), require('../model/Project'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/InlineObject'), require('../model/InlineObject1'), require('../model/Project'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.ProjectApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject, root.HyperOneApi.InlineObject1, root.HyperOneApi.Project);
     }
-    root.HyperOneApi.ProjectApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject, root.HyperOneApi.InlineObject1, root.HyperOneApi.Project);
-  }
 }(this, function(ApiClient, InlineObject, InlineObject1, Project) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Project service.
    * @module api/ProjectApi
    * @version 1
    */
 
-  /**
-   * Constructs a new ProjectApi. 
+    /**
+   * Constructs a new ProjectApi.
    * @alias module:api/ProjectApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the createProject operation.
      * @callback module:api/ProjectApi~createProjectCallback
      * @param {String} error Error message, if any.
@@ -55,43 +55,43 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Create
      * Create project
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject} opts.inlineObject 
+     * @param {module:model/InlineObject} opts.inlineObject
      * @param {module:api/ProjectApi~createProjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Project}
      */
-    this.createProject = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject'];
+        this.createProject = function(opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Project;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Project;
 
-      return this.apiClient.callApi(
-        '/project', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/project', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the listProject operation.
      * @callback module:api/ProjectApi~listProjectCallback
      * @param {String} error Error message, if any.
@@ -99,7 +99,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List project
      * @param {Object} opts Optional parameters
@@ -110,39 +110,39 @@
      * @param {module:api/ProjectApi~listProjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Project>}
      */
-    this.listProject = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listProject = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'name': opts['name'],
-        '$limit': opts['limit'],
-        'active': opts['active'],
-        'organisation': opts['organisation'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                name: opts.name,
+                $limit: opts.limit,
+                active: opts.active,
+                organisation: opts.organisation,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Project];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Project];
 
-      return this.apiClient.callApi(
-        '/project', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/project', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showProject operation.
      * @callback module:api/ProjectApi~showProjectCallback
      * @param {String} error Error message, if any.
@@ -150,47 +150,47 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single project
      * @param {String} projectId ID of project
      * @param {module:api/ProjectApi~showProjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Project}
      */
-    this.showProject = function(projectId, callback) {
-      var postBody = null;
+        this.showProject = function(projectId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'projectId' is set
-      if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling showProject");
-      }
+            // verify the required parameter 'projectId' is set
+            if (projectId === undefined || projectId === null) {
+                throw new Error("Missing the required parameter 'projectId' when calling showProject");
+            }
 
 
-      var pathParams = {
-        'projectId': projectId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                projectId: projectId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Project;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Project;
 
-      return this.apiClient.callApi(
-        '/project/{projectId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/project/{projectId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the updateProject operation.
      * @callback module:api/ProjectApi~updateProjectCallback
      * @param {String} error Error message, if any.
@@ -198,49 +198,49 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Update by ID
      * Returns modified project
      * @param {String} projectId ID of project
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject1} opts.inlineObject1 
+     * @param {module:model/InlineObject1} opts.inlineObject1
      * @param {module:api/ProjectApi~updateProjectCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Project}
      */
-    this.updateProject = function(projectId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject1'];
+        this.updateProject = function(projectId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject1;
 
-      // verify the required parameter 'projectId' is set
-      if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling updateProject");
-      }
+            // verify the required parameter 'projectId' is set
+            if (projectId === undefined || projectId === null) {
+                throw new Error("Missing the required parameter 'projectId' when calling updateProject");
+            }
 
 
-      var pathParams = {
-        'projectId': projectId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                projectId: projectId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Project;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Project;
 
-      return this.apiClient.callApi(
-        '/project/{projectId}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/project/{projectId}', 'PATCH',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));

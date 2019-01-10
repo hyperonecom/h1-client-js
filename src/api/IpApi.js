@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineObject32', 'model/InlineObject33', 'model/InlineObject34', 'model/InlineObject35', 'model/InlineObject36', 'model/Ip'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/InlineObject32', 'model/InlineObject33', 'model/InlineObject34', 'model/InlineObject35', 'model/InlineObject36', 'model/Ip'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineObject32'), require('../model/InlineObject33'), require('../model/InlineObject34'), require('../model/InlineObject35'), require('../model/InlineObject36'), require('../model/Ip'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/InlineObject32'), require('../model/InlineObject33'), require('../model/InlineObject34'), require('../model/InlineObject35'), require('../model/InlineObject36'), require('../model/Ip'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.IpApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject32, root.HyperOneApi.InlineObject33, root.HyperOneApi.InlineObject34, root.HyperOneApi.InlineObject35, root.HyperOneApi.InlineObject36, root.HyperOneApi.Ip);
     }
-    root.HyperOneApi.IpApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject32, root.HyperOneApi.InlineObject33, root.HyperOneApi.InlineObject34, root.HyperOneApi.InlineObject35, root.HyperOneApi.InlineObject36, root.HyperOneApi.Ip);
-  }
 }(this, function(ApiClient, InlineObject32, InlineObject33, InlineObject34, InlineObject35, InlineObject36, Ip) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Ip service.
    * @module api/IpApi
    * @version 1
    */
 
-  /**
-   * Constructs a new IpApi. 
+    /**
+   * Constructs a new IpApi.
    * @alias module:api/IpApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the actionIpAllocate operation.
      * @callback module:api/IpApi~actionIpAllocateCallback
      * @param {String} error Error message, if any.
@@ -55,50 +55,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: allocate
      * Action allocate
      * @param {String} ipId ID of ip
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject34} opts.inlineObject34 
+     * @param {module:model/InlineObject34} opts.inlineObject34
      * @param {module:api/IpApi~actionIpAllocateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ip}
      */
-    this.actionIpAllocate = function(ipId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject34'];
+        this.actionIpAllocate = function(ipId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject34;
 
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling actionIpAllocate");
-      }
+            // verify the required parameter 'ipId' is set
+            if (ipId === undefined || ipId === null) {
+                throw new Error("Missing the required parameter 'ipId' when calling actionIpAllocate");
+            }
 
 
-      var pathParams = {
-        'ipId': ipId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                ipId: ipId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Ip;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Ip;
 
-      return this.apiClient.callApi(
-        '/ip/{ipId}/actions/allocate', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/ip/{ipId}/actions/allocate', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionIpAssociate operation.
      * @callback module:api/IpApi~actionIpAssociateCallback
      * @param {String} error Error message, if any.
@@ -106,50 +106,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: associate
      * Action associate
      * @param {String} ipId ID of ip
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject35} opts.inlineObject35 
+     * @param {module:model/InlineObject35} opts.inlineObject35
      * @param {module:api/IpApi~actionIpAssociateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ip}
      */
-    this.actionIpAssociate = function(ipId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject35'];
+        this.actionIpAssociate = function(ipId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject35;
 
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling actionIpAssociate");
-      }
+            // verify the required parameter 'ipId' is set
+            if (ipId === undefined || ipId === null) {
+                throw new Error("Missing the required parameter 'ipId' when calling actionIpAssociate");
+            }
 
 
-      var pathParams = {
-        'ipId': ipId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                ipId: ipId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Ip;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Ip;
 
-      return this.apiClient.callApi(
-        '/ip/{ipId}/actions/associate', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/ip/{ipId}/actions/associate', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionIpDisassociate operation.
      * @callback module:api/IpApi~actionIpDisassociateCallback
      * @param {String} error Error message, if any.
@@ -157,50 +157,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: disassociate
      * Action disassociate
      * @param {String} ipId ID of ip
      * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} opts.body
      * @param {module:api/IpApi~actionIpDisassociateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ip}
      */
-    this.actionIpDisassociate = function(ipId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['body'];
+        this.actionIpDisassociate = function(ipId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.body;
 
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling actionIpDisassociate");
-      }
+            // verify the required parameter 'ipId' is set
+            if (ipId === undefined || ipId === null) {
+                throw new Error("Missing the required parameter 'ipId' when calling actionIpDisassociate");
+            }
 
 
-      var pathParams = {
-        'ipId': ipId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                ipId: ipId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Ip;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Ip;
 
-      return this.apiClient.callApi(
-        '/ip/{ipId}/actions/disassociate', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/ip/{ipId}/actions/disassociate', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionIpRelease operation.
      * @callback module:api/IpApi~actionIpReleaseCallback
      * @param {String} error Error message, if any.
@@ -208,50 +208,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: release
      * Action release
      * @param {String} ipId ID of ip
      * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} opts.body
      * @param {module:api/IpApi~actionIpReleaseCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ip}
      */
-    this.actionIpRelease = function(ipId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['body'];
+        this.actionIpRelease = function(ipId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.body;
 
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling actionIpRelease");
-      }
+            // verify the required parameter 'ipId' is set
+            if (ipId === undefined || ipId === null) {
+                throw new Error("Missing the required parameter 'ipId' when calling actionIpRelease");
+            }
 
 
-      var pathParams = {
-        'ipId': ipId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                ipId: ipId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Ip;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Ip;
 
-      return this.apiClient.callApi(
-        '/ip/{ipId}/actions/release', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/ip/{ipId}/actions/release', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionIpTransfer operation.
      * @callback module:api/IpApi~actionIpTransferCallback
      * @param {String} error Error message, if any.
@@ -259,50 +259,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: transfer
      * Action transfer
      * @param {String} ipId ID of ip
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject36} opts.inlineObject36 
+     * @param {module:model/InlineObject36} opts.inlineObject36
      * @param {module:api/IpApi~actionIpTransferCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ip}
      */
-    this.actionIpTransfer = function(ipId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject36'];
+        this.actionIpTransfer = function(ipId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject36;
 
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling actionIpTransfer");
-      }
+            // verify the required parameter 'ipId' is set
+            if (ipId === undefined || ipId === null) {
+                throw new Error("Missing the required parameter 'ipId' when calling actionIpTransfer");
+            }
 
 
-      var pathParams = {
-        'ipId': ipId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                ipId: ipId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Ip;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Ip;
 
-      return this.apiClient.callApi(
-        '/ip/{ipId}/actions/transfer', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/ip/{ipId}/actions/transfer', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the createIp operation.
      * @callback module:api/IpApi~createIpCallback
      * @param {String} error Error message, if any.
@@ -310,43 +310,43 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Create
      * Create ip
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject32} opts.inlineObject32 
+     * @param {module:model/InlineObject32} opts.inlineObject32
      * @param {module:api/IpApi~createIpCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ip}
      */
-    this.createIp = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject32'];
+        this.createIp = function(opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject32;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Ip;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Ip;
 
-      return this.apiClient.callApi(
-        '/ip', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/ip', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the deleteIp operation.
      * @callback module:api/IpApi~deleteIpCallback
      * @param {String} error Error message, if any.
@@ -354,45 +354,45 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Delete by ID
      * @param {String} ipId ID of ip
      * @param {module:api/IpApi~deleteIpCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteIp = function(ipId, callback) {
-      var postBody = null;
+        this.deleteIp = function(ipId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling deleteIp");
-      }
+            // verify the required parameter 'ipId' is set
+            if (ipId === undefined || ipId === null) {
+                throw new Error("Missing the required parameter 'ipId' when calling deleteIp");
+            }
 
 
-      var pathParams = {
-        'ipId': ipId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                ipId: ipId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = [];
+            const returnType = null;
 
-      return this.apiClient.callApi(
-        '/ip/{ipId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/ip/{ipId}', 'DELETE',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the listIp operation.
      * @callback module:api/IpApi~listIpCallback
      * @param {String} error Error message, if any.
@@ -400,7 +400,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List ip
      * @param {Object} opts Optional parameters
@@ -408,36 +408,36 @@
      * @param {module:api/IpApi~listIpCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Ip>}
      */
-    this.listIp = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listIp = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'mac': opts['mac'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                mac: opts.mac,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Ip];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Ip];
 
-      return this.apiClient.callApi(
-        '/ip', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/ip', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showIp operation.
      * @callback module:api/IpApi~showIpCallback
      * @param {String} error Error message, if any.
@@ -445,47 +445,47 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single ip
      * @param {String} ipId ID of ip
      * @param {module:api/IpApi~showIpCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ip}
      */
-    this.showIp = function(ipId, callback) {
-      var postBody = null;
+        this.showIp = function(ipId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling showIp");
-      }
+            // verify the required parameter 'ipId' is set
+            if (ipId === undefined || ipId === null) {
+                throw new Error("Missing the required parameter 'ipId' when calling showIp");
+            }
 
 
-      var pathParams = {
-        'ipId': ipId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                ipId: ipId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Ip;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Ip;
 
-      return this.apiClient.callApi(
-        '/ip/{ipId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/ip/{ipId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the updateIp operation.
      * @callback module:api/IpApi~updateIpCallback
      * @param {String} error Error message, if any.
@@ -493,49 +493,49 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Update by ID
      * Returns modified ip
      * @param {String} ipId ID of ip
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject33} opts.inlineObject33 
+     * @param {module:model/InlineObject33} opts.inlineObject33
      * @param {module:api/IpApi~updateIpCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Ip}
      */
-    this.updateIp = function(ipId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject33'];
+        this.updateIp = function(ipId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject33;
 
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling updateIp");
-      }
+            // verify the required parameter 'ipId' is set
+            if (ipId === undefined || ipId === null) {
+                throw new Error("Missing the required parameter 'ipId' when calling updateIp");
+            }
 
 
-      var pathParams = {
-        'ipId': ipId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                ipId: ipId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Ip;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Ip;
 
-      return this.apiClient.callApi(
-        '/ip/{ipId}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/ip/{ipId}', 'PATCH',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));

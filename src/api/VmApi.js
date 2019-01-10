@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineObject26', 'model/InlineObject27', 'model/InlineObject28', 'model/InlineObject29', 'model/InlineObject30', 'model/InlineObject31', 'model/Vm'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/InlineObject26', 'model/InlineObject27', 'model/InlineObject28', 'model/InlineObject29', 'model/InlineObject30', 'model/InlineObject31', 'model/Vm'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineObject26'), require('../model/InlineObject27'), require('../model/InlineObject28'), require('../model/InlineObject29'), require('../model/InlineObject30'), require('../model/InlineObject31'), require('../model/Vm'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/InlineObject26'), require('../model/InlineObject27'), require('../model/InlineObject28'), require('../model/InlineObject29'), require('../model/InlineObject30'), require('../model/InlineObject31'), require('../model/Vm'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.VmApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject26, root.HyperOneApi.InlineObject27, root.HyperOneApi.InlineObject28, root.HyperOneApi.InlineObject29, root.HyperOneApi.InlineObject30, root.HyperOneApi.InlineObject31, root.HyperOneApi.Vm);
     }
-    root.HyperOneApi.VmApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject26, root.HyperOneApi.InlineObject27, root.HyperOneApi.InlineObject28, root.HyperOneApi.InlineObject29, root.HyperOneApi.InlineObject30, root.HyperOneApi.InlineObject31, root.HyperOneApi.Vm);
-  }
 }(this, function(ApiClient, InlineObject26, InlineObject27, InlineObject28, InlineObject29, InlineObject30, InlineObject31, Vm) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Vm service.
    * @module api/VmApi
    * @version 1
    */
 
-  /**
-   * Constructs a new VmApi. 
+    /**
+   * Constructs a new VmApi.
    * @alias module:api/VmApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the actionVmFlavour operation.
      * @callback module:api/VmApi~actionVmFlavourCallback
      * @param {String} error Error message, if any.
@@ -55,50 +55,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: flavour
      * Action flavour
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject31} opts.inlineObject31 
+     * @param {module:model/InlineObject31} opts.inlineObject31
      * @param {module:api/VmApi~actionVmFlavourCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.actionVmFlavour = function(vmId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject31'];
+        this.actionVmFlavour = function(vmId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject31;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmFlavour");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling actionVmFlavour");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}/actions/flavour', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm/{vmId}/actions/flavour', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionVmImage operation.
      * @callback module:api/VmApi~actionVmImageCallback
      * @param {String} error Error message, if any.
@@ -106,50 +106,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: image
      * Action image
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject30} opts.inlineObject30 
+     * @param {module:model/InlineObject30} opts.inlineObject30
      * @param {module:api/VmApi~actionVmImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.actionVmImage = function(vmId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject30'];
+        this.actionVmImage = function(vmId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject30;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmImage");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling actionVmImage");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}/actions/image', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm/{vmId}/actions/image', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionVmPasswordReset operation.
      * @callback module:api/VmApi~actionVmPasswordResetCallback
      * @param {String} error Error message, if any.
@@ -157,50 +157,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: password_reset
      * Action password_reset
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject29} opts.inlineObject29 
+     * @param {module:model/InlineObject29} opts.inlineObject29
      * @param {module:api/VmApi~actionVmPasswordResetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.actionVmPasswordReset = function(vmId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject29'];
+        this.actionVmPasswordReset = function(vmId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject29;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmPasswordReset");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling actionVmPasswordReset");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}/actions/password_reset', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm/{vmId}/actions/password_reset', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionVmRename operation.
      * @callback module:api/VmApi~actionVmRenameCallback
      * @param {String} error Error message, if any.
@@ -208,50 +208,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: rename
      * Action rename
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject28} opts.inlineObject28 
+     * @param {module:model/InlineObject28} opts.inlineObject28
      * @param {module:api/VmApi~actionVmRenameCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.actionVmRename = function(vmId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject28'];
+        this.actionVmRename = function(vmId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject28;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmRename");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling actionVmRename");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}/actions/rename', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm/{vmId}/actions/rename', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionVmRestart operation.
      * @callback module:api/VmApi~actionVmRestartCallback
      * @param {String} error Error message, if any.
@@ -259,50 +259,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: restart
      * Action restart
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} opts.body
      * @param {module:api/VmApi~actionVmRestartCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.actionVmRestart = function(vmId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['body'];
+        this.actionVmRestart = function(vmId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.body;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmRestart");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling actionVmRestart");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}/actions/restart', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm/{vmId}/actions/restart', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionVmStart operation.
      * @callback module:api/VmApi~actionVmStartCallback
      * @param {String} error Error message, if any.
@@ -310,50 +310,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: start
      * Action start
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} opts.body
      * @param {module:api/VmApi~actionVmStartCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.actionVmStart = function(vmId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['body'];
+        this.actionVmStart = function(vmId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.body;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmStart");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling actionVmStart");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}/actions/start', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm/{vmId}/actions/start', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionVmStop operation.
      * @callback module:api/VmApi~actionVmStopCallback
      * @param {String} error Error message, if any.
@@ -361,50 +361,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: stop
      * Action stop
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} opts.body
      * @param {module:api/VmApi~actionVmStopCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.actionVmStop = function(vmId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['body'];
+        this.actionVmStop = function(vmId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.body;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmStop");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling actionVmStop");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}/actions/stop', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm/{vmId}/actions/stop', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the actionVmTurnoff operation.
      * @callback module:api/VmApi~actionVmTurnoffCallback
      * @param {String} error Error message, if any.
@@ -412,50 +412,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: turnoff
      * Action turnoff
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
-     * @param {Object} opts.body 
+     * @param {Object} opts.body
      * @param {module:api/VmApi~actionVmTurnoffCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.actionVmTurnoff = function(vmId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['body'];
+        this.actionVmTurnoff = function(vmId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.body;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmTurnoff");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling actionVmTurnoff");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}/actions/turnoff', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm/{vmId}/actions/turnoff', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the createVm operation.
      * @callback module:api/VmApi~createVmCallback
      * @param {String} error Error message, if any.
@@ -463,43 +463,43 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Create
      * Create vm
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject26} opts.inlineObject26 
+     * @param {module:model/InlineObject26} opts.inlineObject26
      * @param {module:api/VmApi~createVmCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.createVm = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject26'];
+        this.createVm = function(opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject26;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the deleteVm operation.
      * @callback module:api/VmApi~deleteVmCallback
      * @param {String} error Error message, if any.
@@ -507,45 +507,45 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Delete by ID
      * @param {String} vmId ID of vm
      * @param {module:api/VmApi~deleteVmCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteVm = function(vmId, callback) {
-      var postBody = null;
+        this.deleteVm = function(vmId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling deleteVm");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling deleteVm");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = [];
+            const returnType = null;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm/{vmId}', 'DELETE',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the listVm operation.
      * @callback module:api/VmApi~listVmCallback
      * @param {String} error Error message, if any.
@@ -553,7 +553,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List vm
      * @param {Object} opts Optional parameters
@@ -561,36 +561,36 @@
      * @param {module:api/VmApi~listVmCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Vm>}
      */
-    this.listVm = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listVm = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'name': opts['name'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                name: opts.name,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Vm];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Vm];
 
-      return this.apiClient.callApi(
-        '/vm', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showVm operation.
      * @callback module:api/VmApi~showVmCallback
      * @param {String} error Error message, if any.
@@ -598,47 +598,47 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single vm
      * @param {String} vmId ID of vm
      * @param {module:api/VmApi~showVmCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.showVm = function(vmId, callback) {
-      var postBody = null;
+        this.showVm = function(vmId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling showVm");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling showVm");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/vm/{vmId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the updateVm operation.
      * @callback module:api/VmApi~updateVmCallback
      * @param {String} error Error message, if any.
@@ -646,49 +646,49 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Update by ID
      * Returns modified vm
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject27} opts.inlineObject27 
+     * @param {module:model/InlineObject27} opts.inlineObject27
      * @param {module:api/VmApi~updateVmCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Vm}
      */
-    this.updateVm = function(vmId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject27'];
+        this.updateVm = function(vmId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject27;
 
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling updateVm");
-      }
+            // verify the required parameter 'vmId' is set
+            if (vmId === undefined || vmId === null) {
+                throw new Error("Missing the required parameter 'vmId' when calling updateVm");
+            }
 
 
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                vmId: vmId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Vm;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Vm;
 
-      return this.apiClient.callApi(
-        '/vm/{vmId}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/vm/{vmId}', 'PATCH',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));

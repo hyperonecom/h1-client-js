@@ -14,72 +14,72 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/VaultCredentialCertificate', 'model/VaultCredentialPassword'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/VaultCredentialCertificate', 'model/VaultCredentialPassword'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./VaultCredentialCertificate'), require('./VaultCredentialPassword'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('./VaultCredentialCertificate'), require('./VaultCredentialPassword'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.VaultCredential = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.VaultCredentialCertificate, root.HyperOneApi.VaultCredentialPassword);
     }
-    root.HyperOneApi.VaultCredential = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.VaultCredentialCertificate, root.HyperOneApi.VaultCredentialPassword);
-  }
 }(this, function(ApiClient, VaultCredentialCertificate, VaultCredentialPassword) {
-  'use strict';
+    'use strict';
 
 
 
-  /**
+    /**
    * The VaultCredential model module.
    * @module model/VaultCredential
    * @version 1
    */
 
-  /**
+    /**
    * Constructs a new <code>VaultCredential</code>.
    * @alias module:model/VaultCredential
    * @class
    */
-  var exports = function() {
-    var _this = this;
+    const exports = function() {
+        const _this = this;
 
-  };
+    };
 
-  /**
+    /**
    * Constructs a <code>VaultCredential</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/VaultCredential} obj Optional instance to populate.
    * @return {module:model/VaultCredential} The populated <code>VaultCredential</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    if (data) {
-      obj = obj || new exports();
-      if (data.hasOwnProperty('password')) {
-        obj['password'] = ApiClient.convertToType(data['password'], [VaultCredentialPassword]);
-      }
-      if (data.hasOwnProperty('certificate')) {
-        obj['certificate'] = ApiClient.convertToType(data['certificate'], [VaultCredentialCertificate]);
-      }
-    }
-    return obj;
-  }
+    exports.constructFromObject = function(data, obj) {
+        if (data) {
+            obj = obj || new exports();
+            if (data.hasOwnProperty('password')) {
+                obj.password = ApiClient.convertToType(data.password, [VaultCredentialPassword]);
+            }
+            if (data.hasOwnProperty('certificate')) {
+                obj.certificate = ApiClient.convertToType(data.certificate, [VaultCredentialCertificate]);
+            }
+        }
+        return obj;
+    };
 
-  /**
+    /**
    * @member {Array.<module:model/VaultCredentialPassword>} password
    */
-  exports.prototype['password'] = undefined;
-  /**
+    exports.prototype.password = undefined;
+    /**
    * @member {Array.<module:model/VaultCredentialCertificate>} certificate
    */
-  exports.prototype['certificate'] = undefined;
+    exports.prototype.certificate = undefined;
 
 
 
-  return exports;
+    return exports;
 }));
 
 

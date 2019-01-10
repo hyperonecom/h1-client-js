@@ -14,151 +14,151 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/VmDisk', 'model/VmNetadp', 'model/VmPassword'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/VmDisk', 'model/VmNetadp', 'model/VmPassword'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./VmDisk'), require('./VmNetadp'), require('./VmPassword'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('./VmDisk'), require('./VmNetadp'), require('./VmPassword'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.InlineObject26 = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.VmDisk, root.HyperOneApi.VmNetadp, root.HyperOneApi.VmPassword);
     }
-    root.HyperOneApi.InlineObject26 = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.VmDisk, root.HyperOneApi.VmNetadp, root.HyperOneApi.VmPassword);
-  }
 }(this, function(ApiClient, VmDisk, VmNetadp, VmPassword) {
-  'use strict';
+    'use strict';
 
 
 
-  /**
+    /**
    * The InlineObject26 model module.
    * @module model/InlineObject26
    * @version 1
    */
 
-  /**
+    /**
    * Constructs a new <code>InlineObject26</code>.
    * @alias module:model/InlineObject26
    * @class
-   * @param service {String} 
+   * @param service {String}
    */
-  var exports = function(service) {
-    var _this = this;
+    const exports = function(service) {
+        const _this = this;
 
-    _this['service'] = service;
-  };
+        _this.service = service;
+    };
 
-  /**
+    /**
    * Constructs a <code>InlineObject26</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/InlineObject26} obj Optional instance to populate.
    * @return {module:model/InlineObject26} The populated <code>InlineObject26</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    if (data) {
-      obj = obj || new exports();
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('image')) {
-        obj['image'] = ApiClient.convertToType(data['image'], 'String');
-      }
-      if (data.hasOwnProperty('iso')) {
-        obj['iso'] = ApiClient.convertToType(data['iso'], 'String');
-      }
-      if (data.hasOwnProperty('service')) {
-        obj['service'] = ApiClient.convertToType(data['service'], 'String');
-      }
-      if (data.hasOwnProperty('username')) {
-        obj['username'] = ApiClient.convertToType(data['username'], 'String');
-      }
-      if (data.hasOwnProperty('password')) {
-        obj['password'] = VmPassword.constructFromObject(data['password']);
-      }
-      if (data.hasOwnProperty('sshKeys')) {
-        obj['sshKeys'] = ApiClient.convertToType(data['sshKeys'], ['String']);
-      }
-      if (data.hasOwnProperty('userMetadata')) {
-        obj['userMetadata'] = ApiClient.convertToType(data['userMetadata'], 'String');
-      }
-      if (data.hasOwnProperty('disk')) {
-        obj['disk'] = ApiClient.convertToType(data['disk'], [VmDisk]);
-      }
-      if (data.hasOwnProperty('netadp')) {
-        obj['netadp'] = ApiClient.convertToType(data['netadp'], [VmNetadp]);
-      }
-      if (data.hasOwnProperty('boot')) {
-        obj['boot'] = ApiClient.convertToType(data['boot'], 'Boolean');
-      }
-      if (data.hasOwnProperty('cloud')) {
-        obj['cloud'] = ApiClient.convertToType(data['cloud'], 'String');
-      }
-      if (data.hasOwnProperty('tag')) {
-        obj['tag'] = ApiClient.convertToType(data['tag'], Object);
-      }
-    }
-    return obj;
-  }
+    exports.constructFromObject = function(data, obj) {
+        if (data) {
+            obj = obj || new exports();
+            if (data.hasOwnProperty('name')) {
+                obj.name = ApiClient.convertToType(data.name, 'String');
+            }
+            if (data.hasOwnProperty('image')) {
+                obj.image = ApiClient.convertToType(data.image, 'String');
+            }
+            if (data.hasOwnProperty('iso')) {
+                obj.iso = ApiClient.convertToType(data.iso, 'String');
+            }
+            if (data.hasOwnProperty('service')) {
+                obj.service = ApiClient.convertToType(data.service, 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj.username = ApiClient.convertToType(data.username, 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj.password = VmPassword.constructFromObject(data.password);
+            }
+            if (data.hasOwnProperty('sshKeys')) {
+                obj.sshKeys = ApiClient.convertToType(data.sshKeys, ['String']);
+            }
+            if (data.hasOwnProperty('userMetadata')) {
+                obj.userMetadata = ApiClient.convertToType(data.userMetadata, 'String');
+            }
+            if (data.hasOwnProperty('disk')) {
+                obj.disk = ApiClient.convertToType(data.disk, [VmDisk]);
+            }
+            if (data.hasOwnProperty('netadp')) {
+                obj.netadp = ApiClient.convertToType(data.netadp, [VmNetadp]);
+            }
+            if (data.hasOwnProperty('boot')) {
+                obj.boot = ApiClient.convertToType(data.boot, 'Boolean');
+            }
+            if (data.hasOwnProperty('cloud')) {
+                obj.cloud = ApiClient.convertToType(data.cloud, 'String');
+            }
+            if (data.hasOwnProperty('tag')) {
+                obj.tag = ApiClient.convertToType(data.tag, Object);
+            }
+        }
+        return obj;
+    };
 
-  /**
+    /**
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-  /**
+    exports.prototype.name = undefined;
+    /**
    * @member {String} image
    */
-  exports.prototype['image'] = undefined;
-  /**
+    exports.prototype.image = undefined;
+    /**
    * @member {String} iso
    */
-  exports.prototype['iso'] = undefined;
-  /**
+    exports.prototype.iso = undefined;
+    /**
    * @member {String} service
    */
-  exports.prototype['service'] = undefined;
-  /**
+    exports.prototype.service = undefined;
+    /**
    * @member {String} username
    */
-  exports.prototype['username'] = undefined;
-  /**
+    exports.prototype.username = undefined;
+    /**
    * @member {module:model/VmPassword} password
    */
-  exports.prototype['password'] = undefined;
-  /**
+    exports.prototype.password = undefined;
+    /**
    * @member {Array.<String>} sshKeys
    */
-  exports.prototype['sshKeys'] = undefined;
-  /**
+    exports.prototype.sshKeys = undefined;
+    /**
    * @member {String} userMetadata
    */
-  exports.prototype['userMetadata'] = undefined;
-  /**
+    exports.prototype.userMetadata = undefined;
+    /**
    * @member {Array.<module:model/VmDisk>} disk
    */
-  exports.prototype['disk'] = undefined;
-  /**
+    exports.prototype.disk = undefined;
+    /**
    * @member {Array.<module:model/VmNetadp>} netadp
    */
-  exports.prototype['netadp'] = undefined;
-  /**
+    exports.prototype.netadp = undefined;
+    /**
    * @member {Boolean} boot
    */
-  exports.prototype['boot'] = undefined;
-  /**
+    exports.prototype.boot = undefined;
+    /**
    * @member {String} cloud
    */
-  exports.prototype['cloud'] = undefined;
-  /**
+    exports.prototype.cloud = undefined;
+    /**
    * @member {Object} tag
    */
-  exports.prototype['tag'] = undefined;
+    exports.prototype.tag = undefined;
 
 
 
-  return exports;
+    return exports;
 }));
 
 

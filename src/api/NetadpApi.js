@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Netadp'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/Netadp'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Netadp'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/Netadp'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.NetadpApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Netadp);
     }
-    root.HyperOneApi.NetadpApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Netadp);
-  }
 }(this, function(ApiClient, Netadp) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Netadp service.
    * @module api/NetadpApi
    * @version 1
    */
 
-  /**
-   * Constructs a new NetadpApi. 
+    /**
+   * Constructs a new NetadpApi.
    * @alias module:api/NetadpApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the listNetadp operation.
      * @callback module:api/NetadpApi~listNetadpCallback
      * @param {String} error Error message, if any.
@@ -55,7 +55,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List netadp
      * @param {Object} opts Optional parameters
@@ -64,37 +64,37 @@
      * @param {module:api/NetadpApi~listNetadpCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Netadp>}
      */
-    this.listNetadp = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listNetadp = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'assigned.resource': opts['assignedResource'],
-        'assigned.id': opts['assignedId'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                'assigned.resource': opts.assignedResource,
+                'assigned.id': opts.assignedId,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Netadp];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Netadp];
 
-      return this.apiClient.callApi(
-        '/netadp', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/netadp', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showNetadp operation.
      * @callback module:api/NetadpApi~showNetadpCallback
      * @param {String} error Error message, if any.
@@ -102,46 +102,46 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single netadp
      * @param {String} netadpId ID of netadp
      * @param {module:api/NetadpApi~showNetadpCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Netadp}
      */
-    this.showNetadp = function(netadpId, callback) {
-      var postBody = null;
+        this.showNetadp = function(netadpId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'netadpId' is set
-      if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling showNetadp");
-      }
+            // verify the required parameter 'netadpId' is set
+            if (netadpId === undefined || netadpId === null) {
+                throw new Error("Missing the required parameter 'netadpId' when calling showNetadp");
+            }
 
 
-      var pathParams = {
-        'netadpId': netadpId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                netadpId: netadpId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Netadp;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Netadp;
 
-      return this.apiClient.callApi(
-        '/netadp/{netadpId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/netadp/{netadpId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));

@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineObject54', 'model/InlineObject55', 'model/Replica'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/InlineObject54', 'model/InlineObject55', 'model/Replica'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineObject54'), require('../model/InlineObject55'), require('../model/Replica'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/InlineObject54'), require('../model/InlineObject55'), require('../model/Replica'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.ReplicaApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject54, root.HyperOneApi.InlineObject55, root.HyperOneApi.Replica);
     }
-    root.HyperOneApi.ReplicaApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject54, root.HyperOneApi.InlineObject55, root.HyperOneApi.Replica);
-  }
 }(this, function(ApiClient, InlineObject54, InlineObject55, Replica) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Replica service.
    * @module api/ReplicaApi
    * @version 1
    */
 
-  /**
-   * Constructs a new ReplicaApi. 
+    /**
+   * Constructs a new ReplicaApi.
    * @alias module:api/ReplicaApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the actionReplicaImage operation.
      * @callback module:api/ReplicaApi~actionReplicaImageCallback
      * @param {String} error Error message, if any.
@@ -55,50 +55,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: image
      * Action image
      * @param {String} replicaId ID of replica
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject55} opts.inlineObject55 
+     * @param {module:model/InlineObject55} opts.inlineObject55
      * @param {module:api/ReplicaApi~actionReplicaImageCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Replica}
      */
-    this.actionReplicaImage = function(replicaId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject55'];
+        this.actionReplicaImage = function(replicaId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject55;
 
-      // verify the required parameter 'replicaId' is set
-      if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling actionReplicaImage");
-      }
+            // verify the required parameter 'replicaId' is set
+            if (replicaId === undefined || replicaId === null) {
+                throw new Error("Missing the required parameter 'replicaId' when calling actionReplicaImage");
+            }
 
 
-      var pathParams = {
-        'replicaId': replicaId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                replicaId: replicaId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Replica;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Replica;
 
-      return this.apiClient.callApi(
-        '/replica/{replicaId}/actions/image', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/replica/{replicaId}/actions/image', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the createReplica operation.
      * @callback module:api/ReplicaApi~createReplicaCallback
      * @param {String} error Error message, if any.
@@ -106,43 +106,43 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Create
      * Create replica
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject54} opts.inlineObject54 
+     * @param {module:model/InlineObject54} opts.inlineObject54
      * @param {module:api/ReplicaApi~createReplicaCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Replica}
      */
-    this.createReplica = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject54'];
+        this.createReplica = function(opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject54;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Replica;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Replica;
 
-      return this.apiClient.callApi(
-        '/replica', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/replica', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the deleteReplica operation.
      * @callback module:api/ReplicaApi~deleteReplicaCallback
      * @param {String} error Error message, if any.
@@ -150,45 +150,45 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Delete by ID
      * @param {String} replicaId ID of replica
      * @param {module:api/ReplicaApi~deleteReplicaCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteReplica = function(replicaId, callback) {
-      var postBody = null;
+        this.deleteReplica = function(replicaId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'replicaId' is set
-      if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling deleteReplica");
-      }
+            // verify the required parameter 'replicaId' is set
+            if (replicaId === undefined || replicaId === null) {
+                throw new Error("Missing the required parameter 'replicaId' when calling deleteReplica");
+            }
 
 
-      var pathParams = {
-        'replicaId': replicaId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                replicaId: replicaId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = [];
+            const returnType = null;
 
-      return this.apiClient.callApi(
-        '/replica/{replicaId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/replica/{replicaId}', 'DELETE',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the listReplica operation.
      * @callback module:api/ReplicaApi~listReplicaCallback
      * @param {String} error Error message, if any.
@@ -196,7 +196,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List replica
      * @param {Object} opts Optional parameters
@@ -204,36 +204,36 @@
      * @param {module:api/ReplicaApi~listReplicaCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Replica>}
      */
-    this.listReplica = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listReplica = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'name': opts['name'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                name: opts.name,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Replica];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Replica];
 
-      return this.apiClient.callApi(
-        '/replica', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/replica', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showReplica operation.
      * @callback module:api/ReplicaApi~showReplicaCallback
      * @param {String} error Error message, if any.
@@ -241,46 +241,46 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single replica
      * @param {String} replicaId ID of replica
      * @param {module:api/ReplicaApi~showReplicaCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Replica}
      */
-    this.showReplica = function(replicaId, callback) {
-      var postBody = null;
+        this.showReplica = function(replicaId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'replicaId' is set
-      if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling showReplica");
-      }
+            // verify the required parameter 'replicaId' is set
+            if (replicaId === undefined || replicaId === null) {
+                throw new Error("Missing the required parameter 'replicaId' when calling showReplica");
+            }
 
 
-      var pathParams = {
-        'replicaId': replicaId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                replicaId: replicaId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Replica;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Replica;
 
-      return this.apiClient.callApi(
-        '/replica/{replicaId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/replica/{replicaId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));

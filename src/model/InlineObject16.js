@@ -14,104 +14,104 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
-  } else {
+        module.exports = factory(require('../ApiClient'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.InlineObject16 = factory(root.HyperOneApi.ApiClient);
     }
-    root.HyperOneApi.InlineObject16 = factory(root.HyperOneApi.ApiClient);
-  }
 }(this, function(ApiClient) {
-  'use strict';
+    'use strict';
 
 
 
-  /**
+    /**
    * The InlineObject16 model module.
    * @module model/InlineObject16
    * @version 1
    */
 
-  /**
+    /**
    * Constructs a new <code>InlineObject16</code>.
    * @alias module:model/InlineObject16
    * @class
-   * @param name {String} 
-   * @param service {String} 
+   * @param name {String}
+   * @param service {String}
    */
-  var exports = function(name, service) {
-    var _this = this;
+    const exports = function(name, service) {
+        const _this = this;
 
-    _this['name'] = name;
-    _this['service'] = service;
-  };
+        _this.name = name;
+        _this.service = service;
+    };
 
-  /**
+    /**
    * Constructs a <code>InlineObject16</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/InlineObject16} obj Optional instance to populate.
    * @return {module:model/InlineObject16} The populated <code>InlineObject16</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    if (data) {
-      obj = obj || new exports();
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('vm')) {
-        obj['vm'] = ApiClient.convertToType(data['vm'], 'String');
-      }
-      if (data.hasOwnProperty('replica')) {
-        obj['replica'] = ApiClient.convertToType(data['replica'], 'String');
-      }
-      if (data.hasOwnProperty('service')) {
-        obj['service'] = ApiClient.convertToType(data['service'], 'String');
-      }
-      if (data.hasOwnProperty('description')) {
-        obj['description'] = ApiClient.convertToType(data['description'], 'String');
-      }
-      if (data.hasOwnProperty('tag')) {
-        obj['tag'] = ApiClient.convertToType(data['tag'], Object);
-      }
-    }
-    return obj;
-  }
+    exports.constructFromObject = function(data, obj) {
+        if (data) {
+            obj = obj || new exports();
+            if (data.hasOwnProperty('name')) {
+                obj.name = ApiClient.convertToType(data.name, 'String');
+            }
+            if (data.hasOwnProperty('vm')) {
+                obj.vm = ApiClient.convertToType(data.vm, 'String');
+            }
+            if (data.hasOwnProperty('replica')) {
+                obj.replica = ApiClient.convertToType(data.replica, 'String');
+            }
+            if (data.hasOwnProperty('service')) {
+                obj.service = ApiClient.convertToType(data.service, 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj.description = ApiClient.convertToType(data.description, 'String');
+            }
+            if (data.hasOwnProperty('tag')) {
+                obj.tag = ApiClient.convertToType(data.tag, Object);
+            }
+        }
+        return obj;
+    };
 
-  /**
+    /**
    * @member {String} name
    */
-  exports.prototype['name'] = undefined;
-  /**
+    exports.prototype.name = undefined;
+    /**
    * @member {String} vm
    */
-  exports.prototype['vm'] = undefined;
-  /**
+    exports.prototype.vm = undefined;
+    /**
    * @member {String} replica
    */
-  exports.prototype['replica'] = undefined;
-  /**
+    exports.prototype.replica = undefined;
+    /**
    * @member {String} service
    */
-  exports.prototype['service'] = undefined;
-  /**
+    exports.prototype.service = undefined;
+    /**
    * @member {String} description
    */
-  exports.prototype['description'] = undefined;
-  /**
+    exports.prototype.description = undefined;
+    /**
    * @member {Object} tag
    */
-  exports.prototype['tag'] = undefined;
+    exports.prototype.tag = undefined;
 
 
 
-  return exports;
+    return exports;
 }));
 
 

@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineObject11', 'model/InlineObject12', 'model/Network'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/InlineObject11', 'model/InlineObject12', 'model/Network'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineObject11'), require('../model/InlineObject12'), require('../model/Network'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/InlineObject11'), require('../model/InlineObject12'), require('../model/Network'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.NetworkApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject11, root.HyperOneApi.InlineObject12, root.HyperOneApi.Network);
     }
-    root.HyperOneApi.NetworkApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject11, root.HyperOneApi.InlineObject12, root.HyperOneApi.Network);
-  }
 }(this, function(ApiClient, InlineObject11, InlineObject12, Network) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Network service.
    * @module api/NetworkApi
    * @version 1
    */
 
-  /**
-   * Constructs a new NetworkApi. 
+    /**
+   * Constructs a new NetworkApi.
    * @alias module:api/NetworkApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the createNetwork operation.
      * @callback module:api/NetworkApi~createNetworkCallback
      * @param {String} error Error message, if any.
@@ -55,43 +55,43 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Create
      * Create network
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject11} opts.inlineObject11 
+     * @param {module:model/InlineObject11} opts.inlineObject11
      * @param {module:api/NetworkApi~createNetworkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Network}
      */
-    this.createNetwork = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject11'];
+        this.createNetwork = function(opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject11;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Network;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Network;
 
-      return this.apiClient.callApi(
-        '/network', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/network', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the deleteNetwork operation.
      * @callback module:api/NetworkApi~deleteNetworkCallback
      * @param {String} error Error message, if any.
@@ -99,45 +99,45 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Delete by ID
      * @param {String} networkId ID of network
      * @param {module:api/NetworkApi~deleteNetworkCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteNetwork = function(networkId, callback) {
-      var postBody = null;
+        this.deleteNetwork = function(networkId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'networkId' is set
-      if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling deleteNetwork");
-      }
+            // verify the required parameter 'networkId' is set
+            if (networkId === undefined || networkId === null) {
+                throw new Error("Missing the required parameter 'networkId' when calling deleteNetwork");
+            }
 
 
-      var pathParams = {
-        'networkId': networkId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                networkId: networkId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = [];
+            const returnType = null;
 
-      return this.apiClient.callApi(
-        '/network/{networkId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/network/{networkId}', 'DELETE',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the listNetwork operation.
      * @callback module:api/NetworkApi~listNetworkCallback
      * @param {String} error Error message, if any.
@@ -145,7 +145,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List network
      * @param {Object} opts Optional parameters
@@ -153,36 +153,36 @@
      * @param {module:api/NetworkApi~listNetworkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Network>}
      */
-    this.listNetwork = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listNetwork = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'name': opts['name'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                name: opts.name,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Network];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Network];
 
-      return this.apiClient.callApi(
-        '/network', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/network', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showNetwork operation.
      * @callback module:api/NetworkApi~showNetworkCallback
      * @param {String} error Error message, if any.
@@ -190,47 +190,47 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single network
      * @param {String} networkId ID of network
      * @param {module:api/NetworkApi~showNetworkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Network}
      */
-    this.showNetwork = function(networkId, callback) {
-      var postBody = null;
+        this.showNetwork = function(networkId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'networkId' is set
-      if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling showNetwork");
-      }
+            // verify the required parameter 'networkId' is set
+            if (networkId === undefined || networkId === null) {
+                throw new Error("Missing the required parameter 'networkId' when calling showNetwork");
+            }
 
 
-      var pathParams = {
-        'networkId': networkId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                networkId: networkId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Network;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Network;
 
-      return this.apiClient.callApi(
-        '/network/{networkId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/network/{networkId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the updateNetwork operation.
      * @callback module:api/NetworkApi~updateNetworkCallback
      * @param {String} error Error message, if any.
@@ -238,49 +238,49 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Update by ID
      * Returns modified network
      * @param {String} networkId ID of network
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject12} opts.inlineObject12 
+     * @param {module:model/InlineObject12} opts.inlineObject12
      * @param {module:api/NetworkApi~updateNetworkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Network}
      */
-    this.updateNetwork = function(networkId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject12'];
+        this.updateNetwork = function(networkId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject12;
 
-      // verify the required parameter 'networkId' is set
-      if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling updateNetwork");
-      }
+            // verify the required parameter 'networkId' is set
+            if (networkId === undefined || networkId === null) {
+                throw new Error("Missing the required parameter 'networkId' when calling updateNetwork");
+            }
 
 
-      var pathParams = {
-        'networkId': networkId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                networkId: networkId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Network;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Network;
 
-      return this.apiClient.callApi(
-        '/network/{networkId}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/network/{networkId}', 'PATCH',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));

@@ -14,93 +14,93 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/OrganisationBillingAddress'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/OrganisationBillingAddress'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./OrganisationBillingAddress'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('./OrganisationBillingAddress'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.OrganisationBilling = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.OrganisationBillingAddress);
     }
-    root.HyperOneApi.OrganisationBilling = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.OrganisationBillingAddress);
-  }
 }(this, function(ApiClient, OrganisationBillingAddress) {
-  'use strict';
+    'use strict';
 
 
 
-  /**
+    /**
    * The OrganisationBilling model module.
    * @module model/OrganisationBilling
    * @version 1
    */
 
-  /**
+    /**
    * Constructs a new <code>OrganisationBilling</code>.
    * @alias module:model/OrganisationBilling
    * @class
    */
-  var exports = function() {
-    var _this = this;
+    const exports = function() {
+        const _this = this;
 
-  };
+    };
 
-  /**
+    /**
    * Constructs a <code>OrganisationBilling</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/OrganisationBilling} obj Optional instance to populate.
    * @return {module:model/OrganisationBilling} The populated <code>OrganisationBilling</code> instance.
    */
-  exports.constructFromObject = function(data, obj) {
-    if (data) {
-      obj = obj || new exports();
-      if (data.hasOwnProperty('nip')) {
-        obj['nip'] = ApiClient.convertToType(data['nip'], 'String');
-      }
-      if (data.hasOwnProperty('email')) {
-        obj['email'] = ApiClient.convertToType(data['email'], 'String');
-      }
-      if (data.hasOwnProperty('company')) {
-        obj['company'] = ApiClient.convertToType(data['company'], 'String');
-      }
-      if (data.hasOwnProperty('currency')) {
-        obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
-      }
-      if (data.hasOwnProperty('address')) {
-        obj['address'] = OrganisationBillingAddress.constructFromObject(data['address']);
-      }
-    }
-    return obj;
-  }
+    exports.constructFromObject = function(data, obj) {
+        if (data) {
+            obj = obj || new exports();
+            if (data.hasOwnProperty('nip')) {
+                obj.nip = ApiClient.convertToType(data.nip, 'String');
+            }
+            if (data.hasOwnProperty('email')) {
+                obj.email = ApiClient.convertToType(data.email, 'String');
+            }
+            if (data.hasOwnProperty('company')) {
+                obj.company = ApiClient.convertToType(data.company, 'String');
+            }
+            if (data.hasOwnProperty('currency')) {
+                obj.currency = ApiClient.convertToType(data.currency, 'String');
+            }
+            if (data.hasOwnProperty('address')) {
+                obj.address = OrganisationBillingAddress.constructFromObject(data.address);
+            }
+        }
+        return obj;
+    };
 
-  /**
+    /**
    * @member {String} nip
    */
-  exports.prototype['nip'] = undefined;
-  /**
+    exports.prototype.nip = undefined;
+    /**
    * @member {String} email
    */
-  exports.prototype['email'] = undefined;
-  /**
+    exports.prototype.email = undefined;
+    /**
    * @member {String} company
    */
-  exports.prototype['company'] = undefined;
-  /**
+    exports.prototype.company = undefined;
+    /**
    * @member {String} currency
    */
-  exports.prototype['currency'] = undefined;
-  /**
+    exports.prototype.currency = undefined;
+    /**
    * @member {module:model/OrganisationBillingAddress} address
    */
-  exports.prototype['address'] = undefined;
+    exports.prototype.address = undefined;
 
 
 
-  return exports;
+    return exports;
 }));
 
 

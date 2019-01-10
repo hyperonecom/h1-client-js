@@ -14,40 +14,40 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineObject23', 'model/InlineObject24', 'model/InlineObject25', 'model/Iso'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['ApiClient', 'model/InlineObject23', 'model/InlineObject24', 'model/InlineObject25', 'model/Iso'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineObject23'), require('../model/InlineObject24'), require('../model/InlineObject25'), require('../model/Iso'));
-  } else {
+        module.exports = factory(require('../ApiClient'), require('../model/InlineObject23'), require('../model/InlineObject24'), require('../model/InlineObject25'), require('../model/Iso'));
+    } else {
     // Browser globals (root is window)
-    if (!root.HyperOneApi) {
-      root.HyperOneApi = {};
+        if (!root.HyperOneApi) {
+            root.HyperOneApi = {};
+        }
+        root.HyperOneApi.IsoApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject23, root.HyperOneApi.InlineObject24, root.HyperOneApi.InlineObject25, root.HyperOneApi.Iso);
     }
-    root.HyperOneApi.IsoApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject23, root.HyperOneApi.InlineObject24, root.HyperOneApi.InlineObject25, root.HyperOneApi.Iso);
-  }
 }(this, function(ApiClient, InlineObject23, InlineObject24, InlineObject25, Iso) {
-  'use strict';
+    'use strict';
 
-  /**
+    /**
    * Iso service.
    * @module api/IsoApi
    * @version 1
    */
 
-  /**
-   * Constructs a new IsoApi. 
+    /**
+   * Constructs a new IsoApi.
    * @alias module:api/IsoApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-  var exports = function(apiClient) {
-    this.apiClient = apiClient || ApiClient.instance;
+    const exports = function(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
+        /**
      * Callback function to receive the result of the actionIsoTransfer operation.
      * @callback module:api/IsoApi~actionIsoTransferCallback
      * @param {String} error Error message, if any.
@@ -55,50 +55,50 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Action :: transfer
      * Action transfer
      * @param {String} isoId ID of iso
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject25} opts.inlineObject25 
+     * @param {module:model/InlineObject25} opts.inlineObject25
      * @param {module:api/IsoApi~actionIsoTransferCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Iso}
      */
-    this.actionIsoTransfer = function(isoId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject25'];
+        this.actionIsoTransfer = function(isoId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject25;
 
-      // verify the required parameter 'isoId' is set
-      if (isoId === undefined || isoId === null) {
-        throw new Error("Missing the required parameter 'isoId' when calling actionIsoTransfer");
-      }
+            // verify the required parameter 'isoId' is set
+            if (isoId === undefined || isoId === null) {
+                throw new Error("Missing the required parameter 'isoId' when calling actionIsoTransfer");
+            }
 
 
-      var pathParams = {
-        'isoId': isoId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                isoId: isoId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Iso;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Iso;
 
-      return this.apiClient.callApi(
-        '/iso/{isoId}/actions/transfer', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/iso/{isoId}/actions/transfer', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the createIso operation.
      * @callback module:api/IsoApi~createIsoCallback
      * @param {String} error Error message, if any.
@@ -106,43 +106,43 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Create
      * Create iso
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject23} opts.inlineObject23 
+     * @param {module:model/InlineObject23} opts.inlineObject23
      * @param {module:api/IsoApi~createIsoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Iso}
      */
-    this.createIso = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject23'];
+        this.createIso = function(opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject23;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Iso;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Iso;
 
-      return this.apiClient.callApi(
-        '/iso', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/iso', 'POST',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the deleteIso operation.
      * @callback module:api/IsoApi~deleteIsoCallback
      * @param {String} error Error message, if any.
@@ -150,45 +150,45 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Delete by ID
      * @param {String} isoId ID of iso
      * @param {module:api/IsoApi~deleteIsoCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    this.deleteIso = function(isoId, callback) {
-      var postBody = null;
+        this.deleteIso = function(isoId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'isoId' is set
-      if (isoId === undefined || isoId === null) {
-        throw new Error("Missing the required parameter 'isoId' when calling deleteIso");
-      }
+            // verify the required parameter 'isoId' is set
+            if (isoId === undefined || isoId === null) {
+                throw new Error("Missing the required parameter 'isoId' when calling deleteIso");
+            }
 
 
-      var pathParams = {
-        'isoId': isoId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                isoId: isoId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = [];
+            const returnType = null;
 
-      return this.apiClient.callApi(
-        '/iso/{isoId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/iso/{isoId}', 'DELETE',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the listIso operation.
      * @callback module:api/IsoApi~listIsoCallback
      * @param {String} error Error message, if any.
@@ -196,7 +196,7 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * List
      * List iso
      * @param {Object} opts Optional parameters
@@ -204,36 +204,36 @@
      * @param {module:api/IsoApi~listIsoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Iso>}
      */
-    this.listIso = function(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
+        this.listIso = function(opts, callback) {
+            opts = opts || {};
+            const postBody = null;
 
 
-      var pathParams = {
-      };
-      var queryParams = {
-        'name': opts['name'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+            };
+            const queryParams = {
+                name: opts.name,
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [Iso];
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = [Iso];
 
-      return this.apiClient.callApi(
-        '/iso', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/iso', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the showIso operation.
      * @callback module:api/IsoApi~showIsoCallback
      * @param {String} error Error message, if any.
@@ -241,47 +241,47 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Find by ID
      * Returns a single iso
      * @param {String} isoId ID of iso
      * @param {module:api/IsoApi~showIsoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Iso}
      */
-    this.showIso = function(isoId, callback) {
-      var postBody = null;
+        this.showIso = function(isoId, callback) {
+            const postBody = null;
 
-      // verify the required parameter 'isoId' is set
-      if (isoId === undefined || isoId === null) {
-        throw new Error("Missing the required parameter 'isoId' when calling showIso");
-      }
+            // verify the required parameter 'isoId' is set
+            if (isoId === undefined || isoId === null) {
+                throw new Error("Missing the required parameter 'isoId' when calling showIso");
+            }
 
 
-      var pathParams = {
-        'isoId': isoId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                isoId: isoId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Iso;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = [];
+            const accepts = ['application/json'];
+            const returnType = Iso;
 
-      return this.apiClient.callApi(
-        '/iso/{isoId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
+            return this.apiClient.callApi(
+                '/iso/{isoId}', 'GET',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
 
-    /**
+        /**
      * Callback function to receive the result of the updateIso operation.
      * @callback module:api/IsoApi~updateIsoCallback
      * @param {String} error Error message, if any.
@@ -289,49 +289,49 @@
      * @param {String} response The complete HTTP response.
      */
 
-    /**
+        /**
      * Update by ID
      * Returns modified iso
      * @param {String} isoId ID of iso
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject24} opts.inlineObject24 
+     * @param {module:model/InlineObject24} opts.inlineObject24
      * @param {module:api/IsoApi~updateIsoCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Iso}
      */
-    this.updateIso = function(isoId, opts, callback) {
-      opts = opts || {};
-      var postBody = opts['inlineObject24'];
+        this.updateIso = function(isoId, opts, callback) {
+            opts = opts || {};
+            const postBody = opts.inlineObject24;
 
-      // verify the required parameter 'isoId' is set
-      if (isoId === undefined || isoId === null) {
-        throw new Error("Missing the required parameter 'isoId' when calling updateIso");
-      }
+            // verify the required parameter 'isoId' is set
+            if (isoId === undefined || isoId === null) {
+                throw new Error("Missing the required parameter 'isoId' when calling updateIso");
+            }
 
 
-      var pathParams = {
-        'isoId': isoId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
+            const pathParams = {
+                isoId: isoId,
+            };
+            const queryParams = {
+            };
+            const collectionQueryParams = {
+            };
+            const headerParams = {
+            };
+            const formParams = {
+            };
 
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Iso;
+            const authNames = ['Project', 'ServiceAccount', 'Session'];
+            const contentTypes = ['application/json'];
+            const accepts = ['application/json'];
+            const returnType = Iso;
 
-      return this.apiClient.callApi(
-        '/iso/{isoId}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-  };
+            return this.apiClient.callApi(
+                '/iso/{isoId}', 'PATCH',
+                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+                authNames, contentTypes, accepts, returnType, callback
+            );
+        };
+    };
 
-  return exports;
+    return exports;
 }));
