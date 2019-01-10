@@ -47,13 +47,6 @@
         this.apiClient = apiClient || ApiClient.instance;
 
 
-        /**
-     * Callback function to receive the result of the actionLogArchiveTransfer operation.
-     * @callback module:api/LogArchiveApi~actionLogArchiveTransferCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
         /**
      * Action :: transfer
@@ -61,10 +54,9 @@
      * @param {String} logArchiveId ID of logArchive
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject48} opts.inlineObject48
-     * @param {module:api/LogArchiveApi~actionLogArchiveTransferCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-        this.actionLogArchiveTransfer = function(logArchiveId, opts, callback) {
+        this.actionLogArchiveTransferWithHttpInfo = function(logArchiveId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject48;
 
@@ -94,27 +86,34 @@
             return this.apiClient.callApi(
                 '/logArchive/{logArchiveId}/actions/transfer', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the createLogArchive operation.
-     * @callback module:api/LogArchiveApi~createLogArchiveCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: transfer
+     * Action transfer
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject48} opts.inlineObject48
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
+        this.actionLogArchiveTransfer = function(logArchiveId, opts) {
+            return this.actionLogArchiveTransferWithHttpInfo(logArchiveId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Create
      * Create logArchive
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject46} opts.inlineObject46
-     * @param {module:api/LogArchiveApi~createLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-        this.createLogArchive = function(opts, callback) {
+        this.createLogArchiveWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = opts.inlineObject46;
 
@@ -138,24 +137,31 @@
             return this.apiClient.callApi(
                 '/logArchive', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the deleteLogArchive operation.
-     * @callback module:api/LogArchiveApi~deleteLogArchiveCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject46} opts.inlineObject46
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
+        this.createLogArchive = function(opts) {
+            return this.createLogArchiveWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Delete by ID
      * @param {String} logArchiveId ID of logArchive
-     * @param {module:api/LogArchiveApi~deleteLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-        this.deleteLogArchive = function(logArchiveId, callback) {
+        this.deleteLogArchiveWithHttpInfo = function(logArchiveId) {
             const postBody = null;
 
             // verify the required parameter 'logArchiveId' is set
@@ -184,27 +190,31 @@
             return this.apiClient.callApi(
                 '/logArchive/{logArchiveId}', 'DELETE',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the listLogArchive operation.
-     * @callback module:api/LogArchiveApi~listLogArchiveCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/LogArchive>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete by ID
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+        this.deleteLogArchive = function(logArchiveId) {
+            return this.deleteLogArchiveWithHttpInfo(logArchiveId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * List
      * List logArchive
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/LogArchiveApi~listLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/LogArchive>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LogArchive>} and HTTP response
      */
-        this.listLogArchive = function(opts, callback) {
+        this.listLogArchiveWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = null;
 
@@ -229,26 +239,32 @@
             return this.apiClient.callApi(
                 '/logArchive', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the showLogArchive operation.
-     * @callback module:api/LogArchiveApi~showLogArchiveCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List logArchive
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LogArchive>}
      */
+        this.listLogArchive = function(opts) {
+            return this.listLogArchiveWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Find by ID
      * Returns a single logArchive
      * @param {String} logArchiveId ID of logArchive
-     * @param {module:api/LogArchiveApi~showLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-        this.showLogArchive = function(logArchiveId, callback) {
+        this.showLogArchiveWithHttpInfo = function(logArchiveId) {
             const postBody = null;
 
             // verify the required parameter 'logArchiveId' is set
@@ -277,17 +293,23 @@
             return this.apiClient.callApi(
                 '/logArchive/{logArchiveId}', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the updateLogArchive operation.
-     * @callback module:api/LogArchiveApi~updateLogArchiveCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Find by ID
+     * Returns a single logArchive
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
+        this.showLogArchive = function(logArchiveId) {
+            return this.showLogArchiveWithHttpInfo(logArchiveId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Update by ID
@@ -295,10 +317,9 @@
      * @param {String} logArchiveId ID of logArchive
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject47} opts.inlineObject47
-     * @param {module:api/LogArchiveApi~updateLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-        this.updateLogArchive = function(logArchiveId, opts, callback) {
+        this.updateLogArchiveWithHttpInfo = function(logArchiveId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject47;
 
@@ -328,8 +349,23 @@
             return this.apiClient.callApi(
                 '/logArchive/{logArchiveId}', 'PATCH',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
+        };
+
+        /**
+     * Update by ID
+     * Returns modified logArchive
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject47} opts.inlineObject47
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
+     */
+        this.updateLogArchive = function(logArchiveId, opts) {
+            return this.updateLogArchiveWithHttpInfo(logArchiveId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
         };
     };
 

@@ -14,122 +14,121 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.FirewallApi();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.FirewallApi();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('FirewallApi', function() {
-    describe('actionFirewallAttach', function() {
-      it('should call actionFirewallAttach successfully', function(done) {
-        //uncomment below and update the code to test actionFirewallAttach
-        //instance.actionFirewallAttach(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+    describe('FirewallApi', function() {
+        describe('actionFirewallAttach', function() {
+            it('should call actionFirewallAttach successfully', function(done) {
+                //uncomment below and update the code to test actionFirewallAttach
+                //instance.actionFirewallAttach(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionFirewallDetach', function() {
+            it('should call actionFirewallDetach successfully', function(done) {
+                //uncomment below and update the code to test actionFirewallDetach
+                //instance.actionFirewallDetach(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionFirewallTransfer', function() {
+            it('should call actionFirewallTransfer successfully', function(done) {
+                //uncomment below and update the code to test actionFirewallTransfer
+                //instance.actionFirewallTransfer(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('createFirewall', function() {
+            it('should call createFirewall successfully', function(done) {
+                //uncomment below and update the code to test createFirewall
+                //instance.createFirewall(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('deleteFirewall', function() {
+            it('should call deleteFirewall successfully', function(done) {
+                //uncomment below and update the code to test deleteFirewall
+                //instance.deleteFirewall(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('listFirewall', function() {
+            it('should call listFirewall successfully', function(done) {
+                //uncomment below and update the code to test listFirewall
+                //instance.listFirewall(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('showFirewall', function() {
+            it('should call showFirewall successfully', function(done) {
+                //uncomment below and update the code to test showFirewall
+                //instance.showFirewall(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('updateFirewall', function() {
+            it('should call updateFirewall successfully', function(done) {
+                //uncomment below and update the code to test updateFirewall
+                //instance.updateFirewall(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
     });
-    describe('actionFirewallDetach', function() {
-      it('should call actionFirewallDetach successfully', function(done) {
-        //uncomment below and update the code to test actionFirewallDetach
-        //instance.actionFirewallDetach(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionFirewallTransfer', function() {
-      it('should call actionFirewallTransfer successfully', function(done) {
-        //uncomment below and update the code to test actionFirewallTransfer
-        //instance.actionFirewallTransfer(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createFirewall', function() {
-      it('should call createFirewall successfully', function(done) {
-        //uncomment below and update the code to test createFirewall
-        //instance.createFirewall(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteFirewall', function() {
-      it('should call deleteFirewall successfully', function(done) {
-        //uncomment below and update the code to test deleteFirewall
-        //instance.deleteFirewall(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listFirewall', function() {
-      it('should call listFirewall successfully', function(done) {
-        //uncomment below and update the code to test listFirewall
-        //instance.listFirewall(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('showFirewall', function() {
-      it('should call showFirewall successfully', function(done) {
-        //uncomment below and update the code to test showFirewall
-        //instance.showFirewall(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateFirewall', function() {
-      it('should call updateFirewall successfully', function(done) {
-        //uncomment below and update the code to test updateFirewall
-        //instance.updateFirewall(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-  });
 
 }));

@@ -43,14 +43,12 @@ var apiInstance = new HyperOneApi.NetworkApi();
 var opts = {
   'inlineObject11': new HyperOneApi.InlineObject11() // InlineObject11 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createNetwork(opts, callback);
+apiInstance.createNetwork(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -100,14 +98,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteNetwork(networkId, callback);
+apiInstance.deleteNetwork(networkId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -161,14 +157,12 @@ var apiInstance = new HyperOneApi.NetworkApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listNetwork(opts, callback);
+apiInstance.listNetwork(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -220,14 +214,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showNetwork(networkId, callback);
+apiInstance.showNetwork(networkId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -282,14 +274,12 @@ var networkId = "networkId_example"; // String | ID of network
 var opts = {
   'inlineObject12': new HyperOneApi.InlineObject12() // InlineObject12 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateNetwork(networkId, opts, callback);
+apiInstance.updateNetwork(networkId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

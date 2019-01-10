@@ -14,112 +14,111 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.DiskApi();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.DiskApi();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('DiskApi', function() {
-    describe('actionDiskResize', function() {
-      it('should call actionDiskResize successfully', function(done) {
-        //uncomment below and update the code to test actionDiskResize
-        //instance.actionDiskResize(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+    describe('DiskApi', function() {
+        describe('actionDiskResize', function() {
+            it('should call actionDiskResize successfully', function(done) {
+                //uncomment below and update the code to test actionDiskResize
+                //instance.actionDiskResize(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionDiskTransfer', function() {
+            it('should call actionDiskTransfer successfully', function(done) {
+                //uncomment below and update the code to test actionDiskTransfer
+                //instance.actionDiskTransfer(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('createDisk', function() {
+            it('should call createDisk successfully', function(done) {
+                //uncomment below and update the code to test createDisk
+                //instance.createDisk(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('deleteDisk', function() {
+            it('should call deleteDisk successfully', function(done) {
+                //uncomment below and update the code to test deleteDisk
+                //instance.deleteDisk(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('listDisk', function() {
+            it('should call listDisk successfully', function(done) {
+                //uncomment below and update the code to test listDisk
+                //instance.listDisk(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('showDisk', function() {
+            it('should call showDisk successfully', function(done) {
+                //uncomment below and update the code to test showDisk
+                //instance.showDisk(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('updateDisk', function() {
+            it('should call updateDisk successfully', function(done) {
+                //uncomment below and update the code to test updateDisk
+                //instance.updateDisk(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
     });
-    describe('actionDiskTransfer', function() {
-      it('should call actionDiskTransfer successfully', function(done) {
-        //uncomment below and update the code to test actionDiskTransfer
-        //instance.actionDiskTransfer(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createDisk', function() {
-      it('should call createDisk successfully', function(done) {
-        //uncomment below and update the code to test createDisk
-        //instance.createDisk(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteDisk', function() {
-      it('should call deleteDisk successfully', function(done) {
-        //uncomment below and update the code to test deleteDisk
-        //instance.deleteDisk(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listDisk', function() {
-      it('should call listDisk successfully', function(done) {
-        //uncomment below and update the code to test listDisk
-        //instance.listDisk(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('showDisk', function() {
-      it('should call showDisk successfully', function(done) {
-        //uncomment below and update the code to test showDisk
-        //instance.showDisk(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateDisk', function() {
-      it('should call updateDisk successfully', function(done) {
-        //uncomment below and update the code to test updateDisk
-        //instance.updateDisk(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-  });
 
 }));

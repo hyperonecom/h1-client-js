@@ -14,122 +14,121 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.ReservationApi();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.ReservationApi();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('ReservationApi', function() {
-    describe('actionReservationAssign', function() {
-      it('should call actionReservationAssign successfully', function(done) {
-        //uncomment below and update the code to test actionReservationAssign
-        //instance.actionReservationAssign(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+    describe('ReservationApi', function() {
+        describe('actionReservationAssign', function() {
+            it('should call actionReservationAssign successfully', function(done) {
+                //uncomment below and update the code to test actionReservationAssign
+                //instance.actionReservationAssign(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionReservationExtend', function() {
+            it('should call actionReservationExtend successfully', function(done) {
+                //uncomment below and update the code to test actionReservationExtend
+                //instance.actionReservationExtend(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionReservationUnassign', function() {
+            it('should call actionReservationUnassign successfully', function(done) {
+                //uncomment below and update the code to test actionReservationUnassign
+                //instance.actionReservationUnassign(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('createReservation', function() {
+            it('should call createReservation successfully', function(done) {
+                //uncomment below and update the code to test createReservation
+                //instance.createReservation(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('deleteReservation', function() {
+            it('should call deleteReservation successfully', function(done) {
+                //uncomment below and update the code to test deleteReservation
+                //instance.deleteReservation(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('listReservation', function() {
+            it('should call listReservation successfully', function(done) {
+                //uncomment below and update the code to test listReservation
+                //instance.listReservation(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('showReservation', function() {
+            it('should call showReservation successfully', function(done) {
+                //uncomment below and update the code to test showReservation
+                //instance.showReservation(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('updateReservation', function() {
+            it('should call updateReservation successfully', function(done) {
+                //uncomment below and update the code to test updateReservation
+                //instance.updateReservation(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
     });
-    describe('actionReservationExtend', function() {
-      it('should call actionReservationExtend successfully', function(done) {
-        //uncomment below and update the code to test actionReservationExtend
-        //instance.actionReservationExtend(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionReservationUnassign', function() {
-      it('should call actionReservationUnassign successfully', function(done) {
-        //uncomment below and update the code to test actionReservationUnassign
-        //instance.actionReservationUnassign(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createReservation', function() {
-      it('should call createReservation successfully', function(done) {
-        //uncomment below and update the code to test createReservation
-        //instance.createReservation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteReservation', function() {
-      it('should call deleteReservation successfully', function(done) {
-        //uncomment below and update the code to test deleteReservation
-        //instance.deleteReservation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listReservation', function() {
-      it('should call listReservation successfully', function(done) {
-        //uncomment below and update the code to test listReservation
-        //instance.listReservation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('showReservation', function() {
-      it('should call showReservation successfully', function(done) {
-        //uncomment below and update the code to test showReservation
-        //instance.showReservation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateReservation', function() {
-      it('should call updateReservation successfully', function(done) {
-        //uncomment below and update the code to test updateReservation
-        //instance.updateReservation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-  });
 
 }));

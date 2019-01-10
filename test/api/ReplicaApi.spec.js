@@ -14,92 +14,91 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.ReplicaApi();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.ReplicaApi();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('ReplicaApi', function() {
-    describe('actionReplicaImage', function() {
-      it('should call actionReplicaImage successfully', function(done) {
-        //uncomment below and update the code to test actionReplicaImage
-        //instance.actionReplicaImage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+    describe('ReplicaApi', function() {
+        describe('actionReplicaImage', function() {
+            it('should call actionReplicaImage successfully', function(done) {
+                //uncomment below and update the code to test actionReplicaImage
+                //instance.actionReplicaImage(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('createReplica', function() {
+            it('should call createReplica successfully', function(done) {
+                //uncomment below and update the code to test createReplica
+                //instance.createReplica(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('deleteReplica', function() {
+            it('should call deleteReplica successfully', function(done) {
+                //uncomment below and update the code to test deleteReplica
+                //instance.deleteReplica(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('listReplica', function() {
+            it('should call listReplica successfully', function(done) {
+                //uncomment below and update the code to test listReplica
+                //instance.listReplica(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('showReplica', function() {
+            it('should call showReplica successfully', function(done) {
+                //uncomment below and update the code to test showReplica
+                //instance.showReplica(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
     });
-    describe('createReplica', function() {
-      it('should call createReplica successfully', function(done) {
-        //uncomment below and update the code to test createReplica
-        //instance.createReplica(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteReplica', function() {
-      it('should call deleteReplica successfully', function(done) {
-        //uncomment below and update the code to test deleteReplica
-        //instance.deleteReplica(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listReplica', function() {
-      it('should call listReplica successfully', function(done) {
-        //uncomment below and update the code to test listReplica
-        //instance.listReplica(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('showReplica', function() {
-      it('should call showReplica successfully', function(done) {
-        //uncomment below and update the code to test showReplica
-        //instance.showReplica(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-  });
 
 }));

@@ -14,132 +14,131 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.VaultApi();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.VaultApi();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('VaultApi', function() {
-    describe('actionVaultResize', function() {
-      it('should call actionVaultResize successfully', function(done) {
-        //uncomment below and update the code to test actionVaultResize
-        //instance.actionVaultResize(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+    describe('VaultApi', function() {
+        describe('actionVaultResize', function() {
+            it('should call actionVaultResize successfully', function(done) {
+                //uncomment below and update the code to test actionVaultResize
+                //instance.actionVaultResize(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVaultSnapshot', function() {
+            it('should call actionVaultSnapshot successfully', function(done) {
+                //uncomment below and update the code to test actionVaultSnapshot
+                //instance.actionVaultSnapshot(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVaultStart', function() {
+            it('should call actionVaultStart successfully', function(done) {
+                //uncomment below and update the code to test actionVaultStart
+                //instance.actionVaultStart(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVaultStop', function() {
+            it('should call actionVaultStop successfully', function(done) {
+                //uncomment below and update the code to test actionVaultStop
+                //instance.actionVaultStop(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('createVault', function() {
+            it('should call createVault successfully', function(done) {
+                //uncomment below and update the code to test createVault
+                //instance.createVault(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('deleteVault', function() {
+            it('should call deleteVault successfully', function(done) {
+                //uncomment below and update the code to test deleteVault
+                //instance.deleteVault(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('listVault', function() {
+            it('should call listVault successfully', function(done) {
+                //uncomment below and update the code to test listVault
+                //instance.listVault(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('showVault', function() {
+            it('should call showVault successfully', function(done) {
+                //uncomment below and update the code to test showVault
+                //instance.showVault(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('updateVault', function() {
+            it('should call updateVault successfully', function(done) {
+                //uncomment below and update the code to test updateVault
+                //instance.updateVault(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
     });
-    describe('actionVaultSnapshot', function() {
-      it('should call actionVaultSnapshot successfully', function(done) {
-        //uncomment below and update the code to test actionVaultSnapshot
-        //instance.actionVaultSnapshot(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionVaultStart', function() {
-      it('should call actionVaultStart successfully', function(done) {
-        //uncomment below and update the code to test actionVaultStart
-        //instance.actionVaultStart(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionVaultStop', function() {
-      it('should call actionVaultStop successfully', function(done) {
-        //uncomment below and update the code to test actionVaultStop
-        //instance.actionVaultStop(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createVault', function() {
-      it('should call createVault successfully', function(done) {
-        //uncomment below and update the code to test createVault
-        //instance.createVault(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteVault', function() {
-      it('should call deleteVault successfully', function(done) {
-        //uncomment below and update the code to test deleteVault
-        //instance.deleteVault(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listVault', function() {
-      it('should call listVault successfully', function(done) {
-        //uncomment below and update the code to test listVault
-        //instance.listVault(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('showVault', function() {
-      it('should call showVault successfully', function(done) {
-        //uncomment below and update the code to test showVault
-        //instance.showVault(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateVault', function() {
-      it('should call updateVault successfully', function(done) {
-        //uncomment below and update the code to test updateVault
-        //instance.updateVault(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-  });
 
 }));

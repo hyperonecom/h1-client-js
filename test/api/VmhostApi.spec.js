@@ -14,122 +14,121 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.VmhostApi();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.VmhostApi();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('VmhostApi', function() {
-    describe('actionVmhostMoveDisk', function() {
-      it('should call actionVmhostMoveDisk successfully', function(done) {
-        //uncomment below and update the code to test actionVmhostMoveDisk
-        //instance.actionVmhostMoveDisk(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+    describe('VmhostApi', function() {
+        describe('actionVmhostMoveDisk', function() {
+            it('should call actionVmhostMoveDisk successfully', function(done) {
+                //uncomment below and update the code to test actionVmhostMoveDisk
+                //instance.actionVmhostMoveDisk(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVmhostMoveISO', function() {
+            it('should call actionVmhostMoveISO successfully', function(done) {
+                //uncomment below and update the code to test actionVmhostMoveISO
+                //instance.actionVmhostMoveISO(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVmhostMoveImage', function() {
+            it('should call actionVmhostMoveImage successfully', function(done) {
+                //uncomment below and update the code to test actionVmhostMoveImage
+                //instance.actionVmhostMoveImage(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVmhostMoveVM', function() {
+            it('should call actionVmhostMoveVM successfully', function(done) {
+                //uncomment below and update the code to test actionVmhostMoveVM
+                //instance.actionVmhostMoveVM(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('deleteVmhost', function() {
+            it('should call deleteVmhost successfully', function(done) {
+                //uncomment below and update the code to test deleteVmhost
+                //instance.deleteVmhost(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('listVmhost', function() {
+            it('should call listVmhost successfully', function(done) {
+                //uncomment below and update the code to test listVmhost
+                //instance.listVmhost(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('showVmhost', function() {
+            it('should call showVmhost successfully', function(done) {
+                //uncomment below and update the code to test showVmhost
+                //instance.showVmhost(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('updateVmhost', function() {
+            it('should call updateVmhost successfully', function(done) {
+                //uncomment below and update the code to test updateVmhost
+                //instance.updateVmhost(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
     });
-    describe('actionVmhostMoveISO', function() {
-      it('should call actionVmhostMoveISO successfully', function(done) {
-        //uncomment below and update the code to test actionVmhostMoveISO
-        //instance.actionVmhostMoveISO(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionVmhostMoveImage', function() {
-      it('should call actionVmhostMoveImage successfully', function(done) {
-        //uncomment below and update the code to test actionVmhostMoveImage
-        //instance.actionVmhostMoveImage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionVmhostMoveVM', function() {
-      it('should call actionVmhostMoveVM successfully', function(done) {
-        //uncomment below and update the code to test actionVmhostMoveVM
-        //instance.actionVmhostMoveVM(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteVmhost', function() {
-      it('should call deleteVmhost successfully', function(done) {
-        //uncomment below and update the code to test deleteVmhost
-        //instance.deleteVmhost(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listVmhost', function() {
-      it('should call listVmhost successfully', function(done) {
-        //uncomment below and update the code to test listVmhost
-        //instance.listVmhost(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('showVmhost', function() {
-      it('should call showVmhost successfully', function(done) {
-        //uncomment below and update the code to test showVmhost
-        //instance.showVmhost(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateVmhost', function() {
-      it('should call updateVmhost successfully', function(done) {
-        //uncomment below and update the code to test updateVmhost
-        //instance.updateVmhost(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-  });
 
 }));

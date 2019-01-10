@@ -14,66 +14,65 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.InlineObject30();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.InlineObject30();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('InlineObject30', function() {
-    it('should create an instance of InlineObject30', function() {
-      // uncomment below and update the code to test InlineObject30
-      //var instance = new HyperOneApi.InlineObject30();
-      //expect(instance).to.be.a(HyperOneApi.InlineObject30);
+    describe('InlineObject30', function() {
+        it('should create an instance of InlineObject30', function() {
+            // uncomment below and update the code to test InlineObject30
+            //var instance = new HyperOneApi.InlineObject30();
+            //expect(instance).to.be.a(HyperOneApi.InlineObject30);
+        });
+
+        it('should have the property service (base name: "service")', function() {
+            // uncomment below and update the code to test the property service
+            //var instance = new HyperOneApi.InlineObject30();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property description (base name: "description")', function() {
+            // uncomment below and update the code to test the property description
+            //var instance = new HyperOneApi.InlineObject30();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property name (base name: "name")', function() {
+            // uncomment below and update the code to test the property name
+            //var instance = new HyperOneApi.InlineObject30();
+            //expect(instance).to.be();
+        });
+
     });
-
-    it('should have the property service (base name: "service")', function() {
-      // uncomment below and update the code to test the property service
-      //var instance = new HyperOneApi.InlineObject30();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instance = new HyperOneApi.InlineObject30();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new HyperOneApi.InlineObject30();
-      //expect(instance).to.be();
-    });
-
-  });
 
 }));

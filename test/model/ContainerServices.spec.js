@@ -14,90 +14,89 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.ContainerServices();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.ContainerServices();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('ContainerServices', function() {
-    it('should create an instance of ContainerServices', function() {
-      // uncomment below and update the code to test ContainerServices
-      //var instance = new HyperOneApi.ContainerServices();
-      //expect(instance).to.be.a(HyperOneApi.ContainerServices);
+    describe('ContainerServices', function() {
+        it('should create an instance of ContainerServices', function() {
+            // uncomment below and update the code to test ContainerServices
+            //var instance = new HyperOneApi.ContainerServices();
+            //expect(instance).to.be.a(HyperOneApi.ContainerServices);
+        });
+
+        it('should have the property type (base name: "type")', function() {
+            // uncomment below and update the code to test the property type
+            //var instance = new HyperOneApi.ContainerServices();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property name (base name: "name")', function() {
+            // uncomment below and update the code to test the property name
+            //var instance = new HyperOneApi.ContainerServices();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property oneTime (base name: "oneTime")', function() {
+            // uncomment below and update the code to test the property oneTime
+            //var instance = new HyperOneApi.ContainerServices();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property billing (base name: "billing")', function() {
+            // uncomment below and update the code to test the property billing
+            //var instance = new HyperOneApi.ContainerServices();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property data (base name: "data")', function() {
+            // uncomment below and update the code to test the property data
+            //var instance = new HyperOneApi.ContainerServices();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property sourceService (base name: "sourceService")', function() {
+            // uncomment below and update the code to test the property sourceService
+            //var instance = new HyperOneApi.ContainerServices();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property quantity (base name: "quantity")', function() {
+            // uncomment below and update the code to test the property quantity
+            //var instance = new HyperOneApi.ContainerServices();
+            //expect(instance).to.be();
+        });
+
     });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instance = new HyperOneApi.ContainerServices();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new HyperOneApi.ContainerServices();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property oneTime (base name: "oneTime")', function() {
-      // uncomment below and update the code to test the property oneTime
-      //var instance = new HyperOneApi.ContainerServices();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property billing (base name: "billing")', function() {
-      // uncomment below and update the code to test the property billing
-      //var instance = new HyperOneApi.ContainerServices();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property data (base name: "data")', function() {
-      // uncomment below and update the code to test the property data
-      //var instance = new HyperOneApi.ContainerServices();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sourceService (base name: "sourceService")', function() {
-      // uncomment below and update the code to test the property sourceService
-      //var instance = new HyperOneApi.ContainerServices();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property quantity (base name: "quantity")', function() {
-      // uncomment below and update the code to test the property quantity
-      //var instance = new HyperOneApi.ContainerServices();
-      //expect(instance).to.be();
-    });
-
-  });
 
 }));

@@ -14,122 +14,121 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.ContainerApi();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.ContainerApi();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('ContainerApi', function() {
-    describe('actionContainerRestart', function() {
-      it('should call actionContainerRestart successfully', function(done) {
-        //uncomment below and update the code to test actionContainerRestart
-        //instance.actionContainerRestart(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+    describe('ContainerApi', function() {
+        describe('actionContainerRestart', function() {
+            it('should call actionContainerRestart successfully', function(done) {
+                //uncomment below and update the code to test actionContainerRestart
+                //instance.actionContainerRestart(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionContainerStart', function() {
+            it('should call actionContainerStart successfully', function(done) {
+                //uncomment below and update the code to test actionContainerStart
+                //instance.actionContainerStart(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionContainerStop', function() {
+            it('should call actionContainerStop successfully', function(done) {
+                //uncomment below and update the code to test actionContainerStop
+                //instance.actionContainerStop(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('createContainer', function() {
+            it('should call createContainer successfully', function(done) {
+                //uncomment below and update the code to test createContainer
+                //instance.createContainer(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('deleteContainer', function() {
+            it('should call deleteContainer successfully', function(done) {
+                //uncomment below and update the code to test deleteContainer
+                //instance.deleteContainer(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('listContainer', function() {
+            it('should call listContainer successfully', function(done) {
+                //uncomment below and update the code to test listContainer
+                //instance.listContainer(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('showContainer', function() {
+            it('should call showContainer successfully', function(done) {
+                //uncomment below and update the code to test showContainer
+                //instance.showContainer(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('updateContainer', function() {
+            it('should call updateContainer successfully', function(done) {
+                //uncomment below and update the code to test updateContainer
+                //instance.updateContainer(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
     });
-    describe('actionContainerStart', function() {
-      it('should call actionContainerStart successfully', function(done) {
-        //uncomment below and update the code to test actionContainerStart
-        //instance.actionContainerStart(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionContainerStop', function() {
-      it('should call actionContainerStop successfully', function(done) {
-        //uncomment below and update the code to test actionContainerStop
-        //instance.actionContainerStop(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createContainer', function() {
-      it('should call createContainer successfully', function(done) {
-        //uncomment below and update the code to test createContainer
-        //instance.createContainer(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteContainer', function() {
-      it('should call deleteContainer successfully', function(done) {
-        //uncomment below and update the code to test deleteContainer
-        //instance.deleteContainer(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listContainer', function() {
-      it('should call listContainer successfully', function(done) {
-        //uncomment below and update the code to test listContainer
-        //instance.listContainer(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('showContainer', function() {
-      it('should call showContainer successfully', function(done) {
-        //uncomment below and update the code to test showContainer
-        //instance.showContainer(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateContainer', function() {
-      it('should call updateContainer successfully', function(done) {
-        //uncomment below and update the code to test updateContainer
-        //instance.updateContainer(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-  });
 
 }));

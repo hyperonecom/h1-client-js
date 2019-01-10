@@ -48,14 +48,12 @@ var vaultId = "vaultId_example"; // String | ID of vault
 var opts = {
   'inlineObject39': new HyperOneApi.InlineObject39() // InlineObject39 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVaultResize(vaultId, opts, callback);
+apiInstance.actionVaultResize(vaultId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -111,14 +109,12 @@ var vaultId = "vaultId_example"; // String | ID of vault
 var opts = {
   'inlineObject40': new HyperOneApi.InlineObject40() // InlineObject40 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVaultSnapshot(vaultId, opts, callback);
+apiInstance.actionVaultSnapshot(vaultId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -174,14 +170,12 @@ var vaultId = "vaultId_example"; // String | ID of vault
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVaultStart(vaultId, opts, callback);
+apiInstance.actionVaultStart(vaultId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -237,14 +231,12 @@ var vaultId = "vaultId_example"; // String | ID of vault
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVaultStop(vaultId, opts, callback);
+apiInstance.actionVaultStop(vaultId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -299,14 +291,12 @@ var apiInstance = new HyperOneApi.VaultApi();
 var opts = {
   'inlineObject37': new HyperOneApi.InlineObject37() // InlineObject37 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createVault(opts, callback);
+apiInstance.createVault(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -356,14 +346,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteVault(vaultId, callback);
+apiInstance.deleteVault(vaultId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -417,14 +405,12 @@ var apiInstance = new HyperOneApi.VaultApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listVault(opts, callback);
+apiInstance.listVault(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -476,14 +462,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showVault(vaultId, callback);
+apiInstance.showVault(vaultId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -538,14 +522,12 @@ var vaultId = "vaultId_example"; // String | ID of vault
 var opts = {
   'inlineObject38': new HyperOneApi.InlineObject38() // InlineObject38 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateVault(vaultId, opts, callback);
+apiInstance.updateVault(vaultId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

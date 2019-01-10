@@ -47,13 +47,6 @@
         this.apiClient = apiClient || ApiClient.instance;
 
 
-        /**
-     * Callback function to receive the result of the actionDiskResize operation.
-     * @callback module:api/DiskApi~actionDiskResizeCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Disk} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
         /**
      * Action :: resize
@@ -61,10 +54,9 @@
      * @param {String} diskId ID of disk
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject21} opts.inlineObject21
-     * @param {module:api/DiskApi~actionDiskResizeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Disk}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
-        this.actionDiskResize = function(diskId, opts, callback) {
+        this.actionDiskResizeWithHttpInfo = function(diskId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject21;
 
@@ -94,17 +86,25 @@
             return this.apiClient.callApi(
                 '/disk/{diskId}/actions/resize', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the actionDiskTransfer operation.
-     * @callback module:api/DiskApi~actionDiskTransferCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Disk} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: resize
+     * Action resize
+     * @param {String} diskId ID of disk
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject21} opts.inlineObject21
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
      */
+        this.actionDiskResize = function(diskId, opts) {
+            return this.actionDiskResizeWithHttpInfo(diskId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Action :: transfer
@@ -112,10 +112,9 @@
      * @param {String} diskId ID of disk
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject22} opts.inlineObject22
-     * @param {module:api/DiskApi~actionDiskTransferCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Disk}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
-        this.actionDiskTransfer = function(diskId, opts, callback) {
+        this.actionDiskTransferWithHttpInfo = function(diskId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject22;
 
@@ -145,27 +144,34 @@
             return this.apiClient.callApi(
                 '/disk/{diskId}/actions/transfer', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the createDisk operation.
-     * @callback module:api/DiskApi~createDiskCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Disk} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: transfer
+     * Action transfer
+     * @param {String} diskId ID of disk
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject22} opts.inlineObject22
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
      */
+        this.actionDiskTransfer = function(diskId, opts) {
+            return this.actionDiskTransferWithHttpInfo(diskId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Create
      * Create disk
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject19} opts.inlineObject19
-     * @param {module:api/DiskApi~createDiskCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Disk}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
-        this.createDisk = function(opts, callback) {
+        this.createDiskWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = opts.inlineObject19;
 
@@ -189,24 +195,31 @@
             return this.apiClient.callApi(
                 '/disk', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the deleteDisk operation.
-     * @callback module:api/DiskApi~deleteDiskCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create disk
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject19} opts.inlineObject19
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
      */
+        this.createDisk = function(opts) {
+            return this.createDiskWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Delete by ID
      * @param {String} diskId ID of disk
-     * @param {module:api/DiskApi~deleteDiskCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-        this.deleteDisk = function(diskId, callback) {
+        this.deleteDiskWithHttpInfo = function(diskId) {
             const postBody = null;
 
             // verify the required parameter 'diskId' is set
@@ -235,27 +248,31 @@
             return this.apiClient.callApi(
                 '/disk/{diskId}', 'DELETE',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the listDisk operation.
-     * @callback module:api/DiskApi~listDiskCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Disk>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete by ID
+     * @param {String} diskId ID of disk
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+        this.deleteDisk = function(diskId) {
+            return this.deleteDiskWithHttpInfo(diskId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * List
      * List disk
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/DiskApi~listDiskCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Disk>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Disk>} and HTTP response
      */
-        this.listDisk = function(opts, callback) {
+        this.listDiskWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = null;
 
@@ -280,26 +297,32 @@
             return this.apiClient.callApi(
                 '/disk', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the showDisk operation.
-     * @callback module:api/DiskApi~showDiskCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Disk} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List disk
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Disk>}
      */
+        this.listDisk = function(opts) {
+            return this.listDiskWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Find by ID
      * Returns a single disk
      * @param {String} diskId ID of disk
-     * @param {module:api/DiskApi~showDiskCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Disk}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
-        this.showDisk = function(diskId, callback) {
+        this.showDiskWithHttpInfo = function(diskId) {
             const postBody = null;
 
             // verify the required parameter 'diskId' is set
@@ -328,17 +351,23 @@
             return this.apiClient.callApi(
                 '/disk/{diskId}', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the updateDisk operation.
-     * @callback module:api/DiskApi~updateDiskCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Disk} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Find by ID
+     * Returns a single disk
+     * @param {String} diskId ID of disk
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
      */
+        this.showDisk = function(diskId) {
+            return this.showDiskWithHttpInfo(diskId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Update by ID
@@ -346,10 +375,9 @@
      * @param {String} diskId ID of disk
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject20} opts.inlineObject20
-     * @param {module:api/DiskApi~updateDiskCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Disk}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
-        this.updateDisk = function(diskId, opts, callback) {
+        this.updateDiskWithHttpInfo = function(diskId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject20;
 
@@ -379,8 +407,23 @@
             return this.apiClient.callApi(
                 '/disk/{diskId}', 'PATCH',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
+        };
+
+        /**
+     * Update by ID
+     * Returns modified disk
+     * @param {String} diskId ID of disk
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject20} opts.inlineObject20
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
+     */
+        this.updateDisk = function(diskId, opts) {
+            return this.updateDiskWithHttpInfo(diskId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
         };
     };
 

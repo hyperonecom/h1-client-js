@@ -45,14 +45,12 @@ var isoId = "isoId_example"; // String | ID of iso
 var opts = {
   'inlineObject25': new HyperOneApi.InlineObject25() // InlineObject25 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionIsoTransfer(isoId, opts, callback);
+apiInstance.actionIsoTransfer(isoId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -107,14 +105,12 @@ var apiInstance = new HyperOneApi.IsoApi();
 var opts = {
   'inlineObject23': new HyperOneApi.InlineObject23() // InlineObject23 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createIso(opts, callback);
+apiInstance.createIso(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -164,14 +160,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IsoApi();
 var isoId = "isoId_example"; // String | ID of iso
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteIso(isoId, callback);
+apiInstance.deleteIso(isoId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -225,14 +219,12 @@ var apiInstance = new HyperOneApi.IsoApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listIso(opts, callback);
+apiInstance.listIso(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -284,14 +276,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IsoApi();
 var isoId = "isoId_example"; // String | ID of iso
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showIso(isoId, callback);
+apiInstance.showIso(isoId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -346,14 +336,12 @@ var isoId = "isoId_example"; // String | ID of iso
 var opts = {
   'inlineObject24': new HyperOneApi.InlineObject24() // InlineObject24 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateIso(isoId, opts, callback);
+apiInstance.updateIso(isoId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

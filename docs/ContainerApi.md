@@ -47,14 +47,12 @@ var containerId = "containerId_example"; // String | ID of container
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionContainerRestart(containerId, opts, callback);
+apiInstance.actionContainerRestart(containerId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -110,14 +108,12 @@ var containerId = "containerId_example"; // String | ID of container
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionContainerStart(containerId, opts, callback);
+apiInstance.actionContainerStart(containerId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -173,14 +169,12 @@ var containerId = "containerId_example"; // String | ID of container
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionContainerStop(containerId, opts, callback);
+apiInstance.actionContainerStop(containerId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -235,14 +229,12 @@ var apiInstance = new HyperOneApi.ContainerApi();
 var opts = {
   'inlineObject5': new HyperOneApi.InlineObject5() // InlineObject5 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createContainer(opts, callback);
+apiInstance.createContainer(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -292,14 +284,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteContainer(containerId, callback);
+apiInstance.deleteContainer(containerId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -353,14 +343,12 @@ var apiInstance = new HyperOneApi.ContainerApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listContainer(opts, callback);
+apiInstance.listContainer(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -412,14 +400,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showContainer(containerId, callback);
+apiInstance.showContainer(containerId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -474,14 +460,12 @@ var containerId = "containerId_example"; // String | ID of container
 var opts = {
   'inlineObject6': new HyperOneApi.InlineObject6() // InlineObject6 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateContainer(containerId, opts, callback);
+apiInstance.updateContainer(containerId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

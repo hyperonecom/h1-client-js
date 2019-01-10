@@ -45,14 +45,12 @@ var imageId = "imageId_example"; // String | ID of image
 var opts = {
   'inlineObject18': new HyperOneApi.InlineObject18() // InlineObject18 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionImageTransfer(imageId, opts, callback);
+apiInstance.actionImageTransfer(imageId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -107,14 +105,12 @@ var apiInstance = new HyperOneApi.ImageApi();
 var opts = {
   'inlineObject16': new HyperOneApi.InlineObject16() // InlineObject16 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createImage(opts, callback);
+apiInstance.createImage(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -164,14 +160,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteImage(imageId, callback);
+apiInstance.deleteImage(imageId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -225,14 +219,12 @@ var apiInstance = new HyperOneApi.ImageApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listImage(opts, callback);
+apiInstance.listImage(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -284,14 +276,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showImage(imageId, callback);
+apiInstance.showImage(imageId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -346,14 +336,12 @@ var imageId = "imageId_example"; // String | ID of image
 var opts = {
   'inlineObject17': new HyperOneApi.InlineObject17() // InlineObject17 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateImage(imageId, opts, callback);
+apiInstance.updateImage(imageId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

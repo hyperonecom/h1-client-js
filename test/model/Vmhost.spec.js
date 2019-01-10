@@ -14,78 +14,77 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.Vmhost();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.Vmhost();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('Vmhost', function() {
-    it('should create an instance of Vmhost', function() {
-      // uncomment below and update the code to test Vmhost
-      //var instance = new HyperOneApi.Vmhost();
-      //expect(instance).to.be.a(HyperOneApi.Vmhost);
+    describe('Vmhost', function() {
+        it('should create an instance of Vmhost', function() {
+            // uncomment below and update the code to test Vmhost
+            //var instance = new HyperOneApi.Vmhost();
+            //expect(instance).to.be.a(HyperOneApi.Vmhost);
+        });
+
+        it('should have the property id (base name: "_id")', function() {
+            // uncomment below and update the code to test the property id
+            //var instance = new HyperOneApi.Vmhost();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property name (base name: "name")', function() {
+            // uncomment below and update the code to test the property name
+            //var instance = new HyperOneApi.Vmhost();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property state (base name: "state")', function() {
+            // uncomment below and update the code to test the property state
+            //var instance = new HyperOneApi.Vmhost();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property created (base name: "created")', function() {
+            // uncomment below and update the code to test the property created
+            //var instance = new HyperOneApi.Vmhost();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property accessRights (base name: "accessRights")', function() {
+            // uncomment below and update the code to test the property accessRights
+            //var instance = new HyperOneApi.Vmhost();
+            //expect(instance).to.be();
+        });
+
     });
-
-    it('should have the property id (base name: "_id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new HyperOneApi.Vmhost();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new HyperOneApi.Vmhost();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instance = new HyperOneApi.Vmhost();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property created (base name: "created")', function() {
-      // uncomment below and update the code to test the property created
-      //var instance = new HyperOneApi.Vmhost();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property accessRights (base name: "accessRights")', function() {
-      // uncomment below and update the code to test the property accessRights
-      //var instance = new HyperOneApi.Vmhost();
-      //expect(instance).to.be();
-    });
-
-  });
 
 }));

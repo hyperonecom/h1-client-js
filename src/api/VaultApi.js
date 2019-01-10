@@ -47,13 +47,6 @@
         this.apiClient = apiClient || ApiClient.instance;
 
 
-        /**
-     * Callback function to receive the result of the actionVaultResize operation.
-     * @callback module:api/VaultApi~actionVaultResizeCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
         /**
      * Action :: resize
@@ -61,10 +54,9 @@
      * @param {String} vaultId ID of vault
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject39} opts.inlineObject39
-     * @param {module:api/VaultApi~actionVaultResizeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-        this.actionVaultResize = function(vaultId, opts, callback) {
+        this.actionVaultResizeWithHttpInfo = function(vaultId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject39;
 
@@ -94,17 +86,25 @@
             return this.apiClient.callApi(
                 '/vault/{vaultId}/actions/resize', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the actionVaultSnapshot operation.
-     * @callback module:api/VaultApi~actionVaultSnapshotCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: resize
+     * Action resize
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject39} opts.inlineObject39
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+        this.actionVaultResize = function(vaultId, opts) {
+            return this.actionVaultResizeWithHttpInfo(vaultId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Action :: snapshot
@@ -112,10 +112,9 @@
      * @param {String} vaultId ID of vault
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject40} opts.inlineObject40
-     * @param {module:api/VaultApi~actionVaultSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-        this.actionVaultSnapshot = function(vaultId, opts, callback) {
+        this.actionVaultSnapshotWithHttpInfo = function(vaultId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject40;
 
@@ -145,17 +144,25 @@
             return this.apiClient.callApi(
                 '/vault/{vaultId}/actions/snapshot', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the actionVaultStart operation.
-     * @callback module:api/VaultApi~actionVaultStartCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: snapshot
+     * Action snapshot
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject40} opts.inlineObject40
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+        this.actionVaultSnapshot = function(vaultId, opts) {
+            return this.actionVaultSnapshotWithHttpInfo(vaultId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Action :: start
@@ -163,10 +170,9 @@
      * @param {String} vaultId ID of vault
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body
-     * @param {module:api/VaultApi~actionVaultStartCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-        this.actionVaultStart = function(vaultId, opts, callback) {
+        this.actionVaultStartWithHttpInfo = function(vaultId, opts) {
             opts = opts || {};
             const postBody = opts.body;
 
@@ -196,17 +202,25 @@
             return this.apiClient.callApi(
                 '/vault/{vaultId}/actions/start', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the actionVaultStop operation.
-     * @callback module:api/VaultApi~actionVaultStopCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: start
+     * Action start
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+        this.actionVaultStart = function(vaultId, opts) {
+            return this.actionVaultStartWithHttpInfo(vaultId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Action :: stop
@@ -214,10 +228,9 @@
      * @param {String} vaultId ID of vault
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body
-     * @param {module:api/VaultApi~actionVaultStopCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-        this.actionVaultStop = function(vaultId, opts, callback) {
+        this.actionVaultStopWithHttpInfo = function(vaultId, opts) {
             opts = opts || {};
             const postBody = opts.body;
 
@@ -247,27 +260,34 @@
             return this.apiClient.callApi(
                 '/vault/{vaultId}/actions/stop', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the createVault operation.
-     * @callback module:api/VaultApi~createVaultCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: stop
+     * Action stop
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+        this.actionVaultStop = function(vaultId, opts) {
+            return this.actionVaultStopWithHttpInfo(vaultId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Create
      * Create vault
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject37} opts.inlineObject37
-     * @param {module:api/VaultApi~createVaultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-        this.createVault = function(opts, callback) {
+        this.createVaultWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = opts.inlineObject37;
 
@@ -291,24 +311,31 @@
             return this.apiClient.callApi(
                 '/vault', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the deleteVault operation.
-     * @callback module:api/VaultApi~deleteVaultCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject37} opts.inlineObject37
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+        this.createVault = function(opts) {
+            return this.createVaultWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Delete by ID
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~deleteVaultCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-        this.deleteVault = function(vaultId, callback) {
+        this.deleteVaultWithHttpInfo = function(vaultId) {
             const postBody = null;
 
             // verify the required parameter 'vaultId' is set
@@ -337,27 +364,31 @@
             return this.apiClient.callApi(
                 '/vault/{vaultId}', 'DELETE',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the listVault operation.
-     * @callback module:api/VaultApi~listVaultCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Vault>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete by ID
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+        this.deleteVault = function(vaultId) {
+            return this.deleteVaultWithHttpInfo(vaultId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * List
      * List vault
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/VaultApi~listVaultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Vault>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Vault>} and HTTP response
      */
-        this.listVault = function(opts, callback) {
+        this.listVaultWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = null;
 
@@ -382,26 +413,32 @@
             return this.apiClient.callApi(
                 '/vault', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the showVault operation.
-     * @callback module:api/VaultApi~showVaultCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List vault
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Vault>}
      */
+        this.listVault = function(opts) {
+            return this.listVaultWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Find by ID
      * Returns a single vault
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~showVaultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-        this.showVault = function(vaultId, callback) {
+        this.showVaultWithHttpInfo = function(vaultId) {
             const postBody = null;
 
             // verify the required parameter 'vaultId' is set
@@ -430,17 +467,23 @@
             return this.apiClient.callApi(
                 '/vault/{vaultId}', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the updateVault operation.
-     * @callback module:api/VaultApi~updateVaultCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Find by ID
+     * Returns a single vault
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+        this.showVault = function(vaultId) {
+            return this.showVaultWithHttpInfo(vaultId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Update by ID
@@ -448,10 +491,9 @@
      * @param {String} vaultId ID of vault
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject38} opts.inlineObject38
-     * @param {module:api/VaultApi~updateVaultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-        this.updateVault = function(vaultId, opts, callback) {
+        this.updateVaultWithHttpInfo = function(vaultId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject38;
 
@@ -481,8 +523,23 @@
             return this.apiClient.callApi(
                 '/vault/{vaultId}', 'PATCH',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
+        };
+
+        /**
+     * Update by ID
+     * Returns modified vault
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject38} opts.inlineObject38
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+     */
+        this.updateVault = function(vaultId, opts) {
+            return this.updateVaultWithHttpInfo(vaultId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
         };
     };
 

@@ -14,84 +14,83 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.VaultCredential1Password();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.VaultCredential1Password();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('VaultCredential1Password', function() {
-    it('should create an instance of VaultCredential1Password', function() {
-      // uncomment below and update the code to test VaultCredential1Password
-      //var instance = new HyperOneApi.VaultCredential1Password();
-      //expect(instance).to.be.a(HyperOneApi.VaultCredential1Password);
+    describe('VaultCredential1Password', function() {
+        it('should create an instance of VaultCredential1Password', function() {
+            // uncomment below and update the code to test VaultCredential1Password
+            //var instance = new HyperOneApi.VaultCredential1Password();
+            //expect(instance).to.be.a(HyperOneApi.VaultCredential1Password);
+        });
+
+        it('should have the property createdBy (base name: "createdBy")', function() {
+            // uncomment below and update the code to test the property createdBy
+            //var instance = new HyperOneApi.VaultCredential1Password();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property createdOn (base name: "createdOn")', function() {
+            // uncomment below and update the code to test the property createdOn
+            //var instance = new HyperOneApi.VaultCredential1Password();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property name (base name: "name")', function() {
+            // uncomment below and update the code to test the property name
+            //var instance = new HyperOneApi.VaultCredential1Password();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property type (base name: "type")', function() {
+            // uncomment below and update the code to test the property type
+            //var instance = new HyperOneApi.VaultCredential1Password();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property id (base name: "_id")', function() {
+            // uncomment below and update the code to test the property id
+            //var instance = new HyperOneApi.VaultCredential1Password();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property value (base name: "value")', function() {
+            // uncomment below and update the code to test the property value
+            //var instance = new HyperOneApi.VaultCredential1Password();
+            //expect(instance).to.be();
+        });
+
     });
-
-    it('should have the property createdBy (base name: "createdBy")', function() {
-      // uncomment below and update the code to test the property createdBy
-      //var instance = new HyperOneApi.VaultCredential1Password();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdOn (base name: "createdOn")', function() {
-      // uncomment below and update the code to test the property createdOn
-      //var instance = new HyperOneApi.VaultCredential1Password();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new HyperOneApi.VaultCredential1Password();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instance = new HyperOneApi.VaultCredential1Password();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "_id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new HyperOneApi.VaultCredential1Password();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
-      //var instance = new HyperOneApi.VaultCredential1Password();
-      //expect(instance).to.be();
-    });
-
-  });
 
 }));

@@ -14,60 +14,59 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.InlineObject51();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.InlineObject51();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('InlineObject51', function() {
-    it('should create an instance of InlineObject51', function() {
-      // uncomment below and update the code to test InlineObject51
-      //var instance = new HyperOneApi.InlineObject51();
-      //expect(instance).to.be.a(HyperOneApi.InlineObject51);
+    describe('InlineObject51', function() {
+        it('should create an instance of InlineObject51', function() {
+            // uncomment below and update the code to test InlineObject51
+            //var instance = new HyperOneApi.InlineObject51();
+            //expect(instance).to.be.a(HyperOneApi.InlineObject51);
+        });
+
+        it('should have the property disk (base name: "disk")', function() {
+            // uncomment below and update the code to test the property disk
+            //var instance = new HyperOneApi.InlineObject51();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property vmhost (base name: "vmhost")', function() {
+            // uncomment below and update the code to test the property vmhost
+            //var instance = new HyperOneApi.InlineObject51();
+            //expect(instance).to.be();
+        });
+
     });
-
-    it('should have the property disk (base name: "disk")', function() {
-      // uncomment below and update the code to test the property disk
-      //var instance = new HyperOneApi.InlineObject51();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property vmhost (base name: "vmhost")', function() {
-      // uncomment below and update the code to test the property vmhost
-      //var instance = new HyperOneApi.InlineObject51();
-      //expect(instance).to.be();
-    });
-
-  });
 
 }));

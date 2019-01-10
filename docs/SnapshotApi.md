@@ -43,14 +43,12 @@ var apiInstance = new HyperOneApi.SnapshotApi();
 var opts = {
   'inlineObject41': new HyperOneApi.InlineObject41() // InlineObject41 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createSnapshot(opts, callback);
+apiInstance.createSnapshot(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -100,14 +98,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.SnapshotApi();
 var snapshotId = "snapshotId_example"; // String | ID of snapshot
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteSnapshot(snapshotId, callback);
+apiInstance.deleteSnapshot(snapshotId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -162,14 +158,12 @@ var opts = {
   'name': "name_example", // String | Filter by name
   'vault': "vault_example" // String | Filter by vault
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listSnapshot(opts, callback);
+apiInstance.listSnapshot(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -222,14 +216,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.SnapshotApi();
 var snapshotId = "snapshotId_example"; // String | ID of snapshot
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showSnapshot(snapshotId, callback);
+apiInstance.showSnapshot(snapshotId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -284,14 +276,12 @@ var snapshotId = "snapshotId_example"; // String | ID of snapshot
 var opts = {
   'inlineObject42': new HyperOneApi.InlineObject42() // InlineObject42 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateSnapshot(snapshotId, opts, callback);
+apiInstance.updateSnapshot(snapshotId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

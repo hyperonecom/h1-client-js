@@ -47,13 +47,6 @@
         this.apiClient = apiClient || ApiClient.instance;
 
 
-        /**
-     * Callback function to receive the result of the actionImageTransfer operation.
-     * @callback module:api/ImageApi~actionImageTransferCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Image} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
         /**
      * Action :: transfer
@@ -61,10 +54,9 @@
      * @param {String} imageId ID of image
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject18} opts.inlineObject18
-     * @param {module:api/ImageApi~actionImageTransferCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Image}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
-        this.actionImageTransfer = function(imageId, opts, callback) {
+        this.actionImageTransferWithHttpInfo = function(imageId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject18;
 
@@ -94,27 +86,34 @@
             return this.apiClient.callApi(
                 '/image/{imageId}/actions/transfer', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the createImage operation.
-     * @callback module:api/ImageApi~createImageCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Image} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: transfer
+     * Action transfer
+     * @param {String} imageId ID of image
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject18} opts.inlineObject18
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
+        this.actionImageTransfer = function(imageId, opts) {
+            return this.actionImageTransferWithHttpInfo(imageId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Create
      * Create image
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject16} opts.inlineObject16
-     * @param {module:api/ImageApi~createImageCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Image}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
-        this.createImage = function(opts, callback) {
+        this.createImageWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = opts.inlineObject16;
 
@@ -138,24 +137,31 @@
             return this.apiClient.callApi(
                 '/image', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the deleteImage operation.
-     * @callback module:api/ImageApi~deleteImageCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create image
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject16} opts.inlineObject16
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
+        this.createImage = function(opts) {
+            return this.createImageWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Delete by ID
      * @param {String} imageId ID of image
-     * @param {module:api/ImageApi~deleteImageCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-        this.deleteImage = function(imageId, callback) {
+        this.deleteImageWithHttpInfo = function(imageId) {
             const postBody = null;
 
             // verify the required parameter 'imageId' is set
@@ -184,27 +190,31 @@
             return this.apiClient.callApi(
                 '/image/{imageId}', 'DELETE',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the listImage operation.
-     * @callback module:api/ImageApi~listImageCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Image>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete by ID
+     * @param {String} imageId ID of image
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+        this.deleteImage = function(imageId) {
+            return this.deleteImageWithHttpInfo(imageId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * List
      * List image
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/ImageApi~listImageCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Image>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Image>} and HTTP response
      */
-        this.listImage = function(opts, callback) {
+        this.listImageWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = null;
 
@@ -229,26 +239,32 @@
             return this.apiClient.callApi(
                 '/image', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the showImage operation.
-     * @callback module:api/ImageApi~showImageCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Image} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List image
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Image>}
      */
+        this.listImage = function(opts) {
+            return this.listImageWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Find by ID
      * Returns a single image
      * @param {String} imageId ID of image
-     * @param {module:api/ImageApi~showImageCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Image}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
-        this.showImage = function(imageId, callback) {
+        this.showImageWithHttpInfo = function(imageId) {
             const postBody = null;
 
             // verify the required parameter 'imageId' is set
@@ -277,17 +293,23 @@
             return this.apiClient.callApi(
                 '/image/{imageId}', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the updateImage operation.
-     * @callback module:api/ImageApi~updateImageCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Image} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Find by ID
+     * Returns a single image
+     * @param {String} imageId ID of image
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
+        this.showImage = function(imageId) {
+            return this.showImageWithHttpInfo(imageId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Update by ID
@@ -295,10 +317,9 @@
      * @param {String} imageId ID of image
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject17} opts.inlineObject17
-     * @param {module:api/ImageApi~updateImageCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Image}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
-        this.updateImage = function(imageId, opts, callback) {
+        this.updateImageWithHttpInfo = function(imageId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject17;
 
@@ -328,8 +349,23 @@
             return this.apiClient.callApi(
                 '/image/{imageId}', 'PATCH',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
+        };
+
+        /**
+     * Update by ID
+     * Returns modified image
+     * @param {String} imageId ID of image
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject17} opts.inlineObject17
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
+     */
+        this.updateImage = function(imageId, opts) {
+            return this.updateImageWithHttpInfo(imageId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
         };
     };
 

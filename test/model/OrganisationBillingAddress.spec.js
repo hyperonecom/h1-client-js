@@ -14,72 +14,71 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.OrganisationBillingAddress();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.OrganisationBillingAddress();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('OrganisationBillingAddress', function() {
-    it('should create an instance of OrganisationBillingAddress', function() {
-      // uncomment below and update the code to test OrganisationBillingAddress
-      //var instance = new HyperOneApi.OrganisationBillingAddress();
-      //expect(instance).to.be.a(HyperOneApi.OrganisationBillingAddress);
+    describe('OrganisationBillingAddress', function() {
+        it('should create an instance of OrganisationBillingAddress', function() {
+            // uncomment below and update the code to test OrganisationBillingAddress
+            //var instance = new HyperOneApi.OrganisationBillingAddress();
+            //expect(instance).to.be.a(HyperOneApi.OrganisationBillingAddress);
+        });
+
+        it('should have the property country (base name: "country")', function() {
+            // uncomment below and update the code to test the property country
+            //var instance = new HyperOneApi.OrganisationBillingAddress();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property city (base name: "city")', function() {
+            // uncomment below and update the code to test the property city
+            //var instance = new HyperOneApi.OrganisationBillingAddress();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property zipcode (base name: "zipcode")', function() {
+            // uncomment below and update the code to test the property zipcode
+            //var instance = new HyperOneApi.OrganisationBillingAddress();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property street (base name: "street")', function() {
+            // uncomment below and update the code to test the property street
+            //var instance = new HyperOneApi.OrganisationBillingAddress();
+            //expect(instance).to.be();
+        });
+
     });
-
-    it('should have the property country (base name: "country")', function() {
-      // uncomment below and update the code to test the property country
-      //var instance = new HyperOneApi.OrganisationBillingAddress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property city (base name: "city")', function() {
-      // uncomment below and update the code to test the property city
-      //var instance = new HyperOneApi.OrganisationBillingAddress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property zipcode (base name: "zipcode")', function() {
-      // uncomment below and update the code to test the property zipcode
-      //var instance = new HyperOneApi.OrganisationBillingAddress();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property street (base name: "street")', function() {
-      // uncomment below and update the code to test the property street
-      //var instance = new HyperOneApi.OrganisationBillingAddress();
-      //expect(instance).to.be();
-    });
-
-  });
 
 }));

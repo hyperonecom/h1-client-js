@@ -47,13 +47,6 @@
         this.apiClient = apiClient || ApiClient.instance;
 
 
-        /**
-     * Callback function to receive the result of the actionVmhostMoveDisk operation.
-     * @callback module:api/VmhostApi~actionVmhostMoveDiskCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vmhost} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
         /**
      * Action :: moveDisk
@@ -61,10 +54,9 @@
      * @param {String} vmhostId ID of vmhost
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject51} opts.inlineObject51
-     * @param {module:api/VmhostApi~actionVmhostMoveDiskCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vmhost}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vmhost} and HTTP response
      */
-        this.actionVmhostMoveDisk = function(vmhostId, opts, callback) {
+        this.actionVmhostMoveDiskWithHttpInfo = function(vmhostId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject51;
 
@@ -94,17 +86,25 @@
             return this.apiClient.callApi(
                 '/vmhost/{vmhostId}/actions/moveDisk', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the actionVmhostMoveISO operation.
-     * @callback module:api/VmhostApi~actionVmhostMoveISOCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vmhost} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: moveDisk
+     * Action moveDisk
+     * @param {String} vmhostId ID of vmhost
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject51} opts.inlineObject51
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vmhost}
      */
+        this.actionVmhostMoveDisk = function(vmhostId, opts) {
+            return this.actionVmhostMoveDiskWithHttpInfo(vmhostId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Action :: moveISO
@@ -112,10 +112,9 @@
      * @param {String} vmhostId ID of vmhost
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject52} opts.inlineObject52
-     * @param {module:api/VmhostApi~actionVmhostMoveISOCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vmhost}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vmhost} and HTTP response
      */
-        this.actionVmhostMoveISO = function(vmhostId, opts, callback) {
+        this.actionVmhostMoveISOWithHttpInfo = function(vmhostId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject52;
 
@@ -145,17 +144,25 @@
             return this.apiClient.callApi(
                 '/vmhost/{vmhostId}/actions/moveISO', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the actionVmhostMoveImage operation.
-     * @callback module:api/VmhostApi~actionVmhostMoveImageCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vmhost} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: moveISO
+     * Action moveISO
+     * @param {String} vmhostId ID of vmhost
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject52} opts.inlineObject52
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vmhost}
      */
+        this.actionVmhostMoveISO = function(vmhostId, opts) {
+            return this.actionVmhostMoveISOWithHttpInfo(vmhostId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Action :: moveImage
@@ -163,10 +170,9 @@
      * @param {String} vmhostId ID of vmhost
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject53} opts.inlineObject53
-     * @param {module:api/VmhostApi~actionVmhostMoveImageCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vmhost}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vmhost} and HTTP response
      */
-        this.actionVmhostMoveImage = function(vmhostId, opts, callback) {
+        this.actionVmhostMoveImageWithHttpInfo = function(vmhostId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject53;
 
@@ -196,17 +202,25 @@
             return this.apiClient.callApi(
                 '/vmhost/{vmhostId}/actions/moveImage', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the actionVmhostMoveVM operation.
-     * @callback module:api/VmhostApi~actionVmhostMoveVMCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vmhost} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: moveImage
+     * Action moveImage
+     * @param {String} vmhostId ID of vmhost
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject53} opts.inlineObject53
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vmhost}
      */
+        this.actionVmhostMoveImage = function(vmhostId, opts) {
+            return this.actionVmhostMoveImageWithHttpInfo(vmhostId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Action :: moveVM
@@ -214,10 +228,9 @@
      * @param {String} vmhostId ID of vmhost
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject50} opts.inlineObject50
-     * @param {module:api/VmhostApi~actionVmhostMoveVMCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vmhost}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vmhost} and HTTP response
      */
-        this.actionVmhostMoveVM = function(vmhostId, opts, callback) {
+        this.actionVmhostMoveVMWithHttpInfo = function(vmhostId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject50;
 
@@ -247,24 +260,32 @@
             return this.apiClient.callApi(
                 '/vmhost/{vmhostId}/actions/moveVM', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the deleteVmhost operation.
-     * @callback module:api/VmhostApi~deleteVmhostCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Action :: moveVM
+     * Action moveVM
+     * @param {String} vmhostId ID of vmhost
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject50} opts.inlineObject50
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vmhost}
      */
+        this.actionVmhostMoveVM = function(vmhostId, opts) {
+            return this.actionVmhostMoveVMWithHttpInfo(vmhostId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Delete by ID
      * @param {String} vmhostId ID of vmhost
-     * @param {module:api/VmhostApi~deleteVmhostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-        this.deleteVmhost = function(vmhostId, callback) {
+        this.deleteVmhostWithHttpInfo = function(vmhostId) {
             const postBody = null;
 
             // verify the required parameter 'vmhostId' is set
@@ -293,27 +314,31 @@
             return this.apiClient.callApi(
                 '/vmhost/{vmhostId}', 'DELETE',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the listVmhost operation.
-     * @callback module:api/VmhostApi~listVmhostCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Vmhost>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete by ID
+     * @param {String} vmhostId ID of vmhost
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+        this.deleteVmhost = function(vmhostId) {
+            return this.deleteVmhostWithHttpInfo(vmhostId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * List
      * List vmhost
      * @param {Object} opts Optional parameters
      * @param {String} opts.enabledServices Filter by enabledServices
-     * @param {module:api/VmhostApi~listVmhostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Vmhost>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Vmhost>} and HTTP response
      */
-        this.listVmhost = function(opts, callback) {
+        this.listVmhostWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = null;
 
@@ -338,26 +363,32 @@
             return this.apiClient.callApi(
                 '/vmhost', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the showVmhost operation.
-     * @callback module:api/VmhostApi~showVmhostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vmhost} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List vmhost
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.enabledServices Filter by enabledServices
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Vmhost>}
      */
+        this.listVmhost = function(opts) {
+            return this.listVmhostWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Find by ID
      * Returns a single vmhost
      * @param {String} vmhostId ID of vmhost
-     * @param {module:api/VmhostApi~showVmhostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vmhost}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vmhost} and HTTP response
      */
-        this.showVmhost = function(vmhostId, callback) {
+        this.showVmhostWithHttpInfo = function(vmhostId) {
             const postBody = null;
 
             // verify the required parameter 'vmhostId' is set
@@ -386,17 +417,23 @@
             return this.apiClient.callApi(
                 '/vmhost/{vmhostId}', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the updateVmhost operation.
-     * @callback module:api/VmhostApi~updateVmhostCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vmhost} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Find by ID
+     * Returns a single vmhost
+     * @param {String} vmhostId ID of vmhost
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vmhost}
      */
+        this.showVmhost = function(vmhostId) {
+            return this.showVmhostWithHttpInfo(vmhostId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Update by ID
@@ -404,10 +441,9 @@
      * @param {String} vmhostId ID of vmhost
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject49} opts.inlineObject49
-     * @param {module:api/VmhostApi~updateVmhostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vmhost}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vmhost} and HTTP response
      */
-        this.updateVmhost = function(vmhostId, opts, callback) {
+        this.updateVmhostWithHttpInfo = function(vmhostId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject49;
 
@@ -437,8 +473,23 @@
             return this.apiClient.callApi(
                 '/vmhost/{vmhostId}', 'PATCH',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
+        };
+
+        /**
+     * Update by ID
+     * Returns modified vmhost
+     * @param {String} vmhostId ID of vmhost
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject49} opts.inlineObject49
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vmhost}
+     */
+        this.updateVmhost = function(vmhostId, opts) {
+            return this.updateVmhostWithHttpInfo(vmhostId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
         };
     };
 

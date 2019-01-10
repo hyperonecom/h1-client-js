@@ -47,13 +47,6 @@
         this.apiClient = apiClient || ApiClient.instance;
 
 
-        /**
-     * Callback function to receive the result of the actionReplicaImage operation.
-     * @callback module:api/ReplicaApi~actionReplicaImageCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Replica} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
         /**
      * Action :: image
@@ -61,10 +54,9 @@
      * @param {String} replicaId ID of replica
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject55} opts.inlineObject55
-     * @param {module:api/ReplicaApi~actionReplicaImageCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Replica}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Replica} and HTTP response
      */
-        this.actionReplicaImage = function(replicaId, opts, callback) {
+        this.actionReplicaImageWithHttpInfo = function(replicaId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject55;
 
@@ -94,27 +86,34 @@
             return this.apiClient.callApi(
                 '/replica/{replicaId}/actions/image', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the createReplica operation.
-     * @callback module:api/ReplicaApi~createReplicaCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Replica} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: image
+     * Action image
+     * @param {String} replicaId ID of replica
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject55} opts.inlineObject55
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Replica}
      */
+        this.actionReplicaImage = function(replicaId, opts) {
+            return this.actionReplicaImageWithHttpInfo(replicaId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Create
      * Create replica
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject54} opts.inlineObject54
-     * @param {module:api/ReplicaApi~createReplicaCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Replica}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Replica} and HTTP response
      */
-        this.createReplica = function(opts, callback) {
+        this.createReplicaWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = opts.inlineObject54;
 
@@ -138,24 +137,31 @@
             return this.apiClient.callApi(
                 '/replica', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the deleteReplica operation.
-     * @callback module:api/ReplicaApi~deleteReplicaCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create replica
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject54} opts.inlineObject54
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Replica}
      */
+        this.createReplica = function(opts) {
+            return this.createReplicaWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Delete by ID
      * @param {String} replicaId ID of replica
-     * @param {module:api/ReplicaApi~deleteReplicaCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-        this.deleteReplica = function(replicaId, callback) {
+        this.deleteReplicaWithHttpInfo = function(replicaId) {
             const postBody = null;
 
             // verify the required parameter 'replicaId' is set
@@ -184,27 +190,31 @@
             return this.apiClient.callApi(
                 '/replica/{replicaId}', 'DELETE',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the listReplica operation.
-     * @callback module:api/ReplicaApi~listReplicaCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Replica>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete by ID
+     * @param {String} replicaId ID of replica
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+        this.deleteReplica = function(replicaId) {
+            return this.deleteReplicaWithHttpInfo(replicaId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * List
      * List replica
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/ReplicaApi~listReplicaCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Replica>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Replica>} and HTTP response
      */
-        this.listReplica = function(opts, callback) {
+        this.listReplicaWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = null;
 
@@ -229,26 +239,32 @@
             return this.apiClient.callApi(
                 '/replica', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the showReplica operation.
-     * @callback module:api/ReplicaApi~showReplicaCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Replica} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List replica
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Replica>}
      */
+        this.listReplica = function(opts) {
+            return this.listReplicaWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Find by ID
      * Returns a single replica
      * @param {String} replicaId ID of replica
-     * @param {module:api/ReplicaApi~showReplicaCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Replica}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Replica} and HTTP response
      */
-        this.showReplica = function(replicaId, callback) {
+        this.showReplicaWithHttpInfo = function(replicaId) {
             const postBody = null;
 
             // verify the required parameter 'replicaId' is set
@@ -277,8 +293,21 @@
             return this.apiClient.callApi(
                 '/replica/{replicaId}', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
+        };
+
+        /**
+     * Find by ID
+     * Returns a single replica
+     * @param {String} replicaId ID of replica
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Replica}
+     */
+        this.showReplica = function(replicaId) {
+            return this.showReplicaWithHttpInfo(replicaId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
         };
     };
 

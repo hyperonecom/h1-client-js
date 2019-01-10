@@ -47,14 +47,12 @@ var firewallId = "firewallId_example"; // String | ID of firewall
 var opts = {
   'inlineObject9': new HyperOneApi.InlineObject9() // InlineObject9 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionFirewallAttach(firewallId, opts, callback);
+apiInstance.actionFirewallAttach(firewallId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -110,14 +108,12 @@ var firewallId = "firewallId_example"; // String | ID of firewall
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionFirewallDetach(firewallId, opts, callback);
+apiInstance.actionFirewallDetach(firewallId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -173,14 +169,12 @@ var firewallId = "firewallId_example"; // String | ID of firewall
 var opts = {
   'inlineObject10': new HyperOneApi.InlineObject10() // InlineObject10 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionFirewallTransfer(firewallId, opts, callback);
+apiInstance.actionFirewallTransfer(firewallId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -235,14 +229,12 @@ var apiInstance = new HyperOneApi.FirewallApi();
 var opts = {
   'inlineObject7': new HyperOneApi.InlineObject7() // InlineObject7 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createFirewall(opts, callback);
+apiInstance.createFirewall(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -292,14 +284,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteFirewall(firewallId, callback);
+apiInstance.deleteFirewall(firewallId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -353,14 +343,12 @@ var apiInstance = new HyperOneApi.FirewallApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listFirewall(opts, callback);
+apiInstance.listFirewall(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -412,14 +400,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showFirewall(firewallId, callback);
+apiInstance.showFirewall(firewallId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -474,14 +460,12 @@ var firewallId = "firewallId_example"; // String | ID of firewall
 var opts = {
   'inlineObject8': new HyperOneApi.InlineObject8() // InlineObject8 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateFirewall(firewallId, opts, callback);
+apiInstance.updateFirewall(firewallId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

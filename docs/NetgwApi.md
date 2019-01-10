@@ -46,14 +46,12 @@ var netgwId = "netgwId_example"; // String | ID of netgw
 var opts = {
   'inlineObject15': new HyperOneApi.InlineObject15() // InlineObject15 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionNetgwAttach(netgwId, opts, callback);
+apiInstance.actionNetgwAttach(netgwId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -109,14 +107,12 @@ var netgwId = "netgwId_example"; // String | ID of netgw
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionNetgwDetach(netgwId, opts, callback);
+apiInstance.actionNetgwDetach(netgwId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -171,14 +167,12 @@ var apiInstance = new HyperOneApi.NetgwApi();
 var opts = {
   'inlineObject13': new HyperOneApi.InlineObject13() // InlineObject13 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createNetgw(opts, callback);
+apiInstance.createNetgw(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -228,14 +222,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetgwApi();
 var netgwId = "netgwId_example"; // String | ID of netgw
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteNetgw(netgwId, callback);
+apiInstance.deleteNetgw(netgwId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -289,14 +281,12 @@ var apiInstance = new HyperOneApi.NetgwApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listNetgw(opts, callback);
+apiInstance.listNetgw(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -348,14 +338,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetgwApi();
 var netgwId = "netgwId_example"; // String | ID of netgw
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showNetgw(netgwId, callback);
+apiInstance.showNetgw(netgwId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -410,14 +398,12 @@ var netgwId = "netgwId_example"; // String | ID of netgw
 var opts = {
   'inlineObject14': new HyperOneApi.InlineObject14() // InlineObject14 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateNetgw(netgwId, opts, callback);
+apiInstance.updateNetgw(netgwId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

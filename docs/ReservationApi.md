@@ -47,14 +47,12 @@ var reservationId = "reservationId_example"; // String | ID of reservation
 var opts = {
   'inlineObject45': new HyperOneApi.InlineObject45() // InlineObject45 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionReservationAssign(reservationId, opts, callback);
+apiInstance.actionReservationAssign(reservationId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -110,14 +108,12 @@ var reservationId = "reservationId_example"; // String | ID of reservation
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionReservationExtend(reservationId, opts, callback);
+apiInstance.actionReservationExtend(reservationId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -173,14 +169,12 @@ var reservationId = "reservationId_example"; // String | ID of reservation
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionReservationUnassign(reservationId, opts, callback);
+apiInstance.actionReservationUnassign(reservationId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -235,14 +229,12 @@ var apiInstance = new HyperOneApi.ReservationApi();
 var opts = {
   'inlineObject43': new HyperOneApi.InlineObject43() // InlineObject43 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createReservation(opts, callback);
+apiInstance.createReservation(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -292,14 +284,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteReservation(reservationId, callback);
+apiInstance.deleteReservation(reservationId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -353,14 +343,12 @@ var apiInstance = new HyperOneApi.ReservationApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listReservation(opts, callback);
+apiInstance.listReservation(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -412,14 +400,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showReservation(reservationId, callback);
+apiInstance.showReservation(reservationId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -474,14 +460,12 @@ var reservationId = "reservationId_example"; // String | ID of reservation
 var opts = {
   'inlineObject44': new HyperOneApi.InlineObject44() // InlineObject44 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateReservation(reservationId, opts, callback);
+apiInstance.updateReservation(reservationId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

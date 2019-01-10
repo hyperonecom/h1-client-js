@@ -14,172 +14,171 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.VmApi();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.VmApi();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('VmApi', function() {
-    describe('actionVmFlavour', function() {
-      it('should call actionVmFlavour successfully', function(done) {
-        //uncomment below and update the code to test actionVmFlavour
-        //instance.actionVmFlavour(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+    describe('VmApi', function() {
+        describe('actionVmFlavour', function() {
+            it('should call actionVmFlavour successfully', function(done) {
+                //uncomment below and update the code to test actionVmFlavour
+                //instance.actionVmFlavour(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVmImage', function() {
+            it('should call actionVmImage successfully', function(done) {
+                //uncomment below and update the code to test actionVmImage
+                //instance.actionVmImage(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVmPasswordReset', function() {
+            it('should call actionVmPasswordReset successfully', function(done) {
+                //uncomment below and update the code to test actionVmPasswordReset
+                //instance.actionVmPasswordReset(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVmRename', function() {
+            it('should call actionVmRename successfully', function(done) {
+                //uncomment below and update the code to test actionVmRename
+                //instance.actionVmRename(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVmRestart', function() {
+            it('should call actionVmRestart successfully', function(done) {
+                //uncomment below and update the code to test actionVmRestart
+                //instance.actionVmRestart(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVmStart', function() {
+            it('should call actionVmStart successfully', function(done) {
+                //uncomment below and update the code to test actionVmStart
+                //instance.actionVmStart(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVmStop', function() {
+            it('should call actionVmStop successfully', function(done) {
+                //uncomment below and update the code to test actionVmStop
+                //instance.actionVmStop(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('actionVmTurnoff', function() {
+            it('should call actionVmTurnoff successfully', function(done) {
+                //uncomment below and update the code to test actionVmTurnoff
+                //instance.actionVmTurnoff(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('createVm', function() {
+            it('should call createVm successfully', function(done) {
+                //uncomment below and update the code to test createVm
+                //instance.createVm(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('deleteVm', function() {
+            it('should call deleteVm successfully', function(done) {
+                //uncomment below and update the code to test deleteVm
+                //instance.deleteVm(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('listVm', function() {
+            it('should call listVm successfully', function(done) {
+                //uncomment below and update the code to test listVm
+                //instance.listVm(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('showVm', function() {
+            it('should call showVm successfully', function(done) {
+                //uncomment below and update the code to test showVm
+                //instance.showVm(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('updateVm', function() {
+            it('should call updateVm successfully', function(done) {
+                //uncomment below and update the code to test updateVm
+                //instance.updateVm(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
     });
-    describe('actionVmImage', function() {
-      it('should call actionVmImage successfully', function(done) {
-        //uncomment below and update the code to test actionVmImage
-        //instance.actionVmImage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionVmPasswordReset', function() {
-      it('should call actionVmPasswordReset successfully', function(done) {
-        //uncomment below and update the code to test actionVmPasswordReset
-        //instance.actionVmPasswordReset(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionVmRename', function() {
-      it('should call actionVmRename successfully', function(done) {
-        //uncomment below and update the code to test actionVmRename
-        //instance.actionVmRename(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionVmRestart', function() {
-      it('should call actionVmRestart successfully', function(done) {
-        //uncomment below and update the code to test actionVmRestart
-        //instance.actionVmRestart(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionVmStart', function() {
-      it('should call actionVmStart successfully', function(done) {
-        //uncomment below and update the code to test actionVmStart
-        //instance.actionVmStart(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionVmStop', function() {
-      it('should call actionVmStop successfully', function(done) {
-        //uncomment below and update the code to test actionVmStop
-        //instance.actionVmStop(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('actionVmTurnoff', function() {
-      it('should call actionVmTurnoff successfully', function(done) {
-        //uncomment below and update the code to test actionVmTurnoff
-        //instance.actionVmTurnoff(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('createVm', function() {
-      it('should call createVm successfully', function(done) {
-        //uncomment below and update the code to test createVm
-        //instance.createVm(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteVm', function() {
-      it('should call deleteVm successfully', function(done) {
-        //uncomment below and update the code to test deleteVm
-        //instance.deleteVm(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listVm', function() {
-      it('should call listVm successfully', function(done) {
-        //uncomment below and update the code to test listVm
-        //instance.listVm(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('showVm', function() {
-      it('should call showVm successfully', function(done) {
-        //uncomment below and update the code to test showVm
-        //instance.showVm(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateVm', function() {
-      it('should call updateVm successfully', function(done) {
-        //uncomment below and update the code to test updateVm
-        //instance.updateVm(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-  });
 
 }));

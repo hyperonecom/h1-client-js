@@ -14,60 +14,59 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.EventResource();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.EventResource();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('EventResource', function() {
-    it('should create an instance of EventResource', function() {
-      // uncomment below and update the code to test EventResource
-      //var instance = new HyperOneApi.EventResource();
-      //expect(instance).to.be.a(HyperOneApi.EventResource);
+    describe('EventResource', function() {
+        it('should create an instance of EventResource', function() {
+            // uncomment below and update the code to test EventResource
+            //var instance = new HyperOneApi.EventResource();
+            //expect(instance).to.be.a(HyperOneApi.EventResource);
+        });
+
+        it('should have the property id (base name: "id")', function() {
+            // uncomment below and update the code to test the property id
+            //var instance = new HyperOneApi.EventResource();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property type (base name: "type")', function() {
+            // uncomment below and update the code to test the property type
+            //var instance = new HyperOneApi.EventResource();
+            //expect(instance).to.be();
+        });
+
     });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instance = new HyperOneApi.EventResource();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instance = new HyperOneApi.EventResource();
-      //expect(instance).to.be();
-    });
-
-  });
 
 }));

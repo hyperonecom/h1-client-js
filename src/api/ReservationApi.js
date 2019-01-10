@@ -47,13 +47,6 @@
         this.apiClient = apiClient || ApiClient.instance;
 
 
-        /**
-     * Callback function to receive the result of the actionReservationAssign operation.
-     * @callback module:api/ReservationApi~actionReservationAssignCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Reservation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
         /**
      * Action :: assign
@@ -61,10 +54,9 @@
      * @param {String} reservationId ID of reservation
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject45} opts.inlineObject45
-     * @param {module:api/ReservationApi~actionReservationAssignCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Reservation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-        this.actionReservationAssign = function(reservationId, opts, callback) {
+        this.actionReservationAssignWithHttpInfo = function(reservationId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject45;
 
@@ -94,17 +86,25 @@
             return this.apiClient.callApi(
                 '/reservation/{reservationId}/actions/assign', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the actionReservationExtend operation.
-     * @callback module:api/ReservationApi~actionReservationExtendCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Reservation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: assign
+     * Action assign
+     * @param {String} reservationId ID of reservation
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject45} opts.inlineObject45
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
+        this.actionReservationAssign = function(reservationId, opts) {
+            return this.actionReservationAssignWithHttpInfo(reservationId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Action :: extend
@@ -112,10 +112,9 @@
      * @param {String} reservationId ID of reservation
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body
-     * @param {module:api/ReservationApi~actionReservationExtendCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Reservation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-        this.actionReservationExtend = function(reservationId, opts, callback) {
+        this.actionReservationExtendWithHttpInfo = function(reservationId, opts) {
             opts = opts || {};
             const postBody = opts.body;
 
@@ -145,17 +144,25 @@
             return this.apiClient.callApi(
                 '/reservation/{reservationId}/actions/extend', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the actionReservationUnassign operation.
-     * @callback module:api/ReservationApi~actionReservationUnassignCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Reservation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: extend
+     * Action extend
+     * @param {String} reservationId ID of reservation
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
+        this.actionReservationExtend = function(reservationId, opts) {
+            return this.actionReservationExtendWithHttpInfo(reservationId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Action :: unassign
@@ -163,10 +170,9 @@
      * @param {String} reservationId ID of reservation
      * @param {Object} opts Optional parameters
      * @param {Object} opts.body
-     * @param {module:api/ReservationApi~actionReservationUnassignCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Reservation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-        this.actionReservationUnassign = function(reservationId, opts, callback) {
+        this.actionReservationUnassignWithHttpInfo = function(reservationId, opts) {
             opts = opts || {};
             const postBody = opts.body;
 
@@ -196,27 +202,34 @@
             return this.apiClient.callApi(
                 '/reservation/{reservationId}/actions/unassign', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the createReservation operation.
-     * @callback module:api/ReservationApi~createReservationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Reservation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Action :: unassign
+     * Action unassign
+     * @param {String} reservationId ID of reservation
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.body
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
+        this.actionReservationUnassign = function(reservationId, opts) {
+            return this.actionReservationUnassignWithHttpInfo(reservationId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Create
      * Create reservation
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject43} opts.inlineObject43
-     * @param {module:api/ReservationApi~createReservationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Reservation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-        this.createReservation = function(opts, callback) {
+        this.createReservationWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = opts.inlineObject43;
 
@@ -240,24 +253,31 @@
             return this.apiClient.callApi(
                 '/reservation', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the deleteReservation operation.
-     * @callback module:api/ReservationApi~deleteReservationCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create reservation
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject43} opts.inlineObject43
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
+        this.createReservation = function(opts) {
+            return this.createReservationWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Delete by ID
      * @param {String} reservationId ID of reservation
-     * @param {module:api/ReservationApi~deleteReservationCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-        this.deleteReservation = function(reservationId, callback) {
+        this.deleteReservationWithHttpInfo = function(reservationId) {
             const postBody = null;
 
             // verify the required parameter 'reservationId' is set
@@ -286,27 +306,31 @@
             return this.apiClient.callApi(
                 '/reservation/{reservationId}', 'DELETE',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the listReservation operation.
-     * @callback module:api/ReservationApi~listReservationCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Reservation>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete by ID
+     * @param {String} reservationId ID of reservation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+        this.deleteReservation = function(reservationId) {
+            return this.deleteReservationWithHttpInfo(reservationId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * List
      * List reservation
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/ReservationApi~listReservationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Reservation>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Reservation>} and HTTP response
      */
-        this.listReservation = function(opts, callback) {
+        this.listReservationWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = null;
 
@@ -331,26 +355,32 @@
             return this.apiClient.callApi(
                 '/reservation', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the showReservation operation.
-     * @callback module:api/ReservationApi~showReservationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Reservation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List reservation
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Reservation>}
      */
+        this.listReservation = function(opts) {
+            return this.listReservationWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Find by ID
      * Returns a single reservation
      * @param {String} reservationId ID of reservation
-     * @param {module:api/ReservationApi~showReservationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Reservation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-        this.showReservation = function(reservationId, callback) {
+        this.showReservationWithHttpInfo = function(reservationId) {
             const postBody = null;
 
             // verify the required parameter 'reservationId' is set
@@ -379,17 +409,23 @@
             return this.apiClient.callApi(
                 '/reservation/{reservationId}', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the updateReservation operation.
-     * @callback module:api/ReservationApi~updateReservationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Reservation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Find by ID
+     * Returns a single reservation
+     * @param {String} reservationId ID of reservation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
+        this.showReservation = function(reservationId) {
+            return this.showReservationWithHttpInfo(reservationId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Update by ID
@@ -397,10 +433,9 @@
      * @param {String} reservationId ID of reservation
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject44} opts.inlineObject44
-     * @param {module:api/ReservationApi~updateReservationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Reservation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-        this.updateReservation = function(reservationId, opts, callback) {
+        this.updateReservationWithHttpInfo = function(reservationId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject44;
 
@@ -430,8 +465,23 @@
             return this.apiClient.callApi(
                 '/reservation/{reservationId}', 'PATCH',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
+        };
+
+        /**
+     * Update by ID
+     * Returns modified reservation
+     * @param {String} reservationId ID of reservation
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject44} opts.inlineObject44
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
+     */
+        this.updateReservation = function(reservationId, opts) {
+            return this.updateReservationWithHttpInfo(reservationId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
         };
     };
 

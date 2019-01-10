@@ -46,14 +46,12 @@ var diskId = "diskId_example"; // String | ID of disk
 var opts = {
   'inlineObject21': new HyperOneApi.InlineObject21() // InlineObject21 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionDiskResize(diskId, opts, callback);
+apiInstance.actionDiskResize(diskId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -109,14 +107,12 @@ var diskId = "diskId_example"; // String | ID of disk
 var opts = {
   'inlineObject22': new HyperOneApi.InlineObject22() // InlineObject22 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionDiskTransfer(diskId, opts, callback);
+apiInstance.actionDiskTransfer(diskId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -171,14 +167,12 @@ var apiInstance = new HyperOneApi.DiskApi();
 var opts = {
   'inlineObject19': new HyperOneApi.InlineObject19() // InlineObject19 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createDisk(opts, callback);
+apiInstance.createDisk(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -228,14 +222,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.DiskApi();
 var diskId = "diskId_example"; // String | ID of disk
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteDisk(diskId, callback);
+apiInstance.deleteDisk(diskId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -289,14 +281,12 @@ var apiInstance = new HyperOneApi.DiskApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listDisk(opts, callback);
+apiInstance.listDisk(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -348,14 +338,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.DiskApi();
 var diskId = "diskId_example"; // String | ID of disk
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showDisk(diskId, callback);
+apiInstance.showDisk(diskId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -410,14 +398,12 @@ var diskId = "diskId_example"; // String | ID of disk
 var opts = {
   'inlineObject20': new HyperOneApi.InlineObject20() // InlineObject20 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateDisk(diskId, opts, callback);
+apiInstance.updateDisk(diskId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

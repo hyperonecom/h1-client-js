@@ -47,23 +47,15 @@
         this.apiClient = apiClient || ApiClient.instance;
 
 
-        /**
-     * Callback function to receive the result of the createSnapshot operation.
-     * @callback module:api/SnapshotApi~createSnapshotCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Snapshot} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
         /**
      * Create
      * Create snapshot
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject41} opts.inlineObject41
-     * @param {module:api/SnapshotApi~createSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Snapshot}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
      */
-        this.createSnapshot = function(opts, callback) {
+        this.createSnapshotWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = opts.inlineObject41;
 
@@ -87,24 +79,31 @@
             return this.apiClient.callApi(
                 '/snapshot', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the deleteSnapshot operation.
-     * @callback module:api/SnapshotApi~deleteSnapshotCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create snapshot
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject41} opts.inlineObject41
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
      */
+        this.createSnapshot = function(opts) {
+            return this.createSnapshotWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Delete by ID
      * @param {String} snapshotId ID of snapshot
-     * @param {module:api/SnapshotApi~deleteSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-        this.deleteSnapshot = function(snapshotId, callback) {
+        this.deleteSnapshotWithHttpInfo = function(snapshotId) {
             const postBody = null;
 
             // verify the required parameter 'snapshotId' is set
@@ -133,17 +132,22 @@
             return this.apiClient.callApi(
                 '/snapshot/{snapshotId}', 'DELETE',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the listSnapshot operation.
-     * @callback module:api/SnapshotApi~listSnapshotCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Snapshot>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete by ID
+     * @param {String} snapshotId ID of snapshot
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+        this.deleteSnapshot = function(snapshotId) {
+            return this.deleteSnapshotWithHttpInfo(snapshotId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * List
@@ -151,10 +155,9 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
      * @param {String} opts.vault Filter by vault
-     * @param {module:api/SnapshotApi~listSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Snapshot>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Snapshot>} and HTTP response
      */
-        this.listSnapshot = function(opts, callback) {
+        this.listSnapshotWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = null;
 
@@ -180,26 +183,33 @@
             return this.apiClient.callApi(
                 '/snapshot', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the showSnapshot operation.
-     * @callback module:api/SnapshotApi~showSnapshotCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Snapshot} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List snapshot
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @param {String} opts.vault Filter by vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Snapshot>}
      */
+        this.listSnapshot = function(opts) {
+            return this.listSnapshotWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Find by ID
      * Returns a single snapshot
      * @param {String} snapshotId ID of snapshot
-     * @param {module:api/SnapshotApi~showSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Snapshot}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
      */
-        this.showSnapshot = function(snapshotId, callback) {
+        this.showSnapshotWithHttpInfo = function(snapshotId) {
             const postBody = null;
 
             // verify the required parameter 'snapshotId' is set
@@ -228,17 +238,23 @@
             return this.apiClient.callApi(
                 '/snapshot/{snapshotId}', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the updateSnapshot operation.
-     * @callback module:api/SnapshotApi~updateSnapshotCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Snapshot} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Find by ID
+     * Returns a single snapshot
+     * @param {String} snapshotId ID of snapshot
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
      */
+        this.showSnapshot = function(snapshotId) {
+            return this.showSnapshotWithHttpInfo(snapshotId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Update by ID
@@ -246,10 +262,9 @@
      * @param {String} snapshotId ID of snapshot
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject42} opts.inlineObject42
-     * @param {module:api/SnapshotApi~updateSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Snapshot}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
      */
-        this.updateSnapshot = function(snapshotId, opts, callback) {
+        this.updateSnapshotWithHttpInfo = function(snapshotId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject42;
 
@@ -279,8 +294,23 @@
             return this.apiClient.callApi(
                 '/snapshot/{snapshotId}', 'PATCH',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
+        };
+
+        /**
+     * Update by ID
+     * Returns modified snapshot
+     * @param {String} snapshotId ID of snapshot
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject42} opts.inlineObject42
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
+     */
+        this.updateSnapshot = function(snapshotId, opts) {
+            return this.updateSnapshotWithHttpInfo(snapshotId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
         };
     };
 

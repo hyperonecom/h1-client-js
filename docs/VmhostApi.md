@@ -47,14 +47,12 @@ var vmhostId = "vmhostId_example"; // String | ID of vmhost
 var opts = {
   'inlineObject51': new HyperOneApi.InlineObject51() // InlineObject51 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmhostMoveDisk(vmhostId, opts, callback);
+apiInstance.actionVmhostMoveDisk(vmhostId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -110,14 +108,12 @@ var vmhostId = "vmhostId_example"; // String | ID of vmhost
 var opts = {
   'inlineObject52': new HyperOneApi.InlineObject52() // InlineObject52 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmhostMoveISO(vmhostId, opts, callback);
+apiInstance.actionVmhostMoveISO(vmhostId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -173,14 +169,12 @@ var vmhostId = "vmhostId_example"; // String | ID of vmhost
 var opts = {
   'inlineObject53': new HyperOneApi.InlineObject53() // InlineObject53 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmhostMoveImage(vmhostId, opts, callback);
+apiInstance.actionVmhostMoveImage(vmhostId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -236,14 +230,12 @@ var vmhostId = "vmhostId_example"; // String | ID of vmhost
 var opts = {
   'inlineObject50': new HyperOneApi.InlineObject50() // InlineObject50 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmhostMoveVM(vmhostId, opts, callback);
+apiInstance.actionVmhostMoveVM(vmhostId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -294,14 +286,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmhostApi();
 var vmhostId = "vmhostId_example"; // String | ID of vmhost
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteVmhost(vmhostId, callback);
+apiInstance.deleteVmhost(vmhostId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -355,14 +345,12 @@ var apiInstance = new HyperOneApi.VmhostApi();
 var opts = {
   'enabledServices': "enabledServices_example" // String | Filter by enabledServices
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listVmhost(opts, callback);
+apiInstance.listVmhost(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -414,14 +402,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmhostApi();
 var vmhostId = "vmhostId_example"; // String | ID of vmhost
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showVmhost(vmhostId, callback);
+apiInstance.showVmhost(vmhostId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -476,14 +462,12 @@ var vmhostId = "vmhostId_example"; // String | ID of vmhost
 var opts = {
   'inlineObject49': new HyperOneApi.InlineObject49() // InlineObject49 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateVmhost(vmhostId, opts, callback);
+apiInstance.updateVmhost(vmhostId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

@@ -52,14 +52,12 @@ var vmId = "vmId_example"; // String | ID of vm
 var opts = {
   'inlineObject31': new HyperOneApi.InlineObject31() // InlineObject31 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmFlavour(vmId, opts, callback);
+apiInstance.actionVmFlavour(vmId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -115,14 +113,12 @@ var vmId = "vmId_example"; // String | ID of vm
 var opts = {
   'inlineObject30': new HyperOneApi.InlineObject30() // InlineObject30 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmImage(vmId, opts, callback);
+apiInstance.actionVmImage(vmId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -178,14 +174,12 @@ var vmId = "vmId_example"; // String | ID of vm
 var opts = {
   'inlineObject29': new HyperOneApi.InlineObject29() // InlineObject29 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmPasswordReset(vmId, opts, callback);
+apiInstance.actionVmPasswordReset(vmId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -241,14 +235,12 @@ var vmId = "vmId_example"; // String | ID of vm
 var opts = {
   'inlineObject28': new HyperOneApi.InlineObject28() // InlineObject28 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmRename(vmId, opts, callback);
+apiInstance.actionVmRename(vmId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -304,14 +296,12 @@ var vmId = "vmId_example"; // String | ID of vm
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmRestart(vmId, opts, callback);
+apiInstance.actionVmRestart(vmId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -367,14 +357,12 @@ var vmId = "vmId_example"; // String | ID of vm
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmStart(vmId, opts, callback);
+apiInstance.actionVmStart(vmId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -430,14 +418,12 @@ var vmId = "vmId_example"; // String | ID of vm
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmStop(vmId, opts, callback);
+apiInstance.actionVmStop(vmId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -493,14 +479,12 @@ var vmId = "vmId_example"; // String | ID of vm
 var opts = {
   'body': null // Object | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionVmTurnoff(vmId, opts, callback);
+apiInstance.actionVmTurnoff(vmId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -555,14 +539,12 @@ var apiInstance = new HyperOneApi.VmApi();
 var opts = {
   'inlineObject26': new HyperOneApi.InlineObject26() // InlineObject26 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createVm(opts, callback);
+apiInstance.createVm(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -612,14 +594,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteVm(vmId, callback);
+apiInstance.deleteVm(vmId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -673,14 +653,12 @@ var apiInstance = new HyperOneApi.VmApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listVm(opts, callback);
+apiInstance.listVm(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -732,14 +710,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showVm(vmId, callback);
+apiInstance.showVm(vmId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -794,14 +770,12 @@ var vmId = "vmId_example"; // String | ID of vm
 var opts = {
   'inlineObject27': new HyperOneApi.InlineObject27() // InlineObject27 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateVm(vmId, opts, callback);
+apiInstance.updateVm(vmId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

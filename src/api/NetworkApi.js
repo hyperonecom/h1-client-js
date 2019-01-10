@@ -47,23 +47,15 @@
         this.apiClient = apiClient || ApiClient.instance;
 
 
-        /**
-     * Callback function to receive the result of the createNetwork operation.
-     * @callback module:api/NetworkApi~createNetworkCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Network} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
         /**
      * Create
      * Create network
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject11} opts.inlineObject11
-     * @param {module:api/NetworkApi~createNetworkCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Network}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Network} and HTTP response
      */
-        this.createNetwork = function(opts, callback) {
+        this.createNetworkWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = opts.inlineObject11;
 
@@ -87,24 +79,31 @@
             return this.apiClient.callApi(
                 '/network', 'POST',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the deleteNetwork operation.
-     * @callback module:api/NetworkApi~deleteNetworkCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create network
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject11} opts.inlineObject11
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Network}
      */
+        this.createNetwork = function(opts) {
+            return this.createNetworkWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Delete by ID
      * @param {String} networkId ID of network
-     * @param {module:api/NetworkApi~deleteNetworkCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-        this.deleteNetwork = function(networkId, callback) {
+        this.deleteNetworkWithHttpInfo = function(networkId) {
             const postBody = null;
 
             // verify the required parameter 'networkId' is set
@@ -133,27 +132,31 @@
             return this.apiClient.callApi(
                 '/network/{networkId}', 'DELETE',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the listNetwork operation.
-     * @callback module:api/NetworkApi~listNetworkCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Network>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete by ID
+     * @param {String} networkId ID of network
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+        this.deleteNetwork = function(networkId) {
+            return this.deleteNetworkWithHttpInfo(networkId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * List
      * List network
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/NetworkApi~listNetworkCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Network>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Network>} and HTTP response
      */
-        this.listNetwork = function(opts, callback) {
+        this.listNetworkWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = null;
 
@@ -178,26 +181,32 @@
             return this.apiClient.callApi(
                 '/network', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the showNetwork operation.
-     * @callback module:api/NetworkApi~showNetworkCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Network} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List network
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Network>}
      */
+        this.listNetwork = function(opts) {
+            return this.listNetworkWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Find by ID
      * Returns a single network
      * @param {String} networkId ID of network
-     * @param {module:api/NetworkApi~showNetworkCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Network}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Network} and HTTP response
      */
-        this.showNetwork = function(networkId, callback) {
+        this.showNetworkWithHttpInfo = function(networkId) {
             const postBody = null;
 
             // verify the required parameter 'networkId' is set
@@ -226,17 +235,23 @@
             return this.apiClient.callApi(
                 '/network/{networkId}', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the updateNetwork operation.
-     * @callback module:api/NetworkApi~updateNetworkCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Network} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Find by ID
+     * Returns a single network
+     * @param {String} networkId ID of network
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Network}
      */
+        this.showNetwork = function(networkId) {
+            return this.showNetworkWithHttpInfo(networkId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Update by ID
@@ -244,10 +259,9 @@
      * @param {String} networkId ID of network
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject12} opts.inlineObject12
-     * @param {module:api/NetworkApi~updateNetworkCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Network}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Network} and HTTP response
      */
-        this.updateNetwork = function(networkId, opts, callback) {
+        this.updateNetworkWithHttpInfo = function(networkId, opts) {
             opts = opts || {};
             const postBody = opts.inlineObject12;
 
@@ -277,8 +291,23 @@
             return this.apiClient.callApi(
                 '/network/{networkId}', 'PATCH',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
+        };
+
+        /**
+     * Update by ID
+     * Returns modified network
+     * @param {String} networkId ID of network
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject12} opts.inlineObject12
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Network}
+     */
+        this.updateNetwork = function(networkId, opts) {
+            return this.updateNetworkWithHttpInfo(networkId, opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
         };
     };
 

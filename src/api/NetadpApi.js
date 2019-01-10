@@ -47,13 +47,6 @@
         this.apiClient = apiClient || ApiClient.instance;
 
 
-        /**
-     * Callback function to receive the result of the listNetadp operation.
-     * @callback module:api/NetadpApi~listNetadpCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Netadp>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
         /**
      * List
@@ -61,10 +54,9 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.assignedResource Filter by assigned.resource
      * @param {String} opts.assignedId Filter by assigned.id
-     * @param {module:api/NetadpApi~listNetadpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Netadp>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Netadp>} and HTTP response
      */
-        this.listNetadp = function(opts, callback) {
+        this.listNetadpWithHttpInfo = function(opts) {
             opts = opts || {};
             const postBody = null;
 
@@ -90,26 +82,33 @@
             return this.apiClient.callApi(
                 '/netadp', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
         };
 
         /**
-     * Callback function to receive the result of the showNetadp operation.
-     * @callback module:api/NetadpApi~showNetadpCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Netadp} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List netadp
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.assignedResource Filter by assigned.resource
+     * @param {String} opts.assignedId Filter by assigned.id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Netadp>}
      */
+        this.listNetadp = function(opts) {
+            return this.listNetadpWithHttpInfo(opts)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
+        };
+
 
         /**
      * Find by ID
      * Returns a single netadp
      * @param {String} netadpId ID of netadp
-     * @param {module:api/NetadpApi~showNetadpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Netadp}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netadp} and HTTP response
      */
-        this.showNetadp = function(netadpId, callback) {
+        this.showNetadpWithHttpInfo = function(netadpId) {
             const postBody = null;
 
             // verify the required parameter 'netadpId' is set
@@ -138,8 +137,21 @@
             return this.apiClient.callApi(
                 '/netadp/{netadpId}', 'GET',
                 pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType, callback
+                authNames, contentTypes, accepts, returnType
             );
+        };
+
+        /**
+     * Find by ID
+     * Returns a single netadp
+     * @param {String} netadpId ID of netadp
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netadp}
+     */
+        this.showNetadp = function(netadpId) {
+            return this.showNetadpWithHttpInfo(netadpId)
+                .then(function(response_and_data) {
+                    return response_and_data.data;
+                });
         };
     };
 

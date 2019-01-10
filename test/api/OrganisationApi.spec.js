@@ -14,92 +14,91 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.OrganisationApi();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.OrganisationApi();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('OrganisationApi', function() {
-    describe('actionOrganisationTransferAccept', function() {
-      it('should call actionOrganisationTransferAccept successfully', function(done) {
-        //uncomment below and update the code to test actionOrganisationTransferAccept
-        //instance.actionOrganisationTransferAccept(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+    describe('OrganisationApi', function() {
+        describe('actionOrganisationTransferAccept', function() {
+            it('should call actionOrganisationTransferAccept successfully', function(done) {
+                //uncomment below and update the code to test actionOrganisationTransferAccept
+                //instance.actionOrganisationTransferAccept(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('createOrganisation', function() {
+            it('should call createOrganisation successfully', function(done) {
+                //uncomment below and update the code to test createOrganisation
+                //instance.createOrganisation(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('listOrganisation', function() {
+            it('should call listOrganisation successfully', function(done) {
+                //uncomment below and update the code to test listOrganisation
+                //instance.listOrganisation(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('showOrganisation', function() {
+            it('should call showOrganisation successfully', function(done) {
+                //uncomment below and update the code to test showOrganisation
+                //instance.showOrganisation(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('updateOrganisation', function() {
+            it('should call updateOrganisation successfully', function(done) {
+                //uncomment below and update the code to test updateOrganisation
+                //instance.updateOrganisation(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
     });
-    describe('createOrganisation', function() {
-      it('should call createOrganisation successfully', function(done) {
-        //uncomment below and update the code to test createOrganisation
-        //instance.createOrganisation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('listOrganisation', function() {
-      it('should call listOrganisation successfully', function(done) {
-        //uncomment below and update the code to test listOrganisation
-        //instance.listOrganisation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('showOrganisation', function() {
-      it('should call showOrganisation successfully', function(done) {
-        //uncomment below and update the code to test showOrganisation
-        //instance.showOrganisation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateOrganisation', function() {
-      it('should call updateOrganisation successfully', function(done) {
-        //uncomment below and update the code to test updateOrganisation
-        //instance.updateOrganisation(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-  });
 
 }));

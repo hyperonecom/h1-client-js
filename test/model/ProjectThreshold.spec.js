@@ -14,54 +14,53 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.ProjectThreshold();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.ProjectThreshold();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('ProjectThreshold', function() {
-    it('should create an instance of ProjectThreshold', function() {
-      // uncomment below and update the code to test ProjectThreshold
-      //var instance = new HyperOneApi.ProjectThreshold();
-      //expect(instance).to.be.a(HyperOneApi.ProjectThreshold);
+    describe('ProjectThreshold', function() {
+        it('should create an instance of ProjectThreshold', function() {
+            // uncomment below and update the code to test ProjectThreshold
+            //var instance = new HyperOneApi.ProjectThreshold();
+            //expect(instance).to.be.a(HyperOneApi.ProjectThreshold);
+        });
+
+        it('should have the property credits (base name: "credits")', function() {
+            // uncomment below and update the code to test the property credits
+            //var instance = new HyperOneApi.ProjectThreshold();
+            //expect(instance).to.be();
+        });
+
     });
-
-    it('should have the property credits (base name: "credits")', function() {
-      // uncomment below and update the code to test the property credits
-      //var instance = new HyperOneApi.ProjectThreshold();
-      //expect(instance).to.be();
-    });
-
-  });
 
 }));

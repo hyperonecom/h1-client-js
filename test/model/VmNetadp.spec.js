@@ -14,66 +14,65 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.VmNetadp();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.VmNetadp();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('VmNetadp', function() {
-    it('should create an instance of VmNetadp', function() {
-      // uncomment below and update the code to test VmNetadp
-      //var instance = new HyperOneApi.VmNetadp();
-      //expect(instance).to.be.a(HyperOneApi.VmNetadp);
+    describe('VmNetadp', function() {
+        it('should create an instance of VmNetadp', function() {
+            // uncomment below and update the code to test VmNetadp
+            //var instance = new HyperOneApi.VmNetadp();
+            //expect(instance).to.be.a(HyperOneApi.VmNetadp);
+        });
+
+        it('should have the property service (base name: "service")', function() {
+            // uncomment below and update the code to test the property service
+            //var instance = new HyperOneApi.VmNetadp();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property network (base name: "network")', function() {
+            // uncomment below and update the code to test the property network
+            //var instance = new HyperOneApi.VmNetadp();
+            //expect(instance).to.be();
+        });
+
+        it('should have the property ip (base name: "ip")', function() {
+            // uncomment below and update the code to test the property ip
+            //var instance = new HyperOneApi.VmNetadp();
+            //expect(instance).to.be();
+        });
+
     });
-
-    it('should have the property service (base name: "service")', function() {
-      // uncomment below and update the code to test the property service
-      //var instance = new HyperOneApi.VmNetadp();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property network (base name: "network")', function() {
-      // uncomment below and update the code to test the property network
-      //var instance = new HyperOneApi.VmNetadp();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property ip (base name: "ip")', function() {
-      // uncomment below and update the code to test the property ip
-      //var instance = new HyperOneApi.VmNetadp();
-      //expect(instance).to.be();
-    });
-
-  });
 
 }));

@@ -14,82 +14,81 @@
  */
 
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+    if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
+        define(['expect.js', '../../src/index'], factory);
+    } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
-  } else {
+        factory(require('expect.js'), require('../../src/index'));
+    } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HyperOneApi);
-  }
+        factory(root.expect, root.HyperOneApi);
+    }
 }(this, function(expect, HyperOneApi) {
-  'use strict';
+    'use strict';
 
-  var instance;
+    let instance;
 
-  beforeEach(function() {
-    instance = new HyperOneApi.ProjectApi();
-  });
+    beforeEach(function() {
+        instance = new HyperOneApi.ProjectApi();
+    });
 
-  var getProperty = function(object, getter, property) {
+    const getProperty = function(object, getter, property) {
     // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+        if (typeof object[getter] === 'function')
+            return object[getter]();
+        return object[property];
+    };
 
-  var setProperty = function(object, setter, property, value) {
+    const setProperty = function(object, setter, property, value) {
     // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+        if (typeof object[setter] === 'function')
+            object[setter](value);
+        else
+            object[property] = value;
+    };
 
-  describe('ProjectApi', function() {
-    describe('createProject', function() {
-      it('should call createProject successfully', function(done) {
-        //uncomment below and update the code to test createProject
-        //instance.createProject(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+    describe('ProjectApi', function() {
+        describe('createProject', function() {
+            it('should call createProject successfully', function(done) {
+                //uncomment below and update the code to test createProject
+                //instance.createProject(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('listProject', function() {
+            it('should call listProject successfully', function(done) {
+                //uncomment below and update the code to test listProject
+                //instance.listProject(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('showProject', function() {
+            it('should call showProject successfully', function(done) {
+                //uncomment below and update the code to test showProject
+                //instance.showProject(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
+        describe('updateProject', function() {
+            it('should call updateProject successfully', function(done) {
+                //uncomment below and update the code to test updateProject
+                //instance.updateProject(function(error) {
+                //  if (error) throw error;
+                //expect().to.be();
+                //});
+                done();
+            });
+        });
     });
-    describe('listProject', function() {
-      it('should call listProject successfully', function(done) {
-        //uncomment below and update the code to test listProject
-        //instance.listProject(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('showProject', function() {
-      it('should call showProject successfully', function(done) {
-        //uncomment below and update the code to test showProject
-        //instance.showProject(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateProject', function() {
-      it('should call updateProject successfully', function(done) {
-        //uncomment below and update the code to test updateProject
-        //instance.updateProject(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-  });
 
 }));
