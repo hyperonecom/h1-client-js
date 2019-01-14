@@ -47,22 +47,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the actionVaultResize operation.
-     * @callback module:api/VaultApi~actionVaultResizeCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * /actions/resize
      * Action resize
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~actionVaultResizeCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.actionVaultResize = function(vaultId, callback) {
+    this.actionVaultResizeWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -91,26 +83,31 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/actions/resize', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionVaultSnapshot operation.
-     * @callback module:api/VaultApi~actionVaultSnapshotCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/resize
+     * Action resize
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+    this.actionVaultResize = function(vaultId) {
+      return this.actionVaultResizeWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/snapshot
      * Action snapshot
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~actionVaultSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.actionVaultSnapshot = function(vaultId, callback) {
+    this.actionVaultSnapshotWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -139,26 +136,31 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/actions/snapshot', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionVaultStart operation.
-     * @callback module:api/VaultApi~actionVaultStartCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/snapshot
+     * Action snapshot
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+    this.actionVaultSnapshot = function(vaultId) {
+      return this.actionVaultSnapshotWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/start
      * Action start
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~actionVaultStartCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.actionVaultStart = function(vaultId, callback) {
+    this.actionVaultStartWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -187,26 +189,31 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/actions/start', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionVaultStop operation.
-     * @callback module:api/VaultApi~actionVaultStopCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/start
+     * Action start
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+    this.actionVaultStart = function(vaultId) {
+      return this.actionVaultStartWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/stop
      * Action stop
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~actionVaultStopCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.actionVaultStop = function(vaultId, callback) {
+    this.actionVaultStopWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -235,27 +242,32 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/actions/stop', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createVault operation.
-     * @callback module:api/VaultApi~createVaultCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/stop
+     * Action stop
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+    this.actionVaultStop = function(vaultId) {
+      return this.actionVaultStopWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create
      * Create vault
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject47} opts.inlineObject47 
-     * @param {module:api/VaultApi~createVaultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.createVault = function(opts, callback) {
+    this.createVaultWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['inlineObject47'];
 
@@ -279,24 +291,31 @@
       return this.apiClient.callApi(
         '/vault', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteVault operation.
-     * @callback module:api/VaultApi~deleteVaultCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject47} opts.inlineObject47 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+    this.createVault = function(opts) {
+      return this.createVaultWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~deleteVaultCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteVault = function(vaultId, callback) {
+    this.deleteVaultWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -325,27 +344,31 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listVault operation.
-     * @callback module:api/VaultApi~listVaultCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Vault>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteVault = function(vaultId) {
+      return this.deleteVaultWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List
      * List vault
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/VaultApi~listVaultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Vault>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Vault>} and HTTP response
      */
-    this.listVault = function(opts, callback) {
+    this.listVaultWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -370,26 +393,32 @@
       return this.apiClient.callApi(
         '/vault', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultDeleteaccessrightsIdentity operation.
-     * @callback module:api/VaultApi~operationVaultDeleteaccessrightsIdentityCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List vault
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Vault>}
      */
+    this.listVault = function(opts) {
+      return this.listVaultWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/:identity
      * @param {String} vaultId ID of vault
      * @param {String} identity identity
-     * @param {module:api/VaultApi~operationVaultDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.operationVaultDeleteaccessrightsIdentity = function(vaultId, identity, callback) {
+    this.operationVaultDeleteaccessrightsIdentityWithHttpInfo = function(vaultId, identity) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -424,26 +453,31 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultDeletecredentialcertificateId operation.
-     * @callback module:api/VaultApi~operationVaultDeletecredentialcertificateIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/:identity
+     * @param {String} vaultId ID of vault
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+    this.operationVaultDeleteaccessrightsIdentity = function(vaultId, identity) {
+      return this.operationVaultDeleteaccessrightsIdentityWithHttpInfo(vaultId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/certificate/:id
      * @param {String} vaultId ID of vault
      * @param {String} id id
-     * @param {module:api/VaultApi~operationVaultDeletecredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.operationVaultDeletecredentialcertificateId = function(vaultId, id, callback) {
+    this.operationVaultDeletecredentialcertificateIdWithHttpInfo = function(vaultId, id) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -478,26 +512,31 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultDeletecredentialpasswordId operation.
-     * @callback module:api/VaultApi~operationVaultDeletecredentialpasswordIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/certificate/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+    this.operationVaultDeletecredentialcertificateId = function(vaultId, id) {
+      return this.operationVaultDeletecredentialcertificateIdWithHttpInfo(vaultId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/password/:id
      * @param {String} vaultId ID of vault
      * @param {String} id id
-     * @param {module:api/VaultApi~operationVaultDeletecredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.operationVaultDeletecredentialpasswordId = function(vaultId, id, callback) {
+    this.operationVaultDeletecredentialpasswordIdWithHttpInfo = function(vaultId, id) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -532,26 +571,31 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/password/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultDeletetagKey operation.
-     * @callback module:api/VaultApi~operationVaultDeletetagKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/password/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+    this.operationVaultDeletecredentialpasswordId = function(vaultId, id) {
+      return this.operationVaultDeletecredentialpasswordIdWithHttpInfo(vaultId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/:key
      * @param {String} vaultId ID of vault
      * @param {String} key key
-     * @param {module:api/VaultApi~operationVaultDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationVaultDeletetagKey = function(vaultId, key, callback) {
+    this.operationVaultDeletetagKeyWithHttpInfo = function(vaultId, key) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -586,26 +630,31 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultGetcredentialcertificateId operation.
-     * @callback module:api/VaultApi~operationVaultGetcredentialcertificateIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialCertificate} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/:key
+     * @param {String} vaultId ID of vault
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationVaultDeletetagKey = function(vaultId, key) {
+      return this.operationVaultDeletetagKeyWithHttpInfo(vaultId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/certificate/:id
      * @param {String} vaultId ID of vault
      * @param {String} id id
-     * @param {module:api/VaultApi~operationVaultGetcredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialCertificate}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.operationVaultGetcredentialcertificateId = function(vaultId, id, callback) {
+    this.operationVaultGetcredentialcertificateIdWithHttpInfo = function(vaultId, id) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -640,26 +689,31 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultGetcredentialpasswordId operation.
-     * @callback module:api/VaultApi~operationVaultGetcredentialpasswordIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialPassword} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/certificate/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
+    this.operationVaultGetcredentialcertificateId = function(vaultId, id) {
+      return this.operationVaultGetcredentialcertificateIdWithHttpInfo(vaultId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/password/:id
      * @param {String} vaultId ID of vault
      * @param {String} id id
-     * @param {module:api/VaultApi~operationVaultGetcredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialPassword}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
      */
-    this.operationVaultGetcredentialpasswordId = function(vaultId, id, callback) {
+    this.operationVaultGetcredentialpasswordIdWithHttpInfo = function(vaultId, id) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -694,26 +748,31 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/password/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultGetservicesServiceId operation.
-     * @callback module:api/VaultApi~operationVaultGetservicesServiceIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/VaultServices} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/password/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
      */
+    this.operationVaultGetcredentialpasswordId = function(vaultId, id) {
+      return this.operationVaultGetcredentialpasswordIdWithHttpInfo(vaultId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/:serviceId
      * @param {String} vaultId ID of vault
      * @param {String} serviceId serviceId
-     * @param {module:api/VaultApi~operationVaultGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VaultServices}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VaultServices} and HTTP response
      */
-    this.operationVaultGetservicesServiceId = function(vaultId, serviceId, callback) {
+    this.operationVaultGetservicesServiceIdWithHttpInfo = function(vaultId, serviceId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -748,25 +807,30 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultGettag operation.
-     * @callback module:api/VaultApi~operationVaultGettagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/:serviceId
+     * @param {String} vaultId ID of vault
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VaultServices}
      */
+    this.operationVaultGetservicesServiceId = function(vaultId, serviceId) {
+      return this.operationVaultGetservicesServiceIdWithHttpInfo(vaultId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~operationVaultGettagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationVaultGettag = function(vaultId, callback) {
+    this.operationVaultGettagWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -795,25 +859,29 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/tag/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultListaccessrights operation.
-     * @callback module:api/VaultApi~operationVaultListaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<String>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationVaultGettag = function(vaultId) {
+      return this.operationVaultGettagWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~operationVaultListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<String>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationVaultListaccessrights = function(vaultId, callback) {
+    this.operationVaultListaccessrightsWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -842,25 +910,29 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/accessrights/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultListcredentialcertificate operation.
-     * @callback module:api/VaultApi~operationVaultListcredentialcertificateCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/CredentialCertificate>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
+    this.operationVaultListaccessrights = function(vaultId) {
+      return this.operationVaultListaccessrightsWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/certificate
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~operationVaultListcredentialcertificateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/CredentialCertificate>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CredentialCertificate>} and HTTP response
      */
-    this.operationVaultListcredentialcertificate = function(vaultId, callback) {
+    this.operationVaultListcredentialcertificateWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -889,25 +961,29 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultListcredentialpassword operation.
-     * @callback module:api/VaultApi~operationVaultListcredentialpasswordCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/CredentialPassword>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/certificate
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CredentialCertificate>}
      */
+    this.operationVaultListcredentialcertificate = function(vaultId) {
+      return this.operationVaultListcredentialcertificateWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/password
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~operationVaultListcredentialpasswordCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/CredentialPassword>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CredentialPassword>} and HTTP response
      */
-    this.operationVaultListcredentialpassword = function(vaultId, callback) {
+    this.operationVaultListcredentialpasswordWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -936,25 +1012,29 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/password', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultListqueue operation.
-     * @callback module:api/VaultApi~operationVaultListqueueCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Event>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/password
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CredentialPassword>}
      */
+    this.operationVaultListcredentialpassword = function(vaultId) {
+      return this.operationVaultListcredentialpasswordWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /queue/
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~operationVaultListqueueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Event>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationVaultListqueue = function(vaultId, callback) {
+    this.operationVaultListqueueWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -983,25 +1063,29 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/queue/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultListservices operation.
-     * @callback module:api/VaultApi~operationVaultListservicesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/VaultServices>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /queue/
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
+    this.operationVaultListqueue = function(vaultId) {
+      return this.operationVaultListqueueWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~operationVaultListservicesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/VaultServices>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VaultServices>} and HTTP response
      */
-    this.operationVaultListservices = function(vaultId, callback) {
+    this.operationVaultListservicesWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -1030,17 +1114,22 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/services/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultPatchcredentialcertificateId operation.
-     * @callback module:api/VaultApi~operationVaultPatchcredentialcertificateIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialCertificate} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VaultServices>}
      */
+    this.operationVaultListservices = function(vaultId) {
+      return this.operationVaultListservicesWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/certificate/:id
@@ -1048,10 +1137,9 @@
      * @param {String} id id
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject52} opts.inlineObject52 
-     * @param {module:api/VaultApi~operationVaultPatchcredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialCertificate}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.operationVaultPatchcredentialcertificateId = function(vaultId, id, opts, callback) {
+    this.operationVaultPatchcredentialcertificateIdWithHttpInfo = function(vaultId, id, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject52'];
 
@@ -1087,17 +1175,25 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultPatchcredentialpasswordId operation.
-     * @callback module:api/VaultApi~operationVaultPatchcredentialpasswordIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialPassword} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/certificate/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject52} opts.inlineObject52 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
+    this.operationVaultPatchcredentialcertificateId = function(vaultId, id, opts) {
+      return this.operationVaultPatchcredentialcertificateIdWithHttpInfo(vaultId, id, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/password/:id
@@ -1105,10 +1201,9 @@
      * @param {String} id id
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject50} opts.inlineObject50 
-     * @param {module:api/VaultApi~operationVaultPatchcredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialPassword}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
      */
-    this.operationVaultPatchcredentialpasswordId = function(vaultId, id, opts, callback) {
+    this.operationVaultPatchcredentialpasswordIdWithHttpInfo = function(vaultId, id, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject50'];
 
@@ -1144,26 +1239,33 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/password/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultPatchtag operation.
-     * @callback module:api/VaultApi~operationVaultPatchtagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/password/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject50} opts.inlineObject50 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
      */
+    this.operationVaultPatchcredentialpasswordId = function(vaultId, id, opts) {
+      return this.operationVaultPatchcredentialpasswordIdWithHttpInfo(vaultId, id, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} vaultId ID of vault
      * @param {Object.<String, {String: String}>} requestBody 
-     * @param {module:api/VaultApi~operationVaultPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationVaultPatchtag = function(vaultId, requestBody, callback) {
+    this.operationVaultPatchtagWithHttpInfo = function(vaultId, requestBody) {
       var postBody = requestBody;
 
       // verify the required parameter 'vaultId' is set
@@ -1197,27 +1299,32 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/tag/', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultPostaccessrights operation.
-     * @callback module:api/VaultApi~operationVaultPostaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {String} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} vaultId ID of vault
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationVaultPatchtag = function(vaultId, requestBody) {
+      return this.operationVaultPatchtagWithHttpInfo(vaultId, requestBody)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} vaultId ID of vault
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject53} opts.inlineObject53 
-     * @param {module:api/VaultApi~operationVaultPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationVaultPostaccessrights = function(vaultId, opts, callback) {
+    this.operationVaultPostaccessrightsWithHttpInfo = function(vaultId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject53'];
 
@@ -1247,27 +1354,33 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/accessrights/', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultPostcredentialcertificate operation.
-     * @callback module:api/VaultApi~operationVaultPostcredentialcertificateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialCertificate} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject53} opts.inlineObject53 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
+    this.operationVaultPostaccessrights = function(vaultId, opts) {
+      return this.operationVaultPostaccessrightsWithHttpInfo(vaultId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/certificate
      * @param {String} vaultId ID of vault
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject51} opts.inlineObject51 
-     * @param {module:api/VaultApi~operationVaultPostcredentialcertificateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialCertificate}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.operationVaultPostcredentialcertificate = function(vaultId, opts, callback) {
+    this.operationVaultPostcredentialcertificateWithHttpInfo = function(vaultId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject51'];
 
@@ -1297,27 +1410,33 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVaultPostcredentialpassword operation.
-     * @callback module:api/VaultApi~operationVaultPostcredentialpasswordCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialPassword} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/certificate
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject51} opts.inlineObject51 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
+    this.operationVaultPostcredentialcertificate = function(vaultId, opts) {
+      return this.operationVaultPostcredentialcertificateWithHttpInfo(vaultId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/password
      * @param {String} vaultId ID of vault
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject49} opts.inlineObject49 
-     * @param {module:api/VaultApi~operationVaultPostcredentialpasswordCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialPassword}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
      */
-    this.operationVaultPostcredentialpassword = function(vaultId, opts, callback) {
+    this.operationVaultPostcredentialpasswordWithHttpInfo = function(vaultId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject49'];
 
@@ -1347,26 +1466,32 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/password', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the showVault operation.
-     * @callback module:api/VaultApi~showVaultCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/password
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject49} opts.inlineObject49 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
      */
+    this.operationVaultPostcredentialpassword = function(vaultId, opts) {
+      return this.operationVaultPostcredentialpasswordWithHttpInfo(vaultId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get
      * Returns a single vault
      * @param {String} vaultId ID of vault
-     * @param {module:api/VaultApi~showVaultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.showVault = function(vaultId, callback) {
+    this.showVaultWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
@@ -1395,17 +1520,23 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateVault operation.
-     * @callback module:api/VaultApi~updateVaultCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vault} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get
+     * Returns a single vault
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
+    this.showVault = function(vaultId) {
+      return this.showVaultWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update
@@ -1413,10 +1544,9 @@
      * @param {String} vaultId ID of vault
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject48} opts.inlineObject48 
-     * @param {module:api/VaultApi~updateVaultCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.updateVault = function(vaultId, opts, callback) {
+    this.updateVaultWithHttpInfo = function(vaultId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject48'];
 
@@ -1446,8 +1576,23 @@
       return this.apiClient.callApi(
         '/vault/{vaultId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Update
+     * Returns modified vault
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject48} opts.inlineObject48 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+     */
+    this.updateVault = function(vaultId, opts) {
+      return this.updateVaultWithHttpInfo(vaultId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

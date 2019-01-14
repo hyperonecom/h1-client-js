@@ -47,13 +47,6 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the actionOrganisationTransferAccept operation.
-     * @callback module:api/OrganisationApi~actionOrganisationTransferAcceptCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Organisation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * /actions/transfer_accept
@@ -61,10 +54,9 @@
      * @param {String} organisationId ID of organisation
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject5} opts.inlineObject5 
-     * @param {module:api/OrganisationApi~actionOrganisationTransferAcceptCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Organisation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
-    this.actionOrganisationTransferAccept = function(organisationId, opts, callback) {
+    this.actionOrganisationTransferAcceptWithHttpInfo = function(organisationId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject5'];
 
@@ -94,27 +86,34 @@
       return this.apiClient.callApi(
         '/organisation/{organisationId}/actions/transfer_accept', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createOrganisation operation.
-     * @callback module:api/OrganisationApi~createOrganisationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Organisation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/transfer_accept
+     * Action transfer_accept
+     * @param {String} organisationId ID of organisation
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject5} opts.inlineObject5 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
      */
+    this.actionOrganisationTransferAccept = function(organisationId, opts) {
+      return this.actionOrganisationTransferAcceptWithHttpInfo(organisationId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create
      * Create organisation
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject3} opts.inlineObject3 
-     * @param {module:api/OrganisationApi~createOrganisationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Organisation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
-    this.createOrganisation = function(opts, callback) {
+    this.createOrganisationWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['inlineObject3'];
 
@@ -138,17 +137,24 @@
       return this.apiClient.callApi(
         '/organisation', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listOrganisation operation.
-     * @callback module:api/OrganisationApi~listOrganisationCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Organisation>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create organisation
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject3} opts.inlineObject3 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
      */
+    this.createOrganisation = function(opts) {
+      return this.createOrganisationWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List
@@ -158,10 +164,9 @@
      * @param {String} opts.billingCompany Filter by billing.company
      * @param {String} opts.limit Filter by $limit
      * @param {String} opts.active Filter by active
-     * @param {module:api/OrganisationApi~listOrganisationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Organisation>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Organisation>} and HTTP response
      */
-    this.listOrganisation = function(opts, callback) {
+    this.listOrganisationWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -189,26 +194,35 @@
       return this.apiClient.callApi(
         '/organisation', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationOrganisationDeleteaccessrightsIdentity operation.
-     * @callback module:api/OrganisationApi~operationOrganisationDeleteaccessrightsIdentityCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Organisation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List organisation
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @param {String} opts.billingCompany Filter by billing.company
+     * @param {String} opts.limit Filter by $limit
+     * @param {String} opts.active Filter by active
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Organisation>}
      */
+    this.listOrganisation = function(opts) {
+      return this.listOrganisationWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/:identity
      * @param {String} organisationId ID of organisation
      * @param {String} identity identity
-     * @param {module:api/OrganisationApi~operationOrganisationDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Organisation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
-    this.operationOrganisationDeleteaccessrightsIdentity = function(organisationId, identity, callback) {
+    this.operationOrganisationDeleteaccessrightsIdentityWithHttpInfo = function(organisationId, identity) {
       var postBody = null;
 
       // verify the required parameter 'organisationId' is set
@@ -243,26 +257,31 @@
       return this.apiClient.callApi(
         '/organisation/{organisationId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationOrganisationDeletetagKey operation.
-     * @callback module:api/OrganisationApi~operationOrganisationDeletetagKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/:identity
+     * @param {String} organisationId ID of organisation
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
      */
+    this.operationOrganisationDeleteaccessrightsIdentity = function(organisationId, identity) {
+      return this.operationOrganisationDeleteaccessrightsIdentityWithHttpInfo(organisationId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/:key
      * @param {String} organisationId ID of organisation
      * @param {String} key key
-     * @param {module:api/OrganisationApi~operationOrganisationDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationOrganisationDeletetagKey = function(organisationId, key, callback) {
+    this.operationOrganisationDeletetagKeyWithHttpInfo = function(organisationId, key) {
       var postBody = null;
 
       // verify the required parameter 'organisationId' is set
@@ -297,25 +316,30 @@
       return this.apiClient.callApi(
         '/organisation/{organisationId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationOrganisationGettag operation.
-     * @callback module:api/OrganisationApi~operationOrganisationGettagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/:key
+     * @param {String} organisationId ID of organisation
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationOrganisationDeletetagKey = function(organisationId, key) {
+      return this.operationOrganisationDeletetagKeyWithHttpInfo(organisationId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} organisationId ID of organisation
-     * @param {module:api/OrganisationApi~operationOrganisationGettagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationOrganisationGettag = function(organisationId, callback) {
+    this.operationOrganisationGettagWithHttpInfo = function(organisationId) {
       var postBody = null;
 
       // verify the required parameter 'organisationId' is set
@@ -344,25 +368,29 @@
       return this.apiClient.callApi(
         '/organisation/{organisationId}/tag/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationOrganisationListaccessrights operation.
-     * @callback module:api/OrganisationApi~operationOrganisationListaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/OrganisationAccessRights>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} organisationId ID of organisation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationOrganisationGettag = function(organisationId) {
+      return this.operationOrganisationGettagWithHttpInfo(organisationId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} organisationId ID of organisation
-     * @param {module:api/OrganisationApi~operationOrganisationListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/OrganisationAccessRights>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/OrganisationAccessRights>} and HTTP response
      */
-    this.operationOrganisationListaccessrights = function(organisationId, callback) {
+    this.operationOrganisationListaccessrightsWithHttpInfo = function(organisationId) {
       var postBody = null;
 
       // verify the required parameter 'organisationId' is set
@@ -391,25 +419,29 @@
       return this.apiClient.callApi(
         '/organisation/{organisationId}/accessrights/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationOrganisationListqueue operation.
-     * @callback module:api/OrganisationApi~operationOrganisationListqueueCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Event>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} organisationId ID of organisation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/OrganisationAccessRights>}
      */
+    this.operationOrganisationListaccessrights = function(organisationId) {
+      return this.operationOrganisationListaccessrightsWithHttpInfo(organisationId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /queue/
      * @param {String} organisationId ID of organisation
-     * @param {module:api/OrganisationApi~operationOrganisationListqueueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Event>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationOrganisationListqueue = function(organisationId, callback) {
+    this.operationOrganisationListqueueWithHttpInfo = function(organisationId) {
       var postBody = null;
 
       // verify the required parameter 'organisationId' is set
@@ -438,26 +470,30 @@
       return this.apiClient.callApi(
         '/organisation/{organisationId}/queue/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationOrganisationPatchtag operation.
-     * @callback module:api/OrganisationApi~operationOrganisationPatchtagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /queue/
+     * @param {String} organisationId ID of organisation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
+    this.operationOrganisationListqueue = function(organisationId) {
+      return this.operationOrganisationListqueueWithHttpInfo(organisationId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} organisationId ID of organisation
      * @param {Object.<String, {String: String}>} requestBody 
-     * @param {module:api/OrganisationApi~operationOrganisationPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationOrganisationPatchtag = function(organisationId, requestBody, callback) {
+    this.operationOrganisationPatchtagWithHttpInfo = function(organisationId, requestBody) {
       var postBody = requestBody;
 
       // verify the required parameter 'organisationId' is set
@@ -491,27 +527,32 @@
       return this.apiClient.callApi(
         '/organisation/{organisationId}/tag/', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationOrganisationPostaccessrights operation.
-     * @callback module:api/OrganisationApi~operationOrganisationPostaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/OrganisationAccessRights} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} organisationId ID of organisation
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationOrganisationPatchtag = function(organisationId, requestBody) {
+      return this.operationOrganisationPatchtagWithHttpInfo(organisationId, requestBody)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} organisationId ID of organisation
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject6} opts.inlineObject6 
-     * @param {module:api/OrganisationApi~operationOrganisationPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/OrganisationAccessRights}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrganisationAccessRights} and HTTP response
      */
-    this.operationOrganisationPostaccessrights = function(organisationId, opts, callback) {
+    this.operationOrganisationPostaccessrightsWithHttpInfo = function(organisationId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject6'];
 
@@ -541,26 +582,32 @@
       return this.apiClient.callApi(
         '/organisation/{organisationId}/accessrights/', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the showOrganisation operation.
-     * @callback module:api/OrganisationApi~showOrganisationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Organisation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} organisationId ID of organisation
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject6} opts.inlineObject6 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrganisationAccessRights}
      */
+    this.operationOrganisationPostaccessrights = function(organisationId, opts) {
+      return this.operationOrganisationPostaccessrightsWithHttpInfo(organisationId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get
      * Returns a single organisation
      * @param {String} organisationId ID of organisation
-     * @param {module:api/OrganisationApi~showOrganisationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Organisation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
-    this.showOrganisation = function(organisationId, callback) {
+    this.showOrganisationWithHttpInfo = function(organisationId) {
       var postBody = null;
 
       // verify the required parameter 'organisationId' is set
@@ -589,17 +636,23 @@
       return this.apiClient.callApi(
         '/organisation/{organisationId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateOrganisation operation.
-     * @callback module:api/OrganisationApi~updateOrganisationCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Organisation} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get
+     * Returns a single organisation
+     * @param {String} organisationId ID of organisation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
      */
+    this.showOrganisation = function(organisationId) {
+      return this.showOrganisationWithHttpInfo(organisationId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update
@@ -607,10 +660,9 @@
      * @param {String} organisationId ID of organisation
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject4} opts.inlineObject4 
-     * @param {module:api/OrganisationApi~updateOrganisationCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Organisation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
-    this.updateOrganisation = function(organisationId, opts, callback) {
+    this.updateOrganisationWithHttpInfo = function(organisationId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject4'];
 
@@ -640,8 +692,23 @@
       return this.apiClient.callApi(
         '/organisation/{organisationId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Update
+     * Returns modified organisation
+     * @param {String} organisationId ID of organisation
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject4} opts.inlineObject4 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
+     */
+    this.updateOrganisation = function(organisationId, opts) {
+      return this.updateOrganisationWithHttpInfo(organisationId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

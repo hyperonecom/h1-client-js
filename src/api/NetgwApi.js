@@ -47,22 +47,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the actionNetgwAttach operation.
-     * @callback module:api/NetgwApi~actionNetgwAttachCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Netgw} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * /actions/attach
      * Action attach
      * @param {String} netgwId ID of netgw
-     * @param {module:api/NetgwApi~actionNetgwAttachCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Netgw}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.actionNetgwAttach = function(netgwId, callback) {
+    this.actionNetgwAttachWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -91,26 +83,31 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/actions/attach', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionNetgwDetach operation.
-     * @callback module:api/NetgwApi~actionNetgwDetachCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Netgw} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/attach
+     * Action attach
+     * @param {String} netgwId ID of netgw
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
+    this.actionNetgwAttach = function(netgwId) {
+      return this.actionNetgwAttachWithHttpInfo(netgwId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/detach
      * Action detach
      * @param {String} netgwId ID of netgw
-     * @param {module:api/NetgwApi~actionNetgwDetachCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Netgw}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.actionNetgwDetach = function(netgwId, callback) {
+    this.actionNetgwDetachWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -139,27 +136,32 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/actions/detach', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createNetgw operation.
-     * @callback module:api/NetgwApi~createNetgwCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Netgw} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/detach
+     * Action detach
+     * @param {String} netgwId ID of netgw
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
+    this.actionNetgwDetach = function(netgwId) {
+      return this.actionNetgwDetachWithHttpInfo(netgwId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create
      * Create netgw
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject20} opts.inlineObject20 
-     * @param {module:api/NetgwApi~createNetgwCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Netgw}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.createNetgw = function(opts, callback) {
+    this.createNetgwWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['inlineObject20'];
 
@@ -183,24 +185,31 @@
       return this.apiClient.callApi(
         '/netgw', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteNetgw operation.
-     * @callback module:api/NetgwApi~deleteNetgwCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create netgw
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject20} opts.inlineObject20 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
+    this.createNetgw = function(opts) {
+      return this.createNetgwWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete
      * @param {String} netgwId ID of netgw
-     * @param {module:api/NetgwApi~deleteNetgwCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteNetgw = function(netgwId, callback) {
+    this.deleteNetgwWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -229,27 +238,31 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listNetgw operation.
-     * @callback module:api/NetgwApi~listNetgwCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Netgw>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete
+     * @param {String} netgwId ID of netgw
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteNetgw = function(netgwId) {
+      return this.deleteNetgwWithHttpInfo(netgwId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List
      * List netgw
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/NetgwApi~listNetgwCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Netgw>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Netgw>} and HTTP response
      */
-    this.listNetgw = function(opts, callback) {
+    this.listNetgwWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -274,26 +287,32 @@
       return this.apiClient.callApi(
         '/netgw', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationNetgwDeleteaccessrightsIdentity operation.
-     * @callback module:api/NetgwApi~operationNetgwDeleteaccessrightsIdentityCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Netgw} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List netgw
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Netgw>}
      */
+    this.listNetgw = function(opts) {
+      return this.listNetgwWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/:identity
      * @param {String} netgwId ID of netgw
      * @param {String} identity identity
-     * @param {module:api/NetgwApi~operationNetgwDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Netgw}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.operationNetgwDeleteaccessrightsIdentity = function(netgwId, identity, callback) {
+    this.operationNetgwDeleteaccessrightsIdentityWithHttpInfo = function(netgwId, identity) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -328,26 +347,31 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationNetgwDeletetagKey operation.
-     * @callback module:api/NetgwApi~operationNetgwDeletetagKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/:identity
+     * @param {String} netgwId ID of netgw
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
+    this.operationNetgwDeleteaccessrightsIdentity = function(netgwId, identity) {
+      return this.operationNetgwDeleteaccessrightsIdentityWithHttpInfo(netgwId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/:key
      * @param {String} netgwId ID of netgw
      * @param {String} key key
-     * @param {module:api/NetgwApi~operationNetgwDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationNetgwDeletetagKey = function(netgwId, key, callback) {
+    this.operationNetgwDeletetagKeyWithHttpInfo = function(netgwId, key) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -382,26 +406,31 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationNetgwGetservicesServiceId operation.
-     * @callback module:api/NetgwApi~operationNetgwGetservicesServiceIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/NetgwServices} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/:key
+     * @param {String} netgwId ID of netgw
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationNetgwDeletetagKey = function(netgwId, key) {
+      return this.operationNetgwDeletetagKeyWithHttpInfo(netgwId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/:serviceId
      * @param {String} netgwId ID of netgw
      * @param {String} serviceId serviceId
-     * @param {module:api/NetgwApi~operationNetgwGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/NetgwServices}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NetgwServices} and HTTP response
      */
-    this.operationNetgwGetservicesServiceId = function(netgwId, serviceId, callback) {
+    this.operationNetgwGetservicesServiceIdWithHttpInfo = function(netgwId, serviceId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -436,25 +465,30 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationNetgwGettag operation.
-     * @callback module:api/NetgwApi~operationNetgwGettagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/:serviceId
+     * @param {String} netgwId ID of netgw
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NetgwServices}
      */
+    this.operationNetgwGetservicesServiceId = function(netgwId, serviceId) {
+      return this.operationNetgwGetservicesServiceIdWithHttpInfo(netgwId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} netgwId ID of netgw
-     * @param {module:api/NetgwApi~operationNetgwGettagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationNetgwGettag = function(netgwId, callback) {
+    this.operationNetgwGettagWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -483,25 +517,29 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/tag/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationNetgwListaccessrights operation.
-     * @callback module:api/NetgwApi~operationNetgwListaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<String>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} netgwId ID of netgw
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationNetgwGettag = function(netgwId) {
+      return this.operationNetgwGettagWithHttpInfo(netgwId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} netgwId ID of netgw
-     * @param {module:api/NetgwApi~operationNetgwListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<String>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationNetgwListaccessrights = function(netgwId, callback) {
+    this.operationNetgwListaccessrightsWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -530,25 +568,29 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/accessrights/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationNetgwListqueue operation.
-     * @callback module:api/NetgwApi~operationNetgwListqueueCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Event>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} netgwId ID of netgw
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
+    this.operationNetgwListaccessrights = function(netgwId) {
+      return this.operationNetgwListaccessrightsWithHttpInfo(netgwId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /queue/
      * @param {String} netgwId ID of netgw
-     * @param {module:api/NetgwApi~operationNetgwListqueueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Event>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationNetgwListqueue = function(netgwId, callback) {
+    this.operationNetgwListqueueWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -577,25 +619,29 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/queue/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationNetgwListservices operation.
-     * @callback module:api/NetgwApi~operationNetgwListservicesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/NetgwServices>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /queue/
+     * @param {String} netgwId ID of netgw
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
+    this.operationNetgwListqueue = function(netgwId) {
+      return this.operationNetgwListqueueWithHttpInfo(netgwId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/
      * @param {String} netgwId ID of netgw
-     * @param {module:api/NetgwApi~operationNetgwListservicesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/NetgwServices>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/NetgwServices>} and HTTP response
      */
-    this.operationNetgwListservices = function(netgwId, callback) {
+    this.operationNetgwListservicesWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -624,26 +670,30 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/services/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationNetgwPatchtag operation.
-     * @callback module:api/NetgwApi~operationNetgwPatchtagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/
+     * @param {String} netgwId ID of netgw
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/NetgwServices>}
      */
+    this.operationNetgwListservices = function(netgwId) {
+      return this.operationNetgwListservicesWithHttpInfo(netgwId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} netgwId ID of netgw
      * @param {Object.<String, {String: String}>} requestBody 
-     * @param {module:api/NetgwApi~operationNetgwPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationNetgwPatchtag = function(netgwId, requestBody, callback) {
+    this.operationNetgwPatchtagWithHttpInfo = function(netgwId, requestBody) {
       var postBody = requestBody;
 
       // verify the required parameter 'netgwId' is set
@@ -677,27 +727,32 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/tag/', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationNetgwPostaccessrights operation.
-     * @callback module:api/NetgwApi~operationNetgwPostaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {String} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} netgwId ID of netgw
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationNetgwPatchtag = function(netgwId, requestBody) {
+      return this.operationNetgwPatchtagWithHttpInfo(netgwId, requestBody)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} netgwId ID of netgw
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject22} opts.inlineObject22 
-     * @param {module:api/NetgwApi~operationNetgwPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationNetgwPostaccessrights = function(netgwId, opts, callback) {
+    this.operationNetgwPostaccessrightsWithHttpInfo = function(netgwId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject22'];
 
@@ -727,26 +782,32 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}/accessrights/', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the showNetgw operation.
-     * @callback module:api/NetgwApi~showNetgwCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Netgw} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} netgwId ID of netgw
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject22} opts.inlineObject22 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
+    this.operationNetgwPostaccessrights = function(netgwId, opts) {
+      return this.operationNetgwPostaccessrightsWithHttpInfo(netgwId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get
      * Returns a single netgw
      * @param {String} netgwId ID of netgw
-     * @param {module:api/NetgwApi~showNetgwCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Netgw}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.showNetgw = function(netgwId, callback) {
+    this.showNetgwWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
@@ -775,17 +836,23 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateNetgw operation.
-     * @callback module:api/NetgwApi~updateNetgwCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Netgw} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get
+     * Returns a single netgw
+     * @param {String} netgwId ID of netgw
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
+    this.showNetgw = function(netgwId) {
+      return this.showNetgwWithHttpInfo(netgwId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update
@@ -793,10 +860,9 @@
      * @param {String} netgwId ID of netgw
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject21} opts.inlineObject21 
-     * @param {module:api/NetgwApi~updateNetgwCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Netgw}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.updateNetgw = function(netgwId, opts, callback) {
+    this.updateNetgwWithHttpInfo = function(netgwId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject21'];
 
@@ -826,8 +892,23 @@
       return this.apiClient.callApi(
         '/netgw/{netgwId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Update
+     * Returns modified netgw
+     * @param {String} netgwId ID of netgw
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject21} opts.inlineObject21 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
+     */
+    this.updateNetgw = function(netgwId, opts) {
+      return this.updateNetgwWithHttpInfo(netgwId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

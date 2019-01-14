@@ -47,22 +47,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the actionContainerRestart operation.
-     * @callback module:api/ContainerApi~actionContainerRestartCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Container} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * /actions/restart
      * Action restart
      * @param {String} containerId ID of container
-     * @param {module:api/ContainerApi~actionContainerRestartCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Container}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.actionContainerRestart = function(containerId, callback) {
+    this.actionContainerRestartWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -91,26 +83,31 @@
       return this.apiClient.callApi(
         '/container/{containerId}/actions/restart', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionContainerStart operation.
-     * @callback module:api/ContainerApi~actionContainerStartCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Container} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/restart
+     * Action restart
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
+    this.actionContainerRestart = function(containerId) {
+      return this.actionContainerRestartWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/start
      * Action start
      * @param {String} containerId ID of container
-     * @param {module:api/ContainerApi~actionContainerStartCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Container}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.actionContainerStart = function(containerId, callback) {
+    this.actionContainerStartWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -139,26 +136,31 @@
       return this.apiClient.callApi(
         '/container/{containerId}/actions/start', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionContainerStop operation.
-     * @callback module:api/ContainerApi~actionContainerStopCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Container} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/start
+     * Action start
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
+    this.actionContainerStart = function(containerId) {
+      return this.actionContainerStartWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/stop
      * Action stop
      * @param {String} containerId ID of container
-     * @param {module:api/ContainerApi~actionContainerStopCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Container}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.actionContainerStop = function(containerId, callback) {
+    this.actionContainerStopWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -187,27 +189,32 @@
       return this.apiClient.callApi(
         '/container/{containerId}/actions/stop', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createContainer operation.
-     * @callback module:api/ContainerApi~createContainerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Container} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/stop
+     * Action stop
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
+    this.actionContainerStop = function(containerId) {
+      return this.actionContainerStopWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create
      * Create container
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject7} opts.inlineObject7 
-     * @param {module:api/ContainerApi~createContainerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Container}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.createContainer = function(opts, callback) {
+    this.createContainerWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['inlineObject7'];
 
@@ -231,24 +238,31 @@
       return this.apiClient.callApi(
         '/container', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteContainer operation.
-     * @callback module:api/ContainerApi~deleteContainerCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create container
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject7} opts.inlineObject7 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
+    this.createContainer = function(opts) {
+      return this.createContainerWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete
      * @param {String} containerId ID of container
-     * @param {module:api/ContainerApi~deleteContainerCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteContainer = function(containerId, callback) {
+    this.deleteContainerWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -277,27 +291,31 @@
       return this.apiClient.callApi(
         '/container/{containerId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listContainer operation.
-     * @callback module:api/ContainerApi~listContainerCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Container>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteContainer = function(containerId) {
+      return this.deleteContainerWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List
      * List container
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/ContainerApi~listContainerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Container>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Container>} and HTTP response
      */
-    this.listContainer = function(opts, callback) {
+    this.listContainerWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -322,26 +340,32 @@
       return this.apiClient.callApi(
         '/container', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationContainerDeleteaccessrightsIdentity operation.
-     * @callback module:api/ContainerApi~operationContainerDeleteaccessrightsIdentityCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Container} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List container
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Container>}
      */
+    this.listContainer = function(opts) {
+      return this.listContainerWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/:identity
      * @param {String} containerId ID of container
      * @param {String} identity identity
-     * @param {module:api/ContainerApi~operationContainerDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Container}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.operationContainerDeleteaccessrightsIdentity = function(containerId, identity, callback) {
+    this.operationContainerDeleteaccessrightsIdentityWithHttpInfo = function(containerId, identity) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -376,26 +400,31 @@
       return this.apiClient.callApi(
         '/container/{containerId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationContainerDeletetagKey operation.
-     * @callback module:api/ContainerApi~operationContainerDeletetagKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/:identity
+     * @param {String} containerId ID of container
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
+    this.operationContainerDeleteaccessrightsIdentity = function(containerId, identity) {
+      return this.operationContainerDeleteaccessrightsIdentityWithHttpInfo(containerId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/:key
      * @param {String} containerId ID of container
      * @param {String} key key
-     * @param {module:api/ContainerApi~operationContainerDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationContainerDeletetagKey = function(containerId, key, callback) {
+    this.operationContainerDeletetagKeyWithHttpInfo = function(containerId, key) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -430,26 +459,31 @@
       return this.apiClient.callApi(
         '/container/{containerId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationContainerGetservicesServiceId operation.
-     * @callback module:api/ContainerApi~operationContainerGetservicesServiceIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ContainerServices} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/:key
+     * @param {String} containerId ID of container
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationContainerDeletetagKey = function(containerId, key) {
+      return this.operationContainerDeletetagKeyWithHttpInfo(containerId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/:serviceId
      * @param {String} containerId ID of container
      * @param {String} serviceId serviceId
-     * @param {module:api/ContainerApi~operationContainerGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ContainerServices}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContainerServices} and HTTP response
      */
-    this.operationContainerGetservicesServiceId = function(containerId, serviceId, callback) {
+    this.operationContainerGetservicesServiceIdWithHttpInfo = function(containerId, serviceId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -484,25 +518,30 @@
       return this.apiClient.callApi(
         '/container/{containerId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationContainerGettag operation.
-     * @callback module:api/ContainerApi~operationContainerGettagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/:serviceId
+     * @param {String} containerId ID of container
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContainerServices}
      */
+    this.operationContainerGetservicesServiceId = function(containerId, serviceId) {
+      return this.operationContainerGetservicesServiceIdWithHttpInfo(containerId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} containerId ID of container
-     * @param {module:api/ContainerApi~operationContainerGettagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationContainerGettag = function(containerId, callback) {
+    this.operationContainerGettagWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -531,25 +570,29 @@
       return this.apiClient.callApi(
         '/container/{containerId}/tag/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationContainerListaccessrights operation.
-     * @callback module:api/ContainerApi~operationContainerListaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<String>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationContainerGettag = function(containerId) {
+      return this.operationContainerGettagWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} containerId ID of container
-     * @param {module:api/ContainerApi~operationContainerListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<String>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationContainerListaccessrights = function(containerId, callback) {
+    this.operationContainerListaccessrightsWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -578,25 +621,29 @@
       return this.apiClient.callApi(
         '/container/{containerId}/accessrights/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationContainerListqueue operation.
-     * @callback module:api/ContainerApi~operationContainerListqueueCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Event>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
+    this.operationContainerListaccessrights = function(containerId) {
+      return this.operationContainerListaccessrightsWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /queue/
      * @param {String} containerId ID of container
-     * @param {module:api/ContainerApi~operationContainerListqueueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Event>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationContainerListqueue = function(containerId, callback) {
+    this.operationContainerListqueueWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -625,25 +672,29 @@
       return this.apiClient.callApi(
         '/container/{containerId}/queue/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationContainerListservices operation.
-     * @callback module:api/ContainerApi~operationContainerListservicesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/ContainerServices>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /queue/
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
+    this.operationContainerListqueue = function(containerId) {
+      return this.operationContainerListqueueWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/
      * @param {String} containerId ID of container
-     * @param {module:api/ContainerApi~operationContainerListservicesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/ContainerServices>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ContainerServices>} and HTTP response
      */
-    this.operationContainerListservices = function(containerId, callback) {
+    this.operationContainerListservicesWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -672,26 +723,30 @@
       return this.apiClient.callApi(
         '/container/{containerId}/services/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationContainerPatchtag operation.
-     * @callback module:api/ContainerApi~operationContainerPatchtagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ContainerServices>}
      */
+    this.operationContainerListservices = function(containerId) {
+      return this.operationContainerListservicesWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} containerId ID of container
      * @param {Object.<String, {String: String}>} requestBody 
-     * @param {module:api/ContainerApi~operationContainerPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationContainerPatchtag = function(containerId, requestBody, callback) {
+    this.operationContainerPatchtagWithHttpInfo = function(containerId, requestBody) {
       var postBody = requestBody;
 
       // verify the required parameter 'containerId' is set
@@ -725,27 +780,32 @@
       return this.apiClient.callApi(
         '/container/{containerId}/tag/', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationContainerPostaccessrights operation.
-     * @callback module:api/ContainerApi~operationContainerPostaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {String} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} containerId ID of container
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationContainerPatchtag = function(containerId, requestBody) {
+      return this.operationContainerPatchtagWithHttpInfo(containerId, requestBody)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} containerId ID of container
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject9} opts.inlineObject9 
-     * @param {module:api/ContainerApi~operationContainerPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationContainerPostaccessrights = function(containerId, opts, callback) {
+    this.operationContainerPostaccessrightsWithHttpInfo = function(containerId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject9'];
 
@@ -775,26 +835,32 @@
       return this.apiClient.callApi(
         '/container/{containerId}/accessrights/', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the showContainer operation.
-     * @callback module:api/ContainerApi~showContainerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Container} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} containerId ID of container
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject9} opts.inlineObject9 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
+    this.operationContainerPostaccessrights = function(containerId, opts) {
+      return this.operationContainerPostaccessrightsWithHttpInfo(containerId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get
      * Returns a single container
      * @param {String} containerId ID of container
-     * @param {module:api/ContainerApi~showContainerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Container}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.showContainer = function(containerId, callback) {
+    this.showContainerWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
@@ -823,17 +889,23 @@
       return this.apiClient.callApi(
         '/container/{containerId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateContainer operation.
-     * @callback module:api/ContainerApi~updateContainerCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Container} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get
+     * Returns a single container
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
+    this.showContainer = function(containerId) {
+      return this.showContainerWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update
@@ -841,10 +913,9 @@
      * @param {String} containerId ID of container
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject8} opts.inlineObject8 
-     * @param {module:api/ContainerApi~updateContainerCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Container}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.updateContainer = function(containerId, opts, callback) {
+    this.updateContainerWithHttpInfo = function(containerId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject8'];
 
@@ -874,8 +945,23 @@
       return this.apiClient.callApi(
         '/container/{containerId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Update
+     * Returns modified container
+     * @param {String} containerId ID of container
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject8} opts.inlineObject8 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
+     */
+    this.updateContainer = function(containerId, opts) {
+      return this.updateContainerWithHttpInfo(containerId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

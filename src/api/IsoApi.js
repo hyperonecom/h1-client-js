@@ -47,13 +47,6 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the actionIsoTransfer operation.
-     * @callback module:api/IsoApi~actionIsoTransferCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Iso} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * /actions/transfer
@@ -61,10 +54,9 @@
      * @param {String} isoId ID of iso
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject33} opts.inlineObject33 
-     * @param {module:api/IsoApi~actionIsoTransferCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Iso}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Iso} and HTTP response
      */
-    this.actionIsoTransfer = function(isoId, opts, callback) {
+    this.actionIsoTransferWithHttpInfo = function(isoId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject33'];
 
@@ -94,27 +86,34 @@
       return this.apiClient.callApi(
         '/iso/{isoId}/actions/transfer', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createIso operation.
-     * @callback module:api/IsoApi~createIsoCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Iso} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/transfer
+     * Action transfer
+     * @param {String} isoId ID of iso
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject33} opts.inlineObject33 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Iso}
      */
+    this.actionIsoTransfer = function(isoId, opts) {
+      return this.actionIsoTransferWithHttpInfo(isoId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create
      * Create iso
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject31} opts.inlineObject31 
-     * @param {module:api/IsoApi~createIsoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Iso}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Iso} and HTTP response
      */
-    this.createIso = function(opts, callback) {
+    this.createIsoWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['inlineObject31'];
 
@@ -138,24 +137,31 @@
       return this.apiClient.callApi(
         '/iso', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteIso operation.
-     * @callback module:api/IsoApi~deleteIsoCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create iso
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject31} opts.inlineObject31 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Iso}
      */
+    this.createIso = function(opts) {
+      return this.createIsoWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete
      * @param {String} isoId ID of iso
-     * @param {module:api/IsoApi~deleteIsoCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteIso = function(isoId, callback) {
+    this.deleteIsoWithHttpInfo = function(isoId) {
       var postBody = null;
 
       // verify the required parameter 'isoId' is set
@@ -184,27 +190,31 @@
       return this.apiClient.callApi(
         '/iso/{isoId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listIso operation.
-     * @callback module:api/IsoApi~listIsoCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Iso>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete
+     * @param {String} isoId ID of iso
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteIso = function(isoId) {
+      return this.deleteIsoWithHttpInfo(isoId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List
      * List iso
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/IsoApi~listIsoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Iso>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Iso>} and HTTP response
      */
-    this.listIso = function(opts, callback) {
+    this.listIsoWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -229,26 +239,32 @@
       return this.apiClient.callApi(
         '/iso', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIsoDeleteaccessrightsIdentity operation.
-     * @callback module:api/IsoApi~operationIsoDeleteaccessrightsIdentityCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Iso} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List iso
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Iso>}
      */
+    this.listIso = function(opts) {
+      return this.listIsoWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/:identity
      * @param {String} isoId ID of iso
      * @param {String} identity identity
-     * @param {module:api/IsoApi~operationIsoDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Iso}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Iso} and HTTP response
      */
-    this.operationIsoDeleteaccessrightsIdentity = function(isoId, identity, callback) {
+    this.operationIsoDeleteaccessrightsIdentityWithHttpInfo = function(isoId, identity) {
       var postBody = null;
 
       // verify the required parameter 'isoId' is set
@@ -283,26 +299,31 @@
       return this.apiClient.callApi(
         '/iso/{isoId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIsoDeletetagKey operation.
-     * @callback module:api/IsoApi~operationIsoDeletetagKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/:identity
+     * @param {String} isoId ID of iso
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Iso}
      */
+    this.operationIsoDeleteaccessrightsIdentity = function(isoId, identity) {
+      return this.operationIsoDeleteaccessrightsIdentityWithHttpInfo(isoId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/:key
      * @param {String} isoId ID of iso
      * @param {String} key key
-     * @param {module:api/IsoApi~operationIsoDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationIsoDeletetagKey = function(isoId, key, callback) {
+    this.operationIsoDeletetagKeyWithHttpInfo = function(isoId, key) {
       var postBody = null;
 
       // verify the required parameter 'isoId' is set
@@ -337,26 +358,31 @@
       return this.apiClient.callApi(
         '/iso/{isoId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIsoGetservicesServiceId operation.
-     * @callback module:api/IsoApi~operationIsoGetservicesServiceIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/IsoServices} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/:key
+     * @param {String} isoId ID of iso
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationIsoDeletetagKey = function(isoId, key) {
+      return this.operationIsoDeletetagKeyWithHttpInfo(isoId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/:serviceId
      * @param {String} isoId ID of iso
      * @param {String} serviceId serviceId
-     * @param {module:api/IsoApi~operationIsoGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/IsoServices}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IsoServices} and HTTP response
      */
-    this.operationIsoGetservicesServiceId = function(isoId, serviceId, callback) {
+    this.operationIsoGetservicesServiceIdWithHttpInfo = function(isoId, serviceId) {
       var postBody = null;
 
       // verify the required parameter 'isoId' is set
@@ -391,25 +417,30 @@
       return this.apiClient.callApi(
         '/iso/{isoId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIsoGettag operation.
-     * @callback module:api/IsoApi~operationIsoGettagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/:serviceId
+     * @param {String} isoId ID of iso
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IsoServices}
      */
+    this.operationIsoGetservicesServiceId = function(isoId, serviceId) {
+      return this.operationIsoGetservicesServiceIdWithHttpInfo(isoId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} isoId ID of iso
-     * @param {module:api/IsoApi~operationIsoGettagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationIsoGettag = function(isoId, callback) {
+    this.operationIsoGettagWithHttpInfo = function(isoId) {
       var postBody = null;
 
       // verify the required parameter 'isoId' is set
@@ -438,25 +469,29 @@
       return this.apiClient.callApi(
         '/iso/{isoId}/tag/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIsoListaccessrights operation.
-     * @callback module:api/IsoApi~operationIsoListaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<String>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} isoId ID of iso
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationIsoGettag = function(isoId) {
+      return this.operationIsoGettagWithHttpInfo(isoId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} isoId ID of iso
-     * @param {module:api/IsoApi~operationIsoListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<String>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationIsoListaccessrights = function(isoId, callback) {
+    this.operationIsoListaccessrightsWithHttpInfo = function(isoId) {
       var postBody = null;
 
       // verify the required parameter 'isoId' is set
@@ -485,25 +520,29 @@
       return this.apiClient.callApi(
         '/iso/{isoId}/accessrights/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIsoListqueue operation.
-     * @callback module:api/IsoApi~operationIsoListqueueCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Event>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} isoId ID of iso
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
+    this.operationIsoListaccessrights = function(isoId) {
+      return this.operationIsoListaccessrightsWithHttpInfo(isoId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /queue/
      * @param {String} isoId ID of iso
-     * @param {module:api/IsoApi~operationIsoListqueueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Event>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationIsoListqueue = function(isoId, callback) {
+    this.operationIsoListqueueWithHttpInfo = function(isoId) {
       var postBody = null;
 
       // verify the required parameter 'isoId' is set
@@ -532,25 +571,29 @@
       return this.apiClient.callApi(
         '/iso/{isoId}/queue/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIsoListservices operation.
-     * @callback module:api/IsoApi~operationIsoListservicesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IsoServices>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /queue/
+     * @param {String} isoId ID of iso
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
+    this.operationIsoListqueue = function(isoId) {
+      return this.operationIsoListqueueWithHttpInfo(isoId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/
      * @param {String} isoId ID of iso
-     * @param {module:api/IsoApi~operationIsoListservicesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IsoServices>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/IsoServices>} and HTTP response
      */
-    this.operationIsoListservices = function(isoId, callback) {
+    this.operationIsoListservicesWithHttpInfo = function(isoId) {
       var postBody = null;
 
       // verify the required parameter 'isoId' is set
@@ -579,26 +622,30 @@
       return this.apiClient.callApi(
         '/iso/{isoId}/services/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIsoPatchtag operation.
-     * @callback module:api/IsoApi~operationIsoPatchtagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/
+     * @param {String} isoId ID of iso
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/IsoServices>}
      */
+    this.operationIsoListservices = function(isoId) {
+      return this.operationIsoListservicesWithHttpInfo(isoId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} isoId ID of iso
      * @param {Object.<String, {String: String}>} requestBody 
-     * @param {module:api/IsoApi~operationIsoPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationIsoPatchtag = function(isoId, requestBody, callback) {
+    this.operationIsoPatchtagWithHttpInfo = function(isoId, requestBody) {
       var postBody = requestBody;
 
       // verify the required parameter 'isoId' is set
@@ -632,27 +679,32 @@
       return this.apiClient.callApi(
         '/iso/{isoId}/tag/', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIsoPostaccessrights operation.
-     * @callback module:api/IsoApi~operationIsoPostaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {String} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} isoId ID of iso
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationIsoPatchtag = function(isoId, requestBody) {
+      return this.operationIsoPatchtagWithHttpInfo(isoId, requestBody)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} isoId ID of iso
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject34} opts.inlineObject34 
-     * @param {module:api/IsoApi~operationIsoPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationIsoPostaccessrights = function(isoId, opts, callback) {
+    this.operationIsoPostaccessrightsWithHttpInfo = function(isoId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject34'];
 
@@ -682,26 +734,32 @@
       return this.apiClient.callApi(
         '/iso/{isoId}/accessrights/', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the showIso operation.
-     * @callback module:api/IsoApi~showIsoCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Iso} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} isoId ID of iso
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject34} opts.inlineObject34 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
+    this.operationIsoPostaccessrights = function(isoId, opts) {
+      return this.operationIsoPostaccessrightsWithHttpInfo(isoId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get
      * Returns a single iso
      * @param {String} isoId ID of iso
-     * @param {module:api/IsoApi~showIsoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Iso}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Iso} and HTTP response
      */
-    this.showIso = function(isoId, callback) {
+    this.showIsoWithHttpInfo = function(isoId) {
       var postBody = null;
 
       // verify the required parameter 'isoId' is set
@@ -730,17 +788,23 @@
       return this.apiClient.callApi(
         '/iso/{isoId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateIso operation.
-     * @callback module:api/IsoApi~updateIsoCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Iso} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get
+     * Returns a single iso
+     * @param {String} isoId ID of iso
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Iso}
      */
+    this.showIso = function(isoId) {
+      return this.showIsoWithHttpInfo(isoId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update
@@ -748,10 +812,9 @@
      * @param {String} isoId ID of iso
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject32} opts.inlineObject32 
-     * @param {module:api/IsoApi~updateIsoCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Iso}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Iso} and HTTP response
      */
-    this.updateIso = function(isoId, opts, callback) {
+    this.updateIsoWithHttpInfo = function(isoId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject32'];
 
@@ -781,8 +844,23 @@
       return this.apiClient.callApi(
         '/iso/{isoId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Update
+     * Returns modified iso
+     * @param {String} isoId ID of iso
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject32} opts.inlineObject32 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Iso}
+     */
+    this.updateIso = function(isoId, opts) {
+      return this.updateIsoWithHttpInfo(isoId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

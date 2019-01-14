@@ -117,15 +117,12 @@ Session.apiKey = "YOUR API KEY"
 
 var api = new HyperOneApi.ContainerApi()
 var containerId = "containerId_example"; // {String} ID of container
+api.actionContainerRestart(containerId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-api.actionContainerRestart(containerId, callback);
 
 ```
 

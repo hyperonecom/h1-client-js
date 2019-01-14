@@ -47,23 +47,15 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the createProject operation.
-     * @callback module:api/ProjectApi~createProjectCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Project} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Create
      * Create project
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject} opts.inlineObject 
-     * @param {module:api/ProjectApi~createProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.createProject = function(opts, callback) {
+    this.createProjectWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['inlineObject'];
 
@@ -87,17 +79,24 @@
       return this.apiClient.callApi(
         '/project', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listProject operation.
-     * @callback module:api/ProjectApi~listProjectCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Project>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create project
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject} opts.inlineObject 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
+    this.createProject = function(opts) {
+      return this.createProjectWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List
@@ -107,10 +106,9 @@
      * @param {String} opts.limit Filter by $limit
      * @param {String} opts.active Filter by active
      * @param {String} opts.organisation Filter by organisation
-     * @param {module:api/ProjectApi~listProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Project>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
      */
-    this.listProject = function(opts, callback) {
+    this.listProjectWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -138,26 +136,35 @@
       return this.apiClient.callApi(
         '/project', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationProjectDeleteaccessrightsIdentity operation.
-     * @callback module:api/ProjectApi~operationProjectDeleteaccessrightsIdentityCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Project} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List project
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @param {String} opts.limit Filter by $limit
+     * @param {String} opts.active Filter by active
+     * @param {String} opts.organisation Filter by organisation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
      */
+    this.listProject = function(opts) {
+      return this.listProjectWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/:identity
      * @param {String} projectId ID of project
      * @param {String} identity identity
-     * @param {module:api/ProjectApi~operationProjectDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.operationProjectDeleteaccessrightsIdentity = function(projectId, identity, callback) {
+    this.operationProjectDeleteaccessrightsIdentityWithHttpInfo = function(projectId, identity) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
@@ -192,26 +199,31 @@
       return this.apiClient.callApi(
         '/project/{projectId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationProjectDeletetagKey operation.
-     * @callback module:api/ProjectApi~operationProjectDeletetagKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/:identity
+     * @param {String} projectId ID of project
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
+    this.operationProjectDeleteaccessrightsIdentity = function(projectId, identity) {
+      return this.operationProjectDeleteaccessrightsIdentityWithHttpInfo(projectId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/:key
      * @param {String} projectId ID of project
      * @param {String} key key
-     * @param {module:api/ProjectApi~operationProjectDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationProjectDeletetagKey = function(projectId, key, callback) {
+    this.operationProjectDeletetagKeyWithHttpInfo = function(projectId, key) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
@@ -246,26 +258,31 @@
       return this.apiClient.callApi(
         '/project/{projectId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationProjectGetservicesServiceId operation.
-     * @callback module:api/ProjectApi~operationProjectGetservicesServiceIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ProjectServices} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/:key
+     * @param {String} projectId ID of project
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationProjectDeletetagKey = function(projectId, key) {
+      return this.operationProjectDeletetagKeyWithHttpInfo(projectId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/:serviceId
      * @param {String} projectId ID of project
      * @param {String} serviceId serviceId
-     * @param {module:api/ProjectApi~operationProjectGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProjectServices}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectServices} and HTTP response
      */
-    this.operationProjectGetservicesServiceId = function(projectId, serviceId, callback) {
+    this.operationProjectGetservicesServiceIdWithHttpInfo = function(projectId, serviceId) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
@@ -300,25 +317,30 @@
       return this.apiClient.callApi(
         '/project/{projectId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationProjectGettag operation.
-     * @callback module:api/ProjectApi~operationProjectGettagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/:serviceId
+     * @param {String} projectId ID of project
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectServices}
      */
+    this.operationProjectGetservicesServiceId = function(projectId, serviceId) {
+      return this.operationProjectGetservicesServiceIdWithHttpInfo(projectId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} projectId ID of project
-     * @param {module:api/ProjectApi~operationProjectGettagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationProjectGettag = function(projectId, callback) {
+    this.operationProjectGettagWithHttpInfo = function(projectId) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
@@ -347,25 +369,29 @@
       return this.apiClient.callApi(
         '/project/{projectId}/tag/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationProjectListaccessrights operation.
-     * @callback module:api/ProjectApi~operationProjectListaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/ProjectAccessRights>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} projectId ID of project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationProjectGettag = function(projectId) {
+      return this.operationProjectGettagWithHttpInfo(projectId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} projectId ID of project
-     * @param {module:api/ProjectApi~operationProjectListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/ProjectAccessRights>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectAccessRights>} and HTTP response
      */
-    this.operationProjectListaccessrights = function(projectId, callback) {
+    this.operationProjectListaccessrightsWithHttpInfo = function(projectId) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
@@ -394,25 +420,29 @@
       return this.apiClient.callApi(
         '/project/{projectId}/accessrights/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationProjectListqueue operation.
-     * @callback module:api/ProjectApi~operationProjectListqueueCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Event>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} projectId ID of project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectAccessRights>}
      */
+    this.operationProjectListaccessrights = function(projectId) {
+      return this.operationProjectListaccessrightsWithHttpInfo(projectId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /queue/
      * @param {String} projectId ID of project
-     * @param {module:api/ProjectApi~operationProjectListqueueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Event>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationProjectListqueue = function(projectId, callback) {
+    this.operationProjectListqueueWithHttpInfo = function(projectId) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
@@ -441,25 +471,29 @@
       return this.apiClient.callApi(
         '/project/{projectId}/queue/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationProjectListservices operation.
-     * @callback module:api/ProjectApi~operationProjectListservicesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/ProjectServices>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /queue/
+     * @param {String} projectId ID of project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
+    this.operationProjectListqueue = function(projectId) {
+      return this.operationProjectListqueueWithHttpInfo(projectId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/
      * @param {String} projectId ID of project
-     * @param {module:api/ProjectApi~operationProjectListservicesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/ProjectServices>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectServices>} and HTTP response
      */
-    this.operationProjectListservices = function(projectId, callback) {
+    this.operationProjectListservicesWithHttpInfo = function(projectId) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
@@ -488,26 +522,30 @@
       return this.apiClient.callApi(
         '/project/{projectId}/services/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationProjectPatchtag operation.
-     * @callback module:api/ProjectApi~operationProjectPatchtagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/
+     * @param {String} projectId ID of project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectServices>}
      */
+    this.operationProjectListservices = function(projectId) {
+      return this.operationProjectListservicesWithHttpInfo(projectId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} projectId ID of project
      * @param {Object.<String, {String: String}>} requestBody 
-     * @param {module:api/ProjectApi~operationProjectPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationProjectPatchtag = function(projectId, requestBody, callback) {
+    this.operationProjectPatchtagWithHttpInfo = function(projectId, requestBody) {
       var postBody = requestBody;
 
       // verify the required parameter 'projectId' is set
@@ -541,27 +579,32 @@
       return this.apiClient.callApi(
         '/project/{projectId}/tag/', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationProjectPostaccessrights operation.
-     * @callback module:api/ProjectApi~operationProjectPostaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ProjectAccessRights} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} projectId ID of project
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationProjectPatchtag = function(projectId, requestBody) {
+      return this.operationProjectPatchtagWithHttpInfo(projectId, requestBody)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} projectId ID of project
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject2} opts.inlineObject2 
-     * @param {module:api/ProjectApi~operationProjectPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProjectAccessRights}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectAccessRights} and HTTP response
      */
-    this.operationProjectPostaccessrights = function(projectId, opts, callback) {
+    this.operationProjectPostaccessrightsWithHttpInfo = function(projectId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject2'];
 
@@ -591,26 +634,32 @@
       return this.apiClient.callApi(
         '/project/{projectId}/accessrights/', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the showProject operation.
-     * @callback module:api/ProjectApi~showProjectCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Project} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} projectId ID of project
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject2} opts.inlineObject2 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectAccessRights}
      */
+    this.operationProjectPostaccessrights = function(projectId, opts) {
+      return this.operationProjectPostaccessrightsWithHttpInfo(projectId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get
      * Returns a single project
      * @param {String} projectId ID of project
-     * @param {module:api/ProjectApi~showProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.showProject = function(projectId, callback) {
+    this.showProjectWithHttpInfo = function(projectId) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
@@ -639,17 +688,23 @@
       return this.apiClient.callApi(
         '/project/{projectId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateProject operation.
-     * @callback module:api/ProjectApi~updateProjectCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Project} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get
+     * Returns a single project
+     * @param {String} projectId ID of project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
+    this.showProject = function(projectId) {
+      return this.showProjectWithHttpInfo(projectId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update
@@ -657,10 +712,9 @@
      * @param {String} projectId ID of project
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject1} opts.inlineObject1 
-     * @param {module:api/ProjectApi~updateProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.updateProject = function(projectId, opts, callback) {
+    this.updateProjectWithHttpInfo = function(projectId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject1'];
 
@@ -690,8 +744,23 @@
       return this.apiClient.callApi(
         '/project/{projectId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Update
+     * Returns modified project
+     * @param {String} projectId ID of project
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject1} opts.inlineObject1 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     */
+    this.updateProject = function(projectId, opts) {
+      return this.updateProjectWithHttpInfo(projectId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

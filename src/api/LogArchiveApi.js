@@ -47,13 +47,6 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the actionLogArchiveTransfer operation.
-     * @callback module:api/LogArchiveApi~actionLogArchiveTransferCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * /actions/transfer
@@ -61,10 +54,9 @@
      * @param {String} logArchiveId ID of logArchive
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject62} opts.inlineObject62 
-     * @param {module:api/LogArchiveApi~actionLogArchiveTransferCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.actionLogArchiveTransfer = function(logArchiveId, opts, callback) {
+    this.actionLogArchiveTransferWithHttpInfo = function(logArchiveId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject62'];
 
@@ -94,27 +86,34 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/actions/transfer', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createLogArchive operation.
-     * @callback module:api/LogArchiveApi~createLogArchiveCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/transfer
+     * Action transfer
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject62} opts.inlineObject62 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
+    this.actionLogArchiveTransfer = function(logArchiveId, opts) {
+      return this.actionLogArchiveTransferWithHttpInfo(logArchiveId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create
      * Create logArchive
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject60} opts.inlineObject60 
-     * @param {module:api/LogArchiveApi~createLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.createLogArchive = function(opts, callback) {
+    this.createLogArchiveWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['inlineObject60'];
 
@@ -138,24 +137,31 @@
       return this.apiClient.callApi(
         '/logArchive', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteLogArchive operation.
-     * @callback module:api/LogArchiveApi~deleteLogArchiveCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject60} opts.inlineObject60 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
+    this.createLogArchive = function(opts) {
+      return this.createLogArchiveWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete
      * @param {String} logArchiveId ID of logArchive
-     * @param {module:api/LogArchiveApi~deleteLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteLogArchive = function(logArchiveId, callback) {
+    this.deleteLogArchiveWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -184,27 +190,31 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listLogArchive operation.
-     * @callback module:api/LogArchiveApi~listLogArchiveCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/LogArchive>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteLogArchive = function(logArchiveId) {
+      return this.deleteLogArchiveWithHttpInfo(logArchiveId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List
      * List logArchive
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/LogArchiveApi~listLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/LogArchive>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LogArchive>} and HTTP response
      */
-    this.listLogArchive = function(opts, callback) {
+    this.listLogArchiveWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -229,26 +239,32 @@
       return this.apiClient.callApi(
         '/logArchive', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveDeleteaccessrightsIdentity operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveDeleteaccessrightsIdentityCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List logArchive
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LogArchive>}
      */
+    this.listLogArchive = function(opts) {
+      return this.listLogArchiveWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/:identity
      * @param {String} logArchiveId ID of logArchive
      * @param {String} identity identity
-     * @param {module:api/LogArchiveApi~operationLogArchiveDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.operationLogArchiveDeleteaccessrightsIdentity = function(logArchiveId, identity, callback) {
+    this.operationLogArchiveDeleteaccessrightsIdentityWithHttpInfo = function(logArchiveId, identity) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -283,26 +299,31 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveDeletecredentialcertificateId operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveDeletecredentialcertificateIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/:identity
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
+    this.operationLogArchiveDeleteaccessrightsIdentity = function(logArchiveId, identity) {
+      return this.operationLogArchiveDeleteaccessrightsIdentityWithHttpInfo(logArchiveId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/certificate/:id
      * @param {String} logArchiveId ID of logArchive
      * @param {String} id id
-     * @param {module:api/LogArchiveApi~operationLogArchiveDeletecredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.operationLogArchiveDeletecredentialcertificateId = function(logArchiveId, id, callback) {
+    this.operationLogArchiveDeletecredentialcertificateIdWithHttpInfo = function(logArchiveId, id) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -337,26 +358,31 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/certificate/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveDeletecredentialpasswordId operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveDeletecredentialpasswordIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/certificate/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
+    this.operationLogArchiveDeletecredentialcertificateId = function(logArchiveId, id) {
+      return this.operationLogArchiveDeletecredentialcertificateIdWithHttpInfo(logArchiveId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/password/:id
      * @param {String} logArchiveId ID of logArchive
      * @param {String} id id
-     * @param {module:api/LogArchiveApi~operationLogArchiveDeletecredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.operationLogArchiveDeletecredentialpasswordId = function(logArchiveId, id, callback) {
+    this.operationLogArchiveDeletecredentialpasswordIdWithHttpInfo = function(logArchiveId, id) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -391,26 +417,31 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/password/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveDeletetagKey operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveDeletetagKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/password/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
+    this.operationLogArchiveDeletecredentialpasswordId = function(logArchiveId, id) {
+      return this.operationLogArchiveDeletecredentialpasswordIdWithHttpInfo(logArchiveId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/:key
      * @param {String} logArchiveId ID of logArchive
      * @param {String} key key
-     * @param {module:api/LogArchiveApi~operationLogArchiveDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationLogArchiveDeletetagKey = function(logArchiveId, key, callback) {
+    this.operationLogArchiveDeletetagKeyWithHttpInfo = function(logArchiveId, key) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -445,26 +476,31 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveGetcredentialcertificateId operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveGetcredentialcertificateIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialCertificate} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/:key
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationLogArchiveDeletetagKey = function(logArchiveId, key) {
+      return this.operationLogArchiveDeletetagKeyWithHttpInfo(logArchiveId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/certificate/:id
      * @param {String} logArchiveId ID of logArchive
      * @param {String} id id
-     * @param {module:api/LogArchiveApi~operationLogArchiveGetcredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialCertificate}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.operationLogArchiveGetcredentialcertificateId = function(logArchiveId, id, callback) {
+    this.operationLogArchiveGetcredentialcertificateIdWithHttpInfo = function(logArchiveId, id) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -499,26 +535,31 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/certificate/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveGetcredentialpasswordId operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveGetcredentialpasswordIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialPassword} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/certificate/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
+    this.operationLogArchiveGetcredentialcertificateId = function(logArchiveId, id) {
+      return this.operationLogArchiveGetcredentialcertificateIdWithHttpInfo(logArchiveId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/password/:id
      * @param {String} logArchiveId ID of logArchive
      * @param {String} id id
-     * @param {module:api/LogArchiveApi~operationLogArchiveGetcredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialPassword}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
      */
-    this.operationLogArchiveGetcredentialpasswordId = function(logArchiveId, id, callback) {
+    this.operationLogArchiveGetcredentialpasswordIdWithHttpInfo = function(logArchiveId, id) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -553,26 +594,31 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/password/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveGetservicesServiceId operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveGetservicesServiceIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchiveServices} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/password/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
      */
+    this.operationLogArchiveGetcredentialpasswordId = function(logArchiveId, id) {
+      return this.operationLogArchiveGetcredentialpasswordIdWithHttpInfo(logArchiveId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/:serviceId
      * @param {String} logArchiveId ID of logArchive
      * @param {String} serviceId serviceId
-     * @param {module:api/LogArchiveApi~operationLogArchiveGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchiveServices}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchiveServices} and HTTP response
      */
-    this.operationLogArchiveGetservicesServiceId = function(logArchiveId, serviceId, callback) {
+    this.operationLogArchiveGetservicesServiceIdWithHttpInfo = function(logArchiveId, serviceId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -607,25 +653,30 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveGettag operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveGettagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/:serviceId
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchiveServices}
      */
+    this.operationLogArchiveGetservicesServiceId = function(logArchiveId, serviceId) {
+      return this.operationLogArchiveGetservicesServiceIdWithHttpInfo(logArchiveId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} logArchiveId ID of logArchive
-     * @param {module:api/LogArchiveApi~operationLogArchiveGettagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationLogArchiveGettag = function(logArchiveId, callback) {
+    this.operationLogArchiveGettagWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -654,25 +705,29 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/tag/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveListaccessrights operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveListaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<String>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationLogArchiveGettag = function(logArchiveId) {
+      return this.operationLogArchiveGettagWithHttpInfo(logArchiveId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} logArchiveId ID of logArchive
-     * @param {module:api/LogArchiveApi~operationLogArchiveListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<String>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationLogArchiveListaccessrights = function(logArchiveId, callback) {
+    this.operationLogArchiveListaccessrightsWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -701,25 +756,29 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/accessrights/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveListcredentialcertificate operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveListcredentialcertificateCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/CredentialCertificate>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
+    this.operationLogArchiveListaccessrights = function(logArchiveId) {
+      return this.operationLogArchiveListaccessrightsWithHttpInfo(logArchiveId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/certificate
      * @param {String} logArchiveId ID of logArchive
-     * @param {module:api/LogArchiveApi~operationLogArchiveListcredentialcertificateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/CredentialCertificate>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CredentialCertificate>} and HTTP response
      */
-    this.operationLogArchiveListcredentialcertificate = function(logArchiveId, callback) {
+    this.operationLogArchiveListcredentialcertificateWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -748,25 +807,29 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/certificate', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveListcredentialpassword operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveListcredentialpasswordCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/CredentialPassword>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/certificate
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CredentialCertificate>}
      */
+    this.operationLogArchiveListcredentialcertificate = function(logArchiveId) {
+      return this.operationLogArchiveListcredentialcertificateWithHttpInfo(logArchiveId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/password
      * @param {String} logArchiveId ID of logArchive
-     * @param {module:api/LogArchiveApi~operationLogArchiveListcredentialpasswordCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/CredentialPassword>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CredentialPassword>} and HTTP response
      */
-    this.operationLogArchiveListcredentialpassword = function(logArchiveId, callback) {
+    this.operationLogArchiveListcredentialpasswordWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -795,25 +858,29 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/password', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveListqueue operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveListqueueCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Event>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/password
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CredentialPassword>}
      */
+    this.operationLogArchiveListcredentialpassword = function(logArchiveId) {
+      return this.operationLogArchiveListcredentialpasswordWithHttpInfo(logArchiveId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /queue/
      * @param {String} logArchiveId ID of logArchive
-     * @param {module:api/LogArchiveApi~operationLogArchiveListqueueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Event>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationLogArchiveListqueue = function(logArchiveId, callback) {
+    this.operationLogArchiveListqueueWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -842,25 +909,29 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/queue/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchiveListservices operation.
-     * @callback module:api/LogArchiveApi~operationLogArchiveListservicesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/LogArchiveServices>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /queue/
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
+    this.operationLogArchiveListqueue = function(logArchiveId) {
+      return this.operationLogArchiveListqueueWithHttpInfo(logArchiveId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/
      * @param {String} logArchiveId ID of logArchive
-     * @param {module:api/LogArchiveApi~operationLogArchiveListservicesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/LogArchiveServices>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LogArchiveServices>} and HTTP response
      */
-    this.operationLogArchiveListservices = function(logArchiveId, callback) {
+    this.operationLogArchiveListservicesWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -889,17 +960,22 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/services/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchivePatchcredentialcertificateId operation.
-     * @callback module:api/LogArchiveApi~operationLogArchivePatchcredentialcertificateIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialCertificate} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LogArchiveServices>}
      */
+    this.operationLogArchiveListservices = function(logArchiveId) {
+      return this.operationLogArchiveListservicesWithHttpInfo(logArchiveId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/certificate/:id
@@ -907,10 +983,9 @@
      * @param {String} id id
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject66} opts.inlineObject66 
-     * @param {module:api/LogArchiveApi~operationLogArchivePatchcredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialCertificate}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.operationLogArchivePatchcredentialcertificateId = function(logArchiveId, id, opts, callback) {
+    this.operationLogArchivePatchcredentialcertificateIdWithHttpInfo = function(logArchiveId, id, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject66'];
 
@@ -946,17 +1021,25 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/certificate/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchivePatchcredentialpasswordId operation.
-     * @callback module:api/LogArchiveApi~operationLogArchivePatchcredentialpasswordIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialPassword} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/certificate/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject66} opts.inlineObject66 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
+    this.operationLogArchivePatchcredentialcertificateId = function(logArchiveId, id, opts) {
+      return this.operationLogArchivePatchcredentialcertificateIdWithHttpInfo(logArchiveId, id, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/password/:id
@@ -964,10 +1047,9 @@
      * @param {String} id id
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject64} opts.inlineObject64 
-     * @param {module:api/LogArchiveApi~operationLogArchivePatchcredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialPassword}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
      */
-    this.operationLogArchivePatchcredentialpasswordId = function(logArchiveId, id, opts, callback) {
+    this.operationLogArchivePatchcredentialpasswordIdWithHttpInfo = function(logArchiveId, id, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject64'];
 
@@ -1003,26 +1085,33 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/password/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchivePatchtag operation.
-     * @callback module:api/LogArchiveApi~operationLogArchivePatchtagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/password/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject64} opts.inlineObject64 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
      */
+    this.operationLogArchivePatchcredentialpasswordId = function(logArchiveId, id, opts) {
+      return this.operationLogArchivePatchcredentialpasswordIdWithHttpInfo(logArchiveId, id, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} logArchiveId ID of logArchive
      * @param {Object.<String, {String: String}>} requestBody 
-     * @param {module:api/LogArchiveApi~operationLogArchivePatchtagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationLogArchivePatchtag = function(logArchiveId, requestBody, callback) {
+    this.operationLogArchivePatchtagWithHttpInfo = function(logArchiveId, requestBody) {
       var postBody = requestBody;
 
       // verify the required parameter 'logArchiveId' is set
@@ -1056,27 +1145,32 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/tag/', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchivePostaccessrights operation.
-     * @callback module:api/LogArchiveApi~operationLogArchivePostaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {String} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationLogArchivePatchtag = function(logArchiveId, requestBody) {
+      return this.operationLogArchivePatchtagWithHttpInfo(logArchiveId, requestBody)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} logArchiveId ID of logArchive
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject67} opts.inlineObject67 
-     * @param {module:api/LogArchiveApi~operationLogArchivePostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationLogArchivePostaccessrights = function(logArchiveId, opts, callback) {
+    this.operationLogArchivePostaccessrightsWithHttpInfo = function(logArchiveId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject67'];
 
@@ -1106,27 +1200,33 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/accessrights/', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchivePostcredentialcertificate operation.
-     * @callback module:api/LogArchiveApi~operationLogArchivePostcredentialcertificateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialCertificate} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject67} opts.inlineObject67 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
+    this.operationLogArchivePostaccessrights = function(logArchiveId, opts) {
+      return this.operationLogArchivePostaccessrightsWithHttpInfo(logArchiveId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/certificate
      * @param {String} logArchiveId ID of logArchive
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject65} opts.inlineObject65 
-     * @param {module:api/LogArchiveApi~operationLogArchivePostcredentialcertificateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialCertificate}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.operationLogArchivePostcredentialcertificate = function(logArchiveId, opts, callback) {
+    this.operationLogArchivePostcredentialcertificateWithHttpInfo = function(logArchiveId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject65'];
 
@@ -1156,27 +1256,33 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/certificate', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationLogArchivePostcredentialpassword operation.
-     * @callback module:api/LogArchiveApi~operationLogArchivePostcredentialpasswordCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/CredentialPassword} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/certificate
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject65} opts.inlineObject65 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
+    this.operationLogArchivePostcredentialcertificate = function(logArchiveId, opts) {
+      return this.operationLogArchivePostcredentialcertificateWithHttpInfo(logArchiveId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /credential/password
      * @param {String} logArchiveId ID of logArchive
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject63} opts.inlineObject63 
-     * @param {module:api/LogArchiveApi~operationLogArchivePostcredentialpasswordCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/CredentialPassword}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
      */
-    this.operationLogArchivePostcredentialpassword = function(logArchiveId, opts, callback) {
+    this.operationLogArchivePostcredentialpasswordWithHttpInfo = function(logArchiveId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject63'];
 
@@ -1206,26 +1312,32 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/password', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the showLogArchive operation.
-     * @callback module:api/LogArchiveApi~showLogArchiveCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /credential/password
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject63} opts.inlineObject63 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
      */
+    this.operationLogArchivePostcredentialpassword = function(logArchiveId, opts) {
+      return this.operationLogArchivePostcredentialpasswordWithHttpInfo(logArchiveId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get
      * Returns a single logArchive
      * @param {String} logArchiveId ID of logArchive
-     * @param {module:api/LogArchiveApi~showLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.showLogArchive = function(logArchiveId, callback) {
+    this.showLogArchiveWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
@@ -1254,17 +1366,23 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateLogArchive operation.
-     * @callback module:api/LogArchiveApi~updateLogArchiveCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/LogArchive} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get
+     * Returns a single logArchive
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
+    this.showLogArchive = function(logArchiveId) {
+      return this.showLogArchiveWithHttpInfo(logArchiveId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update
@@ -1272,10 +1390,9 @@
      * @param {String} logArchiveId ID of logArchive
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject61} opts.inlineObject61 
-     * @param {module:api/LogArchiveApi~updateLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/LogArchive}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.updateLogArchive = function(logArchiveId, opts, callback) {
+    this.updateLogArchiveWithHttpInfo = function(logArchiveId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject61'];
 
@@ -1305,8 +1422,23 @@
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Update
+     * Returns modified logArchive
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject61} opts.inlineObject61 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
+     */
+    this.updateLogArchive = function(logArchiveId, opts) {
+      return this.updateLogArchiveWithHttpInfo(logArchiveId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

@@ -64,14 +64,12 @@ var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var opts = {
   'inlineObject62': new HyperOneApi.InlineObject62() // InlineObject62 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionLogArchiveTransfer(logArchiveId, opts, callback);
+apiInstance.actionLogArchiveTransfer(logArchiveId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -126,14 +124,12 @@ var apiInstance = new HyperOneApi.LogArchiveApi();
 var opts = {
   'inlineObject60': new HyperOneApi.InlineObject60() // InlineObject60 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createLogArchive(opts, callback);
+apiInstance.createLogArchive(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -183,14 +179,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteLogArchive(logArchiveId, callback);
+apiInstance.deleteLogArchive(logArchiveId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -244,14 +238,12 @@ var apiInstance = new HyperOneApi.LogArchiveApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listLogArchive(opts, callback);
+apiInstance.listLogArchive(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -302,14 +294,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var identity = "identity_example"; // String | identity
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveDeleteaccessrightsIdentity(logArchiveId, identity, callback);
+apiInstance.operationLogArchiveDeleteaccessrightsIdentity(logArchiveId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -361,14 +351,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var id = "id_example"; // String | id
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveDeletecredentialcertificateId(logArchiveId, id, callback);
+apiInstance.operationLogArchiveDeletecredentialcertificateId(logArchiveId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -420,14 +408,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var id = "id_example"; // String | id
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveDeletecredentialpasswordId(logArchiveId, id, callback);
+apiInstance.operationLogArchiveDeletecredentialpasswordId(logArchiveId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -479,14 +465,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var key = "key_example"; // String | key
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveDeletetagKey(logArchiveId, key, callback);
+apiInstance.operationLogArchiveDeletetagKey(logArchiveId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -538,14 +522,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var id = "id_example"; // String | id
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveGetcredentialcertificateId(logArchiveId, id, callback);
+apiInstance.operationLogArchiveGetcredentialcertificateId(logArchiveId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -597,14 +579,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var id = "id_example"; // String | id
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveGetcredentialpasswordId(logArchiveId, id, callback);
+apiInstance.operationLogArchiveGetcredentialpasswordId(logArchiveId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -656,14 +636,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var serviceId = "serviceId_example"; // String | serviceId
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveGetservicesServiceId(logArchiveId, serviceId, callback);
+apiInstance.operationLogArchiveGetservicesServiceId(logArchiveId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -714,14 +692,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveGettag(logArchiveId, callback);
+apiInstance.operationLogArchiveGettag(logArchiveId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -771,14 +747,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveListaccessrights(logArchiveId, callback);
+apiInstance.operationLogArchiveListaccessrights(logArchiveId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -828,14 +802,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveListcredentialcertificate(logArchiveId, callback);
+apiInstance.operationLogArchiveListcredentialcertificate(logArchiveId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -885,14 +857,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveListcredentialpassword(logArchiveId, callback);
+apiInstance.operationLogArchiveListcredentialpassword(logArchiveId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -942,14 +912,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveListqueue(logArchiveId, callback);
+apiInstance.operationLogArchiveListqueue(logArchiveId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -999,14 +967,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchiveListservices(logArchiveId, callback);
+apiInstance.operationLogArchiveListservices(logArchiveId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -1060,14 +1026,12 @@ var id = "id_example"; // String | id
 var opts = {
   'inlineObject66': new HyperOneApi.InlineObject66() // InlineObject66 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchivePatchcredentialcertificateId(logArchiveId, id, opts, callback);
+apiInstance.operationLogArchivePatchcredentialcertificateId(logArchiveId, id, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -1123,14 +1087,12 @@ var id = "id_example"; // String | id
 var opts = {
   'inlineObject64': new HyperOneApi.InlineObject64() // InlineObject64 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchivePatchcredentialpasswordId(logArchiveId, id, opts, callback);
+apiInstance.operationLogArchivePatchcredentialpasswordId(logArchiveId, id, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -1183,14 +1145,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var requestBody = {key: "null"}; // {String: String} | 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchivePatchtag(logArchiveId, requestBody, callback);
+apiInstance.operationLogArchivePatchtag(logArchiveId, requestBody).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -1244,14 +1204,12 @@ var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var opts = {
   'inlineObject67': new HyperOneApi.InlineObject67() // InlineObject67 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchivePostaccessrights(logArchiveId, opts, callback);
+apiInstance.operationLogArchivePostaccessrights(logArchiveId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -1305,14 +1263,12 @@ var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var opts = {
   'inlineObject65': new HyperOneApi.InlineObject65() // InlineObject65 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchivePostcredentialcertificate(logArchiveId, opts, callback);
+apiInstance.operationLogArchivePostcredentialcertificate(logArchiveId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -1366,14 +1322,12 @@ var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var opts = {
   'inlineObject63': new HyperOneApi.InlineObject63() // InlineObject63 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationLogArchivePostcredentialpassword(logArchiveId, opts, callback);
+apiInstance.operationLogArchivePostcredentialpassword(logArchiveId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -1426,14 +1380,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showLogArchive(logArchiveId, callback);
+apiInstance.showLogArchive(logArchiveId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -1488,14 +1440,12 @@ var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
 var opts = {
   'inlineObject61': new HyperOneApi.InlineObject61() // InlineObject61 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateLogArchive(logArchiveId, opts, callback);
+apiInstance.updateLogArchive(logArchiveId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

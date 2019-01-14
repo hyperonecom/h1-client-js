@@ -53,14 +53,12 @@ var replicaId = "replicaId_example"; // String | ID of replica
 var opts = {
   'inlineObject75': new HyperOneApi.InlineObject75() // InlineObject75 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionReplicaImage(replicaId, opts, callback);
+apiInstance.actionReplicaImage(replicaId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -115,14 +113,12 @@ var apiInstance = new HyperOneApi.ReplicaApi();
 var opts = {
   'inlineObject74': new HyperOneApi.InlineObject74() // InlineObject74 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createReplica(opts, callback);
+apiInstance.createReplica(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -172,14 +168,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteReplica(replicaId, callback);
+apiInstance.deleteReplica(replicaId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -233,14 +227,12 @@ var apiInstance = new HyperOneApi.ReplicaApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listReplica(opts, callback);
+apiInstance.listReplica(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -291,14 +283,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
 var identity = "identity_example"; // String | identity
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationReplicaDeleteaccessrightsIdentity(replicaId, identity, callback);
+apiInstance.operationReplicaDeleteaccessrightsIdentity(replicaId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -350,14 +340,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
 var key = "key_example"; // String | key
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationReplicaDeletetagKey(replicaId, key, callback);
+apiInstance.operationReplicaDeletetagKey(replicaId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -409,14 +397,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
 var serviceId = "serviceId_example"; // String | serviceId
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationReplicaGetservicesServiceId(replicaId, serviceId, callback);
+apiInstance.operationReplicaGetservicesServiceId(replicaId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -467,14 +453,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationReplicaGettag(replicaId, callback);
+apiInstance.operationReplicaGettag(replicaId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -524,14 +508,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationReplicaListaccessrights(replicaId, callback);
+apiInstance.operationReplicaListaccessrights(replicaId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -581,14 +563,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationReplicaListqueue(replicaId, callback);
+apiInstance.operationReplicaListqueue(replicaId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -638,14 +618,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationReplicaListservices(replicaId, callback);
+apiInstance.operationReplicaListservices(replicaId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -696,14 +674,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
 var requestBody = {key: "null"}; // {String: String} | 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationReplicaPatchtag(replicaId, requestBody, callback);
+apiInstance.operationReplicaPatchtag(replicaId, requestBody).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -757,14 +733,12 @@ var replicaId = "replicaId_example"; // String | ID of replica
 var opts = {
   'inlineObject76': new HyperOneApi.InlineObject76() // InlineObject76 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationReplicaPostaccessrights(replicaId, opts, callback);
+apiInstance.operationReplicaPostaccessrights(replicaId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -817,14 +791,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showReplica(replicaId, callback);
+apiInstance.showReplica(replicaId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

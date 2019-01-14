@@ -47,22 +47,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the actionIpAllocate operation.
-     * @callback module:api/IpApi~actionIpAllocateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ip} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * /actions/allocate
      * Action allocate
      * @param {String} ipId ID of ip
-     * @param {module:api/IpApi~actionIpAllocateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ip}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.actionIpAllocate = function(ipId, callback) {
+    this.actionIpAllocateWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -91,26 +83,31 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/actions/allocate', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionIpAssociate operation.
-     * @callback module:api/IpApi~actionIpAssociateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ip} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/allocate
+     * Action allocate
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
+    this.actionIpAllocate = function(ipId) {
+      return this.actionIpAllocateWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/associate
      * Action associate
      * @param {String} ipId ID of ip
-     * @param {module:api/IpApi~actionIpAssociateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ip}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.actionIpAssociate = function(ipId, callback) {
+    this.actionIpAssociateWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -139,26 +136,31 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/actions/associate', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionIpDisassociate operation.
-     * @callback module:api/IpApi~actionIpDisassociateCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ip} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/associate
+     * Action associate
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
+    this.actionIpAssociate = function(ipId) {
+      return this.actionIpAssociateWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/disassociate
      * Action disassociate
      * @param {String} ipId ID of ip
-     * @param {module:api/IpApi~actionIpDisassociateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ip}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.actionIpDisassociate = function(ipId, callback) {
+    this.actionIpDisassociateWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -187,26 +189,31 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/actions/disassociate', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionIpRelease operation.
-     * @callback module:api/IpApi~actionIpReleaseCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ip} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/disassociate
+     * Action disassociate
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
+    this.actionIpDisassociate = function(ipId) {
+      return this.actionIpDisassociateWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/release
      * Action release
      * @param {String} ipId ID of ip
-     * @param {module:api/IpApi~actionIpReleaseCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ip}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.actionIpRelease = function(ipId, callback) {
+    this.actionIpReleaseWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -235,17 +242,23 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/actions/release', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionIpTransfer operation.
-     * @callback module:api/IpApi~actionIpTransferCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ip} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/release
+     * Action release
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
+    this.actionIpRelease = function(ipId) {
+      return this.actionIpReleaseWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/transfer
@@ -253,10 +266,9 @@
      * @param {String} ipId ID of ip
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject44} opts.inlineObject44 
-     * @param {module:api/IpApi~actionIpTransferCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ip}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.actionIpTransfer = function(ipId, opts, callback) {
+    this.actionIpTransferWithHttpInfo = function(ipId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject44'];
 
@@ -286,27 +298,34 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/actions/transfer', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createIp operation.
-     * @callback module:api/IpApi~createIpCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ip} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/transfer
+     * Action transfer
+     * @param {String} ipId ID of ip
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject44} opts.inlineObject44 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
+    this.actionIpTransfer = function(ipId, opts) {
+      return this.actionIpTransferWithHttpInfo(ipId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create
      * Create ip
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject42} opts.inlineObject42 
-     * @param {module:api/IpApi~createIpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ip}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.createIp = function(opts, callback) {
+    this.createIpWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['inlineObject42'];
 
@@ -330,24 +349,31 @@
       return this.apiClient.callApi(
         '/ip', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteIp operation.
-     * @callback module:api/IpApi~deleteIpCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create ip
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject42} opts.inlineObject42 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
+    this.createIp = function(opts) {
+      return this.createIpWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete
      * @param {String} ipId ID of ip
-     * @param {module:api/IpApi~deleteIpCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteIp = function(ipId, callback) {
+    this.deleteIpWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -376,27 +402,31 @@
       return this.apiClient.callApi(
         '/ip/{ipId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listIp operation.
-     * @callback module:api/IpApi~listIpCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Ip>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteIp = function(ipId) {
+      return this.deleteIpWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List
      * List ip
      * @param {Object} opts Optional parameters
      * @param {String} opts.mac Filter by mac
-     * @param {module:api/IpApi~listIpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Ip>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Ip>} and HTTP response
      */
-    this.listIp = function(opts, callback) {
+    this.listIpWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -421,26 +451,32 @@
       return this.apiClient.callApi(
         '/ip', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIpDeleteaccessrightsIdentity operation.
-     * @callback module:api/IpApi~operationIpDeleteaccessrightsIdentityCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ip} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List ip
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.mac Filter by mac
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Ip>}
      */
+    this.listIp = function(opts) {
+      return this.listIpWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/:identity
      * @param {String} ipId ID of ip
      * @param {String} identity identity
-     * @param {module:api/IpApi~operationIpDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ip}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.operationIpDeleteaccessrightsIdentity = function(ipId, identity, callback) {
+    this.operationIpDeleteaccessrightsIdentityWithHttpInfo = function(ipId, identity) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -475,26 +511,31 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIpDeletetagKey operation.
-     * @callback module:api/IpApi~operationIpDeletetagKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/:identity
+     * @param {String} ipId ID of ip
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
+    this.operationIpDeleteaccessrightsIdentity = function(ipId, identity) {
+      return this.operationIpDeleteaccessrightsIdentityWithHttpInfo(ipId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/:key
      * @param {String} ipId ID of ip
      * @param {String} key key
-     * @param {module:api/IpApi~operationIpDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationIpDeletetagKey = function(ipId, key, callback) {
+    this.operationIpDeletetagKeyWithHttpInfo = function(ipId, key) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -529,26 +570,31 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIpGetservicesServiceId operation.
-     * @callback module:api/IpApi~operationIpGetservicesServiceIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/IpServices} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/:key
+     * @param {String} ipId ID of ip
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationIpDeletetagKey = function(ipId, key) {
+      return this.operationIpDeletetagKeyWithHttpInfo(ipId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/:serviceId
      * @param {String} ipId ID of ip
      * @param {String} serviceId serviceId
-     * @param {module:api/IpApi~operationIpGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/IpServices}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IpServices} and HTTP response
      */
-    this.operationIpGetservicesServiceId = function(ipId, serviceId, callback) {
+    this.operationIpGetservicesServiceIdWithHttpInfo = function(ipId, serviceId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -583,25 +629,30 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIpGettag operation.
-     * @callback module:api/IpApi~operationIpGettagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/:serviceId
+     * @param {String} ipId ID of ip
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IpServices}
      */
+    this.operationIpGetservicesServiceId = function(ipId, serviceId) {
+      return this.operationIpGetservicesServiceIdWithHttpInfo(ipId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} ipId ID of ip
-     * @param {module:api/IpApi~operationIpGettagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationIpGettag = function(ipId, callback) {
+    this.operationIpGettagWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -630,25 +681,29 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/tag/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIpListaccessrights operation.
-     * @callback module:api/IpApi~operationIpListaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<String>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationIpGettag = function(ipId) {
+      return this.operationIpGettagWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} ipId ID of ip
-     * @param {module:api/IpApi~operationIpListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<String>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationIpListaccessrights = function(ipId, callback) {
+    this.operationIpListaccessrightsWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -677,25 +732,29 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/accessrights/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIpListqueue operation.
-     * @callback module:api/IpApi~operationIpListqueueCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Event>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
+    this.operationIpListaccessrights = function(ipId) {
+      return this.operationIpListaccessrightsWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /queue/
      * @param {String} ipId ID of ip
-     * @param {module:api/IpApi~operationIpListqueueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Event>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationIpListqueue = function(ipId, callback) {
+    this.operationIpListqueueWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -724,25 +783,29 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/queue/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIpListservices operation.
-     * @callback module:api/IpApi~operationIpListservicesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IpServices>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /queue/
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
+    this.operationIpListqueue = function(ipId) {
+      return this.operationIpListqueueWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/
      * @param {String} ipId ID of ip
-     * @param {module:api/IpApi~operationIpListservicesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IpServices>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/IpServices>} and HTTP response
      */
-    this.operationIpListservices = function(ipId, callback) {
+    this.operationIpListservicesWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -771,26 +834,30 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/services/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIpPatchtag operation.
-     * @callback module:api/IpApi~operationIpPatchtagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/IpServices>}
      */
+    this.operationIpListservices = function(ipId) {
+      return this.operationIpListservicesWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} ipId ID of ip
      * @param {Object.<String, {String: String}>} requestBody 
-     * @param {module:api/IpApi~operationIpPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationIpPatchtag = function(ipId, requestBody, callback) {
+    this.operationIpPatchtagWithHttpInfo = function(ipId, requestBody) {
       var postBody = requestBody;
 
       // verify the required parameter 'ipId' is set
@@ -824,27 +891,32 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/tag/', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationIpPostaccessrights operation.
-     * @callback module:api/IpApi~operationIpPostaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {String} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} ipId ID of ip
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationIpPatchtag = function(ipId, requestBody) {
+      return this.operationIpPatchtagWithHttpInfo(ipId, requestBody)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} ipId ID of ip
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject45} opts.inlineObject45 
-     * @param {module:api/IpApi~operationIpPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationIpPostaccessrights = function(ipId, opts, callback) {
+    this.operationIpPostaccessrightsWithHttpInfo = function(ipId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject45'];
 
@@ -874,26 +946,32 @@
       return this.apiClient.callApi(
         '/ip/{ipId}/accessrights/', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the showIp operation.
-     * @callback module:api/IpApi~showIpCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ip} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} ipId ID of ip
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject45} opts.inlineObject45 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
+    this.operationIpPostaccessrights = function(ipId, opts) {
+      return this.operationIpPostaccessrightsWithHttpInfo(ipId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get
      * Returns a single ip
      * @param {String} ipId ID of ip
-     * @param {module:api/IpApi~showIpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ip}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.showIp = function(ipId, callback) {
+    this.showIpWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
@@ -922,17 +1000,23 @@
       return this.apiClient.callApi(
         '/ip/{ipId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateIp operation.
-     * @callback module:api/IpApi~updateIpCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Ip} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get
+     * Returns a single ip
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
+    this.showIp = function(ipId) {
+      return this.showIpWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update
@@ -940,10 +1024,9 @@
      * @param {String} ipId ID of ip
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject43} opts.inlineObject43 
-     * @param {module:api/IpApi~updateIpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Ip}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.updateIp = function(ipId, opts, callback) {
+    this.updateIpWithHttpInfo = function(ipId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject43'];
 
@@ -973,8 +1056,23 @@
       return this.apiClient.callApi(
         '/ip/{ipId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Update
+     * Returns modified ip
+     * @param {String} ipId ID of ip
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject43} opts.inlineObject43 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
+     */
+    this.updateIp = function(ipId, opts) {
+      return this.updateIpWithHttpInfo(ipId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

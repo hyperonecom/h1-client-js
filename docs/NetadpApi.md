@@ -50,14 +50,12 @@ var opts = {
   'assignedResource': "assignedResource_example", // String | Filter by assigned.resource
   'assignedId': "assignedId_example" // String | Filter by assigned.id
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listNetadp(opts, callback);
+apiInstance.listNetadp(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -109,14 +107,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
 var identity = "identity_example"; // String | identity
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationNetadpDeleteaccessrightsIdentity(netadpId, identity, callback);
+apiInstance.operationNetadpDeleteaccessrightsIdentity(netadpId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -168,14 +164,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
 var key = "key_example"; // String | key
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationNetadpDeletetagKey(netadpId, key, callback);
+apiInstance.operationNetadpDeletetagKey(netadpId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -227,14 +221,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
 var serviceId = "serviceId_example"; // String | serviceId
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationNetadpGetservicesServiceId(netadpId, serviceId, callback);
+apiInstance.operationNetadpGetservicesServiceId(netadpId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -285,14 +277,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationNetadpGettag(netadpId, callback);
+apiInstance.operationNetadpGettag(netadpId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -342,14 +332,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationNetadpListaccessrights(netadpId, callback);
+apiInstance.operationNetadpListaccessrights(netadpId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -399,14 +387,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationNetadpListqueue(netadpId, callback);
+apiInstance.operationNetadpListqueue(netadpId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -456,14 +442,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationNetadpListservices(netadpId, callback);
+apiInstance.operationNetadpListservices(netadpId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -514,14 +498,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
 var requestBody = {key: "null"}; // {String: String} | 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationNetadpPatchtag(netadpId, requestBody, callback);
+apiInstance.operationNetadpPatchtag(netadpId, requestBody).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -575,14 +557,12 @@ var netadpId = "netadpId_example"; // String | ID of netadp
 var opts = {
   'inlineObject46': new HyperOneApi.InlineObject46() // InlineObject46 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationNetadpPostaccessrights(netadpId, opts, callback);
+apiInstance.operationNetadpPostaccessrights(netadpId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -635,14 +615,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showNetadp(netadpId, callback);
+apiInstance.showNetadp(netadpId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

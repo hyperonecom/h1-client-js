@@ -47,22 +47,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the actionVmFlavour operation.
-     * @callback module:api/VmApi~actionVmFlavourCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * /actions/flavour
      * Action flavour
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~actionVmFlavourCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmFlavour = function(vmId, callback) {
+    this.actionVmFlavourWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -91,17 +83,23 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/flavour', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionVmImage operation.
-     * @callback module:api/VmApi~actionVmImageCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/flavour
+     * Action flavour
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.actionVmFlavour = function(vmId) {
+      return this.actionVmFlavourWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/image
@@ -109,10 +107,9 @@
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject38} opts.inlineObject38 
-     * @param {module:api/VmApi~actionVmImageCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmImage = function(vmId, opts, callback) {
+    this.actionVmImageWithHttpInfo = function(vmId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject38'];
 
@@ -142,17 +139,25 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/image', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionVmPasswordReset operation.
-     * @callback module:api/VmApi~actionVmPasswordResetCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/image
+     * Action image
+     * @param {String} vmId ID of vm
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject38} opts.inlineObject38 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.actionVmImage = function(vmId, opts) {
+      return this.actionVmImageWithHttpInfo(vmId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/password_reset
@@ -160,10 +165,9 @@
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject37} opts.inlineObject37 
-     * @param {module:api/VmApi~actionVmPasswordResetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmPasswordReset = function(vmId, opts, callback) {
+    this.actionVmPasswordResetWithHttpInfo = function(vmId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject37'];
 
@@ -193,26 +197,33 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/password_reset', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionVmRename operation.
-     * @callback module:api/VmApi~actionVmRenameCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/password_reset
+     * Action password_reset
+     * @param {String} vmId ID of vm
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject37} opts.inlineObject37 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.actionVmPasswordReset = function(vmId, opts) {
+      return this.actionVmPasswordResetWithHttpInfo(vmId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/rename
      * Action rename
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~actionVmRenameCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmRename = function(vmId, callback) {
+    this.actionVmRenameWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -241,26 +252,31 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/rename', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionVmRestart operation.
-     * @callback module:api/VmApi~actionVmRestartCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/rename
+     * Action rename
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.actionVmRename = function(vmId) {
+      return this.actionVmRenameWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/restart
      * Action restart
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~actionVmRestartCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmRestart = function(vmId, callback) {
+    this.actionVmRestartWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -289,26 +305,31 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/restart', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionVmStart operation.
-     * @callback module:api/VmApi~actionVmStartCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/restart
+     * Action restart
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.actionVmRestart = function(vmId) {
+      return this.actionVmRestartWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/start
      * Action start
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~actionVmStartCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmStart = function(vmId, callback) {
+    this.actionVmStartWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -337,26 +358,31 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/start', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionVmStop operation.
-     * @callback module:api/VmApi~actionVmStopCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/start
+     * Action start
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.actionVmStart = function(vmId) {
+      return this.actionVmStartWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/stop
      * Action stop
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~actionVmStopCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmStop = function(vmId, callback) {
+    this.actionVmStopWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -385,26 +411,31 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/stop', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the actionVmTurnoff operation.
-     * @callback module:api/VmApi~actionVmTurnoffCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/stop
+     * Action stop
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.actionVmStop = function(vmId) {
+      return this.actionVmStopWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /actions/turnoff
      * Action turnoff
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~actionVmTurnoffCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmTurnoff = function(vmId, callback) {
+    this.actionVmTurnoffWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -433,27 +464,32 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/turnoff', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createVm operation.
-     * @callback module:api/VmApi~createVmCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /actions/turnoff
+     * Action turnoff
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.actionVmTurnoff = function(vmId) {
+      return this.actionVmTurnoffWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create
      * Create vm
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject35} opts.inlineObject35 
-     * @param {module:api/VmApi~createVmCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.createVm = function(opts, callback) {
+    this.createVmWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['inlineObject35'];
 
@@ -477,24 +513,31 @@
       return this.apiClient.callApi(
         '/vm', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteVm operation.
-     * @callback module:api/VmApi~deleteVmCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * Create
+     * Create vm
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject35} opts.inlineObject35 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.createVm = function(opts) {
+      return this.createVmWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~deleteVmCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteVm = function(vmId, callback) {
+    this.deleteVmWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -523,27 +566,31 @@
       return this.apiClient.callApi(
         '/vm/{vmId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listVm operation.
-     * @callback module:api/VmApi~listVmCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Vm>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteVm = function(vmId) {
+      return this.deleteVmWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * List
      * List vm
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @param {module:api/VmApi~listVmCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Vm>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Vm>} and HTTP response
      */
-    this.listVm = function(opts, callback) {
+    this.listVmWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -568,26 +615,32 @@
       return this.apiClient.callApi(
         '/vm', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmDeleteaccessrightsIdentity operation.
-     * @callback module:api/VmApi~operationVmDeleteaccessrightsIdentityCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * List
+     * List vm
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.name Filter by name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Vm>}
      */
+    this.listVm = function(opts) {
+      return this.listVmWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/:identity
      * @param {String} vmId ID of vm
      * @param {String} identity identity
-     * @param {module:api/VmApi~operationVmDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.operationVmDeleteaccessrightsIdentity = function(vmId, identity, callback) {
+    this.operationVmDeleteaccessrightsIdentityWithHttpInfo = function(vmId, identity) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -622,26 +675,31 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmDeletehddDiskId operation.
-     * @callback module:api/VmApi~operationVmDeletehddDiskIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/:identity
+     * @param {String} vmId ID of vm
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.operationVmDeleteaccessrightsIdentity = function(vmId, identity) {
+      return this.operationVmDeleteaccessrightsIdentityWithHttpInfo(vmId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /hdd/:diskId
      * @param {String} vmId ID of vm
      * @param {String} diskId diskId
-     * @param {module:api/VmApi~operationVmDeletehddDiskIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.operationVmDeletehddDiskId = function(vmId, diskId, callback) {
+    this.operationVmDeletehddDiskIdWithHttpInfo = function(vmId, diskId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -676,25 +734,30 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/hdd/{diskId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmDeletenetadp operation.
-     * @callback module:api/VmApi~operationVmDeletenetadpCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /hdd/:diskId
+     * @param {String} vmId ID of vm
+     * @param {String} diskId diskId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.operationVmDeletehddDiskId = function(vmId, diskId) {
+      return this.operationVmDeletehddDiskIdWithHttpInfo(vmId, diskId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /netadp
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~operationVmDeletenetadpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.operationVmDeletenetadp = function(vmId, callback) {
+    this.operationVmDeletenetadpWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -723,26 +786,30 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/netadp', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmDeletetagKey operation.
-     * @callback module:api/VmApi~operationVmDeletetagKeyCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /netadp
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.operationVmDeletenetadp = function(vmId) {
+      return this.operationVmDeletenetadpWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/:key
      * @param {String} vmId ID of vm
      * @param {String} key key
-     * @param {module:api/VmApi~operationVmDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationVmDeletetagKey = function(vmId, key, callback) {
+    this.operationVmDeletetagKeyWithHttpInfo = function(vmId, key) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -777,26 +844,31 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmGetservicesServiceId operation.
-     * @callback module:api/VmApi~operationVmGetservicesServiceIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/VmServices} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/:key
+     * @param {String} vmId ID of vm
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationVmDeletetagKey = function(vmId, key) {
+      return this.operationVmDeletetagKeyWithHttpInfo(vmId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/:serviceId
      * @param {String} vmId ID of vm
      * @param {String} serviceId serviceId
-     * @param {module:api/VmApi~operationVmGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/VmServices}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VmServices} and HTTP response
      */
-    this.operationVmGetservicesServiceId = function(vmId, serviceId, callback) {
+    this.operationVmGetservicesServiceIdWithHttpInfo = function(vmId, serviceId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -831,25 +903,30 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmGettag operation.
-     * @callback module:api/VmApi~operationVmGettagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/:serviceId
+     * @param {String} vmId ID of vm
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VmServices}
      */
+    this.operationVmGetservicesServiceId = function(vmId, serviceId) {
+      return this.operationVmGetservicesServiceIdWithHttpInfo(vmId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~operationVmGettagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationVmGettag = function(vmId, callback) {
+    this.operationVmGettagWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -878,25 +955,29 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/tag/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmListaccessrights operation.
-     * @callback module:api/VmApi~operationVmListaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<String>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationVmGettag = function(vmId) {
+      return this.operationVmGettagWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~operationVmListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<String>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationVmListaccessrights = function(vmId, callback) {
+    this.operationVmListaccessrightsWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -925,25 +1006,29 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/accessrights/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmListhdd operation.
-     * @callback module:api/VmApi~operationVmListhddCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Hdd>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
+    this.operationVmListaccessrights = function(vmId) {
+      return this.operationVmListaccessrightsWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /hdd
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~operationVmListhddCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Hdd>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Hdd>} and HTTP response
      */
-    this.operationVmListhdd = function(vmId, callback) {
+    this.operationVmListhddWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -972,25 +1057,29 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/hdd', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmListnetadp operation.
-     * @callback module:api/VmApi~operationVmListnetadpCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Netadp>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /hdd
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Hdd>}
      */
+    this.operationVmListhdd = function(vmId) {
+      return this.operationVmListhddWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /netadp
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~operationVmListnetadpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Netadp>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Netadp>} and HTTP response
      */
-    this.operationVmListnetadp = function(vmId, callback) {
+    this.operationVmListnetadpWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -1019,25 +1108,29 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/netadp', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmListqueue operation.
-     * @callback module:api/VmApi~operationVmListqueueCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Event>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /netadp
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Netadp>}
      */
+    this.operationVmListnetadp = function(vmId) {
+      return this.operationVmListnetadpWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /queue/
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~operationVmListqueueCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Event>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationVmListqueue = function(vmId, callback) {
+    this.operationVmListqueueWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -1066,25 +1159,29 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/queue/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmListservices operation.
-     * @callback module:api/VmApi~operationVmListservicesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/VmServices>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /queue/
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
+    this.operationVmListqueue = function(vmId) {
+      return this.operationVmListqueueWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /services/
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~operationVmListservicesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/VmServices>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VmServices>} and HTTP response
      */
-    this.operationVmListservices = function(vmId, callback) {
+    this.operationVmListservicesWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -1113,26 +1210,30 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/services/', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmPatchtag operation.
-     * @callback module:api/VmApi~operationVmPatchtagCallback
-     * @param {String} error Error message, if any.
-     * @param {Object.<String, {String: String}>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /services/
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VmServices>}
      */
+    this.operationVmListservices = function(vmId) {
+      return this.operationVmListservicesWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /tag/
      * @param {String} vmId ID of vm
      * @param {Object.<String, {String: String}>} requestBody 
-     * @param {module:api/VmApi~operationVmPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object.<String, {String: String}>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
      */
-    this.operationVmPatchtag = function(vmId, requestBody, callback) {
+    this.operationVmPatchtagWithHttpInfo = function(vmId, requestBody) {
       var postBody = requestBody;
 
       // verify the required parameter 'vmId' is set
@@ -1166,27 +1267,32 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/tag/', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmPostaccessrights operation.
-     * @callback module:api/VmApi~operationVmPostaccessrightsCallback
-     * @param {String} error Error message, if any.
-     * @param {String} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /tag/
+     * @param {String} vmId ID of vm
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
      */
+    this.operationVmPatchtag = function(vmId, requestBody) {
+      return this.operationVmPatchtagWithHttpInfo(vmId, requestBody)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /accessrights/
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject41} opts.inlineObject41 
-     * @param {module:api/VmApi~operationVmPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationVmPostaccessrights = function(vmId, opts, callback) {
+    this.operationVmPostaccessrightsWithHttpInfo = function(vmId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject41'];
 
@@ -1216,27 +1322,33 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/accessrights/', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmPosthdd operation.
-     * @callback module:api/VmApi~operationVmPosthddCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /accessrights/
+     * @param {String} vmId ID of vm
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject41} opts.inlineObject41 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
+    this.operationVmPostaccessrights = function(vmId, opts) {
+      return this.operationVmPostaccessrightsWithHttpInfo(vmId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /hdd
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject39} opts.inlineObject39 
-     * @param {module:api/VmApi~operationVmPosthddCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.operationVmPosthdd = function(vmId, opts, callback) {
+    this.operationVmPosthddWithHttpInfo = function(vmId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject39'];
 
@@ -1266,27 +1378,33 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/hdd', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the operationVmPostnetadp operation.
-     * @callback module:api/VmApi~operationVmPostnetadpCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /hdd
+     * @param {String} vmId ID of vm
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject39} opts.inlineObject39 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.operationVmPosthdd = function(vmId, opts) {
+      return this.operationVmPosthddWithHttpInfo(vmId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * /netadp
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject40} opts.inlineObject40 
-     * @param {module:api/VmApi~operationVmPostnetadpCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.operationVmPostnetadp = function(vmId, opts, callback) {
+    this.operationVmPostnetadpWithHttpInfo = function(vmId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject40'];
 
@@ -1316,26 +1434,32 @@
       return this.apiClient.callApi(
         '/vm/{vmId}/netadp', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the showVm operation.
-     * @callback module:api/VmApi~showVmCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * /netadp
+     * @param {String} vmId ID of vm
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject40} opts.inlineObject40 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.operationVmPostnetadp = function(vmId, opts) {
+      return this.operationVmPostnetadpWithHttpInfo(vmId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get
      * Returns a single vm
      * @param {String} vmId ID of vm
-     * @param {module:api/VmApi~showVmCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.showVm = function(vmId, callback) {
+    this.showVmWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
@@ -1364,17 +1488,23 @@
       return this.apiClient.callApi(
         '/vm/{vmId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the updateVm operation.
-     * @callback module:api/VmApi~updateVmCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Vm} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get
+     * Returns a single vm
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
+    this.showVm = function(vmId) {
+      return this.showVmWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Update
@@ -1382,10 +1512,9 @@
      * @param {String} vmId ID of vm
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject36} opts.inlineObject36 
-     * @param {module:api/VmApi~updateVmCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Vm}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.updateVm = function(vmId, opts, callback) {
+    this.updateVmWithHttpInfo = function(vmId, opts) {
       opts = opts || {};
       var postBody = opts['inlineObject36'];
 
@@ -1415,8 +1544,23 @@
       return this.apiClient.callApi(
         '/vm/{vmId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Update
+     * Returns modified vm
+     * @param {String} vmId ID of vm
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject36} opts.inlineObject36 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
+     */
+    this.updateVm = function(vmId, opts) {
+      return this.updateVmWithHttpInfo(vmId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

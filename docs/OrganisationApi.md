@@ -51,14 +51,12 @@ var organisationId = "organisationId_example"; // String | ID of organisation
 var opts = {
   'inlineObject5': new HyperOneApi.InlineObject5() // InlineObject5 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionOrganisationTransferAccept(organisationId, opts, callback);
+apiInstance.actionOrganisationTransferAccept(organisationId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -113,14 +111,12 @@ var apiInstance = new HyperOneApi.OrganisationApi();
 var opts = {
   'inlineObject3': new HyperOneApi.InlineObject3() // InlineObject3 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createOrganisation(opts, callback);
+apiInstance.createOrganisation(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -177,14 +173,12 @@ var opts = {
   'limit': "limit_example", // String | Filter by $limit
   'active': "active_example" // String | Filter by active
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listOrganisation(opts, callback);
+apiInstance.listOrganisation(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -238,14 +232,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
 var identity = "identity_example"; // String | identity
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationOrganisationDeleteaccessrightsIdentity(organisationId, identity, callback);
+apiInstance.operationOrganisationDeleteaccessrightsIdentity(organisationId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -297,14 +289,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
 var key = "key_example"; // String | key
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationOrganisationDeletetagKey(organisationId, key, callback);
+apiInstance.operationOrganisationDeletetagKey(organisationId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -355,14 +345,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationOrganisationGettag(organisationId, callback);
+apiInstance.operationOrganisationGettag(organisationId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -412,14 +400,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationOrganisationListaccessrights(organisationId, callback);
+apiInstance.operationOrganisationListaccessrights(organisationId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -469,14 +455,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationOrganisationListqueue(organisationId, callback);
+apiInstance.operationOrganisationListqueue(organisationId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -527,14 +511,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
 var requestBody = {key: "null"}; // {String: String} | 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationOrganisationPatchtag(organisationId, requestBody, callback);
+apiInstance.operationOrganisationPatchtag(organisationId, requestBody).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -588,14 +570,12 @@ var organisationId = "organisationId_example"; // String | ID of organisation
 var opts = {
   'inlineObject6': new HyperOneApi.InlineObject6() // InlineObject6 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationOrganisationPostaccessrights(organisationId, opts, callback);
+apiInstance.operationOrganisationPostaccessrights(organisationId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -648,14 +628,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showOrganisation(organisationId, callback);
+apiInstance.showOrganisation(organisationId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -710,14 +688,12 @@ var organisationId = "organisationId_example"; // String | ID of organisation
 var opts = {
   'inlineObject4': new HyperOneApi.InlineObject4() // InlineObject4 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateOrganisation(organisationId, opts, callback);
+apiInstance.updateOrganisation(organisationId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

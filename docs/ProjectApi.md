@@ -51,14 +51,12 @@ var apiInstance = new HyperOneApi.ProjectApi();
 var opts = {
   'inlineObject': new HyperOneApi.InlineObject() // InlineObject | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createProject(opts, callback);
+apiInstance.createProject(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -115,14 +113,12 @@ var opts = {
   'active': "active_example", // String | Filter by active
   'organisation': "organisation_example" // String | Filter by organisation
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listProject(opts, callback);
+apiInstance.listProject(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -176,14 +172,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
 var identity = "identity_example"; // String | identity
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationProjectDeleteaccessrightsIdentity(projectId, identity, callback);
+apiInstance.operationProjectDeleteaccessrightsIdentity(projectId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -235,14 +229,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
 var key = "key_example"; // String | key
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationProjectDeletetagKey(projectId, key, callback);
+apiInstance.operationProjectDeletetagKey(projectId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -294,14 +286,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
 var serviceId = "serviceId_example"; // String | serviceId
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationProjectGetservicesServiceId(projectId, serviceId, callback);
+apiInstance.operationProjectGetservicesServiceId(projectId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -352,14 +342,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationProjectGettag(projectId, callback);
+apiInstance.operationProjectGettag(projectId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -409,14 +397,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationProjectListaccessrights(projectId, callback);
+apiInstance.operationProjectListaccessrights(projectId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -466,14 +452,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationProjectListqueue(projectId, callback);
+apiInstance.operationProjectListqueue(projectId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -523,14 +507,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationProjectListservices(projectId, callback);
+apiInstance.operationProjectListservices(projectId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -581,14 +563,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
 var requestBody = {key: "null"}; // {String: String} | 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationProjectPatchtag(projectId, requestBody, callback);
+apiInstance.operationProjectPatchtag(projectId, requestBody).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -642,14 +622,12 @@ var projectId = "projectId_example"; // String | ID of project
 var opts = {
   'inlineObject2': new HyperOneApi.InlineObject2() // InlineObject2 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationProjectPostaccessrights(projectId, opts, callback);
+apiInstance.operationProjectPostaccessrights(projectId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -702,14 +680,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showProject(projectId, callback);
+apiInstance.showProject(projectId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -764,14 +740,12 @@ var projectId = "projectId_example"; // String | ID of project
 var opts = {
   'inlineObject1': new HyperOneApi.InlineObject1() // InlineObject1 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateProject(projectId, opts, callback);
+apiInstance.updateProject(projectId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters

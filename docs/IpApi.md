@@ -55,14 +55,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionIpAllocate(ipId, callback);
+apiInstance.actionIpAllocate(ipId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -114,14 +112,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionIpAssociate(ipId, callback);
+apiInstance.actionIpAssociate(ipId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -173,14 +169,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionIpDisassociate(ipId, callback);
+apiInstance.actionIpDisassociate(ipId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -232,14 +226,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionIpRelease(ipId, callback);
+apiInstance.actionIpRelease(ipId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -294,14 +286,12 @@ var ipId = "ipId_example"; // String | ID of ip
 var opts = {
   'inlineObject44': new HyperOneApi.InlineObject44() // InlineObject44 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.actionIpTransfer(ipId, opts, callback);
+apiInstance.actionIpTransfer(ipId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -356,14 +346,12 @@ var apiInstance = new HyperOneApi.IpApi();
 var opts = {
   'inlineObject42': new HyperOneApi.InlineObject42() // InlineObject42 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createIp(opts, callback);
+apiInstance.createIp(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -413,14 +401,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteIp(ipId, callback);
+apiInstance.deleteIp(ipId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -474,14 +460,12 @@ var apiInstance = new HyperOneApi.IpApi();
 var opts = {
   'mac': "mac_example" // String | Filter by mac
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listIp(opts, callback);
+apiInstance.listIp(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -532,14 +516,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
 var identity = "identity_example"; // String | identity
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationIpDeleteaccessrightsIdentity(ipId, identity, callback);
+apiInstance.operationIpDeleteaccessrightsIdentity(ipId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -591,14 +573,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
 var key = "key_example"; // String | key
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationIpDeletetagKey(ipId, key, callback);
+apiInstance.operationIpDeletetagKey(ipId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -650,14 +630,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
 var serviceId = "serviceId_example"; // String | serviceId
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationIpGetservicesServiceId(ipId, serviceId, callback);
+apiInstance.operationIpGetservicesServiceId(ipId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -708,14 +686,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationIpGettag(ipId, callback);
+apiInstance.operationIpGettag(ipId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -765,14 +741,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationIpListaccessrights(ipId, callback);
+apiInstance.operationIpListaccessrights(ipId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -822,14 +796,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationIpListqueue(ipId, callback);
+apiInstance.operationIpListqueue(ipId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -879,14 +851,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationIpListservices(ipId, callback);
+apiInstance.operationIpListservices(ipId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -937,14 +907,12 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
 var requestBody = {key: "null"}; // {String: String} | 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationIpPatchtag(ipId, requestBody, callback);
+apiInstance.operationIpPatchtag(ipId, requestBody).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -998,14 +966,12 @@ var ipId = "ipId_example"; // String | ID of ip
 var opts = {
   'inlineObject45': new HyperOneApi.InlineObject45() // InlineObject45 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.operationIpPostaccessrights(ipId, opts, callback);
+apiInstance.operationIpPostaccessrights(ipId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -1058,14 +1024,12 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.showIp(ipId, callback);
+apiInstance.showIp(ipId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
@@ -1120,14 +1084,12 @@ var ipId = "ipId_example"; // String | ID of ip
 var opts = {
   'inlineObject43': new HyperOneApi.InlineObject43() // InlineObject43 | 
 };
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateIp(ipId, opts, callback);
+apiInstance.updateIp(ipId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
 ```
 
 ### Parameters
