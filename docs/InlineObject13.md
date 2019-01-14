@@ -4,7 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
-**_public** | [**NetgwPublic**](NetgwPublic.md) |  | [optional] 
-**tag** | [**Object**](.md) |  | [optional] 
+**action** | **String** |  | [optional] 
+**priority** | **Number** |  | [optional] 
+**filter** | **[String]** |  | [optional] 
+**external** | **[String]** |  | [optional] 
+**internal** | **[String]** |  | [optional] 
 
 

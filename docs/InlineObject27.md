@@ -3,7 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userMetadata** | **String** |  | [optional] 
+**service** | **String** |  | 
 **name** | **String** |  | [optional] 
+**size** | **Number** |  | [optional] 
+**cloud** | **String** |  | [optional] 
+**metadata** | [**DiskMetadata**](DiskMetadata.md) |  | [optional] 
+**tag** | [**Object**](.md) |  | [optional] 
 
 

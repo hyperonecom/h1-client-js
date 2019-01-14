@@ -4,26 +4,41 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actionVmFlavour**](VmApi.md#actionVmFlavour) | **POST** /vm/{vmId}/actions/flavour | Action :: flavour
-[**actionVmImage**](VmApi.md#actionVmImage) | **POST** /vm/{vmId}/actions/image | Action :: image
-[**actionVmPasswordReset**](VmApi.md#actionVmPasswordReset) | **POST** /vm/{vmId}/actions/password_reset | Action :: password_reset
-[**actionVmRename**](VmApi.md#actionVmRename) | **POST** /vm/{vmId}/actions/rename | Action :: rename
-[**actionVmRestart**](VmApi.md#actionVmRestart) | **POST** /vm/{vmId}/actions/restart | Action :: restart
-[**actionVmStart**](VmApi.md#actionVmStart) | **POST** /vm/{vmId}/actions/start | Action :: start
-[**actionVmStop**](VmApi.md#actionVmStop) | **POST** /vm/{vmId}/actions/stop | Action :: stop
-[**actionVmTurnoff**](VmApi.md#actionVmTurnoff) | **POST** /vm/{vmId}/actions/turnoff | Action :: turnoff
+[**actionVmFlavour**](VmApi.md#actionVmFlavour) | **POST** /vm/{vmId}/actions/flavour | /actions/flavour
+[**actionVmImage**](VmApi.md#actionVmImage) | **POST** /vm/{vmId}/actions/image | /actions/image
+[**actionVmPasswordReset**](VmApi.md#actionVmPasswordReset) | **POST** /vm/{vmId}/actions/password_reset | /actions/password_reset
+[**actionVmRename**](VmApi.md#actionVmRename) | **POST** /vm/{vmId}/actions/rename | /actions/rename
+[**actionVmRestart**](VmApi.md#actionVmRestart) | **POST** /vm/{vmId}/actions/restart | /actions/restart
+[**actionVmStart**](VmApi.md#actionVmStart) | **POST** /vm/{vmId}/actions/start | /actions/start
+[**actionVmStop**](VmApi.md#actionVmStop) | **POST** /vm/{vmId}/actions/stop | /actions/stop
+[**actionVmTurnoff**](VmApi.md#actionVmTurnoff) | **POST** /vm/{vmId}/actions/turnoff | /actions/turnoff
 [**createVm**](VmApi.md#createVm) | **POST** /vm | Create
-[**deleteVm**](VmApi.md#deleteVm) | **DELETE** /vm/{vmId} | Delete by ID
+[**deleteVm**](VmApi.md#deleteVm) | **DELETE** /vm/{vmId} | Delete
 [**listVm**](VmApi.md#listVm) | **GET** /vm | List
-[**showVm**](VmApi.md#showVm) | **GET** /vm/{vmId} | Find by ID
-[**updateVm**](VmApi.md#updateVm) | **PATCH** /vm/{vmId} | Update by ID
+[**operationVmDeleteaccessrightsIdentity**](VmApi.md#operationVmDeleteaccessrightsIdentity) | **DELETE** /vm/{vmId}/accessrights/{identity} | /accessrights/:identity
+[**operationVmDeletehddDiskId**](VmApi.md#operationVmDeletehddDiskId) | **DELETE** /vm/{vmId}/hdd/{diskId} | /hdd/:diskId
+[**operationVmDeletenetadp**](VmApi.md#operationVmDeletenetadp) | **DELETE** /vm/{vmId}/netadp | /netadp
+[**operationVmDeletetagKey**](VmApi.md#operationVmDeletetagKey) | **DELETE** /vm/{vmId}/tag/{key} | /tag/:key
+[**operationVmGetservicesServiceId**](VmApi.md#operationVmGetservicesServiceId) | **GET** /vm/{vmId}/services/{serviceId} | /services/:serviceId
+[**operationVmGettag**](VmApi.md#operationVmGettag) | **GET** /vm/{vmId}/tag/ | /tag/
+[**operationVmListaccessrights**](VmApi.md#operationVmListaccessrights) | **GET** /vm/{vmId}/accessrights/ | /accessrights/
+[**operationVmListhdd**](VmApi.md#operationVmListhdd) | **GET** /vm/{vmId}/hdd | /hdd
+[**operationVmListnetadp**](VmApi.md#operationVmListnetadp) | **GET** /vm/{vmId}/netadp | /netadp
+[**operationVmListqueue**](VmApi.md#operationVmListqueue) | **GET** /vm/{vmId}/queue/ | /queue/
+[**operationVmListservices**](VmApi.md#operationVmListservices) | **GET** /vm/{vmId}/services/ | /services/
+[**operationVmPatchtag**](VmApi.md#operationVmPatchtag) | **PATCH** /vm/{vmId}/tag/ | /tag/
+[**operationVmPostaccessrights**](VmApi.md#operationVmPostaccessrights) | **POST** /vm/{vmId}/accessrights/ | /accessrights/
+[**operationVmPosthdd**](VmApi.md#operationVmPosthdd) | **POST** /vm/{vmId}/hdd | /hdd
+[**operationVmPostnetadp**](VmApi.md#operationVmPostnetadp) | **POST** /vm/{vmId}/netadp | /netadp
+[**showVm**](VmApi.md#showVm) | **GET** /vm/{vmId} | Get
+[**updateVm**](VmApi.md#updateVm) | **PATCH** /vm/{vmId} | Update
 
 
 <a name="actionVmFlavour"></a>
 # **actionVmFlavour**
-> Vm actionVmFlavour(vmId, opts)
+> Vm actionVmFlavour(vmId)
 
-Action :: flavour
+/actions/flavour
 
 Action flavour
 
@@ -49,15 +64,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-var opts = {
-  'inlineObject31': new HyperOneApi.InlineObject31() // InlineObject31 | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 };
-apiInstance.actionVmFlavour(vmId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+apiInstance.actionVmFlavour(vmId, callback);
 ```
 
 ### Parameters
@@ -65,7 +79,6 @@ apiInstance.actionVmFlavour(vmId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
- **inlineObject31** | [**InlineObject31**](InlineObject31.md)|  | [optional] 
 
 ### Return type
 
@@ -77,14 +90,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="actionVmImage"></a>
 # **actionVmImage**
 > Vm actionVmImage(vmId, opts)
 
-Action :: image
+/actions/image
 
 Action image
 
@@ -111,14 +124,16 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
 var opts = {
-  'inlineObject30': new HyperOneApi.InlineObject30() // InlineObject30 | 
+  'inlineObject38': new HyperOneApi.InlineObject38() // InlineObject38 | 
 };
-apiInstance.actionVmImage(vmId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.actionVmImage(vmId, opts, callback);
 ```
 
 ### Parameters
@@ -126,7 +141,7 @@ apiInstance.actionVmImage(vmId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
- **inlineObject30** | [**InlineObject30**](InlineObject30.md)|  | [optional] 
+ **inlineObject38** | [**InlineObject38**](InlineObject38.md)|  | [optional] 
 
 ### Return type
 
@@ -145,7 +160,7 @@ Name | Type | Description  | Notes
 # **actionVmPasswordReset**
 > Vm actionVmPasswordReset(vmId, opts)
 
-Action :: password_reset
+/actions/password_reset
 
 Action password_reset
 
@@ -172,14 +187,16 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
 var opts = {
-  'inlineObject29': new HyperOneApi.InlineObject29() // InlineObject29 | 
+  'inlineObject37': new HyperOneApi.InlineObject37() // InlineObject37 | 
 };
-apiInstance.actionVmPasswordReset(vmId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.actionVmPasswordReset(vmId, opts, callback);
 ```
 
 ### Parameters
@@ -187,7 +204,7 @@ apiInstance.actionVmPasswordReset(vmId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
- **inlineObject29** | [**InlineObject29**](InlineObject29.md)|  | [optional] 
+ **inlineObject37** | [**InlineObject37**](InlineObject37.md)|  | [optional] 
 
 ### Return type
 
@@ -204,9 +221,9 @@ Name | Type | Description  | Notes
 
 <a name="actionVmRename"></a>
 # **actionVmRename**
-> Vm actionVmRename(vmId, opts)
+> Vm actionVmRename(vmId)
 
-Action :: rename
+/actions/rename
 
 Action rename
 
@@ -232,15 +249,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-var opts = {
-  'inlineObject28': new HyperOneApi.InlineObject28() // InlineObject28 | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 };
-apiInstance.actionVmRename(vmId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+apiInstance.actionVmRename(vmId, callback);
 ```
 
 ### Parameters
@@ -248,7 +264,6 @@ apiInstance.actionVmRename(vmId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
- **inlineObject28** | [**InlineObject28**](InlineObject28.md)|  | [optional] 
 
 ### Return type
 
@@ -260,14 +275,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="actionVmRestart"></a>
 # **actionVmRestart**
-> Vm actionVmRestart(vmId, opts)
+> Vm actionVmRestart(vmId)
 
-Action :: restart
+/actions/restart
 
 Action restart
 
@@ -293,15 +308,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-var opts = {
-  'body': null // Object | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 };
-apiInstance.actionVmRestart(vmId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+apiInstance.actionVmRestart(vmId, callback);
 ```
 
 ### Parameters
@@ -309,7 +323,6 @@ apiInstance.actionVmRestart(vmId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
- **body** | **Object**|  | [optional] 
 
 ### Return type
 
@@ -321,14 +334,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="actionVmStart"></a>
 # **actionVmStart**
-> Vm actionVmStart(vmId, opts)
+> Vm actionVmStart(vmId)
 
-Action :: start
+/actions/start
 
 Action start
 
@@ -354,15 +367,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-var opts = {
-  'body': null // Object | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 };
-apiInstance.actionVmStart(vmId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+apiInstance.actionVmStart(vmId, callback);
 ```
 
 ### Parameters
@@ -370,7 +382,6 @@ apiInstance.actionVmStart(vmId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
- **body** | **Object**|  | [optional] 
 
 ### Return type
 
@@ -382,14 +393,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="actionVmStop"></a>
 # **actionVmStop**
-> Vm actionVmStop(vmId, opts)
+> Vm actionVmStop(vmId)
 
-Action :: stop
+/actions/stop
 
 Action stop
 
@@ -415,15 +426,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-var opts = {
-  'body': null // Object | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 };
-apiInstance.actionVmStop(vmId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+apiInstance.actionVmStop(vmId, callback);
 ```
 
 ### Parameters
@@ -431,7 +441,6 @@ apiInstance.actionVmStop(vmId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
- **body** | **Object**|  | [optional] 
 
 ### Return type
 
@@ -443,14 +452,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="actionVmTurnoff"></a>
 # **actionVmTurnoff**
-> Vm actionVmTurnoff(vmId, opts)
+> Vm actionVmTurnoff(vmId)
 
-Action :: turnoff
+/actions/turnoff
 
 Action turnoff
 
@@ -476,15 +485,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-var opts = {
-  'body': null // Object | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 };
-apiInstance.actionVmTurnoff(vmId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+apiInstance.actionVmTurnoff(vmId, callback);
 ```
 
 ### Parameters
@@ -492,7 +500,6 @@ apiInstance.actionVmTurnoff(vmId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
- **body** | **Object**|  | [optional] 
 
 ### Return type
 
@@ -504,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="createVm"></a>
@@ -537,21 +544,23 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var opts = {
-  'inlineObject26': new HyperOneApi.InlineObject26() // InlineObject26 | 
+  'inlineObject35': new HyperOneApi.InlineObject35() // InlineObject35 | 
 };
-apiInstance.createVm(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createVm(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject26** | [**InlineObject26**](InlineObject26.md)|  | [optional] 
+ **inlineObject35** | [**InlineObject35**](InlineObject35.md)|  | [optional] 
 
 ### Return type
 
@@ -570,7 +579,7 @@ Name | Type | Description  | Notes
 # **deleteVm**
 > deleteVm(vmId)
 
-Delete by ID
+Delete
 
 ### Example
 ```javascript
@@ -594,12 +603,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-apiInstance.deleteVm(vmId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteVm(vmId, callback);
 ```
 
 ### Parameters
@@ -653,12 +664,14 @@ var apiInstance = new HyperOneApi.VmApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-apiInstance.listVm(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listVm(opts, callback);
 ```
 
 ### Parameters
@@ -680,11 +693,888 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="operationVmDeleteaccessrightsIdentity"></a>
+# **operationVmDeleteaccessrightsIdentity**
+> Vm operationVmDeleteaccessrightsIdentity(vmId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var identity = "identity_example"; // String | identity
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmDeleteaccessrightsIdentity(vmId, identity, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Vm**](Vm.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmDeletehddDiskId"></a>
+# **operationVmDeletehddDiskId**
+> Vm operationVmDeletehddDiskId(vmId, diskId)
+
+/hdd/:diskId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var diskId = "diskId_example"; // String | diskId
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmDeletehddDiskId(vmId, diskId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+ **diskId** | **String**| diskId | 
+
+### Return type
+
+[**Vm**](Vm.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmDeletenetadp"></a>
+# **operationVmDeletenetadp**
+> Vm operationVmDeletenetadp(vmId)
+
+/netadp
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmDeletenetadp(vmId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+
+### Return type
+
+[**Vm**](Vm.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmDeletetagKey"></a>
+# **operationVmDeletetagKey**
+> {String: String} operationVmDeletetagKey(vmId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var key = "key_example"; // String | key
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmDeletetagKey(vmId, key, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+ **key** | **String**| key | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmGetservicesServiceId"></a>
+# **operationVmGetservicesServiceId**
+> VmServices operationVmGetservicesServiceId(vmId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var serviceId = "serviceId_example"; // String | serviceId
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmGetservicesServiceId(vmId, serviceId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**VmServices**](VmServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmGettag"></a>
+# **operationVmGettag**
+> {String: String} operationVmGettag(vmId)
+
+/tag/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmGettag(vmId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmListaccessrights"></a>
+# **operationVmListaccessrights**
+> [String] operationVmListaccessrights(vmId)
+
+/accessrights/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmListaccessrights(vmId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+
+### Return type
+
+**[String]**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmListhdd"></a>
+# **operationVmListhdd**
+> [Hdd] operationVmListhdd(vmId)
+
+/hdd
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmListhdd(vmId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+
+### Return type
+
+[**[Hdd]**](Hdd.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmListnetadp"></a>
+# **operationVmListnetadp**
+> [Netadp] operationVmListnetadp(vmId)
+
+/netadp
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmListnetadp(vmId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+
+### Return type
+
+[**[Netadp]**](Netadp.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmListqueue"></a>
+# **operationVmListqueue**
+> [Event] operationVmListqueue(vmId)
+
+/queue/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmListqueue(vmId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+
+### Return type
+
+[**[Event]**](Event.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmListservices"></a>
+# **operationVmListservices**
+> [VmServices] operationVmListservices(vmId)
+
+/services/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmListservices(vmId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+
+### Return type
+
+[**[VmServices]**](VmServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationVmPatchtag"></a>
+# **operationVmPatchtag**
+> {String: String} operationVmPatchtag(vmId, requestBody)
+
+/tag/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var requestBody = {key: "null"}; // {String: String} | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmPatchtag(vmId, requestBody, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="operationVmPostaccessrights"></a>
+# **operationVmPostaccessrights**
+> String operationVmPostaccessrights(vmId, opts)
+
+/accessrights/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var opts = {
+  'inlineObject41': new HyperOneApi.InlineObject41() // InlineObject41 | 
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmPostaccessrights(vmId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+ **inlineObject41** | [**InlineObject41**](InlineObject41.md)|  | [optional] 
+
+### Return type
+
+**String**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="operationVmPosthdd"></a>
+# **operationVmPosthdd**
+> Vm operationVmPosthdd(vmId, opts)
+
+/hdd
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var opts = {
+  'inlineObject39': new HyperOneApi.InlineObject39() // InlineObject39 | 
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmPosthdd(vmId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+ **inlineObject39** | [**InlineObject39**](InlineObject39.md)|  | [optional] 
+
+### Return type
+
+[**Vm**](Vm.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="operationVmPostnetadp"></a>
+# **operationVmPostnetadp**
+> Vm operationVmPostnetadp(vmId, opts)
+
+/netadp
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VmApi();
+var vmId = "vmId_example"; // String | ID of vm
+var opts = {
+  'inlineObject40': new HyperOneApi.InlineObject40() // InlineObject40 | 
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationVmPostnetadp(vmId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+ **inlineObject40** | [**InlineObject40**](InlineObject40.md)|  | [optional] 
+
+### Return type
+
+[**Vm**](Vm.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="showVm"></a>
 # **showVm**
 > Vm showVm(vmId)
 
-Find by ID
+Get
 
 Returns a single vm
 
@@ -710,12 +1600,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-apiInstance.showVm(vmId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.showVm(vmId, callback);
 ```
 
 ### Parameters
@@ -741,7 +1633,7 @@ Name | Type | Description  | Notes
 # **updateVm**
 > Vm updateVm(vmId, opts)
 
-Update by ID
+Update
 
 Returns modified vm
 
@@ -768,14 +1660,16 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
 var opts = {
-  'inlineObject27': new HyperOneApi.InlineObject27() // InlineObject27 | 
+  'inlineObject36': new HyperOneApi.InlineObject36() // InlineObject36 | 
 };
-apiInstance.updateVm(vmId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateVm(vmId, opts, callback);
 ```
 
 ### Parameters
@@ -783,7 +1677,7 @@ apiInstance.updateVm(vmId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
- **inlineObject27** | [**InlineObject27**](InlineObject27.md)|  | [optional] 
+ **inlineObject36** | [**InlineObject36**](InlineObject36.md)|  | [optional] 
 
 ### Return type
 

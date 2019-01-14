@@ -14,93 +14,110 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'));
-    } else {
+    module.exports = factory(require('../ApiClient'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.Vmhost = factory(root.HyperOneApi.ApiClient);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
+    root.HyperOneApi.Vmhost = factory(root.HyperOneApi.ApiClient);
+  }
 }(this, function(ApiClient) {
-    'use strict';
+  'use strict';
 
 
 
-    /**
+  /**
    * The Vmhost model module.
    * @module model/Vmhost
    * @version 1
    */
 
-    /**
+  /**
    * Constructs a new <code>Vmhost</code>.
    * @alias module:model/Vmhost
    * @class
    */
-    const exports = function() {
-        const _this = this;
+  var exports = function() {
+    var _this = this;
 
-    };
+  };
 
-    /**
+  /**
    * Constructs a <code>Vmhost</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/Vmhost} obj Optional instance to populate.
    * @return {module:model/Vmhost} The populated <code>Vmhost</code> instance.
    */
-    exports.constructFromObject = function(data, obj) {
-        if (data) {
-            obj = obj || new exports();
-            if (data.hasOwnProperty('_id')) {
-                obj._id = ApiClient.convertToType(data._id, 'String');
-            }
-            if (data.hasOwnProperty('name')) {
-                obj.name = ApiClient.convertToType(data.name, 'String');
-            }
-            if (data.hasOwnProperty('state')) {
-                obj.state = ApiClient.convertToType(data.state, 'String');
-            }
-            if (data.hasOwnProperty('created')) {
-                obj.created = ApiClient.convertToType(data.created, 'Boolean');
-            }
-            if (data.hasOwnProperty('accessRights')) {
-                obj.accessRights = ApiClient.convertToType(data.accessRights, ['String']);
-            }
-        }
-        return obj;
-    };
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+      if (data.hasOwnProperty('_id')) {
+        obj['_id'] = ApiClient.convertToType(data['_id'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('state')) {
+        obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      }
+      if (data.hasOwnProperty('created')) {
+        obj['created'] = ApiClient.convertToType(data['created'], 'Boolean');
+      }
+      if (data.hasOwnProperty('accessRights')) {
+        obj['accessRights'] = ApiClient.convertToType(data['accessRights'], ['String']);
+      }
+    }
+    return obj;
+  }
 
-    /**
+  /**
    * @member {String} _id
    */
-    exports.prototype._id = undefined;
-    /**
+  exports.prototype['_id'] = undefined;
+  /**
    * @member {String} name
    */
-    exports.prototype.name = undefined;
-    /**
-   * @member {String} state
+  exports.prototype['name'] = undefined;
+  /**
+   * @member {module:model/Vmhost.StateEnum} state
    */
-    exports.prototype.state = undefined;
-    /**
+  exports.prototype['state'] = undefined;
+  /**
    * @member {Boolean} created
    */
-    exports.prototype.created = undefined;
-    /**
+  exports.prototype['created'] = undefined;
+  /**
    * @member {Array.<String>} accessRights
    */
-    exports.prototype.accessRights = undefined;
+  exports.prototype['accessRights'] = undefined;
 
 
+  /**
+   * Allowed values for the <code>state</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.StateEnum = {
+    /**
+     * value: "Running"
+     * @const
+     */
+    "Running": "Running",
+    /**
+     * value: "Unknown"
+     * @const
+     */
+    "Unknown": "Unknown"  };
 
-    return exports;
+
+  return exports;
 }));
 
 

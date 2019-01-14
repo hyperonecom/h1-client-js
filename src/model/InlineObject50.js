@@ -14,74 +14,65 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'));
-    } else {
+    module.exports = factory(require('../ApiClient'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.InlineObject50 = factory(root.HyperOneApi.ApiClient);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
+    root.HyperOneApi.InlineObject50 = factory(root.HyperOneApi.ApiClient);
+  }
 }(this, function(ApiClient) {
-    'use strict';
+  'use strict';
 
 
 
-    /**
+  /**
    * The InlineObject50 model module.
    * @module model/InlineObject50
    * @version 1
    */
 
-    /**
+  /**
    * Constructs a new <code>InlineObject50</code>.
    * @alias module:model/InlineObject50
    * @class
-   * @param vm {String}
    */
-    const exports = function(vm) {
-        const _this = this;
+  var exports = function() {
+    var _this = this;
 
-        _this.vm = vm;
-    };
+  };
 
-    /**
+  /**
    * Constructs a <code>InlineObject50</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/InlineObject50} obj Optional instance to populate.
    * @return {module:model/InlineObject50} The populated <code>InlineObject50</code> instance.
    */
-    exports.constructFromObject = function(data, obj) {
-        if (data) {
-            obj = obj || new exports();
-            if (data.hasOwnProperty('vm')) {
-                obj.vm = ApiClient.convertToType(data.vm, 'String');
-            }
-            if (data.hasOwnProperty('vmhost')) {
-                obj.vmhost = ApiClient.convertToType(data.vmhost, 'String');
-            }
-        }
-        return obj;
-    };
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+    }
+    return obj;
+  }
 
-    /**
-   * @member {String} vm
+  /**
+   * @member {String} name
    */
-    exports.prototype.vm = undefined;
-    /**
-   * @member {String} vmhost
-   */
-    exports.prototype.vmhost = undefined;
+  exports.prototype['name'] = undefined;
 
 
 
-    return exports;
+  return exports;
 }));
 
 

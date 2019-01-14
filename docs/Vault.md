@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**services** | [**[ContainerServices]**](ContainerServices.md) |  | [optional] 
+**services** | [**[ProjectServices]**](ProjectServices.md) |  | [optional] 
 **flavour** | **String** |  | [optional] 
 **modifiedOn** | **Date** |  | [optional] 
 **modifiedBy** | **String** |  | [optional] 
@@ -21,5 +21,18 @@ Name | Type | Description | Notes
 **size** | **Number** |  | [optional] 
 **sizeUsed** | **Number** |  | [optional] 
 **credential** | [**VaultCredential1**](VaultCredential1.md) |  | [optional] 
+
+
+<a name="StateEnum"></a>
+## Enum: StateEnum
+
+
+* `Online` (value: `"Online"`)
+
+* `Off` (value: `"Off"`)
+
+* `Unknown` (value: `"Unknown"`)
+
+
 
 

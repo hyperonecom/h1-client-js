@@ -3,6 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**enabledServices** | [**VmhostvmhostIdEnabledServices**](VmhostvmhostIdEnabledServices.md) |  | [optional] 
+**name** | **String** |  | 
+**type** | **String** |  | 
+**value** | **String** |  | 
 
 

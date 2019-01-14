@@ -14,76 +14,72 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient', 'model/OrganisationorganisationIdBilling'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'));
-    } else {
+    module.exports = factory(require('../ApiClient'), require('./OrganisationorganisationIdBilling'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.InlineObject4 = factory(root.HyperOneApi.ApiClient);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
-}(this, function(ApiClient) {
-    'use strict';
+    root.HyperOneApi.InlineObject4 = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.OrganisationorganisationIdBilling);
+  }
+}(this, function(ApiClient, OrganisationorganisationIdBilling) {
+  'use strict';
 
 
 
-    /**
+  /**
    * The InlineObject4 model module.
    * @module model/InlineObject4
    * @version 1
    */
 
-    /**
+  /**
    * Constructs a new <code>InlineObject4</code>.
    * @alias module:model/InlineObject4
    * @class
-   * @param payment {String}
-   * @param project {String}
    */
-    const exports = function(payment, project) {
-        const _this = this;
+  var exports = function() {
+    var _this = this;
 
-        _this.payment = payment;
-        _this.project = project;
-    };
+  };
 
-    /**
+  /**
    * Constructs a <code>InlineObject4</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/InlineObject4} obj Optional instance to populate.
    * @return {module:model/InlineObject4} The populated <code>InlineObject4</code> instance.
    */
-    exports.constructFromObject = function(data, obj) {
-        if (data) {
-            obj = obj || new exports();
-            if (data.hasOwnProperty('payment')) {
-                obj.payment = ApiClient.convertToType(data.payment, 'String');
-            }
-            if (data.hasOwnProperty('project')) {
-                obj.project = ApiClient.convertToType(data.project, 'String');
-            }
-        }
-        return obj;
-    };
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('billing')) {
+        obj['billing'] = OrganisationorganisationIdBilling.constructFromObject(data['billing']);
+      }
+    }
+    return obj;
+  }
 
-    /**
-   * @member {String} payment
+  /**
+   * @member {String} name
    */
-    exports.prototype.payment = undefined;
-    /**
-   * @member {String} project
+  exports.prototype['name'] = undefined;
+  /**
+   * @member {module:model/OrganisationorganisationIdBilling} billing
    */
-    exports.prototype.project = undefined;
+  exports.prototype['billing'] = undefined;
 
 
 
-    return exports;
+  return exports;
 }));
 
 

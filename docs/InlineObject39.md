@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**size** | **Number** |  | [optional] 
+**disk** | **String** |  | 
+**controllerType** | **String** |  | [optional] 
 
 

@@ -14,360 +14,1301 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient', 'model/InlineObject46', 'model/InlineObject47', 'model/InlineObject48', 'model/LogArchive'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Event', 'model/InlineObject60', 'model/InlineObject61', 'model/InlineObject62', 'model/InlineObject63', 'model/InlineObject64', 'model/InlineObject65', 'model/InlineObject66', 'model/InlineObject67', 'model/LogArchive', 'model/LogArchiveServices'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'), require('../model/InlineObject46'), require('../model/InlineObject47'), require('../model/InlineObject48'), require('../model/LogArchive'));
-    } else {
+    module.exports = factory(require('../ApiClient'), require('../model/CredentialCertificate'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/InlineObject60'), require('../model/InlineObject61'), require('../model/InlineObject62'), require('../model/InlineObject63'), require('../model/InlineObject64'), require('../model/InlineObject65'), require('../model/InlineObject66'), require('../model/InlineObject67'), require('../model/LogArchive'), require('../model/LogArchiveServices'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.LogArchiveApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject46, root.HyperOneApi.InlineObject47, root.HyperOneApi.InlineObject48, root.HyperOneApi.LogArchive);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
-}(this, function(ApiClient, InlineObject46, InlineObject47, InlineObject48, LogArchive) {
-    'use strict';
+    root.HyperOneApi.LogArchiveApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.InlineObject60, root.HyperOneApi.InlineObject61, root.HyperOneApi.InlineObject62, root.HyperOneApi.InlineObject63, root.HyperOneApi.InlineObject64, root.HyperOneApi.InlineObject65, root.HyperOneApi.InlineObject66, root.HyperOneApi.InlineObject67, root.HyperOneApi.LogArchive, root.HyperOneApi.LogArchiveServices);
+  }
+}(this, function(ApiClient, CredentialCertificate, CredentialPassword, Event, InlineObject60, InlineObject61, InlineObject62, InlineObject63, InlineObject64, InlineObject65, InlineObject66, InlineObject67, LogArchive, LogArchiveServices) {
+  'use strict';
 
-    /**
+  /**
    * LogArchive service.
    * @module api/LogArchiveApi
    * @version 1
    */
 
-    /**
-   * Constructs a new LogArchiveApi.
+  /**
+   * Constructs a new LogArchiveApi. 
    * @alias module:api/LogArchiveApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    const exports = function(apiClient) {
-        this.apiClient = apiClient || ApiClient.instance;
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
 
 
+    /**
+     * Callback function to receive the result of the actionLogArchiveTransfer operation.
+     * @callback module:api/LogArchiveApi~actionLogArchiveTransferCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LogArchive} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
-        /**
-     * Action :: transfer
+    /**
+     * /actions/transfer
      * Action transfer
      * @param {String} logArchiveId ID of logArchive
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject48} opts.inlineObject48
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
+     * @param {module:model/InlineObject62} opts.inlineObject62 
+     * @param {module:api/LogArchiveApi~actionLogArchiveTransferCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LogArchive}
      */
-        this.actionLogArchiveTransferWithHttpInfo = function(logArchiveId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject48;
+    this.actionLogArchiveTransfer = function(logArchiveId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject62'];
 
-            // verify the required parameter 'logArchiveId' is set
-            if (logArchiveId === undefined || logArchiveId === null) {
-                throw new Error("Missing the required parameter 'logArchiveId' when calling actionLogArchiveTransfer");
-            }
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling actionLogArchiveTransfer");
+      }
 
 
-            const pathParams = {
-                logArchiveId: logArchiveId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = LogArchive;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = LogArchive;
 
-            return this.apiClient.callApi(
-                '/logArchive/{logArchiveId}/actions/transfer', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/actions/transfer', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: transfer
-     * Action transfer
-     * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject48} opts.inlineObject48
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
+    /**
+     * Callback function to receive the result of the createLogArchive operation.
+     * @callback module:api/LogArchiveApi~createLogArchiveCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LogArchive} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionLogArchiveTransfer = function(logArchiveId, opts) {
-            return this.actionLogArchiveTransferWithHttpInfo(logArchiveId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
+    /**
      * Create
      * Create logArchive
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject46} opts.inlineObject46
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
+     * @param {module:model/InlineObject60} opts.inlineObject60 
+     * @param {module:api/LogArchiveApi~createLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LogArchive}
      */
-        this.createLogArchiveWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject46;
+    this.createLogArchive = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject60'];
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = LogArchive;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = LogArchive;
 
-            return this.apiClient.callApi(
-                '/logArchive', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/logArchive', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Create
-     * Create logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject46} opts.inlineObject46
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
+    /**
+     * Callback function to receive the result of the deleteLogArchive operation.
+     * @callback module:api/LogArchiveApi~deleteLogArchiveCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-        this.createLogArchive = function(opts) {
-            return this.createLogArchiveWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Delete by ID
+    /**
+     * Delete
      * @param {String} logArchiveId ID of logArchive
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/LogArchiveApi~deleteLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
      */
-        this.deleteLogArchiveWithHttpInfo = function(logArchiveId) {
-            const postBody = null;
+    this.deleteLogArchive = function(logArchiveId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'logArchiveId' is set
-            if (logArchiveId === undefined || logArchiveId === null) {
-                throw new Error("Missing the required parameter 'logArchiveId' when calling deleteLogArchive");
-            }
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling deleteLogArchive");
+      }
 
 
-            const pathParams = {
-                logArchiveId: logArchiveId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = [];
-            const returnType = null;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
 
-            return this.apiClient.callApi(
-                '/logArchive/{logArchiveId}', 'DELETE',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Delete by ID
-     * @param {String} logArchiveId ID of logArchive
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+    /**
+     * Callback function to receive the result of the listLogArchive operation.
+     * @callback module:api/LogArchiveApi~listLogArchiveCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/LogArchive>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.deleteLogArchive = function(logArchiveId) {
-            return this.deleteLogArchiveWithHttpInfo(logArchiveId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
+    /**
      * List
      * List logArchive
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LogArchive>} and HTTP response
+     * @param {module:api/LogArchiveApi~listLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/LogArchive>}
      */
-        this.listLogArchiveWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = null;
+    this.listLogArchive = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-                name: opts.name,
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+        'name': opts['name'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = [LogArchive];
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [LogArchive];
 
-            return this.apiClient.callApi(
-                '/logArchive', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/logArchive', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * List
-     * List logArchive
+    /**
+     * Callback function to receive the result of the operationLogArchiveDeleteaccessrightsIdentity operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveDeleteaccessrightsIdentityCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LogArchive} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/:identity
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} identity identity
+     * @param {module:api/LogArchiveApi~operationLogArchiveDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LogArchive}
+     */
+    this.operationLogArchiveDeleteaccessrightsIdentity = function(logArchiveId, identity, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveDeleteaccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling operationLogArchiveDeleteaccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LogArchive;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveDeletecredentialcertificateId operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveDeletecredentialcertificateIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LogArchive} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @param {module:api/LogArchiveApi~operationLogArchiveDeletecredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LogArchive}
+     */
+    this.operationLogArchiveDeletecredentialcertificateId = function(logArchiveId, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveDeletecredentialcertificateId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationLogArchiveDeletecredentialcertificateId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LogArchive;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/certificate/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveDeletecredentialpasswordId operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveDeletecredentialpasswordIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LogArchive} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/password/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @param {module:api/LogArchiveApi~operationLogArchiveDeletecredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LogArchive}
+     */
+    this.operationLogArchiveDeletecredentialpasswordId = function(logArchiveId, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveDeletecredentialpasswordId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationLogArchiveDeletecredentialpasswordId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LogArchive;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/password/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveDeletetagKey operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveDeletetagKeyCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/:key
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} key key
+     * @param {module:api/LogArchiveApi~operationLogArchiveDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationLogArchiveDeletetagKey = function(logArchiveId, key, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveDeletetagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling operationLogArchiveDeletetagKey");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveGetcredentialcertificateId operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveGetcredentialcertificateIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialCertificate} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @param {module:api/LogArchiveApi~operationLogArchiveGetcredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialCertificate}
+     */
+    this.operationLogArchiveGetcredentialcertificateId = function(logArchiveId, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveGetcredentialcertificateId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationLogArchiveGetcredentialcertificateId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CredentialCertificate;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/certificate/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveGetcredentialpasswordId operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveGetcredentialpasswordIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialPassword} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/password/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @param {module:api/LogArchiveApi~operationLogArchiveGetcredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialPassword}
+     */
+    this.operationLogArchiveGetcredentialpasswordId = function(logArchiveId, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveGetcredentialpasswordId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationLogArchiveGetcredentialpasswordId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CredentialPassword;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/password/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveGetservicesServiceId operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveGetservicesServiceIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LogArchiveServices} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/:serviceId
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} serviceId serviceId
+     * @param {module:api/LogArchiveApi~operationLogArchiveGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LogArchiveServices}
+     */
+    this.operationLogArchiveGetservicesServiceId = function(logArchiveId, serviceId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveGetservicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling operationLogArchiveGetservicesServiceId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LogArchiveServices;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveGettag operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveGettagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} logArchiveId ID of logArchive
+     * @param {module:api/LogArchiveApi~operationLogArchiveGettagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationLogArchiveGettag = function(logArchiveId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveGettag");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/tag/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveListaccessrights operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveListaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<String>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} logArchiveId ID of logArchive
+     * @param {module:api/LogArchiveApi~operationLogArchiveListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<String>}
+     */
+    this.operationLogArchiveListaccessrights = function(logArchiveId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveListaccessrights");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ['String'];
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/accessrights/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveListcredentialcertificate operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveListcredentialcertificateCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/CredentialCertificate>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/certificate
+     * @param {String} logArchiveId ID of logArchive
+     * @param {module:api/LogArchiveApi~operationLogArchiveListcredentialcertificateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CredentialCertificate>}
+     */
+    this.operationLogArchiveListcredentialcertificate = function(logArchiveId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveListcredentialcertificate");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [CredentialCertificate];
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/certificate', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveListcredentialpassword operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveListcredentialpasswordCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/CredentialPassword>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/password
+     * @param {String} logArchiveId ID of logArchive
+     * @param {module:api/LogArchiveApi~operationLogArchiveListcredentialpasswordCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CredentialPassword>}
+     */
+    this.operationLogArchiveListcredentialpassword = function(logArchiveId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveListcredentialpassword");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [CredentialPassword];
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/password', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveListqueue operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveListqueueCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Event>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /queue/
+     * @param {String} logArchiveId ID of logArchive
+     * @param {module:api/LogArchiveApi~operationLogArchiveListqueueCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Event>}
+     */
+    this.operationLogArchiveListqueue = function(logArchiveId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveListqueue");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Event];
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/queue/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchiveListservices operation.
+     * @callback module:api/LogArchiveApi~operationLogArchiveListservicesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/LogArchiveServices>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/
+     * @param {String} logArchiveId ID of logArchive
+     * @param {module:api/LogArchiveApi~operationLogArchiveListservicesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/LogArchiveServices>}
+     */
+    this.operationLogArchiveListservices = function(logArchiveId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveListservices");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [LogArchiveServices];
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/services/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchivePatchcredentialcertificateId operation.
+     * @callback module:api/LogArchiveApi~operationLogArchivePatchcredentialcertificateIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialCertificate} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
      * @param {Object} opts Optional parameters
-     * @param {String} opts.name Filter by name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LogArchive>}
+     * @param {module:model/InlineObject66} opts.inlineObject66 
+     * @param {module:api/LogArchiveApi~operationLogArchivePatchcredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialCertificate}
      */
-        this.listLogArchive = function(opts) {
-            return this.listLogArchiveWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
+    this.operationLogArchivePatchcredentialcertificateId = function(logArchiveId, id, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject66'];
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePatchcredentialcertificateId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationLogArchivePatchcredentialcertificateId");
+      }
 
 
-        /**
-     * Find by ID
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CredentialCertificate;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/certificate/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchivePatchcredentialpasswordId operation.
+     * @callback module:api/LogArchiveApi~operationLogArchivePatchcredentialpasswordIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialPassword} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/password/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject64} opts.inlineObject64 
+     * @param {module:api/LogArchiveApi~operationLogArchivePatchcredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialPassword}
+     */
+    this.operationLogArchivePatchcredentialpasswordId = function(logArchiveId, id, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject64'];
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePatchcredentialpasswordId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationLogArchivePatchcredentialpasswordId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CredentialPassword;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/password/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchivePatchtag operation.
+     * @callback module:api/LogArchiveApi~operationLogArchivePatchtagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @param {module:api/LogArchiveApi~operationLogArchivePatchtagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationLogArchivePatchtag = function(logArchiveId, requestBody, callback) {
+      var postBody = requestBody;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePatchtag");
+      }
+
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling operationLogArchivePatchtag");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/tag/', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchivePostaccessrights operation.
+     * @callback module:api/LogArchiveApi~operationLogArchivePostaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {String} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject67} opts.inlineObject67 
+     * @param {module:api/LogArchiveApi~operationLogArchivePostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link String}
+     */
+    this.operationLogArchivePostaccessrights = function(logArchiveId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject67'];
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePostaccessrights");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = 'String';
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/accessrights/', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchivePostcredentialcertificate operation.
+     * @callback module:api/LogArchiveApi~operationLogArchivePostcredentialcertificateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialCertificate} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/certificate
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject65} opts.inlineObject65 
+     * @param {module:api/LogArchiveApi~operationLogArchivePostcredentialcertificateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialCertificate}
+     */
+    this.operationLogArchivePostcredentialcertificate = function(logArchiveId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject65'];
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePostcredentialcertificate");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CredentialCertificate;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/certificate', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationLogArchivePostcredentialpassword operation.
+     * @callback module:api/LogArchiveApi~operationLogArchivePostcredentialpasswordCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialPassword} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/password
+     * @param {String} logArchiveId ID of logArchive
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject63} opts.inlineObject63 
+     * @param {module:api/LogArchiveApi~operationLogArchivePostcredentialpasswordCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialPassword}
+     */
+    this.operationLogArchivePostcredentialpassword = function(logArchiveId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject63'];
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePostcredentialpassword");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CredentialPassword;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/password', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the showLogArchive operation.
+     * @callback module:api/LogArchiveApi~showLogArchiveCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LogArchive} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get
      * Returns a single logArchive
      * @param {String} logArchiveId ID of logArchive
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
+     * @param {module:api/LogArchiveApi~showLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LogArchive}
      */
-        this.showLogArchiveWithHttpInfo = function(logArchiveId) {
-            const postBody = null;
+    this.showLogArchive = function(logArchiveId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'logArchiveId' is set
-            if (logArchiveId === undefined || logArchiveId === null) {
-                throw new Error("Missing the required parameter 'logArchiveId' when calling showLogArchive");
-            }
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling showLogArchive");
+      }
 
 
-            const pathParams = {
-                logArchiveId: logArchiveId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = LogArchive;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LogArchive;
 
-            return this.apiClient.callApi(
-                '/logArchive/{logArchiveId}', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Find by ID
-     * Returns a single logArchive
-     * @param {String} logArchiveId ID of logArchive
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
+    /**
+     * Callback function to receive the result of the updateLogArchive operation.
+     * @callback module:api/LogArchiveApi~updateLogArchiveCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/LogArchive} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.showLogArchive = function(logArchiveId) {
-            return this.showLogArchiveWithHttpInfo(logArchiveId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Update by ID
+    /**
+     * Update
      * Returns modified logArchive
      * @param {String} logArchiveId ID of logArchive
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject47} opts.inlineObject47
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
+     * @param {module:model/InlineObject61} opts.inlineObject61 
+     * @param {module:api/LogArchiveApi~updateLogArchiveCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/LogArchive}
      */
-        this.updateLogArchiveWithHttpInfo = function(logArchiveId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject47;
+    this.updateLogArchive = function(logArchiveId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject61'];
 
-            // verify the required parameter 'logArchiveId' is set
-            if (logArchiveId === undefined || logArchiveId === null) {
-                throw new Error("Missing the required parameter 'logArchiveId' when calling updateLogArchive");
-            }
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling updateLogArchive");
+      }
 
 
-            const pathParams = {
-                logArchiveId: logArchiveId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = LogArchive;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = LogArchive;
 
-            return this.apiClient.callApi(
-                '/logArchive/{logArchiveId}', 'PATCH',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+  };
 
-        /**
-     * Update by ID
-     * Returns modified logArchive
-     * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject47} opts.inlineObject47
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
-     */
-        this.updateLogArchive = function(logArchiveId, opts) {
-            return this.updateLogArchiveWithHttpInfo(logArchiveId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
-    };
-
-    return exports;
+  return exports;
 }));

@@ -5,18 +5,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**services** | **String** |  | [optional] 
+**services** | [**[ProjectServices]**](ProjectServices.md) |  | [optional] 
 **flavour** | **String** |  | [optional] 
-**modifiedOn** | **String** |  | [optional] 
+**modifiedOn** | **Date** |  | [optional] 
 **modifiedBy** | **String** |  | [optional] 
 **createdBy** | **String** |  | [optional] 
-**createdOn** | **String** |  | [optional] 
+**createdOn** | **Date** |  | [optional] 
 **accessRights** | [**ProjectAccessRights1**](ProjectAccessRights1.md) |  | [optional] 
 **processing** | **Boolean** |  | [optional] 
-**created** | **String** |  | [optional] 
+**created** | **Boolean** |  | [optional] 
 **queue** | [**[Event]**](Event.md) |  | [optional] 
 **state** | **String** |  | [optional] 
-**tag** | **String** |  | [optional] 
+**tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
 **bankAccount** | **String** |  | [optional] 
 **organisation** | **String** |  | [optional] 
@@ -24,12 +24,25 @@ Name | Type | Description | Notes
 **invoices** | [**ProjectInvoices**](ProjectInvoices.md) |  | [optional] 
 **payments** | [**ProjectPayments**](ProjectPayments.md) |  | [optional] 
 **verified** | **String** |  | [optional] 
-**active** | **String** |  | [optional] 
-**limit** | **String** |  | [optional] 
+**active** | **Boolean** |  | [optional] 
+**limit** | [**ProjectLimit**](ProjectLimit.md) |  | [optional] 
 **threshold** | [**ProjectThreshold**](ProjectThreshold.md) |  | [optional] 
-**roles** | **String** |  | [optional] 
+**roles** | [**[ProjectRoles]**](ProjectRoles.md) |  | [optional] 
 **networkAcl** | [**ProjectNetworkAcl**](ProjectNetworkAcl.md) |  | [optional] 
 **compliance** | [**ProjectCompliance**](ProjectCompliance.md) |  | [optional] 
 **transfer** | [**ProjectTransfer**](ProjectTransfer.md) |  | [optional] 
+
+
+<a name="StateEnum"></a>
+## Enum: StateEnum
+
+
+* `Active` (value: `"Active"`)
+
+* `Inactive` (value: `"Inactive"`)
+
+* `Limited` (value: `"Limited"`)
+
+
 
 

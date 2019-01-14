@@ -7,22 +7,35 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **services** | **String** |  | [optional] 
 **flavour** | **String** |  | [optional] 
-**modifiedOn** | **String** |  | [optional] 
+**modifiedOn** | **Date** |  | [optional] 
 **modifiedBy** | **String** |  | [optional] 
 **createdBy** | **String** |  | [optional] 
-**createdOn** | **String** |  | [optional] 
+**createdOn** | **Date** |  | [optional] 
 **accessRights** | [**ProjectAccessRights1**](ProjectAccessRights1.md) |  | [optional] 
-**processing** | **String** |  | [optional] 
-**created** | **String** |  | [optional] 
-**queue** | **String** |  | [optional] 
+**processing** | **Boolean** |  | [optional] 
+**created** | **Boolean** |  | [optional] 
+**queue** | [**[Event]**](Event.md) |  | [optional] 
 **state** | **String** |  | [optional] 
-**tag** | **String** |  | [optional] 
+**tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
 **billing** | [**OrganisationBilling1**](OrganisationBilling1.md) |  | [optional] 
-**verified** | **String** |  | [optional] 
-**limit** | **String** |  | [optional] 
-**roles** | **String** |  | [optional] 
+**verified** | **Number** |  | [optional] 
+**limit** | [**OrganisationLimit**](OrganisationLimit.md) |  | [optional] 
+**roles** | [**[ProjectRoles]**](ProjectRoles.md) |  | [optional] 
 **transfer** | [**OrganisationTransfer**](OrganisationTransfer.md) |  | [optional] 
 **bankAccount** | **String** |  | [optional] 
+
+
+<a name="StateEnum"></a>
+## Enum: StateEnum
+
+
+* `Active` (value: `"Active"`)
+
+* `Inactive` (value: `"Inactive"`)
+
+* `Limited` (value: `"Limited"`)
+
+
 
 

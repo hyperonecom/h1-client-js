@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**disk** | **String** |  | 
-**vmhost** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
+**value** | **String** |  | [optional] 
 
 

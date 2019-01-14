@@ -4,20 +4,29 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actionDiskResize**](DiskApi.md#actionDiskResize) | **POST** /disk/{diskId}/actions/resize | Action :: resize
-[**actionDiskTransfer**](DiskApi.md#actionDiskTransfer) | **POST** /disk/{diskId}/actions/transfer | Action :: transfer
+[**actionDiskResize**](DiskApi.md#actionDiskResize) | **POST** /disk/{diskId}/actions/resize | /actions/resize
+[**actionDiskTransfer**](DiskApi.md#actionDiskTransfer) | **POST** /disk/{diskId}/actions/transfer | /actions/transfer
 [**createDisk**](DiskApi.md#createDisk) | **POST** /disk | Create
-[**deleteDisk**](DiskApi.md#deleteDisk) | **DELETE** /disk/{diskId} | Delete by ID
+[**deleteDisk**](DiskApi.md#deleteDisk) | **DELETE** /disk/{diskId} | Delete
 [**listDisk**](DiskApi.md#listDisk) | **GET** /disk | List
-[**showDisk**](DiskApi.md#showDisk) | **GET** /disk/{diskId} | Find by ID
-[**updateDisk**](DiskApi.md#updateDisk) | **PATCH** /disk/{diskId} | Update by ID
+[**operationDiskDeleteaccessrightsIdentity**](DiskApi.md#operationDiskDeleteaccessrightsIdentity) | **DELETE** /disk/{diskId}/accessrights/{identity} | /accessrights/:identity
+[**operationDiskDeletetagKey**](DiskApi.md#operationDiskDeletetagKey) | **DELETE** /disk/{diskId}/tag/{key} | /tag/:key
+[**operationDiskGetservicesServiceId**](DiskApi.md#operationDiskGetservicesServiceId) | **GET** /disk/{diskId}/services/{serviceId} | /services/:serviceId
+[**operationDiskGettag**](DiskApi.md#operationDiskGettag) | **GET** /disk/{diskId}/tag/ | /tag/
+[**operationDiskListaccessrights**](DiskApi.md#operationDiskListaccessrights) | **GET** /disk/{diskId}/accessrights/ | /accessrights/
+[**operationDiskListqueue**](DiskApi.md#operationDiskListqueue) | **GET** /disk/{diskId}/queue/ | /queue/
+[**operationDiskListservices**](DiskApi.md#operationDiskListservices) | **GET** /disk/{diskId}/services/ | /services/
+[**operationDiskPatchtag**](DiskApi.md#operationDiskPatchtag) | **PATCH** /disk/{diskId}/tag/ | /tag/
+[**operationDiskPostaccessrights**](DiskApi.md#operationDiskPostaccessrights) | **POST** /disk/{diskId}/accessrights/ | /accessrights/
+[**showDisk**](DiskApi.md#showDisk) | **GET** /disk/{diskId} | Get
+[**updateDisk**](DiskApi.md#updateDisk) | **PATCH** /disk/{diskId} | Update
 
 
 <a name="actionDiskResize"></a>
 # **actionDiskResize**
-> Disk actionDiskResize(diskId, opts)
+> Disk actionDiskResize(diskId)
 
-Action :: resize
+/actions/resize
 
 Action resize
 
@@ -43,15 +52,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.DiskApi();
 var diskId = "diskId_example"; // String | ID of disk
-var opts = {
-  'inlineObject21': new HyperOneApi.InlineObject21() // InlineObject21 | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 };
-apiInstance.actionDiskResize(diskId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+apiInstance.actionDiskResize(diskId, callback);
 ```
 
 ### Parameters
@@ -59,7 +67,6 @@ apiInstance.actionDiskResize(diskId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diskId** | **String**| ID of disk | 
- **inlineObject21** | [**InlineObject21**](InlineObject21.md)|  | [optional] 
 
 ### Return type
 
@@ -71,14 +78,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="actionDiskTransfer"></a>
 # **actionDiskTransfer**
 > Disk actionDiskTransfer(diskId, opts)
 
-Action :: transfer
+/actions/transfer
 
 Action transfer
 
@@ -105,14 +112,16 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.DiskApi();
 var diskId = "diskId_example"; // String | ID of disk
 var opts = {
-  'inlineObject22': new HyperOneApi.InlineObject22() // InlineObject22 | 
+  'inlineObject29': new HyperOneApi.InlineObject29() // InlineObject29 | 
 };
-apiInstance.actionDiskTransfer(diskId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.actionDiskTransfer(diskId, opts, callback);
 ```
 
 ### Parameters
@@ -120,7 +129,7 @@ apiInstance.actionDiskTransfer(diskId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diskId** | **String**| ID of disk | 
- **inlineObject22** | [**InlineObject22**](InlineObject22.md)|  | [optional] 
+ **inlineObject29** | [**InlineObject29**](InlineObject29.md)|  | [optional] 
 
 ### Return type
 
@@ -165,21 +174,23 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.DiskApi();
 var opts = {
-  'inlineObject19': new HyperOneApi.InlineObject19() // InlineObject19 | 
+  'inlineObject27': new HyperOneApi.InlineObject27() // InlineObject27 | 
 };
-apiInstance.createDisk(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createDisk(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject19** | [**InlineObject19**](InlineObject19.md)|  | [optional] 
+ **inlineObject27** | [**InlineObject27**](InlineObject27.md)|  | [optional] 
 
 ### Return type
 
@@ -198,7 +209,7 @@ Name | Type | Description  | Notes
 # **deleteDisk**
 > deleteDisk(diskId)
 
-Delete by ID
+Delete
 
 ### Example
 ```javascript
@@ -222,12 +233,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.DiskApi();
 var diskId = "diskId_example"; // String | ID of disk
-apiInstance.deleteDisk(diskId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteDisk(diskId, callback);
 ```
 
 ### Parameters
@@ -281,12 +294,14 @@ var apiInstance = new HyperOneApi.DiskApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-apiInstance.listDisk(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listDisk(opts, callback);
 ```
 
 ### Parameters
@@ -308,11 +323,536 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="operationDiskDeleteaccessrightsIdentity"></a>
+# **operationDiskDeleteaccessrightsIdentity**
+> Disk operationDiskDeleteaccessrightsIdentity(diskId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.DiskApi();
+var diskId = "diskId_example"; // String | ID of disk
+var identity = "identity_example"; // String | identity
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationDiskDeleteaccessrightsIdentity(diskId, identity, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Disk**](Disk.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationDiskDeletetagKey"></a>
+# **operationDiskDeletetagKey**
+> {String: String} operationDiskDeletetagKey(diskId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.DiskApi();
+var diskId = "diskId_example"; // String | ID of disk
+var key = "key_example"; // String | key
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationDiskDeletetagKey(diskId, key, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+ **key** | **String**| key | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationDiskGetservicesServiceId"></a>
+# **operationDiskGetservicesServiceId**
+> DiskServices operationDiskGetservicesServiceId(diskId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.DiskApi();
+var diskId = "diskId_example"; // String | ID of disk
+var serviceId = "serviceId_example"; // String | serviceId
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationDiskGetservicesServiceId(diskId, serviceId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**DiskServices**](DiskServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationDiskGettag"></a>
+# **operationDiskGettag**
+> {String: String} operationDiskGettag(diskId)
+
+/tag/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.DiskApi();
+var diskId = "diskId_example"; // String | ID of disk
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationDiskGettag(diskId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationDiskListaccessrights"></a>
+# **operationDiskListaccessrights**
+> [String] operationDiskListaccessrights(diskId)
+
+/accessrights/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.DiskApi();
+var diskId = "diskId_example"; // String | ID of disk
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationDiskListaccessrights(diskId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+
+### Return type
+
+**[String]**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationDiskListqueue"></a>
+# **operationDiskListqueue**
+> [Event] operationDiskListqueue(diskId)
+
+/queue/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.DiskApi();
+var diskId = "diskId_example"; // String | ID of disk
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationDiskListqueue(diskId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+
+### Return type
+
+[**[Event]**](Event.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationDiskListservices"></a>
+# **operationDiskListservices**
+> [DiskServices] operationDiskListservices(diskId)
+
+/services/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.DiskApi();
+var diskId = "diskId_example"; // String | ID of disk
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationDiskListservices(diskId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+
+### Return type
+
+[**[DiskServices]**](DiskServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationDiskPatchtag"></a>
+# **operationDiskPatchtag**
+> {String: String} operationDiskPatchtag(diskId, requestBody)
+
+/tag/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.DiskApi();
+var diskId = "diskId_example"; // String | ID of disk
+var requestBody = {key: "null"}; // {String: String} | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationDiskPatchtag(diskId, requestBody, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="operationDiskPostaccessrights"></a>
+# **operationDiskPostaccessrights**
+> String operationDiskPostaccessrights(diskId, opts)
+
+/accessrights/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.DiskApi();
+var diskId = "diskId_example"; // String | ID of disk
+var opts = {
+  'inlineObject30': new HyperOneApi.InlineObject30() // InlineObject30 | 
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationDiskPostaccessrights(diskId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+ **inlineObject30** | [**InlineObject30**](InlineObject30.md)|  | [optional] 
+
+### Return type
+
+**String**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="showDisk"></a>
 # **showDisk**
 > Disk showDisk(diskId)
 
-Find by ID
+Get
 
 Returns a single disk
 
@@ -338,12 +878,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.DiskApi();
 var diskId = "diskId_example"; // String | ID of disk
-apiInstance.showDisk(diskId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.showDisk(diskId, callback);
 ```
 
 ### Parameters
@@ -369,7 +911,7 @@ Name | Type | Description  | Notes
 # **updateDisk**
 > Disk updateDisk(diskId, opts)
 
-Update by ID
+Update
 
 Returns modified disk
 
@@ -396,14 +938,16 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.DiskApi();
 var diskId = "diskId_example"; // String | ID of disk
 var opts = {
-  'inlineObject20': new HyperOneApi.InlineObject20() // InlineObject20 | 
+  'inlineObject28': new HyperOneApi.InlineObject28() // InlineObject28 | 
 };
-apiInstance.updateDisk(diskId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateDisk(diskId, opts, callback);
 ```
 
 ### Parameters
@@ -411,7 +955,7 @@ apiInstance.updateDisk(diskId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diskId** | **String**| ID of disk | 
- **inlineObject20** | [**InlineObject20**](InlineObject20.md)|  | [optional] 
+ **inlineObject28** | [**InlineObject28**](InlineObject28.md)|  | [optional] 
 
 ### Return type
 

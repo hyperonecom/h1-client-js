@@ -3,7 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hostname** | **String** |  | 
-**secret** | **String** |  | 
+**vault** | **String** |  | 
+**service** | **String** |  | 
+**name** | **String** |  | 
+**tag** | [**Object**](.md) |  | [optional] 
 
 

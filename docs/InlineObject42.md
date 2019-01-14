@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
+**service** | **String** |  | 
+**tag** | [**Object**](.md) |  | [optional] 
 
 

@@ -14,534 +14,1442 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient', 'model/InlineObject37', 'model/InlineObject38', 'model/InlineObject39', 'model/InlineObject40', 'model/Vault'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Event', 'model/InlineObject47', 'model/InlineObject48', 'model/InlineObject49', 'model/InlineObject50', 'model/InlineObject51', 'model/InlineObject52', 'model/InlineObject53', 'model/Vault', 'model/VaultServices'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'), require('../model/InlineObject37'), require('../model/InlineObject38'), require('../model/InlineObject39'), require('../model/InlineObject40'), require('../model/Vault'));
-    } else {
+    module.exports = factory(require('../ApiClient'), require('../model/CredentialCertificate'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/InlineObject47'), require('../model/InlineObject48'), require('../model/InlineObject49'), require('../model/InlineObject50'), require('../model/InlineObject51'), require('../model/InlineObject52'), require('../model/InlineObject53'), require('../model/Vault'), require('../model/VaultServices'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.VaultApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject37, root.HyperOneApi.InlineObject38, root.HyperOneApi.InlineObject39, root.HyperOneApi.InlineObject40, root.HyperOneApi.Vault);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
-}(this, function(ApiClient, InlineObject37, InlineObject38, InlineObject39, InlineObject40, Vault) {
-    'use strict';
+    root.HyperOneApi.VaultApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.InlineObject47, root.HyperOneApi.InlineObject48, root.HyperOneApi.InlineObject49, root.HyperOneApi.InlineObject50, root.HyperOneApi.InlineObject51, root.HyperOneApi.InlineObject52, root.HyperOneApi.InlineObject53, root.HyperOneApi.Vault, root.HyperOneApi.VaultServices);
+  }
+}(this, function(ApiClient, CredentialCertificate, CredentialPassword, Event, InlineObject47, InlineObject48, InlineObject49, InlineObject50, InlineObject51, InlineObject52, InlineObject53, Vault, VaultServices) {
+  'use strict';
 
-    /**
+  /**
    * Vault service.
    * @module api/VaultApi
    * @version 1
    */
 
-    /**
-   * Constructs a new VaultApi.
+  /**
+   * Constructs a new VaultApi. 
    * @alias module:api/VaultApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    const exports = function(apiClient) {
-        this.apiClient = apiClient || ApiClient.instance;
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
 
 
+    /**
+     * Callback function to receive the result of the actionVaultResize operation.
+     * @callback module:api/VaultApi~actionVaultResizeCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vault} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
-        /**
-     * Action :: resize
+    /**
+     * /actions/resize
      * Action resize
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject39} opts.inlineObject39
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     * @param {module:api/VaultApi~actionVaultResizeCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vault}
      */
-        this.actionVaultResizeWithHttpInfo = function(vaultId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject39;
+    this.actionVaultResize = function(vaultId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'vaultId' is set
-            if (vaultId === undefined || vaultId === null) {
-                throw new Error("Missing the required parameter 'vaultId' when calling actionVaultResize");
-            }
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling actionVaultResize");
+      }
 
 
-            const pathParams = {
-                vaultId: vaultId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Vault;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
 
-            return this.apiClient.callApi(
-                '/vault/{vaultId}/actions/resize', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/actions/resize', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: resize
-     * Action resize
-     * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject39} opts.inlineObject39
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+    /**
+     * Callback function to receive the result of the actionVaultSnapshot operation.
+     * @callback module:api/VaultApi~actionVaultSnapshotCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vault} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionVaultResize = function(vaultId, opts) {
-            return this.actionVaultResizeWithHttpInfo(vaultId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Action :: snapshot
+    /**
+     * /actions/snapshot
      * Action snapshot
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject40} opts.inlineObject40
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     * @param {module:api/VaultApi~actionVaultSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vault}
      */
-        this.actionVaultSnapshotWithHttpInfo = function(vaultId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject40;
+    this.actionVaultSnapshot = function(vaultId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'vaultId' is set
-            if (vaultId === undefined || vaultId === null) {
-                throw new Error("Missing the required parameter 'vaultId' when calling actionVaultSnapshot");
-            }
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling actionVaultSnapshot");
+      }
 
 
-            const pathParams = {
-                vaultId: vaultId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Vault;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
 
-            return this.apiClient.callApi(
-                '/vault/{vaultId}/actions/snapshot', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/actions/snapshot', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: snapshot
-     * Action snapshot
-     * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject40} opts.inlineObject40
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+    /**
+     * Callback function to receive the result of the actionVaultStart operation.
+     * @callback module:api/VaultApi~actionVaultStartCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vault} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionVaultSnapshot = function(vaultId, opts) {
-            return this.actionVaultSnapshotWithHttpInfo(vaultId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Action :: start
+    /**
+     * /actions/start
      * Action start
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     * @param {module:api/VaultApi~actionVaultStartCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vault}
      */
-        this.actionVaultStartWithHttpInfo = function(vaultId, opts) {
-            opts = opts || {};
-            const postBody = opts.body;
+    this.actionVaultStart = function(vaultId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'vaultId' is set
-            if (vaultId === undefined || vaultId === null) {
-                throw new Error("Missing the required parameter 'vaultId' when calling actionVaultStart");
-            }
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling actionVaultStart");
+      }
 
 
-            const pathParams = {
-                vaultId: vaultId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Vault;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
 
-            return this.apiClient.callApi(
-                '/vault/{vaultId}/actions/start', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/actions/start', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: start
-     * Action start
-     * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+    /**
+     * Callback function to receive the result of the actionVaultStop operation.
+     * @callback module:api/VaultApi~actionVaultStopCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vault} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionVaultStart = function(vaultId, opts) {
-            return this.actionVaultStartWithHttpInfo(vaultId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Action :: stop
+    /**
+     * /actions/stop
      * Action stop
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     * @param {module:api/VaultApi~actionVaultStopCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vault}
      */
-        this.actionVaultStopWithHttpInfo = function(vaultId, opts) {
-            opts = opts || {};
-            const postBody = opts.body;
+    this.actionVaultStop = function(vaultId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'vaultId' is set
-            if (vaultId === undefined || vaultId === null) {
-                throw new Error("Missing the required parameter 'vaultId' when calling actionVaultStop");
-            }
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling actionVaultStop");
+      }
 
 
-            const pathParams = {
-                vaultId: vaultId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Vault;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
 
-            return this.apiClient.callApi(
-                '/vault/{vaultId}/actions/stop', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/actions/stop', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: stop
-     * Action stop
-     * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+    /**
+     * Callback function to receive the result of the createVault operation.
+     * @callback module:api/VaultApi~createVaultCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vault} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionVaultStop = function(vaultId, opts) {
-            return this.actionVaultStopWithHttpInfo(vaultId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
+    /**
      * Create
      * Create vault
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject37} opts.inlineObject37
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     * @param {module:model/InlineObject47} opts.inlineObject47 
+     * @param {module:api/VaultApi~createVaultCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vault}
      */
-        this.createVaultWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject37;
+    this.createVault = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject47'];
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Vault;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Vault;
 
-            return this.apiClient.callApi(
-                '/vault', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/vault', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Create
-     * Create vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject37} opts.inlineObject37
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+    /**
+     * Callback function to receive the result of the deleteVault operation.
+     * @callback module:api/VaultApi~deleteVaultCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-        this.createVault = function(opts) {
-            return this.createVaultWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Delete by ID
+    /**
+     * Delete
      * @param {String} vaultId ID of vault
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/VaultApi~deleteVaultCallback} callback The callback function, accepting three arguments: error, data, response
      */
-        this.deleteVaultWithHttpInfo = function(vaultId) {
-            const postBody = null;
+    this.deleteVault = function(vaultId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'vaultId' is set
-            if (vaultId === undefined || vaultId === null) {
-                throw new Error("Missing the required parameter 'vaultId' when calling deleteVault");
-            }
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling deleteVault");
+      }
 
 
-            const pathParams = {
-                vaultId: vaultId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = [];
-            const returnType = null;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
 
-            return this.apiClient.callApi(
-                '/vault/{vaultId}', 'DELETE',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/vault/{vaultId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Delete by ID
-     * @param {String} vaultId ID of vault
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+    /**
+     * Callback function to receive the result of the listVault operation.
+     * @callback module:api/VaultApi~listVaultCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Vault>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.deleteVault = function(vaultId) {
-            return this.deleteVaultWithHttpInfo(vaultId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
+    /**
      * List
      * List vault
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Vault>} and HTTP response
+     * @param {module:api/VaultApi~listVaultCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Vault>}
      */
-        this.listVaultWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = null;
+    this.listVault = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-                name: opts.name,
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+        'name': opts['name'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = [Vault];
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Vault];
 
-            return this.apiClient.callApi(
-                '/vault', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/vault', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * List
-     * List vault
+    /**
+     * Callback function to receive the result of the operationVaultDeleteaccessrightsIdentity operation.
+     * @callback module:api/VaultApi~operationVaultDeleteaccessrightsIdentityCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vault} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/:identity
+     * @param {String} vaultId ID of vault
+     * @param {String} identity identity
+     * @param {module:api/VaultApi~operationVaultDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vault}
+     */
+    this.operationVaultDeleteaccessrightsIdentity = function(vaultId, identity, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultDeleteaccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling operationVaultDeleteaccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultDeletecredentialcertificateId operation.
+     * @callback module:api/VaultApi~operationVaultDeletecredentialcertificateIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vault} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @param {module:api/VaultApi~operationVaultDeletecredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vault}
+     */
+    this.operationVaultDeletecredentialcertificateId = function(vaultId, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultDeletecredentialcertificateId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationVaultDeletecredentialcertificateId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/certificate/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultDeletecredentialpasswordId operation.
+     * @callback module:api/VaultApi~operationVaultDeletecredentialpasswordIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vault} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/password/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @param {module:api/VaultApi~operationVaultDeletecredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vault}
+     */
+    this.operationVaultDeletecredentialpasswordId = function(vaultId, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultDeletecredentialpasswordId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationVaultDeletecredentialpasswordId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/password/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultDeletetagKey operation.
+     * @callback module:api/VaultApi~operationVaultDeletetagKeyCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/:key
+     * @param {String} vaultId ID of vault
+     * @param {String} key key
+     * @param {module:api/VaultApi~operationVaultDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationVaultDeletetagKey = function(vaultId, key, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultDeletetagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling operationVaultDeletetagKey");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultGetcredentialcertificateId operation.
+     * @callback module:api/VaultApi~operationVaultGetcredentialcertificateIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialCertificate} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @param {module:api/VaultApi~operationVaultGetcredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialCertificate}
+     */
+    this.operationVaultGetcredentialcertificateId = function(vaultId, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultGetcredentialcertificateId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationVaultGetcredentialcertificateId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CredentialCertificate;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/certificate/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultGetcredentialpasswordId operation.
+     * @callback module:api/VaultApi~operationVaultGetcredentialpasswordIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialPassword} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/password/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @param {module:api/VaultApi~operationVaultGetcredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialPassword}
+     */
+    this.operationVaultGetcredentialpasswordId = function(vaultId, id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultGetcredentialpasswordId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationVaultGetcredentialpasswordId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CredentialPassword;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/password/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultGetservicesServiceId operation.
+     * @callback module:api/VaultApi~operationVaultGetservicesServiceIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/VaultServices} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/:serviceId
+     * @param {String} vaultId ID of vault
+     * @param {String} serviceId serviceId
+     * @param {module:api/VaultApi~operationVaultGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/VaultServices}
+     */
+    this.operationVaultGetservicesServiceId = function(vaultId, serviceId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultGetservicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling operationVaultGetservicesServiceId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = VaultServices;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultGettag operation.
+     * @callback module:api/VaultApi~operationVaultGettagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} vaultId ID of vault
+     * @param {module:api/VaultApi~operationVaultGettagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationVaultGettag = function(vaultId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultGettag");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/tag/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultListaccessrights operation.
+     * @callback module:api/VaultApi~operationVaultListaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<String>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} vaultId ID of vault
+     * @param {module:api/VaultApi~operationVaultListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<String>}
+     */
+    this.operationVaultListaccessrights = function(vaultId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultListaccessrights");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ['String'];
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/accessrights/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultListcredentialcertificate operation.
+     * @callback module:api/VaultApi~operationVaultListcredentialcertificateCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/CredentialCertificate>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/certificate
+     * @param {String} vaultId ID of vault
+     * @param {module:api/VaultApi~operationVaultListcredentialcertificateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CredentialCertificate>}
+     */
+    this.operationVaultListcredentialcertificate = function(vaultId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultListcredentialcertificate");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [CredentialCertificate];
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/certificate', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultListcredentialpassword operation.
+     * @callback module:api/VaultApi~operationVaultListcredentialpasswordCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/CredentialPassword>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/password
+     * @param {String} vaultId ID of vault
+     * @param {module:api/VaultApi~operationVaultListcredentialpasswordCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CredentialPassword>}
+     */
+    this.operationVaultListcredentialpassword = function(vaultId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultListcredentialpassword");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [CredentialPassword];
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/password', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultListqueue operation.
+     * @callback module:api/VaultApi~operationVaultListqueueCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Event>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /queue/
+     * @param {String} vaultId ID of vault
+     * @param {module:api/VaultApi~operationVaultListqueueCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Event>}
+     */
+    this.operationVaultListqueue = function(vaultId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultListqueue");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Event];
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/queue/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultListservices operation.
+     * @callback module:api/VaultApi~operationVaultListservicesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/VaultServices>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/
+     * @param {String} vaultId ID of vault
+     * @param {module:api/VaultApi~operationVaultListservicesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/VaultServices>}
+     */
+    this.operationVaultListservices = function(vaultId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultListservices");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [VaultServices];
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/services/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultPatchcredentialcertificateId operation.
+     * @callback module:api/VaultApi~operationVaultPatchcredentialcertificateIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialCertificate} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
      * @param {Object} opts Optional parameters
-     * @param {String} opts.name Filter by name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Vault>}
+     * @param {module:model/InlineObject52} opts.inlineObject52 
+     * @param {module:api/VaultApi~operationVaultPatchcredentialcertificateIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialCertificate}
      */
-        this.listVault = function(opts) {
-            return this.listVaultWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
+    this.operationVaultPatchcredentialcertificateId = function(vaultId, id, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject52'];
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPatchcredentialcertificateId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationVaultPatchcredentialcertificateId");
+      }
 
 
-        /**
-     * Find by ID
+      var pathParams = {
+        'vaultId': vaultId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CredentialCertificate;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/certificate/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultPatchcredentialpasswordId operation.
+     * @callback module:api/VaultApi~operationVaultPatchcredentialpasswordIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialPassword} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/password/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject50} opts.inlineObject50 
+     * @param {module:api/VaultApi~operationVaultPatchcredentialpasswordIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialPassword}
+     */
+    this.operationVaultPatchcredentialpasswordId = function(vaultId, id, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject50'];
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPatchcredentialpasswordId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling operationVaultPatchcredentialpasswordId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CredentialPassword;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/password/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultPatchtag operation.
+     * @callback module:api/VaultApi~operationVaultPatchtagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} vaultId ID of vault
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @param {module:api/VaultApi~operationVaultPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationVaultPatchtag = function(vaultId, requestBody, callback) {
+      var postBody = requestBody;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPatchtag");
+      }
+
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling operationVaultPatchtag");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/tag/', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultPostaccessrights operation.
+     * @callback module:api/VaultApi~operationVaultPostaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {String} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject53} opts.inlineObject53 
+     * @param {module:api/VaultApi~operationVaultPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link String}
+     */
+    this.operationVaultPostaccessrights = function(vaultId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject53'];
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPostaccessrights");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = 'String';
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/accessrights/', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultPostcredentialcertificate operation.
+     * @callback module:api/VaultApi~operationVaultPostcredentialcertificateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialCertificate} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/certificate
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject51} opts.inlineObject51 
+     * @param {module:api/VaultApi~operationVaultPostcredentialcertificateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialCertificate}
+     */
+    this.operationVaultPostcredentialcertificate = function(vaultId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject51'];
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPostcredentialcertificate");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CredentialCertificate;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/certificate', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationVaultPostcredentialpassword operation.
+     * @callback module:api/VaultApi~operationVaultPostcredentialpasswordCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/CredentialPassword} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /credential/password
+     * @param {String} vaultId ID of vault
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject49} opts.inlineObject49 
+     * @param {module:api/VaultApi~operationVaultPostcredentialpasswordCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/CredentialPassword}
+     */
+    this.operationVaultPostcredentialpassword = function(vaultId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject49'];
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPostcredentialpassword");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = CredentialPassword;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/password', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the showVault operation.
+     * @callback module:api/VaultApi~showVaultCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vault} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get
      * Returns a single vault
      * @param {String} vaultId ID of vault
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     * @param {module:api/VaultApi~showVaultCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vault}
      */
-        this.showVaultWithHttpInfo = function(vaultId) {
-            const postBody = null;
+    this.showVault = function(vaultId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'vaultId' is set
-            if (vaultId === undefined || vaultId === null) {
-                throw new Error("Missing the required parameter 'vaultId' when calling showVault");
-            }
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling showVault");
+      }
 
 
-            const pathParams = {
-                vaultId: vaultId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = Vault;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
 
-            return this.apiClient.callApi(
-                '/vault/{vaultId}', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/vault/{vaultId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Find by ID
-     * Returns a single vault
-     * @param {String} vaultId ID of vault
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+    /**
+     * Callback function to receive the result of the updateVault operation.
+     * @callback module:api/VaultApi~updateVaultCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Vault} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.showVault = function(vaultId) {
-            return this.showVaultWithHttpInfo(vaultId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Update by ID
+    /**
+     * Update
      * Returns modified vault
      * @param {String} vaultId ID of vault
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject38} opts.inlineObject38
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     * @param {module:model/InlineObject48} opts.inlineObject48 
+     * @param {module:api/VaultApi~updateVaultCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Vault}
      */
-        this.updateVaultWithHttpInfo = function(vaultId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject38;
+    this.updateVault = function(vaultId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject48'];
 
-            // verify the required parameter 'vaultId' is set
-            if (vaultId === undefined || vaultId === null) {
-                throw new Error("Missing the required parameter 'vaultId' when calling updateVault");
-            }
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling updateVault");
+      }
 
 
-            const pathParams = {
-                vaultId: vaultId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Vault;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Vault;
 
-            return this.apiClient.callApi(
-                '/vault/{vaultId}', 'PATCH',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/vault/{vaultId}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+  };
 
-        /**
-     * Update by ID
-     * Returns modified vault
-     * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject38} opts.inlineObject38
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
-     */
-        this.updateVault = function(vaultId, opts) {
-            return this.updateVaultWithHttpInfo(vaultId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
-    };
-
-    return exports;
+  return exports;
 }));

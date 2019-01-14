@@ -14,91 +14,92 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient', 'model/InlineObject', 'model/InlineObject1', 'model/Project'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient', 'model/Event', 'model/InlineObject', 'model/InlineObject1', 'model/InlineObject2', 'model/Project', 'model/ProjectAccessRights', 'model/ProjectServices'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'), require('../model/InlineObject'), require('../model/InlineObject1'), require('../model/Project'));
-    } else {
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject'), require('../model/InlineObject1'), require('../model/InlineObject2'), require('../model/Project'), require('../model/ProjectAccessRights'), require('../model/ProjectServices'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.ProjectApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject, root.HyperOneApi.InlineObject1, root.HyperOneApi.Project);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
-}(this, function(ApiClient, InlineObject, InlineObject1, Project) {
-    'use strict';
+    root.HyperOneApi.ProjectApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject, root.HyperOneApi.InlineObject1, root.HyperOneApi.InlineObject2, root.HyperOneApi.Project, root.HyperOneApi.ProjectAccessRights, root.HyperOneApi.ProjectServices);
+  }
+}(this, function(ApiClient, Event, InlineObject, InlineObject1, InlineObject2, Project, ProjectAccessRights, ProjectServices) {
+  'use strict';
 
-    /**
+  /**
    * Project service.
    * @module api/ProjectApi
    * @version 1
    */
 
-    /**
-   * Constructs a new ProjectApi.
+  /**
+   * Constructs a new ProjectApi. 
    * @alias module:api/ProjectApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    const exports = function(apiClient) {
-        this.apiClient = apiClient || ApiClient.instance;
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
 
 
+    /**
+     * Callback function to receive the result of the createProject operation.
+     * @callback module:api/ProjectApi~createProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
-        /**
+    /**
      * Create
      * Create project
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject} opts.inlineObject
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     * @param {module:model/InlineObject} opts.inlineObject 
+     * @param {module:api/ProjectApi~createProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
      */
-        this.createProjectWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject;
+    this.createProject = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject'];
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Project;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Project;
 
-            return this.apiClient.callApi(
-                '/project', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/project', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Create
-     * Create project
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject} opts.inlineObject
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+    /**
+     * Callback function to receive the result of the listProject operation.
+     * @callback module:api/ProjectApi~listProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Project>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.createProject = function(opts) {
-            return this.createProjectWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
+    /**
      * List
      * List project
      * @param {Object} opts Optional parameters
@@ -106,168 +107,593 @@
      * @param {String} opts.limit Filter by $limit
      * @param {String} opts.active Filter by active
      * @param {String} opts.organisation Filter by organisation
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
+     * @param {module:api/ProjectApi~listProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Project>}
      */
-        this.listProjectWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = null;
+    this.listProject = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-                name: opts.name,
-                $limit: opts.limit,
-                active: opts.active,
-                organisation: opts.organisation,
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+        'name': opts['name'],
+        '$limit': opts['limit'],
+        'active': opts['active'],
+        'organisation': opts['organisation'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = [Project];
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Project];
 
-            return this.apiClient.callApi(
-                '/project', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/project', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * List
-     * List project
+    /**
+     * Callback function to receive the result of the operationProjectDeleteaccessrightsIdentity operation.
+     * @callback module:api/ProjectApi~operationProjectDeleteaccessrightsIdentityCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/:identity
+     * @param {String} projectId ID of project
+     * @param {String} identity identity
+     * @param {module:api/ProjectApi~operationProjectDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
+     */
+    this.operationProjectDeleteaccessrightsIdentity = function(projectId, identity, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling operationProjectDeleteaccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling operationProjectDeleteaccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Project;
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationProjectDeletetagKey operation.
+     * @callback module:api/ProjectApi~operationProjectDeletetagKeyCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/:key
+     * @param {String} projectId ID of project
+     * @param {String} key key
+     * @param {module:api/ProjectApi~operationProjectDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationProjectDeletetagKey = function(projectId, key, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling operationProjectDeletetagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling operationProjectDeletetagKey");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationProjectGetservicesServiceId operation.
+     * @callback module:api/ProjectApi~operationProjectGetservicesServiceIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ProjectServices} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/:serviceId
+     * @param {String} projectId ID of project
+     * @param {String} serviceId serviceId
+     * @param {module:api/ProjectApi~operationProjectGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ProjectServices}
+     */
+    this.operationProjectGetservicesServiceId = function(projectId, serviceId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling operationProjectGetservicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling operationProjectGetservicesServiceId");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ProjectServices;
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationProjectGettag operation.
+     * @callback module:api/ProjectApi~operationProjectGettagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} projectId ID of project
+     * @param {module:api/ProjectApi~operationProjectGettagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationProjectGettag = function(projectId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling operationProjectGettag");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/tag/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationProjectListaccessrights operation.
+     * @callback module:api/ProjectApi~operationProjectListaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ProjectAccessRights>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} projectId ID of project
+     * @param {module:api/ProjectApi~operationProjectListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ProjectAccessRights>}
+     */
+    this.operationProjectListaccessrights = function(projectId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling operationProjectListaccessrights");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ProjectAccessRights];
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/accessrights/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationProjectListqueue operation.
+     * @callback module:api/ProjectApi~operationProjectListqueueCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Event>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /queue/
+     * @param {String} projectId ID of project
+     * @param {module:api/ProjectApi~operationProjectListqueueCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Event>}
+     */
+    this.operationProjectListqueue = function(projectId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling operationProjectListqueue");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Event];
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/queue/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationProjectListservices operation.
+     * @callback module:api/ProjectApi~operationProjectListservicesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ProjectServices>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/
+     * @param {String} projectId ID of project
+     * @param {module:api/ProjectApi~operationProjectListservicesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ProjectServices>}
+     */
+    this.operationProjectListservices = function(projectId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling operationProjectListservices");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ProjectServices];
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/services/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationProjectPatchtag operation.
+     * @callback module:api/ProjectApi~operationProjectPatchtagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} projectId ID of project
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @param {module:api/ProjectApi~operationProjectPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationProjectPatchtag = function(projectId, requestBody, callback) {
+      var postBody = requestBody;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling operationProjectPatchtag");
+      }
+
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling operationProjectPatchtag");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/tag/', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationProjectPostaccessrights operation.
+     * @callback module:api/ProjectApi~operationProjectPostaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ProjectAccessRights} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} projectId ID of project
      * @param {Object} opts Optional parameters
-     * @param {String} opts.name Filter by name
-     * @param {String} opts.limit Filter by $limit
-     * @param {String} opts.active Filter by active
-     * @param {String} opts.organisation Filter by organisation
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
+     * @param {module:model/InlineObject2} opts.inlineObject2 
+     * @param {module:api/ProjectApi~operationProjectPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ProjectAccessRights}
      */
-        this.listProject = function(opts) {
-            return this.listProjectWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
+    this.operationProjectPostaccessrights = function(projectId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject2'];
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling operationProjectPostaccessrights");
+      }
 
 
-        /**
-     * Find by ID
+      var pathParams = {
+        'projectId': projectId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ProjectAccessRights;
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/accessrights/', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the showProject operation.
+     * @callback module:api/ProjectApi~showProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get
      * Returns a single project
      * @param {String} projectId ID of project
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     * @param {module:api/ProjectApi~showProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
      */
-        this.showProjectWithHttpInfo = function(projectId) {
-            const postBody = null;
+    this.showProject = function(projectId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'projectId' is set
-            if (projectId === undefined || projectId === null) {
-                throw new Error("Missing the required parameter 'projectId' when calling showProject");
-            }
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling showProject");
+      }
 
 
-            const pathParams = {
-                projectId: projectId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'projectId': projectId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = Project;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Project;
 
-            return this.apiClient.callApi(
-                '/project/{projectId}', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/project/{projectId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Find by ID
-     * Returns a single project
-     * @param {String} projectId ID of project
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+    /**
+     * Callback function to receive the result of the updateProject operation.
+     * @callback module:api/ProjectApi~updateProjectCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.showProject = function(projectId) {
-            return this.showProjectWithHttpInfo(projectId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Update by ID
+    /**
+     * Update
      * Returns modified project
      * @param {String} projectId ID of project
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject1} opts.inlineObject1
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     * @param {module:model/InlineObject1} opts.inlineObject1 
+     * @param {module:api/ProjectApi~updateProjectCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
      */
-        this.updateProjectWithHttpInfo = function(projectId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject1;
+    this.updateProject = function(projectId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject1'];
 
-            // verify the required parameter 'projectId' is set
-            if (projectId === undefined || projectId === null) {
-                throw new Error("Missing the required parameter 'projectId' when calling updateProject");
-            }
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling updateProject");
+      }
 
 
-            const pathParams = {
-                projectId: projectId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'projectId': projectId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Project;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Project;
 
-            return this.apiClient.callApi(
-                '/project/{projectId}', 'PATCH',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/project/{projectId}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+  };
 
-        /**
-     * Update by ID
-     * Returns modified project
-     * @param {String} projectId ID of project
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject1} opts.inlineObject1
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
-     */
-        this.updateProject = function(projectId, opts) {
-            return this.updateProjectWithHttpInfo(projectId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
-    };
-
-    return exports;
+  return exports;
 }));

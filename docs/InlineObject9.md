@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**network** | **String** |  | 
+**identity** | **String** |  | [optional] 
 
 

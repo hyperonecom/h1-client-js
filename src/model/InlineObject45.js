@@ -14,65 +14,65 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'));
-    } else {
+    module.exports = factory(require('../ApiClient'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.InlineObject45 = factory(root.HyperOneApi.ApiClient);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
+    root.HyperOneApi.InlineObject45 = factory(root.HyperOneApi.ApiClient);
+  }
 }(this, function(ApiClient) {
-    'use strict';
+  'use strict';
 
 
 
-    /**
+  /**
    * The InlineObject45 model module.
    * @module model/InlineObject45
    * @version 1
    */
 
-    /**
+  /**
    * Constructs a new <code>InlineObject45</code>.
    * @alias module:model/InlineObject45
    * @class
    */
-    const exports = function() {
-        const _this = this;
+  var exports = function() {
+    var _this = this;
 
-    };
+  };
 
-    /**
+  /**
    * Constructs a <code>InlineObject45</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/InlineObject45} obj Optional instance to populate.
    * @return {module:model/InlineObject45} The populated <code>InlineObject45</code> instance.
    */
-    exports.constructFromObject = function(data, obj) {
-        if (data) {
-            obj = obj || new exports();
-            if (data.hasOwnProperty('resource')) {
-                obj.resource = ApiClient.convertToType(data.resource, 'String');
-            }
-        }
-        return obj;
-    };
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+      if (data.hasOwnProperty('identity')) {
+        obj['identity'] = ApiClient.convertToType(data['identity'], 'String');
+      }
+    }
+    return obj;
+  }
 
-    /**
-   * @member {String} resource
+  /**
+   * @member {String} identity
    */
-    exports.prototype.resource = undefined;
+  exports.prototype['identity'] = undefined;
 
 
 
-    return exports;
+  return exports;
 }));
 
 

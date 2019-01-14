@@ -14,305 +14,728 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient', 'model/InlineObject41', 'model/InlineObject42', 'model/Snapshot'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient', 'model/Event', 'model/InlineObject54', 'model/InlineObject55', 'model/InlineObject56', 'model/Snapshot', 'model/SnapshotServices'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'), require('../model/InlineObject41'), require('../model/InlineObject42'), require('../model/Snapshot'));
-    } else {
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject54'), require('../model/InlineObject55'), require('../model/InlineObject56'), require('../model/Snapshot'), require('../model/SnapshotServices'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.SnapshotApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineObject41, root.HyperOneApi.InlineObject42, root.HyperOneApi.Snapshot);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
-}(this, function(ApiClient, InlineObject41, InlineObject42, Snapshot) {
-    'use strict';
+    root.HyperOneApi.SnapshotApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject54, root.HyperOneApi.InlineObject55, root.HyperOneApi.InlineObject56, root.HyperOneApi.Snapshot, root.HyperOneApi.SnapshotServices);
+  }
+}(this, function(ApiClient, Event, InlineObject54, InlineObject55, InlineObject56, Snapshot, SnapshotServices) {
+  'use strict';
 
-    /**
+  /**
    * Snapshot service.
    * @module api/SnapshotApi
    * @version 1
    */
 
-    /**
-   * Constructs a new SnapshotApi.
+  /**
+   * Constructs a new SnapshotApi. 
    * @alias module:api/SnapshotApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    const exports = function(apiClient) {
-        this.apiClient = apiClient || ApiClient.instance;
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
 
 
+    /**
+     * Callback function to receive the result of the createSnapshot operation.
+     * @callback module:api/SnapshotApi~createSnapshotCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Snapshot} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
-        /**
+    /**
      * Create
      * Create snapshot
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject41} opts.inlineObject41
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
+     * @param {module:model/InlineObject54} opts.inlineObject54 
+     * @param {module:api/SnapshotApi~createSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Snapshot}
      */
-        this.createSnapshotWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject41;
+    this.createSnapshot = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject54'];
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Snapshot;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Snapshot;
 
-            return this.apiClient.callApi(
-                '/snapshot', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/snapshot', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Create
-     * Create snapshot
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject41} opts.inlineObject41
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
+    /**
+     * Callback function to receive the result of the deleteSnapshot operation.
+     * @callback module:api/SnapshotApi~deleteSnapshotCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-        this.createSnapshot = function(opts) {
-            return this.createSnapshotWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Delete by ID
+    /**
+     * Delete
      * @param {String} snapshotId ID of snapshot
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/SnapshotApi~deleteSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
      */
-        this.deleteSnapshotWithHttpInfo = function(snapshotId) {
-            const postBody = null;
+    this.deleteSnapshot = function(snapshotId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'snapshotId' is set
-            if (snapshotId === undefined || snapshotId === null) {
-                throw new Error("Missing the required parameter 'snapshotId' when calling deleteSnapshot");
-            }
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling deleteSnapshot");
+      }
 
 
-            const pathParams = {
-                snapshotId: snapshotId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'snapshotId': snapshotId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = [];
-            const returnType = null;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
 
-            return this.apiClient.callApi(
-                '/snapshot/{snapshotId}', 'DELETE',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Delete by ID
-     * @param {String} snapshotId ID of snapshot
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+    /**
+     * Callback function to receive the result of the listSnapshot operation.
+     * @callback module:api/SnapshotApi~listSnapshotCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Snapshot>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.deleteSnapshot = function(snapshotId) {
-            return this.deleteSnapshotWithHttpInfo(snapshotId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
+    /**
      * List
      * List snapshot
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
      * @param {String} opts.vault Filter by vault
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Snapshot>} and HTTP response
+     * @param {module:api/SnapshotApi~listSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Snapshot>}
      */
-        this.listSnapshotWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = null;
+    this.listSnapshot = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-                name: opts.name,
-                vault: opts.vault,
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+        'name': opts['name'],
+        'vault': opts['vault'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = [Snapshot];
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Snapshot];
 
-            return this.apiClient.callApi(
-                '/snapshot', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/snapshot', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * List
-     * List snapshot
+    /**
+     * Callback function to receive the result of the operationSnapshotDeleteaccessrightsIdentity operation.
+     * @callback module:api/SnapshotApi~operationSnapshotDeleteaccessrightsIdentityCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Snapshot} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/:identity
+     * @param {String} snapshotId ID of snapshot
+     * @param {String} identity identity
+     * @param {module:api/SnapshotApi~operationSnapshotDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Snapshot}
+     */
+    this.operationSnapshotDeleteaccessrightsIdentity = function(snapshotId, identity, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotDeleteaccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling operationSnapshotDeleteaccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Snapshot;
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationSnapshotDeletetagKey operation.
+     * @callback module:api/SnapshotApi~operationSnapshotDeletetagKeyCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/:key
+     * @param {String} snapshotId ID of snapshot
+     * @param {String} key key
+     * @param {module:api/SnapshotApi~operationSnapshotDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationSnapshotDeletetagKey = function(snapshotId, key, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotDeletetagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling operationSnapshotDeletetagKey");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationSnapshotGetservicesServiceId operation.
+     * @callback module:api/SnapshotApi~operationSnapshotGetservicesServiceIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/SnapshotServices} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/:serviceId
+     * @param {String} snapshotId ID of snapshot
+     * @param {String} serviceId serviceId
+     * @param {module:api/SnapshotApi~operationSnapshotGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/SnapshotServices}
+     */
+    this.operationSnapshotGetservicesServiceId = function(snapshotId, serviceId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotGetservicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling operationSnapshotGetservicesServiceId");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = SnapshotServices;
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationSnapshotGettag operation.
+     * @callback module:api/SnapshotApi~operationSnapshotGettagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} snapshotId ID of snapshot
+     * @param {module:api/SnapshotApi~operationSnapshotGettagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationSnapshotGettag = function(snapshotId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotGettag");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/tag/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationSnapshotListaccessrights operation.
+     * @callback module:api/SnapshotApi~operationSnapshotListaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<String>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} snapshotId ID of snapshot
+     * @param {module:api/SnapshotApi~operationSnapshotListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<String>}
+     */
+    this.operationSnapshotListaccessrights = function(snapshotId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotListaccessrights");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ['String'];
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/accessrights/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationSnapshotListqueue operation.
+     * @callback module:api/SnapshotApi~operationSnapshotListqueueCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Event>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /queue/
+     * @param {String} snapshotId ID of snapshot
+     * @param {module:api/SnapshotApi~operationSnapshotListqueueCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Event>}
+     */
+    this.operationSnapshotListqueue = function(snapshotId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotListqueue");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Event];
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/queue/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationSnapshotListservices operation.
+     * @callback module:api/SnapshotApi~operationSnapshotListservicesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/SnapshotServices>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/
+     * @param {String} snapshotId ID of snapshot
+     * @param {module:api/SnapshotApi~operationSnapshotListservicesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/SnapshotServices>}
+     */
+    this.operationSnapshotListservices = function(snapshotId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotListservices");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [SnapshotServices];
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/services/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationSnapshotPatchtag operation.
+     * @callback module:api/SnapshotApi~operationSnapshotPatchtagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} snapshotId ID of snapshot
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @param {module:api/SnapshotApi~operationSnapshotPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationSnapshotPatchtag = function(snapshotId, requestBody, callback) {
+      var postBody = requestBody;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotPatchtag");
+      }
+
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling operationSnapshotPatchtag");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/tag/', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationSnapshotPostaccessrights operation.
+     * @callback module:api/SnapshotApi~operationSnapshotPostaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {String} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} snapshotId ID of snapshot
      * @param {Object} opts Optional parameters
-     * @param {String} opts.name Filter by name
-     * @param {String} opts.vault Filter by vault
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Snapshot>}
+     * @param {module:model/InlineObject56} opts.inlineObject56 
+     * @param {module:api/SnapshotApi~operationSnapshotPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link String}
      */
-        this.listSnapshot = function(opts) {
-            return this.listSnapshotWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
+    this.operationSnapshotPostaccessrights = function(snapshotId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject56'];
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotPostaccessrights");
+      }
 
 
-        /**
-     * Find by ID
+      var pathParams = {
+        'snapshotId': snapshotId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = 'String';
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/accessrights/', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the showSnapshot operation.
+     * @callback module:api/SnapshotApi~showSnapshotCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Snapshot} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get
      * Returns a single snapshot
      * @param {String} snapshotId ID of snapshot
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
+     * @param {module:api/SnapshotApi~showSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Snapshot}
      */
-        this.showSnapshotWithHttpInfo = function(snapshotId) {
-            const postBody = null;
+    this.showSnapshot = function(snapshotId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'snapshotId' is set
-            if (snapshotId === undefined || snapshotId === null) {
-                throw new Error("Missing the required parameter 'snapshotId' when calling showSnapshot");
-            }
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling showSnapshot");
+      }
 
 
-            const pathParams = {
-                snapshotId: snapshotId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'snapshotId': snapshotId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = Snapshot;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Snapshot;
 
-            return this.apiClient.callApi(
-                '/snapshot/{snapshotId}', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Find by ID
-     * Returns a single snapshot
-     * @param {String} snapshotId ID of snapshot
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
+    /**
+     * Callback function to receive the result of the updateSnapshot operation.
+     * @callback module:api/SnapshotApi~updateSnapshotCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Snapshot} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.showSnapshot = function(snapshotId) {
-            return this.showSnapshotWithHttpInfo(snapshotId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Update by ID
+    /**
+     * Update
      * Returns modified snapshot
      * @param {String} snapshotId ID of snapshot
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject42} opts.inlineObject42
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
+     * @param {module:model/InlineObject55} opts.inlineObject55 
+     * @param {module:api/SnapshotApi~updateSnapshotCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Snapshot}
      */
-        this.updateSnapshotWithHttpInfo = function(snapshotId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject42;
+    this.updateSnapshot = function(snapshotId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject55'];
 
-            // verify the required parameter 'snapshotId' is set
-            if (snapshotId === undefined || snapshotId === null) {
-                throw new Error("Missing the required parameter 'snapshotId' when calling updateSnapshot");
-            }
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling updateSnapshot");
+      }
 
 
-            const pathParams = {
-                snapshotId: snapshotId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'snapshotId': snapshotId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Snapshot;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Snapshot;
 
-            return this.apiClient.callApi(
-                '/snapshot/{snapshotId}', 'PATCH',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+  };
 
-        /**
-     * Update by ID
-     * Returns modified snapshot
-     * @param {String} snapshotId ID of snapshot
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject42} opts.inlineObject42
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
-     */
-        this.updateSnapshot = function(snapshotId, opts) {
-            return this.updateSnapshotWithHttpInfo(snapshotId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
-    };
-
-    return exports;
+  return exports;
 }));

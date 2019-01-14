@@ -14,198 +14,220 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient', 'model/ContainerServices', 'model/Event', 'model/NetadpAssigned', 'model/NetgwNetwork', 'model/NetgwPrimaryIP'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient', 'model/Event', 'model/NetadpAssigned', 'model/NetgwNetwork', 'model/NetgwPrimaryIP', 'model/ProjectServices'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'), require('./ContainerServices'), require('./Event'), require('./NetadpAssigned'), require('./NetgwNetwork'), require('./NetgwPrimaryIP'));
-    } else {
+    module.exports = factory(require('../ApiClient'), require('./Event'), require('./NetadpAssigned'), require('./NetgwNetwork'), require('./NetgwPrimaryIP'), require('./ProjectServices'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.Netadp = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.ContainerServices, root.HyperOneApi.Event, root.HyperOneApi.NetadpAssigned, root.HyperOneApi.NetgwNetwork, root.HyperOneApi.NetgwPrimaryIP);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
-}(this, function(ApiClient, ContainerServices, Event, NetadpAssigned, NetgwNetwork, NetgwPrimaryIP) {
-    'use strict';
+    root.HyperOneApi.Netadp = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.NetadpAssigned, root.HyperOneApi.NetgwNetwork, root.HyperOneApi.NetgwPrimaryIP, root.HyperOneApi.ProjectServices);
+  }
+}(this, function(ApiClient, Event, NetadpAssigned, NetgwNetwork, NetgwPrimaryIP, ProjectServices) {
+  'use strict';
 
 
 
-    /**
+  /**
    * The Netadp model module.
    * @module model/Netadp
    * @version 1
    */
 
-    /**
+  /**
    * Constructs a new <code>Netadp</code>.
    * @alias module:model/Netadp
    * @class
    */
-    const exports = function() {
-        const _this = this;
+  var exports = function() {
+    var _this = this;
 
-    };
+  };
 
-    /**
+  /**
    * Constructs a <code>Netadp</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/Netadp} obj Optional instance to populate.
    * @return {module:model/Netadp} The populated <code>Netadp</code> instance.
    */
-    exports.constructFromObject = function(data, obj) {
-        if (data) {
-            obj = obj || new exports();
-            if (data.hasOwnProperty('_id')) {
-                obj._id = ApiClient.convertToType(data._id, 'String');
-            }
-            if (data.hasOwnProperty('name')) {
-                obj.name = ApiClient.convertToType(data.name, 'String');
-            }
-            if (data.hasOwnProperty('services')) {
-                obj.services = ApiClient.convertToType(data.services, [ContainerServices]);
-            }
-            if (data.hasOwnProperty('flavour')) {
-                obj.flavour = ApiClient.convertToType(data.flavour, 'String');
-            }
-            if (data.hasOwnProperty('modifiedOn')) {
-                obj.modifiedOn = ApiClient.convertToType(data.modifiedOn, 'Date');
-            }
-            if (data.hasOwnProperty('modifiedBy')) {
-                obj.modifiedBy = ApiClient.convertToType(data.modifiedBy, 'String');
-            }
-            if (data.hasOwnProperty('createdBy')) {
-                obj.createdBy = ApiClient.convertToType(data.createdBy, 'String');
-            }
-            if (data.hasOwnProperty('createdOn')) {
-                obj.createdOn = ApiClient.convertToType(data.createdOn, 'Date');
-            }
-            if (data.hasOwnProperty('accessRights')) {
-                obj.accessRights = ApiClient.convertToType(data.accessRights, ['String']);
-            }
-            if (data.hasOwnProperty('processing')) {
-                obj.processing = ApiClient.convertToType(data.processing, 'Boolean');
-            }
-            if (data.hasOwnProperty('created')) {
-                obj.created = ApiClient.convertToType(data.created, 'Boolean');
-            }
-            if (data.hasOwnProperty('queue')) {
-                obj.queue = ApiClient.convertToType(data.queue, [Event]);
-            }
-            if (data.hasOwnProperty('state')) {
-                obj.state = ApiClient.convertToType(data.state, 'String');
-            }
-            if (data.hasOwnProperty('tag')) {
-                obj.tag = ApiClient.convertToType(data.tag, Object);
-            }
-            if (data.hasOwnProperty('project')) {
-                obj.project = ApiClient.convertToType(data.project, 'String');
-            }
-            if (data.hasOwnProperty('macaddress')) {
-                obj.macaddress = ApiClient.convertToType(data.macaddress, 'String');
-            }
-            if (data.hasOwnProperty('speed')) {
-                obj.speed = ApiClient.convertToType(data.speed, 'Number');
-            }
-            if (data.hasOwnProperty('network')) {
-                obj.network = NetgwNetwork.constructFromObject(data.network);
-            }
-            if (data.hasOwnProperty('ip')) {
-                obj.ip = NetgwPrimaryIP.constructFromObject(data.ip);
-            }
-            if (data.hasOwnProperty('assigned')) {
-                obj.assigned = NetadpAssigned.constructFromObject(data.assigned);
-            }
-        }
-        return obj;
-    };
+  exports.constructFromObject = function(data, obj) {
+    if (data) {
+      obj = obj || new exports();
+      if (data.hasOwnProperty('_id')) {
+        obj['_id'] = ApiClient.convertToType(data['_id'], 'String');
+      }
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('services')) {
+        obj['services'] = ApiClient.convertToType(data['services'], [ProjectServices]);
+      }
+      if (data.hasOwnProperty('flavour')) {
+        obj['flavour'] = ApiClient.convertToType(data['flavour'], 'String');
+      }
+      if (data.hasOwnProperty('modifiedOn')) {
+        obj['modifiedOn'] = ApiClient.convertToType(data['modifiedOn'], 'Date');
+      }
+      if (data.hasOwnProperty('modifiedBy')) {
+        obj['modifiedBy'] = ApiClient.convertToType(data['modifiedBy'], 'String');
+      }
+      if (data.hasOwnProperty('createdBy')) {
+        obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'String');
+      }
+      if (data.hasOwnProperty('createdOn')) {
+        obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'Date');
+      }
+      if (data.hasOwnProperty('accessRights')) {
+        obj['accessRights'] = ApiClient.convertToType(data['accessRights'], ['String']);
+      }
+      if (data.hasOwnProperty('processing')) {
+        obj['processing'] = ApiClient.convertToType(data['processing'], 'Boolean');
+      }
+      if (data.hasOwnProperty('created')) {
+        obj['created'] = ApiClient.convertToType(data['created'], 'Boolean');
+      }
+      if (data.hasOwnProperty('queue')) {
+        obj['queue'] = ApiClient.convertToType(data['queue'], [Event]);
+      }
+      if (data.hasOwnProperty('state')) {
+        obj['state'] = ApiClient.convertToType(data['state'], 'String');
+      }
+      if (data.hasOwnProperty('tag')) {
+        obj['tag'] = ApiClient.convertToType(data['tag'], Object);
+      }
+      if (data.hasOwnProperty('project')) {
+        obj['project'] = ApiClient.convertToType(data['project'], 'String');
+      }
+      if (data.hasOwnProperty('macaddress')) {
+        obj['macaddress'] = ApiClient.convertToType(data['macaddress'], 'String');
+      }
+      if (data.hasOwnProperty('speed')) {
+        obj['speed'] = ApiClient.convertToType(data['speed'], 'Number');
+      }
+      if (data.hasOwnProperty('network')) {
+        obj['network'] = NetgwNetwork.constructFromObject(data['network']);
+      }
+      if (data.hasOwnProperty('ip')) {
+        obj['ip'] = NetgwPrimaryIP.constructFromObject(data['ip']);
+      }
+      if (data.hasOwnProperty('assigned')) {
+        obj['assigned'] = NetadpAssigned.constructFromObject(data['assigned']);
+      }
+    }
+    return obj;
+  }
 
-    /**
+  /**
    * @member {String} _id
    */
-    exports.prototype._id = undefined;
-    /**
+  exports.prototype['_id'] = undefined;
+  /**
    * @member {String} name
    */
-    exports.prototype.name = undefined;
-    /**
-   * @member {Array.<module:model/ContainerServices>} services
+  exports.prototype['name'] = undefined;
+  /**
+   * @member {Array.<module:model/ProjectServices>} services
    */
-    exports.prototype.services = undefined;
-    /**
+  exports.prototype['services'] = undefined;
+  /**
    * @member {String} flavour
    */
-    exports.prototype.flavour = undefined;
-    /**
+  exports.prototype['flavour'] = undefined;
+  /**
    * @member {Date} modifiedOn
    */
-    exports.prototype.modifiedOn = undefined;
-    /**
+  exports.prototype['modifiedOn'] = undefined;
+  /**
    * @member {String} modifiedBy
    */
-    exports.prototype.modifiedBy = undefined;
-    /**
+  exports.prototype['modifiedBy'] = undefined;
+  /**
    * @member {String} createdBy
    */
-    exports.prototype.createdBy = undefined;
-    /**
+  exports.prototype['createdBy'] = undefined;
+  /**
    * @member {Date} createdOn
    */
-    exports.prototype.createdOn = undefined;
-    /**
+  exports.prototype['createdOn'] = undefined;
+  /**
    * @member {Array.<String>} accessRights
    */
-    exports.prototype.accessRights = undefined;
-    /**
+  exports.prototype['accessRights'] = undefined;
+  /**
    * @member {Boolean} processing
    */
-    exports.prototype.processing = undefined;
-    /**
+  exports.prototype['processing'] = undefined;
+  /**
    * @member {Boolean} created
    */
-    exports.prototype.created = undefined;
-    /**
+  exports.prototype['created'] = undefined;
+  /**
    * @member {Array.<module:model/Event>} queue
    */
-    exports.prototype.queue = undefined;
-    /**
-   * @member {String} state
+  exports.prototype['queue'] = undefined;
+  /**
+   * @member {module:model/Netadp.StateEnum} state
    */
-    exports.prototype.state = undefined;
-    /**
+  exports.prototype['state'] = undefined;
+  /**
    * @member {Object} tag
    */
-    exports.prototype.tag = undefined;
-    /**
+  exports.prototype['tag'] = undefined;
+  /**
    * @member {String} project
    */
-    exports.prototype.project = undefined;
-    /**
+  exports.prototype['project'] = undefined;
+  /**
    * @member {String} macaddress
    */
-    exports.prototype.macaddress = undefined;
-    /**
+  exports.prototype['macaddress'] = undefined;
+  /**
    * @member {Number} speed
    */
-    exports.prototype.speed = undefined;
-    /**
+  exports.prototype['speed'] = undefined;
+  /**
    * @member {module:model/NetgwNetwork} network
    */
-    exports.prototype.network = undefined;
-    /**
+  exports.prototype['network'] = undefined;
+  /**
    * @member {module:model/NetgwPrimaryIP} ip
    */
-    exports.prototype.ip = undefined;
-    /**
+  exports.prototype['ip'] = undefined;
+  /**
    * @member {module:model/NetadpAssigned} assigned
    */
-    exports.prototype.assigned = undefined;
+  exports.prototype['assigned'] = undefined;
 
 
+  /**
+   * Allowed values for the <code>state</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.StateEnum = {
+    /**
+     * value: "Online"
+     * @const
+     */
+    "Online": "Online",
+    /**
+     * value: "Deallocated"
+     * @const
+     */
+    "Deallocated": "Deallocated",
+    /**
+     * value: "Unknown"
+     * @const
+     */
+    "Unknown": "Unknown"  };
 
-    return exports;
+
+  return exports;
 }));
 
 

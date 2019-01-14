@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**services** | [**[ContainerServices]**](ContainerServices.md) |  | [optional] 
+**services** | [**[ProjectServices]**](ProjectServices.md) |  | [optional] 
 **flavour** | **String** |  | [optional] 
 **modifiedOn** | **Date** |  | [optional] 
 **modifiedBy** | **String** |  | [optional] 
@@ -18,5 +18,38 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
+
+
+<a name="StateEnum"></a>
+## Enum: StateEnum
+
+
+* `Error` (value: `"Error"`)
+
+* `FailOverWaitingCompletion` (value: `"FailOverWaitingCompletion"`)
+
+* `FailedOver` (value: `"FailedOver"`)
+
+* `NotApplicable` (value: `"NotApplicable"`)
+
+* `ReadyForInitialReplication` (value: `"ReadyForInitialReplication"`)
+
+* `Replicating` (value: `"Replicating"`)
+
+* `Resynchronizing` (value: `"Resynchronizing"`)
+
+* `ResynchronizeSuspended` (value: `"ResynchronizeSuspended"`)
+
+* `Suspended` (value: `"Suspended"`)
+
+* `SyncedReplicationComplete` (value: `"SyncedReplicationComplete"`)
+
+* `WaitingForInitialReplication` (value: `"WaitingForInitialReplication"`)
+
+* `WaitingForStartResynchronize` (value: `"WaitingForStartResynchronize"`)
+
+* `Unknown` (value: `"Unknown"`)
+
+
 
 

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**service** | **String** |  | 
+**identity** | **String** |  | [optional] 
 
 

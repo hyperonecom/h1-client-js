@@ -14,476 +14,870 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient', 'model/Container', 'model/InlineObject5', 'model/InlineObject6'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient', 'model/Container', 'model/ContainerServices', 'model/Event', 'model/InlineObject7', 'model/InlineObject8', 'model/InlineObject9'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'), require('../model/Container'), require('../model/InlineObject5'), require('../model/InlineObject6'));
-    } else {
+    module.exports = factory(require('../ApiClient'), require('../model/Container'), require('../model/ContainerServices'), require('../model/Event'), require('../model/InlineObject7'), require('../model/InlineObject8'), require('../model/InlineObject9'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.ContainerApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Container, root.HyperOneApi.InlineObject5, root.HyperOneApi.InlineObject6);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
-}(this, function(ApiClient, Container, InlineObject5, InlineObject6) {
-    'use strict';
+    root.HyperOneApi.ContainerApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Container, root.HyperOneApi.ContainerServices, root.HyperOneApi.Event, root.HyperOneApi.InlineObject7, root.HyperOneApi.InlineObject8, root.HyperOneApi.InlineObject9);
+  }
+}(this, function(ApiClient, Container, ContainerServices, Event, InlineObject7, InlineObject8, InlineObject9) {
+  'use strict';
 
-    /**
+  /**
    * Container service.
    * @module api/ContainerApi
    * @version 1
    */
 
-    /**
-   * Constructs a new ContainerApi.
+  /**
+   * Constructs a new ContainerApi. 
    * @alias module:api/ContainerApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    const exports = function(apiClient) {
-        this.apiClient = apiClient || ApiClient.instance;
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
 
 
+    /**
+     * Callback function to receive the result of the actionContainerRestart operation.
+     * @callback module:api/ContainerApi~actionContainerRestartCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Container} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
-        /**
-     * Action :: restart
+    /**
+     * /actions/restart
      * Action restart
      * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
+     * @param {module:api/ContainerApi~actionContainerRestartCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Container}
      */
-        this.actionContainerRestartWithHttpInfo = function(containerId, opts) {
-            opts = opts || {};
-            const postBody = opts.body;
+    this.actionContainerRestart = function(containerId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'containerId' is set
-            if (containerId === undefined || containerId === null) {
-                throw new Error("Missing the required parameter 'containerId' when calling actionContainerRestart");
-            }
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling actionContainerRestart");
+      }
 
 
-            const pathParams = {
-                containerId: containerId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Container;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Container;
 
-            return this.apiClient.callApi(
-                '/container/{containerId}/actions/restart', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/container/{containerId}/actions/restart', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: restart
-     * Action restart
-     * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
+    /**
+     * Callback function to receive the result of the actionContainerStart operation.
+     * @callback module:api/ContainerApi~actionContainerStartCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Container} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionContainerRestart = function(containerId, opts) {
-            return this.actionContainerRestartWithHttpInfo(containerId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Action :: start
+    /**
+     * /actions/start
      * Action start
      * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
+     * @param {module:api/ContainerApi~actionContainerStartCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Container}
      */
-        this.actionContainerStartWithHttpInfo = function(containerId, opts) {
-            opts = opts || {};
-            const postBody = opts.body;
+    this.actionContainerStart = function(containerId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'containerId' is set
-            if (containerId === undefined || containerId === null) {
-                throw new Error("Missing the required parameter 'containerId' when calling actionContainerStart");
-            }
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling actionContainerStart");
+      }
 
 
-            const pathParams = {
-                containerId: containerId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Container;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Container;
 
-            return this.apiClient.callApi(
-                '/container/{containerId}/actions/start', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/container/{containerId}/actions/start', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: start
-     * Action start
-     * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
+    /**
+     * Callback function to receive the result of the actionContainerStop operation.
+     * @callback module:api/ContainerApi~actionContainerStopCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Container} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionContainerStart = function(containerId, opts) {
-            return this.actionContainerStartWithHttpInfo(containerId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Action :: stop
+    /**
+     * /actions/stop
      * Action stop
      * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
+     * @param {module:api/ContainerApi~actionContainerStopCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Container}
      */
-        this.actionContainerStopWithHttpInfo = function(containerId, opts) {
-            opts = opts || {};
-            const postBody = opts.body;
+    this.actionContainerStop = function(containerId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'containerId' is set
-            if (containerId === undefined || containerId === null) {
-                throw new Error("Missing the required parameter 'containerId' when calling actionContainerStop");
-            }
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling actionContainerStop");
+      }
 
 
-            const pathParams = {
-                containerId: containerId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Container;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Container;
 
-            return this.apiClient.callApi(
-                '/container/{containerId}/actions/stop', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/container/{containerId}/actions/stop', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: stop
-     * Action stop
-     * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
+    /**
+     * Callback function to receive the result of the createContainer operation.
+     * @callback module:api/ContainerApi~createContainerCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Container} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionContainerStop = function(containerId, opts) {
-            return this.actionContainerStopWithHttpInfo(containerId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
+    /**
      * Create
      * Create container
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject5} opts.inlineObject5
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
+     * @param {module:model/InlineObject7} opts.inlineObject7 
+     * @param {module:api/ContainerApi~createContainerCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Container}
      */
-        this.createContainerWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject5;
+    this.createContainer = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject7'];
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Container;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Container;
 
-            return this.apiClient.callApi(
-                '/container', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/container', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Create
-     * Create container
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject5} opts.inlineObject5
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
+    /**
+     * Callback function to receive the result of the deleteContainer operation.
+     * @callback module:api/ContainerApi~deleteContainerCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-        this.createContainer = function(opts) {
-            return this.createContainerWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Delete by ID
+    /**
+     * Delete
      * @param {String} containerId ID of container
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/ContainerApi~deleteContainerCallback} callback The callback function, accepting three arguments: error, data, response
      */
-        this.deleteContainerWithHttpInfo = function(containerId) {
-            const postBody = null;
+    this.deleteContainer = function(containerId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'containerId' is set
-            if (containerId === undefined || containerId === null) {
-                throw new Error("Missing the required parameter 'containerId' when calling deleteContainer");
-            }
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling deleteContainer");
+      }
 
 
-            const pathParams = {
-                containerId: containerId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = [];
-            const returnType = null;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
 
-            return this.apiClient.callApi(
-                '/container/{containerId}', 'DELETE',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/container/{containerId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Delete by ID
-     * @param {String} containerId ID of container
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+    /**
+     * Callback function to receive the result of the listContainer operation.
+     * @callback module:api/ContainerApi~listContainerCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Container>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.deleteContainer = function(containerId) {
-            return this.deleteContainerWithHttpInfo(containerId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
+    /**
      * List
      * List container
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Container>} and HTTP response
+     * @param {module:api/ContainerApi~listContainerCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Container>}
      */
-        this.listContainerWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = null;
+    this.listContainer = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-                name: opts.name,
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+        'name': opts['name'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = [Container];
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Container];
 
-            return this.apiClient.callApi(
-                '/container', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/container', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * List
-     * List container
+    /**
+     * Callback function to receive the result of the operationContainerDeleteaccessrightsIdentity operation.
+     * @callback module:api/ContainerApi~operationContainerDeleteaccessrightsIdentityCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Container} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/:identity
+     * @param {String} containerId ID of container
+     * @param {String} identity identity
+     * @param {module:api/ContainerApi~operationContainerDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Container}
+     */
+    this.operationContainerDeleteaccessrightsIdentity = function(containerId, identity, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling operationContainerDeleteaccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling operationContainerDeleteaccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Container;
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationContainerDeletetagKey operation.
+     * @callback module:api/ContainerApi~operationContainerDeletetagKeyCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/:key
+     * @param {String} containerId ID of container
+     * @param {String} key key
+     * @param {module:api/ContainerApi~operationContainerDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationContainerDeletetagKey = function(containerId, key, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling operationContainerDeletetagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling operationContainerDeletetagKey");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationContainerGetservicesServiceId operation.
+     * @callback module:api/ContainerApi~operationContainerGetservicesServiceIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ContainerServices} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/:serviceId
+     * @param {String} containerId ID of container
+     * @param {String} serviceId serviceId
+     * @param {module:api/ContainerApi~operationContainerGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ContainerServices}
+     */
+    this.operationContainerGetservicesServiceId = function(containerId, serviceId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling operationContainerGetservicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling operationContainerGetservicesServiceId");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ContainerServices;
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationContainerGettag operation.
+     * @callback module:api/ContainerApi~operationContainerGettagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} containerId ID of container
+     * @param {module:api/ContainerApi~operationContainerGettagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationContainerGettag = function(containerId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling operationContainerGettag");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/tag/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationContainerListaccessrights operation.
+     * @callback module:api/ContainerApi~operationContainerListaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<String>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} containerId ID of container
+     * @param {module:api/ContainerApi~operationContainerListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<String>}
+     */
+    this.operationContainerListaccessrights = function(containerId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling operationContainerListaccessrights");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ['String'];
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/accessrights/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationContainerListqueue operation.
+     * @callback module:api/ContainerApi~operationContainerListqueueCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Event>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /queue/
+     * @param {String} containerId ID of container
+     * @param {module:api/ContainerApi~operationContainerListqueueCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Event>}
+     */
+    this.operationContainerListqueue = function(containerId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling operationContainerListqueue");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Event];
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/queue/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationContainerListservices operation.
+     * @callback module:api/ContainerApi~operationContainerListservicesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ContainerServices>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/
+     * @param {String} containerId ID of container
+     * @param {module:api/ContainerApi~operationContainerListservicesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ContainerServices>}
+     */
+    this.operationContainerListservices = function(containerId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling operationContainerListservices");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ContainerServices];
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/services/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationContainerPatchtag operation.
+     * @callback module:api/ContainerApi~operationContainerPatchtagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} containerId ID of container
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @param {module:api/ContainerApi~operationContainerPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationContainerPatchtag = function(containerId, requestBody, callback) {
+      var postBody = requestBody;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling operationContainerPatchtag");
+      }
+
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling operationContainerPatchtag");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/tag/', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationContainerPostaccessrights operation.
+     * @callback module:api/ContainerApi~operationContainerPostaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {String} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} containerId ID of container
      * @param {Object} opts Optional parameters
-     * @param {String} opts.name Filter by name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Container>}
+     * @param {module:model/InlineObject9} opts.inlineObject9 
+     * @param {module:api/ContainerApi~operationContainerPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link String}
      */
-        this.listContainer = function(opts) {
-            return this.listContainerWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
+    this.operationContainerPostaccessrights = function(containerId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject9'];
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling operationContainerPostaccessrights");
+      }
 
 
-        /**
-     * Find by ID
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = 'String';
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/accessrights/', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the showContainer operation.
+     * @callback module:api/ContainerApi~showContainerCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Container} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get
      * Returns a single container
      * @param {String} containerId ID of container
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
+     * @param {module:api/ContainerApi~showContainerCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Container}
      */
-        this.showContainerWithHttpInfo = function(containerId) {
-            const postBody = null;
+    this.showContainer = function(containerId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'containerId' is set
-            if (containerId === undefined || containerId === null) {
-                throw new Error("Missing the required parameter 'containerId' when calling showContainer");
-            }
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling showContainer");
+      }
 
 
-            const pathParams = {
-                containerId: containerId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = Container;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Container;
 
-            return this.apiClient.callApi(
-                '/container/{containerId}', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/container/{containerId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Find by ID
-     * Returns a single container
-     * @param {String} containerId ID of container
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
+    /**
+     * Callback function to receive the result of the updateContainer operation.
+     * @callback module:api/ContainerApi~updateContainerCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Container} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.showContainer = function(containerId) {
-            return this.showContainerWithHttpInfo(containerId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Update by ID
+    /**
+     * Update
      * Returns modified container
      * @param {String} containerId ID of container
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject6} opts.inlineObject6
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
+     * @param {module:model/InlineObject8} opts.inlineObject8 
+     * @param {module:api/ContainerApi~updateContainerCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Container}
      */
-        this.updateContainerWithHttpInfo = function(containerId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject6;
+    this.updateContainer = function(containerId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject8'];
 
-            // verify the required parameter 'containerId' is set
-            if (containerId === undefined || containerId === null) {
-                throw new Error("Missing the required parameter 'containerId' when calling updateContainer");
-            }
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling updateContainer");
+      }
 
 
-            const pathParams = {
-                containerId: containerId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Container;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Container;
 
-            return this.apiClient.callApi(
-                '/container/{containerId}', 'PATCH',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/container/{containerId}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+  };
 
-        /**
-     * Update by ID
-     * Returns modified container
-     * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject6} opts.inlineObject6
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
-     */
-        this.updateContainer = function(containerId, opts) {
-            return this.updateContainerWithHttpInfo(containerId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
-    };
-
-    return exports;
+  return exports;
 }));

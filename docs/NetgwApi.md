@@ -4,20 +4,29 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actionNetgwAttach**](NetgwApi.md#actionNetgwAttach) | **POST** /netgw/{netgwId}/actions/attach | Action :: attach
-[**actionNetgwDetach**](NetgwApi.md#actionNetgwDetach) | **POST** /netgw/{netgwId}/actions/detach | Action :: detach
+[**actionNetgwAttach**](NetgwApi.md#actionNetgwAttach) | **POST** /netgw/{netgwId}/actions/attach | /actions/attach
+[**actionNetgwDetach**](NetgwApi.md#actionNetgwDetach) | **POST** /netgw/{netgwId}/actions/detach | /actions/detach
 [**createNetgw**](NetgwApi.md#createNetgw) | **POST** /netgw | Create
-[**deleteNetgw**](NetgwApi.md#deleteNetgw) | **DELETE** /netgw/{netgwId} | Delete by ID
+[**deleteNetgw**](NetgwApi.md#deleteNetgw) | **DELETE** /netgw/{netgwId} | Delete
 [**listNetgw**](NetgwApi.md#listNetgw) | **GET** /netgw | List
-[**showNetgw**](NetgwApi.md#showNetgw) | **GET** /netgw/{netgwId} | Find by ID
-[**updateNetgw**](NetgwApi.md#updateNetgw) | **PATCH** /netgw/{netgwId} | Update by ID
+[**operationNetgwDeleteaccessrightsIdentity**](NetgwApi.md#operationNetgwDeleteaccessrightsIdentity) | **DELETE** /netgw/{netgwId}/accessrights/{identity} | /accessrights/:identity
+[**operationNetgwDeletetagKey**](NetgwApi.md#operationNetgwDeletetagKey) | **DELETE** /netgw/{netgwId}/tag/{key} | /tag/:key
+[**operationNetgwGetservicesServiceId**](NetgwApi.md#operationNetgwGetservicesServiceId) | **GET** /netgw/{netgwId}/services/{serviceId} | /services/:serviceId
+[**operationNetgwGettag**](NetgwApi.md#operationNetgwGettag) | **GET** /netgw/{netgwId}/tag/ | /tag/
+[**operationNetgwListaccessrights**](NetgwApi.md#operationNetgwListaccessrights) | **GET** /netgw/{netgwId}/accessrights/ | /accessrights/
+[**operationNetgwListqueue**](NetgwApi.md#operationNetgwListqueue) | **GET** /netgw/{netgwId}/queue/ | /queue/
+[**operationNetgwListservices**](NetgwApi.md#operationNetgwListservices) | **GET** /netgw/{netgwId}/services/ | /services/
+[**operationNetgwPatchtag**](NetgwApi.md#operationNetgwPatchtag) | **PATCH** /netgw/{netgwId}/tag/ | /tag/
+[**operationNetgwPostaccessrights**](NetgwApi.md#operationNetgwPostaccessrights) | **POST** /netgw/{netgwId}/accessrights/ | /accessrights/
+[**showNetgw**](NetgwApi.md#showNetgw) | **GET** /netgw/{netgwId} | Get
+[**updateNetgw**](NetgwApi.md#updateNetgw) | **PATCH** /netgw/{netgwId} | Update
 
 
 <a name="actionNetgwAttach"></a>
 # **actionNetgwAttach**
-> Netgw actionNetgwAttach(netgwId, opts)
+> Netgw actionNetgwAttach(netgwId)
 
-Action :: attach
+/actions/attach
 
 Action attach
 
@@ -43,15 +52,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetgwApi();
 var netgwId = "netgwId_example"; // String | ID of netgw
-var opts = {
-  'inlineObject15': new HyperOneApi.InlineObject15() // InlineObject15 | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 };
-apiInstance.actionNetgwAttach(netgwId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+apiInstance.actionNetgwAttach(netgwId, callback);
 ```
 
 ### Parameters
@@ -59,7 +67,6 @@ apiInstance.actionNetgwAttach(netgwId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **netgwId** | **String**| ID of netgw | 
- **inlineObject15** | [**InlineObject15**](InlineObject15.md)|  | [optional] 
 
 ### Return type
 
@@ -71,14 +78,14 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="actionNetgwDetach"></a>
 # **actionNetgwDetach**
-> Netgw actionNetgwDetach(netgwId, opts)
+> Netgw actionNetgwDetach(netgwId)
 
-Action :: detach
+/actions/detach
 
 Action detach
 
@@ -104,15 +111,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetgwApi();
 var netgwId = "netgwId_example"; // String | ID of netgw
-var opts = {
-  'body': null // Object | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
 };
-apiInstance.actionNetgwDetach(netgwId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+apiInstance.actionNetgwDetach(netgwId, callback);
 ```
 
 ### Parameters
@@ -120,7 +126,6 @@ apiInstance.actionNetgwDetach(netgwId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **netgwId** | **String**| ID of netgw | 
- **body** | **Object**|  | [optional] 
 
 ### Return type
 
@@ -132,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="createNetgw"></a>
@@ -165,21 +170,23 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetgwApi();
 var opts = {
-  'inlineObject13': new HyperOneApi.InlineObject13() // InlineObject13 | 
+  'inlineObject20': new HyperOneApi.InlineObject20() // InlineObject20 | 
 };
-apiInstance.createNetgw(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createNetgw(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject13** | [**InlineObject13**](InlineObject13.md)|  | [optional] 
+ **inlineObject20** | [**InlineObject20**](InlineObject20.md)|  | [optional] 
 
 ### Return type
 
@@ -198,7 +205,7 @@ Name | Type | Description  | Notes
 # **deleteNetgw**
 > deleteNetgw(netgwId)
 
-Delete by ID
+Delete
 
 ### Example
 ```javascript
@@ -222,12 +229,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetgwApi();
 var netgwId = "netgwId_example"; // String | ID of netgw
-apiInstance.deleteNetgw(netgwId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteNetgw(netgwId, callback);
 ```
 
 ### Parameters
@@ -281,12 +290,14 @@ var apiInstance = new HyperOneApi.NetgwApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-apiInstance.listNetgw(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listNetgw(opts, callback);
 ```
 
 ### Parameters
@@ -308,11 +319,536 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="operationNetgwDeleteaccessrightsIdentity"></a>
+# **operationNetgwDeleteaccessrightsIdentity**
+> Netgw operationNetgwDeleteaccessrightsIdentity(netgwId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetgwApi();
+var netgwId = "netgwId_example"; // String | ID of netgw
+var identity = "identity_example"; // String | identity
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationNetgwDeleteaccessrightsIdentity(netgwId, identity, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netgwId** | **String**| ID of netgw | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Netgw**](Netgw.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationNetgwDeletetagKey"></a>
+# **operationNetgwDeletetagKey**
+> {String: String} operationNetgwDeletetagKey(netgwId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetgwApi();
+var netgwId = "netgwId_example"; // String | ID of netgw
+var key = "key_example"; // String | key
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationNetgwDeletetagKey(netgwId, key, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netgwId** | **String**| ID of netgw | 
+ **key** | **String**| key | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationNetgwGetservicesServiceId"></a>
+# **operationNetgwGetservicesServiceId**
+> NetgwServices operationNetgwGetservicesServiceId(netgwId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetgwApi();
+var netgwId = "netgwId_example"; // String | ID of netgw
+var serviceId = "serviceId_example"; // String | serviceId
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationNetgwGetservicesServiceId(netgwId, serviceId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netgwId** | **String**| ID of netgw | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**NetgwServices**](NetgwServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationNetgwGettag"></a>
+# **operationNetgwGettag**
+> {String: String} operationNetgwGettag(netgwId)
+
+/tag/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetgwApi();
+var netgwId = "netgwId_example"; // String | ID of netgw
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationNetgwGettag(netgwId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netgwId** | **String**| ID of netgw | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationNetgwListaccessrights"></a>
+# **operationNetgwListaccessrights**
+> [String] operationNetgwListaccessrights(netgwId)
+
+/accessrights/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetgwApi();
+var netgwId = "netgwId_example"; // String | ID of netgw
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationNetgwListaccessrights(netgwId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netgwId** | **String**| ID of netgw | 
+
+### Return type
+
+**[String]**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationNetgwListqueue"></a>
+# **operationNetgwListqueue**
+> [Event] operationNetgwListqueue(netgwId)
+
+/queue/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetgwApi();
+var netgwId = "netgwId_example"; // String | ID of netgw
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationNetgwListqueue(netgwId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netgwId** | **String**| ID of netgw | 
+
+### Return type
+
+[**[Event]**](Event.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationNetgwListservices"></a>
+# **operationNetgwListservices**
+> [NetgwServices] operationNetgwListservices(netgwId)
+
+/services/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetgwApi();
+var netgwId = "netgwId_example"; // String | ID of netgw
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationNetgwListservices(netgwId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netgwId** | **String**| ID of netgw | 
+
+### Return type
+
+[**[NetgwServices]**](NetgwServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationNetgwPatchtag"></a>
+# **operationNetgwPatchtag**
+> {String: String} operationNetgwPatchtag(netgwId, requestBody)
+
+/tag/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetgwApi();
+var netgwId = "netgwId_example"; // String | ID of netgw
+var requestBody = {key: "null"}; // {String: String} | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationNetgwPatchtag(netgwId, requestBody, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netgwId** | **String**| ID of netgw | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="operationNetgwPostaccessrights"></a>
+# **operationNetgwPostaccessrights**
+> String operationNetgwPostaccessrights(netgwId, opts)
+
+/accessrights/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetgwApi();
+var netgwId = "netgwId_example"; // String | ID of netgw
+var opts = {
+  'inlineObject22': new HyperOneApi.InlineObject22() // InlineObject22 | 
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationNetgwPostaccessrights(netgwId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netgwId** | **String**| ID of netgw | 
+ **inlineObject22** | [**InlineObject22**](InlineObject22.md)|  | [optional] 
+
+### Return type
+
+**String**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="showNetgw"></a>
 # **showNetgw**
 > Netgw showNetgw(netgwId)
 
-Find by ID
+Get
 
 Returns a single netgw
 
@@ -338,12 +874,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetgwApi();
 var netgwId = "netgwId_example"; // String | ID of netgw
-apiInstance.showNetgw(netgwId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.showNetgw(netgwId, callback);
 ```
 
 ### Parameters
@@ -369,7 +907,7 @@ Name | Type | Description  | Notes
 # **updateNetgw**
 > Netgw updateNetgw(netgwId, opts)
 
-Update by ID
+Update
 
 Returns modified netgw
 
@@ -396,14 +934,16 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.NetgwApi();
 var netgwId = "netgwId_example"; // String | ID of netgw
 var opts = {
-  'inlineObject14': new HyperOneApi.InlineObject14() // InlineObject14 | 
+  'inlineObject21': new HyperOneApi.InlineObject21() // InlineObject21 | 
 };
-apiInstance.updateNetgw(netgwId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateNetgw(netgwId, opts, callback);
 ```
 
 ### Parameters
@@ -411,7 +951,7 @@ apiInstance.updateNetgw(netgwId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **netgwId** | **String**| ID of netgw | 
- **inlineObject14** | [**InlineObject14**](InlineObject14.md)|  | [optional] 
+ **inlineObject21** | [**InlineObject21**](InlineObject21.md)|  | [optional] 
 
 ### Return type
 

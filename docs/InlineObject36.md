@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**project** | **String** |  | 
+**userMetadata** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
 
 

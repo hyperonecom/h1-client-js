@@ -4,6 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
-**billing** | [**OrganisationorganisationIdBilling**](OrganisationorganisationIdBilling.md) |  | [optional] 
+**billing** | [**OrganisationBilling**](OrganisationBilling.md) |  | [optional] 
+**accessRights** | [**[OrganisationAccessRights]**](OrganisationAccessRights.md) |  | [optional] 
+**tag** | [**Object**](.md) |  | [optional] 
 
 

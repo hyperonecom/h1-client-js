@@ -10,3 +10,14 @@ Name | Type | Description | Notes
 **accessRights** | **[String]** |  | [optional] 
 
 
+<a name="StateEnum"></a>
+## Enum: StateEnum
+
+
+* `Running` (value: `"Running"`)
+
+* `Unknown` (value: `"Unknown"`)
+
+
+
+

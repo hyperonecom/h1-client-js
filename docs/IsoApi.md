@@ -4,19 +4,28 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actionIsoTransfer**](IsoApi.md#actionIsoTransfer) | **POST** /iso/{isoId}/actions/transfer | Action :: transfer
+[**actionIsoTransfer**](IsoApi.md#actionIsoTransfer) | **POST** /iso/{isoId}/actions/transfer | /actions/transfer
 [**createIso**](IsoApi.md#createIso) | **POST** /iso | Create
-[**deleteIso**](IsoApi.md#deleteIso) | **DELETE** /iso/{isoId} | Delete by ID
+[**deleteIso**](IsoApi.md#deleteIso) | **DELETE** /iso/{isoId} | Delete
 [**listIso**](IsoApi.md#listIso) | **GET** /iso | List
-[**showIso**](IsoApi.md#showIso) | **GET** /iso/{isoId} | Find by ID
-[**updateIso**](IsoApi.md#updateIso) | **PATCH** /iso/{isoId} | Update by ID
+[**operationIsoDeleteaccessrightsIdentity**](IsoApi.md#operationIsoDeleteaccessrightsIdentity) | **DELETE** /iso/{isoId}/accessrights/{identity} | /accessrights/:identity
+[**operationIsoDeletetagKey**](IsoApi.md#operationIsoDeletetagKey) | **DELETE** /iso/{isoId}/tag/{key} | /tag/:key
+[**operationIsoGetservicesServiceId**](IsoApi.md#operationIsoGetservicesServiceId) | **GET** /iso/{isoId}/services/{serviceId} | /services/:serviceId
+[**operationIsoGettag**](IsoApi.md#operationIsoGettag) | **GET** /iso/{isoId}/tag/ | /tag/
+[**operationIsoListaccessrights**](IsoApi.md#operationIsoListaccessrights) | **GET** /iso/{isoId}/accessrights/ | /accessrights/
+[**operationIsoListqueue**](IsoApi.md#operationIsoListqueue) | **GET** /iso/{isoId}/queue/ | /queue/
+[**operationIsoListservices**](IsoApi.md#operationIsoListservices) | **GET** /iso/{isoId}/services/ | /services/
+[**operationIsoPatchtag**](IsoApi.md#operationIsoPatchtag) | **PATCH** /iso/{isoId}/tag/ | /tag/
+[**operationIsoPostaccessrights**](IsoApi.md#operationIsoPostaccessrights) | **POST** /iso/{isoId}/accessrights/ | /accessrights/
+[**showIso**](IsoApi.md#showIso) | **GET** /iso/{isoId} | Get
+[**updateIso**](IsoApi.md#updateIso) | **PATCH** /iso/{isoId} | Update
 
 
 <a name="actionIsoTransfer"></a>
 # **actionIsoTransfer**
 > Iso actionIsoTransfer(isoId, opts)
 
-Action :: transfer
+/actions/transfer
 
 Action transfer
 
@@ -43,14 +52,16 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.IsoApi();
 var isoId = "isoId_example"; // String | ID of iso
 var opts = {
-  'inlineObject25': new HyperOneApi.InlineObject25() // InlineObject25 | 
+  'inlineObject33': new HyperOneApi.InlineObject33() // InlineObject33 | 
 };
-apiInstance.actionIsoTransfer(isoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.actionIsoTransfer(isoId, opts, callback);
 ```
 
 ### Parameters
@@ -58,7 +69,7 @@ apiInstance.actionIsoTransfer(isoId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **isoId** | **String**| ID of iso | 
- **inlineObject25** | [**InlineObject25**](InlineObject25.md)|  | [optional] 
+ **inlineObject33** | [**InlineObject33**](InlineObject33.md)|  | [optional] 
 
 ### Return type
 
@@ -103,21 +114,23 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IsoApi();
 var opts = {
-  'inlineObject23': new HyperOneApi.InlineObject23() // InlineObject23 | 
+  'inlineObject31': new HyperOneApi.InlineObject31() // InlineObject31 | 
 };
-apiInstance.createIso(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createIso(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject23** | [**InlineObject23**](InlineObject23.md)|  | [optional] 
+ **inlineObject31** | [**InlineObject31**](InlineObject31.md)|  | [optional] 
 
 ### Return type
 
@@ -136,7 +149,7 @@ Name | Type | Description  | Notes
 # **deleteIso**
 > deleteIso(isoId)
 
-Delete by ID
+Delete
 
 ### Example
 ```javascript
@@ -160,12 +173,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IsoApi();
 var isoId = "isoId_example"; // String | ID of iso
-apiInstance.deleteIso(isoId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteIso(isoId, callback);
 ```
 
 ### Parameters
@@ -219,12 +234,14 @@ var apiInstance = new HyperOneApi.IsoApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-apiInstance.listIso(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.listIso(opts, callback);
 ```
 
 ### Parameters
@@ -246,11 +263,536 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="operationIsoDeleteaccessrightsIdentity"></a>
+# **operationIsoDeleteaccessrightsIdentity**
+> Iso operationIsoDeleteaccessrightsIdentity(isoId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IsoApi();
+var isoId = "isoId_example"; // String | ID of iso
+var identity = "identity_example"; // String | identity
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationIsoDeleteaccessrightsIdentity(isoId, identity, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isoId** | **String**| ID of iso | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Iso**](Iso.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationIsoDeletetagKey"></a>
+# **operationIsoDeletetagKey**
+> {String: String} operationIsoDeletetagKey(isoId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IsoApi();
+var isoId = "isoId_example"; // String | ID of iso
+var key = "key_example"; // String | key
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationIsoDeletetagKey(isoId, key, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isoId** | **String**| ID of iso | 
+ **key** | **String**| key | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationIsoGetservicesServiceId"></a>
+# **operationIsoGetservicesServiceId**
+> IsoServices operationIsoGetservicesServiceId(isoId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IsoApi();
+var isoId = "isoId_example"; // String | ID of iso
+var serviceId = "serviceId_example"; // String | serviceId
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationIsoGetservicesServiceId(isoId, serviceId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isoId** | **String**| ID of iso | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**IsoServices**](IsoServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationIsoGettag"></a>
+# **operationIsoGettag**
+> {String: String} operationIsoGettag(isoId)
+
+/tag/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IsoApi();
+var isoId = "isoId_example"; // String | ID of iso
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationIsoGettag(isoId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isoId** | **String**| ID of iso | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationIsoListaccessrights"></a>
+# **operationIsoListaccessrights**
+> [String] operationIsoListaccessrights(isoId)
+
+/accessrights/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IsoApi();
+var isoId = "isoId_example"; // String | ID of iso
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationIsoListaccessrights(isoId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isoId** | **String**| ID of iso | 
+
+### Return type
+
+**[String]**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationIsoListqueue"></a>
+# **operationIsoListqueue**
+> [Event] operationIsoListqueue(isoId)
+
+/queue/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IsoApi();
+var isoId = "isoId_example"; // String | ID of iso
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationIsoListqueue(isoId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isoId** | **String**| ID of iso | 
+
+### Return type
+
+[**[Event]**](Event.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationIsoListservices"></a>
+# **operationIsoListservices**
+> [IsoServices] operationIsoListservices(isoId)
+
+/services/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IsoApi();
+var isoId = "isoId_example"; // String | ID of iso
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationIsoListservices(isoId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isoId** | **String**| ID of iso | 
+
+### Return type
+
+[**[IsoServices]**](IsoServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="operationIsoPatchtag"></a>
+# **operationIsoPatchtag**
+> {String: String} operationIsoPatchtag(isoId, requestBody)
+
+/tag/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IsoApi();
+var isoId = "isoId_example"; // String | ID of iso
+var requestBody = {key: "null"}; // {String: String} | 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationIsoPatchtag(isoId, requestBody, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isoId** | **String**| ID of iso | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
+
+### Return type
+
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="operationIsoPostaccessrights"></a>
+# **operationIsoPostaccessrights**
+> String operationIsoPostaccessrights(isoId, opts)
+
+/accessrights/
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IsoApi();
+var isoId = "isoId_example"; // String | ID of iso
+var opts = {
+  'inlineObject34': new HyperOneApi.InlineObject34() // InlineObject34 | 
+};
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.operationIsoPostaccessrights(isoId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **isoId** | **String**| ID of iso | 
+ **inlineObject34** | [**InlineObject34**](InlineObject34.md)|  | [optional] 
+
+### Return type
+
+**String**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="showIso"></a>
 # **showIso**
 > Iso showIso(isoId)
 
-Find by ID
+Get
 
 Returns a single iso
 
@@ -276,12 +818,14 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IsoApi();
 var isoId = "isoId_example"; // String | ID of iso
-apiInstance.showIso(isoId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.showIso(isoId, callback);
 ```
 
 ### Parameters
@@ -307,7 +851,7 @@ Name | Type | Description  | Notes
 # **updateIso**
 > Iso updateIso(isoId, opts)
 
-Update by ID
+Update
 
 Returns modified iso
 
@@ -334,14 +878,16 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.IsoApi();
 var isoId = "isoId_example"; // String | ID of iso
 var opts = {
-  'inlineObject24': new HyperOneApi.InlineObject24() // InlineObject24 | 
+  'inlineObject32': new HyperOneApi.InlineObject32() // InlineObject32 | 
 };
-apiInstance.updateIso(isoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateIso(isoId, opts, callback);
 ```
 
 ### Parameters
@@ -349,7 +895,7 @@ apiInstance.updateIso(isoId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **isoId** | **String**| ID of iso | 
- **inlineObject24** | [**InlineObject24**](InlineObject24.md)|  | [optional] 
+ **inlineObject32** | [**InlineObject32**](InlineObject32.md)|  | [optional] 
 
 ### Return type
 

@@ -3,6 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
+**name** | **String** |  | 
+**size** | **Number** |  | 
+**service** | **String** |  | 
+**credential** | [**VaultCredential**](VaultCredential.md) |  | [optional] 
+**snapshot** | **String** |  | [optional] 
+**tag** | [**Object**](.md) |  | [optional] 
 
 

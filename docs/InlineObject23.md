@@ -4,11 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
-**size** | **Number** |  | [optional] 
-**source** | **String** |  | [optional] 
+**vm** | **String** |  | [optional] 
+**replica** | **String** |  | [optional] 
 **service** | **String** |  | 
-**cloud** | **String** |  | [optional] 
-**metadata** | [**DiskMetadata**](DiskMetadata.md) |  | [optional] 
+**description** | **String** |  | [optional] 
 **tag** | [**Object**](.md) |  | [optional] 
 
 

@@ -14,476 +14,1283 @@
  */
 
 (function(root, factory) {
-    if (typeof define === 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-        define(['ApiClient', 'model/Firewall', 'model/InlineObject10', 'model/InlineObject7', 'model/InlineObject8', 'model/InlineObject9'], factory);
-    } else if (typeof module === 'object' && module.exports) {
+    define(['ApiClient', 'model/Event', 'model/Firewall', 'model/FirewallServices', 'model/InlineObject10', 'model/InlineObject11', 'model/InlineObject12', 'model/InlineObject13', 'model/InlineObject14', 'model/InlineObject15', 'model/InlineResponse200'], factory);
+  } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-        module.exports = factory(require('../ApiClient'), require('../model/Firewall'), require('../model/InlineObject10'), require('../model/InlineObject7'), require('../model/InlineObject8'), require('../model/InlineObject9'));
-    } else {
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Firewall'), require('../model/FirewallServices'), require('../model/InlineObject10'), require('../model/InlineObject11'), require('../model/InlineObject12'), require('../model/InlineObject13'), require('../model/InlineObject14'), require('../model/InlineObject15'), require('../model/InlineResponse200'));
+  } else {
     // Browser globals (root is window)
-        if (!root.HyperOneApi) {
-            root.HyperOneApi = {};
-        }
-        root.HyperOneApi.FirewallApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Firewall, root.HyperOneApi.InlineObject10, root.HyperOneApi.InlineObject7, root.HyperOneApi.InlineObject8, root.HyperOneApi.InlineObject9);
+    if (!root.HyperOneApi) {
+      root.HyperOneApi = {};
     }
-}(this, function(ApiClient, Firewall, InlineObject10, InlineObject7, InlineObject8, InlineObject9) {
-    'use strict';
+    root.HyperOneApi.FirewallApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Firewall, root.HyperOneApi.FirewallServices, root.HyperOneApi.InlineObject10, root.HyperOneApi.InlineObject11, root.HyperOneApi.InlineObject12, root.HyperOneApi.InlineObject13, root.HyperOneApi.InlineObject14, root.HyperOneApi.InlineObject15, root.HyperOneApi.InlineResponse200);
+  }
+}(this, function(ApiClient, Event, Firewall, FirewallServices, InlineObject10, InlineObject11, InlineObject12, InlineObject13, InlineObject14, InlineObject15, InlineResponse200) {
+  'use strict';
 
-    /**
+  /**
    * Firewall service.
    * @module api/FirewallApi
    * @version 1
    */
 
-    /**
-   * Constructs a new FirewallApi.
+  /**
+   * Constructs a new FirewallApi. 
    * @alias module:api/FirewallApi
    * @class
    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
    * default to {@link module:ApiClient#instance} if unspecified.
    */
-    const exports = function(apiClient) {
-        this.apiClient = apiClient || ApiClient.instance;
+  var exports = function(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
 
 
+    /**
+     * Callback function to receive the result of the actionFirewallAttach operation.
+     * @callback module:api/FirewallApi~actionFirewallAttachCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Firewall} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
-        /**
-     * Action :: attach
+    /**
+     * /actions/attach
      * Action attach
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject9} opts.inlineObject9
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
+     * @param {module:api/FirewallApi~actionFirewallAttachCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Firewall}
      */
-        this.actionFirewallAttachWithHttpInfo = function(firewallId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject9;
+    this.actionFirewallAttach = function(firewallId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'firewallId' is set
-            if (firewallId === undefined || firewallId === null) {
-                throw new Error("Missing the required parameter 'firewallId' when calling actionFirewallAttach");
-            }
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling actionFirewallAttach");
+      }
 
 
-            const pathParams = {
-                firewallId: firewallId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Firewall;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Firewall;
 
-            return this.apiClient.callApi(
-                '/firewall/{firewallId}/actions/attach', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/actions/attach', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: attach
-     * Action attach
-     * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject9} opts.inlineObject9
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
+    /**
+     * Callback function to receive the result of the actionFirewallDetach operation.
+     * @callback module:api/FirewallApi~actionFirewallDetachCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Firewall} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionFirewallAttach = function(firewallId, opts) {
-            return this.actionFirewallAttachWithHttpInfo(firewallId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Action :: detach
+    /**
+     * /actions/detach
      * Action detach
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
+     * @param {module:api/FirewallApi~actionFirewallDetachCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Firewall}
      */
-        this.actionFirewallDetachWithHttpInfo = function(firewallId, opts) {
-            opts = opts || {};
-            const postBody = opts.body;
+    this.actionFirewallDetach = function(firewallId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'firewallId' is set
-            if (firewallId === undefined || firewallId === null) {
-                throw new Error("Missing the required parameter 'firewallId' when calling actionFirewallDetach");
-            }
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling actionFirewallDetach");
+      }
 
 
-            const pathParams = {
-                firewallId: firewallId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Firewall;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Firewall;
 
-            return this.apiClient.callApi(
-                '/firewall/{firewallId}/actions/detach', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/actions/detach', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: detach
-     * Action detach
-     * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.body
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
+    /**
+     * Callback function to receive the result of the actionFirewallTransfer operation.
+     * @callback module:api/FirewallApi~actionFirewallTransferCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Firewall} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionFirewallDetach = function(firewallId, opts) {
-            return this.actionFirewallDetachWithHttpInfo(firewallId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Action :: transfer
+    /**
+     * /actions/transfer
      * Action transfer
      * @param {String} firewallId ID of firewall
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject10} opts.inlineObject10
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
+     * @param {module:model/InlineObject12} opts.inlineObject12 
+     * @param {module:api/FirewallApi~actionFirewallTransferCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Firewall}
      */
-        this.actionFirewallTransferWithHttpInfo = function(firewallId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject10;
+    this.actionFirewallTransfer = function(firewallId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject12'];
 
-            // verify the required parameter 'firewallId' is set
-            if (firewallId === undefined || firewallId === null) {
-                throw new Error("Missing the required parameter 'firewallId' when calling actionFirewallTransfer");
-            }
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling actionFirewallTransfer");
+      }
 
 
-            const pathParams = {
-                firewallId: firewallId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Firewall;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Firewall;
 
-            return this.apiClient.callApi(
-                '/firewall/{firewallId}/actions/transfer', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/actions/transfer', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Action :: transfer
-     * Action transfer
-     * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject10} opts.inlineObject10
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
+    /**
+     * Callback function to receive the result of the createFirewall operation.
+     * @callback module:api/FirewallApi~createFirewallCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Firewall} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.actionFirewallTransfer = function(firewallId, opts) {
-            return this.actionFirewallTransferWithHttpInfo(firewallId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
+    /**
      * Create
      * Create firewall
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject7} opts.inlineObject7
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
+     * @param {module:model/InlineObject10} opts.inlineObject10 
+     * @param {module:api/FirewallApi~createFirewallCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Firewall}
      */
-        this.createFirewallWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject7;
+    this.createFirewall = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject10'];
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Firewall;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Firewall;
 
-            return this.apiClient.callApi(
-                '/firewall', 'POST',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/firewall', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Create
-     * Create firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject7} opts.inlineObject7
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
+    /**
+     * Callback function to receive the result of the deleteFirewall operation.
+     * @callback module:api/FirewallApi~deleteFirewallCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
      */
-        this.createFirewall = function(opts) {
-            return this.createFirewallWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Delete by ID
+    /**
+     * Delete
      * @param {String} firewallId ID of firewall
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @param {module:api/FirewallApi~deleteFirewallCallback} callback The callback function, accepting three arguments: error, data, response
      */
-        this.deleteFirewallWithHttpInfo = function(firewallId) {
-            const postBody = null;
+    this.deleteFirewall = function(firewallId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'firewallId' is set
-            if (firewallId === undefined || firewallId === null) {
-                throw new Error("Missing the required parameter 'firewallId' when calling deleteFirewall");
-            }
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling deleteFirewall");
+      }
 
 
-            const pathParams = {
-                firewallId: firewallId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = [];
-            const returnType = null;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
 
-            return this.apiClient.callApi(
-                '/firewall/{firewallId}', 'DELETE',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Delete by ID
-     * @param {String} firewallId ID of firewall
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+    /**
+     * Callback function to receive the result of the listFirewall operation.
+     * @callback module:api/FirewallApi~listFirewallCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Firewall>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.deleteFirewall = function(firewallId) {
-            return this.deleteFirewallWithHttpInfo(firewallId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
+    /**
      * List
      * List firewall
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Firewall>} and HTTP response
+     * @param {module:api/FirewallApi~listFirewallCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Firewall>}
      */
-        this.listFirewallWithHttpInfo = function(opts) {
-            opts = opts || {};
-            const postBody = null;
+    this.listFirewall = function(opts, callback) {
+      opts = opts || {};
+      var postBody = null;
 
 
-            const pathParams = {
-            };
-            const queryParams = {
-                name: opts.name,
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+      };
+      var queryParams = {
+        'name': opts['name'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = [Firewall];
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Firewall];
 
-            return this.apiClient.callApi(
-                '/firewall', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/firewall', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * List
-     * List firewall
+    /**
+     * Callback function to receive the result of the operationFirewallDeleteaccessrightsIdentity operation.
+     * @callback module:api/FirewallApi~operationFirewallDeleteaccessrightsIdentityCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Firewall} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/:identity
+     * @param {String} firewallId ID of firewall
+     * @param {String} identity identity
+     * @param {module:api/FirewallApi~operationFirewallDeleteaccessrightsIdentityCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Firewall}
+     */
+    this.operationFirewallDeleteaccessrightsIdentity = function(firewallId, identity, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallDeleteaccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling operationFirewallDeleteaccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Firewall;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallDeleteegressRuleId operation.
+     * @callback module:api/FirewallApi~operationFirewallDeleteegressRuleIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /egress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @param {module:api/FirewallApi~operationFirewallDeleteegressRuleIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse200}
+     */
+    this.operationFirewallDeleteegressRuleId = function(firewallId, ruleId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallDeleteegressRuleId");
+      }
+
+      // verify the required parameter 'ruleId' is set
+      if (ruleId === undefined || ruleId === null) {
+        throw new Error("Missing the required parameter 'ruleId' when calling operationFirewallDeleteegressRuleId");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'ruleId': ruleId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/egress/{ruleId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallDeleteingressRuleId operation.
+     * @callback module:api/FirewallApi~operationFirewallDeleteingressRuleIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /ingress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @param {module:api/FirewallApi~operationFirewallDeleteingressRuleIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse200}
+     */
+    this.operationFirewallDeleteingressRuleId = function(firewallId, ruleId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallDeleteingressRuleId");
+      }
+
+      // verify the required parameter 'ruleId' is set
+      if (ruleId === undefined || ruleId === null) {
+        throw new Error("Missing the required parameter 'ruleId' when calling operationFirewallDeleteingressRuleId");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'ruleId': ruleId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/ingress/{ruleId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallDeletetagKey operation.
+     * @callback module:api/FirewallApi~operationFirewallDeletetagKeyCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/:key
+     * @param {String} firewallId ID of firewall
+     * @param {String} key key
+     * @param {module:api/FirewallApi~operationFirewallDeletetagKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationFirewallDeletetagKey = function(firewallId, key, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallDeletetagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling operationFirewallDeletetagKey");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallGetegressRuleId operation.
+     * @callback module:api/FirewallApi~operationFirewallGetegressRuleIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /egress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @param {module:api/FirewallApi~operationFirewallGetegressRuleIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse200}
+     */
+    this.operationFirewallGetegressRuleId = function(firewallId, ruleId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallGetegressRuleId");
+      }
+
+      // verify the required parameter 'ruleId' is set
+      if (ruleId === undefined || ruleId === null) {
+        throw new Error("Missing the required parameter 'ruleId' when calling operationFirewallGetegressRuleId");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'ruleId': ruleId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/egress/{ruleId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallGetingressRuleId operation.
+     * @callback module:api/FirewallApi~operationFirewallGetingressRuleIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /ingress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @param {module:api/FirewallApi~operationFirewallGetingressRuleIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse200}
+     */
+    this.operationFirewallGetingressRuleId = function(firewallId, ruleId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallGetingressRuleId");
+      }
+
+      // verify the required parameter 'ruleId' is set
+      if (ruleId === undefined || ruleId === null) {
+        throw new Error("Missing the required parameter 'ruleId' when calling operationFirewallGetingressRuleId");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'ruleId': ruleId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/ingress/{ruleId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallGetservicesServiceId operation.
+     * @callback module:api/FirewallApi~operationFirewallGetservicesServiceIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/FirewallServices} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/:serviceId
+     * @param {String} firewallId ID of firewall
+     * @param {String} serviceId serviceId
+     * @param {module:api/FirewallApi~operationFirewallGetservicesServiceIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/FirewallServices}
+     */
+    this.operationFirewallGetservicesServiceId = function(firewallId, serviceId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallGetservicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling operationFirewallGetservicesServiceId");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = FirewallServices;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallGettag operation.
+     * @callback module:api/FirewallApi~operationFirewallGettagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} firewallId ID of firewall
+     * @param {module:api/FirewallApi~operationFirewallGettagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationFirewallGettag = function(firewallId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallGettag");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/tag/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallListaccessrights operation.
+     * @callback module:api/FirewallApi~operationFirewallListaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<String>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} firewallId ID of firewall
+     * @param {module:api/FirewallApi~operationFirewallListaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<String>}
+     */
+    this.operationFirewallListaccessrights = function(firewallId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallListaccessrights");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ['String'];
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/accessrights/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallListegress operation.
+     * @callback module:api/FirewallApi~operationFirewallListegressCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/InlineResponse200>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /egress
+     * @param {String} firewallId ID of firewall
+     * @param {module:api/FirewallApi~operationFirewallListegressCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/InlineResponse200>}
+     */
+    this.operationFirewallListegress = function(firewallId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallListegress");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [InlineResponse200];
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/egress', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallListingress operation.
+     * @callback module:api/FirewallApi~operationFirewallListingressCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/InlineResponse200>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /ingress
+     * @param {String} firewallId ID of firewall
+     * @param {module:api/FirewallApi~operationFirewallListingressCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/InlineResponse200>}
+     */
+    this.operationFirewallListingress = function(firewallId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallListingress");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [InlineResponse200];
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/ingress', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallListqueue operation.
+     * @callback module:api/FirewallApi~operationFirewallListqueueCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Event>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /queue/
+     * @param {String} firewallId ID of firewall
+     * @param {module:api/FirewallApi~operationFirewallListqueueCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Event>}
+     */
+    this.operationFirewallListqueue = function(firewallId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallListqueue");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [Event];
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/queue/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallListservices operation.
+     * @callback module:api/FirewallApi~operationFirewallListservicesCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/FirewallServices>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /services/
+     * @param {String} firewallId ID of firewall
+     * @param {module:api/FirewallApi~operationFirewallListservicesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/FirewallServices>}
+     */
+    this.operationFirewallListservices = function(firewallId, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallListservices");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [FirewallServices];
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/services/', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallPatchtag operation.
+     * @callback module:api/FirewallApi~operationFirewallPatchtagCallback
+     * @param {String} error Error message, if any.
+     * @param {Object.<String, {String: String}>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /tag/
+     * @param {String} firewallId ID of firewall
+     * @param {Object.<String, {String: String}>} requestBody 
+     * @param {module:api/FirewallApi~operationFirewallPatchtagCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object.<String, {String: String}>}
+     */
+    this.operationFirewallPatchtag = function(firewallId, requestBody, callback) {
+      var postBody = requestBody;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallPatchtag");
+      }
+
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling operationFirewallPatchtag");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = {'String': 'String'};
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/tag/', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallPostaccessrights operation.
+     * @callback module:api/FirewallApi~operationFirewallPostaccessrightsCallback
+     * @param {String} error Error message, if any.
+     * @param {String} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /accessrights/
+     * @param {String} firewallId ID of firewall
      * @param {Object} opts Optional parameters
-     * @param {String} opts.name Filter by name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Firewall>}
+     * @param {module:model/InlineObject15} opts.inlineObject15 
+     * @param {module:api/FirewallApi~operationFirewallPostaccessrightsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link String}
      */
-        this.listFirewall = function(opts) {
-            return this.listFirewallWithHttpInfo(opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
+    this.operationFirewallPostaccessrights = function(firewallId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject15'];
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallPostaccessrights");
+      }
 
 
-        /**
-     * Find by ID
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = 'String';
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/accessrights/', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallPostegress operation.
+     * @callback module:api/FirewallApi~operationFirewallPostegressCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /egress
+     * @param {String} firewallId ID of firewall
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject14} opts.inlineObject14 
+     * @param {module:api/FirewallApi~operationFirewallPostegressCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse200}
+     */
+    this.operationFirewallPostegress = function(firewallId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject14'];
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallPostegress");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/egress', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the operationFirewallPostingress operation.
+     * @callback module:api/FirewallApi~operationFirewallPostingressCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /ingress
+     * @param {String} firewallId ID of firewall
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InlineObject13} opts.inlineObject13 
+     * @param {module:api/FirewallApi~operationFirewallPostingressCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse200}
+     */
+    this.operationFirewallPostingress = function(firewallId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject13'];
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallPostingress");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/ingress', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the showFirewall operation.
+     * @callback module:api/FirewallApi~showFirewallCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Firewall} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get
      * Returns a single firewall
      * @param {String} firewallId ID of firewall
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
+     * @param {module:api/FirewallApi~showFirewallCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Firewall}
      */
-        this.showFirewallWithHttpInfo = function(firewallId) {
-            const postBody = null;
+    this.showFirewall = function(firewallId, callback) {
+      var postBody = null;
 
-            // verify the required parameter 'firewallId' is set
-            if (firewallId === undefined || firewallId === null) {
-                throw new Error("Missing the required parameter 'firewallId' when calling showFirewall");
-            }
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling showFirewall");
+      }
 
 
-            const pathParams = {
-                firewallId: firewallId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = [];
-            const accepts = ['application/json'];
-            const returnType = Firewall;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Firewall;
 
-            return this.apiClient.callApi(
-                '/firewall/{firewallId}', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
-        /**
-     * Find by ID
-     * Returns a single firewall
-     * @param {String} firewallId ID of firewall
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
+    /**
+     * Callback function to receive the result of the updateFirewall operation.
+     * @callback module:api/FirewallApi~updateFirewallCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Firewall} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-        this.showFirewall = function(firewallId) {
-            return this.showFirewallWithHttpInfo(firewallId)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
 
-
-        /**
-     * Update by ID
+    /**
+     * Update
      * Returns modified firewall
      * @param {String} firewallId ID of firewall
      * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject8} opts.inlineObject8
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
+     * @param {module:model/InlineObject11} opts.inlineObject11 
+     * @param {module:api/FirewallApi~updateFirewallCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Firewall}
      */
-        this.updateFirewallWithHttpInfo = function(firewallId, opts) {
-            opts = opts || {};
-            const postBody = opts.inlineObject8;
+    this.updateFirewall = function(firewallId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['inlineObject11'];
 
-            // verify the required parameter 'firewallId' is set
-            if (firewallId === undefined || firewallId === null) {
-                throw new Error("Missing the required parameter 'firewallId' when calling updateFirewall");
-            }
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling updateFirewall");
+      }
 
 
-            const pathParams = {
-                firewallId: firewallId,
-            };
-            const queryParams = {
-            };
-            const collectionQueryParams = {
-            };
-            const headerParams = {
-            };
-            const formParams = {
-            };
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
 
-            const authNames = ['Project', 'ServiceAccount', 'Session'];
-            const contentTypes = ['application/json'];
-            const accepts = ['application/json'];
-            const returnType = Firewall;
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Firewall;
 
-            return this.apiClient.callApi(
-                '/firewall/{firewallId}', 'PATCH',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, returnType
-            );
-        };
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+  };
 
-        /**
-     * Update by ID
-     * Returns modified firewall
-     * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject8} opts.inlineObject8
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
-     */
-        this.updateFirewall = function(firewallId, opts) {
-            return this.updateFirewallWithHttpInfo(firewallId, opts)
-                .then(function(response_and_data) {
-                    return response_and_data.data;
-                });
-        };
-    };
-
-    return exports;
+  return exports;
 }));

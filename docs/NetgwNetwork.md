@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **address** | **String** |  | [optional] 
 **broadcast** | **String** |  | [optional] 
 **gateway** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
 **vm** | **String** |  | [optional] 
 **dns** | **String** |  | [optional] 
 **netgw** | **String** |  | [optional] 

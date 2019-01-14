@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**newname** | **String** |  | 
+**name** | **String** |  | [optional] 
 
 

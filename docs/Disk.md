@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**services** | [**[ContainerServices]**](ContainerServices.md) |  | [optional] 
+**services** | [**[ProjectServices]**](ProjectServices.md) |  | [optional] 
 **flavour** | **String** |  | [optional] 
 **modifiedOn** | **Date** |  | [optional] 
 **modifiedBy** | **String** |  | [optional] 
@@ -21,9 +21,26 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **size** | **Number** |  | [optional] 
 **vm** | **String** |  | [optional] 
-**persistent** | **String** |  | [optional] 
+**persistent** | **Boolean** |  | [optional] 
 **downloadUrl** | **String** |  | [optional] 
 **metadata** | [**DiskMetadata1**](DiskMetadata1.md) |  | [optional] 
+
+
+<a name="StateEnum"></a>
+## Enum: StateEnum
+
+
+* `Uploading` (value: `"Uploading"`)
+
+* `Online` (value: `"Online"`)
+
+* `Attached` (value: `"Attached"`)
+
+* `Detached` (value: `"Detached"`)
+
+* `Unknown` (value: `"Unknown"`)
+
+
 
 
 <a name="TypeEnum"></a>

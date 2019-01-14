@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ptrRecord** | **String** |  | [optional] 
+**project** | **String** |  | 
 
 

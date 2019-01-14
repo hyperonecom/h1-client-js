@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**services** | [**[ContainerServices]**](ContainerServices.md) |  | [optional] 
+**services** | [**[ProjectServices]**](ProjectServices.md) |  | [optional] 
 **flavour** | **String** |  | [optional] 
 **modifiedOn** | **Date** |  | [optional] 
 **modifiedBy** | **String** |  | [optional] 
@@ -22,5 +22,16 @@ Name | Type | Description | Notes
 **fileSize** | **Number** |  | [optional] 
 **vm** | [**ImageVm**](ImageVm.md) |  | [optional] 
 **description** | **String** |  | [optional] 
+
+
+<a name="StateEnum"></a>
+## Enum: StateEnum
+
+
+* `Online` (value: `"Online"`)
+
+* `Unknown` (value: `"Unknown"`)
+
+
 
 

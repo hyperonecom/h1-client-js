@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**services** | [**[ContainerServices]**](ContainerServices.md) |  | [optional] 
+**services** | [**[ProjectServices]**](ProjectServices.md) |  | [optional] 
 **flavour** | **String** |  | [optional] 
 **modifiedOn** | **Date** |  | [optional] 
 **modifiedBy** | **String** |  | [optional] 
@@ -23,5 +23,18 @@ Name | Type | Description | Notes
 **network** | [**NetgwNetwork**](NetgwNetwork.md) |  | [optional] 
 **ip** | [**NetgwPrimaryIP**](NetgwPrimaryIP.md) |  | [optional] 
 **assigned** | [**NetadpAssigned**](NetadpAssigned.md) |  | [optional] 
+
+
+<a name="StateEnum"></a>
+## Enum: StateEnum
+
+
+* `Online` (value: `"Online"`)
+
+* `Deallocated` (value: `"Deallocated"`)
+
+* `Unknown` (value: `"Unknown"`)
+
+
 
 
