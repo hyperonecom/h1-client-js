@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **sourceImage** | [**VmSourceImage**](VmSourceImage.md) |  | [optional] 
 **userMetadata** | **String** |  | [optional] 
 **cpu** | **Number** |  | [optional] 
-**memory** | **String** |  | [optional] 
+**memory** | **Number** |  | [optional] 
 **data** | [**VmData**](VmData.md) |  | [optional] 
 
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/InlineObject3', 'model/InlineObject4', 'model/InlineObject5', 'model/InlineObject6', 'model/Organisation', 'model/OrganisationAccessRights'], factory);
+    define(['ApiClient', 'model/Event', 'model/Organisation', 'model/OrganisationAccessRights', 'model/OrganisationActionTransferAccept', 'model/OrganisationCreate', 'model/OrganisationPostAccessrights', 'model/OrganisationUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject3'), require('../model/InlineObject4'), require('../model/InlineObject5'), require('../model/InlineObject6'), require('../model/Organisation'), require('../model/OrganisationAccessRights'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Organisation'), require('../model/OrganisationAccessRights'), require('../model/OrganisationActionTransferAccept'), require('../model/OrganisationCreate'), require('../model/OrganisationPostAccessrights'), require('../model/OrganisationUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.OrganisationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject3, root.HyperOneApi.InlineObject4, root.HyperOneApi.InlineObject5, root.HyperOneApi.InlineObject6, root.HyperOneApi.Organisation, root.HyperOneApi.OrganisationAccessRights);
+    root.HyperOneApi.OrganisationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Organisation, root.HyperOneApi.OrganisationAccessRights, root.HyperOneApi.OrganisationActionTransferAccept, root.HyperOneApi.OrganisationCreate, root.HyperOneApi.OrganisationPostAccessrights, root.HyperOneApi.OrganisationUpdate);
   }
-}(this, function(ApiClient, Event, InlineObject3, InlineObject4, InlineObject5, InlineObject6, Organisation, OrganisationAccessRights) {
+}(this, function(ApiClient, Event, Organisation, OrganisationAccessRights, OrganisationActionTransferAccept, OrganisationCreate, OrganisationPostAccessrights, OrganisationUpdate) {
   'use strict';
 
   /**
@@ -52,17 +52,20 @@
      * /actions/transfer_accept
      * Action transfer_accept
      * @param {String} organisationId ID of organisation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject5} opts.inlineObject5 
+     * @param {module:model/OrganisationActionTransferAccept} organisationActionTransferAccept 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
-    this.actionOrganisationTransferAcceptWithHttpInfo = function(organisationId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject5'];
+    this.organisationActionTransferAcceptWithHttpInfo = function(organisationId, organisationActionTransferAccept) {
+      var postBody = organisationActionTransferAccept;
 
       // verify the required parameter 'organisationId' is set
       if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling actionOrganisationTransferAccept");
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationActionTransferAccept");
+      }
+
+      // verify the required parameter 'organisationActionTransferAccept' is set
+      if (organisationActionTransferAccept === undefined || organisationActionTransferAccept === null) {
+        throw new Error("Missing the required parameter 'organisationActionTransferAccept' when calling organisationActionTransferAccept");
       }
 
 
@@ -94,12 +97,11 @@
      * /actions/transfer_accept
      * Action transfer_accept
      * @param {String} organisationId ID of organisation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject5} opts.inlineObject5 
+     * @param {module:model/OrganisationActionTransferAccept} organisationActionTransferAccept 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
      */
-    this.actionOrganisationTransferAccept = function(organisationId, opts) {
-      return this.actionOrganisationTransferAcceptWithHttpInfo(organisationId, opts)
+    this.organisationActionTransferAccept = function(organisationId, organisationActionTransferAccept) {
+      return this.organisationActionTransferAcceptWithHttpInfo(organisationId, organisationActionTransferAccept)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -109,13 +111,16 @@
     /**
      * Create
      * Create organisation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject3} opts.inlineObject3 
+     * @param {module:model/OrganisationCreate} organisationCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
-    this.createOrganisationWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject3'];
+    this.organisationCreateWithHttpInfo = function(organisationCreate) {
+      var postBody = organisationCreate;
+
+      // verify the required parameter 'organisationCreate' is set
+      if (organisationCreate === undefined || organisationCreate === null) {
+        throw new Error("Missing the required parameter 'organisationCreate' when calling organisationCreate");
+      }
 
 
       var pathParams = {
@@ -144,12 +149,180 @@
     /**
      * Create
      * Create organisation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject3} opts.inlineObject3 
+     * @param {module:model/OrganisationCreate} organisationCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
      */
-    this.createOrganisation = function(opts) {
-      return this.createOrganisationWithHttpInfo(opts)
+    this.organisationCreate = function(organisationCreate) {
+      return this.organisationCreateWithHttpInfo(organisationCreate)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} organisationId ID of organisation
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
+     */
+    this.organisationDeleteAccessrightsIdentityWithHttpInfo = function(organisationId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'organisationId' is set
+      if (organisationId === undefined || organisationId === null) {
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling organisationDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'organisationId': organisationId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Organisation;
+
+      return this.apiClient.callApi(
+        '/organisation/{organisationId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} organisationId ID of organisation
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
+     */
+    this.organisationDeleteAccessrightsIdentity = function(organisationId, identity) {
+      return this.organisationDeleteAccessrightsIdentityWithHttpInfo(organisationId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} organisationId ID of organisation
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.organisationDeleteTagKeyWithHttpInfo = function(organisationId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'organisationId' is set
+      if (organisationId === undefined || organisationId === null) {
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling organisationDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'organisationId': organisationId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/organisation/{organisationId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} organisationId ID of organisation
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.organisationDeleteTagKey = function(organisationId, key) {
+      return this.organisationDeleteTagKeyWithHttpInfo(organisationId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} organisationId ID of organisation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.organisationGetTagWithHttpInfo = function(organisationId) {
+      var postBody = null;
+
+      // verify the required parameter 'organisationId' is set
+      if (organisationId === undefined || organisationId === null) {
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationGetTag");
+      }
+
+
+      var pathParams = {
+        'organisationId': organisationId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/organisation/{organisationId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} organisationId ID of organisation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.organisationGetTag = function(organisationId) {
+      return this.organisationGetTagWithHttpInfo(organisationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -166,7 +339,7 @@
      * @param {String} opts.active Filter by active
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Organisation>} and HTTP response
      */
-    this.listOrganisationWithHttpInfo = function(opts) {
+    this.organisationListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -208,8 +381,8 @@
      * @param {String} opts.active Filter by active
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Organisation>}
      */
-    this.listOrganisation = function(opts) {
-      return this.listOrganisationWithHttpInfo(opts)
+    this.organisationList = function(opts) {
+      return this.organisationListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -217,185 +390,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} organisationId ID of organisation
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
-     */
-    this.operationOrganisationDeleteaccessrightsIdentityWithHttpInfo = function(organisationId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'organisationId' is set
-      if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling operationOrganisationDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationOrganisationDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'organisationId': organisationId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Organisation;
-
-      return this.apiClient.callApi(
-        '/organisation/{organisationId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} organisationId ID of organisation
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
-     */
-    this.operationOrganisationDeleteaccessrightsIdentity = function(organisationId, identity) {
-      return this.operationOrganisationDeleteaccessrightsIdentityWithHttpInfo(organisationId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} organisationId ID of organisation
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationOrganisationDeletetagKeyWithHttpInfo = function(organisationId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'organisationId' is set
-      if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling operationOrganisationDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationOrganisationDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'organisationId': organisationId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/organisation/{organisationId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} organisationId ID of organisation
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationOrganisationDeletetagKey = function(organisationId, key) {
-      return this.operationOrganisationDeletetagKeyWithHttpInfo(organisationId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} organisationId ID of organisation
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationOrganisationGettagWithHttpInfo = function(organisationId) {
-      var postBody = null;
-
-      // verify the required parameter 'organisationId' is set
-      if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling operationOrganisationGettag");
-      }
-
-
-      var pathParams = {
-        'organisationId': organisationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/organisation/{organisationId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} organisationId ID of organisation
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationOrganisationGettag = function(organisationId) {
-      return this.operationOrganisationGettagWithHttpInfo(organisationId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} organisationId ID of organisation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/OrganisationAccessRights>} and HTTP response
      */
-    this.operationOrganisationListaccessrightsWithHttpInfo = function(organisationId) {
+    this.organisationListAccessrightsWithHttpInfo = function(organisationId) {
       var postBody = null;
 
       // verify the required parameter 'organisationId' is set
       if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling operationOrganisationListaccessrights");
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationListAccessrights");
       }
 
 
@@ -417,19 +421,19 @@
       var returnType = [OrganisationAccessRights];
 
       return this.apiClient.callApi(
-        '/organisation/{organisationId}/accessrights/', 'GET',
+        '/organisation/{organisationId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} organisationId ID of organisation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/OrganisationAccessRights>}
      */
-    this.operationOrganisationListaccessrights = function(organisationId) {
-      return this.operationOrganisationListaccessrightsWithHttpInfo(organisationId)
+    this.organisationListAccessrights = function(organisationId) {
+      return this.organisationListAccessrightsWithHttpInfo(organisationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -437,16 +441,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} organisationId ID of organisation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationOrganisationListqueueWithHttpInfo = function(organisationId) {
+    this.organisationListQueueWithHttpInfo = function(organisationId) {
       var postBody = null;
 
       // verify the required parameter 'organisationId' is set
       if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling operationOrganisationListqueue");
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationListQueue");
       }
 
 
@@ -468,19 +472,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/organisation/{organisationId}/queue/', 'GET',
+        '/organisation/{organisationId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} organisationId ID of organisation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationOrganisationListqueue = function(organisationId) {
-      return this.operationOrganisationListqueueWithHttpInfo(organisationId)
+    this.organisationListQueue = function(organisationId) {
+      return this.organisationListQueueWithHttpInfo(organisationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -488,22 +492,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} organisationId ID of organisation
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationOrganisationPatchtagWithHttpInfo = function(organisationId, requestBody) {
-      var postBody = requestBody;
+    this.organisationPatchTagWithHttpInfo = function(organisationId, body) {
+      var postBody = body;
 
       // verify the required parameter 'organisationId' is set
       if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling operationOrganisationPatchtag");
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationOrganisationPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling organisationPatchTag");
       }
 
 
@@ -522,23 +526,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/organisation/{organisationId}/tag/', 'PATCH',
+        '/organisation/{organisationId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} organisationId ID of organisation
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationOrganisationPatchtag = function(organisationId, requestBody) {
-      return this.operationOrganisationPatchtagWithHttpInfo(organisationId, requestBody)
+    this.organisationPatchTag = function(organisationId, body) {
+      return this.organisationPatchTagWithHttpInfo(organisationId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -546,19 +550,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} organisationId ID of organisation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject6} opts.inlineObject6 
+     * @param {module:model/OrganisationPostAccessrights} organisationPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrganisationAccessRights} and HTTP response
      */
-    this.operationOrganisationPostaccessrightsWithHttpInfo = function(organisationId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject6'];
+    this.organisationPostAccessrightsWithHttpInfo = function(organisationId, organisationPostAccessrights) {
+      var postBody = organisationPostAccessrights;
 
       // verify the required parameter 'organisationId' is set
       if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling operationOrganisationPostaccessrights");
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationPostAccessrights");
+      }
+
+      // verify the required parameter 'organisationPostAccessrights' is set
+      if (organisationPostAccessrights === undefined || organisationPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'organisationPostAccessrights' when calling organisationPostAccessrights");
       }
 
 
@@ -580,21 +587,20 @@
       var returnType = OrganisationAccessRights;
 
       return this.apiClient.callApi(
-        '/organisation/{organisationId}/accessrights/', 'POST',
+        '/organisation/{organisationId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} organisationId ID of organisation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject6} opts.inlineObject6 
+     * @param {module:model/OrganisationPostAccessrights} organisationPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrganisationAccessRights}
      */
-    this.operationOrganisationPostaccessrights = function(organisationId, opts) {
-      return this.operationOrganisationPostaccessrightsWithHttpInfo(organisationId, opts)
+    this.organisationPostAccessrights = function(organisationId, organisationPostAccessrights) {
+      return this.organisationPostAccessrightsWithHttpInfo(organisationId, organisationPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -607,12 +613,12 @@
      * @param {String} organisationId ID of organisation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
-    this.showOrganisationWithHttpInfo = function(organisationId) {
+    this.organisationShowWithHttpInfo = function(organisationId) {
       var postBody = null;
 
       // verify the required parameter 'organisationId' is set
       if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling showOrganisation");
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationShow");
       }
 
 
@@ -646,8 +652,8 @@
      * @param {String} organisationId ID of organisation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
      */
-    this.showOrganisation = function(organisationId) {
-      return this.showOrganisationWithHttpInfo(organisationId)
+    this.organisationShow = function(organisationId) {
+      return this.organisationShowWithHttpInfo(organisationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -658,17 +664,20 @@
      * Update
      * Returns modified organisation
      * @param {String} organisationId ID of organisation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject4} opts.inlineObject4 
+     * @param {module:model/OrganisationUpdate} organisationUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
-    this.updateOrganisationWithHttpInfo = function(organisationId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject4'];
+    this.organisationUpdateWithHttpInfo = function(organisationId, organisationUpdate) {
+      var postBody = organisationUpdate;
 
       // verify the required parameter 'organisationId' is set
       if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling updateOrganisation");
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationUpdate");
+      }
+
+      // verify the required parameter 'organisationUpdate' is set
+      if (organisationUpdate === undefined || organisationUpdate === null) {
+        throw new Error("Missing the required parameter 'organisationUpdate' when calling organisationUpdate");
       }
 
 
@@ -700,12 +709,11 @@
      * Update
      * Returns modified organisation
      * @param {String} organisationId ID of organisation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject4} opts.inlineObject4 
+     * @param {module:model/OrganisationUpdate} organisationUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
      */
-    this.updateOrganisation = function(organisationId, opts) {
-      return this.updateOrganisationWithHttpInfo(organisationId, opts)
+    this.organisationUpdate = function(organisationId, organisationUpdate) {
+      return this.organisationUpdateWithHttpInfo(organisationId, organisationUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

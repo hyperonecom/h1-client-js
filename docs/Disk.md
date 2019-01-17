@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **vm** | **String** |  | [optional] 
 **persistent** | **Boolean** |  | [optional] 
 **downloadUrl** | **String** |  | [optional] 
-**metadata** | [**DiskMetadata1**](DiskMetadata1.md) |  | [optional] 
+**metadata** | [**DiskMetadata**](DiskMetadata.md) |  | [optional] 
 
 
 <a name="StateEnum"></a>

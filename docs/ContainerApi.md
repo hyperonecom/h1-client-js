@@ -4,28 +4,28 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actionContainerRestart**](ContainerApi.md#actionContainerRestart) | **POST** /container/{containerId}/actions/restart | /actions/restart
-[**actionContainerStart**](ContainerApi.md#actionContainerStart) | **POST** /container/{containerId}/actions/start | /actions/start
-[**actionContainerStop**](ContainerApi.md#actionContainerStop) | **POST** /container/{containerId}/actions/stop | /actions/stop
-[**createContainer**](ContainerApi.md#createContainer) | **POST** /container | Create
-[**deleteContainer**](ContainerApi.md#deleteContainer) | **DELETE** /container/{containerId} | Delete
-[**listContainer**](ContainerApi.md#listContainer) | **GET** /container | List
-[**operationContainerDeleteaccessrightsIdentity**](ContainerApi.md#operationContainerDeleteaccessrightsIdentity) | **DELETE** /container/{containerId}/accessrights/{identity} | /accessrights/:identity
-[**operationContainerDeletetagKey**](ContainerApi.md#operationContainerDeletetagKey) | **DELETE** /container/{containerId}/tag/{key} | /tag/:key
-[**operationContainerGetservicesServiceId**](ContainerApi.md#operationContainerGetservicesServiceId) | **GET** /container/{containerId}/services/{serviceId} | /services/:serviceId
-[**operationContainerGettag**](ContainerApi.md#operationContainerGettag) | **GET** /container/{containerId}/tag/ | /tag/
-[**operationContainerListaccessrights**](ContainerApi.md#operationContainerListaccessrights) | **GET** /container/{containerId}/accessrights/ | /accessrights/
-[**operationContainerListqueue**](ContainerApi.md#operationContainerListqueue) | **GET** /container/{containerId}/queue/ | /queue/
-[**operationContainerListservices**](ContainerApi.md#operationContainerListservices) | **GET** /container/{containerId}/services/ | /services/
-[**operationContainerPatchtag**](ContainerApi.md#operationContainerPatchtag) | **PATCH** /container/{containerId}/tag/ | /tag/
-[**operationContainerPostaccessrights**](ContainerApi.md#operationContainerPostaccessrights) | **POST** /container/{containerId}/accessrights/ | /accessrights/
-[**showContainer**](ContainerApi.md#showContainer) | **GET** /container/{containerId} | Get
-[**updateContainer**](ContainerApi.md#updateContainer) | **PATCH** /container/{containerId} | Update
+[**containerActionRestart**](ContainerApi.md#containerActionRestart) | **POST** /container/{containerId}/actions/restart | /actions/restart
+[**containerActionStart**](ContainerApi.md#containerActionStart) | **POST** /container/{containerId}/actions/start | /actions/start
+[**containerActionStop**](ContainerApi.md#containerActionStop) | **POST** /container/{containerId}/actions/stop | /actions/stop
+[**containerCreate**](ContainerApi.md#containerCreate) | **POST** /container | Create
+[**containerDelete**](ContainerApi.md#containerDelete) | **DELETE** /container/{containerId} | Delete
+[**containerDeleteAccessrightsIdentity**](ContainerApi.md#containerDeleteAccessrightsIdentity) | **DELETE** /container/{containerId}/accessrights/{identity} | /accessrights/:identity
+[**containerDeleteTagKey**](ContainerApi.md#containerDeleteTagKey) | **DELETE** /container/{containerId}/tag/{key} | /tag/:key
+[**containerGetServicesServiceId**](ContainerApi.md#containerGetServicesServiceId) | **GET** /container/{containerId}/services/{serviceId} | /services/:serviceId
+[**containerGetTag**](ContainerApi.md#containerGetTag) | **GET** /container/{containerId}/tag | /tag
+[**containerList**](ContainerApi.md#containerList) | **GET** /container | List
+[**containerListAccessrights**](ContainerApi.md#containerListAccessrights) | **GET** /container/{containerId}/accessrights | /accessrights
+[**containerListQueue**](ContainerApi.md#containerListQueue) | **GET** /container/{containerId}/queue | /queue
+[**containerListServices**](ContainerApi.md#containerListServices) | **GET** /container/{containerId}/services | /services
+[**containerPatchTag**](ContainerApi.md#containerPatchTag) | **PATCH** /container/{containerId}/tag | /tag
+[**containerPostAccessrights**](ContainerApi.md#containerPostAccessrights) | **POST** /container/{containerId}/accessrights | /accessrights
+[**containerShow**](ContainerApi.md#containerShow) | **GET** /container/{containerId} | Get
+[**containerUpdate**](ContainerApi.md#containerUpdate) | **PATCH** /container/{containerId} | Update
 
 
-<a name="actionContainerRestart"></a>
-# **actionContainerRestart**
-> Container actionContainerRestart(containerId)
+<a name="containerActionRestart"></a>
+# **containerActionRestart**
+> Container containerActionRestart(containerId)
 
 /actions/restart
 
@@ -53,7 +53,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-apiInstance.actionContainerRestart(containerId).then(function(data) {
+apiInstance.containerActionRestart(containerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -80,9 +80,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionContainerStart"></a>
-# **actionContainerStart**
-> Container actionContainerStart(containerId)
+<a name="containerActionStart"></a>
+# **containerActionStart**
+> Container containerActionStart(containerId)
 
 /actions/start
 
@@ -110,7 +110,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-apiInstance.actionContainerStart(containerId).then(function(data) {
+apiInstance.containerActionStart(containerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -137,9 +137,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionContainerStop"></a>
-# **actionContainerStop**
-> Container actionContainerStop(containerId)
+<a name="containerActionStop"></a>
+# **containerActionStop**
+> Container containerActionStop(containerId)
 
 /actions/stop
 
@@ -167,7 +167,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-apiInstance.actionContainerStop(containerId).then(function(data) {
+apiInstance.containerActionStop(containerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -194,9 +194,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="createContainer"></a>
-# **createContainer**
-> Container createContainer(opts)
+<a name="containerCreate"></a>
+# **containerCreate**
+> Container containerCreate(containerCreate)
 
 Create
 
@@ -223,10 +223,8 @@ Session.apiKey = 'YOUR API KEY';
 //Session.apiKeyPrefix = 'Token';
 
 var apiInstance = new HyperOneApi.ContainerApi();
-var opts = {
-  'inlineObject7': new HyperOneApi.InlineObject7() // InlineObject7 | 
-};
-apiInstance.createContainer(opts).then(function(data) {
+var containerCreate = new HyperOneApi.ContainerCreate(); // ContainerCreate | 
+apiInstance.containerCreate(containerCreate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -238,7 +236,7 @@ apiInstance.createContainer(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject7** | [**InlineObject7**](InlineObject7.md)|  | [optional] 
+ **containerCreate** | [**ContainerCreate**](ContainerCreate.md)|  | 
 
 ### Return type
 
@@ -253,9 +251,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="deleteContainer"></a>
-# **deleteContainer**
-> deleteContainer(containerId)
+<a name="containerDelete"></a>
+# **containerDelete**
+> containerDelete(containerId)
 
 Delete
 
@@ -281,7 +279,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-apiInstance.deleteContainer(containerId).then(function() {
+apiInstance.containerDelete(containerId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -308,9 +306,235 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="listContainer"></a>
-# **listContainer**
-> [Container] listContainer(opts)
+<a name="containerDeleteAccessrightsIdentity"></a>
+# **containerDeleteAccessrightsIdentity**
+> Container containerDeleteAccessrightsIdentity(containerId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ContainerApi();
+var containerId = "containerId_example"; // String | ID of container
+var identity = "identity_example"; // String | identity
+apiInstance.containerDeleteAccessrightsIdentity(containerId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **containerId** | **String**| ID of container | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Container**](Container.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="containerDeleteTagKey"></a>
+# **containerDeleteTagKey**
+> Object containerDeleteTagKey(containerId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ContainerApi();
+var containerId = "containerId_example"; // String | ID of container
+var key = "key_example"; // String | key
+apiInstance.containerDeleteTagKey(containerId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **containerId** | **String**| ID of container | 
+ **key** | **String**| key | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="containerGetServicesServiceId"></a>
+# **containerGetServicesServiceId**
+> ContainerServices containerGetServicesServiceId(containerId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ContainerApi();
+var containerId = "containerId_example"; // String | ID of container
+var serviceId = "serviceId_example"; // String | serviceId
+apiInstance.containerGetServicesServiceId(containerId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **containerId** | **String**| ID of container | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**ContainerServices**](ContainerServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="containerGetTag"></a>
+# **containerGetTag**
+> Object containerGetTag(containerId)
+
+/tag
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ContainerApi();
+var containerId = "containerId_example"; // String | ID of container
+apiInstance.containerGetTag(containerId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **containerId** | **String**| ID of container | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="containerList"></a>
+# **containerList**
+> [Container] containerList(opts)
 
 List
 
@@ -340,7 +564,7 @@ var apiInstance = new HyperOneApi.ContainerApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-apiInstance.listContainer(opts).then(function(data) {
+apiInstance.containerList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -367,68 +591,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationContainerDeleteaccessrightsIdentity"></a>
-# **operationContainerDeleteaccessrightsIdentity**
-> Container operationContainerDeleteaccessrightsIdentity(containerId, identity)
+<a name="containerListAccessrights"></a>
+# **containerListAccessrights**
+> [String] containerListAccessrights(containerId)
 
-/accessrights/:identity
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ContainerApi();
-var containerId = "containerId_example"; // String | ID of container
-var identity = "identity_example"; // String | identity
-apiInstance.operationContainerDeleteaccessrightsIdentity(containerId, identity).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **containerId** | **String**| ID of container | 
- **identity** | **String**| identity | 
-
-### Return type
-
-[**Container**](Container.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationContainerDeletetagKey"></a>
-# **operationContainerDeletetagKey**
-> {String: String} operationContainerDeletetagKey(containerId, key)
-
-/tag/:key
+/accessrights
 
 ### Example
 ```javascript
@@ -452,176 +619,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-var key = "key_example"; // String | key
-apiInstance.operationContainerDeletetagKey(containerId, key).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **containerId** | **String**| ID of container | 
- **key** | **String**| key | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationContainerGetservicesServiceId"></a>
-# **operationContainerGetservicesServiceId**
-> ContainerServices operationContainerGetservicesServiceId(containerId, serviceId)
-
-/services/:serviceId
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ContainerApi();
-var containerId = "containerId_example"; // String | ID of container
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.operationContainerGetservicesServiceId(containerId, serviceId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **containerId** | **String**| ID of container | 
- **serviceId** | **String**| serviceId | 
-
-### Return type
-
-[**ContainerServices**](ContainerServices.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationContainerGettag"></a>
-# **operationContainerGettag**
-> {String: String} operationContainerGettag(containerId)
-
-/tag/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ContainerApi();
-var containerId = "containerId_example"; // String | ID of container
-apiInstance.operationContainerGettag(containerId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **containerId** | **String**| ID of container | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationContainerListaccessrights"></a>
-# **operationContainerListaccessrights**
-> [String] operationContainerListaccessrights(containerId)
-
-/accessrights/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ContainerApi();
-var containerId = "containerId_example"; // String | ID of container
-apiInstance.operationContainerListaccessrights(containerId).then(function(data) {
+apiInstance.containerListAccessrights(containerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -648,11 +646,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationContainerListqueue"></a>
-# **operationContainerListqueue**
-> [Event] operationContainerListqueue(containerId)
+<a name="containerListQueue"></a>
+# **containerListQueue**
+> [Event] containerListQueue(containerId)
 
-/queue/
+/queue
 
 ### Example
 ```javascript
@@ -676,7 +674,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-apiInstance.operationContainerListqueue(containerId).then(function(data) {
+apiInstance.containerListQueue(containerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -703,11 +701,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationContainerListservices"></a>
-# **operationContainerListservices**
-> [ContainerServices] operationContainerListservices(containerId)
+<a name="containerListServices"></a>
+# **containerListServices**
+> [ContainerServices] containerListServices(containerId)
 
-/services/
+/services
 
 ### Example
 ```javascript
@@ -731,7 +729,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-apiInstance.operationContainerListservices(containerId).then(function(data) {
+apiInstance.containerListServices(containerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -758,11 +756,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationContainerPatchtag"></a>
-# **operationContainerPatchtag**
-> {String: String} operationContainerPatchtag(containerId, requestBody)
+<a name="containerPatchTag"></a>
+# **containerPatchTag**
+> Object containerPatchTag(containerId, body)
 
-/tag/
+/tag
 
 ### Example
 ```javascript
@@ -786,8 +784,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.operationContainerPatchtag(containerId, requestBody).then(function(data) {
+var body = null; // Object | 
+apiInstance.containerPatchTag(containerId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -800,11 +798,11 @@ apiInstance.operationContainerPatchtag(containerId, requestBody).then(function(d
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **containerId** | **String**| ID of container | 
- **requestBody** | [**{String: String}**](String.md)|  | 
+ **body** | **Object**|  | 
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -815,11 +813,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationContainerPostaccessrights"></a>
-# **operationContainerPostaccessrights**
-> String operationContainerPostaccessrights(containerId, opts)
+<a name="containerPostAccessrights"></a>
+# **containerPostAccessrights**
+> String containerPostAccessrights(containerId, containerPostAccessrights)
 
-/accessrights/
+/accessrights
 
 ### Example
 ```javascript
@@ -843,10 +841,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-var opts = {
-  'inlineObject9': new HyperOneApi.InlineObject9() // InlineObject9 | 
-};
-apiInstance.operationContainerPostaccessrights(containerId, opts).then(function(data) {
+var containerPostAccessrights = new HyperOneApi.ContainerPostAccessrights(); // ContainerPostAccessrights | 
+apiInstance.containerPostAccessrights(containerId, containerPostAccessrights).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -859,7 +855,7 @@ apiInstance.operationContainerPostaccessrights(containerId, opts).then(function(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **containerId** | **String**| ID of container | 
- **inlineObject9** | [**InlineObject9**](InlineObject9.md)|  | [optional] 
+ **containerPostAccessrights** | [**ContainerPostAccessrights**](ContainerPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -874,9 +870,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="showContainer"></a>
-# **showContainer**
-> Container showContainer(containerId)
+<a name="containerShow"></a>
+# **containerShow**
+> Container containerShow(containerId)
 
 Get
 
@@ -904,7 +900,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-apiInstance.showContainer(containerId).then(function(data) {
+apiInstance.containerShow(containerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -931,9 +927,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateContainer"></a>
-# **updateContainer**
-> Container updateContainer(containerId, opts)
+<a name="containerUpdate"></a>
+# **containerUpdate**
+> Container containerUpdate(containerId, containerUpdate)
 
 Update
 
@@ -961,10 +957,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-var opts = {
-  'inlineObject8': new HyperOneApi.InlineObject8() // InlineObject8 | 
-};
-apiInstance.updateContainer(containerId, opts).then(function(data) {
+var containerUpdate = new HyperOneApi.ContainerUpdate(); // ContainerUpdate | 
+apiInstance.containerUpdate(containerId, containerUpdate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -977,7 +971,7 @@ apiInstance.updateContainer(containerId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **containerId** | **String**| ID of container | 
- **inlineObject8** | [**InlineObject8**](InlineObject8.md)|  | [optional] 
+ **containerUpdate** | [**ContainerUpdate**](ContainerUpdate.md)|  | 
 
 ### Return type
 

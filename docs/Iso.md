@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
-**size** | **String** |  | [optional] 
-**metadata** | [**DiskMetadata1**](DiskMetadata1.md) |  | [optional] 
+**size** | **Number** |  | [optional] 
+**metadata** | [**DiskMetadata**](DiskMetadata.md) |  | [optional] 
 
 
 <a name="StateEnum"></a>

@@ -4,26 +4,26 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actionImageTransfer**](ImageApi.md#actionImageTransfer) | **POST** /image/{imageId}/actions/transfer | /actions/transfer
-[**createImage**](ImageApi.md#createImage) | **POST** /image | Create
-[**deleteImage**](ImageApi.md#deleteImage) | **DELETE** /image/{imageId} | Delete
-[**listImage**](ImageApi.md#listImage) | **GET** /image | List
-[**operationImageDeleteaccessrightsIdentity**](ImageApi.md#operationImageDeleteaccessrightsIdentity) | **DELETE** /image/{imageId}/accessrights/{identity} | /accessrights/:identity
-[**operationImageDeletetagKey**](ImageApi.md#operationImageDeletetagKey) | **DELETE** /image/{imageId}/tag/{key} | /tag/:key
-[**operationImageGetservicesServiceId**](ImageApi.md#operationImageGetservicesServiceId) | **GET** /image/{imageId}/services/{serviceId} | /services/:serviceId
-[**operationImageGettag**](ImageApi.md#operationImageGettag) | **GET** /image/{imageId}/tag/ | /tag/
-[**operationImageListaccessrights**](ImageApi.md#operationImageListaccessrights) | **GET** /image/{imageId}/accessrights/ | /accessrights/
-[**operationImageListqueue**](ImageApi.md#operationImageListqueue) | **GET** /image/{imageId}/queue/ | /queue/
-[**operationImageListservices**](ImageApi.md#operationImageListservices) | **GET** /image/{imageId}/services/ | /services/
-[**operationImagePatchtag**](ImageApi.md#operationImagePatchtag) | **PATCH** /image/{imageId}/tag/ | /tag/
-[**operationImagePostaccessrights**](ImageApi.md#operationImagePostaccessrights) | **POST** /image/{imageId}/accessrights/ | /accessrights/
-[**showImage**](ImageApi.md#showImage) | **GET** /image/{imageId} | Get
-[**updateImage**](ImageApi.md#updateImage) | **PATCH** /image/{imageId} | Update
+[**imageActionTransfer**](ImageApi.md#imageActionTransfer) | **POST** /image/{imageId}/actions/transfer | /actions/transfer
+[**imageCreate**](ImageApi.md#imageCreate) | **POST** /image | Create
+[**imageDelete**](ImageApi.md#imageDelete) | **DELETE** /image/{imageId} | Delete
+[**imageDeleteAccessrightsIdentity**](ImageApi.md#imageDeleteAccessrightsIdentity) | **DELETE** /image/{imageId}/accessrights/{identity} | /accessrights/:identity
+[**imageDeleteTagKey**](ImageApi.md#imageDeleteTagKey) | **DELETE** /image/{imageId}/tag/{key} | /tag/:key
+[**imageGetServicesServiceId**](ImageApi.md#imageGetServicesServiceId) | **GET** /image/{imageId}/services/{serviceId} | /services/:serviceId
+[**imageGetTag**](ImageApi.md#imageGetTag) | **GET** /image/{imageId}/tag | /tag
+[**imageList**](ImageApi.md#imageList) | **GET** /image | List
+[**imageListAccessrights**](ImageApi.md#imageListAccessrights) | **GET** /image/{imageId}/accessrights | /accessrights
+[**imageListQueue**](ImageApi.md#imageListQueue) | **GET** /image/{imageId}/queue | /queue
+[**imageListServices**](ImageApi.md#imageListServices) | **GET** /image/{imageId}/services | /services
+[**imagePatchTag**](ImageApi.md#imagePatchTag) | **PATCH** /image/{imageId}/tag | /tag
+[**imagePostAccessrights**](ImageApi.md#imagePostAccessrights) | **POST** /image/{imageId}/accessrights | /accessrights
+[**imageShow**](ImageApi.md#imageShow) | **GET** /image/{imageId} | Get
+[**imageUpdate**](ImageApi.md#imageUpdate) | **PATCH** /image/{imageId} | Update
 
 
-<a name="actionImageTransfer"></a>
-# **actionImageTransfer**
-> Image actionImageTransfer(imageId, opts)
+<a name="imageActionTransfer"></a>
+# **imageActionTransfer**
+> Image imageActionTransfer(imageId, imageActionTransfer)
 
 /actions/transfer
 
@@ -51,10 +51,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-var opts = {
-  'inlineObject25': new HyperOneApi.InlineObject25() // InlineObject25 | 
-};
-apiInstance.actionImageTransfer(imageId, opts).then(function(data) {
+var imageActionTransfer = new HyperOneApi.ImageActionTransfer(); // ImageActionTransfer | 
+apiInstance.imageActionTransfer(imageId, imageActionTransfer).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -67,7 +65,7 @@ apiInstance.actionImageTransfer(imageId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageId** | **String**| ID of image | 
- **inlineObject25** | [**InlineObject25**](InlineObject25.md)|  | [optional] 
+ **imageActionTransfer** | [**ImageActionTransfer**](ImageActionTransfer.md)|  | 
 
 ### Return type
 
@@ -82,9 +80,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="createImage"></a>
-# **createImage**
-> Image createImage(opts)
+<a name="imageCreate"></a>
+# **imageCreate**
+> Image imageCreate(imageCreate)
 
 Create
 
@@ -111,10 +109,8 @@ Session.apiKey = 'YOUR API KEY';
 //Session.apiKeyPrefix = 'Token';
 
 var apiInstance = new HyperOneApi.ImageApi();
-var opts = {
-  'inlineObject23': new HyperOneApi.InlineObject23() // InlineObject23 | 
-};
-apiInstance.createImage(opts).then(function(data) {
+var imageCreate = new HyperOneApi.ImageCreate(); // ImageCreate | 
+apiInstance.imageCreate(imageCreate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -126,7 +122,7 @@ apiInstance.createImage(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject23** | [**InlineObject23**](InlineObject23.md)|  | [optional] 
+ **imageCreate** | [**ImageCreate**](ImageCreate.md)|  | 
 
 ### Return type
 
@@ -141,9 +137,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="deleteImage"></a>
-# **deleteImage**
-> deleteImage(imageId)
+<a name="imageDelete"></a>
+# **imageDelete**
+> imageDelete(imageId)
 
 Delete
 
@@ -169,7 +165,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-apiInstance.deleteImage(imageId).then(function() {
+apiInstance.imageDelete(imageId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -196,9 +192,235 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="listImage"></a>
-# **listImage**
-> [Image] listImage(opts)
+<a name="imageDeleteAccessrightsIdentity"></a>
+# **imageDeleteAccessrightsIdentity**
+> Image imageDeleteAccessrightsIdentity(imageId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ImageApi();
+var imageId = "imageId_example"; // String | ID of image
+var identity = "identity_example"; // String | identity
+apiInstance.imageDeleteAccessrightsIdentity(imageId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **imageId** | **String**| ID of image | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Image**](Image.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="imageDeleteTagKey"></a>
+# **imageDeleteTagKey**
+> Object imageDeleteTagKey(imageId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ImageApi();
+var imageId = "imageId_example"; // String | ID of image
+var key = "key_example"; // String | key
+apiInstance.imageDeleteTagKey(imageId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **imageId** | **String**| ID of image | 
+ **key** | **String**| key | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="imageGetServicesServiceId"></a>
+# **imageGetServicesServiceId**
+> ImageServices imageGetServicesServiceId(imageId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ImageApi();
+var imageId = "imageId_example"; // String | ID of image
+var serviceId = "serviceId_example"; // String | serviceId
+apiInstance.imageGetServicesServiceId(imageId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **imageId** | **String**| ID of image | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**ImageServices**](ImageServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="imageGetTag"></a>
+# **imageGetTag**
+> Object imageGetTag(imageId)
+
+/tag
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ImageApi();
+var imageId = "imageId_example"; // String | ID of image
+apiInstance.imageGetTag(imageId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **imageId** | **String**| ID of image | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="imageList"></a>
+# **imageList**
+> [Image] imageList(opts)
 
 List
 
@@ -228,7 +450,7 @@ var apiInstance = new HyperOneApi.ImageApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-apiInstance.listImage(opts).then(function(data) {
+apiInstance.imageList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -255,68 +477,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationImageDeleteaccessrightsIdentity"></a>
-# **operationImageDeleteaccessrightsIdentity**
-> Image operationImageDeleteaccessrightsIdentity(imageId, identity)
+<a name="imageListAccessrights"></a>
+# **imageListAccessrights**
+> [String] imageListAccessrights(imageId)
 
-/accessrights/:identity
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ImageApi();
-var imageId = "imageId_example"; // String | ID of image
-var identity = "identity_example"; // String | identity
-apiInstance.operationImageDeleteaccessrightsIdentity(imageId, identity).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **imageId** | **String**| ID of image | 
- **identity** | **String**| identity | 
-
-### Return type
-
-[**Image**](Image.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationImageDeletetagKey"></a>
-# **operationImageDeletetagKey**
-> {String: String} operationImageDeletetagKey(imageId, key)
-
-/tag/:key
+/accessrights
 
 ### Example
 ```javascript
@@ -340,176 +505,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-var key = "key_example"; // String | key
-apiInstance.operationImageDeletetagKey(imageId, key).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **imageId** | **String**| ID of image | 
- **key** | **String**| key | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationImageGetservicesServiceId"></a>
-# **operationImageGetservicesServiceId**
-> ImageServices operationImageGetservicesServiceId(imageId, serviceId)
-
-/services/:serviceId
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ImageApi();
-var imageId = "imageId_example"; // String | ID of image
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.operationImageGetservicesServiceId(imageId, serviceId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **imageId** | **String**| ID of image | 
- **serviceId** | **String**| serviceId | 
-
-### Return type
-
-[**ImageServices**](ImageServices.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationImageGettag"></a>
-# **operationImageGettag**
-> {String: String} operationImageGettag(imageId)
-
-/tag/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ImageApi();
-var imageId = "imageId_example"; // String | ID of image
-apiInstance.operationImageGettag(imageId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **imageId** | **String**| ID of image | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationImageListaccessrights"></a>
-# **operationImageListaccessrights**
-> [String] operationImageListaccessrights(imageId)
-
-/accessrights/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ImageApi();
-var imageId = "imageId_example"; // String | ID of image
-apiInstance.operationImageListaccessrights(imageId).then(function(data) {
+apiInstance.imageListAccessrights(imageId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -536,11 +532,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationImageListqueue"></a>
-# **operationImageListqueue**
-> [Event] operationImageListqueue(imageId)
+<a name="imageListQueue"></a>
+# **imageListQueue**
+> [Event] imageListQueue(imageId)
 
-/queue/
+/queue
 
 ### Example
 ```javascript
@@ -564,7 +560,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-apiInstance.operationImageListqueue(imageId).then(function(data) {
+apiInstance.imageListQueue(imageId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -591,11 +587,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationImageListservices"></a>
-# **operationImageListservices**
-> [ImageServices] operationImageListservices(imageId)
+<a name="imageListServices"></a>
+# **imageListServices**
+> [ImageServices] imageListServices(imageId)
 
-/services/
+/services
 
 ### Example
 ```javascript
@@ -619,7 +615,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-apiInstance.operationImageListservices(imageId).then(function(data) {
+apiInstance.imageListServices(imageId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -646,11 +642,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationImagePatchtag"></a>
-# **operationImagePatchtag**
-> {String: String} operationImagePatchtag(imageId, requestBody)
+<a name="imagePatchTag"></a>
+# **imagePatchTag**
+> Object imagePatchTag(imageId, body)
 
-/tag/
+/tag
 
 ### Example
 ```javascript
@@ -674,8 +670,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.operationImagePatchtag(imageId, requestBody).then(function(data) {
+var body = null; // Object | 
+apiInstance.imagePatchTag(imageId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -688,11 +684,11 @@ apiInstance.operationImagePatchtag(imageId, requestBody).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageId** | **String**| ID of image | 
- **requestBody** | [**{String: String}**](String.md)|  | 
+ **body** | **Object**|  | 
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -703,11 +699,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationImagePostaccessrights"></a>
-# **operationImagePostaccessrights**
-> String operationImagePostaccessrights(imageId, opts)
+<a name="imagePostAccessrights"></a>
+# **imagePostAccessrights**
+> String imagePostAccessrights(imageId, imagePostAccessrights)
 
-/accessrights/
+/accessrights
 
 ### Example
 ```javascript
@@ -731,10 +727,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-var opts = {
-  'inlineObject26': new HyperOneApi.InlineObject26() // InlineObject26 | 
-};
-apiInstance.operationImagePostaccessrights(imageId, opts).then(function(data) {
+var imagePostAccessrights = new HyperOneApi.ImagePostAccessrights(); // ImagePostAccessrights | 
+apiInstance.imagePostAccessrights(imageId, imagePostAccessrights).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -747,7 +741,7 @@ apiInstance.operationImagePostaccessrights(imageId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageId** | **String**| ID of image | 
- **inlineObject26** | [**InlineObject26**](InlineObject26.md)|  | [optional] 
+ **imagePostAccessrights** | [**ImagePostAccessrights**](ImagePostAccessrights.md)|  | 
 
 ### Return type
 
@@ -762,9 +756,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="showImage"></a>
-# **showImage**
-> Image showImage(imageId)
+<a name="imageShow"></a>
+# **imageShow**
+> Image imageShow(imageId)
 
 Get
 
@@ -792,7 +786,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-apiInstance.showImage(imageId).then(function(data) {
+apiInstance.imageShow(imageId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -819,9 +813,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateImage"></a>
-# **updateImage**
-> Image updateImage(imageId, opts)
+<a name="imageUpdate"></a>
+# **imageUpdate**
+> Image imageUpdate(imageId, imageUpdate)
 
 Update
 
@@ -849,10 +843,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-var opts = {
-  'inlineObject24': new HyperOneApi.InlineObject24() // InlineObject24 | 
-};
-apiInstance.updateImage(imageId, opts).then(function(data) {
+var imageUpdate = new HyperOneApi.ImageUpdate(); // ImageUpdate | 
+apiInstance.imageUpdate(imageId, imageUpdate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -865,7 +857,7 @@ apiInstance.updateImage(imageId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageId** | **String**| ID of image | 
- **inlineObject24** | [**InlineObject24**](InlineObject24.md)|  | [optional] 
+ **imageUpdate** | [**ImageUpdate**](ImageUpdate.md)|  | 
 
 ### Return type
 

@@ -42,10 +42,14 @@
    * Constructs a new <code>OrganisationAccessRights</code>.
    * @alias module:model/OrganisationAccessRights
    * @class
+   * @param id {String} 
+   * @param role {module:model/OrganisationAccessRights.RoleEnum} 
    */
-  var exports = function() {
+  var exports = function(id, role) {
     var _this = this;
 
+    _this['id'] = id;
+    _this['role'] = role;
   };
 
   /**
@@ -73,10 +77,37 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * @member {String} role
+   * @member {module:model/OrganisationAccessRights.RoleEnum} role
    */
   exports.prototype['role'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>role</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.RoleEnum = {
+    /**
+     * value: "owner"
+     * @const
+     */
+    "owner": "owner",
+    /**
+     * value: "billing"
+     * @const
+     */
+    "billing": "billing",
+    /**
+     * value: "user"
+     * @const
+     */
+    "user": "user",
+    /**
+     * value: "support"
+     * @const
+     */
+    "support": "support"  };
 
 
   return exports;

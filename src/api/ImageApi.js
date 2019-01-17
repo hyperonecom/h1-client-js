@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Image', 'model/ImageServices', 'model/InlineObject23', 'model/InlineObject24', 'model/InlineObject25', 'model/InlineObject26'], factory);
+    define(['ApiClient', 'model/Event', 'model/Image', 'model/ImageActionTransfer', 'model/ImageCreate', 'model/ImagePostAccessrights', 'model/ImageServices', 'model/ImageUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Image'), require('../model/ImageServices'), require('../model/InlineObject23'), require('../model/InlineObject24'), require('../model/InlineObject25'), require('../model/InlineObject26'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Image'), require('../model/ImageActionTransfer'), require('../model/ImageCreate'), require('../model/ImagePostAccessrights'), require('../model/ImageServices'), require('../model/ImageUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ImageApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Image, root.HyperOneApi.ImageServices, root.HyperOneApi.InlineObject23, root.HyperOneApi.InlineObject24, root.HyperOneApi.InlineObject25, root.HyperOneApi.InlineObject26);
+    root.HyperOneApi.ImageApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Image, root.HyperOneApi.ImageActionTransfer, root.HyperOneApi.ImageCreate, root.HyperOneApi.ImagePostAccessrights, root.HyperOneApi.ImageServices, root.HyperOneApi.ImageUpdate);
   }
-}(this, function(ApiClient, Event, Image, ImageServices, InlineObject23, InlineObject24, InlineObject25, InlineObject26) {
+}(this, function(ApiClient, Event, Image, ImageActionTransfer, ImageCreate, ImagePostAccessrights, ImageServices, ImageUpdate) {
   'use strict';
 
   /**
@@ -52,17 +52,20 @@
      * /actions/transfer
      * Action transfer
      * @param {String} imageId ID of image
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject25} opts.inlineObject25 
+     * @param {module:model/ImageActionTransfer} imageActionTransfer 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
-    this.actionImageTransferWithHttpInfo = function(imageId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject25'];
+    this.imageActionTransferWithHttpInfo = function(imageId, imageActionTransfer) {
+      var postBody = imageActionTransfer;
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling actionImageTransfer");
+        throw new Error("Missing the required parameter 'imageId' when calling imageActionTransfer");
+      }
+
+      // verify the required parameter 'imageActionTransfer' is set
+      if (imageActionTransfer === undefined || imageActionTransfer === null) {
+        throw new Error("Missing the required parameter 'imageActionTransfer' when calling imageActionTransfer");
       }
 
 
@@ -94,12 +97,11 @@
      * /actions/transfer
      * Action transfer
      * @param {String} imageId ID of image
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject25} opts.inlineObject25 
+     * @param {module:model/ImageActionTransfer} imageActionTransfer 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
-    this.actionImageTransfer = function(imageId, opts) {
-      return this.actionImageTransferWithHttpInfo(imageId, opts)
+    this.imageActionTransfer = function(imageId, imageActionTransfer) {
+      return this.imageActionTransferWithHttpInfo(imageId, imageActionTransfer)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -109,13 +111,16 @@
     /**
      * Create
      * Create image
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject23} opts.inlineObject23 
+     * @param {module:model/ImageCreate} imageCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
-    this.createImageWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject23'];
+    this.imageCreateWithHttpInfo = function(imageCreate) {
+      var postBody = imageCreate;
+
+      // verify the required parameter 'imageCreate' is set
+      if (imageCreate === undefined || imageCreate === null) {
+        throw new Error("Missing the required parameter 'imageCreate' when calling imageCreate");
+      }
 
 
       var pathParams = {
@@ -144,12 +149,11 @@
     /**
      * Create
      * Create image
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject23} opts.inlineObject23 
+     * @param {module:model/ImageCreate} imageCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
-    this.createImage = function(opts) {
-      return this.createImageWithHttpInfo(opts)
+    this.imageCreate = function(imageCreate) {
+      return this.imageCreateWithHttpInfo(imageCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -161,12 +165,12 @@
      * @param {String} imageId ID of image
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteImageWithHttpInfo = function(imageId) {
+    this.imageDeleteWithHttpInfo = function(imageId) {
       var postBody = null;
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling deleteImage");
+        throw new Error("Missing the required parameter 'imageId' when calling imageDelete");
       }
 
 
@@ -199,8 +203,236 @@
      * @param {String} imageId ID of image
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteImage = function(imageId) {
-      return this.deleteImageWithHttpInfo(imageId)
+    this.imageDelete = function(imageId) {
+      return this.imageDeleteWithHttpInfo(imageId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} imageId ID of image
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
+     */
+    this.imageDeleteAccessrightsIdentityWithHttpInfo = function(imageId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'imageId' is set
+      if (imageId === undefined || imageId === null) {
+        throw new Error("Missing the required parameter 'imageId' when calling imageDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling imageDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'imageId': imageId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Image;
+
+      return this.apiClient.callApi(
+        '/image/{imageId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} imageId ID of image
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
+     */
+    this.imageDeleteAccessrightsIdentity = function(imageId, identity) {
+      return this.imageDeleteAccessrightsIdentityWithHttpInfo(imageId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} imageId ID of image
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.imageDeleteTagKeyWithHttpInfo = function(imageId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'imageId' is set
+      if (imageId === undefined || imageId === null) {
+        throw new Error("Missing the required parameter 'imageId' when calling imageDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling imageDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'imageId': imageId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/image/{imageId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} imageId ID of image
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.imageDeleteTagKey = function(imageId, key) {
+      return this.imageDeleteTagKeyWithHttpInfo(imageId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} imageId ID of image
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ImageServices} and HTTP response
+     */
+    this.imageGetServicesServiceIdWithHttpInfo = function(imageId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'imageId' is set
+      if (imageId === undefined || imageId === null) {
+        throw new Error("Missing the required parameter 'imageId' when calling imageGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling imageGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'imageId': imageId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ImageServices;
+
+      return this.apiClient.callApi(
+        '/image/{imageId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} imageId ID of image
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ImageServices}
+     */
+    this.imageGetServicesServiceId = function(imageId, serviceId) {
+      return this.imageGetServicesServiceIdWithHttpInfo(imageId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} imageId ID of image
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.imageGetTagWithHttpInfo = function(imageId) {
+      var postBody = null;
+
+      // verify the required parameter 'imageId' is set
+      if (imageId === undefined || imageId === null) {
+        throw new Error("Missing the required parameter 'imageId' when calling imageGetTag");
+      }
+
+
+      var pathParams = {
+        'imageId': imageId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/image/{imageId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} imageId ID of image
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.imageGetTag = function(imageId) {
+      return this.imageGetTagWithHttpInfo(imageId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -214,7 +446,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Image>} and HTTP response
      */
-    this.listImageWithHttpInfo = function(opts) {
+    this.imageListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -250,8 +482,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Image>}
      */
-    this.listImage = function(opts) {
-      return this.listImageWithHttpInfo(opts)
+    this.imageList = function(opts) {
+      return this.imageListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -259,244 +491,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} imageId ID of image
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
-     */
-    this.operationImageDeleteaccessrightsIdentityWithHttpInfo = function(imageId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'imageId' is set
-      if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling operationImageDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationImageDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'imageId': imageId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Image;
-
-      return this.apiClient.callApi(
-        '/image/{imageId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} imageId ID of image
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
-     */
-    this.operationImageDeleteaccessrightsIdentity = function(imageId, identity) {
-      return this.operationImageDeleteaccessrightsIdentityWithHttpInfo(imageId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} imageId ID of image
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationImageDeletetagKeyWithHttpInfo = function(imageId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'imageId' is set
-      if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling operationImageDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationImageDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'imageId': imageId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/image/{imageId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} imageId ID of image
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationImageDeletetagKey = function(imageId, key) {
-      return this.operationImageDeletetagKeyWithHttpInfo(imageId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} imageId ID of image
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ImageServices} and HTTP response
-     */
-    this.operationImageGetservicesServiceIdWithHttpInfo = function(imageId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'imageId' is set
-      if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling operationImageGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationImageGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'imageId': imageId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ImageServices;
-
-      return this.apiClient.callApi(
-        '/image/{imageId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} imageId ID of image
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ImageServices}
-     */
-    this.operationImageGetservicesServiceId = function(imageId, serviceId) {
-      return this.operationImageGetservicesServiceIdWithHttpInfo(imageId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} imageId ID of image
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationImageGettagWithHttpInfo = function(imageId) {
-      var postBody = null;
-
-      // verify the required parameter 'imageId' is set
-      if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling operationImageGettag");
-      }
-
-
-      var pathParams = {
-        'imageId': imageId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/image/{imageId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} imageId ID of image
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationImageGettag = function(imageId) {
-      return this.operationImageGettagWithHttpInfo(imageId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} imageId ID of image
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationImageListaccessrightsWithHttpInfo = function(imageId) {
+    this.imageListAccessrightsWithHttpInfo = function(imageId) {
       var postBody = null;
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling operationImageListaccessrights");
+        throw new Error("Missing the required parameter 'imageId' when calling imageListAccessrights");
       }
 
 
@@ -518,19 +522,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/image/{imageId}/accessrights/', 'GET',
+        '/image/{imageId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} imageId ID of image
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationImageListaccessrights = function(imageId) {
-      return this.operationImageListaccessrightsWithHttpInfo(imageId)
+    this.imageListAccessrights = function(imageId) {
+      return this.imageListAccessrightsWithHttpInfo(imageId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -538,16 +542,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} imageId ID of image
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationImageListqueueWithHttpInfo = function(imageId) {
+    this.imageListQueueWithHttpInfo = function(imageId) {
       var postBody = null;
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling operationImageListqueue");
+        throw new Error("Missing the required parameter 'imageId' when calling imageListQueue");
       }
 
 
@@ -569,19 +573,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/image/{imageId}/queue/', 'GET',
+        '/image/{imageId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} imageId ID of image
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationImageListqueue = function(imageId) {
-      return this.operationImageListqueueWithHttpInfo(imageId)
+    this.imageListQueue = function(imageId) {
+      return this.imageListQueueWithHttpInfo(imageId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -589,16 +593,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} imageId ID of image
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ImageServices>} and HTTP response
      */
-    this.operationImageListservicesWithHttpInfo = function(imageId) {
+    this.imageListServicesWithHttpInfo = function(imageId) {
       var postBody = null;
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling operationImageListservices");
+        throw new Error("Missing the required parameter 'imageId' when calling imageListServices");
       }
 
 
@@ -620,19 +624,19 @@
       var returnType = [ImageServices];
 
       return this.apiClient.callApi(
-        '/image/{imageId}/services/', 'GET',
+        '/image/{imageId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} imageId ID of image
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ImageServices>}
      */
-    this.operationImageListservices = function(imageId) {
-      return this.operationImageListservicesWithHttpInfo(imageId)
+    this.imageListServices = function(imageId) {
+      return this.imageListServicesWithHttpInfo(imageId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -640,22 +644,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} imageId ID of image
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationImagePatchtagWithHttpInfo = function(imageId, requestBody) {
-      var postBody = requestBody;
+    this.imagePatchTagWithHttpInfo = function(imageId, body) {
+      var postBody = body;
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling operationImagePatchtag");
+        throw new Error("Missing the required parameter 'imageId' when calling imagePatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationImagePatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling imagePatchTag");
       }
 
 
@@ -674,23 +678,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/image/{imageId}/tag/', 'PATCH',
+        '/image/{imageId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} imageId ID of image
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationImagePatchtag = function(imageId, requestBody) {
-      return this.operationImagePatchtagWithHttpInfo(imageId, requestBody)
+    this.imagePatchTag = function(imageId, body) {
+      return this.imagePatchTagWithHttpInfo(imageId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -698,19 +702,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} imageId ID of image
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject26} opts.inlineObject26 
+     * @param {module:model/ImagePostAccessrights} imagePostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationImagePostaccessrightsWithHttpInfo = function(imageId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject26'];
+    this.imagePostAccessrightsWithHttpInfo = function(imageId, imagePostAccessrights) {
+      var postBody = imagePostAccessrights;
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling operationImagePostaccessrights");
+        throw new Error("Missing the required parameter 'imageId' when calling imagePostAccessrights");
+      }
+
+      // verify the required parameter 'imagePostAccessrights' is set
+      if (imagePostAccessrights === undefined || imagePostAccessrights === null) {
+        throw new Error("Missing the required parameter 'imagePostAccessrights' when calling imagePostAccessrights");
       }
 
 
@@ -732,21 +739,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/image/{imageId}/accessrights/', 'POST',
+        '/image/{imageId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} imageId ID of image
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject26} opts.inlineObject26 
+     * @param {module:model/ImagePostAccessrights} imagePostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationImagePostaccessrights = function(imageId, opts) {
-      return this.operationImagePostaccessrightsWithHttpInfo(imageId, opts)
+    this.imagePostAccessrights = function(imageId, imagePostAccessrights) {
+      return this.imagePostAccessrightsWithHttpInfo(imageId, imagePostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -759,12 +765,12 @@
      * @param {String} imageId ID of image
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
-    this.showImageWithHttpInfo = function(imageId) {
+    this.imageShowWithHttpInfo = function(imageId) {
       var postBody = null;
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling showImage");
+        throw new Error("Missing the required parameter 'imageId' when calling imageShow");
       }
 
 
@@ -798,8 +804,8 @@
      * @param {String} imageId ID of image
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
-    this.showImage = function(imageId) {
-      return this.showImageWithHttpInfo(imageId)
+    this.imageShow = function(imageId) {
+      return this.imageShowWithHttpInfo(imageId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -810,17 +816,20 @@
      * Update
      * Returns modified image
      * @param {String} imageId ID of image
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject24} opts.inlineObject24 
+     * @param {module:model/ImageUpdate} imageUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
-    this.updateImageWithHttpInfo = function(imageId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject24'];
+    this.imageUpdateWithHttpInfo = function(imageId, imageUpdate) {
+      var postBody = imageUpdate;
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
-        throw new Error("Missing the required parameter 'imageId' when calling updateImage");
+        throw new Error("Missing the required parameter 'imageId' when calling imageUpdate");
+      }
+
+      // verify the required parameter 'imageUpdate' is set
+      if (imageUpdate === undefined || imageUpdate === null) {
+        throw new Error("Missing the required parameter 'imageUpdate' when calling imageUpdate");
       }
 
 
@@ -852,12 +861,11 @@
      * Update
      * Returns modified image
      * @param {String} imageId ID of image
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject24} opts.inlineObject24 
+     * @param {module:model/ImageUpdate} imageUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
-    this.updateImage = function(imageId, opts) {
-      return this.updateImageWithHttpInfo(imageId, opts)
+    this.imageUpdate = function(imageId, imageUpdate) {
+      return this.imageUpdateWithHttpInfo(imageId, imageUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

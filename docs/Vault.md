@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **project** | **String** |  | [optional] 
 **size** | **Number** |  | [optional] 
 **sizeUsed** | **Number** |  | [optional] 
-**credential** | [**VaultCredential1**](VaultCredential1.md) |  | [optional] 
 
 
 <a name="StateEnum"></a>

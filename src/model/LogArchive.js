@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/ProjectServices', 'model/VaultCredential1'], factory);
+    define(['ApiClient', 'model/Event', 'model/ProjectServices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Event'), require('./ProjectServices'), require('./VaultCredential1'));
+    module.exports = factory(require('../ApiClient'), require('./Event'), require('./ProjectServices'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.LogArchive = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.ProjectServices, root.HyperOneApi.VaultCredential1);
+    root.HyperOneApi.LogArchive = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.ProjectServices);
   }
-}(this, function(ApiClient, Event, ProjectServices, VaultCredential1) {
+}(this, function(ApiClient, Event, ProjectServices) {
   'use strict';
 
 
@@ -103,9 +103,6 @@
       if (data.hasOwnProperty('project')) {
         obj['project'] = ApiClient.convertToType(data['project'], 'String');
       }
-      if (data.hasOwnProperty('credential')) {
-        obj['credential'] = VaultCredential1.constructFromObject(data['credential']);
-      }
       if (data.hasOwnProperty('sizeUsed')) {
         obj['sizeUsed'] = ApiClient.convertToType(data['sizeUsed'], 'Number');
       }
@@ -176,10 +173,6 @@
    * @member {String} project
    */
   exports.prototype['project'] = undefined;
-  /**
-   * @member {module:model/VaultCredential1} credential
-   */
-  exports.prototype['credential'] = undefined;
   /**
    * @member {Number} sizeUsed
    */

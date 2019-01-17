@@ -113,7 +113,7 @@
         obj['cpu'] = ApiClient.convertToType(data['cpu'], 'Number');
       }
       if (data.hasOwnProperty('memory')) {
-        obj['memory'] = ApiClient.convertToType(data['memory'], 'String');
+        obj['memory'] = ApiClient.convertToType(data['memory'], 'Number');
       }
       if (data.hasOwnProperty('data')) {
         obj['data'] = VmData.constructFromObject(data['data']);
@@ -195,7 +195,7 @@
    */
   exports.prototype['cpu'] = undefined;
   /**
-   * @member {String} memory
+   * @member {Number} memory
    */
   exports.prototype['memory'] = undefined;
   /**

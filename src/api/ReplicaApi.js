@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/InlineObject74', 'model/InlineObject75', 'model/InlineObject76', 'model/Replica', 'model/ReplicaServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/Replica', 'model/ReplicaActionImage', 'model/ReplicaCreate', 'model/ReplicaPostAccessrights', 'model/ReplicaServices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject74'), require('../model/InlineObject75'), require('../model/InlineObject76'), require('../model/Replica'), require('../model/ReplicaServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Replica'), require('../model/ReplicaActionImage'), require('../model/ReplicaCreate'), require('../model/ReplicaPostAccessrights'), require('../model/ReplicaServices'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ReplicaApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject74, root.HyperOneApi.InlineObject75, root.HyperOneApi.InlineObject76, root.HyperOneApi.Replica, root.HyperOneApi.ReplicaServices);
+    root.HyperOneApi.ReplicaApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Replica, root.HyperOneApi.ReplicaActionImage, root.HyperOneApi.ReplicaCreate, root.HyperOneApi.ReplicaPostAccessrights, root.HyperOneApi.ReplicaServices);
   }
-}(this, function(ApiClient, Event, InlineObject74, InlineObject75, InlineObject76, Replica, ReplicaServices) {
+}(this, function(ApiClient, Event, Replica, ReplicaActionImage, ReplicaCreate, ReplicaPostAccessrights, ReplicaServices) {
   'use strict';
 
   /**
@@ -52,17 +52,20 @@
      * /actions/image
      * Action image
      * @param {String} replicaId ID of replica
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject75} opts.inlineObject75 
+     * @param {module:model/ReplicaActionImage} replicaActionImage 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Replica} and HTTP response
      */
-    this.actionReplicaImageWithHttpInfo = function(replicaId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject75'];
+    this.replicaActionImageWithHttpInfo = function(replicaId, replicaActionImage) {
+      var postBody = replicaActionImage;
 
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling actionReplicaImage");
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaActionImage");
+      }
+
+      // verify the required parameter 'replicaActionImage' is set
+      if (replicaActionImage === undefined || replicaActionImage === null) {
+        throw new Error("Missing the required parameter 'replicaActionImage' when calling replicaActionImage");
       }
 
 
@@ -94,12 +97,11 @@
      * /actions/image
      * Action image
      * @param {String} replicaId ID of replica
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject75} opts.inlineObject75 
+     * @param {module:model/ReplicaActionImage} replicaActionImage 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Replica}
      */
-    this.actionReplicaImage = function(replicaId, opts) {
-      return this.actionReplicaImageWithHttpInfo(replicaId, opts)
+    this.replicaActionImage = function(replicaId, replicaActionImage) {
+      return this.replicaActionImageWithHttpInfo(replicaId, replicaActionImage)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -109,13 +111,16 @@
     /**
      * Create
      * Create replica
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject74} opts.inlineObject74 
+     * @param {module:model/ReplicaCreate} replicaCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Replica} and HTTP response
      */
-    this.createReplicaWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject74'];
+    this.replicaCreateWithHttpInfo = function(replicaCreate) {
+      var postBody = replicaCreate;
+
+      // verify the required parameter 'replicaCreate' is set
+      if (replicaCreate === undefined || replicaCreate === null) {
+        throw new Error("Missing the required parameter 'replicaCreate' when calling replicaCreate");
+      }
 
 
       var pathParams = {
@@ -144,12 +149,11 @@
     /**
      * Create
      * Create replica
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject74} opts.inlineObject74 
+     * @param {module:model/ReplicaCreate} replicaCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Replica}
      */
-    this.createReplica = function(opts) {
-      return this.createReplicaWithHttpInfo(opts)
+    this.replicaCreate = function(replicaCreate) {
+      return this.replicaCreateWithHttpInfo(replicaCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -161,12 +165,12 @@
      * @param {String} replicaId ID of replica
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteReplicaWithHttpInfo = function(replicaId) {
+    this.replicaDeleteWithHttpInfo = function(replicaId) {
       var postBody = null;
 
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling deleteReplica");
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaDelete");
       }
 
 
@@ -199,8 +203,236 @@
      * @param {String} replicaId ID of replica
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteReplica = function(replicaId) {
-      return this.deleteReplicaWithHttpInfo(replicaId)
+    this.replicaDelete = function(replicaId) {
+      return this.replicaDeleteWithHttpInfo(replicaId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} replicaId ID of replica
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Replica} and HTTP response
+     */
+    this.replicaDeleteAccessrightsIdentityWithHttpInfo = function(replicaId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'replicaId' is set
+      if (replicaId === undefined || replicaId === null) {
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling replicaDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'replicaId': replicaId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Replica;
+
+      return this.apiClient.callApi(
+        '/replica/{replicaId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} replicaId ID of replica
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Replica}
+     */
+    this.replicaDeleteAccessrightsIdentity = function(replicaId, identity) {
+      return this.replicaDeleteAccessrightsIdentityWithHttpInfo(replicaId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} replicaId ID of replica
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.replicaDeleteTagKeyWithHttpInfo = function(replicaId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'replicaId' is set
+      if (replicaId === undefined || replicaId === null) {
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling replicaDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'replicaId': replicaId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/replica/{replicaId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} replicaId ID of replica
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.replicaDeleteTagKey = function(replicaId, key) {
+      return this.replicaDeleteTagKeyWithHttpInfo(replicaId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} replicaId ID of replica
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ReplicaServices} and HTTP response
+     */
+    this.replicaGetServicesServiceIdWithHttpInfo = function(replicaId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'replicaId' is set
+      if (replicaId === undefined || replicaId === null) {
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling replicaGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'replicaId': replicaId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ReplicaServices;
+
+      return this.apiClient.callApi(
+        '/replica/{replicaId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} replicaId ID of replica
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ReplicaServices}
+     */
+    this.replicaGetServicesServiceId = function(replicaId, serviceId) {
+      return this.replicaGetServicesServiceIdWithHttpInfo(replicaId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} replicaId ID of replica
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.replicaGetTagWithHttpInfo = function(replicaId) {
+      var postBody = null;
+
+      // verify the required parameter 'replicaId' is set
+      if (replicaId === undefined || replicaId === null) {
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaGetTag");
+      }
+
+
+      var pathParams = {
+        'replicaId': replicaId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/replica/{replicaId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} replicaId ID of replica
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.replicaGetTag = function(replicaId) {
+      return this.replicaGetTagWithHttpInfo(replicaId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -214,7 +446,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Replica>} and HTTP response
      */
-    this.listReplicaWithHttpInfo = function(opts) {
+    this.replicaListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -250,8 +482,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Replica>}
      */
-    this.listReplica = function(opts) {
-      return this.listReplicaWithHttpInfo(opts)
+    this.replicaList = function(opts) {
+      return this.replicaListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -259,244 +491,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} replicaId ID of replica
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Replica} and HTTP response
-     */
-    this.operationReplicaDeleteaccessrightsIdentityWithHttpInfo = function(replicaId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'replicaId' is set
-      if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling operationReplicaDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationReplicaDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'replicaId': replicaId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Replica;
-
-      return this.apiClient.callApi(
-        '/replica/{replicaId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} replicaId ID of replica
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Replica}
-     */
-    this.operationReplicaDeleteaccessrightsIdentity = function(replicaId, identity) {
-      return this.operationReplicaDeleteaccessrightsIdentityWithHttpInfo(replicaId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} replicaId ID of replica
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationReplicaDeletetagKeyWithHttpInfo = function(replicaId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'replicaId' is set
-      if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling operationReplicaDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationReplicaDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'replicaId': replicaId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/replica/{replicaId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} replicaId ID of replica
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationReplicaDeletetagKey = function(replicaId, key) {
-      return this.operationReplicaDeletetagKeyWithHttpInfo(replicaId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} replicaId ID of replica
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ReplicaServices} and HTTP response
-     */
-    this.operationReplicaGetservicesServiceIdWithHttpInfo = function(replicaId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'replicaId' is set
-      if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling operationReplicaGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationReplicaGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'replicaId': replicaId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ReplicaServices;
-
-      return this.apiClient.callApi(
-        '/replica/{replicaId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} replicaId ID of replica
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ReplicaServices}
-     */
-    this.operationReplicaGetservicesServiceId = function(replicaId, serviceId) {
-      return this.operationReplicaGetservicesServiceIdWithHttpInfo(replicaId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} replicaId ID of replica
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationReplicaGettagWithHttpInfo = function(replicaId) {
-      var postBody = null;
-
-      // verify the required parameter 'replicaId' is set
-      if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling operationReplicaGettag");
-      }
-
-
-      var pathParams = {
-        'replicaId': replicaId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/replica/{replicaId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} replicaId ID of replica
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationReplicaGettag = function(replicaId) {
-      return this.operationReplicaGettagWithHttpInfo(replicaId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} replicaId ID of replica
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationReplicaListaccessrightsWithHttpInfo = function(replicaId) {
+    this.replicaListAccessrightsWithHttpInfo = function(replicaId) {
       var postBody = null;
 
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling operationReplicaListaccessrights");
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaListAccessrights");
       }
 
 
@@ -518,19 +522,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/replica/{replicaId}/accessrights/', 'GET',
+        '/replica/{replicaId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} replicaId ID of replica
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationReplicaListaccessrights = function(replicaId) {
-      return this.operationReplicaListaccessrightsWithHttpInfo(replicaId)
+    this.replicaListAccessrights = function(replicaId) {
+      return this.replicaListAccessrightsWithHttpInfo(replicaId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -538,16 +542,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} replicaId ID of replica
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationReplicaListqueueWithHttpInfo = function(replicaId) {
+    this.replicaListQueueWithHttpInfo = function(replicaId) {
       var postBody = null;
 
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling operationReplicaListqueue");
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaListQueue");
       }
 
 
@@ -569,19 +573,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/replica/{replicaId}/queue/', 'GET',
+        '/replica/{replicaId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} replicaId ID of replica
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationReplicaListqueue = function(replicaId) {
-      return this.operationReplicaListqueueWithHttpInfo(replicaId)
+    this.replicaListQueue = function(replicaId) {
+      return this.replicaListQueueWithHttpInfo(replicaId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -589,16 +593,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} replicaId ID of replica
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ReplicaServices>} and HTTP response
      */
-    this.operationReplicaListservicesWithHttpInfo = function(replicaId) {
+    this.replicaListServicesWithHttpInfo = function(replicaId) {
       var postBody = null;
 
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling operationReplicaListservices");
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaListServices");
       }
 
 
@@ -620,19 +624,19 @@
       var returnType = [ReplicaServices];
 
       return this.apiClient.callApi(
-        '/replica/{replicaId}/services/', 'GET',
+        '/replica/{replicaId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} replicaId ID of replica
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ReplicaServices>}
      */
-    this.operationReplicaListservices = function(replicaId) {
-      return this.operationReplicaListservicesWithHttpInfo(replicaId)
+    this.replicaListServices = function(replicaId) {
+      return this.replicaListServicesWithHttpInfo(replicaId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -640,22 +644,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} replicaId ID of replica
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationReplicaPatchtagWithHttpInfo = function(replicaId, requestBody) {
-      var postBody = requestBody;
+    this.replicaPatchTagWithHttpInfo = function(replicaId, body) {
+      var postBody = body;
 
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling operationReplicaPatchtag");
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationReplicaPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling replicaPatchTag");
       }
 
 
@@ -674,23 +678,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/replica/{replicaId}/tag/', 'PATCH',
+        '/replica/{replicaId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} replicaId ID of replica
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationReplicaPatchtag = function(replicaId, requestBody) {
-      return this.operationReplicaPatchtagWithHttpInfo(replicaId, requestBody)
+    this.replicaPatchTag = function(replicaId, body) {
+      return this.replicaPatchTagWithHttpInfo(replicaId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -698,19 +702,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} replicaId ID of replica
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject76} opts.inlineObject76 
+     * @param {module:model/ReplicaPostAccessrights} replicaPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationReplicaPostaccessrightsWithHttpInfo = function(replicaId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject76'];
+    this.replicaPostAccessrightsWithHttpInfo = function(replicaId, replicaPostAccessrights) {
+      var postBody = replicaPostAccessrights;
 
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling operationReplicaPostaccessrights");
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaPostAccessrights");
+      }
+
+      // verify the required parameter 'replicaPostAccessrights' is set
+      if (replicaPostAccessrights === undefined || replicaPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'replicaPostAccessrights' when calling replicaPostAccessrights");
       }
 
 
@@ -732,21 +739,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/replica/{replicaId}/accessrights/', 'POST',
+        '/replica/{replicaId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} replicaId ID of replica
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject76} opts.inlineObject76 
+     * @param {module:model/ReplicaPostAccessrights} replicaPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationReplicaPostaccessrights = function(replicaId, opts) {
-      return this.operationReplicaPostaccessrightsWithHttpInfo(replicaId, opts)
+    this.replicaPostAccessrights = function(replicaId, replicaPostAccessrights) {
+      return this.replicaPostAccessrightsWithHttpInfo(replicaId, replicaPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -759,12 +765,12 @@
      * @param {String} replicaId ID of replica
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Replica} and HTTP response
      */
-    this.showReplicaWithHttpInfo = function(replicaId) {
+    this.replicaShowWithHttpInfo = function(replicaId) {
       var postBody = null;
 
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
-        throw new Error("Missing the required parameter 'replicaId' when calling showReplica");
+        throw new Error("Missing the required parameter 'replicaId' when calling replicaShow");
       }
 
 
@@ -798,8 +804,8 @@
      * @param {String} replicaId ID of replica
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Replica}
      */
-    this.showReplica = function(replicaId) {
-      return this.showReplicaWithHttpInfo(replicaId)
+    this.replicaShow = function(replicaId) {
+      return this.replicaShowWithHttpInfo(replicaId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

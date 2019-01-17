@@ -4,39 +4,39 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actionVaultResize**](VaultApi.md#actionVaultResize) | **POST** /vault/{vaultId}/actions/resize | /actions/resize
-[**actionVaultSnapshot**](VaultApi.md#actionVaultSnapshot) | **POST** /vault/{vaultId}/actions/snapshot | /actions/snapshot
-[**actionVaultStart**](VaultApi.md#actionVaultStart) | **POST** /vault/{vaultId}/actions/start | /actions/start
-[**actionVaultStop**](VaultApi.md#actionVaultStop) | **POST** /vault/{vaultId}/actions/stop | /actions/stop
-[**createVault**](VaultApi.md#createVault) | **POST** /vault | Create
-[**deleteVault**](VaultApi.md#deleteVault) | **DELETE** /vault/{vaultId} | Delete
-[**listVault**](VaultApi.md#listVault) | **GET** /vault | List
-[**operationVaultDeleteaccessrightsIdentity**](VaultApi.md#operationVaultDeleteaccessrightsIdentity) | **DELETE** /vault/{vaultId}/accessrights/{identity} | /accessrights/:identity
-[**operationVaultDeletecredentialcertificateId**](VaultApi.md#operationVaultDeletecredentialcertificateId) | **DELETE** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
-[**operationVaultDeletecredentialpasswordId**](VaultApi.md#operationVaultDeletecredentialpasswordId) | **DELETE** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
-[**operationVaultDeletetagKey**](VaultApi.md#operationVaultDeletetagKey) | **DELETE** /vault/{vaultId}/tag/{key} | /tag/:key
-[**operationVaultGetcredentialcertificateId**](VaultApi.md#operationVaultGetcredentialcertificateId) | **GET** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
-[**operationVaultGetcredentialpasswordId**](VaultApi.md#operationVaultGetcredentialpasswordId) | **GET** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
-[**operationVaultGetservicesServiceId**](VaultApi.md#operationVaultGetservicesServiceId) | **GET** /vault/{vaultId}/services/{serviceId} | /services/:serviceId
-[**operationVaultGettag**](VaultApi.md#operationVaultGettag) | **GET** /vault/{vaultId}/tag/ | /tag/
-[**operationVaultListaccessrights**](VaultApi.md#operationVaultListaccessrights) | **GET** /vault/{vaultId}/accessrights/ | /accessrights/
-[**operationVaultListcredentialcertificate**](VaultApi.md#operationVaultListcredentialcertificate) | **GET** /vault/{vaultId}/credential/certificate | /credential/certificate
-[**operationVaultListcredentialpassword**](VaultApi.md#operationVaultListcredentialpassword) | **GET** /vault/{vaultId}/credential/password | /credential/password
-[**operationVaultListqueue**](VaultApi.md#operationVaultListqueue) | **GET** /vault/{vaultId}/queue/ | /queue/
-[**operationVaultListservices**](VaultApi.md#operationVaultListservices) | **GET** /vault/{vaultId}/services/ | /services/
-[**operationVaultPatchcredentialcertificateId**](VaultApi.md#operationVaultPatchcredentialcertificateId) | **PATCH** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
-[**operationVaultPatchcredentialpasswordId**](VaultApi.md#operationVaultPatchcredentialpasswordId) | **PATCH** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
-[**operationVaultPatchtag**](VaultApi.md#operationVaultPatchtag) | **PATCH** /vault/{vaultId}/tag/ | /tag/
-[**operationVaultPostaccessrights**](VaultApi.md#operationVaultPostaccessrights) | **POST** /vault/{vaultId}/accessrights/ | /accessrights/
-[**operationVaultPostcredentialcertificate**](VaultApi.md#operationVaultPostcredentialcertificate) | **POST** /vault/{vaultId}/credential/certificate | /credential/certificate
-[**operationVaultPostcredentialpassword**](VaultApi.md#operationVaultPostcredentialpassword) | **POST** /vault/{vaultId}/credential/password | /credential/password
-[**showVault**](VaultApi.md#showVault) | **GET** /vault/{vaultId} | Get
-[**updateVault**](VaultApi.md#updateVault) | **PATCH** /vault/{vaultId} | Update
+[**vaultActionResize**](VaultApi.md#vaultActionResize) | **POST** /vault/{vaultId}/actions/resize | /actions/resize
+[**vaultActionSnapshot**](VaultApi.md#vaultActionSnapshot) | **POST** /vault/{vaultId}/actions/snapshot | /actions/snapshot
+[**vaultActionStart**](VaultApi.md#vaultActionStart) | **POST** /vault/{vaultId}/actions/start | /actions/start
+[**vaultActionStop**](VaultApi.md#vaultActionStop) | **POST** /vault/{vaultId}/actions/stop | /actions/stop
+[**vaultCreate**](VaultApi.md#vaultCreate) | **POST** /vault | Create
+[**vaultDelete**](VaultApi.md#vaultDelete) | **DELETE** /vault/{vaultId} | Delete
+[**vaultDeleteAccessrightsIdentity**](VaultApi.md#vaultDeleteAccessrightsIdentity) | **DELETE** /vault/{vaultId}/accessrights/{identity} | /accessrights/:identity
+[**vaultDeleteCredentialcertificateId**](VaultApi.md#vaultDeleteCredentialcertificateId) | **DELETE** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
+[**vaultDeleteCredentialpasswordId**](VaultApi.md#vaultDeleteCredentialpasswordId) | **DELETE** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
+[**vaultDeleteTagKey**](VaultApi.md#vaultDeleteTagKey) | **DELETE** /vault/{vaultId}/tag/{key} | /tag/:key
+[**vaultGetCredentialcertificateId**](VaultApi.md#vaultGetCredentialcertificateId) | **GET** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
+[**vaultGetCredentialpasswordId**](VaultApi.md#vaultGetCredentialpasswordId) | **GET** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
+[**vaultGetServicesServiceId**](VaultApi.md#vaultGetServicesServiceId) | **GET** /vault/{vaultId}/services/{serviceId} | /services/:serviceId
+[**vaultGetTag**](VaultApi.md#vaultGetTag) | **GET** /vault/{vaultId}/tag | /tag
+[**vaultList**](VaultApi.md#vaultList) | **GET** /vault | List
+[**vaultListAccessrights**](VaultApi.md#vaultListAccessrights) | **GET** /vault/{vaultId}/accessrights | /accessrights
+[**vaultListCredentialcertificate**](VaultApi.md#vaultListCredentialcertificate) | **GET** /vault/{vaultId}/credential/certificate | /credential/certificate
+[**vaultListCredentialpassword**](VaultApi.md#vaultListCredentialpassword) | **GET** /vault/{vaultId}/credential/password | /credential/password
+[**vaultListQueue**](VaultApi.md#vaultListQueue) | **GET** /vault/{vaultId}/queue | /queue
+[**vaultListServices**](VaultApi.md#vaultListServices) | **GET** /vault/{vaultId}/services | /services
+[**vaultPatchCredentialcertificateId**](VaultApi.md#vaultPatchCredentialcertificateId) | **PATCH** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
+[**vaultPatchCredentialpasswordId**](VaultApi.md#vaultPatchCredentialpasswordId) | **PATCH** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
+[**vaultPatchTag**](VaultApi.md#vaultPatchTag) | **PATCH** /vault/{vaultId}/tag | /tag
+[**vaultPostAccessrights**](VaultApi.md#vaultPostAccessrights) | **POST** /vault/{vaultId}/accessrights | /accessrights
+[**vaultPostCredentialcertificate**](VaultApi.md#vaultPostCredentialcertificate) | **POST** /vault/{vaultId}/credential/certificate | /credential/certificate
+[**vaultPostCredentialpassword**](VaultApi.md#vaultPostCredentialpassword) | **POST** /vault/{vaultId}/credential/password | /credential/password
+[**vaultShow**](VaultApi.md#vaultShow) | **GET** /vault/{vaultId} | Get
+[**vaultUpdate**](VaultApi.md#vaultUpdate) | **PATCH** /vault/{vaultId} | Update
 
 
-<a name="actionVaultResize"></a>
-# **actionVaultResize**
-> Vault actionVaultResize(vaultId)
+<a name="vaultActionResize"></a>
+# **vaultActionResize**
+> Vault vaultActionResize(vaultId)
 
 /actions/resize
 
@@ -64,7 +64,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.actionVaultResize(vaultId).then(function(data) {
+apiInstance.vaultActionResize(vaultId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -91,9 +91,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionVaultSnapshot"></a>
-# **actionVaultSnapshot**
-> Vault actionVaultSnapshot(vaultId)
+<a name="vaultActionSnapshot"></a>
+# **vaultActionSnapshot**
+> Vault vaultActionSnapshot(vaultId)
 
 /actions/snapshot
 
@@ -121,7 +121,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.actionVaultSnapshot(vaultId).then(function(data) {
+apiInstance.vaultActionSnapshot(vaultId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -148,9 +148,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionVaultStart"></a>
-# **actionVaultStart**
-> Vault actionVaultStart(vaultId)
+<a name="vaultActionStart"></a>
+# **vaultActionStart**
+> Vault vaultActionStart(vaultId)
 
 /actions/start
 
@@ -178,7 +178,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.actionVaultStart(vaultId).then(function(data) {
+apiInstance.vaultActionStart(vaultId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -205,9 +205,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionVaultStop"></a>
-# **actionVaultStop**
-> Vault actionVaultStop(vaultId)
+<a name="vaultActionStop"></a>
+# **vaultActionStop**
+> Vault vaultActionStop(vaultId)
 
 /actions/stop
 
@@ -235,7 +235,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.actionVaultStop(vaultId).then(function(data) {
+apiInstance.vaultActionStop(vaultId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -262,9 +262,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="createVault"></a>
-# **createVault**
-> Vault createVault(opts)
+<a name="vaultCreate"></a>
+# **vaultCreate**
+> Vault vaultCreate(vaultCreate)
 
 Create
 
@@ -291,10 +291,8 @@ Session.apiKey = 'YOUR API KEY';
 //Session.apiKeyPrefix = 'Token';
 
 var apiInstance = new HyperOneApi.VaultApi();
-var opts = {
-  'inlineObject47': new HyperOneApi.InlineObject47() // InlineObject47 | 
-};
-apiInstance.createVault(opts).then(function(data) {
+var vaultCreate = new HyperOneApi.VaultCreate(); // VaultCreate | 
+apiInstance.vaultCreate(vaultCreate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -306,7 +304,7 @@ apiInstance.createVault(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject47** | [**InlineObject47**](InlineObject47.md)|  | [optional] 
+ **vaultCreate** | [**VaultCreate**](VaultCreate.md)|  | 
 
 ### Return type
 
@@ -321,9 +319,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="deleteVault"></a>
-# **deleteVault**
-> deleteVault(vaultId)
+<a name="vaultDelete"></a>
+# **vaultDelete**
+> vaultDelete(vaultId)
 
 Delete
 
@@ -349,7 +347,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.deleteVault(vaultId).then(function() {
+apiInstance.vaultDelete(vaultId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -376,9 +374,463 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="listVault"></a>
-# **listVault**
-> [Vault] listVault(opts)
+<a name="vaultDeleteAccessrightsIdentity"></a>
+# **vaultDeleteAccessrightsIdentity**
+> Vault vaultDeleteAccessrightsIdentity(vaultId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VaultApi();
+var vaultId = "vaultId_example"; // String | ID of vault
+var identity = "identity_example"; // String | identity
+apiInstance.vaultDeleteAccessrightsIdentity(vaultId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vaultId** | **String**| ID of vault | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Vault**](Vault.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="vaultDeleteCredentialcertificateId"></a>
+# **vaultDeleteCredentialcertificateId**
+> Vault vaultDeleteCredentialcertificateId(vaultId, id)
+
+/credential/certificate/:id
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VaultApi();
+var vaultId = "vaultId_example"; // String | ID of vault
+var id = "id_example"; // String | id
+apiInstance.vaultDeleteCredentialcertificateId(vaultId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vaultId** | **String**| ID of vault | 
+ **id** | **String**| id | 
+
+### Return type
+
+[**Vault**](Vault.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="vaultDeleteCredentialpasswordId"></a>
+# **vaultDeleteCredentialpasswordId**
+> Vault vaultDeleteCredentialpasswordId(vaultId, id)
+
+/credential/password/:id
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VaultApi();
+var vaultId = "vaultId_example"; // String | ID of vault
+var id = "id_example"; // String | id
+apiInstance.vaultDeleteCredentialpasswordId(vaultId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vaultId** | **String**| ID of vault | 
+ **id** | **String**| id | 
+
+### Return type
+
+[**Vault**](Vault.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="vaultDeleteTagKey"></a>
+# **vaultDeleteTagKey**
+> Object vaultDeleteTagKey(vaultId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VaultApi();
+var vaultId = "vaultId_example"; // String | ID of vault
+var key = "key_example"; // String | key
+apiInstance.vaultDeleteTagKey(vaultId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vaultId** | **String**| ID of vault | 
+ **key** | **String**| key | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="vaultGetCredentialcertificateId"></a>
+# **vaultGetCredentialcertificateId**
+> CredentialCertificate vaultGetCredentialcertificateId(vaultId, id)
+
+/credential/certificate/:id
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VaultApi();
+var vaultId = "vaultId_example"; // String | ID of vault
+var id = "id_example"; // String | id
+apiInstance.vaultGetCredentialcertificateId(vaultId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vaultId** | **String**| ID of vault | 
+ **id** | **String**| id | 
+
+### Return type
+
+[**CredentialCertificate**](CredentialCertificate.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="vaultGetCredentialpasswordId"></a>
+# **vaultGetCredentialpasswordId**
+> CredentialPassword vaultGetCredentialpasswordId(vaultId, id)
+
+/credential/password/:id
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VaultApi();
+var vaultId = "vaultId_example"; // String | ID of vault
+var id = "id_example"; // String | id
+apiInstance.vaultGetCredentialpasswordId(vaultId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vaultId** | **String**| ID of vault | 
+ **id** | **String**| id | 
+
+### Return type
+
+[**CredentialPassword**](CredentialPassword.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="vaultGetServicesServiceId"></a>
+# **vaultGetServicesServiceId**
+> VaultServices vaultGetServicesServiceId(vaultId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VaultApi();
+var vaultId = "vaultId_example"; // String | ID of vault
+var serviceId = "serviceId_example"; // String | serviceId
+apiInstance.vaultGetServicesServiceId(vaultId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vaultId** | **String**| ID of vault | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**VaultServices**](VaultServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="vaultGetTag"></a>
+# **vaultGetTag**
+> Object vaultGetTag(vaultId)
+
+/tag
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.VaultApi();
+var vaultId = "vaultId_example"; // String | ID of vault
+apiInstance.vaultGetTag(vaultId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vaultId** | **String**| ID of vault | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="vaultList"></a>
+# **vaultList**
+> [Vault] vaultList(opts)
 
 List
 
@@ -408,7 +860,7 @@ var apiInstance = new HyperOneApi.VaultApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-apiInstance.listVault(opts).then(function(data) {
+apiInstance.vaultList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -435,68 +887,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationVaultDeleteaccessrightsIdentity"></a>
-# **operationVaultDeleteaccessrightsIdentity**
-> Vault operationVaultDeleteaccessrightsIdentity(vaultId, identity)
+<a name="vaultListAccessrights"></a>
+# **vaultListAccessrights**
+> [String] vaultListAccessrights(vaultId)
 
-/accessrights/:identity
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.VaultApi();
-var vaultId = "vaultId_example"; // String | ID of vault
-var identity = "identity_example"; // String | identity
-apiInstance.operationVaultDeleteaccessrightsIdentity(vaultId, identity).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vaultId** | **String**| ID of vault | 
- **identity** | **String**| identity | 
-
-### Return type
-
-[**Vault**](Vault.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationVaultDeletecredentialcertificateId"></a>
-# **operationVaultDeletecredentialcertificateId**
-> Vault operationVaultDeletecredentialcertificateId(vaultId, id)
-
-/credential/certificate/:id
+/accessrights
 
 ### Example
 ```javascript
@@ -520,404 +915,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-var id = "id_example"; // String | id
-apiInstance.operationVaultDeletecredentialcertificateId(vaultId, id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vaultId** | **String**| ID of vault | 
- **id** | **String**| id | 
-
-### Return type
-
-[**Vault**](Vault.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationVaultDeletecredentialpasswordId"></a>
-# **operationVaultDeletecredentialpasswordId**
-> Vault operationVaultDeletecredentialpasswordId(vaultId, id)
-
-/credential/password/:id
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.VaultApi();
-var vaultId = "vaultId_example"; // String | ID of vault
-var id = "id_example"; // String | id
-apiInstance.operationVaultDeletecredentialpasswordId(vaultId, id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vaultId** | **String**| ID of vault | 
- **id** | **String**| id | 
-
-### Return type
-
-[**Vault**](Vault.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationVaultDeletetagKey"></a>
-# **operationVaultDeletetagKey**
-> {String: String} operationVaultDeletetagKey(vaultId, key)
-
-/tag/:key
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.VaultApi();
-var vaultId = "vaultId_example"; // String | ID of vault
-var key = "key_example"; // String | key
-apiInstance.operationVaultDeletetagKey(vaultId, key).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vaultId** | **String**| ID of vault | 
- **key** | **String**| key | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationVaultGetcredentialcertificateId"></a>
-# **operationVaultGetcredentialcertificateId**
-> CredentialCertificate operationVaultGetcredentialcertificateId(vaultId, id)
-
-/credential/certificate/:id
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.VaultApi();
-var vaultId = "vaultId_example"; // String | ID of vault
-var id = "id_example"; // String | id
-apiInstance.operationVaultGetcredentialcertificateId(vaultId, id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vaultId** | **String**| ID of vault | 
- **id** | **String**| id | 
-
-### Return type
-
-[**CredentialCertificate**](CredentialCertificate.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationVaultGetcredentialpasswordId"></a>
-# **operationVaultGetcredentialpasswordId**
-> CredentialPassword operationVaultGetcredentialpasswordId(vaultId, id)
-
-/credential/password/:id
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.VaultApi();
-var vaultId = "vaultId_example"; // String | ID of vault
-var id = "id_example"; // String | id
-apiInstance.operationVaultGetcredentialpasswordId(vaultId, id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vaultId** | **String**| ID of vault | 
- **id** | **String**| id | 
-
-### Return type
-
-[**CredentialPassword**](CredentialPassword.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationVaultGetservicesServiceId"></a>
-# **operationVaultGetservicesServiceId**
-> VaultServices operationVaultGetservicesServiceId(vaultId, serviceId)
-
-/services/:serviceId
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.VaultApi();
-var vaultId = "vaultId_example"; // String | ID of vault
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.operationVaultGetservicesServiceId(vaultId, serviceId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vaultId** | **String**| ID of vault | 
- **serviceId** | **String**| serviceId | 
-
-### Return type
-
-[**VaultServices**](VaultServices.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationVaultGettag"></a>
-# **operationVaultGettag**
-> {String: String} operationVaultGettag(vaultId)
-
-/tag/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.VaultApi();
-var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.operationVaultGettag(vaultId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vaultId** | **String**| ID of vault | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationVaultListaccessrights"></a>
-# **operationVaultListaccessrights**
-> [String] operationVaultListaccessrights(vaultId)
-
-/accessrights/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.VaultApi();
-var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.operationVaultListaccessrights(vaultId).then(function(data) {
+apiInstance.vaultListAccessrights(vaultId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -944,9 +942,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationVaultListcredentialcertificate"></a>
-# **operationVaultListcredentialcertificate**
-> [CredentialCertificate] operationVaultListcredentialcertificate(vaultId)
+<a name="vaultListCredentialcertificate"></a>
+# **vaultListCredentialcertificate**
+> [CredentialCertificate] vaultListCredentialcertificate(vaultId)
 
 /credential/certificate
 
@@ -972,7 +970,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.operationVaultListcredentialcertificate(vaultId).then(function(data) {
+apiInstance.vaultListCredentialcertificate(vaultId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -999,9 +997,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationVaultListcredentialpassword"></a>
-# **operationVaultListcredentialpassword**
-> [CredentialPassword] operationVaultListcredentialpassword(vaultId)
+<a name="vaultListCredentialpassword"></a>
+# **vaultListCredentialpassword**
+> [CredentialPassword] vaultListCredentialpassword(vaultId)
 
 /credential/password
 
@@ -1027,7 +1025,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.operationVaultListcredentialpassword(vaultId).then(function(data) {
+apiInstance.vaultListCredentialpassword(vaultId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1054,11 +1052,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationVaultListqueue"></a>
-# **operationVaultListqueue**
-> [Event] operationVaultListqueue(vaultId)
+<a name="vaultListQueue"></a>
+# **vaultListQueue**
+> [Event] vaultListQueue(vaultId)
 
-/queue/
+/queue
 
 ### Example
 ```javascript
@@ -1082,7 +1080,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.operationVaultListqueue(vaultId).then(function(data) {
+apiInstance.vaultListQueue(vaultId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1109,11 +1107,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationVaultListservices"></a>
-# **operationVaultListservices**
-> [VaultServices] operationVaultListservices(vaultId)
+<a name="vaultListServices"></a>
+# **vaultListServices**
+> [VaultServices] vaultListServices(vaultId)
 
-/services/
+/services
 
 ### Example
 ```javascript
@@ -1137,7 +1135,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.operationVaultListservices(vaultId).then(function(data) {
+apiInstance.vaultListServices(vaultId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1164,9 +1162,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationVaultPatchcredentialcertificateId"></a>
-# **operationVaultPatchcredentialcertificateId**
-> CredentialCertificate operationVaultPatchcredentialcertificateId(vaultId, id, opts)
+<a name="vaultPatchCredentialcertificateId"></a>
+# **vaultPatchCredentialcertificateId**
+> CredentialCertificate vaultPatchCredentialcertificateId(vaultId, id, vaultPatchCredentialcertificateId)
 
 /credential/certificate/:id
 
@@ -1193,10 +1191,8 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
 var id = "id_example"; // String | id
-var opts = {
-  'inlineObject52': new HyperOneApi.InlineObject52() // InlineObject52 | 
-};
-apiInstance.operationVaultPatchcredentialcertificateId(vaultId, id, opts).then(function(data) {
+var vaultPatchCredentialcertificateId = new HyperOneApi.VaultPatchCredentialcertificateId(); // VaultPatchCredentialcertificateId | 
+apiInstance.vaultPatchCredentialcertificateId(vaultId, id, vaultPatchCredentialcertificateId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1210,7 +1206,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vaultId** | **String**| ID of vault | 
  **id** | **String**| id | 
- **inlineObject52** | [**InlineObject52**](InlineObject52.md)|  | [optional] 
+ **vaultPatchCredentialcertificateId** | [**VaultPatchCredentialcertificateId**](VaultPatchCredentialcertificateId.md)|  | 
 
 ### Return type
 
@@ -1225,9 +1221,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationVaultPatchcredentialpasswordId"></a>
-# **operationVaultPatchcredentialpasswordId**
-> CredentialPassword operationVaultPatchcredentialpasswordId(vaultId, id, opts)
+<a name="vaultPatchCredentialpasswordId"></a>
+# **vaultPatchCredentialpasswordId**
+> CredentialPassword vaultPatchCredentialpasswordId(vaultId, id, vaultPatchCredentialpasswordId)
 
 /credential/password/:id
 
@@ -1254,10 +1250,8 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
 var id = "id_example"; // String | id
-var opts = {
-  'inlineObject50': new HyperOneApi.InlineObject50() // InlineObject50 | 
-};
-apiInstance.operationVaultPatchcredentialpasswordId(vaultId, id, opts).then(function(data) {
+var vaultPatchCredentialpasswordId = new HyperOneApi.VaultPatchCredentialpasswordId(); // VaultPatchCredentialpasswordId | 
+apiInstance.vaultPatchCredentialpasswordId(vaultId, id, vaultPatchCredentialpasswordId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1271,7 +1265,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vaultId** | **String**| ID of vault | 
  **id** | **String**| id | 
- **inlineObject50** | [**InlineObject50**](InlineObject50.md)|  | [optional] 
+ **vaultPatchCredentialpasswordId** | [**VaultPatchCredentialpasswordId**](VaultPatchCredentialpasswordId.md)|  | 
 
 ### Return type
 
@@ -1286,11 +1280,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationVaultPatchtag"></a>
-# **operationVaultPatchtag**
-> {String: String} operationVaultPatchtag(vaultId, requestBody)
+<a name="vaultPatchTag"></a>
+# **vaultPatchTag**
+> Object vaultPatchTag(vaultId, body)
 
-/tag/
+/tag
 
 ### Example
 ```javascript
@@ -1314,8 +1308,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.operationVaultPatchtag(vaultId, requestBody).then(function(data) {
+var body = null; // Object | 
+apiInstance.vaultPatchTag(vaultId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1328,11 +1322,11 @@ apiInstance.operationVaultPatchtag(vaultId, requestBody).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vaultId** | **String**| ID of vault | 
- **requestBody** | [**{String: String}**](String.md)|  | 
+ **body** | **Object**|  | 
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -1343,11 +1337,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationVaultPostaccessrights"></a>
-# **operationVaultPostaccessrights**
-> String operationVaultPostaccessrights(vaultId, opts)
+<a name="vaultPostAccessrights"></a>
+# **vaultPostAccessrights**
+> String vaultPostAccessrights(vaultId, vaultPostAccessrights)
 
-/accessrights/
+/accessrights
 
 ### Example
 ```javascript
@@ -1371,10 +1365,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-var opts = {
-  'inlineObject53': new HyperOneApi.InlineObject53() // InlineObject53 | 
-};
-apiInstance.operationVaultPostaccessrights(vaultId, opts).then(function(data) {
+var vaultPostAccessrights = new HyperOneApi.VaultPostAccessrights(); // VaultPostAccessrights | 
+apiInstance.vaultPostAccessrights(vaultId, vaultPostAccessrights).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1387,7 +1379,7 @@ apiInstance.operationVaultPostaccessrights(vaultId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vaultId** | **String**| ID of vault | 
- **inlineObject53** | [**InlineObject53**](InlineObject53.md)|  | [optional] 
+ **vaultPostAccessrights** | [**VaultPostAccessrights**](VaultPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -1402,9 +1394,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationVaultPostcredentialcertificate"></a>
-# **operationVaultPostcredentialcertificate**
-> CredentialCertificate operationVaultPostcredentialcertificate(vaultId, opts)
+<a name="vaultPostCredentialcertificate"></a>
+# **vaultPostCredentialcertificate**
+> CredentialCertificate vaultPostCredentialcertificate(vaultId, vaultPostCredentialcertificate)
 
 /credential/certificate
 
@@ -1430,10 +1422,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-var opts = {
-  'inlineObject51': new HyperOneApi.InlineObject51() // InlineObject51 | 
-};
-apiInstance.operationVaultPostcredentialcertificate(vaultId, opts).then(function(data) {
+var vaultPostCredentialcertificate = new HyperOneApi.VaultPostCredentialcertificate(); // VaultPostCredentialcertificate | 
+apiInstance.vaultPostCredentialcertificate(vaultId, vaultPostCredentialcertificate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1446,7 +1436,7 @@ apiInstance.operationVaultPostcredentialcertificate(vaultId, opts).then(function
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vaultId** | **String**| ID of vault | 
- **inlineObject51** | [**InlineObject51**](InlineObject51.md)|  | [optional] 
+ **vaultPostCredentialcertificate** | [**VaultPostCredentialcertificate**](VaultPostCredentialcertificate.md)|  | 
 
 ### Return type
 
@@ -1461,9 +1451,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationVaultPostcredentialpassword"></a>
-# **operationVaultPostcredentialpassword**
-> CredentialPassword operationVaultPostcredentialpassword(vaultId, opts)
+<a name="vaultPostCredentialpassword"></a>
+# **vaultPostCredentialpassword**
+> CredentialPassword vaultPostCredentialpassword(vaultId, vaultPostCredentialpassword)
 
 /credential/password
 
@@ -1489,10 +1479,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-var opts = {
-  'inlineObject49': new HyperOneApi.InlineObject49() // InlineObject49 | 
-};
-apiInstance.operationVaultPostcredentialpassword(vaultId, opts).then(function(data) {
+var vaultPostCredentialpassword = new HyperOneApi.VaultPostCredentialpassword(); // VaultPostCredentialpassword | 
+apiInstance.vaultPostCredentialpassword(vaultId, vaultPostCredentialpassword).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1505,7 +1493,7 @@ apiInstance.operationVaultPostcredentialpassword(vaultId, opts).then(function(da
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vaultId** | **String**| ID of vault | 
- **inlineObject49** | [**InlineObject49**](InlineObject49.md)|  | [optional] 
+ **vaultPostCredentialpassword** | [**VaultPostCredentialpassword**](VaultPostCredentialpassword.md)|  | 
 
 ### Return type
 
@@ -1520,9 +1508,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="showVault"></a>
-# **showVault**
-> Vault showVault(vaultId)
+<a name="vaultShow"></a>
+# **vaultShow**
+> Vault vaultShow(vaultId)
 
 Get
 
@@ -1550,7 +1538,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-apiInstance.showVault(vaultId).then(function(data) {
+apiInstance.vaultShow(vaultId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1577,9 +1565,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateVault"></a>
-# **updateVault**
-> Vault updateVault(vaultId, opts)
+<a name="vaultUpdate"></a>
+# **vaultUpdate**
+> Vault vaultUpdate(vaultId, vaultUpdate)
 
 Update
 
@@ -1607,10 +1595,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-var opts = {
-  'inlineObject48': new HyperOneApi.InlineObject48() // InlineObject48 | 
-};
-apiInstance.updateVault(vaultId, opts).then(function(data) {
+var vaultUpdate = new HyperOneApi.VaultUpdate(); // VaultUpdate | 
+apiInstance.vaultUpdate(vaultId, vaultUpdate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1623,7 +1609,7 @@ apiInstance.updateVault(vaultId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vaultId** | **String**| ID of vault | 
- **inlineObject48** | [**InlineObject48**](InlineObject48.md)|  | [optional] 
+ **vaultUpdate** | [**VaultUpdate**](VaultUpdate.md)|  | 
 
 ### Return type
 

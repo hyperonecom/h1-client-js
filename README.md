@@ -117,7 +117,7 @@ Session.apiKey = "YOUR API KEY"
 
 var api = new HyperOneApi.ContainerApi()
 var containerId = "containerId_example"; // {String} ID of container
-api.actionContainerRestart(containerId).then(function(data) {
+api.containerActionRestart(containerId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -132,469 +132,439 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*HyperOneApi.ContainerApi* | [**actionContainerRestart**](docs/ContainerApi.md#actionContainerRestart) | **POST** /container/{containerId}/actions/restart | /actions/restart
-*HyperOneApi.ContainerApi* | [**actionContainerStart**](docs/ContainerApi.md#actionContainerStart) | **POST** /container/{containerId}/actions/start | /actions/start
-*HyperOneApi.ContainerApi* | [**actionContainerStop**](docs/ContainerApi.md#actionContainerStop) | **POST** /container/{containerId}/actions/stop | /actions/stop
-*HyperOneApi.ContainerApi* | [**createContainer**](docs/ContainerApi.md#createContainer) | **POST** /container | Create
-*HyperOneApi.ContainerApi* | [**deleteContainer**](docs/ContainerApi.md#deleteContainer) | **DELETE** /container/{containerId} | Delete
-*HyperOneApi.ContainerApi* | [**listContainer**](docs/ContainerApi.md#listContainer) | **GET** /container | List
-*HyperOneApi.ContainerApi* | [**operationContainerDeleteaccessrightsIdentity**](docs/ContainerApi.md#operationContainerDeleteaccessrightsIdentity) | **DELETE** /container/{containerId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.ContainerApi* | [**operationContainerDeletetagKey**](docs/ContainerApi.md#operationContainerDeletetagKey) | **DELETE** /container/{containerId}/tag/{key} | /tag/:key
-*HyperOneApi.ContainerApi* | [**operationContainerGetservicesServiceId**](docs/ContainerApi.md#operationContainerGetservicesServiceId) | **GET** /container/{containerId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.ContainerApi* | [**operationContainerGettag**](docs/ContainerApi.md#operationContainerGettag) | **GET** /container/{containerId}/tag/ | /tag/
-*HyperOneApi.ContainerApi* | [**operationContainerListaccessrights**](docs/ContainerApi.md#operationContainerListaccessrights) | **GET** /container/{containerId}/accessrights/ | /accessrights/
-*HyperOneApi.ContainerApi* | [**operationContainerListqueue**](docs/ContainerApi.md#operationContainerListqueue) | **GET** /container/{containerId}/queue/ | /queue/
-*HyperOneApi.ContainerApi* | [**operationContainerListservices**](docs/ContainerApi.md#operationContainerListservices) | **GET** /container/{containerId}/services/ | /services/
-*HyperOneApi.ContainerApi* | [**operationContainerPatchtag**](docs/ContainerApi.md#operationContainerPatchtag) | **PATCH** /container/{containerId}/tag/ | /tag/
-*HyperOneApi.ContainerApi* | [**operationContainerPostaccessrights**](docs/ContainerApi.md#operationContainerPostaccessrights) | **POST** /container/{containerId}/accessrights/ | /accessrights/
-*HyperOneApi.ContainerApi* | [**showContainer**](docs/ContainerApi.md#showContainer) | **GET** /container/{containerId} | Get
-*HyperOneApi.ContainerApi* | [**updateContainer**](docs/ContainerApi.md#updateContainer) | **PATCH** /container/{containerId} | Update
-*HyperOneApi.DiskApi* | [**actionDiskResize**](docs/DiskApi.md#actionDiskResize) | **POST** /disk/{diskId}/actions/resize | /actions/resize
-*HyperOneApi.DiskApi* | [**actionDiskTransfer**](docs/DiskApi.md#actionDiskTransfer) | **POST** /disk/{diskId}/actions/transfer | /actions/transfer
-*HyperOneApi.DiskApi* | [**createDisk**](docs/DiskApi.md#createDisk) | **POST** /disk | Create
-*HyperOneApi.DiskApi* | [**deleteDisk**](docs/DiskApi.md#deleteDisk) | **DELETE** /disk/{diskId} | Delete
-*HyperOneApi.DiskApi* | [**listDisk**](docs/DiskApi.md#listDisk) | **GET** /disk | List
-*HyperOneApi.DiskApi* | [**operationDiskDeleteaccessrightsIdentity**](docs/DiskApi.md#operationDiskDeleteaccessrightsIdentity) | **DELETE** /disk/{diskId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.DiskApi* | [**operationDiskDeletetagKey**](docs/DiskApi.md#operationDiskDeletetagKey) | **DELETE** /disk/{diskId}/tag/{key} | /tag/:key
-*HyperOneApi.DiskApi* | [**operationDiskGetservicesServiceId**](docs/DiskApi.md#operationDiskGetservicesServiceId) | **GET** /disk/{diskId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.DiskApi* | [**operationDiskGettag**](docs/DiskApi.md#operationDiskGettag) | **GET** /disk/{diskId}/tag/ | /tag/
-*HyperOneApi.DiskApi* | [**operationDiskListaccessrights**](docs/DiskApi.md#operationDiskListaccessrights) | **GET** /disk/{diskId}/accessrights/ | /accessrights/
-*HyperOneApi.DiskApi* | [**operationDiskListqueue**](docs/DiskApi.md#operationDiskListqueue) | **GET** /disk/{diskId}/queue/ | /queue/
-*HyperOneApi.DiskApi* | [**operationDiskListservices**](docs/DiskApi.md#operationDiskListservices) | **GET** /disk/{diskId}/services/ | /services/
-*HyperOneApi.DiskApi* | [**operationDiskPatchtag**](docs/DiskApi.md#operationDiskPatchtag) | **PATCH** /disk/{diskId}/tag/ | /tag/
-*HyperOneApi.DiskApi* | [**operationDiskPostaccessrights**](docs/DiskApi.md#operationDiskPostaccessrights) | **POST** /disk/{diskId}/accessrights/ | /accessrights/
-*HyperOneApi.DiskApi* | [**showDisk**](docs/DiskApi.md#showDisk) | **GET** /disk/{diskId} | Get
-*HyperOneApi.DiskApi* | [**updateDisk**](docs/DiskApi.md#updateDisk) | **PATCH** /disk/{diskId} | Update
-*HyperOneApi.FirewallApi* | [**actionFirewallAttach**](docs/FirewallApi.md#actionFirewallAttach) | **POST** /firewall/{firewallId}/actions/attach | /actions/attach
-*HyperOneApi.FirewallApi* | [**actionFirewallDetach**](docs/FirewallApi.md#actionFirewallDetach) | **POST** /firewall/{firewallId}/actions/detach | /actions/detach
-*HyperOneApi.FirewallApi* | [**actionFirewallTransfer**](docs/FirewallApi.md#actionFirewallTransfer) | **POST** /firewall/{firewallId}/actions/transfer | /actions/transfer
-*HyperOneApi.FirewallApi* | [**createFirewall**](docs/FirewallApi.md#createFirewall) | **POST** /firewall | Create
-*HyperOneApi.FirewallApi* | [**deleteFirewall**](docs/FirewallApi.md#deleteFirewall) | **DELETE** /firewall/{firewallId} | Delete
-*HyperOneApi.FirewallApi* | [**listFirewall**](docs/FirewallApi.md#listFirewall) | **GET** /firewall | List
-*HyperOneApi.FirewallApi* | [**operationFirewallDeleteaccessrightsIdentity**](docs/FirewallApi.md#operationFirewallDeleteaccessrightsIdentity) | **DELETE** /firewall/{firewallId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.FirewallApi* | [**operationFirewallDeleteegressRuleId**](docs/FirewallApi.md#operationFirewallDeleteegressRuleId) | **DELETE** /firewall/{firewallId}/egress/{ruleId} | /egress/:ruleId
-*HyperOneApi.FirewallApi* | [**operationFirewallDeleteingressRuleId**](docs/FirewallApi.md#operationFirewallDeleteingressRuleId) | **DELETE** /firewall/{firewallId}/ingress/{ruleId} | /ingress/:ruleId
-*HyperOneApi.FirewallApi* | [**operationFirewallDeletetagKey**](docs/FirewallApi.md#operationFirewallDeletetagKey) | **DELETE** /firewall/{firewallId}/tag/{key} | /tag/:key
-*HyperOneApi.FirewallApi* | [**operationFirewallGetegressRuleId**](docs/FirewallApi.md#operationFirewallGetegressRuleId) | **GET** /firewall/{firewallId}/egress/{ruleId} | /egress/:ruleId
-*HyperOneApi.FirewallApi* | [**operationFirewallGetingressRuleId**](docs/FirewallApi.md#operationFirewallGetingressRuleId) | **GET** /firewall/{firewallId}/ingress/{ruleId} | /ingress/:ruleId
-*HyperOneApi.FirewallApi* | [**operationFirewallGetservicesServiceId**](docs/FirewallApi.md#operationFirewallGetservicesServiceId) | **GET** /firewall/{firewallId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.FirewallApi* | [**operationFirewallGettag**](docs/FirewallApi.md#operationFirewallGettag) | **GET** /firewall/{firewallId}/tag/ | /tag/
-*HyperOneApi.FirewallApi* | [**operationFirewallListaccessrights**](docs/FirewallApi.md#operationFirewallListaccessrights) | **GET** /firewall/{firewallId}/accessrights/ | /accessrights/
-*HyperOneApi.FirewallApi* | [**operationFirewallListegress**](docs/FirewallApi.md#operationFirewallListegress) | **GET** /firewall/{firewallId}/egress | /egress
-*HyperOneApi.FirewallApi* | [**operationFirewallListingress**](docs/FirewallApi.md#operationFirewallListingress) | **GET** /firewall/{firewallId}/ingress | /ingress
-*HyperOneApi.FirewallApi* | [**operationFirewallListqueue**](docs/FirewallApi.md#operationFirewallListqueue) | **GET** /firewall/{firewallId}/queue/ | /queue/
-*HyperOneApi.FirewallApi* | [**operationFirewallListservices**](docs/FirewallApi.md#operationFirewallListservices) | **GET** /firewall/{firewallId}/services/ | /services/
-*HyperOneApi.FirewallApi* | [**operationFirewallPatchtag**](docs/FirewallApi.md#operationFirewallPatchtag) | **PATCH** /firewall/{firewallId}/tag/ | /tag/
-*HyperOneApi.FirewallApi* | [**operationFirewallPostaccessrights**](docs/FirewallApi.md#operationFirewallPostaccessrights) | **POST** /firewall/{firewallId}/accessrights/ | /accessrights/
-*HyperOneApi.FirewallApi* | [**operationFirewallPostegress**](docs/FirewallApi.md#operationFirewallPostegress) | **POST** /firewall/{firewallId}/egress | /egress
-*HyperOneApi.FirewallApi* | [**operationFirewallPostingress**](docs/FirewallApi.md#operationFirewallPostingress) | **POST** /firewall/{firewallId}/ingress | /ingress
-*HyperOneApi.FirewallApi* | [**showFirewall**](docs/FirewallApi.md#showFirewall) | **GET** /firewall/{firewallId} | Get
-*HyperOneApi.FirewallApi* | [**updateFirewall**](docs/FirewallApi.md#updateFirewall) | **PATCH** /firewall/{firewallId} | Update
-*HyperOneApi.ImageApi* | [**actionImageTransfer**](docs/ImageApi.md#actionImageTransfer) | **POST** /image/{imageId}/actions/transfer | /actions/transfer
-*HyperOneApi.ImageApi* | [**createImage**](docs/ImageApi.md#createImage) | **POST** /image | Create
-*HyperOneApi.ImageApi* | [**deleteImage**](docs/ImageApi.md#deleteImage) | **DELETE** /image/{imageId} | Delete
-*HyperOneApi.ImageApi* | [**listImage**](docs/ImageApi.md#listImage) | **GET** /image | List
-*HyperOneApi.ImageApi* | [**operationImageDeleteaccessrightsIdentity**](docs/ImageApi.md#operationImageDeleteaccessrightsIdentity) | **DELETE** /image/{imageId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.ImageApi* | [**operationImageDeletetagKey**](docs/ImageApi.md#operationImageDeletetagKey) | **DELETE** /image/{imageId}/tag/{key} | /tag/:key
-*HyperOneApi.ImageApi* | [**operationImageGetservicesServiceId**](docs/ImageApi.md#operationImageGetservicesServiceId) | **GET** /image/{imageId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.ImageApi* | [**operationImageGettag**](docs/ImageApi.md#operationImageGettag) | **GET** /image/{imageId}/tag/ | /tag/
-*HyperOneApi.ImageApi* | [**operationImageListaccessrights**](docs/ImageApi.md#operationImageListaccessrights) | **GET** /image/{imageId}/accessrights/ | /accessrights/
-*HyperOneApi.ImageApi* | [**operationImageListqueue**](docs/ImageApi.md#operationImageListqueue) | **GET** /image/{imageId}/queue/ | /queue/
-*HyperOneApi.ImageApi* | [**operationImageListservices**](docs/ImageApi.md#operationImageListservices) | **GET** /image/{imageId}/services/ | /services/
-*HyperOneApi.ImageApi* | [**operationImagePatchtag**](docs/ImageApi.md#operationImagePatchtag) | **PATCH** /image/{imageId}/tag/ | /tag/
-*HyperOneApi.ImageApi* | [**operationImagePostaccessrights**](docs/ImageApi.md#operationImagePostaccessrights) | **POST** /image/{imageId}/accessrights/ | /accessrights/
-*HyperOneApi.ImageApi* | [**showImage**](docs/ImageApi.md#showImage) | **GET** /image/{imageId} | Get
-*HyperOneApi.ImageApi* | [**updateImage**](docs/ImageApi.md#updateImage) | **PATCH** /image/{imageId} | Update
-*HyperOneApi.IpApi* | [**actionIpAllocate**](docs/IpApi.md#actionIpAllocate) | **POST** /ip/{ipId}/actions/allocate | /actions/allocate
-*HyperOneApi.IpApi* | [**actionIpAssociate**](docs/IpApi.md#actionIpAssociate) | **POST** /ip/{ipId}/actions/associate | /actions/associate
-*HyperOneApi.IpApi* | [**actionIpDisassociate**](docs/IpApi.md#actionIpDisassociate) | **POST** /ip/{ipId}/actions/disassociate | /actions/disassociate
-*HyperOneApi.IpApi* | [**actionIpRelease**](docs/IpApi.md#actionIpRelease) | **POST** /ip/{ipId}/actions/release | /actions/release
-*HyperOneApi.IpApi* | [**actionIpTransfer**](docs/IpApi.md#actionIpTransfer) | **POST** /ip/{ipId}/actions/transfer | /actions/transfer
-*HyperOneApi.IpApi* | [**createIp**](docs/IpApi.md#createIp) | **POST** /ip | Create
-*HyperOneApi.IpApi* | [**deleteIp**](docs/IpApi.md#deleteIp) | **DELETE** /ip/{ipId} | Delete
-*HyperOneApi.IpApi* | [**listIp**](docs/IpApi.md#listIp) | **GET** /ip | List
-*HyperOneApi.IpApi* | [**operationIpDeleteaccessrightsIdentity**](docs/IpApi.md#operationIpDeleteaccessrightsIdentity) | **DELETE** /ip/{ipId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.IpApi* | [**operationIpDeletetagKey**](docs/IpApi.md#operationIpDeletetagKey) | **DELETE** /ip/{ipId}/tag/{key} | /tag/:key
-*HyperOneApi.IpApi* | [**operationIpGetservicesServiceId**](docs/IpApi.md#operationIpGetservicesServiceId) | **GET** /ip/{ipId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.IpApi* | [**operationIpGettag**](docs/IpApi.md#operationIpGettag) | **GET** /ip/{ipId}/tag/ | /tag/
-*HyperOneApi.IpApi* | [**operationIpListaccessrights**](docs/IpApi.md#operationIpListaccessrights) | **GET** /ip/{ipId}/accessrights/ | /accessrights/
-*HyperOneApi.IpApi* | [**operationIpListqueue**](docs/IpApi.md#operationIpListqueue) | **GET** /ip/{ipId}/queue/ | /queue/
-*HyperOneApi.IpApi* | [**operationIpListservices**](docs/IpApi.md#operationIpListservices) | **GET** /ip/{ipId}/services/ | /services/
-*HyperOneApi.IpApi* | [**operationIpPatchtag**](docs/IpApi.md#operationIpPatchtag) | **PATCH** /ip/{ipId}/tag/ | /tag/
-*HyperOneApi.IpApi* | [**operationIpPostaccessrights**](docs/IpApi.md#operationIpPostaccessrights) | **POST** /ip/{ipId}/accessrights/ | /accessrights/
-*HyperOneApi.IpApi* | [**showIp**](docs/IpApi.md#showIp) | **GET** /ip/{ipId} | Get
-*HyperOneApi.IpApi* | [**updateIp**](docs/IpApi.md#updateIp) | **PATCH** /ip/{ipId} | Update
-*HyperOneApi.IsoApi* | [**actionIsoTransfer**](docs/IsoApi.md#actionIsoTransfer) | **POST** /iso/{isoId}/actions/transfer | /actions/transfer
-*HyperOneApi.IsoApi* | [**createIso**](docs/IsoApi.md#createIso) | **POST** /iso | Create
-*HyperOneApi.IsoApi* | [**deleteIso**](docs/IsoApi.md#deleteIso) | **DELETE** /iso/{isoId} | Delete
-*HyperOneApi.IsoApi* | [**listIso**](docs/IsoApi.md#listIso) | **GET** /iso | List
-*HyperOneApi.IsoApi* | [**operationIsoDeleteaccessrightsIdentity**](docs/IsoApi.md#operationIsoDeleteaccessrightsIdentity) | **DELETE** /iso/{isoId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.IsoApi* | [**operationIsoDeletetagKey**](docs/IsoApi.md#operationIsoDeletetagKey) | **DELETE** /iso/{isoId}/tag/{key} | /tag/:key
-*HyperOneApi.IsoApi* | [**operationIsoGetservicesServiceId**](docs/IsoApi.md#operationIsoGetservicesServiceId) | **GET** /iso/{isoId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.IsoApi* | [**operationIsoGettag**](docs/IsoApi.md#operationIsoGettag) | **GET** /iso/{isoId}/tag/ | /tag/
-*HyperOneApi.IsoApi* | [**operationIsoListaccessrights**](docs/IsoApi.md#operationIsoListaccessrights) | **GET** /iso/{isoId}/accessrights/ | /accessrights/
-*HyperOneApi.IsoApi* | [**operationIsoListqueue**](docs/IsoApi.md#operationIsoListqueue) | **GET** /iso/{isoId}/queue/ | /queue/
-*HyperOneApi.IsoApi* | [**operationIsoListservices**](docs/IsoApi.md#operationIsoListservices) | **GET** /iso/{isoId}/services/ | /services/
-*HyperOneApi.IsoApi* | [**operationIsoPatchtag**](docs/IsoApi.md#operationIsoPatchtag) | **PATCH** /iso/{isoId}/tag/ | /tag/
-*HyperOneApi.IsoApi* | [**operationIsoPostaccessrights**](docs/IsoApi.md#operationIsoPostaccessrights) | **POST** /iso/{isoId}/accessrights/ | /accessrights/
-*HyperOneApi.IsoApi* | [**showIso**](docs/IsoApi.md#showIso) | **GET** /iso/{isoId} | Get
-*HyperOneApi.IsoApi* | [**updateIso**](docs/IsoApi.md#updateIso) | **PATCH** /iso/{isoId} | Update
-*HyperOneApi.LogArchiveApi* | [**actionLogArchiveTransfer**](docs/LogArchiveApi.md#actionLogArchiveTransfer) | **POST** /logArchive/{logArchiveId}/actions/transfer | /actions/transfer
-*HyperOneApi.LogArchiveApi* | [**createLogArchive**](docs/LogArchiveApi.md#createLogArchive) | **POST** /logArchive | Create
-*HyperOneApi.LogArchiveApi* | [**deleteLogArchive**](docs/LogArchiveApi.md#deleteLogArchive) | **DELETE** /logArchive/{logArchiveId} | Delete
-*HyperOneApi.LogArchiveApi* | [**listLogArchive**](docs/LogArchiveApi.md#listLogArchive) | **GET** /logArchive | List
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveDeleteaccessrightsIdentity**](docs/LogArchiveApi.md#operationLogArchiveDeleteaccessrightsIdentity) | **DELETE** /logArchive/{logArchiveId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveDeletecredentialcertificateId**](docs/LogArchiveApi.md#operationLogArchiveDeletecredentialcertificateId) | **DELETE** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveDeletecredentialpasswordId**](docs/LogArchiveApi.md#operationLogArchiveDeletecredentialpasswordId) | **DELETE** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveDeletetagKey**](docs/LogArchiveApi.md#operationLogArchiveDeletetagKey) | **DELETE** /logArchive/{logArchiveId}/tag/{key} | /tag/:key
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveGetcredentialcertificateId**](docs/LogArchiveApi.md#operationLogArchiveGetcredentialcertificateId) | **GET** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveGetcredentialpasswordId**](docs/LogArchiveApi.md#operationLogArchiveGetcredentialpasswordId) | **GET** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveGetservicesServiceId**](docs/LogArchiveApi.md#operationLogArchiveGetservicesServiceId) | **GET** /logArchive/{logArchiveId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveGettag**](docs/LogArchiveApi.md#operationLogArchiveGettag) | **GET** /logArchive/{logArchiveId}/tag/ | /tag/
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveListaccessrights**](docs/LogArchiveApi.md#operationLogArchiveListaccessrights) | **GET** /logArchive/{logArchiveId}/accessrights/ | /accessrights/
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveListcredentialcertificate**](docs/LogArchiveApi.md#operationLogArchiveListcredentialcertificate) | **GET** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveListcredentialpassword**](docs/LogArchiveApi.md#operationLogArchiveListcredentialpassword) | **GET** /logArchive/{logArchiveId}/credential/password | /credential/password
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveListqueue**](docs/LogArchiveApi.md#operationLogArchiveListqueue) | **GET** /logArchive/{logArchiveId}/queue/ | /queue/
-*HyperOneApi.LogArchiveApi* | [**operationLogArchiveListservices**](docs/LogArchiveApi.md#operationLogArchiveListservices) | **GET** /logArchive/{logArchiveId}/services/ | /services/
-*HyperOneApi.LogArchiveApi* | [**operationLogArchivePatchcredentialcertificateId**](docs/LogArchiveApi.md#operationLogArchivePatchcredentialcertificateId) | **PATCH** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
-*HyperOneApi.LogArchiveApi* | [**operationLogArchivePatchcredentialpasswordId**](docs/LogArchiveApi.md#operationLogArchivePatchcredentialpasswordId) | **PATCH** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
-*HyperOneApi.LogArchiveApi* | [**operationLogArchivePatchtag**](docs/LogArchiveApi.md#operationLogArchivePatchtag) | **PATCH** /logArchive/{logArchiveId}/tag/ | /tag/
-*HyperOneApi.LogArchiveApi* | [**operationLogArchivePostaccessrights**](docs/LogArchiveApi.md#operationLogArchivePostaccessrights) | **POST** /logArchive/{logArchiveId}/accessrights/ | /accessrights/
-*HyperOneApi.LogArchiveApi* | [**operationLogArchivePostcredentialcertificate**](docs/LogArchiveApi.md#operationLogArchivePostcredentialcertificate) | **POST** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
-*HyperOneApi.LogArchiveApi* | [**operationLogArchivePostcredentialpassword**](docs/LogArchiveApi.md#operationLogArchivePostcredentialpassword) | **POST** /logArchive/{logArchiveId}/credential/password | /credential/password
-*HyperOneApi.LogArchiveApi* | [**showLogArchive**](docs/LogArchiveApi.md#showLogArchive) | **GET** /logArchive/{logArchiveId} | Get
-*HyperOneApi.LogArchiveApi* | [**updateLogArchive**](docs/LogArchiveApi.md#updateLogArchive) | **PATCH** /logArchive/{logArchiveId} | Update
-*HyperOneApi.NetadpApi* | [**listNetadp**](docs/NetadpApi.md#listNetadp) | **GET** /netadp | List
-*HyperOneApi.NetadpApi* | [**operationNetadpDeleteaccessrightsIdentity**](docs/NetadpApi.md#operationNetadpDeleteaccessrightsIdentity) | **DELETE** /netadp/{netadpId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.NetadpApi* | [**operationNetadpDeletetagKey**](docs/NetadpApi.md#operationNetadpDeletetagKey) | **DELETE** /netadp/{netadpId}/tag/{key} | /tag/:key
-*HyperOneApi.NetadpApi* | [**operationNetadpGetservicesServiceId**](docs/NetadpApi.md#operationNetadpGetservicesServiceId) | **GET** /netadp/{netadpId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.NetadpApi* | [**operationNetadpGettag**](docs/NetadpApi.md#operationNetadpGettag) | **GET** /netadp/{netadpId}/tag/ | /tag/
-*HyperOneApi.NetadpApi* | [**operationNetadpListaccessrights**](docs/NetadpApi.md#operationNetadpListaccessrights) | **GET** /netadp/{netadpId}/accessrights/ | /accessrights/
-*HyperOneApi.NetadpApi* | [**operationNetadpListqueue**](docs/NetadpApi.md#operationNetadpListqueue) | **GET** /netadp/{netadpId}/queue/ | /queue/
-*HyperOneApi.NetadpApi* | [**operationNetadpListservices**](docs/NetadpApi.md#operationNetadpListservices) | **GET** /netadp/{netadpId}/services/ | /services/
-*HyperOneApi.NetadpApi* | [**operationNetadpPatchtag**](docs/NetadpApi.md#operationNetadpPatchtag) | **PATCH** /netadp/{netadpId}/tag/ | /tag/
-*HyperOneApi.NetadpApi* | [**operationNetadpPostaccessrights**](docs/NetadpApi.md#operationNetadpPostaccessrights) | **POST** /netadp/{netadpId}/accessrights/ | /accessrights/
-*HyperOneApi.NetadpApi* | [**showNetadp**](docs/NetadpApi.md#showNetadp) | **GET** /netadp/{netadpId} | Get
-*HyperOneApi.NetgwApi* | [**actionNetgwAttach**](docs/NetgwApi.md#actionNetgwAttach) | **POST** /netgw/{netgwId}/actions/attach | /actions/attach
-*HyperOneApi.NetgwApi* | [**actionNetgwDetach**](docs/NetgwApi.md#actionNetgwDetach) | **POST** /netgw/{netgwId}/actions/detach | /actions/detach
-*HyperOneApi.NetgwApi* | [**createNetgw**](docs/NetgwApi.md#createNetgw) | **POST** /netgw | Create
-*HyperOneApi.NetgwApi* | [**deleteNetgw**](docs/NetgwApi.md#deleteNetgw) | **DELETE** /netgw/{netgwId} | Delete
-*HyperOneApi.NetgwApi* | [**listNetgw**](docs/NetgwApi.md#listNetgw) | **GET** /netgw | List
-*HyperOneApi.NetgwApi* | [**operationNetgwDeleteaccessrightsIdentity**](docs/NetgwApi.md#operationNetgwDeleteaccessrightsIdentity) | **DELETE** /netgw/{netgwId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.NetgwApi* | [**operationNetgwDeletetagKey**](docs/NetgwApi.md#operationNetgwDeletetagKey) | **DELETE** /netgw/{netgwId}/tag/{key} | /tag/:key
-*HyperOneApi.NetgwApi* | [**operationNetgwGetservicesServiceId**](docs/NetgwApi.md#operationNetgwGetservicesServiceId) | **GET** /netgw/{netgwId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.NetgwApi* | [**operationNetgwGettag**](docs/NetgwApi.md#operationNetgwGettag) | **GET** /netgw/{netgwId}/tag/ | /tag/
-*HyperOneApi.NetgwApi* | [**operationNetgwListaccessrights**](docs/NetgwApi.md#operationNetgwListaccessrights) | **GET** /netgw/{netgwId}/accessrights/ | /accessrights/
-*HyperOneApi.NetgwApi* | [**operationNetgwListqueue**](docs/NetgwApi.md#operationNetgwListqueue) | **GET** /netgw/{netgwId}/queue/ | /queue/
-*HyperOneApi.NetgwApi* | [**operationNetgwListservices**](docs/NetgwApi.md#operationNetgwListservices) | **GET** /netgw/{netgwId}/services/ | /services/
-*HyperOneApi.NetgwApi* | [**operationNetgwPatchtag**](docs/NetgwApi.md#operationNetgwPatchtag) | **PATCH** /netgw/{netgwId}/tag/ | /tag/
-*HyperOneApi.NetgwApi* | [**operationNetgwPostaccessrights**](docs/NetgwApi.md#operationNetgwPostaccessrights) | **POST** /netgw/{netgwId}/accessrights/ | /accessrights/
-*HyperOneApi.NetgwApi* | [**showNetgw**](docs/NetgwApi.md#showNetgw) | **GET** /netgw/{netgwId} | Get
-*HyperOneApi.NetgwApi* | [**updateNetgw**](docs/NetgwApi.md#updateNetgw) | **PATCH** /netgw/{netgwId} | Update
-*HyperOneApi.NetworkApi* | [**createNetwork**](docs/NetworkApi.md#createNetwork) | **POST** /network | Create
-*HyperOneApi.NetworkApi* | [**deleteNetwork**](docs/NetworkApi.md#deleteNetwork) | **DELETE** /network/{networkId} | Delete
-*HyperOneApi.NetworkApi* | [**listNetwork**](docs/NetworkApi.md#listNetwork) | **GET** /network | List
-*HyperOneApi.NetworkApi* | [**operationNetworkDeleteaccessrightsIdentity**](docs/NetworkApi.md#operationNetworkDeleteaccessrightsIdentity) | **DELETE** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.NetworkApi* | [**operationNetworkDeleteipIpId**](docs/NetworkApi.md#operationNetworkDeleteipIpId) | **DELETE** /network/{networkId}/ip/:ipId | /ip/:ipId
-*HyperOneApi.NetworkApi* | [**operationNetworkDeletetagKey**](docs/NetworkApi.md#operationNetworkDeletetagKey) | **DELETE** /network/{networkId}/tag/{key} | /tag/:key
-*HyperOneApi.NetworkApi* | [**operationNetworkGetipIpId**](docs/NetworkApi.md#operationNetworkGetipIpId) | **GET** /network/{networkId}/ip/:ipId | /ip/:ipId
-*HyperOneApi.NetworkApi* | [**operationNetworkGetservicesServiceId**](docs/NetworkApi.md#operationNetworkGetservicesServiceId) | **GET** /network/{networkId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.NetworkApi* | [**operationNetworkGettag**](docs/NetworkApi.md#operationNetworkGettag) | **GET** /network/{networkId}/tag/ | /tag/
-*HyperOneApi.NetworkApi* | [**operationNetworkListaccessrights**](docs/NetworkApi.md#operationNetworkListaccessrights) | **GET** /network/{networkId}/accessrights/ | /accessrights/
-*HyperOneApi.NetworkApi* | [**operationNetworkListip**](docs/NetworkApi.md#operationNetworkListip) | **GET** /network/{networkId}/ip | /ip
-*HyperOneApi.NetworkApi* | [**operationNetworkListqueue**](docs/NetworkApi.md#operationNetworkListqueue) | **GET** /network/{networkId}/queue/ | /queue/
-*HyperOneApi.NetworkApi* | [**operationNetworkListservices**](docs/NetworkApi.md#operationNetworkListservices) | **GET** /network/{networkId}/services/ | /services/
-*HyperOneApi.NetworkApi* | [**operationNetworkPatchtag**](docs/NetworkApi.md#operationNetworkPatchtag) | **PATCH** /network/{networkId}/tag/ | /tag/
-*HyperOneApi.NetworkApi* | [**operationNetworkPostaccessrights**](docs/NetworkApi.md#operationNetworkPostaccessrights) | **POST** /network/{networkId}/accessrights/ | /accessrights/
-*HyperOneApi.NetworkApi* | [**operationNetworkPostip**](docs/NetworkApi.md#operationNetworkPostip) | **POST** /network/{networkId}/ip | /ip
-*HyperOneApi.NetworkApi* | [**showNetwork**](docs/NetworkApi.md#showNetwork) | **GET** /network/{networkId} | Get
-*HyperOneApi.NetworkApi* | [**updateNetwork**](docs/NetworkApi.md#updateNetwork) | **PATCH** /network/{networkId} | Update
-*HyperOneApi.OrganisationApi* | [**actionOrganisationTransferAccept**](docs/OrganisationApi.md#actionOrganisationTransferAccept) | **POST** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
-*HyperOneApi.OrganisationApi* | [**createOrganisation**](docs/OrganisationApi.md#createOrganisation) | **POST** /organisation | Create
-*HyperOneApi.OrganisationApi* | [**listOrganisation**](docs/OrganisationApi.md#listOrganisation) | **GET** /organisation | List
-*HyperOneApi.OrganisationApi* | [**operationOrganisationDeleteaccessrightsIdentity**](docs/OrganisationApi.md#operationOrganisationDeleteaccessrightsIdentity) | **DELETE** /organisation/{organisationId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.OrganisationApi* | [**operationOrganisationDeletetagKey**](docs/OrganisationApi.md#operationOrganisationDeletetagKey) | **DELETE** /organisation/{organisationId}/tag/{key} | /tag/:key
-*HyperOneApi.OrganisationApi* | [**operationOrganisationGettag**](docs/OrganisationApi.md#operationOrganisationGettag) | **GET** /organisation/{organisationId}/tag/ | /tag/
-*HyperOneApi.OrganisationApi* | [**operationOrganisationListaccessrights**](docs/OrganisationApi.md#operationOrganisationListaccessrights) | **GET** /organisation/{organisationId}/accessrights/ | /accessrights/
-*HyperOneApi.OrganisationApi* | [**operationOrganisationListqueue**](docs/OrganisationApi.md#operationOrganisationListqueue) | **GET** /organisation/{organisationId}/queue/ | /queue/
-*HyperOneApi.OrganisationApi* | [**operationOrganisationPatchtag**](docs/OrganisationApi.md#operationOrganisationPatchtag) | **PATCH** /organisation/{organisationId}/tag/ | /tag/
-*HyperOneApi.OrganisationApi* | [**operationOrganisationPostaccessrights**](docs/OrganisationApi.md#operationOrganisationPostaccessrights) | **POST** /organisation/{organisationId}/accessrights/ | /accessrights/
-*HyperOneApi.OrganisationApi* | [**showOrganisation**](docs/OrganisationApi.md#showOrganisation) | **GET** /organisation/{organisationId} | Get
-*HyperOneApi.OrganisationApi* | [**updateOrganisation**](docs/OrganisationApi.md#updateOrganisation) | **PATCH** /organisation/{organisationId} | Update
-*HyperOneApi.ProjectApi* | [**createProject**](docs/ProjectApi.md#createProject) | **POST** /project | Create
-*HyperOneApi.ProjectApi* | [**listProject**](docs/ProjectApi.md#listProject) | **GET** /project | List
-*HyperOneApi.ProjectApi* | [**operationProjectDeleteaccessrightsIdentity**](docs/ProjectApi.md#operationProjectDeleteaccessrightsIdentity) | **DELETE** /project/{projectId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.ProjectApi* | [**operationProjectDeletetagKey**](docs/ProjectApi.md#operationProjectDeletetagKey) | **DELETE** /project/{projectId}/tag/{key} | /tag/:key
-*HyperOneApi.ProjectApi* | [**operationProjectGetservicesServiceId**](docs/ProjectApi.md#operationProjectGetservicesServiceId) | **GET** /project/{projectId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.ProjectApi* | [**operationProjectGettag**](docs/ProjectApi.md#operationProjectGettag) | **GET** /project/{projectId}/tag/ | /tag/
-*HyperOneApi.ProjectApi* | [**operationProjectListaccessrights**](docs/ProjectApi.md#operationProjectListaccessrights) | **GET** /project/{projectId}/accessrights/ | /accessrights/
-*HyperOneApi.ProjectApi* | [**operationProjectListqueue**](docs/ProjectApi.md#operationProjectListqueue) | **GET** /project/{projectId}/queue/ | /queue/
-*HyperOneApi.ProjectApi* | [**operationProjectListservices**](docs/ProjectApi.md#operationProjectListservices) | **GET** /project/{projectId}/services/ | /services/
-*HyperOneApi.ProjectApi* | [**operationProjectPatchtag**](docs/ProjectApi.md#operationProjectPatchtag) | **PATCH** /project/{projectId}/tag/ | /tag/
-*HyperOneApi.ProjectApi* | [**operationProjectPostaccessrights**](docs/ProjectApi.md#operationProjectPostaccessrights) | **POST** /project/{projectId}/accessrights/ | /accessrights/
-*HyperOneApi.ProjectApi* | [**showProject**](docs/ProjectApi.md#showProject) | **GET** /project/{projectId} | Get
-*HyperOneApi.ProjectApi* | [**updateProject**](docs/ProjectApi.md#updateProject) | **PATCH** /project/{projectId} | Update
-*HyperOneApi.ReplicaApi* | [**actionReplicaImage**](docs/ReplicaApi.md#actionReplicaImage) | **POST** /replica/{replicaId}/actions/image | /actions/image
-*HyperOneApi.ReplicaApi* | [**createReplica**](docs/ReplicaApi.md#createReplica) | **POST** /replica | Create
-*HyperOneApi.ReplicaApi* | [**deleteReplica**](docs/ReplicaApi.md#deleteReplica) | **DELETE** /replica/{replicaId} | Delete
-*HyperOneApi.ReplicaApi* | [**listReplica**](docs/ReplicaApi.md#listReplica) | **GET** /replica | List
-*HyperOneApi.ReplicaApi* | [**operationReplicaDeleteaccessrightsIdentity**](docs/ReplicaApi.md#operationReplicaDeleteaccessrightsIdentity) | **DELETE** /replica/{replicaId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.ReplicaApi* | [**operationReplicaDeletetagKey**](docs/ReplicaApi.md#operationReplicaDeletetagKey) | **DELETE** /replica/{replicaId}/tag/{key} | /tag/:key
-*HyperOneApi.ReplicaApi* | [**operationReplicaGetservicesServiceId**](docs/ReplicaApi.md#operationReplicaGetservicesServiceId) | **GET** /replica/{replicaId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.ReplicaApi* | [**operationReplicaGettag**](docs/ReplicaApi.md#operationReplicaGettag) | **GET** /replica/{replicaId}/tag/ | /tag/
-*HyperOneApi.ReplicaApi* | [**operationReplicaListaccessrights**](docs/ReplicaApi.md#operationReplicaListaccessrights) | **GET** /replica/{replicaId}/accessrights/ | /accessrights/
-*HyperOneApi.ReplicaApi* | [**operationReplicaListqueue**](docs/ReplicaApi.md#operationReplicaListqueue) | **GET** /replica/{replicaId}/queue/ | /queue/
-*HyperOneApi.ReplicaApi* | [**operationReplicaListservices**](docs/ReplicaApi.md#operationReplicaListservices) | **GET** /replica/{replicaId}/services/ | /services/
-*HyperOneApi.ReplicaApi* | [**operationReplicaPatchtag**](docs/ReplicaApi.md#operationReplicaPatchtag) | **PATCH** /replica/{replicaId}/tag/ | /tag/
-*HyperOneApi.ReplicaApi* | [**operationReplicaPostaccessrights**](docs/ReplicaApi.md#operationReplicaPostaccessrights) | **POST** /replica/{replicaId}/accessrights/ | /accessrights/
-*HyperOneApi.ReplicaApi* | [**showReplica**](docs/ReplicaApi.md#showReplica) | **GET** /replica/{replicaId} | Get
-*HyperOneApi.ReservationApi* | [**actionReservationAssign**](docs/ReservationApi.md#actionReservationAssign) | **POST** /reservation/{reservationId}/actions/assign | /actions/assign
-*HyperOneApi.ReservationApi* | [**actionReservationExtend**](docs/ReservationApi.md#actionReservationExtend) | **POST** /reservation/{reservationId}/actions/extend | /actions/extend
-*HyperOneApi.ReservationApi* | [**actionReservationUnassign**](docs/ReservationApi.md#actionReservationUnassign) | **POST** /reservation/{reservationId}/actions/unassign | /actions/unassign
-*HyperOneApi.ReservationApi* | [**createReservation**](docs/ReservationApi.md#createReservation) | **POST** /reservation | Create
-*HyperOneApi.ReservationApi* | [**deleteReservation**](docs/ReservationApi.md#deleteReservation) | **DELETE** /reservation/{reservationId} | Delete
-*HyperOneApi.ReservationApi* | [**listReservation**](docs/ReservationApi.md#listReservation) | **GET** /reservation | List
-*HyperOneApi.ReservationApi* | [**operationReservationDeleteaccessrightsIdentity**](docs/ReservationApi.md#operationReservationDeleteaccessrightsIdentity) | **DELETE** /reservation/{reservationId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.ReservationApi* | [**operationReservationDeletetagKey**](docs/ReservationApi.md#operationReservationDeletetagKey) | **DELETE** /reservation/{reservationId}/tag/{key} | /tag/:key
-*HyperOneApi.ReservationApi* | [**operationReservationGetservicesServiceId**](docs/ReservationApi.md#operationReservationGetservicesServiceId) | **GET** /reservation/{reservationId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.ReservationApi* | [**operationReservationGettag**](docs/ReservationApi.md#operationReservationGettag) | **GET** /reservation/{reservationId}/tag/ | /tag/
-*HyperOneApi.ReservationApi* | [**operationReservationListaccessrights**](docs/ReservationApi.md#operationReservationListaccessrights) | **GET** /reservation/{reservationId}/accessrights/ | /accessrights/
-*HyperOneApi.ReservationApi* | [**operationReservationListqueue**](docs/ReservationApi.md#operationReservationListqueue) | **GET** /reservation/{reservationId}/queue/ | /queue/
-*HyperOneApi.ReservationApi* | [**operationReservationListservices**](docs/ReservationApi.md#operationReservationListservices) | **GET** /reservation/{reservationId}/services/ | /services/
-*HyperOneApi.ReservationApi* | [**operationReservationPatchtag**](docs/ReservationApi.md#operationReservationPatchtag) | **PATCH** /reservation/{reservationId}/tag/ | /tag/
-*HyperOneApi.ReservationApi* | [**operationReservationPostaccessrights**](docs/ReservationApi.md#operationReservationPostaccessrights) | **POST** /reservation/{reservationId}/accessrights/ | /accessrights/
-*HyperOneApi.ReservationApi* | [**showReservation**](docs/ReservationApi.md#showReservation) | **GET** /reservation/{reservationId} | Get
-*HyperOneApi.ReservationApi* | [**updateReservation**](docs/ReservationApi.md#updateReservation) | **PATCH** /reservation/{reservationId} | Update
-*HyperOneApi.SnapshotApi* | [**createSnapshot**](docs/SnapshotApi.md#createSnapshot) | **POST** /snapshot | Create
-*HyperOneApi.SnapshotApi* | [**deleteSnapshot**](docs/SnapshotApi.md#deleteSnapshot) | **DELETE** /snapshot/{snapshotId} | Delete
-*HyperOneApi.SnapshotApi* | [**listSnapshot**](docs/SnapshotApi.md#listSnapshot) | **GET** /snapshot | List
-*HyperOneApi.SnapshotApi* | [**operationSnapshotDeleteaccessrightsIdentity**](docs/SnapshotApi.md#operationSnapshotDeleteaccessrightsIdentity) | **DELETE** /snapshot/{snapshotId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.SnapshotApi* | [**operationSnapshotDeletetagKey**](docs/SnapshotApi.md#operationSnapshotDeletetagKey) | **DELETE** /snapshot/{snapshotId}/tag/{key} | /tag/:key
-*HyperOneApi.SnapshotApi* | [**operationSnapshotGetservicesServiceId**](docs/SnapshotApi.md#operationSnapshotGetservicesServiceId) | **GET** /snapshot/{snapshotId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.SnapshotApi* | [**operationSnapshotGettag**](docs/SnapshotApi.md#operationSnapshotGettag) | **GET** /snapshot/{snapshotId}/tag/ | /tag/
-*HyperOneApi.SnapshotApi* | [**operationSnapshotListaccessrights**](docs/SnapshotApi.md#operationSnapshotListaccessrights) | **GET** /snapshot/{snapshotId}/accessrights/ | /accessrights/
-*HyperOneApi.SnapshotApi* | [**operationSnapshotListqueue**](docs/SnapshotApi.md#operationSnapshotListqueue) | **GET** /snapshot/{snapshotId}/queue/ | /queue/
-*HyperOneApi.SnapshotApi* | [**operationSnapshotListservices**](docs/SnapshotApi.md#operationSnapshotListservices) | **GET** /snapshot/{snapshotId}/services/ | /services/
-*HyperOneApi.SnapshotApi* | [**operationSnapshotPatchtag**](docs/SnapshotApi.md#operationSnapshotPatchtag) | **PATCH** /snapshot/{snapshotId}/tag/ | /tag/
-*HyperOneApi.SnapshotApi* | [**operationSnapshotPostaccessrights**](docs/SnapshotApi.md#operationSnapshotPostaccessrights) | **POST** /snapshot/{snapshotId}/accessrights/ | /accessrights/
-*HyperOneApi.SnapshotApi* | [**showSnapshot**](docs/SnapshotApi.md#showSnapshot) | **GET** /snapshot/{snapshotId} | Get
-*HyperOneApi.SnapshotApi* | [**updateSnapshot**](docs/SnapshotApi.md#updateSnapshot) | **PATCH** /snapshot/{snapshotId} | Update
-*HyperOneApi.VaultApi* | [**actionVaultResize**](docs/VaultApi.md#actionVaultResize) | **POST** /vault/{vaultId}/actions/resize | /actions/resize
-*HyperOneApi.VaultApi* | [**actionVaultSnapshot**](docs/VaultApi.md#actionVaultSnapshot) | **POST** /vault/{vaultId}/actions/snapshot | /actions/snapshot
-*HyperOneApi.VaultApi* | [**actionVaultStart**](docs/VaultApi.md#actionVaultStart) | **POST** /vault/{vaultId}/actions/start | /actions/start
-*HyperOneApi.VaultApi* | [**actionVaultStop**](docs/VaultApi.md#actionVaultStop) | **POST** /vault/{vaultId}/actions/stop | /actions/stop
-*HyperOneApi.VaultApi* | [**createVault**](docs/VaultApi.md#createVault) | **POST** /vault | Create
-*HyperOneApi.VaultApi* | [**deleteVault**](docs/VaultApi.md#deleteVault) | **DELETE** /vault/{vaultId} | Delete
-*HyperOneApi.VaultApi* | [**listVault**](docs/VaultApi.md#listVault) | **GET** /vault | List
-*HyperOneApi.VaultApi* | [**operationVaultDeleteaccessrightsIdentity**](docs/VaultApi.md#operationVaultDeleteaccessrightsIdentity) | **DELETE** /vault/{vaultId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.VaultApi* | [**operationVaultDeletecredentialcertificateId**](docs/VaultApi.md#operationVaultDeletecredentialcertificateId) | **DELETE** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
-*HyperOneApi.VaultApi* | [**operationVaultDeletecredentialpasswordId**](docs/VaultApi.md#operationVaultDeletecredentialpasswordId) | **DELETE** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
-*HyperOneApi.VaultApi* | [**operationVaultDeletetagKey**](docs/VaultApi.md#operationVaultDeletetagKey) | **DELETE** /vault/{vaultId}/tag/{key} | /tag/:key
-*HyperOneApi.VaultApi* | [**operationVaultGetcredentialcertificateId**](docs/VaultApi.md#operationVaultGetcredentialcertificateId) | **GET** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
-*HyperOneApi.VaultApi* | [**operationVaultGetcredentialpasswordId**](docs/VaultApi.md#operationVaultGetcredentialpasswordId) | **GET** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
-*HyperOneApi.VaultApi* | [**operationVaultGetservicesServiceId**](docs/VaultApi.md#operationVaultGetservicesServiceId) | **GET** /vault/{vaultId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.VaultApi* | [**operationVaultGettag**](docs/VaultApi.md#operationVaultGettag) | **GET** /vault/{vaultId}/tag/ | /tag/
-*HyperOneApi.VaultApi* | [**operationVaultListaccessrights**](docs/VaultApi.md#operationVaultListaccessrights) | **GET** /vault/{vaultId}/accessrights/ | /accessrights/
-*HyperOneApi.VaultApi* | [**operationVaultListcredentialcertificate**](docs/VaultApi.md#operationVaultListcredentialcertificate) | **GET** /vault/{vaultId}/credential/certificate | /credential/certificate
-*HyperOneApi.VaultApi* | [**operationVaultListcredentialpassword**](docs/VaultApi.md#operationVaultListcredentialpassword) | **GET** /vault/{vaultId}/credential/password | /credential/password
-*HyperOneApi.VaultApi* | [**operationVaultListqueue**](docs/VaultApi.md#operationVaultListqueue) | **GET** /vault/{vaultId}/queue/ | /queue/
-*HyperOneApi.VaultApi* | [**operationVaultListservices**](docs/VaultApi.md#operationVaultListservices) | **GET** /vault/{vaultId}/services/ | /services/
-*HyperOneApi.VaultApi* | [**operationVaultPatchcredentialcertificateId**](docs/VaultApi.md#operationVaultPatchcredentialcertificateId) | **PATCH** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
-*HyperOneApi.VaultApi* | [**operationVaultPatchcredentialpasswordId**](docs/VaultApi.md#operationVaultPatchcredentialpasswordId) | **PATCH** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
-*HyperOneApi.VaultApi* | [**operationVaultPatchtag**](docs/VaultApi.md#operationVaultPatchtag) | **PATCH** /vault/{vaultId}/tag/ | /tag/
-*HyperOneApi.VaultApi* | [**operationVaultPostaccessrights**](docs/VaultApi.md#operationVaultPostaccessrights) | **POST** /vault/{vaultId}/accessrights/ | /accessrights/
-*HyperOneApi.VaultApi* | [**operationVaultPostcredentialcertificate**](docs/VaultApi.md#operationVaultPostcredentialcertificate) | **POST** /vault/{vaultId}/credential/certificate | /credential/certificate
-*HyperOneApi.VaultApi* | [**operationVaultPostcredentialpassword**](docs/VaultApi.md#operationVaultPostcredentialpassword) | **POST** /vault/{vaultId}/credential/password | /credential/password
-*HyperOneApi.VaultApi* | [**showVault**](docs/VaultApi.md#showVault) | **GET** /vault/{vaultId} | Get
-*HyperOneApi.VaultApi* | [**updateVault**](docs/VaultApi.md#updateVault) | **PATCH** /vault/{vaultId} | Update
-*HyperOneApi.VmApi* | [**actionVmFlavour**](docs/VmApi.md#actionVmFlavour) | **POST** /vm/{vmId}/actions/flavour | /actions/flavour
-*HyperOneApi.VmApi* | [**actionVmImage**](docs/VmApi.md#actionVmImage) | **POST** /vm/{vmId}/actions/image | /actions/image
-*HyperOneApi.VmApi* | [**actionVmPasswordReset**](docs/VmApi.md#actionVmPasswordReset) | **POST** /vm/{vmId}/actions/password_reset | /actions/password_reset
-*HyperOneApi.VmApi* | [**actionVmRename**](docs/VmApi.md#actionVmRename) | **POST** /vm/{vmId}/actions/rename | /actions/rename
-*HyperOneApi.VmApi* | [**actionVmRestart**](docs/VmApi.md#actionVmRestart) | **POST** /vm/{vmId}/actions/restart | /actions/restart
-*HyperOneApi.VmApi* | [**actionVmStart**](docs/VmApi.md#actionVmStart) | **POST** /vm/{vmId}/actions/start | /actions/start
-*HyperOneApi.VmApi* | [**actionVmStop**](docs/VmApi.md#actionVmStop) | **POST** /vm/{vmId}/actions/stop | /actions/stop
-*HyperOneApi.VmApi* | [**actionVmTurnoff**](docs/VmApi.md#actionVmTurnoff) | **POST** /vm/{vmId}/actions/turnoff | /actions/turnoff
-*HyperOneApi.VmApi* | [**createVm**](docs/VmApi.md#createVm) | **POST** /vm | Create
-*HyperOneApi.VmApi* | [**deleteVm**](docs/VmApi.md#deleteVm) | **DELETE** /vm/{vmId} | Delete
-*HyperOneApi.VmApi* | [**listVm**](docs/VmApi.md#listVm) | **GET** /vm | List
-*HyperOneApi.VmApi* | [**operationVmDeleteaccessrightsIdentity**](docs/VmApi.md#operationVmDeleteaccessrightsIdentity) | **DELETE** /vm/{vmId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.VmApi* | [**operationVmDeletehddDiskId**](docs/VmApi.md#operationVmDeletehddDiskId) | **DELETE** /vm/{vmId}/hdd/{diskId} | /hdd/:diskId
-*HyperOneApi.VmApi* | [**operationVmDeletenetadp**](docs/VmApi.md#operationVmDeletenetadp) | **DELETE** /vm/{vmId}/netadp | /netadp
-*HyperOneApi.VmApi* | [**operationVmDeletetagKey**](docs/VmApi.md#operationVmDeletetagKey) | **DELETE** /vm/{vmId}/tag/{key} | /tag/:key
-*HyperOneApi.VmApi* | [**operationVmGetservicesServiceId**](docs/VmApi.md#operationVmGetservicesServiceId) | **GET** /vm/{vmId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.VmApi* | [**operationVmGettag**](docs/VmApi.md#operationVmGettag) | **GET** /vm/{vmId}/tag/ | /tag/
-*HyperOneApi.VmApi* | [**operationVmListaccessrights**](docs/VmApi.md#operationVmListaccessrights) | **GET** /vm/{vmId}/accessrights/ | /accessrights/
-*HyperOneApi.VmApi* | [**operationVmListhdd**](docs/VmApi.md#operationVmListhdd) | **GET** /vm/{vmId}/hdd | /hdd
-*HyperOneApi.VmApi* | [**operationVmListnetadp**](docs/VmApi.md#operationVmListnetadp) | **GET** /vm/{vmId}/netadp | /netadp
-*HyperOneApi.VmApi* | [**operationVmListqueue**](docs/VmApi.md#operationVmListqueue) | **GET** /vm/{vmId}/queue/ | /queue/
-*HyperOneApi.VmApi* | [**operationVmListservices**](docs/VmApi.md#operationVmListservices) | **GET** /vm/{vmId}/services/ | /services/
-*HyperOneApi.VmApi* | [**operationVmPatchtag**](docs/VmApi.md#operationVmPatchtag) | **PATCH** /vm/{vmId}/tag/ | /tag/
-*HyperOneApi.VmApi* | [**operationVmPostaccessrights**](docs/VmApi.md#operationVmPostaccessrights) | **POST** /vm/{vmId}/accessrights/ | /accessrights/
-*HyperOneApi.VmApi* | [**operationVmPosthdd**](docs/VmApi.md#operationVmPosthdd) | **POST** /vm/{vmId}/hdd | /hdd
-*HyperOneApi.VmApi* | [**operationVmPostnetadp**](docs/VmApi.md#operationVmPostnetadp) | **POST** /vm/{vmId}/netadp | /netadp
-*HyperOneApi.VmApi* | [**showVm**](docs/VmApi.md#showVm) | **GET** /vm/{vmId} | Get
-*HyperOneApi.VmApi* | [**updateVm**](docs/VmApi.md#updateVm) | **PATCH** /vm/{vmId} | Update
-*HyperOneApi.VmhostApi* | [**actionVmhostMoveDisk**](docs/VmhostApi.md#actionVmhostMoveDisk) | **POST** /vmhost/{vmhostId}/actions/moveDisk | /actions/moveDisk
-*HyperOneApi.VmhostApi* | [**actionVmhostMoveISO**](docs/VmhostApi.md#actionVmhostMoveISO) | **POST** /vmhost/{vmhostId}/actions/moveISO | /actions/moveISO
-*HyperOneApi.VmhostApi* | [**actionVmhostMoveImage**](docs/VmhostApi.md#actionVmhostMoveImage) | **POST** /vmhost/{vmhostId}/actions/moveImage | /actions/moveImage
-*HyperOneApi.VmhostApi* | [**actionVmhostMoveVM**](docs/VmhostApi.md#actionVmhostMoveVM) | **POST** /vmhost/{vmhostId}/actions/moveVM | /actions/moveVM
-*HyperOneApi.VmhostApi* | [**deleteVmhost**](docs/VmhostApi.md#deleteVmhost) | **DELETE** /vmhost/{vmhostId} | Delete
-*HyperOneApi.VmhostApi* | [**listVmhost**](docs/VmhostApi.md#listVmhost) | **GET** /vmhost | List
-*HyperOneApi.VmhostApi* | [**operationVmhostDeleteaccessrightsIdentity**](docs/VmhostApi.md#operationVmhostDeleteaccessrightsIdentity) | **DELETE** /vmhost/{vmhostId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.VmhostApi* | [**operationVmhostDeletetagKey**](docs/VmhostApi.md#operationVmhostDeletetagKey) | **DELETE** /vmhost/{vmhostId}/tag/{key} | /tag/:key
-*HyperOneApi.VmhostApi* | [**operationVmhostGetservicesServiceId**](docs/VmhostApi.md#operationVmhostGetservicesServiceId) | **GET** /vmhost/{vmhostId}/services/{serviceId} | /services/:serviceId
-*HyperOneApi.VmhostApi* | [**operationVmhostGettag**](docs/VmhostApi.md#operationVmhostGettag) | **GET** /vmhost/{vmhostId}/tag/ | /tag/
-*HyperOneApi.VmhostApi* | [**operationVmhostListaccessrights**](docs/VmhostApi.md#operationVmhostListaccessrights) | **GET** /vmhost/{vmhostId}/accessrights/ | /accessrights/
-*HyperOneApi.VmhostApi* | [**operationVmhostListqueue**](docs/VmhostApi.md#operationVmhostListqueue) | **GET** /vmhost/{vmhostId}/queue/ | /queue/
-*HyperOneApi.VmhostApi* | [**operationVmhostListservices**](docs/VmhostApi.md#operationVmhostListservices) | **GET** /vmhost/{vmhostId}/services/ | /services/
-*HyperOneApi.VmhostApi* | [**operationVmhostPatchtag**](docs/VmhostApi.md#operationVmhostPatchtag) | **PATCH** /vmhost/{vmhostId}/tag/ | /tag/
-*HyperOneApi.VmhostApi* | [**operationVmhostPostaccessrights**](docs/VmhostApi.md#operationVmhostPostaccessrights) | **POST** /vmhost/{vmhostId}/accessrights/ | /accessrights/
-*HyperOneApi.VmhostApi* | [**showVmhost**](docs/VmhostApi.md#showVmhost) | **GET** /vmhost/{vmhostId} | Get
-*HyperOneApi.VmhostApi* | [**updateVmhost**](docs/VmhostApi.md#updateVmhost) | **PATCH** /vmhost/{vmhostId} | Update
+*HyperOneApi.ContainerApi* | [**containerActionRestart**](docs/ContainerApi.md#containerActionRestart) | **POST** /container/{containerId}/actions/restart | /actions/restart
+*HyperOneApi.ContainerApi* | [**containerActionStart**](docs/ContainerApi.md#containerActionStart) | **POST** /container/{containerId}/actions/start | /actions/start
+*HyperOneApi.ContainerApi* | [**containerActionStop**](docs/ContainerApi.md#containerActionStop) | **POST** /container/{containerId}/actions/stop | /actions/stop
+*HyperOneApi.ContainerApi* | [**containerCreate**](docs/ContainerApi.md#containerCreate) | **POST** /container | Create
+*HyperOneApi.ContainerApi* | [**containerDelete**](docs/ContainerApi.md#containerDelete) | **DELETE** /container/{containerId} | Delete
+*HyperOneApi.ContainerApi* | [**containerDeleteAccessrightsIdentity**](docs/ContainerApi.md#containerDeleteAccessrightsIdentity) | **DELETE** /container/{containerId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.ContainerApi* | [**containerDeleteTagKey**](docs/ContainerApi.md#containerDeleteTagKey) | **DELETE** /container/{containerId}/tag/{key} | /tag/:key
+*HyperOneApi.ContainerApi* | [**containerGetServicesServiceId**](docs/ContainerApi.md#containerGetServicesServiceId) | **GET** /container/{containerId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.ContainerApi* | [**containerGetTag**](docs/ContainerApi.md#containerGetTag) | **GET** /container/{containerId}/tag | /tag
+*HyperOneApi.ContainerApi* | [**containerList**](docs/ContainerApi.md#containerList) | **GET** /container | List
+*HyperOneApi.ContainerApi* | [**containerListAccessrights**](docs/ContainerApi.md#containerListAccessrights) | **GET** /container/{containerId}/accessrights | /accessrights
+*HyperOneApi.ContainerApi* | [**containerListQueue**](docs/ContainerApi.md#containerListQueue) | **GET** /container/{containerId}/queue | /queue
+*HyperOneApi.ContainerApi* | [**containerListServices**](docs/ContainerApi.md#containerListServices) | **GET** /container/{containerId}/services | /services
+*HyperOneApi.ContainerApi* | [**containerPatchTag**](docs/ContainerApi.md#containerPatchTag) | **PATCH** /container/{containerId}/tag | /tag
+*HyperOneApi.ContainerApi* | [**containerPostAccessrights**](docs/ContainerApi.md#containerPostAccessrights) | **POST** /container/{containerId}/accessrights | /accessrights
+*HyperOneApi.ContainerApi* | [**containerShow**](docs/ContainerApi.md#containerShow) | **GET** /container/{containerId} | Get
+*HyperOneApi.ContainerApi* | [**containerUpdate**](docs/ContainerApi.md#containerUpdate) | **PATCH** /container/{containerId} | Update
+*HyperOneApi.DiskApi* | [**diskActionResize**](docs/DiskApi.md#diskActionResize) | **POST** /disk/{diskId}/actions/resize | /actions/resize
+*HyperOneApi.DiskApi* | [**diskActionTransfer**](docs/DiskApi.md#diskActionTransfer) | **POST** /disk/{diskId}/actions/transfer | /actions/transfer
+*HyperOneApi.DiskApi* | [**diskCreate**](docs/DiskApi.md#diskCreate) | **POST** /disk | Create
+*HyperOneApi.DiskApi* | [**diskDelete**](docs/DiskApi.md#diskDelete) | **DELETE** /disk/{diskId} | Delete
+*HyperOneApi.DiskApi* | [**diskDeleteAccessrightsIdentity**](docs/DiskApi.md#diskDeleteAccessrightsIdentity) | **DELETE** /disk/{diskId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.DiskApi* | [**diskDeleteTagKey**](docs/DiskApi.md#diskDeleteTagKey) | **DELETE** /disk/{diskId}/tag/{key} | /tag/:key
+*HyperOneApi.DiskApi* | [**diskGetServicesServiceId**](docs/DiskApi.md#diskGetServicesServiceId) | **GET** /disk/{diskId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.DiskApi* | [**diskGetTag**](docs/DiskApi.md#diskGetTag) | **GET** /disk/{diskId}/tag | /tag
+*HyperOneApi.DiskApi* | [**diskList**](docs/DiskApi.md#diskList) | **GET** /disk | List
+*HyperOneApi.DiskApi* | [**diskListAccessrights**](docs/DiskApi.md#diskListAccessrights) | **GET** /disk/{diskId}/accessrights | /accessrights
+*HyperOneApi.DiskApi* | [**diskListQueue**](docs/DiskApi.md#diskListQueue) | **GET** /disk/{diskId}/queue | /queue
+*HyperOneApi.DiskApi* | [**diskListServices**](docs/DiskApi.md#diskListServices) | **GET** /disk/{diskId}/services | /services
+*HyperOneApi.DiskApi* | [**diskPatchTag**](docs/DiskApi.md#diskPatchTag) | **PATCH** /disk/{diskId}/tag | /tag
+*HyperOneApi.DiskApi* | [**diskPostAccessrights**](docs/DiskApi.md#diskPostAccessrights) | **POST** /disk/{diskId}/accessrights | /accessrights
+*HyperOneApi.DiskApi* | [**diskShow**](docs/DiskApi.md#diskShow) | **GET** /disk/{diskId} | Get
+*HyperOneApi.DiskApi* | [**diskUpdate**](docs/DiskApi.md#diskUpdate) | **PATCH** /disk/{diskId} | Update
+*HyperOneApi.FirewallApi* | [**firewallActionAttach**](docs/FirewallApi.md#firewallActionAttach) | **POST** /firewall/{firewallId}/actions/attach | /actions/attach
+*HyperOneApi.FirewallApi* | [**firewallActionDetach**](docs/FirewallApi.md#firewallActionDetach) | **POST** /firewall/{firewallId}/actions/detach | /actions/detach
+*HyperOneApi.FirewallApi* | [**firewallActionTransfer**](docs/FirewallApi.md#firewallActionTransfer) | **POST** /firewall/{firewallId}/actions/transfer | /actions/transfer
+*HyperOneApi.FirewallApi* | [**firewallCreate**](docs/FirewallApi.md#firewallCreate) | **POST** /firewall | Create
+*HyperOneApi.FirewallApi* | [**firewallDelete**](docs/FirewallApi.md#firewallDelete) | **DELETE** /firewall/{firewallId} | Delete
+*HyperOneApi.FirewallApi* | [**firewallDeleteAccessrightsIdentity**](docs/FirewallApi.md#firewallDeleteAccessrightsIdentity) | **DELETE** /firewall/{firewallId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.FirewallApi* | [**firewallDeleteEgressRuleId**](docs/FirewallApi.md#firewallDeleteEgressRuleId) | **DELETE** /firewall/{firewallId}/egress/{ruleId} | /egress/:ruleId
+*HyperOneApi.FirewallApi* | [**firewallDeleteIngressRuleId**](docs/FirewallApi.md#firewallDeleteIngressRuleId) | **DELETE** /firewall/{firewallId}/ingress/{ruleId} | /ingress/:ruleId
+*HyperOneApi.FirewallApi* | [**firewallDeleteTagKey**](docs/FirewallApi.md#firewallDeleteTagKey) | **DELETE** /firewall/{firewallId}/tag/{key} | /tag/:key
+*HyperOneApi.FirewallApi* | [**firewallGetEgressRuleId**](docs/FirewallApi.md#firewallGetEgressRuleId) | **GET** /firewall/{firewallId}/egress/{ruleId} | /egress/:ruleId
+*HyperOneApi.FirewallApi* | [**firewallGetIngressRuleId**](docs/FirewallApi.md#firewallGetIngressRuleId) | **GET** /firewall/{firewallId}/ingress/{ruleId} | /ingress/:ruleId
+*HyperOneApi.FirewallApi* | [**firewallGetServicesServiceId**](docs/FirewallApi.md#firewallGetServicesServiceId) | **GET** /firewall/{firewallId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.FirewallApi* | [**firewallGetTag**](docs/FirewallApi.md#firewallGetTag) | **GET** /firewall/{firewallId}/tag | /tag
+*HyperOneApi.FirewallApi* | [**firewallList**](docs/FirewallApi.md#firewallList) | **GET** /firewall | List
+*HyperOneApi.FirewallApi* | [**firewallListAccessrights**](docs/FirewallApi.md#firewallListAccessrights) | **GET** /firewall/{firewallId}/accessrights | /accessrights
+*HyperOneApi.FirewallApi* | [**firewallListEgress**](docs/FirewallApi.md#firewallListEgress) | **GET** /firewall/{firewallId}/egress | /egress
+*HyperOneApi.FirewallApi* | [**firewallListIngress**](docs/FirewallApi.md#firewallListIngress) | **GET** /firewall/{firewallId}/ingress | /ingress
+*HyperOneApi.FirewallApi* | [**firewallListQueue**](docs/FirewallApi.md#firewallListQueue) | **GET** /firewall/{firewallId}/queue | /queue
+*HyperOneApi.FirewallApi* | [**firewallListServices**](docs/FirewallApi.md#firewallListServices) | **GET** /firewall/{firewallId}/services | /services
+*HyperOneApi.FirewallApi* | [**firewallPatchTag**](docs/FirewallApi.md#firewallPatchTag) | **PATCH** /firewall/{firewallId}/tag | /tag
+*HyperOneApi.FirewallApi* | [**firewallPostAccessrights**](docs/FirewallApi.md#firewallPostAccessrights) | **POST** /firewall/{firewallId}/accessrights | /accessrights
+*HyperOneApi.FirewallApi* | [**firewallPostEgress**](docs/FirewallApi.md#firewallPostEgress) | **POST** /firewall/{firewallId}/egress | /egress
+*HyperOneApi.FirewallApi* | [**firewallPostIngress**](docs/FirewallApi.md#firewallPostIngress) | **POST** /firewall/{firewallId}/ingress | /ingress
+*HyperOneApi.FirewallApi* | [**firewallShow**](docs/FirewallApi.md#firewallShow) | **GET** /firewall/{firewallId} | Get
+*HyperOneApi.FirewallApi* | [**firewallUpdate**](docs/FirewallApi.md#firewallUpdate) | **PATCH** /firewall/{firewallId} | Update
+*HyperOneApi.ImageApi* | [**imageActionTransfer**](docs/ImageApi.md#imageActionTransfer) | **POST** /image/{imageId}/actions/transfer | /actions/transfer
+*HyperOneApi.ImageApi* | [**imageCreate**](docs/ImageApi.md#imageCreate) | **POST** /image | Create
+*HyperOneApi.ImageApi* | [**imageDelete**](docs/ImageApi.md#imageDelete) | **DELETE** /image/{imageId} | Delete
+*HyperOneApi.ImageApi* | [**imageDeleteAccessrightsIdentity**](docs/ImageApi.md#imageDeleteAccessrightsIdentity) | **DELETE** /image/{imageId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.ImageApi* | [**imageDeleteTagKey**](docs/ImageApi.md#imageDeleteTagKey) | **DELETE** /image/{imageId}/tag/{key} | /tag/:key
+*HyperOneApi.ImageApi* | [**imageGetServicesServiceId**](docs/ImageApi.md#imageGetServicesServiceId) | **GET** /image/{imageId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.ImageApi* | [**imageGetTag**](docs/ImageApi.md#imageGetTag) | **GET** /image/{imageId}/tag | /tag
+*HyperOneApi.ImageApi* | [**imageList**](docs/ImageApi.md#imageList) | **GET** /image | List
+*HyperOneApi.ImageApi* | [**imageListAccessrights**](docs/ImageApi.md#imageListAccessrights) | **GET** /image/{imageId}/accessrights | /accessrights
+*HyperOneApi.ImageApi* | [**imageListQueue**](docs/ImageApi.md#imageListQueue) | **GET** /image/{imageId}/queue | /queue
+*HyperOneApi.ImageApi* | [**imageListServices**](docs/ImageApi.md#imageListServices) | **GET** /image/{imageId}/services | /services
+*HyperOneApi.ImageApi* | [**imagePatchTag**](docs/ImageApi.md#imagePatchTag) | **PATCH** /image/{imageId}/tag | /tag
+*HyperOneApi.ImageApi* | [**imagePostAccessrights**](docs/ImageApi.md#imagePostAccessrights) | **POST** /image/{imageId}/accessrights | /accessrights
+*HyperOneApi.ImageApi* | [**imageShow**](docs/ImageApi.md#imageShow) | **GET** /image/{imageId} | Get
+*HyperOneApi.ImageApi* | [**imageUpdate**](docs/ImageApi.md#imageUpdate) | **PATCH** /image/{imageId} | Update
+*HyperOneApi.IpApi* | [**ipActionAllocate**](docs/IpApi.md#ipActionAllocate) | **POST** /ip/{ipId}/actions/allocate | /actions/allocate
+*HyperOneApi.IpApi* | [**ipActionAssociate**](docs/IpApi.md#ipActionAssociate) | **POST** /ip/{ipId}/actions/associate | /actions/associate
+*HyperOneApi.IpApi* | [**ipActionDisassociate**](docs/IpApi.md#ipActionDisassociate) | **POST** /ip/{ipId}/actions/disassociate | /actions/disassociate
+*HyperOneApi.IpApi* | [**ipActionRelease**](docs/IpApi.md#ipActionRelease) | **POST** /ip/{ipId}/actions/release | /actions/release
+*HyperOneApi.IpApi* | [**ipActionTransfer**](docs/IpApi.md#ipActionTransfer) | **POST** /ip/{ipId}/actions/transfer | /actions/transfer
+*HyperOneApi.IpApi* | [**ipCreate**](docs/IpApi.md#ipCreate) | **POST** /ip | Create
+*HyperOneApi.IpApi* | [**ipDelete**](docs/IpApi.md#ipDelete) | **DELETE** /ip/{ipId} | Delete
+*HyperOneApi.IpApi* | [**ipDeleteAccessrightsIdentity**](docs/IpApi.md#ipDeleteAccessrightsIdentity) | **DELETE** /ip/{ipId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.IpApi* | [**ipDeleteTagKey**](docs/IpApi.md#ipDeleteTagKey) | **DELETE** /ip/{ipId}/tag/{key} | /tag/:key
+*HyperOneApi.IpApi* | [**ipGetServicesServiceId**](docs/IpApi.md#ipGetServicesServiceId) | **GET** /ip/{ipId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.IpApi* | [**ipGetTag**](docs/IpApi.md#ipGetTag) | **GET** /ip/{ipId}/tag | /tag
+*HyperOneApi.IpApi* | [**ipList**](docs/IpApi.md#ipList) | **GET** /ip | List
+*HyperOneApi.IpApi* | [**ipListAccessrights**](docs/IpApi.md#ipListAccessrights) | **GET** /ip/{ipId}/accessrights | /accessrights
+*HyperOneApi.IpApi* | [**ipListQueue**](docs/IpApi.md#ipListQueue) | **GET** /ip/{ipId}/queue | /queue
+*HyperOneApi.IpApi* | [**ipListServices**](docs/IpApi.md#ipListServices) | **GET** /ip/{ipId}/services | /services
+*HyperOneApi.IpApi* | [**ipPatchTag**](docs/IpApi.md#ipPatchTag) | **PATCH** /ip/{ipId}/tag | /tag
+*HyperOneApi.IpApi* | [**ipPostAccessrights**](docs/IpApi.md#ipPostAccessrights) | **POST** /ip/{ipId}/accessrights | /accessrights
+*HyperOneApi.IpApi* | [**ipShow**](docs/IpApi.md#ipShow) | **GET** /ip/{ipId} | Get
+*HyperOneApi.IpApi* | [**ipUpdate**](docs/IpApi.md#ipUpdate) | **PATCH** /ip/{ipId} | Update
+*HyperOneApi.IsoApi* | [**isoActionTransfer**](docs/IsoApi.md#isoActionTransfer) | **POST** /iso/{isoId}/actions/transfer | /actions/transfer
+*HyperOneApi.IsoApi* | [**isoCreate**](docs/IsoApi.md#isoCreate) | **POST** /iso | Create
+*HyperOneApi.IsoApi* | [**isoDelete**](docs/IsoApi.md#isoDelete) | **DELETE** /iso/{isoId} | Delete
+*HyperOneApi.IsoApi* | [**isoDeleteAccessrightsIdentity**](docs/IsoApi.md#isoDeleteAccessrightsIdentity) | **DELETE** /iso/{isoId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.IsoApi* | [**isoDeleteTagKey**](docs/IsoApi.md#isoDeleteTagKey) | **DELETE** /iso/{isoId}/tag/{key} | /tag/:key
+*HyperOneApi.IsoApi* | [**isoGetServicesServiceId**](docs/IsoApi.md#isoGetServicesServiceId) | **GET** /iso/{isoId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.IsoApi* | [**isoGetTag**](docs/IsoApi.md#isoGetTag) | **GET** /iso/{isoId}/tag | /tag
+*HyperOneApi.IsoApi* | [**isoList**](docs/IsoApi.md#isoList) | **GET** /iso | List
+*HyperOneApi.IsoApi* | [**isoListAccessrights**](docs/IsoApi.md#isoListAccessrights) | **GET** /iso/{isoId}/accessrights | /accessrights
+*HyperOneApi.IsoApi* | [**isoListQueue**](docs/IsoApi.md#isoListQueue) | **GET** /iso/{isoId}/queue | /queue
+*HyperOneApi.IsoApi* | [**isoListServices**](docs/IsoApi.md#isoListServices) | **GET** /iso/{isoId}/services | /services
+*HyperOneApi.IsoApi* | [**isoPatchTag**](docs/IsoApi.md#isoPatchTag) | **PATCH** /iso/{isoId}/tag | /tag
+*HyperOneApi.IsoApi* | [**isoPostAccessrights**](docs/IsoApi.md#isoPostAccessrights) | **POST** /iso/{isoId}/accessrights | /accessrights
+*HyperOneApi.IsoApi* | [**isoShow**](docs/IsoApi.md#isoShow) | **GET** /iso/{isoId} | Get
+*HyperOneApi.IsoApi* | [**isoUpdate**](docs/IsoApi.md#isoUpdate) | **PATCH** /iso/{isoId} | Update
+*HyperOneApi.LogArchiveApi* | [**logArchiveActionTransfer**](docs/LogArchiveApi.md#logArchiveActionTransfer) | **POST** /logArchive/{logArchiveId}/actions/transfer | /actions/transfer
+*HyperOneApi.LogArchiveApi* | [**logArchiveCreate**](docs/LogArchiveApi.md#logArchiveCreate) | **POST** /logArchive | Create
+*HyperOneApi.LogArchiveApi* | [**logArchiveDelete**](docs/LogArchiveApi.md#logArchiveDelete) | **DELETE** /logArchive/{logArchiveId} | Delete
+*HyperOneApi.LogArchiveApi* | [**logArchiveDeleteAccessrightsIdentity**](docs/LogArchiveApi.md#logArchiveDeleteAccessrightsIdentity) | **DELETE** /logArchive/{logArchiveId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.LogArchiveApi* | [**logArchiveDeleteCredentialcertificateId**](docs/LogArchiveApi.md#logArchiveDeleteCredentialcertificateId) | **DELETE** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
+*HyperOneApi.LogArchiveApi* | [**logArchiveDeleteCredentialpasswordId**](docs/LogArchiveApi.md#logArchiveDeleteCredentialpasswordId) | **DELETE** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
+*HyperOneApi.LogArchiveApi* | [**logArchiveDeleteTagKey**](docs/LogArchiveApi.md#logArchiveDeleteTagKey) | **DELETE** /logArchive/{logArchiveId}/tag/{key} | /tag/:key
+*HyperOneApi.LogArchiveApi* | [**logArchiveGetCredentialcertificateId**](docs/LogArchiveApi.md#logArchiveGetCredentialcertificateId) | **GET** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
+*HyperOneApi.LogArchiveApi* | [**logArchiveGetCredentialpasswordId**](docs/LogArchiveApi.md#logArchiveGetCredentialpasswordId) | **GET** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
+*HyperOneApi.LogArchiveApi* | [**logArchiveGetServicesServiceId**](docs/LogArchiveApi.md#logArchiveGetServicesServiceId) | **GET** /logArchive/{logArchiveId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.LogArchiveApi* | [**logArchiveGetTag**](docs/LogArchiveApi.md#logArchiveGetTag) | **GET** /logArchive/{logArchiveId}/tag | /tag
+*HyperOneApi.LogArchiveApi* | [**logArchiveList**](docs/LogArchiveApi.md#logArchiveList) | **GET** /logArchive | List
+*HyperOneApi.LogArchiveApi* | [**logArchiveListAccessrights**](docs/LogArchiveApi.md#logArchiveListAccessrights) | **GET** /logArchive/{logArchiveId}/accessrights | /accessrights
+*HyperOneApi.LogArchiveApi* | [**logArchiveListCredentialcertificate**](docs/LogArchiveApi.md#logArchiveListCredentialcertificate) | **GET** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
+*HyperOneApi.LogArchiveApi* | [**logArchiveListCredentialpassword**](docs/LogArchiveApi.md#logArchiveListCredentialpassword) | **GET** /logArchive/{logArchiveId}/credential/password | /credential/password
+*HyperOneApi.LogArchiveApi* | [**logArchiveListQueue**](docs/LogArchiveApi.md#logArchiveListQueue) | **GET** /logArchive/{logArchiveId}/queue | /queue
+*HyperOneApi.LogArchiveApi* | [**logArchiveListServices**](docs/LogArchiveApi.md#logArchiveListServices) | **GET** /logArchive/{logArchiveId}/services | /services
+*HyperOneApi.LogArchiveApi* | [**logArchivePatchCredentialcertificateId**](docs/LogArchiveApi.md#logArchivePatchCredentialcertificateId) | **PATCH** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
+*HyperOneApi.LogArchiveApi* | [**logArchivePatchCredentialpasswordId**](docs/LogArchiveApi.md#logArchivePatchCredentialpasswordId) | **PATCH** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
+*HyperOneApi.LogArchiveApi* | [**logArchivePatchTag**](docs/LogArchiveApi.md#logArchivePatchTag) | **PATCH** /logArchive/{logArchiveId}/tag | /tag
+*HyperOneApi.LogArchiveApi* | [**logArchivePostAccessrights**](docs/LogArchiveApi.md#logArchivePostAccessrights) | **POST** /logArchive/{logArchiveId}/accessrights | /accessrights
+*HyperOneApi.LogArchiveApi* | [**logArchivePostCredentialcertificate**](docs/LogArchiveApi.md#logArchivePostCredentialcertificate) | **POST** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
+*HyperOneApi.LogArchiveApi* | [**logArchivePostCredentialpassword**](docs/LogArchiveApi.md#logArchivePostCredentialpassword) | **POST** /logArchive/{logArchiveId}/credential/password | /credential/password
+*HyperOneApi.LogArchiveApi* | [**logArchiveShow**](docs/LogArchiveApi.md#logArchiveShow) | **GET** /logArchive/{logArchiveId} | Get
+*HyperOneApi.LogArchiveApi* | [**logArchiveUpdate**](docs/LogArchiveApi.md#logArchiveUpdate) | **PATCH** /logArchive/{logArchiveId} | Update
+*HyperOneApi.NetadpApi* | [**netadpDeleteAccessrightsIdentity**](docs/NetadpApi.md#netadpDeleteAccessrightsIdentity) | **DELETE** /netadp/{netadpId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.NetadpApi* | [**netadpDeleteTagKey**](docs/NetadpApi.md#netadpDeleteTagKey) | **DELETE** /netadp/{netadpId}/tag/{key} | /tag/:key
+*HyperOneApi.NetadpApi* | [**netadpGetServicesServiceId**](docs/NetadpApi.md#netadpGetServicesServiceId) | **GET** /netadp/{netadpId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.NetadpApi* | [**netadpGetTag**](docs/NetadpApi.md#netadpGetTag) | **GET** /netadp/{netadpId}/tag | /tag
+*HyperOneApi.NetadpApi* | [**netadpList**](docs/NetadpApi.md#netadpList) | **GET** /netadp | List
+*HyperOneApi.NetadpApi* | [**netadpListAccessrights**](docs/NetadpApi.md#netadpListAccessrights) | **GET** /netadp/{netadpId}/accessrights | /accessrights
+*HyperOneApi.NetadpApi* | [**netadpListQueue**](docs/NetadpApi.md#netadpListQueue) | **GET** /netadp/{netadpId}/queue | /queue
+*HyperOneApi.NetadpApi* | [**netadpListServices**](docs/NetadpApi.md#netadpListServices) | **GET** /netadp/{netadpId}/services | /services
+*HyperOneApi.NetadpApi* | [**netadpPatchTag**](docs/NetadpApi.md#netadpPatchTag) | **PATCH** /netadp/{netadpId}/tag | /tag
+*HyperOneApi.NetadpApi* | [**netadpPostAccessrights**](docs/NetadpApi.md#netadpPostAccessrights) | **POST** /netadp/{netadpId}/accessrights | /accessrights
+*HyperOneApi.NetadpApi* | [**netadpShow**](docs/NetadpApi.md#netadpShow) | **GET** /netadp/{netadpId} | Get
+*HyperOneApi.NetgwApi* | [**netgwActionAttach**](docs/NetgwApi.md#netgwActionAttach) | **POST** /netgw/{netgwId}/actions/attach | /actions/attach
+*HyperOneApi.NetgwApi* | [**netgwActionDetach**](docs/NetgwApi.md#netgwActionDetach) | **POST** /netgw/{netgwId}/actions/detach | /actions/detach
+*HyperOneApi.NetgwApi* | [**netgwCreate**](docs/NetgwApi.md#netgwCreate) | **POST** /netgw | Create
+*HyperOneApi.NetgwApi* | [**netgwDelete**](docs/NetgwApi.md#netgwDelete) | **DELETE** /netgw/{netgwId} | Delete
+*HyperOneApi.NetgwApi* | [**netgwDeleteAccessrightsIdentity**](docs/NetgwApi.md#netgwDeleteAccessrightsIdentity) | **DELETE** /netgw/{netgwId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.NetgwApi* | [**netgwDeleteTagKey**](docs/NetgwApi.md#netgwDeleteTagKey) | **DELETE** /netgw/{netgwId}/tag/{key} | /tag/:key
+*HyperOneApi.NetgwApi* | [**netgwGetServicesServiceId**](docs/NetgwApi.md#netgwGetServicesServiceId) | **GET** /netgw/{netgwId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.NetgwApi* | [**netgwGetTag**](docs/NetgwApi.md#netgwGetTag) | **GET** /netgw/{netgwId}/tag | /tag
+*HyperOneApi.NetgwApi* | [**netgwList**](docs/NetgwApi.md#netgwList) | **GET** /netgw | List
+*HyperOneApi.NetgwApi* | [**netgwListAccessrights**](docs/NetgwApi.md#netgwListAccessrights) | **GET** /netgw/{netgwId}/accessrights | /accessrights
+*HyperOneApi.NetgwApi* | [**netgwListQueue**](docs/NetgwApi.md#netgwListQueue) | **GET** /netgw/{netgwId}/queue | /queue
+*HyperOneApi.NetgwApi* | [**netgwListServices**](docs/NetgwApi.md#netgwListServices) | **GET** /netgw/{netgwId}/services | /services
+*HyperOneApi.NetgwApi* | [**netgwPatchTag**](docs/NetgwApi.md#netgwPatchTag) | **PATCH** /netgw/{netgwId}/tag | /tag
+*HyperOneApi.NetgwApi* | [**netgwPostAccessrights**](docs/NetgwApi.md#netgwPostAccessrights) | **POST** /netgw/{netgwId}/accessrights | /accessrights
+*HyperOneApi.NetgwApi* | [**netgwShow**](docs/NetgwApi.md#netgwShow) | **GET** /netgw/{netgwId} | Get
+*HyperOneApi.NetgwApi* | [**netgwUpdate**](docs/NetgwApi.md#netgwUpdate) | **PATCH** /netgw/{netgwId} | Update
+*HyperOneApi.NetworkApi* | [**networkCreate**](docs/NetworkApi.md#networkCreate) | **POST** /network | Create
+*HyperOneApi.NetworkApi* | [**networkDelete**](docs/NetworkApi.md#networkDelete) | **DELETE** /network/{networkId} | Delete
+*HyperOneApi.NetworkApi* | [**networkDeleteAccessrightsIdentity**](docs/NetworkApi.md#networkDeleteAccessrightsIdentity) | **DELETE** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.NetworkApi* | [**networkDeleteIpIpId**](docs/NetworkApi.md#networkDeleteIpIpId) | **DELETE** /network/{networkId}/ip/:ipId | /ip/:ipId
+*HyperOneApi.NetworkApi* | [**networkDeleteTagKey**](docs/NetworkApi.md#networkDeleteTagKey) | **DELETE** /network/{networkId}/tag/{key} | /tag/:key
+*HyperOneApi.NetworkApi* | [**networkGetIpIpId**](docs/NetworkApi.md#networkGetIpIpId) | **GET** /network/{networkId}/ip/:ipId | /ip/:ipId
+*HyperOneApi.NetworkApi* | [**networkGetServicesServiceId**](docs/NetworkApi.md#networkGetServicesServiceId) | **GET** /network/{networkId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.NetworkApi* | [**networkGetTag**](docs/NetworkApi.md#networkGetTag) | **GET** /network/{networkId}/tag | /tag
+*HyperOneApi.NetworkApi* | [**networkList**](docs/NetworkApi.md#networkList) | **GET** /network | List
+*HyperOneApi.NetworkApi* | [**networkListAccessrights**](docs/NetworkApi.md#networkListAccessrights) | **GET** /network/{networkId}/accessrights | /accessrights
+*HyperOneApi.NetworkApi* | [**networkListIp**](docs/NetworkApi.md#networkListIp) | **GET** /network/{networkId}/ip | /ip
+*HyperOneApi.NetworkApi* | [**networkListQueue**](docs/NetworkApi.md#networkListQueue) | **GET** /network/{networkId}/queue | /queue
+*HyperOneApi.NetworkApi* | [**networkListServices**](docs/NetworkApi.md#networkListServices) | **GET** /network/{networkId}/services | /services
+*HyperOneApi.NetworkApi* | [**networkPatchTag**](docs/NetworkApi.md#networkPatchTag) | **PATCH** /network/{networkId}/tag | /tag
+*HyperOneApi.NetworkApi* | [**networkPostAccessrights**](docs/NetworkApi.md#networkPostAccessrights) | **POST** /network/{networkId}/accessrights | /accessrights
+*HyperOneApi.NetworkApi* | [**networkPostIp**](docs/NetworkApi.md#networkPostIp) | **POST** /network/{networkId}/ip | /ip
+*HyperOneApi.NetworkApi* | [**networkShow**](docs/NetworkApi.md#networkShow) | **GET** /network/{networkId} | Get
+*HyperOneApi.NetworkApi* | [**networkUpdate**](docs/NetworkApi.md#networkUpdate) | **PATCH** /network/{networkId} | Update
+*HyperOneApi.OrganisationApi* | [**organisationActionTransferAccept**](docs/OrganisationApi.md#organisationActionTransferAccept) | **POST** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
+*HyperOneApi.OrganisationApi* | [**organisationCreate**](docs/OrganisationApi.md#organisationCreate) | **POST** /organisation | Create
+*HyperOneApi.OrganisationApi* | [**organisationDeleteAccessrightsIdentity**](docs/OrganisationApi.md#organisationDeleteAccessrightsIdentity) | **DELETE** /organisation/{organisationId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.OrganisationApi* | [**organisationDeleteTagKey**](docs/OrganisationApi.md#organisationDeleteTagKey) | **DELETE** /organisation/{organisationId}/tag/{key} | /tag/:key
+*HyperOneApi.OrganisationApi* | [**organisationGetTag**](docs/OrganisationApi.md#organisationGetTag) | **GET** /organisation/{organisationId}/tag | /tag
+*HyperOneApi.OrganisationApi* | [**organisationList**](docs/OrganisationApi.md#organisationList) | **GET** /organisation | List
+*HyperOneApi.OrganisationApi* | [**organisationListAccessrights**](docs/OrganisationApi.md#organisationListAccessrights) | **GET** /organisation/{organisationId}/accessrights | /accessrights
+*HyperOneApi.OrganisationApi* | [**organisationListQueue**](docs/OrganisationApi.md#organisationListQueue) | **GET** /organisation/{organisationId}/queue | /queue
+*HyperOneApi.OrganisationApi* | [**organisationPatchTag**](docs/OrganisationApi.md#organisationPatchTag) | **PATCH** /organisation/{organisationId}/tag | /tag
+*HyperOneApi.OrganisationApi* | [**organisationPostAccessrights**](docs/OrganisationApi.md#organisationPostAccessrights) | **POST** /organisation/{organisationId}/accessrights | /accessrights
+*HyperOneApi.OrganisationApi* | [**organisationShow**](docs/OrganisationApi.md#organisationShow) | **GET** /organisation/{organisationId} | Get
+*HyperOneApi.OrganisationApi* | [**organisationUpdate**](docs/OrganisationApi.md#organisationUpdate) | **PATCH** /organisation/{organisationId} | Update
+*HyperOneApi.ProjectApi* | [**projectCreate**](docs/ProjectApi.md#projectCreate) | **POST** /project | Create
+*HyperOneApi.ProjectApi* | [**projectDeleteAccessrightsIdentity**](docs/ProjectApi.md#projectDeleteAccessrightsIdentity) | **DELETE** /project/{projectId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.ProjectApi* | [**projectDeleteTagKey**](docs/ProjectApi.md#projectDeleteTagKey) | **DELETE** /project/{projectId}/tag/{key} | /tag/:key
+*HyperOneApi.ProjectApi* | [**projectGetServicesServiceId**](docs/ProjectApi.md#projectGetServicesServiceId) | **GET** /project/{projectId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.ProjectApi* | [**projectGetTag**](docs/ProjectApi.md#projectGetTag) | **GET** /project/{projectId}/tag | /tag
+*HyperOneApi.ProjectApi* | [**projectList**](docs/ProjectApi.md#projectList) | **GET** /project | List
+*HyperOneApi.ProjectApi* | [**projectListAccessrights**](docs/ProjectApi.md#projectListAccessrights) | **GET** /project/{projectId}/accessrights | /accessrights
+*HyperOneApi.ProjectApi* | [**projectListQueue**](docs/ProjectApi.md#projectListQueue) | **GET** /project/{projectId}/queue | /queue
+*HyperOneApi.ProjectApi* | [**projectListServices**](docs/ProjectApi.md#projectListServices) | **GET** /project/{projectId}/services | /services
+*HyperOneApi.ProjectApi* | [**projectPatchTag**](docs/ProjectApi.md#projectPatchTag) | **PATCH** /project/{projectId}/tag | /tag
+*HyperOneApi.ProjectApi* | [**projectPostAccessrights**](docs/ProjectApi.md#projectPostAccessrights) | **POST** /project/{projectId}/accessrights | /accessrights
+*HyperOneApi.ProjectApi* | [**projectShow**](docs/ProjectApi.md#projectShow) | **GET** /project/{projectId} | Get
+*HyperOneApi.ProjectApi* | [**projectUpdate**](docs/ProjectApi.md#projectUpdate) | **PATCH** /project/{projectId} | Update
+*HyperOneApi.ReplicaApi* | [**replicaActionImage**](docs/ReplicaApi.md#replicaActionImage) | **POST** /replica/{replicaId}/actions/image | /actions/image
+*HyperOneApi.ReplicaApi* | [**replicaCreate**](docs/ReplicaApi.md#replicaCreate) | **POST** /replica | Create
+*HyperOneApi.ReplicaApi* | [**replicaDelete**](docs/ReplicaApi.md#replicaDelete) | **DELETE** /replica/{replicaId} | Delete
+*HyperOneApi.ReplicaApi* | [**replicaDeleteAccessrightsIdentity**](docs/ReplicaApi.md#replicaDeleteAccessrightsIdentity) | **DELETE** /replica/{replicaId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.ReplicaApi* | [**replicaDeleteTagKey**](docs/ReplicaApi.md#replicaDeleteTagKey) | **DELETE** /replica/{replicaId}/tag/{key} | /tag/:key
+*HyperOneApi.ReplicaApi* | [**replicaGetServicesServiceId**](docs/ReplicaApi.md#replicaGetServicesServiceId) | **GET** /replica/{replicaId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.ReplicaApi* | [**replicaGetTag**](docs/ReplicaApi.md#replicaGetTag) | **GET** /replica/{replicaId}/tag | /tag
+*HyperOneApi.ReplicaApi* | [**replicaList**](docs/ReplicaApi.md#replicaList) | **GET** /replica | List
+*HyperOneApi.ReplicaApi* | [**replicaListAccessrights**](docs/ReplicaApi.md#replicaListAccessrights) | **GET** /replica/{replicaId}/accessrights | /accessrights
+*HyperOneApi.ReplicaApi* | [**replicaListQueue**](docs/ReplicaApi.md#replicaListQueue) | **GET** /replica/{replicaId}/queue | /queue
+*HyperOneApi.ReplicaApi* | [**replicaListServices**](docs/ReplicaApi.md#replicaListServices) | **GET** /replica/{replicaId}/services | /services
+*HyperOneApi.ReplicaApi* | [**replicaPatchTag**](docs/ReplicaApi.md#replicaPatchTag) | **PATCH** /replica/{replicaId}/tag | /tag
+*HyperOneApi.ReplicaApi* | [**replicaPostAccessrights**](docs/ReplicaApi.md#replicaPostAccessrights) | **POST** /replica/{replicaId}/accessrights | /accessrights
+*HyperOneApi.ReplicaApi* | [**replicaShow**](docs/ReplicaApi.md#replicaShow) | **GET** /replica/{replicaId} | Get
+*HyperOneApi.ReservationApi* | [**reservationActionAssign**](docs/ReservationApi.md#reservationActionAssign) | **POST** /reservation/{reservationId}/actions/assign | /actions/assign
+*HyperOneApi.ReservationApi* | [**reservationActionExtend**](docs/ReservationApi.md#reservationActionExtend) | **POST** /reservation/{reservationId}/actions/extend | /actions/extend
+*HyperOneApi.ReservationApi* | [**reservationActionUnassign**](docs/ReservationApi.md#reservationActionUnassign) | **POST** /reservation/{reservationId}/actions/unassign | /actions/unassign
+*HyperOneApi.ReservationApi* | [**reservationCreate**](docs/ReservationApi.md#reservationCreate) | **POST** /reservation | Create
+*HyperOneApi.ReservationApi* | [**reservationDelete**](docs/ReservationApi.md#reservationDelete) | **DELETE** /reservation/{reservationId} | Delete
+*HyperOneApi.ReservationApi* | [**reservationDeleteAccessrightsIdentity**](docs/ReservationApi.md#reservationDeleteAccessrightsIdentity) | **DELETE** /reservation/{reservationId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.ReservationApi* | [**reservationDeleteTagKey**](docs/ReservationApi.md#reservationDeleteTagKey) | **DELETE** /reservation/{reservationId}/tag/{key} | /tag/:key
+*HyperOneApi.ReservationApi* | [**reservationGetServicesServiceId**](docs/ReservationApi.md#reservationGetServicesServiceId) | **GET** /reservation/{reservationId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.ReservationApi* | [**reservationGetTag**](docs/ReservationApi.md#reservationGetTag) | **GET** /reservation/{reservationId}/tag | /tag
+*HyperOneApi.ReservationApi* | [**reservationList**](docs/ReservationApi.md#reservationList) | **GET** /reservation | List
+*HyperOneApi.ReservationApi* | [**reservationListAccessrights**](docs/ReservationApi.md#reservationListAccessrights) | **GET** /reservation/{reservationId}/accessrights | /accessrights
+*HyperOneApi.ReservationApi* | [**reservationListQueue**](docs/ReservationApi.md#reservationListQueue) | **GET** /reservation/{reservationId}/queue | /queue
+*HyperOneApi.ReservationApi* | [**reservationListServices**](docs/ReservationApi.md#reservationListServices) | **GET** /reservation/{reservationId}/services | /services
+*HyperOneApi.ReservationApi* | [**reservationPatchTag**](docs/ReservationApi.md#reservationPatchTag) | **PATCH** /reservation/{reservationId}/tag | /tag
+*HyperOneApi.ReservationApi* | [**reservationPostAccessrights**](docs/ReservationApi.md#reservationPostAccessrights) | **POST** /reservation/{reservationId}/accessrights | /accessrights
+*HyperOneApi.ReservationApi* | [**reservationShow**](docs/ReservationApi.md#reservationShow) | **GET** /reservation/{reservationId} | Get
+*HyperOneApi.ReservationApi* | [**reservationUpdate**](docs/ReservationApi.md#reservationUpdate) | **PATCH** /reservation/{reservationId} | Update
+*HyperOneApi.SnapshotApi* | [**snapshotCreate**](docs/SnapshotApi.md#snapshotCreate) | **POST** /snapshot | Create
+*HyperOneApi.SnapshotApi* | [**snapshotDelete**](docs/SnapshotApi.md#snapshotDelete) | **DELETE** /snapshot/{snapshotId} | Delete
+*HyperOneApi.SnapshotApi* | [**snapshotDeleteAccessrightsIdentity**](docs/SnapshotApi.md#snapshotDeleteAccessrightsIdentity) | **DELETE** /snapshot/{snapshotId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.SnapshotApi* | [**snapshotDeleteTagKey**](docs/SnapshotApi.md#snapshotDeleteTagKey) | **DELETE** /snapshot/{snapshotId}/tag/{key} | /tag/:key
+*HyperOneApi.SnapshotApi* | [**snapshotGetServicesServiceId**](docs/SnapshotApi.md#snapshotGetServicesServiceId) | **GET** /snapshot/{snapshotId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.SnapshotApi* | [**snapshotGetTag**](docs/SnapshotApi.md#snapshotGetTag) | **GET** /snapshot/{snapshotId}/tag | /tag
+*HyperOneApi.SnapshotApi* | [**snapshotList**](docs/SnapshotApi.md#snapshotList) | **GET** /snapshot | List
+*HyperOneApi.SnapshotApi* | [**snapshotListAccessrights**](docs/SnapshotApi.md#snapshotListAccessrights) | **GET** /snapshot/{snapshotId}/accessrights | /accessrights
+*HyperOneApi.SnapshotApi* | [**snapshotListQueue**](docs/SnapshotApi.md#snapshotListQueue) | **GET** /snapshot/{snapshotId}/queue | /queue
+*HyperOneApi.SnapshotApi* | [**snapshotListServices**](docs/SnapshotApi.md#snapshotListServices) | **GET** /snapshot/{snapshotId}/services | /services
+*HyperOneApi.SnapshotApi* | [**snapshotPatchTag**](docs/SnapshotApi.md#snapshotPatchTag) | **PATCH** /snapshot/{snapshotId}/tag | /tag
+*HyperOneApi.SnapshotApi* | [**snapshotPostAccessrights**](docs/SnapshotApi.md#snapshotPostAccessrights) | **POST** /snapshot/{snapshotId}/accessrights | /accessrights
+*HyperOneApi.SnapshotApi* | [**snapshotShow**](docs/SnapshotApi.md#snapshotShow) | **GET** /snapshot/{snapshotId} | Get
+*HyperOneApi.SnapshotApi* | [**snapshotUpdate**](docs/SnapshotApi.md#snapshotUpdate) | **PATCH** /snapshot/{snapshotId} | Update
+*HyperOneApi.VaultApi* | [**vaultActionResize**](docs/VaultApi.md#vaultActionResize) | **POST** /vault/{vaultId}/actions/resize | /actions/resize
+*HyperOneApi.VaultApi* | [**vaultActionSnapshot**](docs/VaultApi.md#vaultActionSnapshot) | **POST** /vault/{vaultId}/actions/snapshot | /actions/snapshot
+*HyperOneApi.VaultApi* | [**vaultActionStart**](docs/VaultApi.md#vaultActionStart) | **POST** /vault/{vaultId}/actions/start | /actions/start
+*HyperOneApi.VaultApi* | [**vaultActionStop**](docs/VaultApi.md#vaultActionStop) | **POST** /vault/{vaultId}/actions/stop | /actions/stop
+*HyperOneApi.VaultApi* | [**vaultCreate**](docs/VaultApi.md#vaultCreate) | **POST** /vault | Create
+*HyperOneApi.VaultApi* | [**vaultDelete**](docs/VaultApi.md#vaultDelete) | **DELETE** /vault/{vaultId} | Delete
+*HyperOneApi.VaultApi* | [**vaultDeleteAccessrightsIdentity**](docs/VaultApi.md#vaultDeleteAccessrightsIdentity) | **DELETE** /vault/{vaultId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.VaultApi* | [**vaultDeleteCredentialcertificateId**](docs/VaultApi.md#vaultDeleteCredentialcertificateId) | **DELETE** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
+*HyperOneApi.VaultApi* | [**vaultDeleteCredentialpasswordId**](docs/VaultApi.md#vaultDeleteCredentialpasswordId) | **DELETE** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
+*HyperOneApi.VaultApi* | [**vaultDeleteTagKey**](docs/VaultApi.md#vaultDeleteTagKey) | **DELETE** /vault/{vaultId}/tag/{key} | /tag/:key
+*HyperOneApi.VaultApi* | [**vaultGetCredentialcertificateId**](docs/VaultApi.md#vaultGetCredentialcertificateId) | **GET** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
+*HyperOneApi.VaultApi* | [**vaultGetCredentialpasswordId**](docs/VaultApi.md#vaultGetCredentialpasswordId) | **GET** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
+*HyperOneApi.VaultApi* | [**vaultGetServicesServiceId**](docs/VaultApi.md#vaultGetServicesServiceId) | **GET** /vault/{vaultId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.VaultApi* | [**vaultGetTag**](docs/VaultApi.md#vaultGetTag) | **GET** /vault/{vaultId}/tag | /tag
+*HyperOneApi.VaultApi* | [**vaultList**](docs/VaultApi.md#vaultList) | **GET** /vault | List
+*HyperOneApi.VaultApi* | [**vaultListAccessrights**](docs/VaultApi.md#vaultListAccessrights) | **GET** /vault/{vaultId}/accessrights | /accessrights
+*HyperOneApi.VaultApi* | [**vaultListCredentialcertificate**](docs/VaultApi.md#vaultListCredentialcertificate) | **GET** /vault/{vaultId}/credential/certificate | /credential/certificate
+*HyperOneApi.VaultApi* | [**vaultListCredentialpassword**](docs/VaultApi.md#vaultListCredentialpassword) | **GET** /vault/{vaultId}/credential/password | /credential/password
+*HyperOneApi.VaultApi* | [**vaultListQueue**](docs/VaultApi.md#vaultListQueue) | **GET** /vault/{vaultId}/queue | /queue
+*HyperOneApi.VaultApi* | [**vaultListServices**](docs/VaultApi.md#vaultListServices) | **GET** /vault/{vaultId}/services | /services
+*HyperOneApi.VaultApi* | [**vaultPatchCredentialcertificateId**](docs/VaultApi.md#vaultPatchCredentialcertificateId) | **PATCH** /vault/{vaultId}/credential/certificate/{id} | /credential/certificate/:id
+*HyperOneApi.VaultApi* | [**vaultPatchCredentialpasswordId**](docs/VaultApi.md#vaultPatchCredentialpasswordId) | **PATCH** /vault/{vaultId}/credential/password/{id} | /credential/password/:id
+*HyperOneApi.VaultApi* | [**vaultPatchTag**](docs/VaultApi.md#vaultPatchTag) | **PATCH** /vault/{vaultId}/tag | /tag
+*HyperOneApi.VaultApi* | [**vaultPostAccessrights**](docs/VaultApi.md#vaultPostAccessrights) | **POST** /vault/{vaultId}/accessrights | /accessrights
+*HyperOneApi.VaultApi* | [**vaultPostCredentialcertificate**](docs/VaultApi.md#vaultPostCredentialcertificate) | **POST** /vault/{vaultId}/credential/certificate | /credential/certificate
+*HyperOneApi.VaultApi* | [**vaultPostCredentialpassword**](docs/VaultApi.md#vaultPostCredentialpassword) | **POST** /vault/{vaultId}/credential/password | /credential/password
+*HyperOneApi.VaultApi* | [**vaultShow**](docs/VaultApi.md#vaultShow) | **GET** /vault/{vaultId} | Get
+*HyperOneApi.VaultApi* | [**vaultUpdate**](docs/VaultApi.md#vaultUpdate) | **PATCH** /vault/{vaultId} | Update
+*HyperOneApi.VmApi* | [**vmActionFlavour**](docs/VmApi.md#vmActionFlavour) | **POST** /vm/{vmId}/actions/flavour | /actions/flavour
+*HyperOneApi.VmApi* | [**vmActionImage**](docs/VmApi.md#vmActionImage) | **POST** /vm/{vmId}/actions/image | /actions/image
+*HyperOneApi.VmApi* | [**vmActionPasswordReset**](docs/VmApi.md#vmActionPasswordReset) | **POST** /vm/{vmId}/actions/password_reset | /actions/password_reset
+*HyperOneApi.VmApi* | [**vmActionRename**](docs/VmApi.md#vmActionRename) | **POST** /vm/{vmId}/actions/rename | /actions/rename
+*HyperOneApi.VmApi* | [**vmActionRestart**](docs/VmApi.md#vmActionRestart) | **POST** /vm/{vmId}/actions/restart | /actions/restart
+*HyperOneApi.VmApi* | [**vmActionStart**](docs/VmApi.md#vmActionStart) | **POST** /vm/{vmId}/actions/start | /actions/start
+*HyperOneApi.VmApi* | [**vmActionStop**](docs/VmApi.md#vmActionStop) | **POST** /vm/{vmId}/actions/stop | /actions/stop
+*HyperOneApi.VmApi* | [**vmActionTurnoff**](docs/VmApi.md#vmActionTurnoff) | **POST** /vm/{vmId}/actions/turnoff | /actions/turnoff
+*HyperOneApi.VmApi* | [**vmCreate**](docs/VmApi.md#vmCreate) | **POST** /vm | Create
+*HyperOneApi.VmApi* | [**vmDelete**](docs/VmApi.md#vmDelete) | **DELETE** /vm/{vmId} | Delete
+*HyperOneApi.VmApi* | [**vmDeleteAccessrightsIdentity**](docs/VmApi.md#vmDeleteAccessrightsIdentity) | **DELETE** /vm/{vmId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.VmApi* | [**vmDeleteHddDiskId**](docs/VmApi.md#vmDeleteHddDiskId) | **DELETE** /vm/{vmId}/hdd/{diskId} | /hdd/:diskId
+*HyperOneApi.VmApi* | [**vmDeleteNetadp**](docs/VmApi.md#vmDeleteNetadp) | **DELETE** /vm/{vmId}/netadp | /netadp
+*HyperOneApi.VmApi* | [**vmDeleteTagKey**](docs/VmApi.md#vmDeleteTagKey) | **DELETE** /vm/{vmId}/tag/{key} | /tag/:key
+*HyperOneApi.VmApi* | [**vmGetServicesServiceId**](docs/VmApi.md#vmGetServicesServiceId) | **GET** /vm/{vmId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.VmApi* | [**vmGetTag**](docs/VmApi.md#vmGetTag) | **GET** /vm/{vmId}/tag | /tag
+*HyperOneApi.VmApi* | [**vmList**](docs/VmApi.md#vmList) | **GET** /vm | List
+*HyperOneApi.VmApi* | [**vmListAccessrights**](docs/VmApi.md#vmListAccessrights) | **GET** /vm/{vmId}/accessrights | /accessrights
+*HyperOneApi.VmApi* | [**vmListHdd**](docs/VmApi.md#vmListHdd) | **GET** /vm/{vmId}/hdd | /hdd
+*HyperOneApi.VmApi* | [**vmListNetadp**](docs/VmApi.md#vmListNetadp) | **GET** /vm/{vmId}/netadp | /netadp
+*HyperOneApi.VmApi* | [**vmListQueue**](docs/VmApi.md#vmListQueue) | **GET** /vm/{vmId}/queue | /queue
+*HyperOneApi.VmApi* | [**vmListServices**](docs/VmApi.md#vmListServices) | **GET** /vm/{vmId}/services | /services
+*HyperOneApi.VmApi* | [**vmPatchTag**](docs/VmApi.md#vmPatchTag) | **PATCH** /vm/{vmId}/tag | /tag
+*HyperOneApi.VmApi* | [**vmPostAccessrights**](docs/VmApi.md#vmPostAccessrights) | **POST** /vm/{vmId}/accessrights | /accessrights
+*HyperOneApi.VmApi* | [**vmPostHdd**](docs/VmApi.md#vmPostHdd) | **POST** /vm/{vmId}/hdd | /hdd
+*HyperOneApi.VmApi* | [**vmPostNetadp**](docs/VmApi.md#vmPostNetadp) | **POST** /vm/{vmId}/netadp | /netadp
+*HyperOneApi.VmApi* | [**vmShow**](docs/VmApi.md#vmShow) | **GET** /vm/{vmId} | Get
+*HyperOneApi.VmApi* | [**vmUpdate**](docs/VmApi.md#vmUpdate) | **PATCH** /vm/{vmId} | Update
+*HyperOneApi.VmhostApi* | [**vmhostActionMoveDisk**](docs/VmhostApi.md#vmhostActionMoveDisk) | **POST** /vmhost/{vmhostId}/actions/moveDisk | /actions/moveDisk
+*HyperOneApi.VmhostApi* | [**vmhostActionMoveISO**](docs/VmhostApi.md#vmhostActionMoveISO) | **POST** /vmhost/{vmhostId}/actions/moveISO | /actions/moveISO
+*HyperOneApi.VmhostApi* | [**vmhostActionMoveImage**](docs/VmhostApi.md#vmhostActionMoveImage) | **POST** /vmhost/{vmhostId}/actions/moveImage | /actions/moveImage
+*HyperOneApi.VmhostApi* | [**vmhostActionMoveVM**](docs/VmhostApi.md#vmhostActionMoveVM) | **POST** /vmhost/{vmhostId}/actions/moveVM | /actions/moveVM
+*HyperOneApi.VmhostApi* | [**vmhostDelete**](docs/VmhostApi.md#vmhostDelete) | **DELETE** /vmhost/{vmhostId} | Delete
+*HyperOneApi.VmhostApi* | [**vmhostDeleteAccessrightsIdentity**](docs/VmhostApi.md#vmhostDeleteAccessrightsIdentity) | **DELETE** /vmhost/{vmhostId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.VmhostApi* | [**vmhostDeleteTagKey**](docs/VmhostApi.md#vmhostDeleteTagKey) | **DELETE** /vmhost/{vmhostId}/tag/{key} | /tag/:key
+*HyperOneApi.VmhostApi* | [**vmhostGetServicesServiceId**](docs/VmhostApi.md#vmhostGetServicesServiceId) | **GET** /vmhost/{vmhostId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.VmhostApi* | [**vmhostGetTag**](docs/VmhostApi.md#vmhostGetTag) | **GET** /vmhost/{vmhostId}/tag | /tag
+*HyperOneApi.VmhostApi* | [**vmhostList**](docs/VmhostApi.md#vmhostList) | **GET** /vmhost | List
+*HyperOneApi.VmhostApi* | [**vmhostListAccessrights**](docs/VmhostApi.md#vmhostListAccessrights) | **GET** /vmhost/{vmhostId}/accessrights | /accessrights
+*HyperOneApi.VmhostApi* | [**vmhostListQueue**](docs/VmhostApi.md#vmhostListQueue) | **GET** /vmhost/{vmhostId}/queue | /queue
+*HyperOneApi.VmhostApi* | [**vmhostListServices**](docs/VmhostApi.md#vmhostListServices) | **GET** /vmhost/{vmhostId}/services | /services
+*HyperOneApi.VmhostApi* | [**vmhostPatchTag**](docs/VmhostApi.md#vmhostPatchTag) | **PATCH** /vmhost/{vmhostId}/tag | /tag
+*HyperOneApi.VmhostApi* | [**vmhostPostAccessrights**](docs/VmhostApi.md#vmhostPostAccessrights) | **POST** /vmhost/{vmhostId}/accessrights | /accessrights
+*HyperOneApi.VmhostApi* | [**vmhostShow**](docs/VmhostApi.md#vmhostShow) | **GET** /vmhost/{vmhostId} | Get
+*HyperOneApi.VmhostApi* | [**vmhostUpdate**](docs/VmhostApi.md#vmhostUpdate) | **PATCH** /vmhost/{vmhostId} | Update
 
 
 ## Documentation for Models
 
  - [HyperOneApi.Container](docs/Container.md)
- - [HyperOneApi.ContainerExpose](docs/ContainerExpose.md)
- - [HyperOneApi.ContainerRegistry](docs/ContainerRegistry.md)
+ - [HyperOneApi.ContainerCreate](docs/ContainerCreate.md)
+ - [HyperOneApi.ContainerCreateExpose](docs/ContainerCreateExpose.md)
+ - [HyperOneApi.ContainerCreateRegistry](docs/ContainerCreateRegistry.md)
+ - [HyperOneApi.ContainerCreateVolumes](docs/ContainerCreateVolumes.md)
+ - [HyperOneApi.ContainerPostAccessrights](docs/ContainerPostAccessrights.md)
  - [HyperOneApi.ContainerServices](docs/ContainerServices.md)
- - [HyperOneApi.ContainerVolumes](docs/ContainerVolumes.md)
+ - [HyperOneApi.ContainerUpdate](docs/ContainerUpdate.md)
  - [HyperOneApi.CredentialCertificate](docs/CredentialCertificate.md)
  - [HyperOneApi.CredentialPassword](docs/CredentialPassword.md)
  - [HyperOneApi.Disk](docs/Disk.md)
+ - [HyperOneApi.DiskActionTransfer](docs/DiskActionTransfer.md)
+ - [HyperOneApi.DiskCreate](docs/DiskCreate.md)
+ - [HyperOneApi.DiskCreateMetadata](docs/DiskCreateMetadata.md)
+ - [HyperOneApi.DiskCreateMetadataSource](docs/DiskCreateMetadataSource.md)
  - [HyperOneApi.DiskMetadata](docs/DiskMetadata.md)
- - [HyperOneApi.DiskMetadata1](docs/DiskMetadata1.md)
- - [HyperOneApi.DiskMetadataSource](docs/DiskMetadataSource.md)
+ - [HyperOneApi.DiskPostAccessrights](docs/DiskPostAccessrights.md)
  - [HyperOneApi.DiskServices](docs/DiskServices.md)
+ - [HyperOneApi.DiskUpdate](docs/DiskUpdate.md)
  - [HyperOneApi.Event](docs/Event.md)
  - [HyperOneApi.EventResource](docs/EventResource.md)
  - [HyperOneApi.Firewall](docs/Firewall.md)
+ - [HyperOneApi.FirewallActionTransfer](docs/FirewallActionTransfer.md)
+ - [HyperOneApi.FirewallCreate](docs/FirewallCreate.md)
+ - [HyperOneApi.FirewallPostAccessrights](docs/FirewallPostAccessrights.md)
+ - [HyperOneApi.FirewallPostEgress](docs/FirewallPostEgress.md)
+ - [HyperOneApi.FirewallPostIngress](docs/FirewallPostIngress.md)
  - [HyperOneApi.FirewallServices](docs/FirewallServices.md)
+ - [HyperOneApi.FirewallUpdate](docs/FirewallUpdate.md)
  - [HyperOneApi.Hdd](docs/Hdd.md)
  - [HyperOneApi.HddDisk](docs/HddDisk.md)
  - [HyperOneApi.Image](docs/Image.md)
+ - [HyperOneApi.ImageActionTransfer](docs/ImageActionTransfer.md)
+ - [HyperOneApi.ImageCreate](docs/ImageCreate.md)
  - [HyperOneApi.ImageDisks](docs/ImageDisks.md)
  - [HyperOneApi.ImageDisksDisk](docs/ImageDisksDisk.md)
+ - [HyperOneApi.ImagePostAccessrights](docs/ImagePostAccessrights.md)
  - [HyperOneApi.ImageServices](docs/ImageServices.md)
+ - [HyperOneApi.ImageUpdate](docs/ImageUpdate.md)
  - [HyperOneApi.ImageVm](docs/ImageVm.md)
- - [HyperOneApi.InlineObject](docs/InlineObject.md)
- - [HyperOneApi.InlineObject1](docs/InlineObject1.md)
- - [HyperOneApi.InlineObject10](docs/InlineObject10.md)
- - [HyperOneApi.InlineObject11](docs/InlineObject11.md)
- - [HyperOneApi.InlineObject12](docs/InlineObject12.md)
- - [HyperOneApi.InlineObject13](docs/InlineObject13.md)
- - [HyperOneApi.InlineObject14](docs/InlineObject14.md)
- - [HyperOneApi.InlineObject15](docs/InlineObject15.md)
- - [HyperOneApi.InlineObject16](docs/InlineObject16.md)
- - [HyperOneApi.InlineObject17](docs/InlineObject17.md)
- - [HyperOneApi.InlineObject18](docs/InlineObject18.md)
- - [HyperOneApi.InlineObject19](docs/InlineObject19.md)
- - [HyperOneApi.InlineObject2](docs/InlineObject2.md)
- - [HyperOneApi.InlineObject20](docs/InlineObject20.md)
- - [HyperOneApi.InlineObject21](docs/InlineObject21.md)
- - [HyperOneApi.InlineObject22](docs/InlineObject22.md)
- - [HyperOneApi.InlineObject23](docs/InlineObject23.md)
- - [HyperOneApi.InlineObject24](docs/InlineObject24.md)
- - [HyperOneApi.InlineObject25](docs/InlineObject25.md)
- - [HyperOneApi.InlineObject26](docs/InlineObject26.md)
- - [HyperOneApi.InlineObject27](docs/InlineObject27.md)
- - [HyperOneApi.InlineObject28](docs/InlineObject28.md)
- - [HyperOneApi.InlineObject29](docs/InlineObject29.md)
- - [HyperOneApi.InlineObject3](docs/InlineObject3.md)
- - [HyperOneApi.InlineObject30](docs/InlineObject30.md)
- - [HyperOneApi.InlineObject31](docs/InlineObject31.md)
- - [HyperOneApi.InlineObject32](docs/InlineObject32.md)
- - [HyperOneApi.InlineObject33](docs/InlineObject33.md)
- - [HyperOneApi.InlineObject34](docs/InlineObject34.md)
- - [HyperOneApi.InlineObject35](docs/InlineObject35.md)
- - [HyperOneApi.InlineObject36](docs/InlineObject36.md)
- - [HyperOneApi.InlineObject37](docs/InlineObject37.md)
- - [HyperOneApi.InlineObject38](docs/InlineObject38.md)
- - [HyperOneApi.InlineObject39](docs/InlineObject39.md)
- - [HyperOneApi.InlineObject4](docs/InlineObject4.md)
- - [HyperOneApi.InlineObject40](docs/InlineObject40.md)
- - [HyperOneApi.InlineObject41](docs/InlineObject41.md)
- - [HyperOneApi.InlineObject42](docs/InlineObject42.md)
- - [HyperOneApi.InlineObject43](docs/InlineObject43.md)
- - [HyperOneApi.InlineObject44](docs/InlineObject44.md)
- - [HyperOneApi.InlineObject45](docs/InlineObject45.md)
- - [HyperOneApi.InlineObject46](docs/InlineObject46.md)
- - [HyperOneApi.InlineObject47](docs/InlineObject47.md)
- - [HyperOneApi.InlineObject48](docs/InlineObject48.md)
- - [HyperOneApi.InlineObject49](docs/InlineObject49.md)
- - [HyperOneApi.InlineObject5](docs/InlineObject5.md)
- - [HyperOneApi.InlineObject50](docs/InlineObject50.md)
- - [HyperOneApi.InlineObject51](docs/InlineObject51.md)
- - [HyperOneApi.InlineObject52](docs/InlineObject52.md)
- - [HyperOneApi.InlineObject53](docs/InlineObject53.md)
- - [HyperOneApi.InlineObject54](docs/InlineObject54.md)
- - [HyperOneApi.InlineObject55](docs/InlineObject55.md)
- - [HyperOneApi.InlineObject56](docs/InlineObject56.md)
- - [HyperOneApi.InlineObject57](docs/InlineObject57.md)
- - [HyperOneApi.InlineObject58](docs/InlineObject58.md)
- - [HyperOneApi.InlineObject59](docs/InlineObject59.md)
- - [HyperOneApi.InlineObject6](docs/InlineObject6.md)
- - [HyperOneApi.InlineObject60](docs/InlineObject60.md)
- - [HyperOneApi.InlineObject61](docs/InlineObject61.md)
- - [HyperOneApi.InlineObject62](docs/InlineObject62.md)
- - [HyperOneApi.InlineObject63](docs/InlineObject63.md)
- - [HyperOneApi.InlineObject64](docs/InlineObject64.md)
- - [HyperOneApi.InlineObject65](docs/InlineObject65.md)
- - [HyperOneApi.InlineObject66](docs/InlineObject66.md)
- - [HyperOneApi.InlineObject67](docs/InlineObject67.md)
- - [HyperOneApi.InlineObject68](docs/InlineObject68.md)
- - [HyperOneApi.InlineObject69](docs/InlineObject69.md)
- - [HyperOneApi.InlineObject7](docs/InlineObject7.md)
- - [HyperOneApi.InlineObject70](docs/InlineObject70.md)
- - [HyperOneApi.InlineObject71](docs/InlineObject71.md)
- - [HyperOneApi.InlineObject72](docs/InlineObject72.md)
- - [HyperOneApi.InlineObject73](docs/InlineObject73.md)
- - [HyperOneApi.InlineObject74](docs/InlineObject74.md)
- - [HyperOneApi.InlineObject75](docs/InlineObject75.md)
- - [HyperOneApi.InlineObject76](docs/InlineObject76.md)
- - [HyperOneApi.InlineObject8](docs/InlineObject8.md)
- - [HyperOneApi.InlineObject9](docs/InlineObject9.md)
  - [HyperOneApi.InlineResponse200](docs/InlineResponse200.md)
  - [HyperOneApi.Ip](docs/Ip.md)
+ - [HyperOneApi.IpActionTransfer](docs/IpActionTransfer.md)
+ - [HyperOneApi.IpCreate](docs/IpCreate.md)
+ - [HyperOneApi.IpPostAccessrights](docs/IpPostAccessrights.md)
  - [HyperOneApi.IpServices](docs/IpServices.md)
+ - [HyperOneApi.IpUpdate](docs/IpUpdate.md)
  - [HyperOneApi.Iso](docs/Iso.md)
+ - [HyperOneApi.IsoActionTransfer](docs/IsoActionTransfer.md)
+ - [HyperOneApi.IsoCreate](docs/IsoCreate.md)
+ - [HyperOneApi.IsoPostAccessrights](docs/IsoPostAccessrights.md)
  - [HyperOneApi.IsoServices](docs/IsoServices.md)
+ - [HyperOneApi.IsoUpdate](docs/IsoUpdate.md)
  - [HyperOneApi.LogArchive](docs/LogArchive.md)
+ - [HyperOneApi.LogArchiveActionTransfer](docs/LogArchiveActionTransfer.md)
+ - [HyperOneApi.LogArchiveCreate](docs/LogArchiveCreate.md)
+ - [HyperOneApi.LogArchivePatchCredentialcertificateId](docs/LogArchivePatchCredentialcertificateId.md)
+ - [HyperOneApi.LogArchivePatchCredentialpasswordId](docs/LogArchivePatchCredentialpasswordId.md)
+ - [HyperOneApi.LogArchivePostAccessrights](docs/LogArchivePostAccessrights.md)
+ - [HyperOneApi.LogArchivePostCredentialcertificate](docs/LogArchivePostCredentialcertificate.md)
+ - [HyperOneApi.LogArchivePostCredentialpassword](docs/LogArchivePostCredentialpassword.md)
  - [HyperOneApi.LogArchiveServices](docs/LogArchiveServices.md)
+ - [HyperOneApi.LogArchiveUpdate](docs/LogArchiveUpdate.md)
  - [HyperOneApi.Netadp](docs/Netadp.md)
  - [HyperOneApi.NetadpAssigned](docs/NetadpAssigned.md)
+ - [HyperOneApi.NetadpPostAccessrights](docs/NetadpPostAccessrights.md)
  - [HyperOneApi.NetadpServices](docs/NetadpServices.md)
  - [HyperOneApi.Netgw](docs/Netgw.md)
+ - [HyperOneApi.NetgwCreate](docs/NetgwCreate.md)
+ - [HyperOneApi.NetgwCreatePublic](docs/NetgwCreatePublic.md)
  - [HyperOneApi.NetgwNetwork](docs/NetgwNetwork.md)
+ - [HyperOneApi.NetgwPostAccessrights](docs/NetgwPostAccessrights.md)
  - [HyperOneApi.NetgwPrimaryIP](docs/NetgwPrimaryIP.md)
  - [HyperOneApi.NetgwPrimaryIPAssociated](docs/NetgwPrimaryIPAssociated.md)
  - [HyperOneApi.NetgwPrimaryIPMac](docs/NetgwPrimaryIPMac.md)
- - [HyperOneApi.NetgwPublic](docs/NetgwPublic.md)
  - [HyperOneApi.NetgwServices](docs/NetgwServices.md)
+ - [HyperOneApi.NetgwUpdate](docs/NetgwUpdate.md)
  - [HyperOneApi.NetgwVpn](docs/NetgwVpn.md)
  - [HyperOneApi.NetgwVpnL2tp](docs/NetgwVpnL2tp.md)
  - [HyperOneApi.NetgwVpnL2tpUser](docs/NetgwVpnL2tpUser.md)
  - [HyperOneApi.Network](docs/Network.md)
+ - [HyperOneApi.NetworkCreate](docs/NetworkCreate.md)
  - [HyperOneApi.NetworkDns](docs/NetworkDns.md)
+ - [HyperOneApi.NetworkPostAccessrights](docs/NetworkPostAccessrights.md)
+ - [HyperOneApi.NetworkPostIp](docs/NetworkPostIp.md)
  - [HyperOneApi.NetworkServices](docs/NetworkServices.md)
+ - [HyperOneApi.NetworkUpdate](docs/NetworkUpdate.md)
  - [HyperOneApi.Organisation](docs/Organisation.md)
  - [HyperOneApi.OrganisationAccessRights](docs/OrganisationAccessRights.md)
+ - [HyperOneApi.OrganisationActionTransferAccept](docs/OrganisationActionTransferAccept.md)
  - [HyperOneApi.OrganisationBilling](docs/OrganisationBilling.md)
- - [HyperOneApi.OrganisationBilling1](docs/OrganisationBilling1.md)
- - [HyperOneApi.OrganisationBillingAddress](docs/OrganisationBillingAddress.md)
+ - [HyperOneApi.OrganisationCreate](docs/OrganisationCreate.md)
+ - [HyperOneApi.OrganisationCreateAccessRights](docs/OrganisationCreateAccessRights.md)
+ - [HyperOneApi.OrganisationCreateBilling](docs/OrganisationCreateBilling.md)
+ - [HyperOneApi.OrganisationCreateBillingAddress](docs/OrganisationCreateBillingAddress.md)
  - [HyperOneApi.OrganisationLimit](docs/OrganisationLimit.md)
  - [HyperOneApi.OrganisationLimitOrganisation](docs/OrganisationLimitOrganisation.md)
+ - [HyperOneApi.OrganisationPostAccessrights](docs/OrganisationPostAccessrights.md)
  - [HyperOneApi.OrganisationTransfer](docs/OrganisationTransfer.md)
- - [HyperOneApi.OrganisationorganisationIdBilling](docs/OrganisationorganisationIdBilling.md)
- - [HyperOneApi.OrganisationorganisationIdBillingAddress](docs/OrganisationorganisationIdBillingAddress.md)
+ - [HyperOneApi.OrganisationUpdate](docs/OrganisationUpdate.md)
+ - [HyperOneApi.OrganisationUpdateBilling](docs/OrganisationUpdateBilling.md)
+ - [HyperOneApi.OrganisationUpdateBillingAddress](docs/OrganisationUpdateBillingAddress.md)
  - [HyperOneApi.Project](docs/Project.md)
  - [HyperOneApi.ProjectAccess](docs/ProjectAccess.md)
  - [HyperOneApi.ProjectAccessRights](docs/ProjectAccessRights.md)
- - [HyperOneApi.ProjectAccessRights1](docs/ProjectAccessRights1.md)
  - [HyperOneApi.ProjectBilling](docs/ProjectBilling.md)
  - [HyperOneApi.ProjectCompliance](docs/ProjectCompliance.md)
+ - [HyperOneApi.ProjectCreate](docs/ProjectCreate.md)
+ - [HyperOneApi.ProjectCreateAccessRights](docs/ProjectCreateAccessRights.md)
  - [HyperOneApi.ProjectInvoices](docs/ProjectInvoices.md)
  - [HyperOneApi.ProjectInvoicesDuplicate](docs/ProjectInvoicesDuplicate.md)
  - [HyperOneApi.ProjectLimit](docs/ProjectLimit.md)
@@ -604,34 +574,63 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.ProjectLimitVm](docs/ProjectLimitVm.md)
  - [HyperOneApi.ProjectNetworkAcl](docs/ProjectNetworkAcl.md)
  - [HyperOneApi.ProjectPayments](docs/ProjectPayments.md)
+ - [HyperOneApi.ProjectPostAccessrights](docs/ProjectPostAccessrights.md)
  - [HyperOneApi.ProjectRoles](docs/ProjectRoles.md)
  - [HyperOneApi.ProjectServices](docs/ProjectServices.md)
  - [HyperOneApi.ProjectThreshold](docs/ProjectThreshold.md)
  - [HyperOneApi.ProjectThresholdCredits](docs/ProjectThresholdCredits.md)
  - [HyperOneApi.ProjectTransfer](docs/ProjectTransfer.md)
+ - [HyperOneApi.ProjectUpdate](docs/ProjectUpdate.md)
  - [HyperOneApi.Replica](docs/Replica.md)
+ - [HyperOneApi.ReplicaActionImage](docs/ReplicaActionImage.md)
+ - [HyperOneApi.ReplicaCreate](docs/ReplicaCreate.md)
+ - [HyperOneApi.ReplicaPostAccessrights](docs/ReplicaPostAccessrights.md)
  - [HyperOneApi.ReplicaServices](docs/ReplicaServices.md)
  - [HyperOneApi.Reservation](docs/Reservation.md)
+ - [HyperOneApi.ReservationCreate](docs/ReservationCreate.md)
+ - [HyperOneApi.ReservationPostAccessrights](docs/ReservationPostAccessrights.md)
  - [HyperOneApi.ReservationServices](docs/ReservationServices.md)
+ - [HyperOneApi.ReservationUpdate](docs/ReservationUpdate.md)
  - [HyperOneApi.Snapshot](docs/Snapshot.md)
+ - [HyperOneApi.SnapshotCreate](docs/SnapshotCreate.md)
+ - [HyperOneApi.SnapshotPostAccessrights](docs/SnapshotPostAccessrights.md)
  - [HyperOneApi.SnapshotServices](docs/SnapshotServices.md)
+ - [HyperOneApi.SnapshotUpdate](docs/SnapshotUpdate.md)
  - [HyperOneApi.Vault](docs/Vault.md)
- - [HyperOneApi.VaultCredential](docs/VaultCredential.md)
- - [HyperOneApi.VaultCredential1](docs/VaultCredential1.md)
- - [HyperOneApi.VaultCredential1Password](docs/VaultCredential1Password.md)
- - [HyperOneApi.VaultCredentialCertificate](docs/VaultCredentialCertificate.md)
- - [HyperOneApi.VaultCredentialPassword](docs/VaultCredentialPassword.md)
+ - [HyperOneApi.VaultCreate](docs/VaultCreate.md)
+ - [HyperOneApi.VaultCreateCredential](docs/VaultCreateCredential.md)
+ - [HyperOneApi.VaultCreateCredentialCertificate](docs/VaultCreateCredentialCertificate.md)
+ - [HyperOneApi.VaultCreateCredentialPassword](docs/VaultCreateCredentialPassword.md)
+ - [HyperOneApi.VaultPatchCredentialcertificateId](docs/VaultPatchCredentialcertificateId.md)
+ - [HyperOneApi.VaultPatchCredentialpasswordId](docs/VaultPatchCredentialpasswordId.md)
+ - [HyperOneApi.VaultPostAccessrights](docs/VaultPostAccessrights.md)
+ - [HyperOneApi.VaultPostCredentialcertificate](docs/VaultPostCredentialcertificate.md)
+ - [HyperOneApi.VaultPostCredentialpassword](docs/VaultPostCredentialpassword.md)
  - [HyperOneApi.VaultServices](docs/VaultServices.md)
+ - [HyperOneApi.VaultUpdate](docs/VaultUpdate.md)
  - [HyperOneApi.Vm](docs/Vm.md)
+ - [HyperOneApi.VmActionImage](docs/VmActionImage.md)
+ - [HyperOneApi.VmActionPasswordReset](docs/VmActionPasswordReset.md)
+ - [HyperOneApi.VmCreate](docs/VmCreate.md)
+ - [HyperOneApi.VmCreateDisk](docs/VmCreateDisk.md)
+ - [HyperOneApi.VmCreateNetadp](docs/VmCreateNetadp.md)
+ - [HyperOneApi.VmCreatePassword](docs/VmCreatePassword.md)
  - [HyperOneApi.VmData](docs/VmData.md)
- - [HyperOneApi.VmDisk](docs/VmDisk.md)
- - [HyperOneApi.VmNetadp](docs/VmNetadp.md)
- - [HyperOneApi.VmPassword](docs/VmPassword.md)
+ - [HyperOneApi.VmPostAccessrights](docs/VmPostAccessrights.md)
+ - [HyperOneApi.VmPostHdd](docs/VmPostHdd.md)
+ - [HyperOneApi.VmPostNetadp](docs/VmPostNetadp.md)
  - [HyperOneApi.VmServices](docs/VmServices.md)
  - [HyperOneApi.VmSourceImage](docs/VmSourceImage.md)
+ - [HyperOneApi.VmUpdate](docs/VmUpdate.md)
  - [HyperOneApi.Vmhost](docs/Vmhost.md)
+ - [HyperOneApi.VmhostActionMoveDisk](docs/VmhostActionMoveDisk.md)
+ - [HyperOneApi.VmhostActionMoveISO](docs/VmhostActionMoveISO.md)
+ - [HyperOneApi.VmhostActionMoveImage](docs/VmhostActionMoveImage.md)
+ - [HyperOneApi.VmhostActionMoveVM](docs/VmhostActionMoveVM.md)
+ - [HyperOneApi.VmhostPostAccessrights](docs/VmhostPostAccessrights.md)
  - [HyperOneApi.VmhostServices](docs/VmhostServices.md)
- - [HyperOneApi.VmhostvmhostIdEnabledServices](docs/VmhostvmhostIdEnabledServices.md)
+ - [HyperOneApi.VmhostUpdate](docs/VmhostUpdate.md)
+ - [HyperOneApi.VmhostUpdateEnabledServices](docs/VmhostUpdateEnabledServices.md)
 
 
 ## Documentation for Authorization

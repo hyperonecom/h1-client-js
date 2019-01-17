@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/InlineObject54', 'model/InlineObject55', 'model/InlineObject56', 'model/Snapshot', 'model/SnapshotServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/Snapshot', 'model/SnapshotCreate', 'model/SnapshotPostAccessrights', 'model/SnapshotServices', 'model/SnapshotUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject54'), require('../model/InlineObject55'), require('../model/InlineObject56'), require('../model/Snapshot'), require('../model/SnapshotServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Snapshot'), require('../model/SnapshotCreate'), require('../model/SnapshotPostAccessrights'), require('../model/SnapshotServices'), require('../model/SnapshotUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.SnapshotApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject54, root.HyperOneApi.InlineObject55, root.HyperOneApi.InlineObject56, root.HyperOneApi.Snapshot, root.HyperOneApi.SnapshotServices);
+    root.HyperOneApi.SnapshotApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Snapshot, root.HyperOneApi.SnapshotCreate, root.HyperOneApi.SnapshotPostAccessrights, root.HyperOneApi.SnapshotServices, root.HyperOneApi.SnapshotUpdate);
   }
-}(this, function(ApiClient, Event, InlineObject54, InlineObject55, InlineObject56, Snapshot, SnapshotServices) {
+}(this, function(ApiClient, Event, Snapshot, SnapshotCreate, SnapshotPostAccessrights, SnapshotServices, SnapshotUpdate) {
   'use strict';
 
   /**
@@ -51,13 +51,16 @@
     /**
      * Create
      * Create snapshot
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject54} opts.inlineObject54 
+     * @param {module:model/SnapshotCreate} snapshotCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
      */
-    this.createSnapshotWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject54'];
+    this.snapshotCreateWithHttpInfo = function(snapshotCreate) {
+      var postBody = snapshotCreate;
+
+      // verify the required parameter 'snapshotCreate' is set
+      if (snapshotCreate === undefined || snapshotCreate === null) {
+        throw new Error("Missing the required parameter 'snapshotCreate' when calling snapshotCreate");
+      }
 
 
       var pathParams = {
@@ -86,12 +89,11 @@
     /**
      * Create
      * Create snapshot
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject54} opts.inlineObject54 
+     * @param {module:model/SnapshotCreate} snapshotCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
      */
-    this.createSnapshot = function(opts) {
-      return this.createSnapshotWithHttpInfo(opts)
+    this.snapshotCreate = function(snapshotCreate) {
+      return this.snapshotCreateWithHttpInfo(snapshotCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -103,12 +105,12 @@
      * @param {String} snapshotId ID of snapshot
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteSnapshotWithHttpInfo = function(snapshotId) {
+    this.snapshotDeleteWithHttpInfo = function(snapshotId) {
       var postBody = null;
 
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling deleteSnapshot");
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotDelete");
       }
 
 
@@ -141,8 +143,236 @@
      * @param {String} snapshotId ID of snapshot
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteSnapshot = function(snapshotId) {
-      return this.deleteSnapshotWithHttpInfo(snapshotId)
+    this.snapshotDelete = function(snapshotId) {
+      return this.snapshotDeleteWithHttpInfo(snapshotId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} snapshotId ID of snapshot
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
+     */
+    this.snapshotDeleteAccessrightsIdentityWithHttpInfo = function(snapshotId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling snapshotDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Snapshot;
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} snapshotId ID of snapshot
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
+     */
+    this.snapshotDeleteAccessrightsIdentity = function(snapshotId, identity) {
+      return this.snapshotDeleteAccessrightsIdentityWithHttpInfo(snapshotId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} snapshotId ID of snapshot
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.snapshotDeleteTagKeyWithHttpInfo = function(snapshotId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling snapshotDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} snapshotId ID of snapshot
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.snapshotDeleteTagKey = function(snapshotId, key) {
+      return this.snapshotDeleteTagKeyWithHttpInfo(snapshotId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} snapshotId ID of snapshot
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnapshotServices} and HTTP response
+     */
+    this.snapshotGetServicesServiceIdWithHttpInfo = function(snapshotId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling snapshotGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = SnapshotServices;
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} snapshotId ID of snapshot
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnapshotServices}
+     */
+    this.snapshotGetServicesServiceId = function(snapshotId, serviceId) {
+      return this.snapshotGetServicesServiceIdWithHttpInfo(snapshotId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} snapshotId ID of snapshot
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.snapshotGetTagWithHttpInfo = function(snapshotId) {
+      var postBody = null;
+
+      // verify the required parameter 'snapshotId' is set
+      if (snapshotId === undefined || snapshotId === null) {
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotGetTag");
+      }
+
+
+      var pathParams = {
+        'snapshotId': snapshotId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/snapshot/{snapshotId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} snapshotId ID of snapshot
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.snapshotGetTag = function(snapshotId) {
+      return this.snapshotGetTagWithHttpInfo(snapshotId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -157,7 +387,7 @@
      * @param {String} opts.vault Filter by vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Snapshot>} and HTTP response
      */
-    this.listSnapshotWithHttpInfo = function(opts) {
+    this.snapshotListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -195,8 +425,8 @@
      * @param {String} opts.vault Filter by vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Snapshot>}
      */
-    this.listSnapshot = function(opts) {
-      return this.listSnapshotWithHttpInfo(opts)
+    this.snapshotList = function(opts) {
+      return this.snapshotListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -204,244 +434,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} snapshotId ID of snapshot
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
-     */
-    this.operationSnapshotDeleteaccessrightsIdentityWithHttpInfo = function(snapshotId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'snapshotId' is set
-      if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationSnapshotDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'snapshotId': snapshotId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Snapshot;
-
-      return this.apiClient.callApi(
-        '/snapshot/{snapshotId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} snapshotId ID of snapshot
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
-     */
-    this.operationSnapshotDeleteaccessrightsIdentity = function(snapshotId, identity) {
-      return this.operationSnapshotDeleteaccessrightsIdentityWithHttpInfo(snapshotId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} snapshotId ID of snapshot
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationSnapshotDeletetagKeyWithHttpInfo = function(snapshotId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'snapshotId' is set
-      if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationSnapshotDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'snapshotId': snapshotId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/snapshot/{snapshotId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} snapshotId ID of snapshot
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationSnapshotDeletetagKey = function(snapshotId, key) {
-      return this.operationSnapshotDeletetagKeyWithHttpInfo(snapshotId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} snapshotId ID of snapshot
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnapshotServices} and HTTP response
-     */
-    this.operationSnapshotGetservicesServiceIdWithHttpInfo = function(snapshotId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'snapshotId' is set
-      if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationSnapshotGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'snapshotId': snapshotId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = SnapshotServices;
-
-      return this.apiClient.callApi(
-        '/snapshot/{snapshotId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} snapshotId ID of snapshot
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnapshotServices}
-     */
-    this.operationSnapshotGetservicesServiceId = function(snapshotId, serviceId) {
-      return this.operationSnapshotGetservicesServiceIdWithHttpInfo(snapshotId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} snapshotId ID of snapshot
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationSnapshotGettagWithHttpInfo = function(snapshotId) {
-      var postBody = null;
-
-      // verify the required parameter 'snapshotId' is set
-      if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotGettag");
-      }
-
-
-      var pathParams = {
-        'snapshotId': snapshotId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/snapshot/{snapshotId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} snapshotId ID of snapshot
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationSnapshotGettag = function(snapshotId) {
-      return this.operationSnapshotGettagWithHttpInfo(snapshotId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} snapshotId ID of snapshot
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationSnapshotListaccessrightsWithHttpInfo = function(snapshotId) {
+    this.snapshotListAccessrightsWithHttpInfo = function(snapshotId) {
       var postBody = null;
 
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotListaccessrights");
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotListAccessrights");
       }
 
 
@@ -463,19 +465,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/snapshot/{snapshotId}/accessrights/', 'GET',
+        '/snapshot/{snapshotId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} snapshotId ID of snapshot
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationSnapshotListaccessrights = function(snapshotId) {
-      return this.operationSnapshotListaccessrightsWithHttpInfo(snapshotId)
+    this.snapshotListAccessrights = function(snapshotId) {
+      return this.snapshotListAccessrightsWithHttpInfo(snapshotId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -483,16 +485,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} snapshotId ID of snapshot
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationSnapshotListqueueWithHttpInfo = function(snapshotId) {
+    this.snapshotListQueueWithHttpInfo = function(snapshotId) {
       var postBody = null;
 
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotListqueue");
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotListQueue");
       }
 
 
@@ -514,19 +516,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/snapshot/{snapshotId}/queue/', 'GET',
+        '/snapshot/{snapshotId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} snapshotId ID of snapshot
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationSnapshotListqueue = function(snapshotId) {
-      return this.operationSnapshotListqueueWithHttpInfo(snapshotId)
+    this.snapshotListQueue = function(snapshotId) {
+      return this.snapshotListQueueWithHttpInfo(snapshotId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -534,16 +536,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} snapshotId ID of snapshot
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SnapshotServices>} and HTTP response
      */
-    this.operationSnapshotListservicesWithHttpInfo = function(snapshotId) {
+    this.snapshotListServicesWithHttpInfo = function(snapshotId) {
       var postBody = null;
 
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotListservices");
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotListServices");
       }
 
 
@@ -565,19 +567,19 @@
       var returnType = [SnapshotServices];
 
       return this.apiClient.callApi(
-        '/snapshot/{snapshotId}/services/', 'GET',
+        '/snapshot/{snapshotId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} snapshotId ID of snapshot
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SnapshotServices>}
      */
-    this.operationSnapshotListservices = function(snapshotId) {
-      return this.operationSnapshotListservicesWithHttpInfo(snapshotId)
+    this.snapshotListServices = function(snapshotId) {
+      return this.snapshotListServicesWithHttpInfo(snapshotId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -585,22 +587,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} snapshotId ID of snapshot
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationSnapshotPatchtagWithHttpInfo = function(snapshotId, requestBody) {
-      var postBody = requestBody;
+    this.snapshotPatchTagWithHttpInfo = function(snapshotId, body) {
+      var postBody = body;
 
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotPatchtag");
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationSnapshotPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling snapshotPatchTag");
       }
 
 
@@ -619,23 +621,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/snapshot/{snapshotId}/tag/', 'PATCH',
+        '/snapshot/{snapshotId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} snapshotId ID of snapshot
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationSnapshotPatchtag = function(snapshotId, requestBody) {
-      return this.operationSnapshotPatchtagWithHttpInfo(snapshotId, requestBody)
+    this.snapshotPatchTag = function(snapshotId, body) {
+      return this.snapshotPatchTagWithHttpInfo(snapshotId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -643,19 +645,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} snapshotId ID of snapshot
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject56} opts.inlineObject56 
+     * @param {module:model/SnapshotPostAccessrights} snapshotPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationSnapshotPostaccessrightsWithHttpInfo = function(snapshotId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject56'];
+    this.snapshotPostAccessrightsWithHttpInfo = function(snapshotId, snapshotPostAccessrights) {
+      var postBody = snapshotPostAccessrights;
 
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling operationSnapshotPostaccessrights");
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotPostAccessrights");
+      }
+
+      // verify the required parameter 'snapshotPostAccessrights' is set
+      if (snapshotPostAccessrights === undefined || snapshotPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'snapshotPostAccessrights' when calling snapshotPostAccessrights");
       }
 
 
@@ -677,21 +682,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/snapshot/{snapshotId}/accessrights/', 'POST',
+        '/snapshot/{snapshotId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} snapshotId ID of snapshot
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject56} opts.inlineObject56 
+     * @param {module:model/SnapshotPostAccessrights} snapshotPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationSnapshotPostaccessrights = function(snapshotId, opts) {
-      return this.operationSnapshotPostaccessrightsWithHttpInfo(snapshotId, opts)
+    this.snapshotPostAccessrights = function(snapshotId, snapshotPostAccessrights) {
+      return this.snapshotPostAccessrightsWithHttpInfo(snapshotId, snapshotPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -704,12 +708,12 @@
      * @param {String} snapshotId ID of snapshot
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
      */
-    this.showSnapshotWithHttpInfo = function(snapshotId) {
+    this.snapshotShowWithHttpInfo = function(snapshotId) {
       var postBody = null;
 
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling showSnapshot");
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotShow");
       }
 
 
@@ -743,8 +747,8 @@
      * @param {String} snapshotId ID of snapshot
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
      */
-    this.showSnapshot = function(snapshotId) {
-      return this.showSnapshotWithHttpInfo(snapshotId)
+    this.snapshotShow = function(snapshotId) {
+      return this.snapshotShowWithHttpInfo(snapshotId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -755,17 +759,20 @@
      * Update
      * Returns modified snapshot
      * @param {String} snapshotId ID of snapshot
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject55} opts.inlineObject55 
+     * @param {module:model/SnapshotUpdate} snapshotUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
      */
-    this.updateSnapshotWithHttpInfo = function(snapshotId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject55'];
+    this.snapshotUpdateWithHttpInfo = function(snapshotId, snapshotUpdate) {
+      var postBody = snapshotUpdate;
 
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
-        throw new Error("Missing the required parameter 'snapshotId' when calling updateSnapshot");
+        throw new Error("Missing the required parameter 'snapshotId' when calling snapshotUpdate");
+      }
+
+      // verify the required parameter 'snapshotUpdate' is set
+      if (snapshotUpdate === undefined || snapshotUpdate === null) {
+        throw new Error("Missing the required parameter 'snapshotUpdate' when calling snapshotUpdate");
       }
 
 
@@ -797,12 +804,11 @@
      * Update
      * Returns modified snapshot
      * @param {String} snapshotId ID of snapshot
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject55} opts.inlineObject55 
+     * @param {module:model/SnapshotUpdate} snapshotUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
      */
-    this.updateSnapshot = function(snapshotId, opts) {
-      return this.updateSnapshotWithHttpInfo(snapshotId, opts)
+    this.snapshotUpdate = function(snapshotId, snapshotUpdate) {
+      return this.snapshotUpdateWithHttpInfo(snapshotId, snapshotUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

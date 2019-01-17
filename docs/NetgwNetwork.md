@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **accessRights** | **String** |  | [optional] 
 **processing** | **String** |  | [optional] 
 **created** | **String** |  | [optional] 
-**queue** | **String** |  | [optional] 
+**queue** | [**[Event]**](Event.md) |  | [optional] 
 **state** | **String** |  | [optional] 
 **tag** | **String** |  | [optional] 
 **project** | **String** |  | [optional] 

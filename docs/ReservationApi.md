@@ -4,28 +4,28 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actionReservationAssign**](ReservationApi.md#actionReservationAssign) | **POST** /reservation/{reservationId}/actions/assign | /actions/assign
-[**actionReservationExtend**](ReservationApi.md#actionReservationExtend) | **POST** /reservation/{reservationId}/actions/extend | /actions/extend
-[**actionReservationUnassign**](ReservationApi.md#actionReservationUnassign) | **POST** /reservation/{reservationId}/actions/unassign | /actions/unassign
-[**createReservation**](ReservationApi.md#createReservation) | **POST** /reservation | Create
-[**deleteReservation**](ReservationApi.md#deleteReservation) | **DELETE** /reservation/{reservationId} | Delete
-[**listReservation**](ReservationApi.md#listReservation) | **GET** /reservation | List
-[**operationReservationDeleteaccessrightsIdentity**](ReservationApi.md#operationReservationDeleteaccessrightsIdentity) | **DELETE** /reservation/{reservationId}/accessrights/{identity} | /accessrights/:identity
-[**operationReservationDeletetagKey**](ReservationApi.md#operationReservationDeletetagKey) | **DELETE** /reservation/{reservationId}/tag/{key} | /tag/:key
-[**operationReservationGetservicesServiceId**](ReservationApi.md#operationReservationGetservicesServiceId) | **GET** /reservation/{reservationId}/services/{serviceId} | /services/:serviceId
-[**operationReservationGettag**](ReservationApi.md#operationReservationGettag) | **GET** /reservation/{reservationId}/tag/ | /tag/
-[**operationReservationListaccessrights**](ReservationApi.md#operationReservationListaccessrights) | **GET** /reservation/{reservationId}/accessrights/ | /accessrights/
-[**operationReservationListqueue**](ReservationApi.md#operationReservationListqueue) | **GET** /reservation/{reservationId}/queue/ | /queue/
-[**operationReservationListservices**](ReservationApi.md#operationReservationListservices) | **GET** /reservation/{reservationId}/services/ | /services/
-[**operationReservationPatchtag**](ReservationApi.md#operationReservationPatchtag) | **PATCH** /reservation/{reservationId}/tag/ | /tag/
-[**operationReservationPostaccessrights**](ReservationApi.md#operationReservationPostaccessrights) | **POST** /reservation/{reservationId}/accessrights/ | /accessrights/
-[**showReservation**](ReservationApi.md#showReservation) | **GET** /reservation/{reservationId} | Get
-[**updateReservation**](ReservationApi.md#updateReservation) | **PATCH** /reservation/{reservationId} | Update
+[**reservationActionAssign**](ReservationApi.md#reservationActionAssign) | **POST** /reservation/{reservationId}/actions/assign | /actions/assign
+[**reservationActionExtend**](ReservationApi.md#reservationActionExtend) | **POST** /reservation/{reservationId}/actions/extend | /actions/extend
+[**reservationActionUnassign**](ReservationApi.md#reservationActionUnassign) | **POST** /reservation/{reservationId}/actions/unassign | /actions/unassign
+[**reservationCreate**](ReservationApi.md#reservationCreate) | **POST** /reservation | Create
+[**reservationDelete**](ReservationApi.md#reservationDelete) | **DELETE** /reservation/{reservationId} | Delete
+[**reservationDeleteAccessrightsIdentity**](ReservationApi.md#reservationDeleteAccessrightsIdentity) | **DELETE** /reservation/{reservationId}/accessrights/{identity} | /accessrights/:identity
+[**reservationDeleteTagKey**](ReservationApi.md#reservationDeleteTagKey) | **DELETE** /reservation/{reservationId}/tag/{key} | /tag/:key
+[**reservationGetServicesServiceId**](ReservationApi.md#reservationGetServicesServiceId) | **GET** /reservation/{reservationId}/services/{serviceId} | /services/:serviceId
+[**reservationGetTag**](ReservationApi.md#reservationGetTag) | **GET** /reservation/{reservationId}/tag | /tag
+[**reservationList**](ReservationApi.md#reservationList) | **GET** /reservation | List
+[**reservationListAccessrights**](ReservationApi.md#reservationListAccessrights) | **GET** /reservation/{reservationId}/accessrights | /accessrights
+[**reservationListQueue**](ReservationApi.md#reservationListQueue) | **GET** /reservation/{reservationId}/queue | /queue
+[**reservationListServices**](ReservationApi.md#reservationListServices) | **GET** /reservation/{reservationId}/services | /services
+[**reservationPatchTag**](ReservationApi.md#reservationPatchTag) | **PATCH** /reservation/{reservationId}/tag | /tag
+[**reservationPostAccessrights**](ReservationApi.md#reservationPostAccessrights) | **POST** /reservation/{reservationId}/accessrights | /accessrights
+[**reservationShow**](ReservationApi.md#reservationShow) | **GET** /reservation/{reservationId} | Get
+[**reservationUpdate**](ReservationApi.md#reservationUpdate) | **PATCH** /reservation/{reservationId} | Update
 
 
-<a name="actionReservationAssign"></a>
-# **actionReservationAssign**
-> Reservation actionReservationAssign(reservationId)
+<a name="reservationActionAssign"></a>
+# **reservationActionAssign**
+> Reservation reservationActionAssign(reservationId)
 
 /actions/assign
 
@@ -53,7 +53,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-apiInstance.actionReservationAssign(reservationId).then(function(data) {
+apiInstance.reservationActionAssign(reservationId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -80,9 +80,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionReservationExtend"></a>
-# **actionReservationExtend**
-> Reservation actionReservationExtend(reservationId)
+<a name="reservationActionExtend"></a>
+# **reservationActionExtend**
+> Reservation reservationActionExtend(reservationId)
 
 /actions/extend
 
@@ -110,7 +110,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-apiInstance.actionReservationExtend(reservationId).then(function(data) {
+apiInstance.reservationActionExtend(reservationId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -137,9 +137,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionReservationUnassign"></a>
-# **actionReservationUnassign**
-> Reservation actionReservationUnassign(reservationId)
+<a name="reservationActionUnassign"></a>
+# **reservationActionUnassign**
+> Reservation reservationActionUnassign(reservationId)
 
 /actions/unassign
 
@@ -167,7 +167,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-apiInstance.actionReservationUnassign(reservationId).then(function(data) {
+apiInstance.reservationActionUnassign(reservationId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -194,9 +194,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="createReservation"></a>
-# **createReservation**
-> Reservation createReservation(opts)
+<a name="reservationCreate"></a>
+# **reservationCreate**
+> Reservation reservationCreate(reservationCreate)
 
 Create
 
@@ -223,10 +223,8 @@ Session.apiKey = 'YOUR API KEY';
 //Session.apiKeyPrefix = 'Token';
 
 var apiInstance = new HyperOneApi.ReservationApi();
-var opts = {
-  'inlineObject57': new HyperOneApi.InlineObject57() // InlineObject57 | 
-};
-apiInstance.createReservation(opts).then(function(data) {
+var reservationCreate = new HyperOneApi.ReservationCreate(); // ReservationCreate | 
+apiInstance.reservationCreate(reservationCreate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -238,7 +236,7 @@ apiInstance.createReservation(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject57** | [**InlineObject57**](InlineObject57.md)|  | [optional] 
+ **reservationCreate** | [**ReservationCreate**](ReservationCreate.md)|  | 
 
 ### Return type
 
@@ -253,9 +251,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="deleteReservation"></a>
-# **deleteReservation**
-> deleteReservation(reservationId)
+<a name="reservationDelete"></a>
+# **reservationDelete**
+> reservationDelete(reservationId)
 
 Delete
 
@@ -281,7 +279,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-apiInstance.deleteReservation(reservationId).then(function() {
+apiInstance.reservationDelete(reservationId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -308,9 +306,235 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="listReservation"></a>
-# **listReservation**
-> [Reservation] listReservation(opts)
+<a name="reservationDeleteAccessrightsIdentity"></a>
+# **reservationDeleteAccessrightsIdentity**
+> Reservation reservationDeleteAccessrightsIdentity(reservationId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ReservationApi();
+var reservationId = "reservationId_example"; // String | ID of reservation
+var identity = "identity_example"; // String | identity
+apiInstance.reservationDeleteAccessrightsIdentity(reservationId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **reservationId** | **String**| ID of reservation | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Reservation**](Reservation.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="reservationDeleteTagKey"></a>
+# **reservationDeleteTagKey**
+> Object reservationDeleteTagKey(reservationId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ReservationApi();
+var reservationId = "reservationId_example"; // String | ID of reservation
+var key = "key_example"; // String | key
+apiInstance.reservationDeleteTagKey(reservationId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **reservationId** | **String**| ID of reservation | 
+ **key** | **String**| key | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="reservationGetServicesServiceId"></a>
+# **reservationGetServicesServiceId**
+> ReservationServices reservationGetServicesServiceId(reservationId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ReservationApi();
+var reservationId = "reservationId_example"; // String | ID of reservation
+var serviceId = "serviceId_example"; // String | serviceId
+apiInstance.reservationGetServicesServiceId(reservationId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **reservationId** | **String**| ID of reservation | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**ReservationServices**](ReservationServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="reservationGetTag"></a>
+# **reservationGetTag**
+> Object reservationGetTag(reservationId)
+
+/tag
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ReservationApi();
+var reservationId = "reservationId_example"; // String | ID of reservation
+apiInstance.reservationGetTag(reservationId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **reservationId** | **String**| ID of reservation | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="reservationList"></a>
+# **reservationList**
+> [Reservation] reservationList(opts)
 
 List
 
@@ -340,7 +564,7 @@ var apiInstance = new HyperOneApi.ReservationApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-apiInstance.listReservation(opts).then(function(data) {
+apiInstance.reservationList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -367,68 +591,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationReservationDeleteaccessrightsIdentity"></a>
-# **operationReservationDeleteaccessrightsIdentity**
-> Reservation operationReservationDeleteaccessrightsIdentity(reservationId, identity)
+<a name="reservationListAccessrights"></a>
+# **reservationListAccessrights**
+> [String] reservationListAccessrights(reservationId)
 
-/accessrights/:identity
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ReservationApi();
-var reservationId = "reservationId_example"; // String | ID of reservation
-var identity = "identity_example"; // String | identity
-apiInstance.operationReservationDeleteaccessrightsIdentity(reservationId, identity).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **reservationId** | **String**| ID of reservation | 
- **identity** | **String**| identity | 
-
-### Return type
-
-[**Reservation**](Reservation.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationReservationDeletetagKey"></a>
-# **operationReservationDeletetagKey**
-> {String: String} operationReservationDeletetagKey(reservationId, key)
-
-/tag/:key
+/accessrights
 
 ### Example
 ```javascript
@@ -452,176 +619,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-var key = "key_example"; // String | key
-apiInstance.operationReservationDeletetagKey(reservationId, key).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **reservationId** | **String**| ID of reservation | 
- **key** | **String**| key | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationReservationGetservicesServiceId"></a>
-# **operationReservationGetservicesServiceId**
-> ReservationServices operationReservationGetservicesServiceId(reservationId, serviceId)
-
-/services/:serviceId
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ReservationApi();
-var reservationId = "reservationId_example"; // String | ID of reservation
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.operationReservationGetservicesServiceId(reservationId, serviceId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **reservationId** | **String**| ID of reservation | 
- **serviceId** | **String**| serviceId | 
-
-### Return type
-
-[**ReservationServices**](ReservationServices.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationReservationGettag"></a>
-# **operationReservationGettag**
-> {String: String} operationReservationGettag(reservationId)
-
-/tag/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ReservationApi();
-var reservationId = "reservationId_example"; // String | ID of reservation
-apiInstance.operationReservationGettag(reservationId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **reservationId** | **String**| ID of reservation | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationReservationListaccessrights"></a>
-# **operationReservationListaccessrights**
-> [String] operationReservationListaccessrights(reservationId)
-
-/accessrights/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.ReservationApi();
-var reservationId = "reservationId_example"; // String | ID of reservation
-apiInstance.operationReservationListaccessrights(reservationId).then(function(data) {
+apiInstance.reservationListAccessrights(reservationId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -648,11 +646,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationReservationListqueue"></a>
-# **operationReservationListqueue**
-> [Event] operationReservationListqueue(reservationId)
+<a name="reservationListQueue"></a>
+# **reservationListQueue**
+> [Event] reservationListQueue(reservationId)
 
-/queue/
+/queue
 
 ### Example
 ```javascript
@@ -676,7 +674,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-apiInstance.operationReservationListqueue(reservationId).then(function(data) {
+apiInstance.reservationListQueue(reservationId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -703,11 +701,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationReservationListservices"></a>
-# **operationReservationListservices**
-> [ReservationServices] operationReservationListservices(reservationId)
+<a name="reservationListServices"></a>
+# **reservationListServices**
+> [ReservationServices] reservationListServices(reservationId)
 
-/services/
+/services
 
 ### Example
 ```javascript
@@ -731,7 +729,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-apiInstance.operationReservationListservices(reservationId).then(function(data) {
+apiInstance.reservationListServices(reservationId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -758,11 +756,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationReservationPatchtag"></a>
-# **operationReservationPatchtag**
-> {String: String} operationReservationPatchtag(reservationId, requestBody)
+<a name="reservationPatchTag"></a>
+# **reservationPatchTag**
+> Object reservationPatchTag(reservationId, body)
 
-/tag/
+/tag
 
 ### Example
 ```javascript
@@ -786,8 +784,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.operationReservationPatchtag(reservationId, requestBody).then(function(data) {
+var body = null; // Object | 
+apiInstance.reservationPatchTag(reservationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -800,11 +798,11 @@ apiInstance.operationReservationPatchtag(reservationId, requestBody).then(functi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reservationId** | **String**| ID of reservation | 
- **requestBody** | [**{String: String}**](String.md)|  | 
+ **body** | **Object**|  | 
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -815,11 +813,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationReservationPostaccessrights"></a>
-# **operationReservationPostaccessrights**
-> String operationReservationPostaccessrights(reservationId, opts)
+<a name="reservationPostAccessrights"></a>
+# **reservationPostAccessrights**
+> String reservationPostAccessrights(reservationId, reservationPostAccessrights)
 
-/accessrights/
+/accessrights
 
 ### Example
 ```javascript
@@ -843,10 +841,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-var opts = {
-  'inlineObject59': new HyperOneApi.InlineObject59() // InlineObject59 | 
-};
-apiInstance.operationReservationPostaccessrights(reservationId, opts).then(function(data) {
+var reservationPostAccessrights = new HyperOneApi.ReservationPostAccessrights(); // ReservationPostAccessrights | 
+apiInstance.reservationPostAccessrights(reservationId, reservationPostAccessrights).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -859,7 +855,7 @@ apiInstance.operationReservationPostaccessrights(reservationId, opts).then(funct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reservationId** | **String**| ID of reservation | 
- **inlineObject59** | [**InlineObject59**](InlineObject59.md)|  | [optional] 
+ **reservationPostAccessrights** | [**ReservationPostAccessrights**](ReservationPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -874,9 +870,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="showReservation"></a>
-# **showReservation**
-> Reservation showReservation(reservationId)
+<a name="reservationShow"></a>
+# **reservationShow**
+> Reservation reservationShow(reservationId)
 
 Get
 
@@ -904,7 +900,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-apiInstance.showReservation(reservationId).then(function(data) {
+apiInstance.reservationShow(reservationId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -931,9 +927,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateReservation"></a>
-# **updateReservation**
-> Reservation updateReservation(reservationId, opts)
+<a name="reservationUpdate"></a>
+# **reservationUpdate**
+> Reservation reservationUpdate(reservationId, reservationUpdate)
 
 Update
 
@@ -961,10 +957,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-var opts = {
-  'inlineObject58': new HyperOneApi.InlineObject58() // InlineObject58 | 
-};
-apiInstance.updateReservation(reservationId, opts).then(function(data) {
+var reservationUpdate = new HyperOneApi.ReservationUpdate(); // ReservationUpdate | 
+apiInstance.reservationUpdate(reservationId, reservationUpdate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -977,7 +971,7 @@ apiInstance.updateReservation(reservationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reservationId** | **String**| ID of reservation | 
- **inlineObject58** | [**InlineObject58**](InlineObject58.md)|  | [optional] 
+ **reservationUpdate** | [**ReservationUpdate**](ReservationUpdate.md)|  | 
 
 ### Return type
 

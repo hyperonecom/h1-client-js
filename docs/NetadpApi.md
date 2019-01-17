@@ -4,22 +4,248 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listNetadp**](NetadpApi.md#listNetadp) | **GET** /netadp | List
-[**operationNetadpDeleteaccessrightsIdentity**](NetadpApi.md#operationNetadpDeleteaccessrightsIdentity) | **DELETE** /netadp/{netadpId}/accessrights/{identity} | /accessrights/:identity
-[**operationNetadpDeletetagKey**](NetadpApi.md#operationNetadpDeletetagKey) | **DELETE** /netadp/{netadpId}/tag/{key} | /tag/:key
-[**operationNetadpGetservicesServiceId**](NetadpApi.md#operationNetadpGetservicesServiceId) | **GET** /netadp/{netadpId}/services/{serviceId} | /services/:serviceId
-[**operationNetadpGettag**](NetadpApi.md#operationNetadpGettag) | **GET** /netadp/{netadpId}/tag/ | /tag/
-[**operationNetadpListaccessrights**](NetadpApi.md#operationNetadpListaccessrights) | **GET** /netadp/{netadpId}/accessrights/ | /accessrights/
-[**operationNetadpListqueue**](NetadpApi.md#operationNetadpListqueue) | **GET** /netadp/{netadpId}/queue/ | /queue/
-[**operationNetadpListservices**](NetadpApi.md#operationNetadpListservices) | **GET** /netadp/{netadpId}/services/ | /services/
-[**operationNetadpPatchtag**](NetadpApi.md#operationNetadpPatchtag) | **PATCH** /netadp/{netadpId}/tag/ | /tag/
-[**operationNetadpPostaccessrights**](NetadpApi.md#operationNetadpPostaccessrights) | **POST** /netadp/{netadpId}/accessrights/ | /accessrights/
-[**showNetadp**](NetadpApi.md#showNetadp) | **GET** /netadp/{netadpId} | Get
+[**netadpDeleteAccessrightsIdentity**](NetadpApi.md#netadpDeleteAccessrightsIdentity) | **DELETE** /netadp/{netadpId}/accessrights/{identity} | /accessrights/:identity
+[**netadpDeleteTagKey**](NetadpApi.md#netadpDeleteTagKey) | **DELETE** /netadp/{netadpId}/tag/{key} | /tag/:key
+[**netadpGetServicesServiceId**](NetadpApi.md#netadpGetServicesServiceId) | **GET** /netadp/{netadpId}/services/{serviceId} | /services/:serviceId
+[**netadpGetTag**](NetadpApi.md#netadpGetTag) | **GET** /netadp/{netadpId}/tag | /tag
+[**netadpList**](NetadpApi.md#netadpList) | **GET** /netadp | List
+[**netadpListAccessrights**](NetadpApi.md#netadpListAccessrights) | **GET** /netadp/{netadpId}/accessrights | /accessrights
+[**netadpListQueue**](NetadpApi.md#netadpListQueue) | **GET** /netadp/{netadpId}/queue | /queue
+[**netadpListServices**](NetadpApi.md#netadpListServices) | **GET** /netadp/{netadpId}/services | /services
+[**netadpPatchTag**](NetadpApi.md#netadpPatchTag) | **PATCH** /netadp/{netadpId}/tag | /tag
+[**netadpPostAccessrights**](NetadpApi.md#netadpPostAccessrights) | **POST** /netadp/{netadpId}/accessrights | /accessrights
+[**netadpShow**](NetadpApi.md#netadpShow) | **GET** /netadp/{netadpId} | Get
 
 
-<a name="listNetadp"></a>
-# **listNetadp**
-> [Netadp] listNetadp(opts)
+<a name="netadpDeleteAccessrightsIdentity"></a>
+# **netadpDeleteAccessrightsIdentity**
+> Netadp netadpDeleteAccessrightsIdentity(netadpId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+var identity = "identity_example"; // String | identity
+apiInstance.netadpDeleteAccessrightsIdentity(netadpId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netadpId** | **String**| ID of netadp | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Netadp**](Netadp.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="netadpDeleteTagKey"></a>
+# **netadpDeleteTagKey**
+> Object netadpDeleteTagKey(netadpId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+var key = "key_example"; // String | key
+apiInstance.netadpDeleteTagKey(netadpId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netadpId** | **String**| ID of netadp | 
+ **key** | **String**| key | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="netadpGetServicesServiceId"></a>
+# **netadpGetServicesServiceId**
+> NetadpServices netadpGetServicesServiceId(netadpId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+var serviceId = "serviceId_example"; // String | serviceId
+apiInstance.netadpGetServicesServiceId(netadpId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netadpId** | **String**| ID of netadp | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**NetadpServices**](NetadpServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="netadpGetTag"></a>
+# **netadpGetTag**
+> Object netadpGetTag(netadpId)
+
+/tag
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+apiInstance.netadpGetTag(netadpId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **netadpId** | **String**| ID of netadp | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="netadpList"></a>
+# **netadpList**
+> [Netadp] netadpList(opts)
 
 List
 
@@ -50,7 +276,7 @@ var opts = {
   'assignedResource': "assignedResource_example", // String | Filter by assigned.resource
   'assignedId': "assignedId_example" // String | Filter by assigned.id
 };
-apiInstance.listNetadp(opts).then(function(data) {
+apiInstance.netadpList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -78,68 +304,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationNetadpDeleteaccessrightsIdentity"></a>
-# **operationNetadpDeleteaccessrightsIdentity**
-> Netadp operationNetadpDeleteaccessrightsIdentity(netadpId, identity)
+<a name="netadpListAccessrights"></a>
+# **netadpListAccessrights**
+> [String] netadpListAccessrights(netadpId)
 
-/accessrights/:identity
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.NetadpApi();
-var netadpId = "netadpId_example"; // String | ID of netadp
-var identity = "identity_example"; // String | identity
-apiInstance.operationNetadpDeleteaccessrightsIdentity(netadpId, identity).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **netadpId** | **String**| ID of netadp | 
- **identity** | **String**| identity | 
-
-### Return type
-
-[**Netadp**](Netadp.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationNetadpDeletetagKey"></a>
-# **operationNetadpDeletetagKey**
-> {String: String} operationNetadpDeletetagKey(netadpId, key)
-
-/tag/:key
+/accessrights
 
 ### Example
 ```javascript
@@ -163,176 +332,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-var key = "key_example"; // String | key
-apiInstance.operationNetadpDeletetagKey(netadpId, key).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **netadpId** | **String**| ID of netadp | 
- **key** | **String**| key | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationNetadpGetservicesServiceId"></a>
-# **operationNetadpGetservicesServiceId**
-> NetadpServices operationNetadpGetservicesServiceId(netadpId, serviceId)
-
-/services/:serviceId
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.NetadpApi();
-var netadpId = "netadpId_example"; // String | ID of netadp
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.operationNetadpGetservicesServiceId(netadpId, serviceId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **netadpId** | **String**| ID of netadp | 
- **serviceId** | **String**| serviceId | 
-
-### Return type
-
-[**NetadpServices**](NetadpServices.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationNetadpGettag"></a>
-# **operationNetadpGettag**
-> {String: String} operationNetadpGettag(netadpId)
-
-/tag/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.NetadpApi();
-var netadpId = "netadpId_example"; // String | ID of netadp
-apiInstance.operationNetadpGettag(netadpId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **netadpId** | **String**| ID of netadp | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationNetadpListaccessrights"></a>
-# **operationNetadpListaccessrights**
-> [String] operationNetadpListaccessrights(netadpId)
-
-/accessrights/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.NetadpApi();
-var netadpId = "netadpId_example"; // String | ID of netadp
-apiInstance.operationNetadpListaccessrights(netadpId).then(function(data) {
+apiInstance.netadpListAccessrights(netadpId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -359,11 +359,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationNetadpListqueue"></a>
-# **operationNetadpListqueue**
-> [Event] operationNetadpListqueue(netadpId)
+<a name="netadpListQueue"></a>
+# **netadpListQueue**
+> [Event] netadpListQueue(netadpId)
 
-/queue/
+/queue
 
 ### Example
 ```javascript
@@ -387,7 +387,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-apiInstance.operationNetadpListqueue(netadpId).then(function(data) {
+apiInstance.netadpListQueue(netadpId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -414,11 +414,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationNetadpListservices"></a>
-# **operationNetadpListservices**
-> [NetadpServices] operationNetadpListservices(netadpId)
+<a name="netadpListServices"></a>
+# **netadpListServices**
+> [NetadpServices] netadpListServices(netadpId)
 
-/services/
+/services
 
 ### Example
 ```javascript
@@ -442,7 +442,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-apiInstance.operationNetadpListservices(netadpId).then(function(data) {
+apiInstance.netadpListServices(netadpId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -469,11 +469,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationNetadpPatchtag"></a>
-# **operationNetadpPatchtag**
-> {String: String} operationNetadpPatchtag(netadpId, requestBody)
+<a name="netadpPatchTag"></a>
+# **netadpPatchTag**
+> Object netadpPatchTag(netadpId, body)
 
-/tag/
+/tag
 
 ### Example
 ```javascript
@@ -497,8 +497,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.operationNetadpPatchtag(netadpId, requestBody).then(function(data) {
+var body = null; // Object | 
+apiInstance.netadpPatchTag(netadpId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -511,11 +511,11 @@ apiInstance.operationNetadpPatchtag(netadpId, requestBody).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **netadpId** | **String**| ID of netadp | 
- **requestBody** | [**{String: String}**](String.md)|  | 
+ **body** | **Object**|  | 
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -526,11 +526,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationNetadpPostaccessrights"></a>
-# **operationNetadpPostaccessrights**
-> String operationNetadpPostaccessrights(netadpId, opts)
+<a name="netadpPostAccessrights"></a>
+# **netadpPostAccessrights**
+> String netadpPostAccessrights(netadpId, netadpPostAccessrights)
 
-/accessrights/
+/accessrights
 
 ### Example
 ```javascript
@@ -554,10 +554,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-var opts = {
-  'inlineObject46': new HyperOneApi.InlineObject46() // InlineObject46 | 
-};
-apiInstance.operationNetadpPostaccessrights(netadpId, opts).then(function(data) {
+var netadpPostAccessrights = new HyperOneApi.NetadpPostAccessrights(); // NetadpPostAccessrights | 
+apiInstance.netadpPostAccessrights(netadpId, netadpPostAccessrights).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -570,7 +568,7 @@ apiInstance.operationNetadpPostaccessrights(netadpId, opts).then(function(data) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **netadpId** | **String**| ID of netadp | 
- **inlineObject46** | [**InlineObject46**](InlineObject46.md)|  | [optional] 
+ **netadpPostAccessrights** | [**NetadpPostAccessrights**](NetadpPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -585,9 +583,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="showNetadp"></a>
-# **showNetadp**
-> Netadp showNetadp(netadpId)
+<a name="netadpShow"></a>
+# **netadpShow**
+> Netadp netadpShow(netadpId)
 
 Get
 
@@ -615,7 +613,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-apiInstance.showNetadp(netadpId).then(function(data) {
+apiInstance.netadpShow(netadpId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);

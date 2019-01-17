@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/InlineObject57', 'model/InlineObject58', 'model/InlineObject59', 'model/Reservation', 'model/ReservationServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/Reservation', 'model/ReservationCreate', 'model/ReservationPostAccessrights', 'model/ReservationServices', 'model/ReservationUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject57'), require('../model/InlineObject58'), require('../model/InlineObject59'), require('../model/Reservation'), require('../model/ReservationServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Reservation'), require('../model/ReservationCreate'), require('../model/ReservationPostAccessrights'), require('../model/ReservationServices'), require('../model/ReservationUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ReservationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject57, root.HyperOneApi.InlineObject58, root.HyperOneApi.InlineObject59, root.HyperOneApi.Reservation, root.HyperOneApi.ReservationServices);
+    root.HyperOneApi.ReservationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Reservation, root.HyperOneApi.ReservationCreate, root.HyperOneApi.ReservationPostAccessrights, root.HyperOneApi.ReservationServices, root.HyperOneApi.ReservationUpdate);
   }
-}(this, function(ApiClient, Event, InlineObject57, InlineObject58, InlineObject59, Reservation, ReservationServices) {
+}(this, function(ApiClient, Event, Reservation, ReservationCreate, ReservationPostAccessrights, ReservationServices, ReservationUpdate) {
   'use strict';
 
   /**
@@ -54,12 +54,12 @@
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-    this.actionReservationAssignWithHttpInfo = function(reservationId) {
+    this.reservationActionAssignWithHttpInfo = function(reservationId) {
       var postBody = null;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling actionReservationAssign");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationActionAssign");
       }
 
 
@@ -93,8 +93,8 @@
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
-    this.actionReservationAssign = function(reservationId) {
-      return this.actionReservationAssignWithHttpInfo(reservationId)
+    this.reservationActionAssign = function(reservationId) {
+      return this.reservationActionAssignWithHttpInfo(reservationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -107,12 +107,12 @@
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-    this.actionReservationExtendWithHttpInfo = function(reservationId) {
+    this.reservationActionExtendWithHttpInfo = function(reservationId) {
       var postBody = null;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling actionReservationExtend");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationActionExtend");
       }
 
 
@@ -146,8 +146,8 @@
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
-    this.actionReservationExtend = function(reservationId) {
-      return this.actionReservationExtendWithHttpInfo(reservationId)
+    this.reservationActionExtend = function(reservationId) {
+      return this.reservationActionExtendWithHttpInfo(reservationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -160,12 +160,12 @@
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-    this.actionReservationUnassignWithHttpInfo = function(reservationId) {
+    this.reservationActionUnassignWithHttpInfo = function(reservationId) {
       var postBody = null;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling actionReservationUnassign");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationActionUnassign");
       }
 
 
@@ -199,8 +199,8 @@
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
-    this.actionReservationUnassign = function(reservationId) {
-      return this.actionReservationUnassignWithHttpInfo(reservationId)
+    this.reservationActionUnassign = function(reservationId) {
+      return this.reservationActionUnassignWithHttpInfo(reservationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -210,13 +210,16 @@
     /**
      * Create
      * Create reservation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject57} opts.inlineObject57 
+     * @param {module:model/ReservationCreate} reservationCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-    this.createReservationWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject57'];
+    this.reservationCreateWithHttpInfo = function(reservationCreate) {
+      var postBody = reservationCreate;
+
+      // verify the required parameter 'reservationCreate' is set
+      if (reservationCreate === undefined || reservationCreate === null) {
+        throw new Error("Missing the required parameter 'reservationCreate' when calling reservationCreate");
+      }
 
 
       var pathParams = {
@@ -245,12 +248,11 @@
     /**
      * Create
      * Create reservation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject57} opts.inlineObject57 
+     * @param {module:model/ReservationCreate} reservationCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
-    this.createReservation = function(opts) {
-      return this.createReservationWithHttpInfo(opts)
+    this.reservationCreate = function(reservationCreate) {
+      return this.reservationCreateWithHttpInfo(reservationCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -262,12 +264,12 @@
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteReservationWithHttpInfo = function(reservationId) {
+    this.reservationDeleteWithHttpInfo = function(reservationId) {
       var postBody = null;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling deleteReservation");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationDelete");
       }
 
 
@@ -300,8 +302,236 @@
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteReservation = function(reservationId) {
-      return this.deleteReservationWithHttpInfo(reservationId)
+    this.reservationDelete = function(reservationId) {
+      return this.reservationDeleteWithHttpInfo(reservationId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} reservationId ID of reservation
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
+     */
+    this.reservationDeleteAccessrightsIdentityWithHttpInfo = function(reservationId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'reservationId' is set
+      if (reservationId === undefined || reservationId === null) {
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling reservationDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'reservationId': reservationId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Reservation;
+
+      return this.apiClient.callApi(
+        '/reservation/{reservationId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} reservationId ID of reservation
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
+     */
+    this.reservationDeleteAccessrightsIdentity = function(reservationId, identity) {
+      return this.reservationDeleteAccessrightsIdentityWithHttpInfo(reservationId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} reservationId ID of reservation
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.reservationDeleteTagKeyWithHttpInfo = function(reservationId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'reservationId' is set
+      if (reservationId === undefined || reservationId === null) {
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling reservationDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'reservationId': reservationId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/reservation/{reservationId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} reservationId ID of reservation
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.reservationDeleteTagKey = function(reservationId, key) {
+      return this.reservationDeleteTagKeyWithHttpInfo(reservationId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} reservationId ID of reservation
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ReservationServices} and HTTP response
+     */
+    this.reservationGetServicesServiceIdWithHttpInfo = function(reservationId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'reservationId' is set
+      if (reservationId === undefined || reservationId === null) {
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling reservationGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'reservationId': reservationId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ReservationServices;
+
+      return this.apiClient.callApi(
+        '/reservation/{reservationId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} reservationId ID of reservation
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ReservationServices}
+     */
+    this.reservationGetServicesServiceId = function(reservationId, serviceId) {
+      return this.reservationGetServicesServiceIdWithHttpInfo(reservationId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} reservationId ID of reservation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.reservationGetTagWithHttpInfo = function(reservationId) {
+      var postBody = null;
+
+      // verify the required parameter 'reservationId' is set
+      if (reservationId === undefined || reservationId === null) {
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationGetTag");
+      }
+
+
+      var pathParams = {
+        'reservationId': reservationId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/reservation/{reservationId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} reservationId ID of reservation
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.reservationGetTag = function(reservationId) {
+      return this.reservationGetTagWithHttpInfo(reservationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -315,7 +545,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Reservation>} and HTTP response
      */
-    this.listReservationWithHttpInfo = function(opts) {
+    this.reservationListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -351,8 +581,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Reservation>}
      */
-    this.listReservation = function(opts) {
-      return this.listReservationWithHttpInfo(opts)
+    this.reservationList = function(opts) {
+      return this.reservationListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -360,244 +590,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} reservationId ID of reservation
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
-     */
-    this.operationReservationDeleteaccessrightsIdentityWithHttpInfo = function(reservationId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'reservationId' is set
-      if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling operationReservationDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationReservationDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'reservationId': reservationId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Reservation;
-
-      return this.apiClient.callApi(
-        '/reservation/{reservationId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} reservationId ID of reservation
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
-     */
-    this.operationReservationDeleteaccessrightsIdentity = function(reservationId, identity) {
-      return this.operationReservationDeleteaccessrightsIdentityWithHttpInfo(reservationId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} reservationId ID of reservation
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationReservationDeletetagKeyWithHttpInfo = function(reservationId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'reservationId' is set
-      if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling operationReservationDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationReservationDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'reservationId': reservationId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/reservation/{reservationId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} reservationId ID of reservation
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationReservationDeletetagKey = function(reservationId, key) {
-      return this.operationReservationDeletetagKeyWithHttpInfo(reservationId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} reservationId ID of reservation
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ReservationServices} and HTTP response
-     */
-    this.operationReservationGetservicesServiceIdWithHttpInfo = function(reservationId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'reservationId' is set
-      if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling operationReservationGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationReservationGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'reservationId': reservationId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ReservationServices;
-
-      return this.apiClient.callApi(
-        '/reservation/{reservationId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} reservationId ID of reservation
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ReservationServices}
-     */
-    this.operationReservationGetservicesServiceId = function(reservationId, serviceId) {
-      return this.operationReservationGetservicesServiceIdWithHttpInfo(reservationId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} reservationId ID of reservation
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationReservationGettagWithHttpInfo = function(reservationId) {
-      var postBody = null;
-
-      // verify the required parameter 'reservationId' is set
-      if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling operationReservationGettag");
-      }
-
-
-      var pathParams = {
-        'reservationId': reservationId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/reservation/{reservationId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} reservationId ID of reservation
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationReservationGettag = function(reservationId) {
-      return this.operationReservationGettagWithHttpInfo(reservationId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationReservationListaccessrightsWithHttpInfo = function(reservationId) {
+    this.reservationListAccessrightsWithHttpInfo = function(reservationId) {
       var postBody = null;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling operationReservationListaccessrights");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationListAccessrights");
       }
 
 
@@ -619,19 +621,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/reservation/{reservationId}/accessrights/', 'GET',
+        '/reservation/{reservationId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationReservationListaccessrights = function(reservationId) {
-      return this.operationReservationListaccessrightsWithHttpInfo(reservationId)
+    this.reservationListAccessrights = function(reservationId) {
+      return this.reservationListAccessrightsWithHttpInfo(reservationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -639,16 +641,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationReservationListqueueWithHttpInfo = function(reservationId) {
+    this.reservationListQueueWithHttpInfo = function(reservationId) {
       var postBody = null;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling operationReservationListqueue");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationListQueue");
       }
 
 
@@ -670,19 +672,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/reservation/{reservationId}/queue/', 'GET',
+        '/reservation/{reservationId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationReservationListqueue = function(reservationId) {
-      return this.operationReservationListqueueWithHttpInfo(reservationId)
+    this.reservationListQueue = function(reservationId) {
+      return this.reservationListQueueWithHttpInfo(reservationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -690,16 +692,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ReservationServices>} and HTTP response
      */
-    this.operationReservationListservicesWithHttpInfo = function(reservationId) {
+    this.reservationListServicesWithHttpInfo = function(reservationId) {
       var postBody = null;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling operationReservationListservices");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationListServices");
       }
 
 
@@ -721,19 +723,19 @@
       var returnType = [ReservationServices];
 
       return this.apiClient.callApi(
-        '/reservation/{reservationId}/services/', 'GET',
+        '/reservation/{reservationId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ReservationServices>}
      */
-    this.operationReservationListservices = function(reservationId) {
-      return this.operationReservationListservicesWithHttpInfo(reservationId)
+    this.reservationListServices = function(reservationId) {
+      return this.reservationListServicesWithHttpInfo(reservationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -741,22 +743,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} reservationId ID of reservation
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationReservationPatchtagWithHttpInfo = function(reservationId, requestBody) {
-      var postBody = requestBody;
+    this.reservationPatchTagWithHttpInfo = function(reservationId, body) {
+      var postBody = body;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling operationReservationPatchtag");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationReservationPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling reservationPatchTag");
       }
 
 
@@ -775,23 +777,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/reservation/{reservationId}/tag/', 'PATCH',
+        '/reservation/{reservationId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} reservationId ID of reservation
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationReservationPatchtag = function(reservationId, requestBody) {
-      return this.operationReservationPatchtagWithHttpInfo(reservationId, requestBody)
+    this.reservationPatchTag = function(reservationId, body) {
+      return this.reservationPatchTagWithHttpInfo(reservationId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -799,19 +801,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} reservationId ID of reservation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject59} opts.inlineObject59 
+     * @param {module:model/ReservationPostAccessrights} reservationPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationReservationPostaccessrightsWithHttpInfo = function(reservationId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject59'];
+    this.reservationPostAccessrightsWithHttpInfo = function(reservationId, reservationPostAccessrights) {
+      var postBody = reservationPostAccessrights;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling operationReservationPostaccessrights");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationPostAccessrights");
+      }
+
+      // verify the required parameter 'reservationPostAccessrights' is set
+      if (reservationPostAccessrights === undefined || reservationPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'reservationPostAccessrights' when calling reservationPostAccessrights");
       }
 
 
@@ -833,21 +838,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/reservation/{reservationId}/accessrights/', 'POST',
+        '/reservation/{reservationId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} reservationId ID of reservation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject59} opts.inlineObject59 
+     * @param {module:model/ReservationPostAccessrights} reservationPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationReservationPostaccessrights = function(reservationId, opts) {
-      return this.operationReservationPostaccessrightsWithHttpInfo(reservationId, opts)
+    this.reservationPostAccessrights = function(reservationId, reservationPostAccessrights) {
+      return this.reservationPostAccessrightsWithHttpInfo(reservationId, reservationPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -860,12 +864,12 @@
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-    this.showReservationWithHttpInfo = function(reservationId) {
+    this.reservationShowWithHttpInfo = function(reservationId) {
       var postBody = null;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling showReservation");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationShow");
       }
 
 
@@ -899,8 +903,8 @@
      * @param {String} reservationId ID of reservation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
-    this.showReservation = function(reservationId) {
-      return this.showReservationWithHttpInfo(reservationId)
+    this.reservationShow = function(reservationId) {
+      return this.reservationShowWithHttpInfo(reservationId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -911,17 +915,20 @@
      * Update
      * Returns modified reservation
      * @param {String} reservationId ID of reservation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject58} opts.inlineObject58 
+     * @param {module:model/ReservationUpdate} reservationUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
-    this.updateReservationWithHttpInfo = function(reservationId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject58'];
+    this.reservationUpdateWithHttpInfo = function(reservationId, reservationUpdate) {
+      var postBody = reservationUpdate;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
-        throw new Error("Missing the required parameter 'reservationId' when calling updateReservation");
+        throw new Error("Missing the required parameter 'reservationId' when calling reservationUpdate");
+      }
+
+      // verify the required parameter 'reservationUpdate' is set
+      if (reservationUpdate === undefined || reservationUpdate === null) {
+        throw new Error("Missing the required parameter 'reservationUpdate' when calling reservationUpdate");
       }
 
 
@@ -953,12 +960,11 @@
      * Update
      * Returns modified reservation
      * @param {String} reservationId ID of reservation
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject58} opts.inlineObject58 
+     * @param {module:model/ReservationUpdate} reservationUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
-    this.updateReservation = function(reservationId, opts) {
-      return this.updateReservationWithHttpInfo(reservationId, opts)
+    this.reservationUpdate = function(reservationId, reservationUpdate) {
+      return this.reservationUpdateWithHttpInfo(reservationId, reservationUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

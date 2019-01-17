@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/InlineObject46', 'model/Netadp', 'model/NetadpServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/Netadp', 'model/NetadpPostAccessrights', 'model/NetadpServices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject46'), require('../model/Netadp'), require('../model/NetadpServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Netadp'), require('../model/NetadpPostAccessrights'), require('../model/NetadpServices'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.NetadpApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject46, root.HyperOneApi.Netadp, root.HyperOneApi.NetadpServices);
+    root.HyperOneApi.NetadpApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Netadp, root.HyperOneApi.NetadpPostAccessrights, root.HyperOneApi.NetadpServices);
   }
-}(this, function(ApiClient, Event, InlineObject46, Netadp, NetadpServices) {
+}(this, function(ApiClient, Event, Netadp, NetadpPostAccessrights, NetadpServices) {
   'use strict';
 
   /**
@@ -49,6 +49,234 @@
 
 
     /**
+     * /accessrights/:identity
+     * @param {String} netadpId ID of netadp
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netadp} and HTTP response
+     */
+    this.netadpDeleteAccessrightsIdentityWithHttpInfo = function(netadpId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'netadpId' is set
+      if (netadpId === undefined || netadpId === null) {
+        throw new Error("Missing the required parameter 'netadpId' when calling netadpDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling netadpDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'netadpId': netadpId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Netadp;
+
+      return this.apiClient.callApi(
+        '/netadp/{netadpId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} netadpId ID of netadp
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netadp}
+     */
+    this.netadpDeleteAccessrightsIdentity = function(netadpId, identity) {
+      return this.netadpDeleteAccessrightsIdentityWithHttpInfo(netadpId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} netadpId ID of netadp
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.netadpDeleteTagKeyWithHttpInfo = function(netadpId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'netadpId' is set
+      if (netadpId === undefined || netadpId === null) {
+        throw new Error("Missing the required parameter 'netadpId' when calling netadpDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling netadpDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'netadpId': netadpId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/netadp/{netadpId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} netadpId ID of netadp
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.netadpDeleteTagKey = function(netadpId, key) {
+      return this.netadpDeleteTagKeyWithHttpInfo(netadpId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} netadpId ID of netadp
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NetadpServices} and HTTP response
+     */
+    this.netadpGetServicesServiceIdWithHttpInfo = function(netadpId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'netadpId' is set
+      if (netadpId === undefined || netadpId === null) {
+        throw new Error("Missing the required parameter 'netadpId' when calling netadpGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling netadpGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'netadpId': netadpId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = NetadpServices;
+
+      return this.apiClient.callApi(
+        '/netadp/{netadpId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} netadpId ID of netadp
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NetadpServices}
+     */
+    this.netadpGetServicesServiceId = function(netadpId, serviceId) {
+      return this.netadpGetServicesServiceIdWithHttpInfo(netadpId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} netadpId ID of netadp
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.netadpGetTagWithHttpInfo = function(netadpId) {
+      var postBody = null;
+
+      // verify the required parameter 'netadpId' is set
+      if (netadpId === undefined || netadpId === null) {
+        throw new Error("Missing the required parameter 'netadpId' when calling netadpGetTag");
+      }
+
+
+      var pathParams = {
+        'netadpId': netadpId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/netadp/{netadpId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} netadpId ID of netadp
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.netadpGetTag = function(netadpId) {
+      return this.netadpGetTagWithHttpInfo(netadpId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * List
      * List netadp
      * @param {Object} opts Optional parameters
@@ -56,7 +284,7 @@
      * @param {String} opts.assignedId Filter by assigned.id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Netadp>} and HTTP response
      */
-    this.listNetadpWithHttpInfo = function(opts) {
+    this.netadpListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -94,8 +322,8 @@
      * @param {String} opts.assignedId Filter by assigned.id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Netadp>}
      */
-    this.listNetadp = function(opts) {
-      return this.listNetadpWithHttpInfo(opts)
+    this.netadpList = function(opts) {
+      return this.netadpListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -103,244 +331,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} netadpId ID of netadp
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netadp} and HTTP response
-     */
-    this.operationNetadpDeleteaccessrightsIdentityWithHttpInfo = function(netadpId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'netadpId' is set
-      if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling operationNetadpDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationNetadpDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'netadpId': netadpId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Netadp;
-
-      return this.apiClient.callApi(
-        '/netadp/{netadpId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} netadpId ID of netadp
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netadp}
-     */
-    this.operationNetadpDeleteaccessrightsIdentity = function(netadpId, identity) {
-      return this.operationNetadpDeleteaccessrightsIdentityWithHttpInfo(netadpId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} netadpId ID of netadp
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationNetadpDeletetagKeyWithHttpInfo = function(netadpId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'netadpId' is set
-      if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling operationNetadpDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationNetadpDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'netadpId': netadpId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/netadp/{netadpId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} netadpId ID of netadp
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationNetadpDeletetagKey = function(netadpId, key) {
-      return this.operationNetadpDeletetagKeyWithHttpInfo(netadpId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} netadpId ID of netadp
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NetadpServices} and HTTP response
-     */
-    this.operationNetadpGetservicesServiceIdWithHttpInfo = function(netadpId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'netadpId' is set
-      if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling operationNetadpGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationNetadpGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'netadpId': netadpId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = NetadpServices;
-
-      return this.apiClient.callApi(
-        '/netadp/{netadpId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} netadpId ID of netadp
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NetadpServices}
-     */
-    this.operationNetadpGetservicesServiceId = function(netadpId, serviceId) {
-      return this.operationNetadpGetservicesServiceIdWithHttpInfo(netadpId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} netadpId ID of netadp
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationNetadpGettagWithHttpInfo = function(netadpId) {
-      var postBody = null;
-
-      // verify the required parameter 'netadpId' is set
-      if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling operationNetadpGettag");
-      }
-
-
-      var pathParams = {
-        'netadpId': netadpId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/netadp/{netadpId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} netadpId ID of netadp
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationNetadpGettag = function(netadpId) {
-      return this.operationNetadpGettagWithHttpInfo(netadpId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} netadpId ID of netadp
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationNetadpListaccessrightsWithHttpInfo = function(netadpId) {
+    this.netadpListAccessrightsWithHttpInfo = function(netadpId) {
       var postBody = null;
 
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling operationNetadpListaccessrights");
+        throw new Error("Missing the required parameter 'netadpId' when calling netadpListAccessrights");
       }
 
 
@@ -362,19 +362,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/netadp/{netadpId}/accessrights/', 'GET',
+        '/netadp/{netadpId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} netadpId ID of netadp
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationNetadpListaccessrights = function(netadpId) {
-      return this.operationNetadpListaccessrightsWithHttpInfo(netadpId)
+    this.netadpListAccessrights = function(netadpId) {
+      return this.netadpListAccessrightsWithHttpInfo(netadpId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -382,16 +382,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} netadpId ID of netadp
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationNetadpListqueueWithHttpInfo = function(netadpId) {
+    this.netadpListQueueWithHttpInfo = function(netadpId) {
       var postBody = null;
 
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling operationNetadpListqueue");
+        throw new Error("Missing the required parameter 'netadpId' when calling netadpListQueue");
       }
 
 
@@ -413,19 +413,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/netadp/{netadpId}/queue/', 'GET',
+        '/netadp/{netadpId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} netadpId ID of netadp
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationNetadpListqueue = function(netadpId) {
-      return this.operationNetadpListqueueWithHttpInfo(netadpId)
+    this.netadpListQueue = function(netadpId) {
+      return this.netadpListQueueWithHttpInfo(netadpId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -433,16 +433,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} netadpId ID of netadp
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/NetadpServices>} and HTTP response
      */
-    this.operationNetadpListservicesWithHttpInfo = function(netadpId) {
+    this.netadpListServicesWithHttpInfo = function(netadpId) {
       var postBody = null;
 
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling operationNetadpListservices");
+        throw new Error("Missing the required parameter 'netadpId' when calling netadpListServices");
       }
 
 
@@ -464,19 +464,19 @@
       var returnType = [NetadpServices];
 
       return this.apiClient.callApi(
-        '/netadp/{netadpId}/services/', 'GET',
+        '/netadp/{netadpId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} netadpId ID of netadp
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/NetadpServices>}
      */
-    this.operationNetadpListservices = function(netadpId) {
-      return this.operationNetadpListservicesWithHttpInfo(netadpId)
+    this.netadpListServices = function(netadpId) {
+      return this.netadpListServicesWithHttpInfo(netadpId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -484,22 +484,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} netadpId ID of netadp
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationNetadpPatchtagWithHttpInfo = function(netadpId, requestBody) {
-      var postBody = requestBody;
+    this.netadpPatchTagWithHttpInfo = function(netadpId, body) {
+      var postBody = body;
 
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling operationNetadpPatchtag");
+        throw new Error("Missing the required parameter 'netadpId' when calling netadpPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationNetadpPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling netadpPatchTag");
       }
 
 
@@ -518,23 +518,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/netadp/{netadpId}/tag/', 'PATCH',
+        '/netadp/{netadpId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} netadpId ID of netadp
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationNetadpPatchtag = function(netadpId, requestBody) {
-      return this.operationNetadpPatchtagWithHttpInfo(netadpId, requestBody)
+    this.netadpPatchTag = function(netadpId, body) {
+      return this.netadpPatchTagWithHttpInfo(netadpId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -542,19 +542,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} netadpId ID of netadp
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject46} opts.inlineObject46 
+     * @param {module:model/NetadpPostAccessrights} netadpPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationNetadpPostaccessrightsWithHttpInfo = function(netadpId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject46'];
+    this.netadpPostAccessrightsWithHttpInfo = function(netadpId, netadpPostAccessrights) {
+      var postBody = netadpPostAccessrights;
 
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling operationNetadpPostaccessrights");
+        throw new Error("Missing the required parameter 'netadpId' when calling netadpPostAccessrights");
+      }
+
+      // verify the required parameter 'netadpPostAccessrights' is set
+      if (netadpPostAccessrights === undefined || netadpPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'netadpPostAccessrights' when calling netadpPostAccessrights");
       }
 
 
@@ -576,21 +579,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/netadp/{netadpId}/accessrights/', 'POST',
+        '/netadp/{netadpId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} netadpId ID of netadp
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject46} opts.inlineObject46 
+     * @param {module:model/NetadpPostAccessrights} netadpPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationNetadpPostaccessrights = function(netadpId, opts) {
-      return this.operationNetadpPostaccessrightsWithHttpInfo(netadpId, opts)
+    this.netadpPostAccessrights = function(netadpId, netadpPostAccessrights) {
+      return this.netadpPostAccessrightsWithHttpInfo(netadpId, netadpPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -603,12 +605,12 @@
      * @param {String} netadpId ID of netadp
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netadp} and HTTP response
      */
-    this.showNetadpWithHttpInfo = function(netadpId) {
+    this.netadpShowWithHttpInfo = function(netadpId) {
       var postBody = null;
 
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
-        throw new Error("Missing the required parameter 'netadpId' when calling showNetadp");
+        throw new Error("Missing the required parameter 'netadpId' when calling netadpShow");
       }
 
 
@@ -642,8 +644,8 @@
      * @param {String} netadpId ID of netadp
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netadp}
      */
-    this.showNetadp = function(netadpId) {
-      return this.showNetadpWithHttpInfo(netadpId)
+    this.netadpShow = function(netadpId) {
+      return this.netadpShowWithHttpInfo(netadpId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

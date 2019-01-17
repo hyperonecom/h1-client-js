@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DiskMetadataSource'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DiskMetadataSource'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.DiskMetadata = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.DiskMetadataSource);
+    root.HyperOneApi.DiskMetadata = factory(root.HyperOneApi.ApiClient);
   }
-}(this, function(ApiClient, DiskMetadataSource) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -59,14 +59,14 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('source')) {
-        obj['source'] = DiskMetadataSource.constructFromObject(data['source']);
+        obj['source'] = ApiClient.convertToType(data['source'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/DiskMetadataSource} source
+   * @member {String} source
    */
   exports.prototype['source'] = undefined;
 

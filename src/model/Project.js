@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/ProjectAccessRights1', 'model/ProjectBilling', 'model/ProjectCompliance', 'model/ProjectInvoices', 'model/ProjectLimit', 'model/ProjectNetworkAcl', 'model/ProjectPayments', 'model/ProjectRoles', 'model/ProjectServices', 'model/ProjectThreshold', 'model/ProjectTransfer'], factory);
+    define(['ApiClient', 'model/Event', 'model/ProjectAccessRights', 'model/ProjectBilling', 'model/ProjectCompliance', 'model/ProjectInvoices', 'model/ProjectLimit', 'model/ProjectNetworkAcl', 'model/ProjectPayments', 'model/ProjectRoles', 'model/ProjectServices', 'model/ProjectThreshold', 'model/ProjectTransfer'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Event'), require('./ProjectAccessRights1'), require('./ProjectBilling'), require('./ProjectCompliance'), require('./ProjectInvoices'), require('./ProjectLimit'), require('./ProjectNetworkAcl'), require('./ProjectPayments'), require('./ProjectRoles'), require('./ProjectServices'), require('./ProjectThreshold'), require('./ProjectTransfer'));
+    module.exports = factory(require('../ApiClient'), require('./Event'), require('./ProjectAccessRights'), require('./ProjectBilling'), require('./ProjectCompliance'), require('./ProjectInvoices'), require('./ProjectLimit'), require('./ProjectNetworkAcl'), require('./ProjectPayments'), require('./ProjectRoles'), require('./ProjectServices'), require('./ProjectThreshold'), require('./ProjectTransfer'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.Project = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.ProjectAccessRights1, root.HyperOneApi.ProjectBilling, root.HyperOneApi.ProjectCompliance, root.HyperOneApi.ProjectInvoices, root.HyperOneApi.ProjectLimit, root.HyperOneApi.ProjectNetworkAcl, root.HyperOneApi.ProjectPayments, root.HyperOneApi.ProjectRoles, root.HyperOneApi.ProjectServices, root.HyperOneApi.ProjectThreshold, root.HyperOneApi.ProjectTransfer);
+    root.HyperOneApi.Project = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.ProjectAccessRights, root.HyperOneApi.ProjectBilling, root.HyperOneApi.ProjectCompliance, root.HyperOneApi.ProjectInvoices, root.HyperOneApi.ProjectLimit, root.HyperOneApi.ProjectNetworkAcl, root.HyperOneApi.ProjectPayments, root.HyperOneApi.ProjectRoles, root.HyperOneApi.ProjectServices, root.HyperOneApi.ProjectThreshold, root.HyperOneApi.ProjectTransfer);
   }
-}(this, function(ApiClient, Event, ProjectAccessRights1, ProjectBilling, ProjectCompliance, ProjectInvoices, ProjectLimit, ProjectNetworkAcl, ProjectPayments, ProjectRoles, ProjectServices, ProjectThreshold, ProjectTransfer) {
+}(this, function(ApiClient, Event, ProjectAccessRights, ProjectBilling, ProjectCompliance, ProjectInvoices, ProjectLimit, ProjectNetworkAcl, ProjectPayments, ProjectRoles, ProjectServices, ProjectThreshold, ProjectTransfer) {
   'use strict';
 
 
@@ -83,7 +83,7 @@
         obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'Date');
       }
       if (data.hasOwnProperty('accessRights')) {
-        obj['accessRights'] = ProjectAccessRights1.constructFromObject(data['accessRights']);
+        obj['accessRights'] = ProjectAccessRights.constructFromObject(data['accessRights']);
       }
       if (data.hasOwnProperty('processing')) {
         obj['processing'] = ApiClient.convertToType(data['processing'], 'Boolean');
@@ -179,7 +179,7 @@
    */
   exports.prototype['createdOn'] = undefined;
   /**
-   * @member {module:model/ProjectAccessRights1} accessRights
+   * @member {module:model/ProjectAccessRights} accessRights
    */
   exports.prototype['accessRights'] = undefined;
   /**

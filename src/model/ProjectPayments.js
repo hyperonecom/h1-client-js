@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Event'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Event'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ProjectPayments = factory(root.HyperOneApi.ApiClient);
+    root.HyperOneApi.ProjectPayments = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Event) {
   'use strict';
 
 
@@ -92,7 +92,7 @@
         obj['created'] = ApiClient.convertToType(data['created'], 'String');
       }
       if (data.hasOwnProperty('queue')) {
-        obj['queue'] = ApiClient.convertToType(data['queue'], 'String');
+        obj['queue'] = ApiClient.convertToType(data['queue'], [Event]);
       }
       if (data.hasOwnProperty('state')) {
         obj['state'] = ApiClient.convertToType(data['state'], 'String');
@@ -104,10 +104,10 @@
         obj['project'] = ApiClient.convertToType(data['project'], 'String');
       }
       if (data.hasOwnProperty('creditsFree')) {
-        obj['creditsFree'] = ApiClient.convertToType(data['creditsFree'], 'String');
+        obj['creditsFree'] = ApiClient.convertToType(data['creditsFree'], 'Number');
       }
       if (data.hasOwnProperty('credits')) {
-        obj['credits'] = ApiClient.convertToType(data['credits'], 'String');
+        obj['credits'] = ApiClient.convertToType(data['credits'], 'Number');
       }
       if (data.hasOwnProperty('channel')) {
         obj['channel'] = ApiClient.convertToType(data['channel'], 'String');
@@ -167,7 +167,7 @@
    */
   exports.prototype['created'] = undefined;
   /**
-   * @member {String} queue
+   * @member {Array.<module:model/Event>} queue
    */
   exports.prototype['queue'] = undefined;
   /**
@@ -183,11 +183,11 @@
    */
   exports.prototype['project'] = undefined;
   /**
-   * @member {String} creditsFree
+   * @member {Number} creditsFree
    */
   exports.prototype['creditsFree'] = undefined;
   /**
-   * @member {String} credits
+   * @member {Number} credits
    */
   exports.prototype['credits'] = undefined;
   /**

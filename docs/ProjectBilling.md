@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**credits** | **String** |  | [optional] 
-**creditsBonus** | **String** |  | [optional] 
-**creditLimit** | **String** |  | [optional] 
+**credits** | **Number** |  | [optional] 
+**creditsBonus** | **Number** |  | [optional] 
+**creditLimit** | **Number** |  | [optional] 
 
 

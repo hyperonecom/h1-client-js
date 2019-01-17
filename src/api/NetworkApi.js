@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/InlineObject16', 'model/InlineObject17', 'model/InlineObject18', 'model/InlineObject19', 'model/Ip', 'model/Network', 'model/NetworkServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/Ip', 'model/Network', 'model/NetworkCreate', 'model/NetworkPostAccessrights', 'model/NetworkPostIp', 'model/NetworkServices', 'model/NetworkUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject16'), require('../model/InlineObject17'), require('../model/InlineObject18'), require('../model/InlineObject19'), require('../model/Ip'), require('../model/Network'), require('../model/NetworkServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Ip'), require('../model/Network'), require('../model/NetworkCreate'), require('../model/NetworkPostAccessrights'), require('../model/NetworkPostIp'), require('../model/NetworkServices'), require('../model/NetworkUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.NetworkApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject16, root.HyperOneApi.InlineObject17, root.HyperOneApi.InlineObject18, root.HyperOneApi.InlineObject19, root.HyperOneApi.Ip, root.HyperOneApi.Network, root.HyperOneApi.NetworkServices);
+    root.HyperOneApi.NetworkApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Ip, root.HyperOneApi.Network, root.HyperOneApi.NetworkCreate, root.HyperOneApi.NetworkPostAccessrights, root.HyperOneApi.NetworkPostIp, root.HyperOneApi.NetworkServices, root.HyperOneApi.NetworkUpdate);
   }
-}(this, function(ApiClient, Event, InlineObject16, InlineObject17, InlineObject18, InlineObject19, Ip, Network, NetworkServices) {
+}(this, function(ApiClient, Event, Ip, Network, NetworkCreate, NetworkPostAccessrights, NetworkPostIp, NetworkServices, NetworkUpdate) {
   'use strict';
 
   /**
@@ -51,13 +51,16 @@
     /**
      * Create
      * Create network
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject16} opts.inlineObject16 
+     * @param {module:model/NetworkCreate} networkCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Network} and HTTP response
      */
-    this.createNetworkWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject16'];
+    this.networkCreateWithHttpInfo = function(networkCreate) {
+      var postBody = networkCreate;
+
+      // verify the required parameter 'networkCreate' is set
+      if (networkCreate === undefined || networkCreate === null) {
+        throw new Error("Missing the required parameter 'networkCreate' when calling networkCreate");
+      }
 
 
       var pathParams = {
@@ -86,12 +89,11 @@
     /**
      * Create
      * Create network
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject16} opts.inlineObject16 
+     * @param {module:model/NetworkCreate} networkCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Network}
      */
-    this.createNetwork = function(opts) {
-      return this.createNetworkWithHttpInfo(opts)
+    this.networkCreate = function(networkCreate) {
+      return this.networkCreateWithHttpInfo(networkCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -103,12 +105,12 @@
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteNetworkWithHttpInfo = function(networkId) {
+    this.networkDeleteWithHttpInfo = function(networkId) {
       var postBody = null;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling deleteNetwork");
+        throw new Error("Missing the required parameter 'networkId' when calling networkDelete");
       }
 
 
@@ -141,8 +143,338 @@
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteNetwork = function(networkId) {
-      return this.deleteNetworkWithHttpInfo(networkId)
+    this.networkDelete = function(networkId) {
+      return this.networkDeleteWithHttpInfo(networkId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} networkId ID of network
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Network} and HTTP response
+     */
+    this.networkDeleteAccessrightsIdentityWithHttpInfo = function(networkId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'networkId' is set
+      if (networkId === undefined || networkId === null) {
+        throw new Error("Missing the required parameter 'networkId' when calling networkDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling networkDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'networkId': networkId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Network;
+
+      return this.apiClient.callApi(
+        '/network/{networkId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} networkId ID of network
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Network}
+     */
+    this.networkDeleteAccessrightsIdentity = function(networkId, identity) {
+      return this.networkDeleteAccessrightsIdentityWithHttpInfo(networkId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /ip/:ipId
+     * @param {String} networkId ID of network
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
+     */
+    this.networkDeleteIpIpIdWithHttpInfo = function(networkId) {
+      var postBody = null;
+
+      // verify the required parameter 'networkId' is set
+      if (networkId === undefined || networkId === null) {
+        throw new Error("Missing the required parameter 'networkId' when calling networkDeleteIpIpId");
+      }
+
+
+      var pathParams = {
+        'networkId': networkId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Ip;
+
+      return this.apiClient.callApi(
+        '/network/{networkId}/ip/:ipId', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /ip/:ipId
+     * @param {String} networkId ID of network
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
+     */
+    this.networkDeleteIpIpId = function(networkId) {
+      return this.networkDeleteIpIpIdWithHttpInfo(networkId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} networkId ID of network
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.networkDeleteTagKeyWithHttpInfo = function(networkId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'networkId' is set
+      if (networkId === undefined || networkId === null) {
+        throw new Error("Missing the required parameter 'networkId' when calling networkDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling networkDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'networkId': networkId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/network/{networkId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} networkId ID of network
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.networkDeleteTagKey = function(networkId, key) {
+      return this.networkDeleteTagKeyWithHttpInfo(networkId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /ip/:ipId
+     * @param {String} networkId ID of network
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
+     */
+    this.networkGetIpIpIdWithHttpInfo = function(networkId) {
+      var postBody = null;
+
+      // verify the required parameter 'networkId' is set
+      if (networkId === undefined || networkId === null) {
+        throw new Error("Missing the required parameter 'networkId' when calling networkGetIpIpId");
+      }
+
+
+      var pathParams = {
+        'networkId': networkId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Ip;
+
+      return this.apiClient.callApi(
+        '/network/{networkId}/ip/:ipId', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /ip/:ipId
+     * @param {String} networkId ID of network
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
+     */
+    this.networkGetIpIpId = function(networkId) {
+      return this.networkGetIpIpIdWithHttpInfo(networkId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} networkId ID of network
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NetworkServices} and HTTP response
+     */
+    this.networkGetServicesServiceIdWithHttpInfo = function(networkId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'networkId' is set
+      if (networkId === undefined || networkId === null) {
+        throw new Error("Missing the required parameter 'networkId' when calling networkGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling networkGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'networkId': networkId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = NetworkServices;
+
+      return this.apiClient.callApi(
+        '/network/{networkId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} networkId ID of network
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NetworkServices}
+     */
+    this.networkGetServicesServiceId = function(networkId, serviceId) {
+      return this.networkGetServicesServiceIdWithHttpInfo(networkId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} networkId ID of network
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.networkGetTagWithHttpInfo = function(networkId) {
+      var postBody = null;
+
+      // verify the required parameter 'networkId' is set
+      if (networkId === undefined || networkId === null) {
+        throw new Error("Missing the required parameter 'networkId' when calling networkGetTag");
+      }
+
+
+      var pathParams = {
+        'networkId': networkId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/network/{networkId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} networkId ID of network
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.networkGetTag = function(networkId) {
+      return this.networkGetTagWithHttpInfo(networkId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -156,7 +488,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Network>} and HTTP response
      */
-    this.listNetworkWithHttpInfo = function(opts) {
+    this.networkListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -192,8 +524,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Network>}
      */
-    this.listNetwork = function(opts) {
-      return this.listNetworkWithHttpInfo(opts)
+    this.networkList = function(opts) {
+      return this.networkListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -201,346 +533,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} networkId ID of network
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Network} and HTTP response
-     */
-    this.operationNetworkDeleteaccessrightsIdentityWithHttpInfo = function(networkId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'networkId' is set
-      if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationNetworkDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'networkId': networkId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Network;
-
-      return this.apiClient.callApi(
-        '/network/{networkId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} networkId ID of network
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Network}
-     */
-    this.operationNetworkDeleteaccessrightsIdentity = function(networkId, identity) {
-      return this.operationNetworkDeleteaccessrightsIdentityWithHttpInfo(networkId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /ip/:ipId
-     * @param {String} networkId ID of network
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
-     */
-    this.operationNetworkDeleteipIpIdWithHttpInfo = function(networkId) {
-      var postBody = null;
-
-      // verify the required parameter 'networkId' is set
-      if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkDeleteipIpId");
-      }
-
-
-      var pathParams = {
-        'networkId': networkId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Ip;
-
-      return this.apiClient.callApi(
-        '/network/{networkId}/ip/:ipId', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /ip/:ipId
-     * @param {String} networkId ID of network
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
-     */
-    this.operationNetworkDeleteipIpId = function(networkId) {
-      return this.operationNetworkDeleteipIpIdWithHttpInfo(networkId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} networkId ID of network
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationNetworkDeletetagKeyWithHttpInfo = function(networkId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'networkId' is set
-      if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationNetworkDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'networkId': networkId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/network/{networkId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} networkId ID of network
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationNetworkDeletetagKey = function(networkId, key) {
-      return this.operationNetworkDeletetagKeyWithHttpInfo(networkId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /ip/:ipId
-     * @param {String} networkId ID of network
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
-     */
-    this.operationNetworkGetipIpIdWithHttpInfo = function(networkId) {
-      var postBody = null;
-
-      // verify the required parameter 'networkId' is set
-      if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkGetipIpId");
-      }
-
-
-      var pathParams = {
-        'networkId': networkId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Ip;
-
-      return this.apiClient.callApi(
-        '/network/{networkId}/ip/:ipId', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /ip/:ipId
-     * @param {String} networkId ID of network
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
-     */
-    this.operationNetworkGetipIpId = function(networkId) {
-      return this.operationNetworkGetipIpIdWithHttpInfo(networkId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} networkId ID of network
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NetworkServices} and HTTP response
-     */
-    this.operationNetworkGetservicesServiceIdWithHttpInfo = function(networkId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'networkId' is set
-      if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationNetworkGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'networkId': networkId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = NetworkServices;
-
-      return this.apiClient.callApi(
-        '/network/{networkId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} networkId ID of network
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NetworkServices}
-     */
-    this.operationNetworkGetservicesServiceId = function(networkId, serviceId) {
-      return this.operationNetworkGetservicesServiceIdWithHttpInfo(networkId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} networkId ID of network
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationNetworkGettagWithHttpInfo = function(networkId) {
-      var postBody = null;
-
-      // verify the required parameter 'networkId' is set
-      if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkGettag");
-      }
-
-
-      var pathParams = {
-        'networkId': networkId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/network/{networkId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} networkId ID of network
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationNetworkGettag = function(networkId) {
-      return this.operationNetworkGettagWithHttpInfo(networkId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationNetworkListaccessrightsWithHttpInfo = function(networkId) {
+    this.networkListAccessrightsWithHttpInfo = function(networkId) {
       var postBody = null;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkListaccessrights");
+        throw new Error("Missing the required parameter 'networkId' when calling networkListAccessrights");
       }
 
 
@@ -562,19 +564,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/network/{networkId}/accessrights/', 'GET',
+        '/network/{networkId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationNetworkListaccessrights = function(networkId) {
-      return this.operationNetworkListaccessrightsWithHttpInfo(networkId)
+    this.networkListAccessrights = function(networkId) {
+      return this.networkListAccessrightsWithHttpInfo(networkId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -586,12 +588,12 @@
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Ip>} and HTTP response
      */
-    this.operationNetworkListipWithHttpInfo = function(networkId) {
+    this.networkListIpWithHttpInfo = function(networkId) {
       var postBody = null;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkListip");
+        throw new Error("Missing the required parameter 'networkId' when calling networkListIp");
       }
 
 
@@ -624,8 +626,8 @@
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Ip>}
      */
-    this.operationNetworkListip = function(networkId) {
-      return this.operationNetworkListipWithHttpInfo(networkId)
+    this.networkListIp = function(networkId) {
+      return this.networkListIpWithHttpInfo(networkId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -633,16 +635,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationNetworkListqueueWithHttpInfo = function(networkId) {
+    this.networkListQueueWithHttpInfo = function(networkId) {
       var postBody = null;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkListqueue");
+        throw new Error("Missing the required parameter 'networkId' when calling networkListQueue");
       }
 
 
@@ -664,19 +666,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/network/{networkId}/queue/', 'GET',
+        '/network/{networkId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationNetworkListqueue = function(networkId) {
-      return this.operationNetworkListqueueWithHttpInfo(networkId)
+    this.networkListQueue = function(networkId) {
+      return this.networkListQueueWithHttpInfo(networkId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -684,16 +686,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/NetworkServices>} and HTTP response
      */
-    this.operationNetworkListservicesWithHttpInfo = function(networkId) {
+    this.networkListServicesWithHttpInfo = function(networkId) {
       var postBody = null;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkListservices");
+        throw new Error("Missing the required parameter 'networkId' when calling networkListServices");
       }
 
 
@@ -715,19 +717,19 @@
       var returnType = [NetworkServices];
 
       return this.apiClient.callApi(
-        '/network/{networkId}/services/', 'GET',
+        '/network/{networkId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/NetworkServices>}
      */
-    this.operationNetworkListservices = function(networkId) {
-      return this.operationNetworkListservicesWithHttpInfo(networkId)
+    this.networkListServices = function(networkId) {
+      return this.networkListServicesWithHttpInfo(networkId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -735,22 +737,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} networkId ID of network
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationNetworkPatchtagWithHttpInfo = function(networkId, requestBody) {
-      var postBody = requestBody;
+    this.networkPatchTagWithHttpInfo = function(networkId, body) {
+      var postBody = body;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkPatchtag");
+        throw new Error("Missing the required parameter 'networkId' when calling networkPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationNetworkPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling networkPatchTag");
       }
 
 
@@ -769,23 +771,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/network/{networkId}/tag/', 'PATCH',
+        '/network/{networkId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} networkId ID of network
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationNetworkPatchtag = function(networkId, requestBody) {
-      return this.operationNetworkPatchtagWithHttpInfo(networkId, requestBody)
+    this.networkPatchTag = function(networkId, body) {
+      return this.networkPatchTagWithHttpInfo(networkId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -793,19 +795,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} networkId ID of network
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject19} opts.inlineObject19 
+     * @param {module:model/NetworkPostAccessrights} networkPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationNetworkPostaccessrightsWithHttpInfo = function(networkId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject19'];
+    this.networkPostAccessrightsWithHttpInfo = function(networkId, networkPostAccessrights) {
+      var postBody = networkPostAccessrights;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkPostaccessrights");
+        throw new Error("Missing the required parameter 'networkId' when calling networkPostAccessrights");
+      }
+
+      // verify the required parameter 'networkPostAccessrights' is set
+      if (networkPostAccessrights === undefined || networkPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'networkPostAccessrights' when calling networkPostAccessrights");
       }
 
 
@@ -827,21 +832,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/network/{networkId}/accessrights/', 'POST',
+        '/network/{networkId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} networkId ID of network
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject19} opts.inlineObject19 
+     * @param {module:model/NetworkPostAccessrights} networkPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationNetworkPostaccessrights = function(networkId, opts) {
-      return this.operationNetworkPostaccessrightsWithHttpInfo(networkId, opts)
+    this.networkPostAccessrights = function(networkId, networkPostAccessrights) {
+      return this.networkPostAccessrightsWithHttpInfo(networkId, networkPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -851,17 +855,20 @@
     /**
      * /ip
      * @param {String} networkId ID of network
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject18} opts.inlineObject18 
+     * @param {module:model/NetworkPostIp} networkPostIp 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.operationNetworkPostipWithHttpInfo = function(networkId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject18'];
+    this.networkPostIpWithHttpInfo = function(networkId, networkPostIp) {
+      var postBody = networkPostIp;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling operationNetworkPostip");
+        throw new Error("Missing the required parameter 'networkId' when calling networkPostIp");
+      }
+
+      // verify the required parameter 'networkPostIp' is set
+      if (networkPostIp === undefined || networkPostIp === null) {
+        throw new Error("Missing the required parameter 'networkPostIp' when calling networkPostIp");
       }
 
 
@@ -892,12 +899,11 @@
     /**
      * /ip
      * @param {String} networkId ID of network
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject18} opts.inlineObject18 
+     * @param {module:model/NetworkPostIp} networkPostIp 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.operationNetworkPostip = function(networkId, opts) {
-      return this.operationNetworkPostipWithHttpInfo(networkId, opts)
+    this.networkPostIp = function(networkId, networkPostIp) {
+      return this.networkPostIpWithHttpInfo(networkId, networkPostIp)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -910,12 +916,12 @@
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Network} and HTTP response
      */
-    this.showNetworkWithHttpInfo = function(networkId) {
+    this.networkShowWithHttpInfo = function(networkId) {
       var postBody = null;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling showNetwork");
+        throw new Error("Missing the required parameter 'networkId' when calling networkShow");
       }
 
 
@@ -949,8 +955,8 @@
      * @param {String} networkId ID of network
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Network}
      */
-    this.showNetwork = function(networkId) {
-      return this.showNetworkWithHttpInfo(networkId)
+    this.networkShow = function(networkId) {
+      return this.networkShowWithHttpInfo(networkId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -961,17 +967,20 @@
      * Update
      * Returns modified network
      * @param {String} networkId ID of network
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject17} opts.inlineObject17 
+     * @param {module:model/NetworkUpdate} networkUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Network} and HTTP response
      */
-    this.updateNetworkWithHttpInfo = function(networkId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject17'];
+    this.networkUpdateWithHttpInfo = function(networkId, networkUpdate) {
+      var postBody = networkUpdate;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
-        throw new Error("Missing the required parameter 'networkId' when calling updateNetwork");
+        throw new Error("Missing the required parameter 'networkId' when calling networkUpdate");
+      }
+
+      // verify the required parameter 'networkUpdate' is set
+      if (networkUpdate === undefined || networkUpdate === null) {
+        throw new Error("Missing the required parameter 'networkUpdate' when calling networkUpdate");
       }
 
 
@@ -1003,12 +1012,11 @@
      * Update
      * Returns modified network
      * @param {String} networkId ID of network
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject17} opts.inlineObject17 
+     * @param {module:model/NetworkUpdate} networkUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Network}
      */
-    this.updateNetwork = function(networkId, opts) {
-      return this.updateNetworkWithHttpInfo(networkId, opts)
+    this.networkUpdate = function(networkId, networkUpdate) {
+      return this.networkUpdateWithHttpInfo(networkId, networkUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

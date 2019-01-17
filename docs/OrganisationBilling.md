@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nip** | **String** |  | [optional] 
-**email** | **String** |  | [optional] 
-**company** | **String** |  | [optional] 
 **currency** | **String** |  | [optional] 
-**address** | [**OrganisationBillingAddress**](OrganisationBillingAddress.md) |  | [optional] 
+**company** | **String** |  | [optional] 
+**email** | **String** |  | [optional] 
+**address** | **String** |  | [optional] 
+**nip** | **String** |  | [optional] 
 
 

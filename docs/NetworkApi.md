@@ -4,29 +4,29 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createNetwork**](NetworkApi.md#createNetwork) | **POST** /network | Create
-[**deleteNetwork**](NetworkApi.md#deleteNetwork) | **DELETE** /network/{networkId} | Delete
-[**listNetwork**](NetworkApi.md#listNetwork) | **GET** /network | List
-[**operationNetworkDeleteaccessrightsIdentity**](NetworkApi.md#operationNetworkDeleteaccessrightsIdentity) | **DELETE** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
-[**operationNetworkDeleteipIpId**](NetworkApi.md#operationNetworkDeleteipIpId) | **DELETE** /network/{networkId}/ip/:ipId | /ip/:ipId
-[**operationNetworkDeletetagKey**](NetworkApi.md#operationNetworkDeletetagKey) | **DELETE** /network/{networkId}/tag/{key} | /tag/:key
-[**operationNetworkGetipIpId**](NetworkApi.md#operationNetworkGetipIpId) | **GET** /network/{networkId}/ip/:ipId | /ip/:ipId
-[**operationNetworkGetservicesServiceId**](NetworkApi.md#operationNetworkGetservicesServiceId) | **GET** /network/{networkId}/services/{serviceId} | /services/:serviceId
-[**operationNetworkGettag**](NetworkApi.md#operationNetworkGettag) | **GET** /network/{networkId}/tag/ | /tag/
-[**operationNetworkListaccessrights**](NetworkApi.md#operationNetworkListaccessrights) | **GET** /network/{networkId}/accessrights/ | /accessrights/
-[**operationNetworkListip**](NetworkApi.md#operationNetworkListip) | **GET** /network/{networkId}/ip | /ip
-[**operationNetworkListqueue**](NetworkApi.md#operationNetworkListqueue) | **GET** /network/{networkId}/queue/ | /queue/
-[**operationNetworkListservices**](NetworkApi.md#operationNetworkListservices) | **GET** /network/{networkId}/services/ | /services/
-[**operationNetworkPatchtag**](NetworkApi.md#operationNetworkPatchtag) | **PATCH** /network/{networkId}/tag/ | /tag/
-[**operationNetworkPostaccessrights**](NetworkApi.md#operationNetworkPostaccessrights) | **POST** /network/{networkId}/accessrights/ | /accessrights/
-[**operationNetworkPostip**](NetworkApi.md#operationNetworkPostip) | **POST** /network/{networkId}/ip | /ip
-[**showNetwork**](NetworkApi.md#showNetwork) | **GET** /network/{networkId} | Get
-[**updateNetwork**](NetworkApi.md#updateNetwork) | **PATCH** /network/{networkId} | Update
+[**networkCreate**](NetworkApi.md#networkCreate) | **POST** /network | Create
+[**networkDelete**](NetworkApi.md#networkDelete) | **DELETE** /network/{networkId} | Delete
+[**networkDeleteAccessrightsIdentity**](NetworkApi.md#networkDeleteAccessrightsIdentity) | **DELETE** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
+[**networkDeleteIpIpId**](NetworkApi.md#networkDeleteIpIpId) | **DELETE** /network/{networkId}/ip/:ipId | /ip/:ipId
+[**networkDeleteTagKey**](NetworkApi.md#networkDeleteTagKey) | **DELETE** /network/{networkId}/tag/{key} | /tag/:key
+[**networkGetIpIpId**](NetworkApi.md#networkGetIpIpId) | **GET** /network/{networkId}/ip/:ipId | /ip/:ipId
+[**networkGetServicesServiceId**](NetworkApi.md#networkGetServicesServiceId) | **GET** /network/{networkId}/services/{serviceId} | /services/:serviceId
+[**networkGetTag**](NetworkApi.md#networkGetTag) | **GET** /network/{networkId}/tag | /tag
+[**networkList**](NetworkApi.md#networkList) | **GET** /network | List
+[**networkListAccessrights**](NetworkApi.md#networkListAccessrights) | **GET** /network/{networkId}/accessrights | /accessrights
+[**networkListIp**](NetworkApi.md#networkListIp) | **GET** /network/{networkId}/ip | /ip
+[**networkListQueue**](NetworkApi.md#networkListQueue) | **GET** /network/{networkId}/queue | /queue
+[**networkListServices**](NetworkApi.md#networkListServices) | **GET** /network/{networkId}/services | /services
+[**networkPatchTag**](NetworkApi.md#networkPatchTag) | **PATCH** /network/{networkId}/tag | /tag
+[**networkPostAccessrights**](NetworkApi.md#networkPostAccessrights) | **POST** /network/{networkId}/accessrights | /accessrights
+[**networkPostIp**](NetworkApi.md#networkPostIp) | **POST** /network/{networkId}/ip | /ip
+[**networkShow**](NetworkApi.md#networkShow) | **GET** /network/{networkId} | Get
+[**networkUpdate**](NetworkApi.md#networkUpdate) | **PATCH** /network/{networkId} | Update
 
 
-<a name="createNetwork"></a>
-# **createNetwork**
-> Network createNetwork(opts)
+<a name="networkCreate"></a>
+# **networkCreate**
+> Network networkCreate(networkCreate)
 
 Create
 
@@ -53,10 +53,8 @@ Session.apiKey = 'YOUR API KEY';
 //Session.apiKeyPrefix = 'Token';
 
 var apiInstance = new HyperOneApi.NetworkApi();
-var opts = {
-  'inlineObject16': new HyperOneApi.InlineObject16() // InlineObject16 | 
-};
-apiInstance.createNetwork(opts).then(function(data) {
+var networkCreate = new HyperOneApi.NetworkCreate(); // NetworkCreate | 
+apiInstance.networkCreate(networkCreate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -68,7 +66,7 @@ apiInstance.createNetwork(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject16** | [**InlineObject16**](InlineObject16.md)|  | [optional] 
+ **networkCreate** | [**NetworkCreate**](NetworkCreate.md)|  | 
 
 ### Return type
 
@@ -83,9 +81,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="deleteNetwork"></a>
-# **deleteNetwork**
-> deleteNetwork(networkId)
+<a name="networkDelete"></a>
+# **networkDelete**
+> networkDelete(networkId)
 
 Delete
 
@@ -111,7 +109,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-apiInstance.deleteNetwork(networkId).then(function() {
+apiInstance.networkDelete(networkId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -138,9 +136,345 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="listNetwork"></a>
-# **listNetwork**
-> [Network] listNetwork(opts)
+<a name="networkDeleteAccessrightsIdentity"></a>
+# **networkDeleteAccessrightsIdentity**
+> Network networkDeleteAccessrightsIdentity(networkId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetworkApi();
+var networkId = "networkId_example"; // String | ID of network
+var identity = "identity_example"; // String | identity
+apiInstance.networkDeleteAccessrightsIdentity(networkId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **networkId** | **String**| ID of network | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Network**](Network.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="networkDeleteIpIpId"></a>
+# **networkDeleteIpIpId**
+> Ip networkDeleteIpIpId(networkId)
+
+/ip/:ipId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetworkApi();
+var networkId = "networkId_example"; // String | ID of network
+apiInstance.networkDeleteIpIpId(networkId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **networkId** | **String**| ID of network | 
+
+### Return type
+
+[**Ip**](Ip.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="networkDeleteTagKey"></a>
+# **networkDeleteTagKey**
+> Object networkDeleteTagKey(networkId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetworkApi();
+var networkId = "networkId_example"; // String | ID of network
+var key = "key_example"; // String | key
+apiInstance.networkDeleteTagKey(networkId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **networkId** | **String**| ID of network | 
+ **key** | **String**| key | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="networkGetIpIpId"></a>
+# **networkGetIpIpId**
+> Ip networkGetIpIpId(networkId)
+
+/ip/:ipId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetworkApi();
+var networkId = "networkId_example"; // String | ID of network
+apiInstance.networkGetIpIpId(networkId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **networkId** | **String**| ID of network | 
+
+### Return type
+
+[**Ip**](Ip.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="networkGetServicesServiceId"></a>
+# **networkGetServicesServiceId**
+> NetworkServices networkGetServicesServiceId(networkId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetworkApi();
+var networkId = "networkId_example"; // String | ID of network
+var serviceId = "serviceId_example"; // String | serviceId
+apiInstance.networkGetServicesServiceId(networkId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **networkId** | **String**| ID of network | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**NetworkServices**](NetworkServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="networkGetTag"></a>
+# **networkGetTag**
+> Object networkGetTag(networkId)
+
+/tag
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.NetworkApi();
+var networkId = "networkId_example"; // String | ID of network
+apiInstance.networkGetTag(networkId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **networkId** | **String**| ID of network | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="networkList"></a>
+# **networkList**
+> [Network] networkList(opts)
 
 List
 
@@ -170,7 +504,7 @@ var apiInstance = new HyperOneApi.NetworkApi();
 var opts = {
   'name': "name_example" // String | Filter by name
 };
-apiInstance.listNetwork(opts).then(function(data) {
+apiInstance.networkList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -197,68 +531,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationNetworkDeleteaccessrightsIdentity"></a>
-# **operationNetworkDeleteaccessrightsIdentity**
-> Network operationNetworkDeleteaccessrightsIdentity(networkId, identity)
+<a name="networkListAccessrights"></a>
+# **networkListAccessrights**
+> [String] networkListAccessrights(networkId)
 
-/accessrights/:identity
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.NetworkApi();
-var networkId = "networkId_example"; // String | ID of network
-var identity = "identity_example"; // String | identity
-apiInstance.operationNetworkDeleteaccessrightsIdentity(networkId, identity).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **networkId** | **String**| ID of network | 
- **identity** | **String**| identity | 
-
-### Return type
-
-[**Network**](Network.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationNetworkDeleteipIpId"></a>
-# **operationNetworkDeleteipIpId**
-> Ip operationNetworkDeleteipIpId(networkId)
-
-/ip/:ipId
+/accessrights
 
 ### Example
 ```javascript
@@ -282,286 +559,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-apiInstance.operationNetworkDeleteipIpId(networkId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **networkId** | **String**| ID of network | 
-
-### Return type
-
-[**Ip**](Ip.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationNetworkDeletetagKey"></a>
-# **operationNetworkDeletetagKey**
-> {String: String} operationNetworkDeletetagKey(networkId, key)
-
-/tag/:key
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.NetworkApi();
-var networkId = "networkId_example"; // String | ID of network
-var key = "key_example"; // String | key
-apiInstance.operationNetworkDeletetagKey(networkId, key).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **networkId** | **String**| ID of network | 
- **key** | **String**| key | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationNetworkGetipIpId"></a>
-# **operationNetworkGetipIpId**
-> Ip operationNetworkGetipIpId(networkId)
-
-/ip/:ipId
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.NetworkApi();
-var networkId = "networkId_example"; // String | ID of network
-apiInstance.operationNetworkGetipIpId(networkId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **networkId** | **String**| ID of network | 
-
-### Return type
-
-[**Ip**](Ip.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationNetworkGetservicesServiceId"></a>
-# **operationNetworkGetservicesServiceId**
-> NetworkServices operationNetworkGetservicesServiceId(networkId, serviceId)
-
-/services/:serviceId
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.NetworkApi();
-var networkId = "networkId_example"; // String | ID of network
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.operationNetworkGetservicesServiceId(networkId, serviceId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **networkId** | **String**| ID of network | 
- **serviceId** | **String**| serviceId | 
-
-### Return type
-
-[**NetworkServices**](NetworkServices.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationNetworkGettag"></a>
-# **operationNetworkGettag**
-> {String: String} operationNetworkGettag(networkId)
-
-/tag/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.NetworkApi();
-var networkId = "networkId_example"; // String | ID of network
-apiInstance.operationNetworkGettag(networkId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **networkId** | **String**| ID of network | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationNetworkListaccessrights"></a>
-# **operationNetworkListaccessrights**
-> [String] operationNetworkListaccessrights(networkId)
-
-/accessrights/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.NetworkApi();
-var networkId = "networkId_example"; // String | ID of network
-apiInstance.operationNetworkListaccessrights(networkId).then(function(data) {
+apiInstance.networkListAccessrights(networkId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -588,9 +586,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationNetworkListip"></a>
-# **operationNetworkListip**
-> [Ip] operationNetworkListip(networkId)
+<a name="networkListIp"></a>
+# **networkListIp**
+> [Ip] networkListIp(networkId)
 
 /ip
 
@@ -616,7 +614,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-apiInstance.operationNetworkListip(networkId).then(function(data) {
+apiInstance.networkListIp(networkId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -643,11 +641,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationNetworkListqueue"></a>
-# **operationNetworkListqueue**
-> [Event] operationNetworkListqueue(networkId)
+<a name="networkListQueue"></a>
+# **networkListQueue**
+> [Event] networkListQueue(networkId)
 
-/queue/
+/queue
 
 ### Example
 ```javascript
@@ -671,7 +669,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-apiInstance.operationNetworkListqueue(networkId).then(function(data) {
+apiInstance.networkListQueue(networkId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -698,11 +696,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationNetworkListservices"></a>
-# **operationNetworkListservices**
-> [NetworkServices] operationNetworkListservices(networkId)
+<a name="networkListServices"></a>
+# **networkListServices**
+> [NetworkServices] networkListServices(networkId)
 
-/services/
+/services
 
 ### Example
 ```javascript
@@ -726,7 +724,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-apiInstance.operationNetworkListservices(networkId).then(function(data) {
+apiInstance.networkListServices(networkId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -753,11 +751,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationNetworkPatchtag"></a>
-# **operationNetworkPatchtag**
-> {String: String} operationNetworkPatchtag(networkId, requestBody)
+<a name="networkPatchTag"></a>
+# **networkPatchTag**
+> Object networkPatchTag(networkId, body)
 
-/tag/
+/tag
 
 ### Example
 ```javascript
@@ -781,8 +779,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.operationNetworkPatchtag(networkId, requestBody).then(function(data) {
+var body = null; // Object | 
+apiInstance.networkPatchTag(networkId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -795,11 +793,11 @@ apiInstance.operationNetworkPatchtag(networkId, requestBody).then(function(data)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**| ID of network | 
- **requestBody** | [**{String: String}**](String.md)|  | 
+ **body** | **Object**|  | 
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -810,11 +808,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationNetworkPostaccessrights"></a>
-# **operationNetworkPostaccessrights**
-> String operationNetworkPostaccessrights(networkId, opts)
+<a name="networkPostAccessrights"></a>
+# **networkPostAccessrights**
+> String networkPostAccessrights(networkId, networkPostAccessrights)
 
-/accessrights/
+/accessrights
 
 ### Example
 ```javascript
@@ -838,10 +836,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-var opts = {
-  'inlineObject19': new HyperOneApi.InlineObject19() // InlineObject19 | 
-};
-apiInstance.operationNetworkPostaccessrights(networkId, opts).then(function(data) {
+var networkPostAccessrights = new HyperOneApi.NetworkPostAccessrights(); // NetworkPostAccessrights | 
+apiInstance.networkPostAccessrights(networkId, networkPostAccessrights).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -854,7 +850,7 @@ apiInstance.operationNetworkPostaccessrights(networkId, opts).then(function(data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**| ID of network | 
- **inlineObject19** | [**InlineObject19**](InlineObject19.md)|  | [optional] 
+ **networkPostAccessrights** | [**NetworkPostAccessrights**](NetworkPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -869,9 +865,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationNetworkPostip"></a>
-# **operationNetworkPostip**
-> Ip operationNetworkPostip(networkId, opts)
+<a name="networkPostIp"></a>
+# **networkPostIp**
+> Ip networkPostIp(networkId, networkPostIp)
 
 /ip
 
@@ -897,10 +893,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-var opts = {
-  'inlineObject18': new HyperOneApi.InlineObject18() // InlineObject18 | 
-};
-apiInstance.operationNetworkPostip(networkId, opts).then(function(data) {
+var networkPostIp = new HyperOneApi.NetworkPostIp(); // NetworkPostIp | 
+apiInstance.networkPostIp(networkId, networkPostIp).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -913,7 +907,7 @@ apiInstance.operationNetworkPostip(networkId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**| ID of network | 
- **inlineObject18** | [**InlineObject18**](InlineObject18.md)|  | [optional] 
+ **networkPostIp** | [**NetworkPostIp**](NetworkPostIp.md)|  | 
 
 ### Return type
 
@@ -928,9 +922,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="showNetwork"></a>
-# **showNetwork**
-> Network showNetwork(networkId)
+<a name="networkShow"></a>
+# **networkShow**
+> Network networkShow(networkId)
 
 Get
 
@@ -958,7 +952,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-apiInstance.showNetwork(networkId).then(function(data) {
+apiInstance.networkShow(networkId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -985,9 +979,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateNetwork"></a>
-# **updateNetwork**
-> Network updateNetwork(networkId, opts)
+<a name="networkUpdate"></a>
+# **networkUpdate**
+> Network networkUpdate(networkId, networkUpdate)
 
 Update
 
@@ -1015,10 +1009,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-var opts = {
-  'inlineObject17': new HyperOneApi.InlineObject17() // InlineObject17 | 
-};
-apiInstance.updateNetwork(networkId, opts).then(function(data) {
+var networkUpdate = new HyperOneApi.NetworkUpdate(); // NetworkUpdate | 
+apiInstance.networkUpdate(networkId, networkUpdate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1031,7 +1023,7 @@ apiInstance.updateNetwork(networkId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**| ID of network | 
- **inlineObject17** | [**InlineObject17**](InlineObject17.md)|  | [optional] 
+ **networkUpdate** | [**NetworkUpdate**](NetworkUpdate.md)|  | 
 
 ### Return type
 

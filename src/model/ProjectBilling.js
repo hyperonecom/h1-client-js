@@ -59,28 +59,28 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('credits')) {
-        obj['credits'] = ApiClient.convertToType(data['credits'], 'String');
+        obj['credits'] = ApiClient.convertToType(data['credits'], 'Number');
       }
       if (data.hasOwnProperty('creditsBonus')) {
-        obj['creditsBonus'] = ApiClient.convertToType(data['creditsBonus'], 'String');
+        obj['creditsBonus'] = ApiClient.convertToType(data['creditsBonus'], 'Number');
       }
       if (data.hasOwnProperty('creditLimit')) {
-        obj['creditLimit'] = ApiClient.convertToType(data['creditLimit'], 'String');
+        obj['creditLimit'] = ApiClient.convertToType(data['creditLimit'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} credits
+   * @member {Number} credits
    */
   exports.prototype['credits'] = undefined;
   /**
-   * @member {String} creditsBonus
+   * @member {Number} creditsBonus
    */
   exports.prototype['creditsBonus'] = undefined;
   /**
-   * @member {String} creditLimit
+   * @member {Number} creditLimit
    */
   exports.prototype['creditLimit'] = undefined;
 

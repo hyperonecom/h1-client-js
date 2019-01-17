@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Firewall', 'model/FirewallServices', 'model/InlineObject10', 'model/InlineObject11', 'model/InlineObject12', 'model/InlineObject13', 'model/InlineObject14', 'model/InlineObject15', 'model/InlineResponse200'], factory);
+    define(['ApiClient', 'model/Event', 'model/Firewall', 'model/FirewallActionTransfer', 'model/FirewallCreate', 'model/FirewallPostAccessrights', 'model/FirewallPostEgress', 'model/FirewallPostIngress', 'model/FirewallServices', 'model/FirewallUpdate', 'model/InlineResponse200'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Firewall'), require('../model/FirewallServices'), require('../model/InlineObject10'), require('../model/InlineObject11'), require('../model/InlineObject12'), require('../model/InlineObject13'), require('../model/InlineObject14'), require('../model/InlineObject15'), require('../model/InlineResponse200'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Firewall'), require('../model/FirewallActionTransfer'), require('../model/FirewallCreate'), require('../model/FirewallPostAccessrights'), require('../model/FirewallPostEgress'), require('../model/FirewallPostIngress'), require('../model/FirewallServices'), require('../model/FirewallUpdate'), require('../model/InlineResponse200'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.FirewallApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Firewall, root.HyperOneApi.FirewallServices, root.HyperOneApi.InlineObject10, root.HyperOneApi.InlineObject11, root.HyperOneApi.InlineObject12, root.HyperOneApi.InlineObject13, root.HyperOneApi.InlineObject14, root.HyperOneApi.InlineObject15, root.HyperOneApi.InlineResponse200);
+    root.HyperOneApi.FirewallApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Firewall, root.HyperOneApi.FirewallActionTransfer, root.HyperOneApi.FirewallCreate, root.HyperOneApi.FirewallPostAccessrights, root.HyperOneApi.FirewallPostEgress, root.HyperOneApi.FirewallPostIngress, root.HyperOneApi.FirewallServices, root.HyperOneApi.FirewallUpdate, root.HyperOneApi.InlineResponse200);
   }
-}(this, function(ApiClient, Event, Firewall, FirewallServices, InlineObject10, InlineObject11, InlineObject12, InlineObject13, InlineObject14, InlineObject15, InlineResponse200) {
+}(this, function(ApiClient, Event, Firewall, FirewallActionTransfer, FirewallCreate, FirewallPostAccessrights, FirewallPostEgress, FirewallPostIngress, FirewallServices, FirewallUpdate, InlineResponse200) {
   'use strict';
 
   /**
@@ -54,12 +54,12 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
      */
-    this.actionFirewallAttachWithHttpInfo = function(firewallId) {
+    this.firewallActionAttachWithHttpInfo = function(firewallId) {
       var postBody = null;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling actionFirewallAttach");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallActionAttach");
       }
 
 
@@ -93,8 +93,8 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
      */
-    this.actionFirewallAttach = function(firewallId) {
-      return this.actionFirewallAttachWithHttpInfo(firewallId)
+    this.firewallActionAttach = function(firewallId) {
+      return this.firewallActionAttachWithHttpInfo(firewallId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -107,12 +107,12 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
      */
-    this.actionFirewallDetachWithHttpInfo = function(firewallId) {
+    this.firewallActionDetachWithHttpInfo = function(firewallId) {
       var postBody = null;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling actionFirewallDetach");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallActionDetach");
       }
 
 
@@ -146,8 +146,8 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
      */
-    this.actionFirewallDetach = function(firewallId) {
-      return this.actionFirewallDetachWithHttpInfo(firewallId)
+    this.firewallActionDetach = function(firewallId) {
+      return this.firewallActionDetachWithHttpInfo(firewallId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -158,17 +158,20 @@
      * /actions/transfer
      * Action transfer
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject12} opts.inlineObject12 
+     * @param {module:model/FirewallActionTransfer} firewallActionTransfer 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
      */
-    this.actionFirewallTransferWithHttpInfo = function(firewallId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject12'];
+    this.firewallActionTransferWithHttpInfo = function(firewallId, firewallActionTransfer) {
+      var postBody = firewallActionTransfer;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling actionFirewallTransfer");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallActionTransfer");
+      }
+
+      // verify the required parameter 'firewallActionTransfer' is set
+      if (firewallActionTransfer === undefined || firewallActionTransfer === null) {
+        throw new Error("Missing the required parameter 'firewallActionTransfer' when calling firewallActionTransfer");
       }
 
 
@@ -200,12 +203,11 @@
      * /actions/transfer
      * Action transfer
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject12} opts.inlineObject12 
+     * @param {module:model/FirewallActionTransfer} firewallActionTransfer 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
      */
-    this.actionFirewallTransfer = function(firewallId, opts) {
-      return this.actionFirewallTransferWithHttpInfo(firewallId, opts)
+    this.firewallActionTransfer = function(firewallId, firewallActionTransfer) {
+      return this.firewallActionTransferWithHttpInfo(firewallId, firewallActionTransfer)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -215,13 +217,16 @@
     /**
      * Create
      * Create firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject10} opts.inlineObject10 
+     * @param {module:model/FirewallCreate} firewallCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
      */
-    this.createFirewallWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject10'];
+    this.firewallCreateWithHttpInfo = function(firewallCreate) {
+      var postBody = firewallCreate;
+
+      // verify the required parameter 'firewallCreate' is set
+      if (firewallCreate === undefined || firewallCreate === null) {
+        throw new Error("Missing the required parameter 'firewallCreate' when calling firewallCreate");
+      }
 
 
       var pathParams = {
@@ -250,12 +255,11 @@
     /**
      * Create
      * Create firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject10} opts.inlineObject10 
+     * @param {module:model/FirewallCreate} firewallCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
      */
-    this.createFirewall = function(opts) {
-      return this.createFirewallWithHttpInfo(opts)
+    this.firewallCreate = function(firewallCreate) {
+      return this.firewallCreateWithHttpInfo(firewallCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -267,12 +271,12 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteFirewallWithHttpInfo = function(firewallId) {
+    this.firewallDeleteWithHttpInfo = function(firewallId) {
       var postBody = null;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling deleteFirewall");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallDelete");
       }
 
 
@@ -305,8 +309,472 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteFirewall = function(firewallId) {
-      return this.deleteFirewallWithHttpInfo(firewallId)
+    this.firewallDelete = function(firewallId) {
+      return this.firewallDeleteWithHttpInfo(firewallId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} firewallId ID of firewall
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
+     */
+    this.firewallDeleteAccessrightsIdentityWithHttpInfo = function(firewallId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling firewallDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Firewall;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} firewallId ID of firewall
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
+     */
+    this.firewallDeleteAccessrightsIdentity = function(firewallId, identity) {
+      return this.firewallDeleteAccessrightsIdentityWithHttpInfo(firewallId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /egress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     */
+    this.firewallDeleteEgressRuleIdWithHttpInfo = function(firewallId, ruleId) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallDeleteEgressRuleId");
+      }
+
+      // verify the required parameter 'ruleId' is set
+      if (ruleId === undefined || ruleId === null) {
+        throw new Error("Missing the required parameter 'ruleId' when calling firewallDeleteEgressRuleId");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'ruleId': ruleId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/egress/{ruleId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /egress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     */
+    this.firewallDeleteEgressRuleId = function(firewallId, ruleId) {
+      return this.firewallDeleteEgressRuleIdWithHttpInfo(firewallId, ruleId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /ingress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     */
+    this.firewallDeleteIngressRuleIdWithHttpInfo = function(firewallId, ruleId) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallDeleteIngressRuleId");
+      }
+
+      // verify the required parameter 'ruleId' is set
+      if (ruleId === undefined || ruleId === null) {
+        throw new Error("Missing the required parameter 'ruleId' when calling firewallDeleteIngressRuleId");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'ruleId': ruleId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/ingress/{ruleId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /ingress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     */
+    this.firewallDeleteIngressRuleId = function(firewallId, ruleId) {
+      return this.firewallDeleteIngressRuleIdWithHttpInfo(firewallId, ruleId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} firewallId ID of firewall
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.firewallDeleteTagKeyWithHttpInfo = function(firewallId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling firewallDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} firewallId ID of firewall
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.firewallDeleteTagKey = function(firewallId, key) {
+      return this.firewallDeleteTagKeyWithHttpInfo(firewallId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /egress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     */
+    this.firewallGetEgressRuleIdWithHttpInfo = function(firewallId, ruleId) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallGetEgressRuleId");
+      }
+
+      // verify the required parameter 'ruleId' is set
+      if (ruleId === undefined || ruleId === null) {
+        throw new Error("Missing the required parameter 'ruleId' when calling firewallGetEgressRuleId");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'ruleId': ruleId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/egress/{ruleId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /egress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     */
+    this.firewallGetEgressRuleId = function(firewallId, ruleId) {
+      return this.firewallGetEgressRuleIdWithHttpInfo(firewallId, ruleId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /ingress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     */
+    this.firewallGetIngressRuleIdWithHttpInfo = function(firewallId, ruleId) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallGetIngressRuleId");
+      }
+
+      // verify the required parameter 'ruleId' is set
+      if (ruleId === undefined || ruleId === null) {
+        throw new Error("Missing the required parameter 'ruleId' when calling firewallGetIngressRuleId");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'ruleId': ruleId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/ingress/{ruleId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /ingress/:ruleId
+     * @param {String} firewallId ID of firewall
+     * @param {String} ruleId ruleId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     */
+    this.firewallGetIngressRuleId = function(firewallId, ruleId) {
+      return this.firewallGetIngressRuleIdWithHttpInfo(firewallId, ruleId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} firewallId ID of firewall
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallServices} and HTTP response
+     */
+    this.firewallGetServicesServiceIdWithHttpInfo = function(firewallId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling firewallGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = FirewallServices;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} firewallId ID of firewall
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallServices}
+     */
+    this.firewallGetServicesServiceId = function(firewallId, serviceId) {
+      return this.firewallGetServicesServiceIdWithHttpInfo(firewallId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} firewallId ID of firewall
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.firewallGetTagWithHttpInfo = function(firewallId) {
+      var postBody = null;
+
+      // verify the required parameter 'firewallId' is set
+      if (firewallId === undefined || firewallId === null) {
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallGetTag");
+      }
+
+
+      var pathParams = {
+        'firewallId': firewallId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/firewall/{firewallId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} firewallId ID of firewall
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.firewallGetTag = function(firewallId) {
+      return this.firewallGetTagWithHttpInfo(firewallId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -320,7 +788,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Firewall>} and HTTP response
      */
-    this.listFirewallWithHttpInfo = function(opts) {
+    this.firewallListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -356,8 +824,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Firewall>}
      */
-    this.listFirewall = function(opts) {
-      return this.listFirewallWithHttpInfo(opts)
+    this.firewallList = function(opts) {
+      return this.firewallListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -365,480 +833,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} firewallId ID of firewall
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
-     */
-    this.operationFirewallDeleteaccessrightsIdentityWithHttpInfo = function(firewallId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'firewallId' is set
-      if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationFirewallDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'firewallId': firewallId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Firewall;
-
-      return this.apiClient.callApi(
-        '/firewall/{firewallId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} firewallId ID of firewall
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
-     */
-    this.operationFirewallDeleteaccessrightsIdentity = function(firewallId, identity) {
-      return this.operationFirewallDeleteaccessrightsIdentityWithHttpInfo(firewallId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /egress/:ruleId
-     * @param {String} firewallId ID of firewall
-     * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
-     */
-    this.operationFirewallDeleteegressRuleIdWithHttpInfo = function(firewallId, ruleId) {
-      var postBody = null;
-
-      // verify the required parameter 'firewallId' is set
-      if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallDeleteegressRuleId");
-      }
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw new Error("Missing the required parameter 'ruleId' when calling operationFirewallDeleteegressRuleId");
-      }
-
-
-      var pathParams = {
-        'firewallId': firewallId,
-        'ruleId': ruleId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse200;
-
-      return this.apiClient.callApi(
-        '/firewall/{firewallId}/egress/{ruleId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /egress/:ruleId
-     * @param {String} firewallId ID of firewall
-     * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
-     */
-    this.operationFirewallDeleteegressRuleId = function(firewallId, ruleId) {
-      return this.operationFirewallDeleteegressRuleIdWithHttpInfo(firewallId, ruleId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /ingress/:ruleId
-     * @param {String} firewallId ID of firewall
-     * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
-     */
-    this.operationFirewallDeleteingressRuleIdWithHttpInfo = function(firewallId, ruleId) {
-      var postBody = null;
-
-      // verify the required parameter 'firewallId' is set
-      if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallDeleteingressRuleId");
-      }
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw new Error("Missing the required parameter 'ruleId' when calling operationFirewallDeleteingressRuleId");
-      }
-
-
-      var pathParams = {
-        'firewallId': firewallId,
-        'ruleId': ruleId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse200;
-
-      return this.apiClient.callApi(
-        '/firewall/{firewallId}/ingress/{ruleId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /ingress/:ruleId
-     * @param {String} firewallId ID of firewall
-     * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
-     */
-    this.operationFirewallDeleteingressRuleId = function(firewallId, ruleId) {
-      return this.operationFirewallDeleteingressRuleIdWithHttpInfo(firewallId, ruleId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} firewallId ID of firewall
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationFirewallDeletetagKeyWithHttpInfo = function(firewallId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'firewallId' is set
-      if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationFirewallDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'firewallId': firewallId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/firewall/{firewallId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} firewallId ID of firewall
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationFirewallDeletetagKey = function(firewallId, key) {
-      return this.operationFirewallDeletetagKeyWithHttpInfo(firewallId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /egress/:ruleId
-     * @param {String} firewallId ID of firewall
-     * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
-     */
-    this.operationFirewallGetegressRuleIdWithHttpInfo = function(firewallId, ruleId) {
-      var postBody = null;
-
-      // verify the required parameter 'firewallId' is set
-      if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallGetegressRuleId");
-      }
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw new Error("Missing the required parameter 'ruleId' when calling operationFirewallGetegressRuleId");
-      }
-
-
-      var pathParams = {
-        'firewallId': firewallId,
-        'ruleId': ruleId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse200;
-
-      return this.apiClient.callApi(
-        '/firewall/{firewallId}/egress/{ruleId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /egress/:ruleId
-     * @param {String} firewallId ID of firewall
-     * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
-     */
-    this.operationFirewallGetegressRuleId = function(firewallId, ruleId) {
-      return this.operationFirewallGetegressRuleIdWithHttpInfo(firewallId, ruleId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /ingress/:ruleId
-     * @param {String} firewallId ID of firewall
-     * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
-     */
-    this.operationFirewallGetingressRuleIdWithHttpInfo = function(firewallId, ruleId) {
-      var postBody = null;
-
-      // verify the required parameter 'firewallId' is set
-      if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallGetingressRuleId");
-      }
-
-      // verify the required parameter 'ruleId' is set
-      if (ruleId === undefined || ruleId === null) {
-        throw new Error("Missing the required parameter 'ruleId' when calling operationFirewallGetingressRuleId");
-      }
-
-
-      var pathParams = {
-        'firewallId': firewallId,
-        'ruleId': ruleId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = InlineResponse200;
-
-      return this.apiClient.callApi(
-        '/firewall/{firewallId}/ingress/{ruleId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /ingress/:ruleId
-     * @param {String} firewallId ID of firewall
-     * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
-     */
-    this.operationFirewallGetingressRuleId = function(firewallId, ruleId) {
-      return this.operationFirewallGetingressRuleIdWithHttpInfo(firewallId, ruleId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} firewallId ID of firewall
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FirewallServices} and HTTP response
-     */
-    this.operationFirewallGetservicesServiceIdWithHttpInfo = function(firewallId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'firewallId' is set
-      if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationFirewallGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'firewallId': firewallId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = FirewallServices;
-
-      return this.apiClient.callApi(
-        '/firewall/{firewallId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} firewallId ID of firewall
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FirewallServices}
-     */
-    this.operationFirewallGetservicesServiceId = function(firewallId, serviceId) {
-      return this.operationFirewallGetservicesServiceIdWithHttpInfo(firewallId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} firewallId ID of firewall
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationFirewallGettagWithHttpInfo = function(firewallId) {
-      var postBody = null;
-
-      // verify the required parameter 'firewallId' is set
-      if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallGettag");
-      }
-
-
-      var pathParams = {
-        'firewallId': firewallId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/firewall/{firewallId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} firewallId ID of firewall
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationFirewallGettag = function(firewallId) {
-      return this.operationFirewallGettagWithHttpInfo(firewallId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationFirewallListaccessrightsWithHttpInfo = function(firewallId) {
+    this.firewallListAccessrightsWithHttpInfo = function(firewallId) {
       var postBody = null;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallListaccessrights");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallListAccessrights");
       }
 
 
@@ -860,19 +864,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/firewall/{firewallId}/accessrights/', 'GET',
+        '/firewall/{firewallId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationFirewallListaccessrights = function(firewallId) {
-      return this.operationFirewallListaccessrightsWithHttpInfo(firewallId)
+    this.firewallListAccessrights = function(firewallId) {
+      return this.firewallListAccessrightsWithHttpInfo(firewallId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -884,12 +888,12 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse200>} and HTTP response
      */
-    this.operationFirewallListegressWithHttpInfo = function(firewallId) {
+    this.firewallListEgressWithHttpInfo = function(firewallId) {
       var postBody = null;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallListegress");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallListEgress");
       }
 
 
@@ -922,8 +926,8 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse200>}
      */
-    this.operationFirewallListegress = function(firewallId) {
-      return this.operationFirewallListegressWithHttpInfo(firewallId)
+    this.firewallListEgress = function(firewallId) {
+      return this.firewallListEgressWithHttpInfo(firewallId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -935,12 +939,12 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse200>} and HTTP response
      */
-    this.operationFirewallListingressWithHttpInfo = function(firewallId) {
+    this.firewallListIngressWithHttpInfo = function(firewallId) {
       var postBody = null;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallListingress");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallListIngress");
       }
 
 
@@ -973,8 +977,8 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse200>}
      */
-    this.operationFirewallListingress = function(firewallId) {
-      return this.operationFirewallListingressWithHttpInfo(firewallId)
+    this.firewallListIngress = function(firewallId) {
+      return this.firewallListIngressWithHttpInfo(firewallId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -982,16 +986,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationFirewallListqueueWithHttpInfo = function(firewallId) {
+    this.firewallListQueueWithHttpInfo = function(firewallId) {
       var postBody = null;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallListqueue");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallListQueue");
       }
 
 
@@ -1013,19 +1017,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/firewall/{firewallId}/queue/', 'GET',
+        '/firewall/{firewallId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationFirewallListqueue = function(firewallId) {
-      return this.operationFirewallListqueueWithHttpInfo(firewallId)
+    this.firewallListQueue = function(firewallId) {
+      return this.firewallListQueueWithHttpInfo(firewallId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1033,16 +1037,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/FirewallServices>} and HTTP response
      */
-    this.operationFirewallListservicesWithHttpInfo = function(firewallId) {
+    this.firewallListServicesWithHttpInfo = function(firewallId) {
       var postBody = null;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallListservices");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallListServices");
       }
 
 
@@ -1064,19 +1068,19 @@
       var returnType = [FirewallServices];
 
       return this.apiClient.callApi(
-        '/firewall/{firewallId}/services/', 'GET',
+        '/firewall/{firewallId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/FirewallServices>}
      */
-    this.operationFirewallListservices = function(firewallId) {
-      return this.operationFirewallListservicesWithHttpInfo(firewallId)
+    this.firewallListServices = function(firewallId) {
+      return this.firewallListServicesWithHttpInfo(firewallId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1084,22 +1088,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} firewallId ID of firewall
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationFirewallPatchtagWithHttpInfo = function(firewallId, requestBody) {
-      var postBody = requestBody;
+    this.firewallPatchTagWithHttpInfo = function(firewallId, body) {
+      var postBody = body;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallPatchtag");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationFirewallPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling firewallPatchTag");
       }
 
 
@@ -1118,23 +1122,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/firewall/{firewallId}/tag/', 'PATCH',
+        '/firewall/{firewallId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} firewallId ID of firewall
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationFirewallPatchtag = function(firewallId, requestBody) {
-      return this.operationFirewallPatchtagWithHttpInfo(firewallId, requestBody)
+    this.firewallPatchTag = function(firewallId, body) {
+      return this.firewallPatchTagWithHttpInfo(firewallId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1142,19 +1146,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject15} opts.inlineObject15 
+     * @param {module:model/FirewallPostAccessrights} firewallPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationFirewallPostaccessrightsWithHttpInfo = function(firewallId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject15'];
+    this.firewallPostAccessrightsWithHttpInfo = function(firewallId, firewallPostAccessrights) {
+      var postBody = firewallPostAccessrights;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallPostaccessrights");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallPostAccessrights");
+      }
+
+      // verify the required parameter 'firewallPostAccessrights' is set
+      if (firewallPostAccessrights === undefined || firewallPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'firewallPostAccessrights' when calling firewallPostAccessrights");
       }
 
 
@@ -1176,21 +1183,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/firewall/{firewallId}/accessrights/', 'POST',
+        '/firewall/{firewallId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject15} opts.inlineObject15 
+     * @param {module:model/FirewallPostAccessrights} firewallPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationFirewallPostaccessrights = function(firewallId, opts) {
-      return this.operationFirewallPostaccessrightsWithHttpInfo(firewallId, opts)
+    this.firewallPostAccessrights = function(firewallId, firewallPostAccessrights) {
+      return this.firewallPostAccessrightsWithHttpInfo(firewallId, firewallPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1200,17 +1206,20 @@
     /**
      * /egress
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject14} opts.inlineObject14 
+     * @param {module:model/FirewallPostEgress} firewallPostEgress 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
-    this.operationFirewallPostegressWithHttpInfo = function(firewallId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject14'];
+    this.firewallPostEgressWithHttpInfo = function(firewallId, firewallPostEgress) {
+      var postBody = firewallPostEgress;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallPostegress");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallPostEgress");
+      }
+
+      // verify the required parameter 'firewallPostEgress' is set
+      if (firewallPostEgress === undefined || firewallPostEgress === null) {
+        throw new Error("Missing the required parameter 'firewallPostEgress' when calling firewallPostEgress");
       }
 
 
@@ -1241,12 +1250,11 @@
     /**
      * /egress
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject14} opts.inlineObject14 
+     * @param {module:model/FirewallPostEgress} firewallPostEgress 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
-    this.operationFirewallPostegress = function(firewallId, opts) {
-      return this.operationFirewallPostegressWithHttpInfo(firewallId, opts)
+    this.firewallPostEgress = function(firewallId, firewallPostEgress) {
+      return this.firewallPostEgressWithHttpInfo(firewallId, firewallPostEgress)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1256,17 +1264,20 @@
     /**
      * /ingress
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject13} opts.inlineObject13 
+     * @param {module:model/FirewallPostIngress} firewallPostIngress 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
-    this.operationFirewallPostingressWithHttpInfo = function(firewallId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject13'];
+    this.firewallPostIngressWithHttpInfo = function(firewallId, firewallPostIngress) {
+      var postBody = firewallPostIngress;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling operationFirewallPostingress");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallPostIngress");
+      }
+
+      // verify the required parameter 'firewallPostIngress' is set
+      if (firewallPostIngress === undefined || firewallPostIngress === null) {
+        throw new Error("Missing the required parameter 'firewallPostIngress' when calling firewallPostIngress");
       }
 
 
@@ -1297,12 +1308,11 @@
     /**
      * /ingress
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject13} opts.inlineObject13 
+     * @param {module:model/FirewallPostIngress} firewallPostIngress 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
-    this.operationFirewallPostingress = function(firewallId, opts) {
-      return this.operationFirewallPostingressWithHttpInfo(firewallId, opts)
+    this.firewallPostIngress = function(firewallId, firewallPostIngress) {
+      return this.firewallPostIngressWithHttpInfo(firewallId, firewallPostIngress)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1315,12 +1325,12 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
      */
-    this.showFirewallWithHttpInfo = function(firewallId) {
+    this.firewallShowWithHttpInfo = function(firewallId) {
       var postBody = null;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling showFirewall");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallShow");
       }
 
 
@@ -1354,8 +1364,8 @@
      * @param {String} firewallId ID of firewall
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
      */
-    this.showFirewall = function(firewallId) {
-      return this.showFirewallWithHttpInfo(firewallId)
+    this.firewallShow = function(firewallId) {
+      return this.firewallShowWithHttpInfo(firewallId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1366,17 +1376,20 @@
      * Update
      * Returns modified firewall
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject11} opts.inlineObject11 
+     * @param {module:model/FirewallUpdate} firewallUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
      */
-    this.updateFirewallWithHttpInfo = function(firewallId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject11'];
+    this.firewallUpdateWithHttpInfo = function(firewallId, firewallUpdate) {
+      var postBody = firewallUpdate;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
-        throw new Error("Missing the required parameter 'firewallId' when calling updateFirewall");
+        throw new Error("Missing the required parameter 'firewallId' when calling firewallUpdate");
+      }
+
+      // verify the required parameter 'firewallUpdate' is set
+      if (firewallUpdate === undefined || firewallUpdate === null) {
+        throw new Error("Missing the required parameter 'firewallUpdate' when calling firewallUpdate");
       }
 
 
@@ -1408,12 +1421,11 @@
      * Update
      * Returns modified firewall
      * @param {String} firewallId ID of firewall
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject11} opts.inlineObject11 
+     * @param {module:model/FirewallUpdate} firewallUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
      */
-    this.updateFirewall = function(firewallId, opts) {
-      return this.updateFirewallWithHttpInfo(firewallId, opts)
+    this.firewallUpdate = function(firewallId, firewallUpdate) {
+      return this.firewallUpdateWithHttpInfo(firewallId, firewallUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/InlineObject20', 'model/InlineObject21', 'model/InlineObject22', 'model/Netgw', 'model/NetgwServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/Netgw', 'model/NetgwCreate', 'model/NetgwPostAccessrights', 'model/NetgwServices', 'model/NetgwUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject20'), require('../model/InlineObject21'), require('../model/InlineObject22'), require('../model/Netgw'), require('../model/NetgwServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Netgw'), require('../model/NetgwCreate'), require('../model/NetgwPostAccessrights'), require('../model/NetgwServices'), require('../model/NetgwUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.NetgwApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject20, root.HyperOneApi.InlineObject21, root.HyperOneApi.InlineObject22, root.HyperOneApi.Netgw, root.HyperOneApi.NetgwServices);
+    root.HyperOneApi.NetgwApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Netgw, root.HyperOneApi.NetgwCreate, root.HyperOneApi.NetgwPostAccessrights, root.HyperOneApi.NetgwServices, root.HyperOneApi.NetgwUpdate);
   }
-}(this, function(ApiClient, Event, InlineObject20, InlineObject21, InlineObject22, Netgw, NetgwServices) {
+}(this, function(ApiClient, Event, Netgw, NetgwCreate, NetgwPostAccessrights, NetgwServices, NetgwUpdate) {
   'use strict';
 
   /**
@@ -54,12 +54,12 @@
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.actionNetgwAttachWithHttpInfo = function(netgwId) {
+    this.netgwActionAttachWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling actionNetgwAttach");
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwActionAttach");
       }
 
 
@@ -93,8 +93,8 @@
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
-    this.actionNetgwAttach = function(netgwId) {
-      return this.actionNetgwAttachWithHttpInfo(netgwId)
+    this.netgwActionAttach = function(netgwId) {
+      return this.netgwActionAttachWithHttpInfo(netgwId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -107,12 +107,12 @@
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.actionNetgwDetachWithHttpInfo = function(netgwId) {
+    this.netgwActionDetachWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling actionNetgwDetach");
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwActionDetach");
       }
 
 
@@ -146,8 +146,8 @@
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
-    this.actionNetgwDetach = function(netgwId) {
-      return this.actionNetgwDetachWithHttpInfo(netgwId)
+    this.netgwActionDetach = function(netgwId) {
+      return this.netgwActionDetachWithHttpInfo(netgwId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -157,13 +157,16 @@
     /**
      * Create
      * Create netgw
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject20} opts.inlineObject20 
+     * @param {module:model/NetgwCreate} netgwCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.createNetgwWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject20'];
+    this.netgwCreateWithHttpInfo = function(netgwCreate) {
+      var postBody = netgwCreate;
+
+      // verify the required parameter 'netgwCreate' is set
+      if (netgwCreate === undefined || netgwCreate === null) {
+        throw new Error("Missing the required parameter 'netgwCreate' when calling netgwCreate");
+      }
 
 
       var pathParams = {
@@ -192,12 +195,11 @@
     /**
      * Create
      * Create netgw
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject20} opts.inlineObject20 
+     * @param {module:model/NetgwCreate} netgwCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
-    this.createNetgw = function(opts) {
-      return this.createNetgwWithHttpInfo(opts)
+    this.netgwCreate = function(netgwCreate) {
+      return this.netgwCreateWithHttpInfo(netgwCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -209,12 +211,12 @@
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteNetgwWithHttpInfo = function(netgwId) {
+    this.netgwDeleteWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling deleteNetgw");
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwDelete");
       }
 
 
@@ -247,8 +249,236 @@
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteNetgw = function(netgwId) {
-      return this.deleteNetgwWithHttpInfo(netgwId)
+    this.netgwDelete = function(netgwId) {
+      return this.netgwDeleteWithHttpInfo(netgwId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} netgwId ID of netgw
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
+     */
+    this.netgwDeleteAccessrightsIdentityWithHttpInfo = function(netgwId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'netgwId' is set
+      if (netgwId === undefined || netgwId === null) {
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling netgwDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'netgwId': netgwId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Netgw;
+
+      return this.apiClient.callApi(
+        '/netgw/{netgwId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} netgwId ID of netgw
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
+     */
+    this.netgwDeleteAccessrightsIdentity = function(netgwId, identity) {
+      return this.netgwDeleteAccessrightsIdentityWithHttpInfo(netgwId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} netgwId ID of netgw
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.netgwDeleteTagKeyWithHttpInfo = function(netgwId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'netgwId' is set
+      if (netgwId === undefined || netgwId === null) {
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling netgwDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'netgwId': netgwId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/netgw/{netgwId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} netgwId ID of netgw
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.netgwDeleteTagKey = function(netgwId, key) {
+      return this.netgwDeleteTagKeyWithHttpInfo(netgwId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} netgwId ID of netgw
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NetgwServices} and HTTP response
+     */
+    this.netgwGetServicesServiceIdWithHttpInfo = function(netgwId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'netgwId' is set
+      if (netgwId === undefined || netgwId === null) {
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling netgwGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'netgwId': netgwId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = NetgwServices;
+
+      return this.apiClient.callApi(
+        '/netgw/{netgwId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} netgwId ID of netgw
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NetgwServices}
+     */
+    this.netgwGetServicesServiceId = function(netgwId, serviceId) {
+      return this.netgwGetServicesServiceIdWithHttpInfo(netgwId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} netgwId ID of netgw
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.netgwGetTagWithHttpInfo = function(netgwId) {
+      var postBody = null;
+
+      // verify the required parameter 'netgwId' is set
+      if (netgwId === undefined || netgwId === null) {
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwGetTag");
+      }
+
+
+      var pathParams = {
+        'netgwId': netgwId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/netgw/{netgwId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} netgwId ID of netgw
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.netgwGetTag = function(netgwId) {
+      return this.netgwGetTagWithHttpInfo(netgwId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -262,7 +492,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Netgw>} and HTTP response
      */
-    this.listNetgwWithHttpInfo = function(opts) {
+    this.netgwListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -298,8 +528,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Netgw>}
      */
-    this.listNetgw = function(opts) {
-      return this.listNetgwWithHttpInfo(opts)
+    this.netgwList = function(opts) {
+      return this.netgwListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -307,244 +537,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} netgwId ID of netgw
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
-     */
-    this.operationNetgwDeleteaccessrightsIdentityWithHttpInfo = function(netgwId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'netgwId' is set
-      if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling operationNetgwDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationNetgwDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'netgwId': netgwId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Netgw;
-
-      return this.apiClient.callApi(
-        '/netgw/{netgwId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} netgwId ID of netgw
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
-     */
-    this.operationNetgwDeleteaccessrightsIdentity = function(netgwId, identity) {
-      return this.operationNetgwDeleteaccessrightsIdentityWithHttpInfo(netgwId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} netgwId ID of netgw
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationNetgwDeletetagKeyWithHttpInfo = function(netgwId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'netgwId' is set
-      if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling operationNetgwDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationNetgwDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'netgwId': netgwId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/netgw/{netgwId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} netgwId ID of netgw
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationNetgwDeletetagKey = function(netgwId, key) {
-      return this.operationNetgwDeletetagKeyWithHttpInfo(netgwId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} netgwId ID of netgw
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NetgwServices} and HTTP response
-     */
-    this.operationNetgwGetservicesServiceIdWithHttpInfo = function(netgwId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'netgwId' is set
-      if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling operationNetgwGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationNetgwGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'netgwId': netgwId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = NetgwServices;
-
-      return this.apiClient.callApi(
-        '/netgw/{netgwId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} netgwId ID of netgw
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NetgwServices}
-     */
-    this.operationNetgwGetservicesServiceId = function(netgwId, serviceId) {
-      return this.operationNetgwGetservicesServiceIdWithHttpInfo(netgwId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} netgwId ID of netgw
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationNetgwGettagWithHttpInfo = function(netgwId) {
-      var postBody = null;
-
-      // verify the required parameter 'netgwId' is set
-      if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling operationNetgwGettag");
-      }
-
-
-      var pathParams = {
-        'netgwId': netgwId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/netgw/{netgwId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} netgwId ID of netgw
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationNetgwGettag = function(netgwId) {
-      return this.operationNetgwGettagWithHttpInfo(netgwId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationNetgwListaccessrightsWithHttpInfo = function(netgwId) {
+    this.netgwListAccessrightsWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling operationNetgwListaccessrights");
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwListAccessrights");
       }
 
 
@@ -566,19 +568,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/netgw/{netgwId}/accessrights/', 'GET',
+        '/netgw/{netgwId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationNetgwListaccessrights = function(netgwId) {
-      return this.operationNetgwListaccessrightsWithHttpInfo(netgwId)
+    this.netgwListAccessrights = function(netgwId) {
+      return this.netgwListAccessrightsWithHttpInfo(netgwId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -586,16 +588,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationNetgwListqueueWithHttpInfo = function(netgwId) {
+    this.netgwListQueueWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling operationNetgwListqueue");
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwListQueue");
       }
 
 
@@ -617,19 +619,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/netgw/{netgwId}/queue/', 'GET',
+        '/netgw/{netgwId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationNetgwListqueue = function(netgwId) {
-      return this.operationNetgwListqueueWithHttpInfo(netgwId)
+    this.netgwListQueue = function(netgwId) {
+      return this.netgwListQueueWithHttpInfo(netgwId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -637,16 +639,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/NetgwServices>} and HTTP response
      */
-    this.operationNetgwListservicesWithHttpInfo = function(netgwId) {
+    this.netgwListServicesWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling operationNetgwListservices");
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwListServices");
       }
 
 
@@ -668,19 +670,19 @@
       var returnType = [NetgwServices];
 
       return this.apiClient.callApi(
-        '/netgw/{netgwId}/services/', 'GET',
+        '/netgw/{netgwId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/NetgwServices>}
      */
-    this.operationNetgwListservices = function(netgwId) {
-      return this.operationNetgwListservicesWithHttpInfo(netgwId)
+    this.netgwListServices = function(netgwId) {
+      return this.netgwListServicesWithHttpInfo(netgwId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -688,22 +690,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} netgwId ID of netgw
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationNetgwPatchtagWithHttpInfo = function(netgwId, requestBody) {
-      var postBody = requestBody;
+    this.netgwPatchTagWithHttpInfo = function(netgwId, body) {
+      var postBody = body;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling operationNetgwPatchtag");
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationNetgwPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling netgwPatchTag");
       }
 
 
@@ -722,23 +724,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/netgw/{netgwId}/tag/', 'PATCH',
+        '/netgw/{netgwId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} netgwId ID of netgw
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationNetgwPatchtag = function(netgwId, requestBody) {
-      return this.operationNetgwPatchtagWithHttpInfo(netgwId, requestBody)
+    this.netgwPatchTag = function(netgwId, body) {
+      return this.netgwPatchTagWithHttpInfo(netgwId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -746,19 +748,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} netgwId ID of netgw
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject22} opts.inlineObject22 
+     * @param {module:model/NetgwPostAccessrights} netgwPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationNetgwPostaccessrightsWithHttpInfo = function(netgwId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject22'];
+    this.netgwPostAccessrightsWithHttpInfo = function(netgwId, netgwPostAccessrights) {
+      var postBody = netgwPostAccessrights;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling operationNetgwPostaccessrights");
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwPostAccessrights");
+      }
+
+      // verify the required parameter 'netgwPostAccessrights' is set
+      if (netgwPostAccessrights === undefined || netgwPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'netgwPostAccessrights' when calling netgwPostAccessrights");
       }
 
 
@@ -780,21 +785,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/netgw/{netgwId}/accessrights/', 'POST',
+        '/netgw/{netgwId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} netgwId ID of netgw
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject22} opts.inlineObject22 
+     * @param {module:model/NetgwPostAccessrights} netgwPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationNetgwPostaccessrights = function(netgwId, opts) {
-      return this.operationNetgwPostaccessrightsWithHttpInfo(netgwId, opts)
+    this.netgwPostAccessrights = function(netgwId, netgwPostAccessrights) {
+      return this.netgwPostAccessrightsWithHttpInfo(netgwId, netgwPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -807,12 +811,12 @@
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.showNetgwWithHttpInfo = function(netgwId) {
+    this.netgwShowWithHttpInfo = function(netgwId) {
       var postBody = null;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling showNetgw");
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwShow");
       }
 
 
@@ -846,8 +850,8 @@
      * @param {String} netgwId ID of netgw
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
-    this.showNetgw = function(netgwId) {
-      return this.showNetgwWithHttpInfo(netgwId)
+    this.netgwShow = function(netgwId) {
+      return this.netgwShowWithHttpInfo(netgwId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -858,17 +862,20 @@
      * Update
      * Returns modified netgw
      * @param {String} netgwId ID of netgw
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject21} opts.inlineObject21 
+     * @param {module:model/NetgwUpdate} netgwUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
-    this.updateNetgwWithHttpInfo = function(netgwId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject21'];
+    this.netgwUpdateWithHttpInfo = function(netgwId, netgwUpdate) {
+      var postBody = netgwUpdate;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
-        throw new Error("Missing the required parameter 'netgwId' when calling updateNetgw");
+        throw new Error("Missing the required parameter 'netgwId' when calling netgwUpdate");
+      }
+
+      // verify the required parameter 'netgwUpdate' is set
+      if (netgwUpdate === undefined || netgwUpdate === null) {
+        throw new Error("Missing the required parameter 'netgwUpdate' when calling netgwUpdate");
       }
 
 
@@ -900,12 +907,11 @@
      * Update
      * Returns modified netgw
      * @param {String} netgwId ID of netgw
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject21} opts.inlineObject21 
+     * @param {module:model/NetgwUpdate} netgwUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
-    this.updateNetgw = function(netgwId, opts) {
-      return this.updateNetgwWithHttpInfo(netgwId, opts)
+    this.netgwUpdate = function(netgwId, netgwUpdate) {
+      return this.netgwUpdateWithHttpInfo(netgwId, netgwUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

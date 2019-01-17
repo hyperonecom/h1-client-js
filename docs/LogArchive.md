@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
-**credential** | [**VaultCredential1**](VaultCredential1.md) |  | [optional] 
 **sizeUsed** | **Number** |  | [optional] 
 **retention** | **Number** |  | [optional] 
 

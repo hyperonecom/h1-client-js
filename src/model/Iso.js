@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DiskMetadata1', 'model/Event', 'model/ProjectServices'], factory);
+    define(['ApiClient', 'model/DiskMetadata', 'model/Event', 'model/ProjectServices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DiskMetadata1'), require('./Event'), require('./ProjectServices'));
+    module.exports = factory(require('../ApiClient'), require('./DiskMetadata'), require('./Event'), require('./ProjectServices'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.Iso = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.DiskMetadata1, root.HyperOneApi.Event, root.HyperOneApi.ProjectServices);
+    root.HyperOneApi.Iso = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.DiskMetadata, root.HyperOneApi.Event, root.HyperOneApi.ProjectServices);
   }
-}(this, function(ApiClient, DiskMetadata1, Event, ProjectServices) {
+}(this, function(ApiClient, DiskMetadata, Event, ProjectServices) {
   'use strict';
 
 
@@ -104,10 +104,10 @@
         obj['project'] = ApiClient.convertToType(data['project'], 'String');
       }
       if (data.hasOwnProperty('size')) {
-        obj['size'] = ApiClient.convertToType(data['size'], 'String');
+        obj['size'] = ApiClient.convertToType(data['size'], 'Number');
       }
       if (data.hasOwnProperty('metadata')) {
-        obj['metadata'] = DiskMetadata1.constructFromObject(data['metadata']);
+        obj['metadata'] = DiskMetadata.constructFromObject(data['metadata']);
       }
     }
     return obj;
@@ -174,11 +174,11 @@
    */
   exports.prototype['project'] = undefined;
   /**
-   * @member {String} size
+   * @member {Number} size
    */
   exports.prototype['size'] = undefined;
   /**
-   * @member {module:model/DiskMetadata1} metadata
+   * @member {module:model/DiskMetadata} metadata
    */
   exports.prototype['metadata'] = undefined;
 

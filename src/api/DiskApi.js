@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Disk', 'model/DiskServices', 'model/Event', 'model/InlineObject27', 'model/InlineObject28', 'model/InlineObject29', 'model/InlineObject30'], factory);
+    define(['ApiClient', 'model/Disk', 'model/DiskActionTransfer', 'model/DiskCreate', 'model/DiskPostAccessrights', 'model/DiskServices', 'model/DiskUpdate', 'model/Event'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Disk'), require('../model/DiskServices'), require('../model/Event'), require('../model/InlineObject27'), require('../model/InlineObject28'), require('../model/InlineObject29'), require('../model/InlineObject30'));
+    module.exports = factory(require('../ApiClient'), require('../model/Disk'), require('../model/DiskActionTransfer'), require('../model/DiskCreate'), require('../model/DiskPostAccessrights'), require('../model/DiskServices'), require('../model/DiskUpdate'), require('../model/Event'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.DiskApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Disk, root.HyperOneApi.DiskServices, root.HyperOneApi.Event, root.HyperOneApi.InlineObject27, root.HyperOneApi.InlineObject28, root.HyperOneApi.InlineObject29, root.HyperOneApi.InlineObject30);
+    root.HyperOneApi.DiskApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Disk, root.HyperOneApi.DiskActionTransfer, root.HyperOneApi.DiskCreate, root.HyperOneApi.DiskPostAccessrights, root.HyperOneApi.DiskServices, root.HyperOneApi.DiskUpdate, root.HyperOneApi.Event);
   }
-}(this, function(ApiClient, Disk, DiskServices, Event, InlineObject27, InlineObject28, InlineObject29, InlineObject30) {
+}(this, function(ApiClient, Disk, DiskActionTransfer, DiskCreate, DiskPostAccessrights, DiskServices, DiskUpdate, Event) {
   'use strict';
 
   /**
@@ -54,12 +54,12 @@
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
-    this.actionDiskResizeWithHttpInfo = function(diskId) {
+    this.diskActionResizeWithHttpInfo = function(diskId) {
       var postBody = null;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling actionDiskResize");
+        throw new Error("Missing the required parameter 'diskId' when calling diskActionResize");
       }
 
 
@@ -93,8 +93,8 @@
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
      */
-    this.actionDiskResize = function(diskId) {
-      return this.actionDiskResizeWithHttpInfo(diskId)
+    this.diskActionResize = function(diskId) {
+      return this.diskActionResizeWithHttpInfo(diskId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -105,17 +105,20 @@
      * /actions/transfer
      * Action transfer
      * @param {String} diskId ID of disk
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject29} opts.inlineObject29 
+     * @param {module:model/DiskActionTransfer} diskActionTransfer 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
-    this.actionDiskTransferWithHttpInfo = function(diskId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject29'];
+    this.diskActionTransferWithHttpInfo = function(diskId, diskActionTransfer) {
+      var postBody = diskActionTransfer;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling actionDiskTransfer");
+        throw new Error("Missing the required parameter 'diskId' when calling diskActionTransfer");
+      }
+
+      // verify the required parameter 'diskActionTransfer' is set
+      if (diskActionTransfer === undefined || diskActionTransfer === null) {
+        throw new Error("Missing the required parameter 'diskActionTransfer' when calling diskActionTransfer");
       }
 
 
@@ -147,12 +150,11 @@
      * /actions/transfer
      * Action transfer
      * @param {String} diskId ID of disk
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject29} opts.inlineObject29 
+     * @param {module:model/DiskActionTransfer} diskActionTransfer 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
      */
-    this.actionDiskTransfer = function(diskId, opts) {
-      return this.actionDiskTransferWithHttpInfo(diskId, opts)
+    this.diskActionTransfer = function(diskId, diskActionTransfer) {
+      return this.diskActionTransferWithHttpInfo(diskId, diskActionTransfer)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -162,13 +164,16 @@
     /**
      * Create
      * Create disk
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject27} opts.inlineObject27 
+     * @param {module:model/DiskCreate} diskCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
-    this.createDiskWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject27'];
+    this.diskCreateWithHttpInfo = function(diskCreate) {
+      var postBody = diskCreate;
+
+      // verify the required parameter 'diskCreate' is set
+      if (diskCreate === undefined || diskCreate === null) {
+        throw new Error("Missing the required parameter 'diskCreate' when calling diskCreate");
+      }
 
 
       var pathParams = {
@@ -197,12 +202,11 @@
     /**
      * Create
      * Create disk
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject27} opts.inlineObject27 
+     * @param {module:model/DiskCreate} diskCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
      */
-    this.createDisk = function(opts) {
-      return this.createDiskWithHttpInfo(opts)
+    this.diskCreate = function(diskCreate) {
+      return this.diskCreateWithHttpInfo(diskCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -214,12 +218,12 @@
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteDiskWithHttpInfo = function(diskId) {
+    this.diskDeleteWithHttpInfo = function(diskId) {
       var postBody = null;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling deleteDisk");
+        throw new Error("Missing the required parameter 'diskId' when calling diskDelete");
       }
 
 
@@ -252,8 +256,236 @@
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteDisk = function(diskId) {
-      return this.deleteDiskWithHttpInfo(diskId)
+    this.diskDelete = function(diskId) {
+      return this.diskDeleteWithHttpInfo(diskId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} diskId ID of disk
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
+     */
+    this.diskDeleteAccessrightsIdentityWithHttpInfo = function(diskId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'diskId' is set
+      if (diskId === undefined || diskId === null) {
+        throw new Error("Missing the required parameter 'diskId' when calling diskDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling diskDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'diskId': diskId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Disk;
+
+      return this.apiClient.callApi(
+        '/disk/{diskId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} diskId ID of disk
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
+     */
+    this.diskDeleteAccessrightsIdentity = function(diskId, identity) {
+      return this.diskDeleteAccessrightsIdentityWithHttpInfo(diskId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} diskId ID of disk
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.diskDeleteTagKeyWithHttpInfo = function(diskId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'diskId' is set
+      if (diskId === undefined || diskId === null) {
+        throw new Error("Missing the required parameter 'diskId' when calling diskDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling diskDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'diskId': diskId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/disk/{diskId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} diskId ID of disk
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.diskDeleteTagKey = function(diskId, key) {
+      return this.diskDeleteTagKeyWithHttpInfo(diskId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} diskId ID of disk
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DiskServices} and HTTP response
+     */
+    this.diskGetServicesServiceIdWithHttpInfo = function(diskId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'diskId' is set
+      if (diskId === undefined || diskId === null) {
+        throw new Error("Missing the required parameter 'diskId' when calling diskGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling diskGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'diskId': diskId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = DiskServices;
+
+      return this.apiClient.callApi(
+        '/disk/{diskId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} diskId ID of disk
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DiskServices}
+     */
+    this.diskGetServicesServiceId = function(diskId, serviceId) {
+      return this.diskGetServicesServiceIdWithHttpInfo(diskId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} diskId ID of disk
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.diskGetTagWithHttpInfo = function(diskId) {
+      var postBody = null;
+
+      // verify the required parameter 'diskId' is set
+      if (diskId === undefined || diskId === null) {
+        throw new Error("Missing the required parameter 'diskId' when calling diskGetTag");
+      }
+
+
+      var pathParams = {
+        'diskId': diskId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/disk/{diskId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} diskId ID of disk
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.diskGetTag = function(diskId) {
+      return this.diskGetTagWithHttpInfo(diskId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -267,7 +499,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Disk>} and HTTP response
      */
-    this.listDiskWithHttpInfo = function(opts) {
+    this.diskListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -303,8 +535,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Disk>}
      */
-    this.listDisk = function(opts) {
-      return this.listDiskWithHttpInfo(opts)
+    this.diskList = function(opts) {
+      return this.diskListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -312,244 +544,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} diskId ID of disk
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
-     */
-    this.operationDiskDeleteaccessrightsIdentityWithHttpInfo = function(diskId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'diskId' is set
-      if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling operationDiskDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationDiskDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'diskId': diskId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Disk;
-
-      return this.apiClient.callApi(
-        '/disk/{diskId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} diskId ID of disk
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
-     */
-    this.operationDiskDeleteaccessrightsIdentity = function(diskId, identity) {
-      return this.operationDiskDeleteaccessrightsIdentityWithHttpInfo(diskId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} diskId ID of disk
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationDiskDeletetagKeyWithHttpInfo = function(diskId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'diskId' is set
-      if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling operationDiskDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationDiskDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'diskId': diskId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/disk/{diskId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} diskId ID of disk
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationDiskDeletetagKey = function(diskId, key) {
-      return this.operationDiskDeletetagKeyWithHttpInfo(diskId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} diskId ID of disk
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DiskServices} and HTTP response
-     */
-    this.operationDiskGetservicesServiceIdWithHttpInfo = function(diskId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'diskId' is set
-      if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling operationDiskGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationDiskGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'diskId': diskId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = DiskServices;
-
-      return this.apiClient.callApi(
-        '/disk/{diskId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} diskId ID of disk
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DiskServices}
-     */
-    this.operationDiskGetservicesServiceId = function(diskId, serviceId) {
-      return this.operationDiskGetservicesServiceIdWithHttpInfo(diskId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} diskId ID of disk
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationDiskGettagWithHttpInfo = function(diskId) {
-      var postBody = null;
-
-      // verify the required parameter 'diskId' is set
-      if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling operationDiskGettag");
-      }
-
-
-      var pathParams = {
-        'diskId': diskId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/disk/{diskId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} diskId ID of disk
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationDiskGettag = function(diskId) {
-      return this.operationDiskGettagWithHttpInfo(diskId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationDiskListaccessrightsWithHttpInfo = function(diskId) {
+    this.diskListAccessrightsWithHttpInfo = function(diskId) {
       var postBody = null;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling operationDiskListaccessrights");
+        throw new Error("Missing the required parameter 'diskId' when calling diskListAccessrights");
       }
 
 
@@ -571,19 +575,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/disk/{diskId}/accessrights/', 'GET',
+        '/disk/{diskId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationDiskListaccessrights = function(diskId) {
-      return this.operationDiskListaccessrightsWithHttpInfo(diskId)
+    this.diskListAccessrights = function(diskId) {
+      return this.diskListAccessrightsWithHttpInfo(diskId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -591,16 +595,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationDiskListqueueWithHttpInfo = function(diskId) {
+    this.diskListQueueWithHttpInfo = function(diskId) {
       var postBody = null;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling operationDiskListqueue");
+        throw new Error("Missing the required parameter 'diskId' when calling diskListQueue");
       }
 
 
@@ -622,19 +626,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/disk/{diskId}/queue/', 'GET',
+        '/disk/{diskId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationDiskListqueue = function(diskId) {
-      return this.operationDiskListqueueWithHttpInfo(diskId)
+    this.diskListQueue = function(diskId) {
+      return this.diskListQueueWithHttpInfo(diskId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -642,16 +646,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DiskServices>} and HTTP response
      */
-    this.operationDiskListservicesWithHttpInfo = function(diskId) {
+    this.diskListServicesWithHttpInfo = function(diskId) {
       var postBody = null;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling operationDiskListservices");
+        throw new Error("Missing the required parameter 'diskId' when calling diskListServices");
       }
 
 
@@ -673,19 +677,19 @@
       var returnType = [DiskServices];
 
       return this.apiClient.callApi(
-        '/disk/{diskId}/services/', 'GET',
+        '/disk/{diskId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DiskServices>}
      */
-    this.operationDiskListservices = function(diskId) {
-      return this.operationDiskListservicesWithHttpInfo(diskId)
+    this.diskListServices = function(diskId) {
+      return this.diskListServicesWithHttpInfo(diskId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -693,22 +697,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} diskId ID of disk
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationDiskPatchtagWithHttpInfo = function(diskId, requestBody) {
-      var postBody = requestBody;
+    this.diskPatchTagWithHttpInfo = function(diskId, body) {
+      var postBody = body;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling operationDiskPatchtag");
+        throw new Error("Missing the required parameter 'diskId' when calling diskPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationDiskPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling diskPatchTag");
       }
 
 
@@ -727,23 +731,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/disk/{diskId}/tag/', 'PATCH',
+        '/disk/{diskId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} diskId ID of disk
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationDiskPatchtag = function(diskId, requestBody) {
-      return this.operationDiskPatchtagWithHttpInfo(diskId, requestBody)
+    this.diskPatchTag = function(diskId, body) {
+      return this.diskPatchTagWithHttpInfo(diskId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -751,19 +755,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} diskId ID of disk
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject30} opts.inlineObject30 
+     * @param {module:model/DiskPostAccessrights} diskPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationDiskPostaccessrightsWithHttpInfo = function(diskId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject30'];
+    this.diskPostAccessrightsWithHttpInfo = function(diskId, diskPostAccessrights) {
+      var postBody = diskPostAccessrights;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling operationDiskPostaccessrights");
+        throw new Error("Missing the required parameter 'diskId' when calling diskPostAccessrights");
+      }
+
+      // verify the required parameter 'diskPostAccessrights' is set
+      if (diskPostAccessrights === undefined || diskPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'diskPostAccessrights' when calling diskPostAccessrights");
       }
 
 
@@ -785,21 +792,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/disk/{diskId}/accessrights/', 'POST',
+        '/disk/{diskId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} diskId ID of disk
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject30} opts.inlineObject30 
+     * @param {module:model/DiskPostAccessrights} diskPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationDiskPostaccessrights = function(diskId, opts) {
-      return this.operationDiskPostaccessrightsWithHttpInfo(diskId, opts)
+    this.diskPostAccessrights = function(diskId, diskPostAccessrights) {
+      return this.diskPostAccessrightsWithHttpInfo(diskId, diskPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -812,12 +818,12 @@
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
-    this.showDiskWithHttpInfo = function(diskId) {
+    this.diskShowWithHttpInfo = function(diskId) {
       var postBody = null;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling showDisk");
+        throw new Error("Missing the required parameter 'diskId' when calling diskShow");
       }
 
 
@@ -851,8 +857,8 @@
      * @param {String} diskId ID of disk
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
      */
-    this.showDisk = function(diskId) {
-      return this.showDiskWithHttpInfo(diskId)
+    this.diskShow = function(diskId) {
+      return this.diskShowWithHttpInfo(diskId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -863,17 +869,20 @@
      * Update
      * Returns modified disk
      * @param {String} diskId ID of disk
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject28} opts.inlineObject28 
+     * @param {module:model/DiskUpdate} diskUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
-    this.updateDiskWithHttpInfo = function(diskId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject28'];
+    this.diskUpdateWithHttpInfo = function(diskId, diskUpdate) {
+      var postBody = diskUpdate;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling updateDisk");
+        throw new Error("Missing the required parameter 'diskId' when calling diskUpdate");
+      }
+
+      // verify the required parameter 'diskUpdate' is set
+      if (diskUpdate === undefined || diskUpdate === null) {
+        throw new Error("Missing the required parameter 'diskUpdate' when calling diskUpdate");
       }
 
 
@@ -905,12 +914,11 @@
      * Update
      * Returns modified disk
      * @param {String} diskId ID of disk
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject28} opts.inlineObject28 
+     * @param {module:model/DiskUpdate} diskUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
      */
-    this.updateDisk = function(diskId, opts) {
-      return this.updateDiskWithHttpInfo(diskId, opts)
+    this.diskUpdate = function(diskId, diskUpdate) {
+      return this.diskUpdateWithHttpInfo(diskId, diskUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

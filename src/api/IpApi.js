@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/InlineObject42', 'model/InlineObject43', 'model/InlineObject44', 'model/InlineObject45', 'model/Ip', 'model/IpServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/Ip', 'model/IpActionTransfer', 'model/IpCreate', 'model/IpPostAccessrights', 'model/IpServices', 'model/IpUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject42'), require('../model/InlineObject43'), require('../model/InlineObject44'), require('../model/InlineObject45'), require('../model/Ip'), require('../model/IpServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Ip'), require('../model/IpActionTransfer'), require('../model/IpCreate'), require('../model/IpPostAccessrights'), require('../model/IpServices'), require('../model/IpUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.IpApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject42, root.HyperOneApi.InlineObject43, root.HyperOneApi.InlineObject44, root.HyperOneApi.InlineObject45, root.HyperOneApi.Ip, root.HyperOneApi.IpServices);
+    root.HyperOneApi.IpApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Ip, root.HyperOneApi.IpActionTransfer, root.HyperOneApi.IpCreate, root.HyperOneApi.IpPostAccessrights, root.HyperOneApi.IpServices, root.HyperOneApi.IpUpdate);
   }
-}(this, function(ApiClient, Event, InlineObject42, InlineObject43, InlineObject44, InlineObject45, Ip, IpServices) {
+}(this, function(ApiClient, Event, Ip, IpActionTransfer, IpCreate, IpPostAccessrights, IpServices, IpUpdate) {
   'use strict';
 
   /**
@@ -54,12 +54,12 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.actionIpAllocateWithHttpInfo = function(ipId) {
+    this.ipActionAllocateWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling actionIpAllocate");
+        throw new Error("Missing the required parameter 'ipId' when calling ipActionAllocate");
       }
 
 
@@ -93,8 +93,8 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.actionIpAllocate = function(ipId) {
-      return this.actionIpAllocateWithHttpInfo(ipId)
+    this.ipActionAllocate = function(ipId) {
+      return this.ipActionAllocateWithHttpInfo(ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -107,12 +107,12 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.actionIpAssociateWithHttpInfo = function(ipId) {
+    this.ipActionAssociateWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling actionIpAssociate");
+        throw new Error("Missing the required parameter 'ipId' when calling ipActionAssociate");
       }
 
 
@@ -146,8 +146,8 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.actionIpAssociate = function(ipId) {
-      return this.actionIpAssociateWithHttpInfo(ipId)
+    this.ipActionAssociate = function(ipId) {
+      return this.ipActionAssociateWithHttpInfo(ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -160,12 +160,12 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.actionIpDisassociateWithHttpInfo = function(ipId) {
+    this.ipActionDisassociateWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling actionIpDisassociate");
+        throw new Error("Missing the required parameter 'ipId' when calling ipActionDisassociate");
       }
 
 
@@ -199,8 +199,8 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.actionIpDisassociate = function(ipId) {
-      return this.actionIpDisassociateWithHttpInfo(ipId)
+    this.ipActionDisassociate = function(ipId) {
+      return this.ipActionDisassociateWithHttpInfo(ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -213,12 +213,12 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.actionIpReleaseWithHttpInfo = function(ipId) {
+    this.ipActionReleaseWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling actionIpRelease");
+        throw new Error("Missing the required parameter 'ipId' when calling ipActionRelease");
       }
 
 
@@ -252,8 +252,8 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.actionIpRelease = function(ipId) {
-      return this.actionIpReleaseWithHttpInfo(ipId)
+    this.ipActionRelease = function(ipId) {
+      return this.ipActionReleaseWithHttpInfo(ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -264,17 +264,20 @@
      * /actions/transfer
      * Action transfer
      * @param {String} ipId ID of ip
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject44} opts.inlineObject44 
+     * @param {module:model/IpActionTransfer} ipActionTransfer 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.actionIpTransferWithHttpInfo = function(ipId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject44'];
+    this.ipActionTransferWithHttpInfo = function(ipId, ipActionTransfer) {
+      var postBody = ipActionTransfer;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling actionIpTransfer");
+        throw new Error("Missing the required parameter 'ipId' when calling ipActionTransfer");
+      }
+
+      // verify the required parameter 'ipActionTransfer' is set
+      if (ipActionTransfer === undefined || ipActionTransfer === null) {
+        throw new Error("Missing the required parameter 'ipActionTransfer' when calling ipActionTransfer");
       }
 
 
@@ -306,12 +309,11 @@
      * /actions/transfer
      * Action transfer
      * @param {String} ipId ID of ip
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject44} opts.inlineObject44 
+     * @param {module:model/IpActionTransfer} ipActionTransfer 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.actionIpTransfer = function(ipId, opts) {
-      return this.actionIpTransferWithHttpInfo(ipId, opts)
+    this.ipActionTransfer = function(ipId, ipActionTransfer) {
+      return this.ipActionTransferWithHttpInfo(ipId, ipActionTransfer)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -321,13 +323,16 @@
     /**
      * Create
      * Create ip
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject42} opts.inlineObject42 
+     * @param {module:model/IpCreate} ipCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.createIpWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject42'];
+    this.ipCreateWithHttpInfo = function(ipCreate) {
+      var postBody = ipCreate;
+
+      // verify the required parameter 'ipCreate' is set
+      if (ipCreate === undefined || ipCreate === null) {
+        throw new Error("Missing the required parameter 'ipCreate' when calling ipCreate");
+      }
 
 
       var pathParams = {
@@ -356,12 +361,11 @@
     /**
      * Create
      * Create ip
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject42} opts.inlineObject42 
+     * @param {module:model/IpCreate} ipCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.createIp = function(opts) {
-      return this.createIpWithHttpInfo(opts)
+    this.ipCreate = function(ipCreate) {
+      return this.ipCreateWithHttpInfo(ipCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -373,12 +377,12 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteIpWithHttpInfo = function(ipId) {
+    this.ipDeleteWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling deleteIp");
+        throw new Error("Missing the required parameter 'ipId' when calling ipDelete");
       }
 
 
@@ -411,8 +415,236 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteIp = function(ipId) {
-      return this.deleteIpWithHttpInfo(ipId)
+    this.ipDelete = function(ipId) {
+      return this.ipDeleteWithHttpInfo(ipId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} ipId ID of ip
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
+     */
+    this.ipDeleteAccessrightsIdentityWithHttpInfo = function(ipId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'ipId' is set
+      if (ipId === undefined || ipId === null) {
+        throw new Error("Missing the required parameter 'ipId' when calling ipDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling ipDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'ipId': ipId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Ip;
+
+      return this.apiClient.callApi(
+        '/ip/{ipId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} ipId ID of ip
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
+     */
+    this.ipDeleteAccessrightsIdentity = function(ipId, identity) {
+      return this.ipDeleteAccessrightsIdentityWithHttpInfo(ipId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} ipId ID of ip
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.ipDeleteTagKeyWithHttpInfo = function(ipId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'ipId' is set
+      if (ipId === undefined || ipId === null) {
+        throw new Error("Missing the required parameter 'ipId' when calling ipDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling ipDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'ipId': ipId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/ip/{ipId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} ipId ID of ip
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.ipDeleteTagKey = function(ipId, key) {
+      return this.ipDeleteTagKeyWithHttpInfo(ipId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} ipId ID of ip
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IpServices} and HTTP response
+     */
+    this.ipGetServicesServiceIdWithHttpInfo = function(ipId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'ipId' is set
+      if (ipId === undefined || ipId === null) {
+        throw new Error("Missing the required parameter 'ipId' when calling ipGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling ipGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'ipId': ipId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = IpServices;
+
+      return this.apiClient.callApi(
+        '/ip/{ipId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} ipId ID of ip
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IpServices}
+     */
+    this.ipGetServicesServiceId = function(ipId, serviceId) {
+      return this.ipGetServicesServiceIdWithHttpInfo(ipId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.ipGetTagWithHttpInfo = function(ipId) {
+      var postBody = null;
+
+      // verify the required parameter 'ipId' is set
+      if (ipId === undefined || ipId === null) {
+        throw new Error("Missing the required parameter 'ipId' when calling ipGetTag");
+      }
+
+
+      var pathParams = {
+        'ipId': ipId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/ip/{ipId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} ipId ID of ip
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.ipGetTag = function(ipId) {
+      return this.ipGetTagWithHttpInfo(ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -426,7 +658,7 @@
      * @param {String} opts.mac Filter by mac
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Ip>} and HTTP response
      */
-    this.listIpWithHttpInfo = function(opts) {
+    this.ipListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -462,8 +694,8 @@
      * @param {String} opts.mac Filter by mac
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Ip>}
      */
-    this.listIp = function(opts) {
-      return this.listIpWithHttpInfo(opts)
+    this.ipList = function(opts) {
+      return this.ipListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -471,244 +703,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} ipId ID of ip
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
-     */
-    this.operationIpDeleteaccessrightsIdentityWithHttpInfo = function(ipId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling operationIpDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationIpDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'ipId': ipId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Ip;
-
-      return this.apiClient.callApi(
-        '/ip/{ipId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} ipId ID of ip
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
-     */
-    this.operationIpDeleteaccessrightsIdentity = function(ipId, identity) {
-      return this.operationIpDeleteaccessrightsIdentityWithHttpInfo(ipId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} ipId ID of ip
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationIpDeletetagKeyWithHttpInfo = function(ipId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling operationIpDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationIpDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'ipId': ipId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/ip/{ipId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} ipId ID of ip
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationIpDeletetagKey = function(ipId, key) {
-      return this.operationIpDeletetagKeyWithHttpInfo(ipId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} ipId ID of ip
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IpServices} and HTTP response
-     */
-    this.operationIpGetservicesServiceIdWithHttpInfo = function(ipId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling operationIpGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationIpGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'ipId': ipId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = IpServices;
-
-      return this.apiClient.callApi(
-        '/ip/{ipId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} ipId ID of ip
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IpServices}
-     */
-    this.operationIpGetservicesServiceId = function(ipId, serviceId) {
-      return this.operationIpGetservicesServiceIdWithHttpInfo(ipId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} ipId ID of ip
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationIpGettagWithHttpInfo = function(ipId) {
-      var postBody = null;
-
-      // verify the required parameter 'ipId' is set
-      if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling operationIpGettag");
-      }
-
-
-      var pathParams = {
-        'ipId': ipId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/ip/{ipId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} ipId ID of ip
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationIpGettag = function(ipId) {
-      return this.operationIpGettagWithHttpInfo(ipId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationIpListaccessrightsWithHttpInfo = function(ipId) {
+    this.ipListAccessrightsWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling operationIpListaccessrights");
+        throw new Error("Missing the required parameter 'ipId' when calling ipListAccessrights");
       }
 
 
@@ -730,19 +734,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/ip/{ipId}/accessrights/', 'GET',
+        '/ip/{ipId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationIpListaccessrights = function(ipId) {
-      return this.operationIpListaccessrightsWithHttpInfo(ipId)
+    this.ipListAccessrights = function(ipId) {
+      return this.ipListAccessrightsWithHttpInfo(ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -750,16 +754,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationIpListqueueWithHttpInfo = function(ipId) {
+    this.ipListQueueWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling operationIpListqueue");
+        throw new Error("Missing the required parameter 'ipId' when calling ipListQueue");
       }
 
 
@@ -781,19 +785,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/ip/{ipId}/queue/', 'GET',
+        '/ip/{ipId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationIpListqueue = function(ipId) {
-      return this.operationIpListqueueWithHttpInfo(ipId)
+    this.ipListQueue = function(ipId) {
+      return this.ipListQueueWithHttpInfo(ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -801,16 +805,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/IpServices>} and HTTP response
      */
-    this.operationIpListservicesWithHttpInfo = function(ipId) {
+    this.ipListServicesWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling operationIpListservices");
+        throw new Error("Missing the required parameter 'ipId' when calling ipListServices");
       }
 
 
@@ -832,19 +836,19 @@
       var returnType = [IpServices];
 
       return this.apiClient.callApi(
-        '/ip/{ipId}/services/', 'GET',
+        '/ip/{ipId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/IpServices>}
      */
-    this.operationIpListservices = function(ipId) {
-      return this.operationIpListservicesWithHttpInfo(ipId)
+    this.ipListServices = function(ipId) {
+      return this.ipListServicesWithHttpInfo(ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -852,22 +856,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} ipId ID of ip
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationIpPatchtagWithHttpInfo = function(ipId, requestBody) {
-      var postBody = requestBody;
+    this.ipPatchTagWithHttpInfo = function(ipId, body) {
+      var postBody = body;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling operationIpPatchtag");
+        throw new Error("Missing the required parameter 'ipId' when calling ipPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationIpPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling ipPatchTag");
       }
 
 
@@ -886,23 +890,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/ip/{ipId}/tag/', 'PATCH',
+        '/ip/{ipId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} ipId ID of ip
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationIpPatchtag = function(ipId, requestBody) {
-      return this.operationIpPatchtagWithHttpInfo(ipId, requestBody)
+    this.ipPatchTag = function(ipId, body) {
+      return this.ipPatchTagWithHttpInfo(ipId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -910,19 +914,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} ipId ID of ip
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject45} opts.inlineObject45 
+     * @param {module:model/IpPostAccessrights} ipPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationIpPostaccessrightsWithHttpInfo = function(ipId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject45'];
+    this.ipPostAccessrightsWithHttpInfo = function(ipId, ipPostAccessrights) {
+      var postBody = ipPostAccessrights;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling operationIpPostaccessrights");
+        throw new Error("Missing the required parameter 'ipId' when calling ipPostAccessrights");
+      }
+
+      // verify the required parameter 'ipPostAccessrights' is set
+      if (ipPostAccessrights === undefined || ipPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'ipPostAccessrights' when calling ipPostAccessrights");
       }
 
 
@@ -944,21 +951,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/ip/{ipId}/accessrights/', 'POST',
+        '/ip/{ipId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} ipId ID of ip
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject45} opts.inlineObject45 
+     * @param {module:model/IpPostAccessrights} ipPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationIpPostaccessrights = function(ipId, opts) {
-      return this.operationIpPostaccessrightsWithHttpInfo(ipId, opts)
+    this.ipPostAccessrights = function(ipId, ipPostAccessrights) {
+      return this.ipPostAccessrightsWithHttpInfo(ipId, ipPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -971,12 +977,12 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.showIpWithHttpInfo = function(ipId) {
+    this.ipShowWithHttpInfo = function(ipId) {
       var postBody = null;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling showIp");
+        throw new Error("Missing the required parameter 'ipId' when calling ipShow");
       }
 
 
@@ -1010,8 +1016,8 @@
      * @param {String} ipId ID of ip
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.showIp = function(ipId) {
-      return this.showIpWithHttpInfo(ipId)
+    this.ipShow = function(ipId) {
+      return this.ipShowWithHttpInfo(ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1022,17 +1028,20 @@
      * Update
      * Returns modified ip
      * @param {String} ipId ID of ip
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject43} opts.inlineObject43 
+     * @param {module:model/IpUpdate} ipUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.updateIpWithHttpInfo = function(ipId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject43'];
+    this.ipUpdateWithHttpInfo = function(ipId, ipUpdate) {
+      var postBody = ipUpdate;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
-        throw new Error("Missing the required parameter 'ipId' when calling updateIp");
+        throw new Error("Missing the required parameter 'ipId' when calling ipUpdate");
+      }
+
+      // verify the required parameter 'ipUpdate' is set
+      if (ipUpdate === undefined || ipUpdate === null) {
+        throw new Error("Missing the required parameter 'ipUpdate' when calling ipUpdate");
       }
 
 
@@ -1064,12 +1073,11 @@
      * Update
      * Returns modified ip
      * @param {String} ipId ID of ip
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject43} opts.inlineObject43 
+     * @param {module:model/IpUpdate} ipUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.updateIp = function(ipId, opts) {
-      return this.updateIpWithHttpInfo(ipId, opts)
+    this.ipUpdate = function(ipId, ipUpdate) {
+      return this.ipUpdateWithHttpInfo(ipId, ipUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

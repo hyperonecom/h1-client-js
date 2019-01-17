@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Event', 'model/InlineObject47', 'model/InlineObject48', 'model/InlineObject49', 'model/InlineObject50', 'model/InlineObject51', 'model/InlineObject52', 'model/InlineObject53', 'model/Vault', 'model/VaultServices'], factory);
+    define(['ApiClient', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Event', 'model/Vault', 'model/VaultCreate', 'model/VaultPatchCredentialcertificateId', 'model/VaultPatchCredentialpasswordId', 'model/VaultPostAccessrights', 'model/VaultPostCredentialcertificate', 'model/VaultPostCredentialpassword', 'model/VaultServices', 'model/VaultUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CredentialCertificate'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/InlineObject47'), require('../model/InlineObject48'), require('../model/InlineObject49'), require('../model/InlineObject50'), require('../model/InlineObject51'), require('../model/InlineObject52'), require('../model/InlineObject53'), require('../model/Vault'), require('../model/VaultServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/CredentialCertificate'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/Vault'), require('../model/VaultCreate'), require('../model/VaultPatchCredentialcertificateId'), require('../model/VaultPatchCredentialpasswordId'), require('../model/VaultPostAccessrights'), require('../model/VaultPostCredentialcertificate'), require('../model/VaultPostCredentialpassword'), require('../model/VaultServices'), require('../model/VaultUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.VaultApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.InlineObject47, root.HyperOneApi.InlineObject48, root.HyperOneApi.InlineObject49, root.HyperOneApi.InlineObject50, root.HyperOneApi.InlineObject51, root.HyperOneApi.InlineObject52, root.HyperOneApi.InlineObject53, root.HyperOneApi.Vault, root.HyperOneApi.VaultServices);
+    root.HyperOneApi.VaultApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.Vault, root.HyperOneApi.VaultCreate, root.HyperOneApi.VaultPatchCredentialcertificateId, root.HyperOneApi.VaultPatchCredentialpasswordId, root.HyperOneApi.VaultPostAccessrights, root.HyperOneApi.VaultPostCredentialcertificate, root.HyperOneApi.VaultPostCredentialpassword, root.HyperOneApi.VaultServices, root.HyperOneApi.VaultUpdate);
   }
-}(this, function(ApiClient, CredentialCertificate, CredentialPassword, Event, InlineObject47, InlineObject48, InlineObject49, InlineObject50, InlineObject51, InlineObject52, InlineObject53, Vault, VaultServices) {
+}(this, function(ApiClient, CredentialCertificate, CredentialPassword, Event, Vault, VaultCreate, VaultPatchCredentialcertificateId, VaultPatchCredentialpasswordId, VaultPostAccessrights, VaultPostCredentialcertificate, VaultPostCredentialpassword, VaultServices, VaultUpdate) {
   'use strict';
 
   /**
@@ -54,12 +54,12 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.actionVaultResizeWithHttpInfo = function(vaultId) {
+    this.vaultActionResizeWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling actionVaultResize");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultActionResize");
       }
 
 
@@ -93,8 +93,8 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
-    this.actionVaultResize = function(vaultId) {
-      return this.actionVaultResizeWithHttpInfo(vaultId)
+    this.vaultActionResize = function(vaultId) {
+      return this.vaultActionResizeWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -107,12 +107,12 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.actionVaultSnapshotWithHttpInfo = function(vaultId) {
+    this.vaultActionSnapshotWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling actionVaultSnapshot");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultActionSnapshot");
       }
 
 
@@ -146,8 +146,8 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
-    this.actionVaultSnapshot = function(vaultId) {
-      return this.actionVaultSnapshotWithHttpInfo(vaultId)
+    this.vaultActionSnapshot = function(vaultId) {
+      return this.vaultActionSnapshotWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -160,12 +160,12 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.actionVaultStartWithHttpInfo = function(vaultId) {
+    this.vaultActionStartWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling actionVaultStart");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultActionStart");
       }
 
 
@@ -199,8 +199,8 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
-    this.actionVaultStart = function(vaultId) {
-      return this.actionVaultStartWithHttpInfo(vaultId)
+    this.vaultActionStart = function(vaultId) {
+      return this.vaultActionStartWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -213,12 +213,12 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.actionVaultStopWithHttpInfo = function(vaultId) {
+    this.vaultActionStopWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling actionVaultStop");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultActionStop");
       }
 
 
@@ -252,8 +252,8 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
-    this.actionVaultStop = function(vaultId) {
-      return this.actionVaultStopWithHttpInfo(vaultId)
+    this.vaultActionStop = function(vaultId) {
+      return this.vaultActionStopWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -263,13 +263,16 @@
     /**
      * Create
      * Create vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject47} opts.inlineObject47 
+     * @param {module:model/VaultCreate} vaultCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.createVaultWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject47'];
+    this.vaultCreateWithHttpInfo = function(vaultCreate) {
+      var postBody = vaultCreate;
+
+      // verify the required parameter 'vaultCreate' is set
+      if (vaultCreate === undefined || vaultCreate === null) {
+        throw new Error("Missing the required parameter 'vaultCreate' when calling vaultCreate");
+      }
 
 
       var pathParams = {
@@ -298,12 +301,11 @@
     /**
      * Create
      * Create vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject47} opts.inlineObject47 
+     * @param {module:model/VaultCreate} vaultCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
-    this.createVault = function(opts) {
-      return this.createVaultWithHttpInfo(opts)
+    this.vaultCreate = function(vaultCreate) {
+      return this.vaultCreateWithHttpInfo(vaultCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -315,12 +317,12 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteVaultWithHttpInfo = function(vaultId) {
+    this.vaultDeleteWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling deleteVault");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultDelete");
       }
 
 
@@ -353,8 +355,472 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteVault = function(vaultId) {
-      return this.deleteVaultWithHttpInfo(vaultId)
+    this.vaultDelete = function(vaultId) {
+      return this.vaultDeleteWithHttpInfo(vaultId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} vaultId ID of vault
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     */
+    this.vaultDeleteAccessrightsIdentityWithHttpInfo = function(vaultId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling vaultDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} vaultId ID of vault
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+     */
+    this.vaultDeleteAccessrightsIdentity = function(vaultId, identity) {
+      return this.vaultDeleteAccessrightsIdentityWithHttpInfo(vaultId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     */
+    this.vaultDeleteCredentialcertificateIdWithHttpInfo = function(vaultId, id) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultDeleteCredentialcertificateId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling vaultDeleteCredentialcertificateId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/certificate/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+     */
+    this.vaultDeleteCredentialcertificateId = function(vaultId, id) {
+      return this.vaultDeleteCredentialcertificateIdWithHttpInfo(vaultId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /credential/password/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     */
+    this.vaultDeleteCredentialpasswordIdWithHttpInfo = function(vaultId, id) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultDeleteCredentialpasswordId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling vaultDeleteCredentialpasswordId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vault;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/password/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /credential/password/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+     */
+    this.vaultDeleteCredentialpasswordId = function(vaultId, id) {
+      return this.vaultDeleteCredentialpasswordIdWithHttpInfo(vaultId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} vaultId ID of vault
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.vaultDeleteTagKeyWithHttpInfo = function(vaultId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling vaultDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} vaultId ID of vault
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.vaultDeleteTagKey = function(vaultId, key) {
+      return this.vaultDeleteTagKeyWithHttpInfo(vaultId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
+     */
+    this.vaultGetCredentialcertificateIdWithHttpInfo = function(vaultId, id) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultGetCredentialcertificateId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling vaultGetCredentialcertificateId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CredentialCertificate;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/certificate/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
+     */
+    this.vaultGetCredentialcertificateId = function(vaultId, id) {
+      return this.vaultGetCredentialcertificateIdWithHttpInfo(vaultId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /credential/password/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
+     */
+    this.vaultGetCredentialpasswordIdWithHttpInfo = function(vaultId, id) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultGetCredentialpasswordId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling vaultGetCredentialpasswordId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CredentialPassword;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/credential/password/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /credential/password/:id
+     * @param {String} vaultId ID of vault
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
+     */
+    this.vaultGetCredentialpasswordId = function(vaultId, id) {
+      return this.vaultGetCredentialpasswordIdWithHttpInfo(vaultId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} vaultId ID of vault
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VaultServices} and HTTP response
+     */
+    this.vaultGetServicesServiceIdWithHttpInfo = function(vaultId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling vaultGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = VaultServices;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} vaultId ID of vault
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VaultServices}
+     */
+    this.vaultGetServicesServiceId = function(vaultId, serviceId) {
+      return this.vaultGetServicesServiceIdWithHttpInfo(vaultId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.vaultGetTagWithHttpInfo = function(vaultId) {
+      var postBody = null;
+
+      // verify the required parameter 'vaultId' is set
+      if (vaultId === undefined || vaultId === null) {
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultGetTag");
+      }
+
+
+      var pathParams = {
+        'vaultId': vaultId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/vault/{vaultId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} vaultId ID of vault
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.vaultGetTag = function(vaultId) {
+      return this.vaultGetTagWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -368,7 +834,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Vault>} and HTTP response
      */
-    this.listVaultWithHttpInfo = function(opts) {
+    this.vaultListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -404,8 +870,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Vault>}
      */
-    this.listVault = function(opts) {
-      return this.listVaultWithHttpInfo(opts)
+    this.vaultList = function(opts) {
+      return this.vaultListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -413,480 +879,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} vaultId ID of vault
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
-     */
-    this.operationVaultDeleteaccessrightsIdentityWithHttpInfo = function(vaultId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'vaultId' is set
-      if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationVaultDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'vaultId': vaultId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Vault;
-
-      return this.apiClient.callApi(
-        '/vault/{vaultId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} vaultId ID of vault
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
-     */
-    this.operationVaultDeleteaccessrightsIdentity = function(vaultId, identity) {
-      return this.operationVaultDeleteaccessrightsIdentityWithHttpInfo(vaultId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} vaultId ID of vault
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
-     */
-    this.operationVaultDeletecredentialcertificateIdWithHttpInfo = function(vaultId, id) {
-      var postBody = null;
-
-      // verify the required parameter 'vaultId' is set
-      if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultDeletecredentialcertificateId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationVaultDeletecredentialcertificateId");
-      }
-
-
-      var pathParams = {
-        'vaultId': vaultId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Vault;
-
-      return this.apiClient.callApi(
-        '/vault/{vaultId}/credential/certificate/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} vaultId ID of vault
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
-     */
-    this.operationVaultDeletecredentialcertificateId = function(vaultId, id) {
-      return this.operationVaultDeletecredentialcertificateIdWithHttpInfo(vaultId, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/password/:id
-     * @param {String} vaultId ID of vault
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
-     */
-    this.operationVaultDeletecredentialpasswordIdWithHttpInfo = function(vaultId, id) {
-      var postBody = null;
-
-      // verify the required parameter 'vaultId' is set
-      if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultDeletecredentialpasswordId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationVaultDeletecredentialpasswordId");
-      }
-
-
-      var pathParams = {
-        'vaultId': vaultId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Vault;
-
-      return this.apiClient.callApi(
-        '/vault/{vaultId}/credential/password/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/password/:id
-     * @param {String} vaultId ID of vault
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
-     */
-    this.operationVaultDeletecredentialpasswordId = function(vaultId, id) {
-      return this.operationVaultDeletecredentialpasswordIdWithHttpInfo(vaultId, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} vaultId ID of vault
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationVaultDeletetagKeyWithHttpInfo = function(vaultId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'vaultId' is set
-      if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationVaultDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'vaultId': vaultId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/vault/{vaultId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} vaultId ID of vault
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationVaultDeletetagKey = function(vaultId, key) {
-      return this.operationVaultDeletetagKeyWithHttpInfo(vaultId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} vaultId ID of vault
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
-     */
-    this.operationVaultGetcredentialcertificateIdWithHttpInfo = function(vaultId, id) {
-      var postBody = null;
-
-      // verify the required parameter 'vaultId' is set
-      if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultGetcredentialcertificateId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationVaultGetcredentialcertificateId");
-      }
-
-
-      var pathParams = {
-        'vaultId': vaultId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CredentialCertificate;
-
-      return this.apiClient.callApi(
-        '/vault/{vaultId}/credential/certificate/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} vaultId ID of vault
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
-     */
-    this.operationVaultGetcredentialcertificateId = function(vaultId, id) {
-      return this.operationVaultGetcredentialcertificateIdWithHttpInfo(vaultId, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/password/:id
-     * @param {String} vaultId ID of vault
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
-     */
-    this.operationVaultGetcredentialpasswordIdWithHttpInfo = function(vaultId, id) {
-      var postBody = null;
-
-      // verify the required parameter 'vaultId' is set
-      if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultGetcredentialpasswordId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationVaultGetcredentialpasswordId");
-      }
-
-
-      var pathParams = {
-        'vaultId': vaultId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CredentialPassword;
-
-      return this.apiClient.callApi(
-        '/vault/{vaultId}/credential/password/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/password/:id
-     * @param {String} vaultId ID of vault
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
-     */
-    this.operationVaultGetcredentialpasswordId = function(vaultId, id) {
-      return this.operationVaultGetcredentialpasswordIdWithHttpInfo(vaultId, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} vaultId ID of vault
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VaultServices} and HTTP response
-     */
-    this.operationVaultGetservicesServiceIdWithHttpInfo = function(vaultId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'vaultId' is set
-      if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationVaultGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'vaultId': vaultId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = VaultServices;
-
-      return this.apiClient.callApi(
-        '/vault/{vaultId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} vaultId ID of vault
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VaultServices}
-     */
-    this.operationVaultGetservicesServiceId = function(vaultId, serviceId) {
-      return this.operationVaultGetservicesServiceIdWithHttpInfo(vaultId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} vaultId ID of vault
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationVaultGettagWithHttpInfo = function(vaultId) {
-      var postBody = null;
-
-      // verify the required parameter 'vaultId' is set
-      if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultGettag");
-      }
-
-
-      var pathParams = {
-        'vaultId': vaultId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/vault/{vaultId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} vaultId ID of vault
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationVaultGettag = function(vaultId) {
-      return this.operationVaultGettagWithHttpInfo(vaultId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationVaultListaccessrightsWithHttpInfo = function(vaultId) {
+    this.vaultListAccessrightsWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultListaccessrights");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultListAccessrights");
       }
 
 
@@ -908,19 +910,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/vault/{vaultId}/accessrights/', 'GET',
+        '/vault/{vaultId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationVaultListaccessrights = function(vaultId) {
-      return this.operationVaultListaccessrightsWithHttpInfo(vaultId)
+    this.vaultListAccessrights = function(vaultId) {
+      return this.vaultListAccessrightsWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -932,12 +934,12 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CredentialCertificate>} and HTTP response
      */
-    this.operationVaultListcredentialcertificateWithHttpInfo = function(vaultId) {
+    this.vaultListCredentialcertificateWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultListcredentialcertificate");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultListCredentialcertificate");
       }
 
 
@@ -970,8 +972,8 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CredentialCertificate>}
      */
-    this.operationVaultListcredentialcertificate = function(vaultId) {
-      return this.operationVaultListcredentialcertificateWithHttpInfo(vaultId)
+    this.vaultListCredentialcertificate = function(vaultId) {
+      return this.vaultListCredentialcertificateWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -983,12 +985,12 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CredentialPassword>} and HTTP response
      */
-    this.operationVaultListcredentialpasswordWithHttpInfo = function(vaultId) {
+    this.vaultListCredentialpasswordWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultListcredentialpassword");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultListCredentialpassword");
       }
 
 
@@ -1021,8 +1023,8 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CredentialPassword>}
      */
-    this.operationVaultListcredentialpassword = function(vaultId) {
-      return this.operationVaultListcredentialpasswordWithHttpInfo(vaultId)
+    this.vaultListCredentialpassword = function(vaultId) {
+      return this.vaultListCredentialpasswordWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1030,16 +1032,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationVaultListqueueWithHttpInfo = function(vaultId) {
+    this.vaultListQueueWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultListqueue");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultListQueue");
       }
 
 
@@ -1061,19 +1063,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/vault/{vaultId}/queue/', 'GET',
+        '/vault/{vaultId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationVaultListqueue = function(vaultId) {
-      return this.operationVaultListqueueWithHttpInfo(vaultId)
+    this.vaultListQueue = function(vaultId) {
+      return this.vaultListQueueWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1081,16 +1083,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VaultServices>} and HTTP response
      */
-    this.operationVaultListservicesWithHttpInfo = function(vaultId) {
+    this.vaultListServicesWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultListservices");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultListServices");
       }
 
 
@@ -1112,19 +1114,19 @@
       var returnType = [VaultServices];
 
       return this.apiClient.callApi(
-        '/vault/{vaultId}/services/', 'GET',
+        '/vault/{vaultId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VaultServices>}
      */
-    this.operationVaultListservices = function(vaultId) {
-      return this.operationVaultListservicesWithHttpInfo(vaultId)
+    this.vaultListServices = function(vaultId) {
+      return this.vaultListServicesWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1135,22 +1137,25 @@
      * /credential/certificate/:id
      * @param {String} vaultId ID of vault
      * @param {String} id id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject52} opts.inlineObject52 
+     * @param {module:model/VaultPatchCredentialcertificateId} vaultPatchCredentialcertificateId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.operationVaultPatchcredentialcertificateIdWithHttpInfo = function(vaultId, id, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject52'];
+    this.vaultPatchCredentialcertificateIdWithHttpInfo = function(vaultId, id, vaultPatchCredentialcertificateId) {
+      var postBody = vaultPatchCredentialcertificateId;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPatchcredentialcertificateId");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultPatchCredentialcertificateId");
       }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationVaultPatchcredentialcertificateId");
+        throw new Error("Missing the required parameter 'id' when calling vaultPatchCredentialcertificateId");
+      }
+
+      // verify the required parameter 'vaultPatchCredentialcertificateId' is set
+      if (vaultPatchCredentialcertificateId === undefined || vaultPatchCredentialcertificateId === null) {
+        throw new Error("Missing the required parameter 'vaultPatchCredentialcertificateId' when calling vaultPatchCredentialcertificateId");
       }
 
 
@@ -1183,12 +1188,11 @@
      * /credential/certificate/:id
      * @param {String} vaultId ID of vault
      * @param {String} id id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject52} opts.inlineObject52 
+     * @param {module:model/VaultPatchCredentialcertificateId} vaultPatchCredentialcertificateId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
-    this.operationVaultPatchcredentialcertificateId = function(vaultId, id, opts) {
-      return this.operationVaultPatchcredentialcertificateIdWithHttpInfo(vaultId, id, opts)
+    this.vaultPatchCredentialcertificateId = function(vaultId, id, vaultPatchCredentialcertificateId) {
+      return this.vaultPatchCredentialcertificateIdWithHttpInfo(vaultId, id, vaultPatchCredentialcertificateId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1199,22 +1203,25 @@
      * /credential/password/:id
      * @param {String} vaultId ID of vault
      * @param {String} id id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject50} opts.inlineObject50 
+     * @param {module:model/VaultPatchCredentialpasswordId} vaultPatchCredentialpasswordId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
      */
-    this.operationVaultPatchcredentialpasswordIdWithHttpInfo = function(vaultId, id, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject50'];
+    this.vaultPatchCredentialpasswordIdWithHttpInfo = function(vaultId, id, vaultPatchCredentialpasswordId) {
+      var postBody = vaultPatchCredentialpasswordId;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPatchcredentialpasswordId");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultPatchCredentialpasswordId");
       }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationVaultPatchcredentialpasswordId");
+        throw new Error("Missing the required parameter 'id' when calling vaultPatchCredentialpasswordId");
+      }
+
+      // verify the required parameter 'vaultPatchCredentialpasswordId' is set
+      if (vaultPatchCredentialpasswordId === undefined || vaultPatchCredentialpasswordId === null) {
+        throw new Error("Missing the required parameter 'vaultPatchCredentialpasswordId' when calling vaultPatchCredentialpasswordId");
       }
 
 
@@ -1247,12 +1254,11 @@
      * /credential/password/:id
      * @param {String} vaultId ID of vault
      * @param {String} id id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject50} opts.inlineObject50 
+     * @param {module:model/VaultPatchCredentialpasswordId} vaultPatchCredentialpasswordId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
      */
-    this.operationVaultPatchcredentialpasswordId = function(vaultId, id, opts) {
-      return this.operationVaultPatchcredentialpasswordIdWithHttpInfo(vaultId, id, opts)
+    this.vaultPatchCredentialpasswordId = function(vaultId, id, vaultPatchCredentialpasswordId) {
+      return this.vaultPatchCredentialpasswordIdWithHttpInfo(vaultId, id, vaultPatchCredentialpasswordId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1260,22 +1266,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} vaultId ID of vault
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationVaultPatchtagWithHttpInfo = function(vaultId, requestBody) {
-      var postBody = requestBody;
+    this.vaultPatchTagWithHttpInfo = function(vaultId, body) {
+      var postBody = body;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPatchtag");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationVaultPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling vaultPatchTag");
       }
 
 
@@ -1294,23 +1300,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/vault/{vaultId}/tag/', 'PATCH',
+        '/vault/{vaultId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} vaultId ID of vault
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationVaultPatchtag = function(vaultId, requestBody) {
-      return this.operationVaultPatchtagWithHttpInfo(vaultId, requestBody)
+    this.vaultPatchTag = function(vaultId, body) {
+      return this.vaultPatchTagWithHttpInfo(vaultId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1318,19 +1324,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject53} opts.inlineObject53 
+     * @param {module:model/VaultPostAccessrights} vaultPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationVaultPostaccessrightsWithHttpInfo = function(vaultId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject53'];
+    this.vaultPostAccessrightsWithHttpInfo = function(vaultId, vaultPostAccessrights) {
+      var postBody = vaultPostAccessrights;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPostaccessrights");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultPostAccessrights");
+      }
+
+      // verify the required parameter 'vaultPostAccessrights' is set
+      if (vaultPostAccessrights === undefined || vaultPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'vaultPostAccessrights' when calling vaultPostAccessrights");
       }
 
 
@@ -1352,21 +1361,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/vault/{vaultId}/accessrights/', 'POST',
+        '/vault/{vaultId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject53} opts.inlineObject53 
+     * @param {module:model/VaultPostAccessrights} vaultPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationVaultPostaccessrights = function(vaultId, opts) {
-      return this.operationVaultPostaccessrightsWithHttpInfo(vaultId, opts)
+    this.vaultPostAccessrights = function(vaultId, vaultPostAccessrights) {
+      return this.vaultPostAccessrightsWithHttpInfo(vaultId, vaultPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1376,17 +1384,20 @@
     /**
      * /credential/certificate
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject51} opts.inlineObject51 
+     * @param {module:model/VaultPostCredentialcertificate} vaultPostCredentialcertificate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.operationVaultPostcredentialcertificateWithHttpInfo = function(vaultId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject51'];
+    this.vaultPostCredentialcertificateWithHttpInfo = function(vaultId, vaultPostCredentialcertificate) {
+      var postBody = vaultPostCredentialcertificate;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPostcredentialcertificate");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultPostCredentialcertificate");
+      }
+
+      // verify the required parameter 'vaultPostCredentialcertificate' is set
+      if (vaultPostCredentialcertificate === undefined || vaultPostCredentialcertificate === null) {
+        throw new Error("Missing the required parameter 'vaultPostCredentialcertificate' when calling vaultPostCredentialcertificate");
       }
 
 
@@ -1417,12 +1428,11 @@
     /**
      * /credential/certificate
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject51} opts.inlineObject51 
+     * @param {module:model/VaultPostCredentialcertificate} vaultPostCredentialcertificate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
-    this.operationVaultPostcredentialcertificate = function(vaultId, opts) {
-      return this.operationVaultPostcredentialcertificateWithHttpInfo(vaultId, opts)
+    this.vaultPostCredentialcertificate = function(vaultId, vaultPostCredentialcertificate) {
+      return this.vaultPostCredentialcertificateWithHttpInfo(vaultId, vaultPostCredentialcertificate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1432,17 +1442,20 @@
     /**
      * /credential/password
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject49} opts.inlineObject49 
+     * @param {module:model/VaultPostCredentialpassword} vaultPostCredentialpassword 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
      */
-    this.operationVaultPostcredentialpasswordWithHttpInfo = function(vaultId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject49'];
+    this.vaultPostCredentialpasswordWithHttpInfo = function(vaultId, vaultPostCredentialpassword) {
+      var postBody = vaultPostCredentialpassword;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling operationVaultPostcredentialpassword");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultPostCredentialpassword");
+      }
+
+      // verify the required parameter 'vaultPostCredentialpassword' is set
+      if (vaultPostCredentialpassword === undefined || vaultPostCredentialpassword === null) {
+        throw new Error("Missing the required parameter 'vaultPostCredentialpassword' when calling vaultPostCredentialpassword");
       }
 
 
@@ -1473,12 +1486,11 @@
     /**
      * /credential/password
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject49} opts.inlineObject49 
+     * @param {module:model/VaultPostCredentialpassword} vaultPostCredentialpassword 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
      */
-    this.operationVaultPostcredentialpassword = function(vaultId, opts) {
-      return this.operationVaultPostcredentialpasswordWithHttpInfo(vaultId, opts)
+    this.vaultPostCredentialpassword = function(vaultId, vaultPostCredentialpassword) {
+      return this.vaultPostCredentialpasswordWithHttpInfo(vaultId, vaultPostCredentialpassword)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1491,12 +1503,12 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.showVaultWithHttpInfo = function(vaultId) {
+    this.vaultShowWithHttpInfo = function(vaultId) {
       var postBody = null;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling showVault");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultShow");
       }
 
 
@@ -1530,8 +1542,8 @@
      * @param {String} vaultId ID of vault
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
-    this.showVault = function(vaultId) {
-      return this.showVaultWithHttpInfo(vaultId)
+    this.vaultShow = function(vaultId) {
+      return this.vaultShowWithHttpInfo(vaultId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1542,17 +1554,20 @@
      * Update
      * Returns modified vault
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject48} opts.inlineObject48 
+     * @param {module:model/VaultUpdate} vaultUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
-    this.updateVaultWithHttpInfo = function(vaultId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject48'];
+    this.vaultUpdateWithHttpInfo = function(vaultId, vaultUpdate) {
+      var postBody = vaultUpdate;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
-        throw new Error("Missing the required parameter 'vaultId' when calling updateVault");
+        throw new Error("Missing the required parameter 'vaultId' when calling vaultUpdate");
+      }
+
+      // verify the required parameter 'vaultUpdate' is set
+      if (vaultUpdate === undefined || vaultUpdate === null) {
+        throw new Error("Missing the required parameter 'vaultUpdate' when calling vaultUpdate");
       }
 
 
@@ -1584,12 +1599,11 @@
      * Update
      * Returns modified vault
      * @param {String} vaultId ID of vault
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject48} opts.inlineObject48 
+     * @param {module:model/VaultUpdate} vaultUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
-    this.updateVault = function(vaultId, opts) {
-      return this.updateVaultWithHttpInfo(vaultId, opts)
+    this.vaultUpdate = function(vaultId, vaultUpdate) {
+      return this.vaultUpdateWithHttpInfo(vaultId, vaultUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

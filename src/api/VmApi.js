@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Hdd', 'model/InlineObject35', 'model/InlineObject36', 'model/InlineObject37', 'model/InlineObject38', 'model/InlineObject39', 'model/InlineObject40', 'model/InlineObject41', 'model/Netadp', 'model/Vm', 'model/VmServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/Hdd', 'model/Netadp', 'model/Vm', 'model/VmActionImage', 'model/VmActionPasswordReset', 'model/VmCreate', 'model/VmPostAccessrights', 'model/VmPostHdd', 'model/VmPostNetadp', 'model/VmServices', 'model/VmUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Hdd'), require('../model/InlineObject35'), require('../model/InlineObject36'), require('../model/InlineObject37'), require('../model/InlineObject38'), require('../model/InlineObject39'), require('../model/InlineObject40'), require('../model/InlineObject41'), require('../model/Netadp'), require('../model/Vm'), require('../model/VmServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Hdd'), require('../model/Netadp'), require('../model/Vm'), require('../model/VmActionImage'), require('../model/VmActionPasswordReset'), require('../model/VmCreate'), require('../model/VmPostAccessrights'), require('../model/VmPostHdd'), require('../model/VmPostNetadp'), require('../model/VmServices'), require('../model/VmUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.VmApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Hdd, root.HyperOneApi.InlineObject35, root.HyperOneApi.InlineObject36, root.HyperOneApi.InlineObject37, root.HyperOneApi.InlineObject38, root.HyperOneApi.InlineObject39, root.HyperOneApi.InlineObject40, root.HyperOneApi.InlineObject41, root.HyperOneApi.Netadp, root.HyperOneApi.Vm, root.HyperOneApi.VmServices);
+    root.HyperOneApi.VmApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Hdd, root.HyperOneApi.Netadp, root.HyperOneApi.Vm, root.HyperOneApi.VmActionImage, root.HyperOneApi.VmActionPasswordReset, root.HyperOneApi.VmCreate, root.HyperOneApi.VmPostAccessrights, root.HyperOneApi.VmPostHdd, root.HyperOneApi.VmPostNetadp, root.HyperOneApi.VmServices, root.HyperOneApi.VmUpdate);
   }
-}(this, function(ApiClient, Event, Hdd, InlineObject35, InlineObject36, InlineObject37, InlineObject38, InlineObject39, InlineObject40, InlineObject41, Netadp, Vm, VmServices) {
+}(this, function(ApiClient, Event, Hdd, Netadp, Vm, VmActionImage, VmActionPasswordReset, VmCreate, VmPostAccessrights, VmPostHdd, VmPostNetadp, VmServices, VmUpdate) {
   'use strict';
 
   /**
@@ -54,12 +54,12 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmFlavourWithHttpInfo = function(vmId) {
+    this.vmActionFlavourWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmFlavour");
+        throw new Error("Missing the required parameter 'vmId' when calling vmActionFlavour");
       }
 
 
@@ -93,8 +93,8 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.actionVmFlavour = function(vmId) {
-      return this.actionVmFlavourWithHttpInfo(vmId)
+    this.vmActionFlavour = function(vmId) {
+      return this.vmActionFlavourWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -105,17 +105,20 @@
      * /actions/image
      * Action image
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject38} opts.inlineObject38 
+     * @param {module:model/VmActionImage} vmActionImage 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmImageWithHttpInfo = function(vmId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject38'];
+    this.vmActionImageWithHttpInfo = function(vmId, vmActionImage) {
+      var postBody = vmActionImage;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmImage");
+        throw new Error("Missing the required parameter 'vmId' when calling vmActionImage");
+      }
+
+      // verify the required parameter 'vmActionImage' is set
+      if (vmActionImage === undefined || vmActionImage === null) {
+        throw new Error("Missing the required parameter 'vmActionImage' when calling vmActionImage");
       }
 
 
@@ -147,12 +150,11 @@
      * /actions/image
      * Action image
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject38} opts.inlineObject38 
+     * @param {module:model/VmActionImage} vmActionImage 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.actionVmImage = function(vmId, opts) {
-      return this.actionVmImageWithHttpInfo(vmId, opts)
+    this.vmActionImage = function(vmId, vmActionImage) {
+      return this.vmActionImageWithHttpInfo(vmId, vmActionImage)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -163,17 +165,20 @@
      * /actions/password_reset
      * Action password_reset
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject37} opts.inlineObject37 
+     * @param {module:model/VmActionPasswordReset} vmActionPasswordReset 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmPasswordResetWithHttpInfo = function(vmId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject37'];
+    this.vmActionPasswordResetWithHttpInfo = function(vmId, vmActionPasswordReset) {
+      var postBody = vmActionPasswordReset;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmPasswordReset");
+        throw new Error("Missing the required parameter 'vmId' when calling vmActionPasswordReset");
+      }
+
+      // verify the required parameter 'vmActionPasswordReset' is set
+      if (vmActionPasswordReset === undefined || vmActionPasswordReset === null) {
+        throw new Error("Missing the required parameter 'vmActionPasswordReset' when calling vmActionPasswordReset");
       }
 
 
@@ -205,12 +210,11 @@
      * /actions/password_reset
      * Action password_reset
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject37} opts.inlineObject37 
+     * @param {module:model/VmActionPasswordReset} vmActionPasswordReset 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.actionVmPasswordReset = function(vmId, opts) {
-      return this.actionVmPasswordResetWithHttpInfo(vmId, opts)
+    this.vmActionPasswordReset = function(vmId, vmActionPasswordReset) {
+      return this.vmActionPasswordResetWithHttpInfo(vmId, vmActionPasswordReset)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -223,12 +227,12 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmRenameWithHttpInfo = function(vmId) {
+    this.vmActionRenameWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmRename");
+        throw new Error("Missing the required parameter 'vmId' when calling vmActionRename");
       }
 
 
@@ -262,8 +266,8 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.actionVmRename = function(vmId) {
-      return this.actionVmRenameWithHttpInfo(vmId)
+    this.vmActionRename = function(vmId) {
+      return this.vmActionRenameWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -276,12 +280,12 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmRestartWithHttpInfo = function(vmId) {
+    this.vmActionRestartWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmRestart");
+        throw new Error("Missing the required parameter 'vmId' when calling vmActionRestart");
       }
 
 
@@ -315,8 +319,8 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.actionVmRestart = function(vmId) {
-      return this.actionVmRestartWithHttpInfo(vmId)
+    this.vmActionRestart = function(vmId) {
+      return this.vmActionRestartWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -329,12 +333,12 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmStartWithHttpInfo = function(vmId) {
+    this.vmActionStartWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmStart");
+        throw new Error("Missing the required parameter 'vmId' when calling vmActionStart");
       }
 
 
@@ -368,8 +372,8 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.actionVmStart = function(vmId) {
-      return this.actionVmStartWithHttpInfo(vmId)
+    this.vmActionStart = function(vmId) {
+      return this.vmActionStartWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -382,12 +386,12 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmStopWithHttpInfo = function(vmId) {
+    this.vmActionStopWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmStop");
+        throw new Error("Missing the required parameter 'vmId' when calling vmActionStop");
       }
 
 
@@ -421,8 +425,8 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.actionVmStop = function(vmId) {
-      return this.actionVmStopWithHttpInfo(vmId)
+    this.vmActionStop = function(vmId) {
+      return this.vmActionStopWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -435,12 +439,12 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.actionVmTurnoffWithHttpInfo = function(vmId) {
+    this.vmActionTurnoffWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling actionVmTurnoff");
+        throw new Error("Missing the required parameter 'vmId' when calling vmActionTurnoff");
       }
 
 
@@ -474,8 +478,8 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.actionVmTurnoff = function(vmId) {
-      return this.actionVmTurnoffWithHttpInfo(vmId)
+    this.vmActionTurnoff = function(vmId) {
+      return this.vmActionTurnoffWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -485,13 +489,16 @@
     /**
      * Create
      * Create vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject35} opts.inlineObject35 
+     * @param {module:model/VmCreate} vmCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.createVmWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject35'];
+    this.vmCreateWithHttpInfo = function(vmCreate) {
+      var postBody = vmCreate;
+
+      // verify the required parameter 'vmCreate' is set
+      if (vmCreate === undefined || vmCreate === null) {
+        throw new Error("Missing the required parameter 'vmCreate' when calling vmCreate");
+      }
 
 
       var pathParams = {
@@ -520,12 +527,11 @@
     /**
      * Create
      * Create vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject35} opts.inlineObject35 
+     * @param {module:model/VmCreate} vmCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.createVm = function(opts) {
-      return this.createVmWithHttpInfo(opts)
+    this.vmCreate = function(vmCreate) {
+      return this.vmCreateWithHttpInfo(vmCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -537,12 +543,12 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteVmWithHttpInfo = function(vmId) {
+    this.vmDeleteWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling deleteVm");
+        throw new Error("Missing the required parameter 'vmId' when calling vmDelete");
       }
 
 
@@ -575,8 +581,346 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteVm = function(vmId) {
-      return this.deleteVmWithHttpInfo(vmId)
+    this.vmDelete = function(vmId) {
+      return this.vmDeleteWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} vmId ID of vm
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
+     */
+    this.vmDeleteAccessrightsIdentityWithHttpInfo = function(vmId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling vmDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling vmDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'vmId': vmId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vm;
+
+      return this.apiClient.callApi(
+        '/vm/{vmId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} vmId ID of vm
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
+     */
+    this.vmDeleteAccessrightsIdentity = function(vmId, identity) {
+      return this.vmDeleteAccessrightsIdentityWithHttpInfo(vmId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /hdd/:diskId
+     * @param {String} vmId ID of vm
+     * @param {String} diskId diskId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
+     */
+    this.vmDeleteHddDiskIdWithHttpInfo = function(vmId, diskId) {
+      var postBody = null;
+
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling vmDeleteHddDiskId");
+      }
+
+      // verify the required parameter 'diskId' is set
+      if (diskId === undefined || diskId === null) {
+        throw new Error("Missing the required parameter 'diskId' when calling vmDeleteHddDiskId");
+      }
+
+
+      var pathParams = {
+        'vmId': vmId,
+        'diskId': diskId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vm;
+
+      return this.apiClient.callApi(
+        '/vm/{vmId}/hdd/{diskId}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /hdd/:diskId
+     * @param {String} vmId ID of vm
+     * @param {String} diskId diskId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
+     */
+    this.vmDeleteHddDiskId = function(vmId, diskId) {
+      return this.vmDeleteHddDiskIdWithHttpInfo(vmId, diskId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /netadp
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
+     */
+    this.vmDeleteNetadpWithHttpInfo = function(vmId) {
+      var postBody = null;
+
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling vmDeleteNetadp");
+      }
+
+
+      var pathParams = {
+        'vmId': vmId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Vm;
+
+      return this.apiClient.callApi(
+        '/vm/{vmId}/netadp', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /netadp
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
+     */
+    this.vmDeleteNetadp = function(vmId) {
+      return this.vmDeleteNetadpWithHttpInfo(vmId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} vmId ID of vm
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.vmDeleteTagKeyWithHttpInfo = function(vmId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling vmDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling vmDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'vmId': vmId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/vm/{vmId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} vmId ID of vm
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.vmDeleteTagKey = function(vmId, key) {
+      return this.vmDeleteTagKeyWithHttpInfo(vmId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} vmId ID of vm
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VmServices} and HTTP response
+     */
+    this.vmGetServicesServiceIdWithHttpInfo = function(vmId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling vmGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling vmGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'vmId': vmId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = VmServices;
+
+      return this.apiClient.callApi(
+        '/vm/{vmId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} vmId ID of vm
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VmServices}
+     */
+    this.vmGetServicesServiceId = function(vmId, serviceId) {
+      return this.vmGetServicesServiceIdWithHttpInfo(vmId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.vmGetTagWithHttpInfo = function(vmId) {
+      var postBody = null;
+
+      // verify the required parameter 'vmId' is set
+      if (vmId === undefined || vmId === null) {
+        throw new Error("Missing the required parameter 'vmId' when calling vmGetTag");
+      }
+
+
+      var pathParams = {
+        'vmId': vmId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/vm/{vmId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} vmId ID of vm
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.vmGetTag = function(vmId) {
+      return this.vmGetTagWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -590,7 +934,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Vm>} and HTTP response
      */
-    this.listVmWithHttpInfo = function(opts) {
+    this.vmListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -626,8 +970,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Vm>}
      */
-    this.listVm = function(opts) {
-      return this.listVmWithHttpInfo(opts)
+    this.vmList = function(opts) {
+      return this.vmListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -635,354 +979,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} vmId ID of vm
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
-     */
-    this.operationVmDeleteaccessrightsIdentityWithHttpInfo = function(vmId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationVmDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'vmId': vmId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Vm;
-
-      return this.apiClient.callApi(
-        '/vm/{vmId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} vmId ID of vm
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
-     */
-    this.operationVmDeleteaccessrightsIdentity = function(vmId, identity) {
-      return this.operationVmDeleteaccessrightsIdentityWithHttpInfo(vmId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /hdd/:diskId
-     * @param {String} vmId ID of vm
-     * @param {String} diskId diskId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
-     */
-    this.operationVmDeletehddDiskIdWithHttpInfo = function(vmId, diskId) {
-      var postBody = null;
-
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmDeletehddDiskId");
-      }
-
-      // verify the required parameter 'diskId' is set
-      if (diskId === undefined || diskId === null) {
-        throw new Error("Missing the required parameter 'diskId' when calling operationVmDeletehddDiskId");
-      }
-
-
-      var pathParams = {
-        'vmId': vmId,
-        'diskId': diskId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Vm;
-
-      return this.apiClient.callApi(
-        '/vm/{vmId}/hdd/{diskId}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /hdd/:diskId
-     * @param {String} vmId ID of vm
-     * @param {String} diskId diskId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
-     */
-    this.operationVmDeletehddDiskId = function(vmId, diskId) {
-      return this.operationVmDeletehddDiskIdWithHttpInfo(vmId, diskId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /netadp
-     * @param {String} vmId ID of vm
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
-     */
-    this.operationVmDeletenetadpWithHttpInfo = function(vmId) {
-      var postBody = null;
-
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmDeletenetadp");
-      }
-
-
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Vm;
-
-      return this.apiClient.callApi(
-        '/vm/{vmId}/netadp', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /netadp
-     * @param {String} vmId ID of vm
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
-     */
-    this.operationVmDeletenetadp = function(vmId) {
-      return this.operationVmDeletenetadpWithHttpInfo(vmId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} vmId ID of vm
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationVmDeletetagKeyWithHttpInfo = function(vmId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationVmDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'vmId': vmId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/vm/{vmId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} vmId ID of vm
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationVmDeletetagKey = function(vmId, key) {
-      return this.operationVmDeletetagKeyWithHttpInfo(vmId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} vmId ID of vm
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VmServices} and HTTP response
-     */
-    this.operationVmGetservicesServiceIdWithHttpInfo = function(vmId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationVmGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'vmId': vmId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = VmServices;
-
-      return this.apiClient.callApi(
-        '/vm/{vmId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} vmId ID of vm
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VmServices}
-     */
-    this.operationVmGetservicesServiceId = function(vmId, serviceId) {
-      return this.operationVmGetservicesServiceIdWithHttpInfo(vmId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} vmId ID of vm
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationVmGettagWithHttpInfo = function(vmId) {
-      var postBody = null;
-
-      // verify the required parameter 'vmId' is set
-      if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmGettag");
-      }
-
-
-      var pathParams = {
-        'vmId': vmId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/vm/{vmId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} vmId ID of vm
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationVmGettag = function(vmId) {
-      return this.operationVmGettagWithHttpInfo(vmId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationVmListaccessrightsWithHttpInfo = function(vmId) {
+    this.vmListAccessrightsWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmListaccessrights");
+        throw new Error("Missing the required parameter 'vmId' when calling vmListAccessrights");
       }
 
 
@@ -1004,19 +1010,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/vm/{vmId}/accessrights/', 'GET',
+        '/vm/{vmId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationVmListaccessrights = function(vmId) {
-      return this.operationVmListaccessrightsWithHttpInfo(vmId)
+    this.vmListAccessrights = function(vmId) {
+      return this.vmListAccessrightsWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1028,12 +1034,12 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Hdd>} and HTTP response
      */
-    this.operationVmListhddWithHttpInfo = function(vmId) {
+    this.vmListHddWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmListhdd");
+        throw new Error("Missing the required parameter 'vmId' when calling vmListHdd");
       }
 
 
@@ -1066,8 +1072,8 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Hdd>}
      */
-    this.operationVmListhdd = function(vmId) {
-      return this.operationVmListhddWithHttpInfo(vmId)
+    this.vmListHdd = function(vmId) {
+      return this.vmListHddWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1079,12 +1085,12 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Netadp>} and HTTP response
      */
-    this.operationVmListnetadpWithHttpInfo = function(vmId) {
+    this.vmListNetadpWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmListnetadp");
+        throw new Error("Missing the required parameter 'vmId' when calling vmListNetadp");
       }
 
 
@@ -1117,8 +1123,8 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Netadp>}
      */
-    this.operationVmListnetadp = function(vmId) {
-      return this.operationVmListnetadpWithHttpInfo(vmId)
+    this.vmListNetadp = function(vmId) {
+      return this.vmListNetadpWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1126,16 +1132,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationVmListqueueWithHttpInfo = function(vmId) {
+    this.vmListQueueWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmListqueue");
+        throw new Error("Missing the required parameter 'vmId' when calling vmListQueue");
       }
 
 
@@ -1157,19 +1163,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/vm/{vmId}/queue/', 'GET',
+        '/vm/{vmId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationVmListqueue = function(vmId) {
-      return this.operationVmListqueueWithHttpInfo(vmId)
+    this.vmListQueue = function(vmId) {
+      return this.vmListQueueWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1177,16 +1183,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VmServices>} and HTTP response
      */
-    this.operationVmListservicesWithHttpInfo = function(vmId) {
+    this.vmListServicesWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmListservices");
+        throw new Error("Missing the required parameter 'vmId' when calling vmListServices");
       }
 
 
@@ -1208,19 +1214,19 @@
       var returnType = [VmServices];
 
       return this.apiClient.callApi(
-        '/vm/{vmId}/services/', 'GET',
+        '/vm/{vmId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VmServices>}
      */
-    this.operationVmListservices = function(vmId) {
-      return this.operationVmListservicesWithHttpInfo(vmId)
+    this.vmListServices = function(vmId) {
+      return this.vmListServicesWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1228,22 +1234,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} vmId ID of vm
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationVmPatchtagWithHttpInfo = function(vmId, requestBody) {
-      var postBody = requestBody;
+    this.vmPatchTagWithHttpInfo = function(vmId, body) {
+      var postBody = body;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmPatchtag");
+        throw new Error("Missing the required parameter 'vmId' when calling vmPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationVmPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling vmPatchTag");
       }
 
 
@@ -1262,23 +1268,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/vm/{vmId}/tag/', 'PATCH',
+        '/vm/{vmId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} vmId ID of vm
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationVmPatchtag = function(vmId, requestBody) {
-      return this.operationVmPatchtagWithHttpInfo(vmId, requestBody)
+    this.vmPatchTag = function(vmId, body) {
+      return this.vmPatchTagWithHttpInfo(vmId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1286,19 +1292,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject41} opts.inlineObject41 
+     * @param {module:model/VmPostAccessrights} vmPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationVmPostaccessrightsWithHttpInfo = function(vmId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject41'];
+    this.vmPostAccessrightsWithHttpInfo = function(vmId, vmPostAccessrights) {
+      var postBody = vmPostAccessrights;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmPostaccessrights");
+        throw new Error("Missing the required parameter 'vmId' when calling vmPostAccessrights");
+      }
+
+      // verify the required parameter 'vmPostAccessrights' is set
+      if (vmPostAccessrights === undefined || vmPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'vmPostAccessrights' when calling vmPostAccessrights");
       }
 
 
@@ -1320,21 +1329,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/vm/{vmId}/accessrights/', 'POST',
+        '/vm/{vmId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject41} opts.inlineObject41 
+     * @param {module:model/VmPostAccessrights} vmPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationVmPostaccessrights = function(vmId, opts) {
-      return this.operationVmPostaccessrightsWithHttpInfo(vmId, opts)
+    this.vmPostAccessrights = function(vmId, vmPostAccessrights) {
+      return this.vmPostAccessrightsWithHttpInfo(vmId, vmPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1344,17 +1352,20 @@
     /**
      * /hdd
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject39} opts.inlineObject39 
+     * @param {module:model/VmPostHdd} vmPostHdd 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.operationVmPosthddWithHttpInfo = function(vmId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject39'];
+    this.vmPostHddWithHttpInfo = function(vmId, vmPostHdd) {
+      var postBody = vmPostHdd;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmPosthdd");
+        throw new Error("Missing the required parameter 'vmId' when calling vmPostHdd");
+      }
+
+      // verify the required parameter 'vmPostHdd' is set
+      if (vmPostHdd === undefined || vmPostHdd === null) {
+        throw new Error("Missing the required parameter 'vmPostHdd' when calling vmPostHdd");
       }
 
 
@@ -1385,12 +1396,11 @@
     /**
      * /hdd
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject39} opts.inlineObject39 
+     * @param {module:model/VmPostHdd} vmPostHdd 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.operationVmPosthdd = function(vmId, opts) {
-      return this.operationVmPosthddWithHttpInfo(vmId, opts)
+    this.vmPostHdd = function(vmId, vmPostHdd) {
+      return this.vmPostHddWithHttpInfo(vmId, vmPostHdd)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1400,17 +1410,20 @@
     /**
      * /netadp
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject40} opts.inlineObject40 
+     * @param {module:model/VmPostNetadp} vmPostNetadp 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.operationVmPostnetadpWithHttpInfo = function(vmId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject40'];
+    this.vmPostNetadpWithHttpInfo = function(vmId, vmPostNetadp) {
+      var postBody = vmPostNetadp;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling operationVmPostnetadp");
+        throw new Error("Missing the required parameter 'vmId' when calling vmPostNetadp");
+      }
+
+      // verify the required parameter 'vmPostNetadp' is set
+      if (vmPostNetadp === undefined || vmPostNetadp === null) {
+        throw new Error("Missing the required parameter 'vmPostNetadp' when calling vmPostNetadp");
       }
 
 
@@ -1441,12 +1454,11 @@
     /**
      * /netadp
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject40} opts.inlineObject40 
+     * @param {module:model/VmPostNetadp} vmPostNetadp 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.operationVmPostnetadp = function(vmId, opts) {
-      return this.operationVmPostnetadpWithHttpInfo(vmId, opts)
+    this.vmPostNetadp = function(vmId, vmPostNetadp) {
+      return this.vmPostNetadpWithHttpInfo(vmId, vmPostNetadp)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1459,12 +1471,12 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.showVmWithHttpInfo = function(vmId) {
+    this.vmShowWithHttpInfo = function(vmId) {
       var postBody = null;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling showVm");
+        throw new Error("Missing the required parameter 'vmId' when calling vmShow");
       }
 
 
@@ -1498,8 +1510,8 @@
      * @param {String} vmId ID of vm
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.showVm = function(vmId) {
-      return this.showVmWithHttpInfo(vmId)
+    this.vmShow = function(vmId) {
+      return this.vmShowWithHttpInfo(vmId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1510,17 +1522,20 @@
      * Update
      * Returns modified vm
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject36} opts.inlineObject36 
+     * @param {module:model/VmUpdate} vmUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
-    this.updateVmWithHttpInfo = function(vmId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject36'];
+    this.vmUpdateWithHttpInfo = function(vmId, vmUpdate) {
+      var postBody = vmUpdate;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
-        throw new Error("Missing the required parameter 'vmId' when calling updateVm");
+        throw new Error("Missing the required parameter 'vmId' when calling vmUpdate");
+      }
+
+      // verify the required parameter 'vmUpdate' is set
+      if (vmUpdate === undefined || vmUpdate === null) {
+        throw new Error("Missing the required parameter 'vmUpdate' when calling vmUpdate");
       }
 
 
@@ -1552,12 +1567,11 @@
      * Update
      * Returns modified vm
      * @param {String} vmId ID of vm
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject36} opts.inlineObject36 
+     * @param {module:model/VmUpdate} vmUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
-    this.updateVm = function(vmId, opts) {
-      return this.updateVmWithHttpInfo(vmId, opts)
+    this.vmUpdate = function(vmId, vmUpdate) {
+      return this.vmUpdateWithHttpInfo(vmId, vmUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -4,30 +4,30 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actionIpAllocate**](IpApi.md#actionIpAllocate) | **POST** /ip/{ipId}/actions/allocate | /actions/allocate
-[**actionIpAssociate**](IpApi.md#actionIpAssociate) | **POST** /ip/{ipId}/actions/associate | /actions/associate
-[**actionIpDisassociate**](IpApi.md#actionIpDisassociate) | **POST** /ip/{ipId}/actions/disassociate | /actions/disassociate
-[**actionIpRelease**](IpApi.md#actionIpRelease) | **POST** /ip/{ipId}/actions/release | /actions/release
-[**actionIpTransfer**](IpApi.md#actionIpTransfer) | **POST** /ip/{ipId}/actions/transfer | /actions/transfer
-[**createIp**](IpApi.md#createIp) | **POST** /ip | Create
-[**deleteIp**](IpApi.md#deleteIp) | **DELETE** /ip/{ipId} | Delete
-[**listIp**](IpApi.md#listIp) | **GET** /ip | List
-[**operationIpDeleteaccessrightsIdentity**](IpApi.md#operationIpDeleteaccessrightsIdentity) | **DELETE** /ip/{ipId}/accessrights/{identity} | /accessrights/:identity
-[**operationIpDeletetagKey**](IpApi.md#operationIpDeletetagKey) | **DELETE** /ip/{ipId}/tag/{key} | /tag/:key
-[**operationIpGetservicesServiceId**](IpApi.md#operationIpGetservicesServiceId) | **GET** /ip/{ipId}/services/{serviceId} | /services/:serviceId
-[**operationIpGettag**](IpApi.md#operationIpGettag) | **GET** /ip/{ipId}/tag/ | /tag/
-[**operationIpListaccessrights**](IpApi.md#operationIpListaccessrights) | **GET** /ip/{ipId}/accessrights/ | /accessrights/
-[**operationIpListqueue**](IpApi.md#operationIpListqueue) | **GET** /ip/{ipId}/queue/ | /queue/
-[**operationIpListservices**](IpApi.md#operationIpListservices) | **GET** /ip/{ipId}/services/ | /services/
-[**operationIpPatchtag**](IpApi.md#operationIpPatchtag) | **PATCH** /ip/{ipId}/tag/ | /tag/
-[**operationIpPostaccessrights**](IpApi.md#operationIpPostaccessrights) | **POST** /ip/{ipId}/accessrights/ | /accessrights/
-[**showIp**](IpApi.md#showIp) | **GET** /ip/{ipId} | Get
-[**updateIp**](IpApi.md#updateIp) | **PATCH** /ip/{ipId} | Update
+[**ipActionAllocate**](IpApi.md#ipActionAllocate) | **POST** /ip/{ipId}/actions/allocate | /actions/allocate
+[**ipActionAssociate**](IpApi.md#ipActionAssociate) | **POST** /ip/{ipId}/actions/associate | /actions/associate
+[**ipActionDisassociate**](IpApi.md#ipActionDisassociate) | **POST** /ip/{ipId}/actions/disassociate | /actions/disassociate
+[**ipActionRelease**](IpApi.md#ipActionRelease) | **POST** /ip/{ipId}/actions/release | /actions/release
+[**ipActionTransfer**](IpApi.md#ipActionTransfer) | **POST** /ip/{ipId}/actions/transfer | /actions/transfer
+[**ipCreate**](IpApi.md#ipCreate) | **POST** /ip | Create
+[**ipDelete**](IpApi.md#ipDelete) | **DELETE** /ip/{ipId} | Delete
+[**ipDeleteAccessrightsIdentity**](IpApi.md#ipDeleteAccessrightsIdentity) | **DELETE** /ip/{ipId}/accessrights/{identity} | /accessrights/:identity
+[**ipDeleteTagKey**](IpApi.md#ipDeleteTagKey) | **DELETE** /ip/{ipId}/tag/{key} | /tag/:key
+[**ipGetServicesServiceId**](IpApi.md#ipGetServicesServiceId) | **GET** /ip/{ipId}/services/{serviceId} | /services/:serviceId
+[**ipGetTag**](IpApi.md#ipGetTag) | **GET** /ip/{ipId}/tag | /tag
+[**ipList**](IpApi.md#ipList) | **GET** /ip | List
+[**ipListAccessrights**](IpApi.md#ipListAccessrights) | **GET** /ip/{ipId}/accessrights | /accessrights
+[**ipListQueue**](IpApi.md#ipListQueue) | **GET** /ip/{ipId}/queue | /queue
+[**ipListServices**](IpApi.md#ipListServices) | **GET** /ip/{ipId}/services | /services
+[**ipPatchTag**](IpApi.md#ipPatchTag) | **PATCH** /ip/{ipId}/tag | /tag
+[**ipPostAccessrights**](IpApi.md#ipPostAccessrights) | **POST** /ip/{ipId}/accessrights | /accessrights
+[**ipShow**](IpApi.md#ipShow) | **GET** /ip/{ipId} | Get
+[**ipUpdate**](IpApi.md#ipUpdate) | **PATCH** /ip/{ipId} | Update
 
 
-<a name="actionIpAllocate"></a>
-# **actionIpAllocate**
-> Ip actionIpAllocate(ipId)
+<a name="ipActionAllocate"></a>
+# **ipActionAllocate**
+> Ip ipActionAllocate(ipId)
 
 /actions/allocate
 
@@ -55,7 +55,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-apiInstance.actionIpAllocate(ipId).then(function(data) {
+apiInstance.ipActionAllocate(ipId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -82,9 +82,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionIpAssociate"></a>
-# **actionIpAssociate**
-> Ip actionIpAssociate(ipId)
+<a name="ipActionAssociate"></a>
+# **ipActionAssociate**
+> Ip ipActionAssociate(ipId)
 
 /actions/associate
 
@@ -112,7 +112,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-apiInstance.actionIpAssociate(ipId).then(function(data) {
+apiInstance.ipActionAssociate(ipId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -139,9 +139,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionIpDisassociate"></a>
-# **actionIpDisassociate**
-> Ip actionIpDisassociate(ipId)
+<a name="ipActionDisassociate"></a>
+# **ipActionDisassociate**
+> Ip ipActionDisassociate(ipId)
 
 /actions/disassociate
 
@@ -169,7 +169,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-apiInstance.actionIpDisassociate(ipId).then(function(data) {
+apiInstance.ipActionDisassociate(ipId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -196,9 +196,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionIpRelease"></a>
-# **actionIpRelease**
-> Ip actionIpRelease(ipId)
+<a name="ipActionRelease"></a>
+# **ipActionRelease**
+> Ip ipActionRelease(ipId)
 
 /actions/release
 
@@ -226,7 +226,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-apiInstance.actionIpRelease(ipId).then(function(data) {
+apiInstance.ipActionRelease(ipId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -253,9 +253,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="actionIpTransfer"></a>
-# **actionIpTransfer**
-> Ip actionIpTransfer(ipId, opts)
+<a name="ipActionTransfer"></a>
+# **ipActionTransfer**
+> Ip ipActionTransfer(ipId, ipActionTransfer)
 
 /actions/transfer
 
@@ -283,10 +283,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var opts = {
-  'inlineObject44': new HyperOneApi.InlineObject44() // InlineObject44 | 
-};
-apiInstance.actionIpTransfer(ipId, opts).then(function(data) {
+var ipActionTransfer = new HyperOneApi.IpActionTransfer(); // IpActionTransfer | 
+apiInstance.ipActionTransfer(ipId, ipActionTransfer).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -299,7 +297,7 @@ apiInstance.actionIpTransfer(ipId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ipId** | **String**| ID of ip | 
- **inlineObject44** | [**InlineObject44**](InlineObject44.md)|  | [optional] 
+ **ipActionTransfer** | [**IpActionTransfer**](IpActionTransfer.md)|  | 
 
 ### Return type
 
@@ -314,9 +312,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="createIp"></a>
-# **createIp**
-> Ip createIp(opts)
+<a name="ipCreate"></a>
+# **ipCreate**
+> Ip ipCreate(ipCreate)
 
 Create
 
@@ -343,10 +341,8 @@ Session.apiKey = 'YOUR API KEY';
 //Session.apiKeyPrefix = 'Token';
 
 var apiInstance = new HyperOneApi.IpApi();
-var opts = {
-  'inlineObject42': new HyperOneApi.InlineObject42() // InlineObject42 | 
-};
-apiInstance.createIp(opts).then(function(data) {
+var ipCreate = new HyperOneApi.IpCreate(); // IpCreate | 
+apiInstance.ipCreate(ipCreate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -358,7 +354,7 @@ apiInstance.createIp(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject42** | [**InlineObject42**](InlineObject42.md)|  | [optional] 
+ **ipCreate** | [**IpCreate**](IpCreate.md)|  | 
 
 ### Return type
 
@@ -373,9 +369,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="deleteIp"></a>
-# **deleteIp**
-> deleteIp(ipId)
+<a name="ipDelete"></a>
+# **ipDelete**
+> ipDelete(ipId)
 
 Delete
 
@@ -401,7 +397,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-apiInstance.deleteIp(ipId).then(function() {
+apiInstance.ipDelete(ipId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -428,9 +424,235 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-<a name="listIp"></a>
-# **listIp**
-> [Ip] listIp(opts)
+<a name="ipDeleteAccessrightsIdentity"></a>
+# **ipDeleteAccessrightsIdentity**
+> Ip ipDeleteAccessrightsIdentity(ipId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IpApi();
+var ipId = "ipId_example"; // String | ID of ip
+var identity = "identity_example"; // String | identity
+apiInstance.ipDeleteAccessrightsIdentity(ipId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ipId** | **String**| ID of ip | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Ip**](Ip.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="ipDeleteTagKey"></a>
+# **ipDeleteTagKey**
+> Object ipDeleteTagKey(ipId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IpApi();
+var ipId = "ipId_example"; // String | ID of ip
+var key = "key_example"; // String | key
+apiInstance.ipDeleteTagKey(ipId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ipId** | **String**| ID of ip | 
+ **key** | **String**| key | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="ipGetServicesServiceId"></a>
+# **ipGetServicesServiceId**
+> IpServices ipGetServicesServiceId(ipId, serviceId)
+
+/services/:serviceId
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IpApi();
+var ipId = "ipId_example"; // String | ID of ip
+var serviceId = "serviceId_example"; // String | serviceId
+apiInstance.ipGetServicesServiceId(ipId, serviceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ipId** | **String**| ID of ip | 
+ **serviceId** | **String**| serviceId | 
+
+### Return type
+
+[**IpServices**](IpServices.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="ipGetTag"></a>
+# **ipGetTag**
+> Object ipGetTag(ipId)
+
+/tag
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.IpApi();
+var ipId = "ipId_example"; // String | ID of ip
+apiInstance.ipGetTag(ipId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ipId** | **String**| ID of ip | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="ipList"></a>
+# **ipList**
+> [Ip] ipList(opts)
 
 List
 
@@ -460,7 +682,7 @@ var apiInstance = new HyperOneApi.IpApi();
 var opts = {
   'mac': "mac_example" // String | Filter by mac
 };
-apiInstance.listIp(opts).then(function(data) {
+apiInstance.ipList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -487,68 +709,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationIpDeleteaccessrightsIdentity"></a>
-# **operationIpDeleteaccessrightsIdentity**
-> Ip operationIpDeleteaccessrightsIdentity(ipId, identity)
+<a name="ipListAccessrights"></a>
+# **ipListAccessrights**
+> [String] ipListAccessrights(ipId)
 
-/accessrights/:identity
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.IpApi();
-var ipId = "ipId_example"; // String | ID of ip
-var identity = "identity_example"; // String | identity
-apiInstance.operationIpDeleteaccessrightsIdentity(ipId, identity).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ipId** | **String**| ID of ip | 
- **identity** | **String**| identity | 
-
-### Return type
-
-[**Ip**](Ip.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationIpDeletetagKey"></a>
-# **operationIpDeletetagKey**
-> {String: String} operationIpDeletetagKey(ipId, key)
-
-/tag/:key
+/accessrights
 
 ### Example
 ```javascript
@@ -572,176 +737,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var key = "key_example"; // String | key
-apiInstance.operationIpDeletetagKey(ipId, key).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ipId** | **String**| ID of ip | 
- **key** | **String**| key | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationIpGetservicesServiceId"></a>
-# **operationIpGetservicesServiceId**
-> IpServices operationIpGetservicesServiceId(ipId, serviceId)
-
-/services/:serviceId
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.IpApi();
-var ipId = "ipId_example"; // String | ID of ip
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.operationIpGetservicesServiceId(ipId, serviceId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ipId** | **String**| ID of ip | 
- **serviceId** | **String**| serviceId | 
-
-### Return type
-
-[**IpServices**](IpServices.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationIpGettag"></a>
-# **operationIpGettag**
-> {String: String} operationIpGettag(ipId)
-
-/tag/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.IpApi();
-var ipId = "ipId_example"; // String | ID of ip
-apiInstance.operationIpGettag(ipId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ipId** | **String**| ID of ip | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationIpListaccessrights"></a>
-# **operationIpListaccessrights**
-> [String] operationIpListaccessrights(ipId)
-
-/accessrights/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.IpApi();
-var ipId = "ipId_example"; // String | ID of ip
-apiInstance.operationIpListaccessrights(ipId).then(function(data) {
+apiInstance.ipListAccessrights(ipId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -768,11 +764,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationIpListqueue"></a>
-# **operationIpListqueue**
-> [Event] operationIpListqueue(ipId)
+<a name="ipListQueue"></a>
+# **ipListQueue**
+> [Event] ipListQueue(ipId)
 
-/queue/
+/queue
 
 ### Example
 ```javascript
@@ -796,7 +792,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-apiInstance.operationIpListqueue(ipId).then(function(data) {
+apiInstance.ipListQueue(ipId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -823,11 +819,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationIpListservices"></a>
-# **operationIpListservices**
-> [IpServices] operationIpListservices(ipId)
+<a name="ipListServices"></a>
+# **ipListServices**
+> [IpServices] ipListServices(ipId)
 
-/services/
+/services
 
 ### Example
 ```javascript
@@ -851,7 +847,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-apiInstance.operationIpListservices(ipId).then(function(data) {
+apiInstance.ipListServices(ipId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -878,11 +874,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationIpPatchtag"></a>
-# **operationIpPatchtag**
-> {String: String} operationIpPatchtag(ipId, requestBody)
+<a name="ipPatchTag"></a>
+# **ipPatchTag**
+> Object ipPatchTag(ipId, body)
 
-/tag/
+/tag
 
 ### Example
 ```javascript
@@ -906,8 +902,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.operationIpPatchtag(ipId, requestBody).then(function(data) {
+var body = null; // Object | 
+apiInstance.ipPatchTag(ipId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -920,11 +916,11 @@ apiInstance.operationIpPatchtag(ipId, requestBody).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ipId** | **String**| ID of ip | 
- **requestBody** | [**{String: String}**](String.md)|  | 
+ **body** | **Object**|  | 
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -935,11 +931,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationIpPostaccessrights"></a>
-# **operationIpPostaccessrights**
-> String operationIpPostaccessrights(ipId, opts)
+<a name="ipPostAccessrights"></a>
+# **ipPostAccessrights**
+> String ipPostAccessrights(ipId, ipPostAccessrights)
 
-/accessrights/
+/accessrights
 
 ### Example
 ```javascript
@@ -963,10 +959,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var opts = {
-  'inlineObject45': new HyperOneApi.InlineObject45() // InlineObject45 | 
-};
-apiInstance.operationIpPostaccessrights(ipId, opts).then(function(data) {
+var ipPostAccessrights = new HyperOneApi.IpPostAccessrights(); // IpPostAccessrights | 
+apiInstance.ipPostAccessrights(ipId, ipPostAccessrights).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -979,7 +973,7 @@ apiInstance.operationIpPostaccessrights(ipId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ipId** | **String**| ID of ip | 
- **inlineObject45** | [**InlineObject45**](InlineObject45.md)|  | [optional] 
+ **ipPostAccessrights** | [**IpPostAccessrights**](IpPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -994,9 +988,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="showIp"></a>
-# **showIp**
-> Ip showIp(ipId)
+<a name="ipShow"></a>
+# **ipShow**
+> Ip ipShow(ipId)
 
 Get
 
@@ -1024,7 +1018,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-apiInstance.showIp(ipId).then(function(data) {
+apiInstance.ipShow(ipId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1051,9 +1045,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateIp"></a>
-# **updateIp**
-> Ip updateIp(ipId, opts)
+<a name="ipUpdate"></a>
+# **ipUpdate**
+> Ip ipUpdate(ipId, ipUpdate)
 
 Update
 
@@ -1081,10 +1075,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var opts = {
-  'inlineObject43': new HyperOneApi.InlineObject43() // InlineObject43 | 
-};
-apiInstance.updateIp(ipId, opts).then(function(data) {
+var ipUpdate = new HyperOneApi.IpUpdate(); // IpUpdate | 
+apiInstance.ipUpdate(ipId, ipUpdate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1097,7 +1089,7 @@ apiInstance.updateIp(ipId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ipId** | **String**| ID of ip | 
- **inlineObject43** | [**InlineObject43**](InlineObject43.md)|  | [optional] 
+ **ipUpdate** | [**IpUpdate**](IpUpdate.md)|  | 
 
 ### Return type
 

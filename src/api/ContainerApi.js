@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Container', 'model/ContainerServices', 'model/Event', 'model/InlineObject7', 'model/InlineObject8', 'model/InlineObject9'], factory);
+    define(['ApiClient', 'model/Container', 'model/ContainerCreate', 'model/ContainerPostAccessrights', 'model/ContainerServices', 'model/ContainerUpdate', 'model/Event'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Container'), require('../model/ContainerServices'), require('../model/Event'), require('../model/InlineObject7'), require('../model/InlineObject8'), require('../model/InlineObject9'));
+    module.exports = factory(require('../ApiClient'), require('../model/Container'), require('../model/ContainerCreate'), require('../model/ContainerPostAccessrights'), require('../model/ContainerServices'), require('../model/ContainerUpdate'), require('../model/Event'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ContainerApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Container, root.HyperOneApi.ContainerServices, root.HyperOneApi.Event, root.HyperOneApi.InlineObject7, root.HyperOneApi.InlineObject8, root.HyperOneApi.InlineObject9);
+    root.HyperOneApi.ContainerApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Container, root.HyperOneApi.ContainerCreate, root.HyperOneApi.ContainerPostAccessrights, root.HyperOneApi.ContainerServices, root.HyperOneApi.ContainerUpdate, root.HyperOneApi.Event);
   }
-}(this, function(ApiClient, Container, ContainerServices, Event, InlineObject7, InlineObject8, InlineObject9) {
+}(this, function(ApiClient, Container, ContainerCreate, ContainerPostAccessrights, ContainerServices, ContainerUpdate, Event) {
   'use strict';
 
   /**
@@ -54,12 +54,12 @@
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.actionContainerRestartWithHttpInfo = function(containerId) {
+    this.containerActionRestartWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling actionContainerRestart");
+        throw new Error("Missing the required parameter 'containerId' when calling containerActionRestart");
       }
 
 
@@ -93,8 +93,8 @@
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
-    this.actionContainerRestart = function(containerId) {
-      return this.actionContainerRestartWithHttpInfo(containerId)
+    this.containerActionRestart = function(containerId) {
+      return this.containerActionRestartWithHttpInfo(containerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -107,12 +107,12 @@
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.actionContainerStartWithHttpInfo = function(containerId) {
+    this.containerActionStartWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling actionContainerStart");
+        throw new Error("Missing the required parameter 'containerId' when calling containerActionStart");
       }
 
 
@@ -146,8 +146,8 @@
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
-    this.actionContainerStart = function(containerId) {
-      return this.actionContainerStartWithHttpInfo(containerId)
+    this.containerActionStart = function(containerId) {
+      return this.containerActionStartWithHttpInfo(containerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -160,12 +160,12 @@
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.actionContainerStopWithHttpInfo = function(containerId) {
+    this.containerActionStopWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling actionContainerStop");
+        throw new Error("Missing the required parameter 'containerId' when calling containerActionStop");
       }
 
 
@@ -199,8 +199,8 @@
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
-    this.actionContainerStop = function(containerId) {
-      return this.actionContainerStopWithHttpInfo(containerId)
+    this.containerActionStop = function(containerId) {
+      return this.containerActionStopWithHttpInfo(containerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -210,13 +210,16 @@
     /**
      * Create
      * Create container
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject7} opts.inlineObject7 
+     * @param {module:model/ContainerCreate} containerCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.createContainerWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject7'];
+    this.containerCreateWithHttpInfo = function(containerCreate) {
+      var postBody = containerCreate;
+
+      // verify the required parameter 'containerCreate' is set
+      if (containerCreate === undefined || containerCreate === null) {
+        throw new Error("Missing the required parameter 'containerCreate' when calling containerCreate");
+      }
 
 
       var pathParams = {
@@ -245,12 +248,11 @@
     /**
      * Create
      * Create container
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject7} opts.inlineObject7 
+     * @param {module:model/ContainerCreate} containerCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
-    this.createContainer = function(opts) {
-      return this.createContainerWithHttpInfo(opts)
+    this.containerCreate = function(containerCreate) {
+      return this.containerCreateWithHttpInfo(containerCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -262,12 +264,12 @@
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteContainerWithHttpInfo = function(containerId) {
+    this.containerDeleteWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling deleteContainer");
+        throw new Error("Missing the required parameter 'containerId' when calling containerDelete");
       }
 
 
@@ -300,8 +302,236 @@
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteContainer = function(containerId) {
-      return this.deleteContainerWithHttpInfo(containerId)
+    this.containerDelete = function(containerId) {
+      return this.containerDeleteWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} containerId ID of container
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
+     */
+    this.containerDeleteAccessrightsIdentityWithHttpInfo = function(containerId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling containerDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling containerDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Container;
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} containerId ID of container
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
+     */
+    this.containerDeleteAccessrightsIdentity = function(containerId, identity) {
+      return this.containerDeleteAccessrightsIdentityWithHttpInfo(containerId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} containerId ID of container
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.containerDeleteTagKeyWithHttpInfo = function(containerId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling containerDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling containerDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} containerId ID of container
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.containerDeleteTagKey = function(containerId, key) {
+      return this.containerDeleteTagKeyWithHttpInfo(containerId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} containerId ID of container
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContainerServices} and HTTP response
+     */
+    this.containerGetServicesServiceIdWithHttpInfo = function(containerId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling containerGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling containerGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ContainerServices;
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} containerId ID of container
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContainerServices}
+     */
+    this.containerGetServicesServiceId = function(containerId, serviceId) {
+      return this.containerGetServicesServiceIdWithHttpInfo(containerId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.containerGetTagWithHttpInfo = function(containerId) {
+      var postBody = null;
+
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling containerGetTag");
+      }
+
+
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/container/{containerId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.containerGetTag = function(containerId) {
+      return this.containerGetTagWithHttpInfo(containerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -315,7 +545,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Container>} and HTTP response
      */
-    this.listContainerWithHttpInfo = function(opts) {
+    this.containerListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -351,8 +581,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Container>}
      */
-    this.listContainer = function(opts) {
-      return this.listContainerWithHttpInfo(opts)
+    this.containerList = function(opts) {
+      return this.containerListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -360,244 +590,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} containerId ID of container
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
-     */
-    this.operationContainerDeleteaccessrightsIdentityWithHttpInfo = function(containerId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'containerId' is set
-      if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling operationContainerDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationContainerDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'containerId': containerId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Container;
-
-      return this.apiClient.callApi(
-        '/container/{containerId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} containerId ID of container
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
-     */
-    this.operationContainerDeleteaccessrightsIdentity = function(containerId, identity) {
-      return this.operationContainerDeleteaccessrightsIdentityWithHttpInfo(containerId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} containerId ID of container
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationContainerDeletetagKeyWithHttpInfo = function(containerId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'containerId' is set
-      if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling operationContainerDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationContainerDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'containerId': containerId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/container/{containerId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} containerId ID of container
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationContainerDeletetagKey = function(containerId, key) {
-      return this.operationContainerDeletetagKeyWithHttpInfo(containerId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} containerId ID of container
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContainerServices} and HTTP response
-     */
-    this.operationContainerGetservicesServiceIdWithHttpInfo = function(containerId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'containerId' is set
-      if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling operationContainerGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationContainerGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'containerId': containerId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ContainerServices;
-
-      return this.apiClient.callApi(
-        '/container/{containerId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} containerId ID of container
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContainerServices}
-     */
-    this.operationContainerGetservicesServiceId = function(containerId, serviceId) {
-      return this.operationContainerGetservicesServiceIdWithHttpInfo(containerId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} containerId ID of container
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationContainerGettagWithHttpInfo = function(containerId) {
-      var postBody = null;
-
-      // verify the required parameter 'containerId' is set
-      if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling operationContainerGettag");
-      }
-
-
-      var pathParams = {
-        'containerId': containerId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/container/{containerId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} containerId ID of container
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationContainerGettag = function(containerId) {
-      return this.operationContainerGettagWithHttpInfo(containerId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationContainerListaccessrightsWithHttpInfo = function(containerId) {
+    this.containerListAccessrightsWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling operationContainerListaccessrights");
+        throw new Error("Missing the required parameter 'containerId' when calling containerListAccessrights");
       }
 
 
@@ -619,19 +621,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/container/{containerId}/accessrights/', 'GET',
+        '/container/{containerId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationContainerListaccessrights = function(containerId) {
-      return this.operationContainerListaccessrightsWithHttpInfo(containerId)
+    this.containerListAccessrights = function(containerId) {
+      return this.containerListAccessrightsWithHttpInfo(containerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -639,16 +641,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationContainerListqueueWithHttpInfo = function(containerId) {
+    this.containerListQueueWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling operationContainerListqueue");
+        throw new Error("Missing the required parameter 'containerId' when calling containerListQueue");
       }
 
 
@@ -670,19 +672,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/container/{containerId}/queue/', 'GET',
+        '/container/{containerId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationContainerListqueue = function(containerId) {
-      return this.operationContainerListqueueWithHttpInfo(containerId)
+    this.containerListQueue = function(containerId) {
+      return this.containerListQueueWithHttpInfo(containerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -690,16 +692,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ContainerServices>} and HTTP response
      */
-    this.operationContainerListservicesWithHttpInfo = function(containerId) {
+    this.containerListServicesWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling operationContainerListservices");
+        throw new Error("Missing the required parameter 'containerId' when calling containerListServices");
       }
 
 
@@ -721,19 +723,19 @@
       var returnType = [ContainerServices];
 
       return this.apiClient.callApi(
-        '/container/{containerId}/services/', 'GET',
+        '/container/{containerId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ContainerServices>}
      */
-    this.operationContainerListservices = function(containerId) {
-      return this.operationContainerListservicesWithHttpInfo(containerId)
+    this.containerListServices = function(containerId) {
+      return this.containerListServicesWithHttpInfo(containerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -741,22 +743,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} containerId ID of container
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationContainerPatchtagWithHttpInfo = function(containerId, requestBody) {
-      var postBody = requestBody;
+    this.containerPatchTagWithHttpInfo = function(containerId, body) {
+      var postBody = body;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling operationContainerPatchtag");
+        throw new Error("Missing the required parameter 'containerId' when calling containerPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationContainerPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling containerPatchTag");
       }
 
 
@@ -775,23 +777,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/container/{containerId}/tag/', 'PATCH',
+        '/container/{containerId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} containerId ID of container
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationContainerPatchtag = function(containerId, requestBody) {
-      return this.operationContainerPatchtagWithHttpInfo(containerId, requestBody)
+    this.containerPatchTag = function(containerId, body) {
+      return this.containerPatchTagWithHttpInfo(containerId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -799,19 +801,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject9} opts.inlineObject9 
+     * @param {module:model/ContainerPostAccessrights} containerPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationContainerPostaccessrightsWithHttpInfo = function(containerId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject9'];
+    this.containerPostAccessrightsWithHttpInfo = function(containerId, containerPostAccessrights) {
+      var postBody = containerPostAccessrights;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling operationContainerPostaccessrights");
+        throw new Error("Missing the required parameter 'containerId' when calling containerPostAccessrights");
+      }
+
+      // verify the required parameter 'containerPostAccessrights' is set
+      if (containerPostAccessrights === undefined || containerPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'containerPostAccessrights' when calling containerPostAccessrights");
       }
 
 
@@ -833,21 +838,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/container/{containerId}/accessrights/', 'POST',
+        '/container/{containerId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject9} opts.inlineObject9 
+     * @param {module:model/ContainerPostAccessrights} containerPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationContainerPostaccessrights = function(containerId, opts) {
-      return this.operationContainerPostaccessrightsWithHttpInfo(containerId, opts)
+    this.containerPostAccessrights = function(containerId, containerPostAccessrights) {
+      return this.containerPostAccessrightsWithHttpInfo(containerId, containerPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -860,12 +864,12 @@
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.showContainerWithHttpInfo = function(containerId) {
+    this.containerShowWithHttpInfo = function(containerId) {
       var postBody = null;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling showContainer");
+        throw new Error("Missing the required parameter 'containerId' when calling containerShow");
       }
 
 
@@ -899,8 +903,8 @@
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
-    this.showContainer = function(containerId) {
-      return this.showContainerWithHttpInfo(containerId)
+    this.containerShow = function(containerId) {
+      return this.containerShowWithHttpInfo(containerId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -911,17 +915,20 @@
      * Update
      * Returns modified container
      * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject8} opts.inlineObject8 
+     * @param {module:model/ContainerUpdate} containerUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
-    this.updateContainerWithHttpInfo = function(containerId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject8'];
+    this.containerUpdateWithHttpInfo = function(containerId, containerUpdate) {
+      var postBody = containerUpdate;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
-        throw new Error("Missing the required parameter 'containerId' when calling updateContainer");
+        throw new Error("Missing the required parameter 'containerId' when calling containerUpdate");
+      }
+
+      // verify the required parameter 'containerUpdate' is set
+      if (containerUpdate === undefined || containerUpdate === null) {
+        throw new Error("Missing the required parameter 'containerUpdate' when calling containerUpdate");
       }
 
 
@@ -953,12 +960,11 @@
      * Update
      * Returns modified container
      * @param {String} containerId ID of container
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject8} opts.inlineObject8 
+     * @param {module:model/ContainerUpdate} containerUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
-    this.updateContainer = function(containerId, opts) {
-      return this.updateContainerWithHttpInfo(containerId, opts)
+    this.containerUpdate = function(containerId, containerUpdate) {
+      return this.containerUpdateWithHttpInfo(containerId, containerUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

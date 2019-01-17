@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Container', 'model/ContainerExpose', 'model/ContainerRegistry', 'model/ContainerServices', 'model/ContainerVolumes', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Disk', 'model/DiskMetadata', 'model/DiskMetadata1', 'model/DiskMetadataSource', 'model/DiskServices', 'model/Event', 'model/EventResource', 'model/Firewall', 'model/FirewallServices', 'model/Hdd', 'model/HddDisk', 'model/Image', 'model/ImageDisks', 'model/ImageDisksDisk', 'model/ImageServices', 'model/ImageVm', 'model/InlineObject', 'model/InlineObject1', 'model/InlineObject10', 'model/InlineObject11', 'model/InlineObject12', 'model/InlineObject13', 'model/InlineObject14', 'model/InlineObject15', 'model/InlineObject16', 'model/InlineObject17', 'model/InlineObject18', 'model/InlineObject19', 'model/InlineObject2', 'model/InlineObject20', 'model/InlineObject21', 'model/InlineObject22', 'model/InlineObject23', 'model/InlineObject24', 'model/InlineObject25', 'model/InlineObject26', 'model/InlineObject27', 'model/InlineObject28', 'model/InlineObject29', 'model/InlineObject3', 'model/InlineObject30', 'model/InlineObject31', 'model/InlineObject32', 'model/InlineObject33', 'model/InlineObject34', 'model/InlineObject35', 'model/InlineObject36', 'model/InlineObject37', 'model/InlineObject38', 'model/InlineObject39', 'model/InlineObject4', 'model/InlineObject40', 'model/InlineObject41', 'model/InlineObject42', 'model/InlineObject43', 'model/InlineObject44', 'model/InlineObject45', 'model/InlineObject46', 'model/InlineObject47', 'model/InlineObject48', 'model/InlineObject49', 'model/InlineObject5', 'model/InlineObject50', 'model/InlineObject51', 'model/InlineObject52', 'model/InlineObject53', 'model/InlineObject54', 'model/InlineObject55', 'model/InlineObject56', 'model/InlineObject57', 'model/InlineObject58', 'model/InlineObject59', 'model/InlineObject6', 'model/InlineObject60', 'model/InlineObject61', 'model/InlineObject62', 'model/InlineObject63', 'model/InlineObject64', 'model/InlineObject65', 'model/InlineObject66', 'model/InlineObject67', 'model/InlineObject68', 'model/InlineObject69', 'model/InlineObject7', 'model/InlineObject70', 'model/InlineObject71', 'model/InlineObject72', 'model/InlineObject73', 'model/InlineObject74', 'model/InlineObject75', 'model/InlineObject76', 'model/InlineObject8', 'model/InlineObject9', 'model/InlineResponse200', 'model/Ip', 'model/IpServices', 'model/Iso', 'model/IsoServices', 'model/LogArchive', 'model/LogArchiveServices', 'model/Netadp', 'model/NetadpAssigned', 'model/NetadpServices', 'model/Netgw', 'model/NetgwNetwork', 'model/NetgwPrimaryIP', 'model/NetgwPrimaryIPAssociated', 'model/NetgwPrimaryIPMac', 'model/NetgwPublic', 'model/NetgwServices', 'model/NetgwVpn', 'model/NetgwVpnL2tp', 'model/NetgwVpnL2tpUser', 'model/Network', 'model/NetworkDns', 'model/NetworkServices', 'model/Organisation', 'model/OrganisationAccessRights', 'model/OrganisationBilling', 'model/OrganisationBilling1', 'model/OrganisationBillingAddress', 'model/OrganisationLimit', 'model/OrganisationLimitOrganisation', 'model/OrganisationTransfer', 'model/OrganisationorganisationIdBilling', 'model/OrganisationorganisationIdBillingAddress', 'model/Project', 'model/ProjectAccess', 'model/ProjectAccessRights', 'model/ProjectAccessRights1', 'model/ProjectBilling', 'model/ProjectCompliance', 'model/ProjectInvoices', 'model/ProjectInvoicesDuplicate', 'model/ProjectLimit', 'model/ProjectLimitDisk', 'model/ProjectLimitDomain', 'model/ProjectLimitIso', 'model/ProjectLimitVm', 'model/ProjectNetworkAcl', 'model/ProjectPayments', 'model/ProjectRoles', 'model/ProjectServices', 'model/ProjectThreshold', 'model/ProjectThresholdCredits', 'model/ProjectTransfer', 'model/Replica', 'model/ReplicaServices', 'model/Reservation', 'model/ReservationServices', 'model/Snapshot', 'model/SnapshotServices', 'model/Vault', 'model/VaultCredential', 'model/VaultCredential1', 'model/VaultCredential1Password', 'model/VaultCredentialCertificate', 'model/VaultCredentialPassword', 'model/VaultServices', 'model/Vm', 'model/VmData', 'model/VmDisk', 'model/VmNetadp', 'model/VmPassword', 'model/VmServices', 'model/VmSourceImage', 'model/Vmhost', 'model/VmhostServices', 'model/VmhostvmhostIdEnabledServices', 'api/ContainerApi', 'api/DiskApi', 'api/FirewallApi', 'api/ImageApi', 'api/IpApi', 'api/IsoApi', 'api/LogArchiveApi', 'api/NetadpApi', 'api/NetgwApi', 'api/NetworkApi', 'api/OrganisationApi', 'api/ProjectApi', 'api/ReplicaApi', 'api/ReservationApi', 'api/SnapshotApi', 'api/VaultApi', 'api/VmApi', 'api/VmhostApi'], factory);
+    define(['ApiClient', 'model/Container', 'model/ContainerCreate', 'model/ContainerCreateExpose', 'model/ContainerCreateRegistry', 'model/ContainerCreateVolumes', 'model/ContainerPostAccessrights', 'model/ContainerServices', 'model/ContainerUpdate', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Disk', 'model/DiskActionTransfer', 'model/DiskCreate', 'model/DiskCreateMetadata', 'model/DiskCreateMetadataSource', 'model/DiskMetadata', 'model/DiskPostAccessrights', 'model/DiskServices', 'model/DiskUpdate', 'model/Event', 'model/EventResource', 'model/Firewall', 'model/FirewallActionTransfer', 'model/FirewallCreate', 'model/FirewallPostAccessrights', 'model/FirewallPostEgress', 'model/FirewallPostIngress', 'model/FirewallServices', 'model/FirewallUpdate', 'model/Hdd', 'model/HddDisk', 'model/Image', 'model/ImageActionTransfer', 'model/ImageCreate', 'model/ImageDisks', 'model/ImageDisksDisk', 'model/ImagePostAccessrights', 'model/ImageServices', 'model/ImageUpdate', 'model/ImageVm', 'model/InlineResponse200', 'model/Ip', 'model/IpActionTransfer', 'model/IpCreate', 'model/IpPostAccessrights', 'model/IpServices', 'model/IpUpdate', 'model/Iso', 'model/IsoActionTransfer', 'model/IsoCreate', 'model/IsoPostAccessrights', 'model/IsoServices', 'model/IsoUpdate', 'model/LogArchive', 'model/LogArchiveActionTransfer', 'model/LogArchiveCreate', 'model/LogArchivePatchCredentialcertificateId', 'model/LogArchivePatchCredentialpasswordId', 'model/LogArchivePostAccessrights', 'model/LogArchivePostCredentialcertificate', 'model/LogArchivePostCredentialpassword', 'model/LogArchiveServices', 'model/LogArchiveUpdate', 'model/Netadp', 'model/NetadpAssigned', 'model/NetadpPostAccessrights', 'model/NetadpServices', 'model/Netgw', 'model/NetgwCreate', 'model/NetgwCreatePublic', 'model/NetgwNetwork', 'model/NetgwPostAccessrights', 'model/NetgwPrimaryIP', 'model/NetgwPrimaryIPAssociated', 'model/NetgwPrimaryIPMac', 'model/NetgwServices', 'model/NetgwUpdate', 'model/NetgwVpn', 'model/NetgwVpnL2tp', 'model/NetgwVpnL2tpUser', 'model/Network', 'model/NetworkCreate', 'model/NetworkDns', 'model/NetworkPostAccessrights', 'model/NetworkPostIp', 'model/NetworkServices', 'model/NetworkUpdate', 'model/Organisation', 'model/OrganisationAccessRights', 'model/OrganisationActionTransferAccept', 'model/OrganisationBilling', 'model/OrganisationCreate', 'model/OrganisationCreateAccessRights', 'model/OrganisationCreateBilling', 'model/OrganisationCreateBillingAddress', 'model/OrganisationLimit', 'model/OrganisationLimitOrganisation', 'model/OrganisationPostAccessrights', 'model/OrganisationTransfer', 'model/OrganisationUpdate', 'model/OrganisationUpdateBilling', 'model/OrganisationUpdateBillingAddress', 'model/Project', 'model/ProjectAccess', 'model/ProjectAccessRights', 'model/ProjectBilling', 'model/ProjectCompliance', 'model/ProjectCreate', 'model/ProjectCreateAccessRights', 'model/ProjectInvoices', 'model/ProjectInvoicesDuplicate', 'model/ProjectLimit', 'model/ProjectLimitDisk', 'model/ProjectLimitDomain', 'model/ProjectLimitIso', 'model/ProjectLimitVm', 'model/ProjectNetworkAcl', 'model/ProjectPayments', 'model/ProjectPostAccessrights', 'model/ProjectRoles', 'model/ProjectServices', 'model/ProjectThreshold', 'model/ProjectThresholdCredits', 'model/ProjectTransfer', 'model/ProjectUpdate', 'model/Replica', 'model/ReplicaActionImage', 'model/ReplicaCreate', 'model/ReplicaPostAccessrights', 'model/ReplicaServices', 'model/Reservation', 'model/ReservationCreate', 'model/ReservationPostAccessrights', 'model/ReservationServices', 'model/ReservationUpdate', 'model/Snapshot', 'model/SnapshotCreate', 'model/SnapshotPostAccessrights', 'model/SnapshotServices', 'model/SnapshotUpdate', 'model/Vault', 'model/VaultCreate', 'model/VaultCreateCredential', 'model/VaultCreateCredentialCertificate', 'model/VaultCreateCredentialPassword', 'model/VaultPatchCredentialcertificateId', 'model/VaultPatchCredentialpasswordId', 'model/VaultPostAccessrights', 'model/VaultPostCredentialcertificate', 'model/VaultPostCredentialpassword', 'model/VaultServices', 'model/VaultUpdate', 'model/Vm', 'model/VmActionImage', 'model/VmActionPasswordReset', 'model/VmCreate', 'model/VmCreateDisk', 'model/VmCreateNetadp', 'model/VmCreatePassword', 'model/VmData', 'model/VmPostAccessrights', 'model/VmPostHdd', 'model/VmPostNetadp', 'model/VmServices', 'model/VmSourceImage', 'model/VmUpdate', 'model/Vmhost', 'model/VmhostActionMoveDisk', 'model/VmhostActionMoveISO', 'model/VmhostActionMoveImage', 'model/VmhostActionMoveVM', 'model/VmhostPostAccessrights', 'model/VmhostServices', 'model/VmhostUpdate', 'model/VmhostUpdateEnabledServices', 'api/ContainerApi', 'api/DiskApi', 'api/FirewallApi', 'api/ImageApi', 'api/IpApi', 'api/IsoApi', 'api/LogArchiveApi', 'api/NetadpApi', 'api/NetgwApi', 'api/NetworkApi', 'api/OrganisationApi', 'api/ProjectApi', 'api/ReplicaApi', 'api/ReservationApi', 'api/SnapshotApi', 'api/VaultApi', 'api/VmApi', 'api/VmhostApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Container'), require('./model/ContainerExpose'), require('./model/ContainerRegistry'), require('./model/ContainerServices'), require('./model/ContainerVolumes'), require('./model/CredentialCertificate'), require('./model/CredentialPassword'), require('./model/Disk'), require('./model/DiskMetadata'), require('./model/DiskMetadata1'), require('./model/DiskMetadataSource'), require('./model/DiskServices'), require('./model/Event'), require('./model/EventResource'), require('./model/Firewall'), require('./model/FirewallServices'), require('./model/Hdd'), require('./model/HddDisk'), require('./model/Image'), require('./model/ImageDisks'), require('./model/ImageDisksDisk'), require('./model/ImageServices'), require('./model/ImageVm'), require('./model/InlineObject'), require('./model/InlineObject1'), require('./model/InlineObject10'), require('./model/InlineObject11'), require('./model/InlineObject12'), require('./model/InlineObject13'), require('./model/InlineObject14'), require('./model/InlineObject15'), require('./model/InlineObject16'), require('./model/InlineObject17'), require('./model/InlineObject18'), require('./model/InlineObject19'), require('./model/InlineObject2'), require('./model/InlineObject20'), require('./model/InlineObject21'), require('./model/InlineObject22'), require('./model/InlineObject23'), require('./model/InlineObject24'), require('./model/InlineObject25'), require('./model/InlineObject26'), require('./model/InlineObject27'), require('./model/InlineObject28'), require('./model/InlineObject29'), require('./model/InlineObject3'), require('./model/InlineObject30'), require('./model/InlineObject31'), require('./model/InlineObject32'), require('./model/InlineObject33'), require('./model/InlineObject34'), require('./model/InlineObject35'), require('./model/InlineObject36'), require('./model/InlineObject37'), require('./model/InlineObject38'), require('./model/InlineObject39'), require('./model/InlineObject4'), require('./model/InlineObject40'), require('./model/InlineObject41'), require('./model/InlineObject42'), require('./model/InlineObject43'), require('./model/InlineObject44'), require('./model/InlineObject45'), require('./model/InlineObject46'), require('./model/InlineObject47'), require('./model/InlineObject48'), require('./model/InlineObject49'), require('./model/InlineObject5'), require('./model/InlineObject50'), require('./model/InlineObject51'), require('./model/InlineObject52'), require('./model/InlineObject53'), require('./model/InlineObject54'), require('./model/InlineObject55'), require('./model/InlineObject56'), require('./model/InlineObject57'), require('./model/InlineObject58'), require('./model/InlineObject59'), require('./model/InlineObject6'), require('./model/InlineObject60'), require('./model/InlineObject61'), require('./model/InlineObject62'), require('./model/InlineObject63'), require('./model/InlineObject64'), require('./model/InlineObject65'), require('./model/InlineObject66'), require('./model/InlineObject67'), require('./model/InlineObject68'), require('./model/InlineObject69'), require('./model/InlineObject7'), require('./model/InlineObject70'), require('./model/InlineObject71'), require('./model/InlineObject72'), require('./model/InlineObject73'), require('./model/InlineObject74'), require('./model/InlineObject75'), require('./model/InlineObject76'), require('./model/InlineObject8'), require('./model/InlineObject9'), require('./model/InlineResponse200'), require('./model/Ip'), require('./model/IpServices'), require('./model/Iso'), require('./model/IsoServices'), require('./model/LogArchive'), require('./model/LogArchiveServices'), require('./model/Netadp'), require('./model/NetadpAssigned'), require('./model/NetadpServices'), require('./model/Netgw'), require('./model/NetgwNetwork'), require('./model/NetgwPrimaryIP'), require('./model/NetgwPrimaryIPAssociated'), require('./model/NetgwPrimaryIPMac'), require('./model/NetgwPublic'), require('./model/NetgwServices'), require('./model/NetgwVpn'), require('./model/NetgwVpnL2tp'), require('./model/NetgwVpnL2tpUser'), require('./model/Network'), require('./model/NetworkDns'), require('./model/NetworkServices'), require('./model/Organisation'), require('./model/OrganisationAccessRights'), require('./model/OrganisationBilling'), require('./model/OrganisationBilling1'), require('./model/OrganisationBillingAddress'), require('./model/OrganisationLimit'), require('./model/OrganisationLimitOrganisation'), require('./model/OrganisationTransfer'), require('./model/OrganisationorganisationIdBilling'), require('./model/OrganisationorganisationIdBillingAddress'), require('./model/Project'), require('./model/ProjectAccess'), require('./model/ProjectAccessRights'), require('./model/ProjectAccessRights1'), require('./model/ProjectBilling'), require('./model/ProjectCompliance'), require('./model/ProjectInvoices'), require('./model/ProjectInvoicesDuplicate'), require('./model/ProjectLimit'), require('./model/ProjectLimitDisk'), require('./model/ProjectLimitDomain'), require('./model/ProjectLimitIso'), require('./model/ProjectLimitVm'), require('./model/ProjectNetworkAcl'), require('./model/ProjectPayments'), require('./model/ProjectRoles'), require('./model/ProjectServices'), require('./model/ProjectThreshold'), require('./model/ProjectThresholdCredits'), require('./model/ProjectTransfer'), require('./model/Replica'), require('./model/ReplicaServices'), require('./model/Reservation'), require('./model/ReservationServices'), require('./model/Snapshot'), require('./model/SnapshotServices'), require('./model/Vault'), require('./model/VaultCredential'), require('./model/VaultCredential1'), require('./model/VaultCredential1Password'), require('./model/VaultCredentialCertificate'), require('./model/VaultCredentialPassword'), require('./model/VaultServices'), require('./model/Vm'), require('./model/VmData'), require('./model/VmDisk'), require('./model/VmNetadp'), require('./model/VmPassword'), require('./model/VmServices'), require('./model/VmSourceImage'), require('./model/Vmhost'), require('./model/VmhostServices'), require('./model/VmhostvmhostIdEnabledServices'), require('./api/ContainerApi'), require('./api/DiskApi'), require('./api/FirewallApi'), require('./api/ImageApi'), require('./api/IpApi'), require('./api/IsoApi'), require('./api/LogArchiveApi'), require('./api/NetadpApi'), require('./api/NetgwApi'), require('./api/NetworkApi'), require('./api/OrganisationApi'), require('./api/ProjectApi'), require('./api/ReplicaApi'), require('./api/ReservationApi'), require('./api/SnapshotApi'), require('./api/VaultApi'), require('./api/VmApi'), require('./api/VmhostApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Container'), require('./model/ContainerCreate'), require('./model/ContainerCreateExpose'), require('./model/ContainerCreateRegistry'), require('./model/ContainerCreateVolumes'), require('./model/ContainerPostAccessrights'), require('./model/ContainerServices'), require('./model/ContainerUpdate'), require('./model/CredentialCertificate'), require('./model/CredentialPassword'), require('./model/Disk'), require('./model/DiskActionTransfer'), require('./model/DiskCreate'), require('./model/DiskCreateMetadata'), require('./model/DiskCreateMetadataSource'), require('./model/DiskMetadata'), require('./model/DiskPostAccessrights'), require('./model/DiskServices'), require('./model/DiskUpdate'), require('./model/Event'), require('./model/EventResource'), require('./model/Firewall'), require('./model/FirewallActionTransfer'), require('./model/FirewallCreate'), require('./model/FirewallPostAccessrights'), require('./model/FirewallPostEgress'), require('./model/FirewallPostIngress'), require('./model/FirewallServices'), require('./model/FirewallUpdate'), require('./model/Hdd'), require('./model/HddDisk'), require('./model/Image'), require('./model/ImageActionTransfer'), require('./model/ImageCreate'), require('./model/ImageDisks'), require('./model/ImageDisksDisk'), require('./model/ImagePostAccessrights'), require('./model/ImageServices'), require('./model/ImageUpdate'), require('./model/ImageVm'), require('./model/InlineResponse200'), require('./model/Ip'), require('./model/IpActionTransfer'), require('./model/IpCreate'), require('./model/IpPostAccessrights'), require('./model/IpServices'), require('./model/IpUpdate'), require('./model/Iso'), require('./model/IsoActionTransfer'), require('./model/IsoCreate'), require('./model/IsoPostAccessrights'), require('./model/IsoServices'), require('./model/IsoUpdate'), require('./model/LogArchive'), require('./model/LogArchiveActionTransfer'), require('./model/LogArchiveCreate'), require('./model/LogArchivePatchCredentialcertificateId'), require('./model/LogArchivePatchCredentialpasswordId'), require('./model/LogArchivePostAccessrights'), require('./model/LogArchivePostCredentialcertificate'), require('./model/LogArchivePostCredentialpassword'), require('./model/LogArchiveServices'), require('./model/LogArchiveUpdate'), require('./model/Netadp'), require('./model/NetadpAssigned'), require('./model/NetadpPostAccessrights'), require('./model/NetadpServices'), require('./model/Netgw'), require('./model/NetgwCreate'), require('./model/NetgwCreatePublic'), require('./model/NetgwNetwork'), require('./model/NetgwPostAccessrights'), require('./model/NetgwPrimaryIP'), require('./model/NetgwPrimaryIPAssociated'), require('./model/NetgwPrimaryIPMac'), require('./model/NetgwServices'), require('./model/NetgwUpdate'), require('./model/NetgwVpn'), require('./model/NetgwVpnL2tp'), require('./model/NetgwVpnL2tpUser'), require('./model/Network'), require('./model/NetworkCreate'), require('./model/NetworkDns'), require('./model/NetworkPostAccessrights'), require('./model/NetworkPostIp'), require('./model/NetworkServices'), require('./model/NetworkUpdate'), require('./model/Organisation'), require('./model/OrganisationAccessRights'), require('./model/OrganisationActionTransferAccept'), require('./model/OrganisationBilling'), require('./model/OrganisationCreate'), require('./model/OrganisationCreateAccessRights'), require('./model/OrganisationCreateBilling'), require('./model/OrganisationCreateBillingAddress'), require('./model/OrganisationLimit'), require('./model/OrganisationLimitOrganisation'), require('./model/OrganisationPostAccessrights'), require('./model/OrganisationTransfer'), require('./model/OrganisationUpdate'), require('./model/OrganisationUpdateBilling'), require('./model/OrganisationUpdateBillingAddress'), require('./model/Project'), require('./model/ProjectAccess'), require('./model/ProjectAccessRights'), require('./model/ProjectBilling'), require('./model/ProjectCompliance'), require('./model/ProjectCreate'), require('./model/ProjectCreateAccessRights'), require('./model/ProjectInvoices'), require('./model/ProjectInvoicesDuplicate'), require('./model/ProjectLimit'), require('./model/ProjectLimitDisk'), require('./model/ProjectLimitDomain'), require('./model/ProjectLimitIso'), require('./model/ProjectLimitVm'), require('./model/ProjectNetworkAcl'), require('./model/ProjectPayments'), require('./model/ProjectPostAccessrights'), require('./model/ProjectRoles'), require('./model/ProjectServices'), require('./model/ProjectThreshold'), require('./model/ProjectThresholdCredits'), require('./model/ProjectTransfer'), require('./model/ProjectUpdate'), require('./model/Replica'), require('./model/ReplicaActionImage'), require('./model/ReplicaCreate'), require('./model/ReplicaPostAccessrights'), require('./model/ReplicaServices'), require('./model/Reservation'), require('./model/ReservationCreate'), require('./model/ReservationPostAccessrights'), require('./model/ReservationServices'), require('./model/ReservationUpdate'), require('./model/Snapshot'), require('./model/SnapshotCreate'), require('./model/SnapshotPostAccessrights'), require('./model/SnapshotServices'), require('./model/SnapshotUpdate'), require('./model/Vault'), require('./model/VaultCreate'), require('./model/VaultCreateCredential'), require('./model/VaultCreateCredentialCertificate'), require('./model/VaultCreateCredentialPassword'), require('./model/VaultPatchCredentialcertificateId'), require('./model/VaultPatchCredentialpasswordId'), require('./model/VaultPostAccessrights'), require('./model/VaultPostCredentialcertificate'), require('./model/VaultPostCredentialpassword'), require('./model/VaultServices'), require('./model/VaultUpdate'), require('./model/Vm'), require('./model/VmActionImage'), require('./model/VmActionPasswordReset'), require('./model/VmCreate'), require('./model/VmCreateDisk'), require('./model/VmCreateNetadp'), require('./model/VmCreatePassword'), require('./model/VmData'), require('./model/VmPostAccessrights'), require('./model/VmPostHdd'), require('./model/VmPostNetadp'), require('./model/VmServices'), require('./model/VmSourceImage'), require('./model/VmUpdate'), require('./model/Vmhost'), require('./model/VmhostActionMoveDisk'), require('./model/VmhostActionMoveISO'), require('./model/VmhostActionMoveImage'), require('./model/VmhostActionMoveVM'), require('./model/VmhostPostAccessrights'), require('./model/VmhostServices'), require('./model/VmhostUpdate'), require('./model/VmhostUpdateEnabledServices'), require('./api/ContainerApi'), require('./api/DiskApi'), require('./api/FirewallApi'), require('./api/ImageApi'), require('./api/IpApi'), require('./api/IsoApi'), require('./api/LogArchiveApi'), require('./api/NetadpApi'), require('./api/NetgwApi'), require('./api/NetworkApi'), require('./api/OrganisationApi'), require('./api/ProjectApi'), require('./api/ReplicaApi'), require('./api/ReservationApi'), require('./api/SnapshotApi'), require('./api/VaultApi'), require('./api/VmApi'), require('./api/VmhostApi'));
   }
-}(function(ApiClient, Container, ContainerExpose, ContainerRegistry, ContainerServices, ContainerVolumes, CredentialCertificate, CredentialPassword, Disk, DiskMetadata, DiskMetadata1, DiskMetadataSource, DiskServices, Event, EventResource, Firewall, FirewallServices, Hdd, HddDisk, Image, ImageDisks, ImageDisksDisk, ImageServices, ImageVm, InlineObject, InlineObject1, InlineObject10, InlineObject11, InlineObject12, InlineObject13, InlineObject14, InlineObject15, InlineObject16, InlineObject17, InlineObject18, InlineObject19, InlineObject2, InlineObject20, InlineObject21, InlineObject22, InlineObject23, InlineObject24, InlineObject25, InlineObject26, InlineObject27, InlineObject28, InlineObject29, InlineObject3, InlineObject30, InlineObject31, InlineObject32, InlineObject33, InlineObject34, InlineObject35, InlineObject36, InlineObject37, InlineObject38, InlineObject39, InlineObject4, InlineObject40, InlineObject41, InlineObject42, InlineObject43, InlineObject44, InlineObject45, InlineObject46, InlineObject47, InlineObject48, InlineObject49, InlineObject5, InlineObject50, InlineObject51, InlineObject52, InlineObject53, InlineObject54, InlineObject55, InlineObject56, InlineObject57, InlineObject58, InlineObject59, InlineObject6, InlineObject60, InlineObject61, InlineObject62, InlineObject63, InlineObject64, InlineObject65, InlineObject66, InlineObject67, InlineObject68, InlineObject69, InlineObject7, InlineObject70, InlineObject71, InlineObject72, InlineObject73, InlineObject74, InlineObject75, InlineObject76, InlineObject8, InlineObject9, InlineResponse200, Ip, IpServices, Iso, IsoServices, LogArchive, LogArchiveServices, Netadp, NetadpAssigned, NetadpServices, Netgw, NetgwNetwork, NetgwPrimaryIP, NetgwPrimaryIPAssociated, NetgwPrimaryIPMac, NetgwPublic, NetgwServices, NetgwVpn, NetgwVpnL2tp, NetgwVpnL2tpUser, Network, NetworkDns, NetworkServices, Organisation, OrganisationAccessRights, OrganisationBilling, OrganisationBilling1, OrganisationBillingAddress, OrganisationLimit, OrganisationLimitOrganisation, OrganisationTransfer, OrganisationorganisationIdBilling, OrganisationorganisationIdBillingAddress, Project, ProjectAccess, ProjectAccessRights, ProjectAccessRights1, ProjectBilling, ProjectCompliance, ProjectInvoices, ProjectInvoicesDuplicate, ProjectLimit, ProjectLimitDisk, ProjectLimitDomain, ProjectLimitIso, ProjectLimitVm, ProjectNetworkAcl, ProjectPayments, ProjectRoles, ProjectServices, ProjectThreshold, ProjectThresholdCredits, ProjectTransfer, Replica, ReplicaServices, Reservation, ReservationServices, Snapshot, SnapshotServices, Vault, VaultCredential, VaultCredential1, VaultCredential1Password, VaultCredentialCertificate, VaultCredentialPassword, VaultServices, Vm, VmData, VmDisk, VmNetadp, VmPassword, VmServices, VmSourceImage, Vmhost, VmhostServices, VmhostvmhostIdEnabledServices, ContainerApi, DiskApi, FirewallApi, ImageApi, IpApi, IsoApi, LogArchiveApi, NetadpApi, NetgwApi, NetworkApi, OrganisationApi, ProjectApi, ReplicaApi, ReservationApi, SnapshotApi, VaultApi, VmApi, VmhostApi) {
+}(function(ApiClient, Container, ContainerCreate, ContainerCreateExpose, ContainerCreateRegistry, ContainerCreateVolumes, ContainerPostAccessrights, ContainerServices, ContainerUpdate, CredentialCertificate, CredentialPassword, Disk, DiskActionTransfer, DiskCreate, DiskCreateMetadata, DiskCreateMetadataSource, DiskMetadata, DiskPostAccessrights, DiskServices, DiskUpdate, Event, EventResource, Firewall, FirewallActionTransfer, FirewallCreate, FirewallPostAccessrights, FirewallPostEgress, FirewallPostIngress, FirewallServices, FirewallUpdate, Hdd, HddDisk, Image, ImageActionTransfer, ImageCreate, ImageDisks, ImageDisksDisk, ImagePostAccessrights, ImageServices, ImageUpdate, ImageVm, InlineResponse200, Ip, IpActionTransfer, IpCreate, IpPostAccessrights, IpServices, IpUpdate, Iso, IsoActionTransfer, IsoCreate, IsoPostAccessrights, IsoServices, IsoUpdate, LogArchive, LogArchiveActionTransfer, LogArchiveCreate, LogArchivePatchCredentialcertificateId, LogArchivePatchCredentialpasswordId, LogArchivePostAccessrights, LogArchivePostCredentialcertificate, LogArchivePostCredentialpassword, LogArchiveServices, LogArchiveUpdate, Netadp, NetadpAssigned, NetadpPostAccessrights, NetadpServices, Netgw, NetgwCreate, NetgwCreatePublic, NetgwNetwork, NetgwPostAccessrights, NetgwPrimaryIP, NetgwPrimaryIPAssociated, NetgwPrimaryIPMac, NetgwServices, NetgwUpdate, NetgwVpn, NetgwVpnL2tp, NetgwVpnL2tpUser, Network, NetworkCreate, NetworkDns, NetworkPostAccessrights, NetworkPostIp, NetworkServices, NetworkUpdate, Organisation, OrganisationAccessRights, OrganisationActionTransferAccept, OrganisationBilling, OrganisationCreate, OrganisationCreateAccessRights, OrganisationCreateBilling, OrganisationCreateBillingAddress, OrganisationLimit, OrganisationLimitOrganisation, OrganisationPostAccessrights, OrganisationTransfer, OrganisationUpdate, OrganisationUpdateBilling, OrganisationUpdateBillingAddress, Project, ProjectAccess, ProjectAccessRights, ProjectBilling, ProjectCompliance, ProjectCreate, ProjectCreateAccessRights, ProjectInvoices, ProjectInvoicesDuplicate, ProjectLimit, ProjectLimitDisk, ProjectLimitDomain, ProjectLimitIso, ProjectLimitVm, ProjectNetworkAcl, ProjectPayments, ProjectPostAccessrights, ProjectRoles, ProjectServices, ProjectThreshold, ProjectThresholdCredits, ProjectTransfer, ProjectUpdate, Replica, ReplicaActionImage, ReplicaCreate, ReplicaPostAccessrights, ReplicaServices, Reservation, ReservationCreate, ReservationPostAccessrights, ReservationServices, ReservationUpdate, Snapshot, SnapshotCreate, SnapshotPostAccessrights, SnapshotServices, SnapshotUpdate, Vault, VaultCreate, VaultCreateCredential, VaultCreateCredentialCertificate, VaultCreateCredentialPassword, VaultPatchCredentialcertificateId, VaultPatchCredentialpasswordId, VaultPostAccessrights, VaultPostCredentialcertificate, VaultPostCredentialpassword, VaultServices, VaultUpdate, Vm, VmActionImage, VmActionPasswordReset, VmCreate, VmCreateDisk, VmCreateNetadp, VmCreatePassword, VmData, VmPostAccessrights, VmPostHdd, VmPostNetadp, VmServices, VmSourceImage, VmUpdate, Vmhost, VmhostActionMoveDisk, VmhostActionMoveISO, VmhostActionMoveImage, VmhostActionMoveVM, VmhostPostAccessrights, VmhostServices, VmhostUpdate, VmhostUpdateEnabledServices, ContainerApi, DiskApi, FirewallApi, ImageApi, IpApi, IsoApi, LogArchiveApi, NetadpApi, NetgwApi, NetworkApi, OrganisationApi, ProjectApi, ReplicaApi, ReservationApi, SnapshotApi, VaultApi, VmApi, VmhostApi) {
   'use strict';
 
   /**
@@ -67,25 +67,40 @@
      */
     Container: Container,
     /**
-     * The ContainerExpose model constructor.
-     * @property {module:model/ContainerExpose}
+     * The ContainerCreate model constructor.
+     * @property {module:model/ContainerCreate}
      */
-    ContainerExpose: ContainerExpose,
+    ContainerCreate: ContainerCreate,
     /**
-     * The ContainerRegistry model constructor.
-     * @property {module:model/ContainerRegistry}
+     * The ContainerCreateExpose model constructor.
+     * @property {module:model/ContainerCreateExpose}
      */
-    ContainerRegistry: ContainerRegistry,
+    ContainerCreateExpose: ContainerCreateExpose,
+    /**
+     * The ContainerCreateRegistry model constructor.
+     * @property {module:model/ContainerCreateRegistry}
+     */
+    ContainerCreateRegistry: ContainerCreateRegistry,
+    /**
+     * The ContainerCreateVolumes model constructor.
+     * @property {module:model/ContainerCreateVolumes}
+     */
+    ContainerCreateVolumes: ContainerCreateVolumes,
+    /**
+     * The ContainerPostAccessrights model constructor.
+     * @property {module:model/ContainerPostAccessrights}
+     */
+    ContainerPostAccessrights: ContainerPostAccessrights,
     /**
      * The ContainerServices model constructor.
      * @property {module:model/ContainerServices}
      */
     ContainerServices: ContainerServices,
     /**
-     * The ContainerVolumes model constructor.
-     * @property {module:model/ContainerVolumes}
+     * The ContainerUpdate model constructor.
+     * @property {module:model/ContainerUpdate}
      */
-    ContainerVolumes: ContainerVolumes,
+    ContainerUpdate: ContainerUpdate,
     /**
      * The CredentialCertificate model constructor.
      * @property {module:model/CredentialCertificate}
@@ -102,25 +117,45 @@
      */
     Disk: Disk,
     /**
+     * The DiskActionTransfer model constructor.
+     * @property {module:model/DiskActionTransfer}
+     */
+    DiskActionTransfer: DiskActionTransfer,
+    /**
+     * The DiskCreate model constructor.
+     * @property {module:model/DiskCreate}
+     */
+    DiskCreate: DiskCreate,
+    /**
+     * The DiskCreateMetadata model constructor.
+     * @property {module:model/DiskCreateMetadata}
+     */
+    DiskCreateMetadata: DiskCreateMetadata,
+    /**
+     * The DiskCreateMetadataSource model constructor.
+     * @property {module:model/DiskCreateMetadataSource}
+     */
+    DiskCreateMetadataSource: DiskCreateMetadataSource,
+    /**
      * The DiskMetadata model constructor.
      * @property {module:model/DiskMetadata}
      */
     DiskMetadata: DiskMetadata,
     /**
-     * The DiskMetadata1 model constructor.
-     * @property {module:model/DiskMetadata1}
+     * The DiskPostAccessrights model constructor.
+     * @property {module:model/DiskPostAccessrights}
      */
-    DiskMetadata1: DiskMetadata1,
-    /**
-     * The DiskMetadataSource model constructor.
-     * @property {module:model/DiskMetadataSource}
-     */
-    DiskMetadataSource: DiskMetadataSource,
+    DiskPostAccessrights: DiskPostAccessrights,
     /**
      * The DiskServices model constructor.
      * @property {module:model/DiskServices}
      */
     DiskServices: DiskServices,
+    /**
+     * The DiskUpdate model constructor.
+     * @property {module:model/DiskUpdate}
+     */
+    DiskUpdate: DiskUpdate,
     /**
      * The Event model constructor.
      * @property {module:model/Event}
@@ -137,10 +172,40 @@
      */
     Firewall: Firewall,
     /**
+     * The FirewallActionTransfer model constructor.
+     * @property {module:model/FirewallActionTransfer}
+     */
+    FirewallActionTransfer: FirewallActionTransfer,
+    /**
+     * The FirewallCreate model constructor.
+     * @property {module:model/FirewallCreate}
+     */
+    FirewallCreate: FirewallCreate,
+    /**
+     * The FirewallPostAccessrights model constructor.
+     * @property {module:model/FirewallPostAccessrights}
+     */
+    FirewallPostAccessrights: FirewallPostAccessrights,
+    /**
+     * The FirewallPostEgress model constructor.
+     * @property {module:model/FirewallPostEgress}
+     */
+    FirewallPostEgress: FirewallPostEgress,
+    /**
+     * The FirewallPostIngress model constructor.
+     * @property {module:model/FirewallPostIngress}
+     */
+    FirewallPostIngress: FirewallPostIngress,
+    /**
      * The FirewallServices model constructor.
      * @property {module:model/FirewallServices}
      */
     FirewallServices: FirewallServices,
+    /**
+     * The FirewallUpdate model constructor.
+     * @property {module:model/FirewallUpdate}
+     */
+    FirewallUpdate: FirewallUpdate,
     /**
      * The Hdd model constructor.
      * @property {module:model/Hdd}
@@ -157,6 +222,16 @@
      */
     Image: Image,
     /**
+     * The ImageActionTransfer model constructor.
+     * @property {module:model/ImageActionTransfer}
+     */
+    ImageActionTransfer: ImageActionTransfer,
+    /**
+     * The ImageCreate model constructor.
+     * @property {module:model/ImageCreate}
+     */
+    ImageCreate: ImageCreate,
+    /**
      * The ImageDisks model constructor.
      * @property {module:model/ImageDisks}
      */
@@ -167,400 +242,25 @@
      */
     ImageDisksDisk: ImageDisksDisk,
     /**
+     * The ImagePostAccessrights model constructor.
+     * @property {module:model/ImagePostAccessrights}
+     */
+    ImagePostAccessrights: ImagePostAccessrights,
+    /**
      * The ImageServices model constructor.
      * @property {module:model/ImageServices}
      */
     ImageServices: ImageServices,
     /**
+     * The ImageUpdate model constructor.
+     * @property {module:model/ImageUpdate}
+     */
+    ImageUpdate: ImageUpdate,
+    /**
      * The ImageVm model constructor.
      * @property {module:model/ImageVm}
      */
     ImageVm: ImageVm,
-    /**
-     * The InlineObject model constructor.
-     * @property {module:model/InlineObject}
-     */
-    InlineObject: InlineObject,
-    /**
-     * The InlineObject1 model constructor.
-     * @property {module:model/InlineObject1}
-     */
-    InlineObject1: InlineObject1,
-    /**
-     * The InlineObject10 model constructor.
-     * @property {module:model/InlineObject10}
-     */
-    InlineObject10: InlineObject10,
-    /**
-     * The InlineObject11 model constructor.
-     * @property {module:model/InlineObject11}
-     */
-    InlineObject11: InlineObject11,
-    /**
-     * The InlineObject12 model constructor.
-     * @property {module:model/InlineObject12}
-     */
-    InlineObject12: InlineObject12,
-    /**
-     * The InlineObject13 model constructor.
-     * @property {module:model/InlineObject13}
-     */
-    InlineObject13: InlineObject13,
-    /**
-     * The InlineObject14 model constructor.
-     * @property {module:model/InlineObject14}
-     */
-    InlineObject14: InlineObject14,
-    /**
-     * The InlineObject15 model constructor.
-     * @property {module:model/InlineObject15}
-     */
-    InlineObject15: InlineObject15,
-    /**
-     * The InlineObject16 model constructor.
-     * @property {module:model/InlineObject16}
-     */
-    InlineObject16: InlineObject16,
-    /**
-     * The InlineObject17 model constructor.
-     * @property {module:model/InlineObject17}
-     */
-    InlineObject17: InlineObject17,
-    /**
-     * The InlineObject18 model constructor.
-     * @property {module:model/InlineObject18}
-     */
-    InlineObject18: InlineObject18,
-    /**
-     * The InlineObject19 model constructor.
-     * @property {module:model/InlineObject19}
-     */
-    InlineObject19: InlineObject19,
-    /**
-     * The InlineObject2 model constructor.
-     * @property {module:model/InlineObject2}
-     */
-    InlineObject2: InlineObject2,
-    /**
-     * The InlineObject20 model constructor.
-     * @property {module:model/InlineObject20}
-     */
-    InlineObject20: InlineObject20,
-    /**
-     * The InlineObject21 model constructor.
-     * @property {module:model/InlineObject21}
-     */
-    InlineObject21: InlineObject21,
-    /**
-     * The InlineObject22 model constructor.
-     * @property {module:model/InlineObject22}
-     */
-    InlineObject22: InlineObject22,
-    /**
-     * The InlineObject23 model constructor.
-     * @property {module:model/InlineObject23}
-     */
-    InlineObject23: InlineObject23,
-    /**
-     * The InlineObject24 model constructor.
-     * @property {module:model/InlineObject24}
-     */
-    InlineObject24: InlineObject24,
-    /**
-     * The InlineObject25 model constructor.
-     * @property {module:model/InlineObject25}
-     */
-    InlineObject25: InlineObject25,
-    /**
-     * The InlineObject26 model constructor.
-     * @property {module:model/InlineObject26}
-     */
-    InlineObject26: InlineObject26,
-    /**
-     * The InlineObject27 model constructor.
-     * @property {module:model/InlineObject27}
-     */
-    InlineObject27: InlineObject27,
-    /**
-     * The InlineObject28 model constructor.
-     * @property {module:model/InlineObject28}
-     */
-    InlineObject28: InlineObject28,
-    /**
-     * The InlineObject29 model constructor.
-     * @property {module:model/InlineObject29}
-     */
-    InlineObject29: InlineObject29,
-    /**
-     * The InlineObject3 model constructor.
-     * @property {module:model/InlineObject3}
-     */
-    InlineObject3: InlineObject3,
-    /**
-     * The InlineObject30 model constructor.
-     * @property {module:model/InlineObject30}
-     */
-    InlineObject30: InlineObject30,
-    /**
-     * The InlineObject31 model constructor.
-     * @property {module:model/InlineObject31}
-     */
-    InlineObject31: InlineObject31,
-    /**
-     * The InlineObject32 model constructor.
-     * @property {module:model/InlineObject32}
-     */
-    InlineObject32: InlineObject32,
-    /**
-     * The InlineObject33 model constructor.
-     * @property {module:model/InlineObject33}
-     */
-    InlineObject33: InlineObject33,
-    /**
-     * The InlineObject34 model constructor.
-     * @property {module:model/InlineObject34}
-     */
-    InlineObject34: InlineObject34,
-    /**
-     * The InlineObject35 model constructor.
-     * @property {module:model/InlineObject35}
-     */
-    InlineObject35: InlineObject35,
-    /**
-     * The InlineObject36 model constructor.
-     * @property {module:model/InlineObject36}
-     */
-    InlineObject36: InlineObject36,
-    /**
-     * The InlineObject37 model constructor.
-     * @property {module:model/InlineObject37}
-     */
-    InlineObject37: InlineObject37,
-    /**
-     * The InlineObject38 model constructor.
-     * @property {module:model/InlineObject38}
-     */
-    InlineObject38: InlineObject38,
-    /**
-     * The InlineObject39 model constructor.
-     * @property {module:model/InlineObject39}
-     */
-    InlineObject39: InlineObject39,
-    /**
-     * The InlineObject4 model constructor.
-     * @property {module:model/InlineObject4}
-     */
-    InlineObject4: InlineObject4,
-    /**
-     * The InlineObject40 model constructor.
-     * @property {module:model/InlineObject40}
-     */
-    InlineObject40: InlineObject40,
-    /**
-     * The InlineObject41 model constructor.
-     * @property {module:model/InlineObject41}
-     */
-    InlineObject41: InlineObject41,
-    /**
-     * The InlineObject42 model constructor.
-     * @property {module:model/InlineObject42}
-     */
-    InlineObject42: InlineObject42,
-    /**
-     * The InlineObject43 model constructor.
-     * @property {module:model/InlineObject43}
-     */
-    InlineObject43: InlineObject43,
-    /**
-     * The InlineObject44 model constructor.
-     * @property {module:model/InlineObject44}
-     */
-    InlineObject44: InlineObject44,
-    /**
-     * The InlineObject45 model constructor.
-     * @property {module:model/InlineObject45}
-     */
-    InlineObject45: InlineObject45,
-    /**
-     * The InlineObject46 model constructor.
-     * @property {module:model/InlineObject46}
-     */
-    InlineObject46: InlineObject46,
-    /**
-     * The InlineObject47 model constructor.
-     * @property {module:model/InlineObject47}
-     */
-    InlineObject47: InlineObject47,
-    /**
-     * The InlineObject48 model constructor.
-     * @property {module:model/InlineObject48}
-     */
-    InlineObject48: InlineObject48,
-    /**
-     * The InlineObject49 model constructor.
-     * @property {module:model/InlineObject49}
-     */
-    InlineObject49: InlineObject49,
-    /**
-     * The InlineObject5 model constructor.
-     * @property {module:model/InlineObject5}
-     */
-    InlineObject5: InlineObject5,
-    /**
-     * The InlineObject50 model constructor.
-     * @property {module:model/InlineObject50}
-     */
-    InlineObject50: InlineObject50,
-    /**
-     * The InlineObject51 model constructor.
-     * @property {module:model/InlineObject51}
-     */
-    InlineObject51: InlineObject51,
-    /**
-     * The InlineObject52 model constructor.
-     * @property {module:model/InlineObject52}
-     */
-    InlineObject52: InlineObject52,
-    /**
-     * The InlineObject53 model constructor.
-     * @property {module:model/InlineObject53}
-     */
-    InlineObject53: InlineObject53,
-    /**
-     * The InlineObject54 model constructor.
-     * @property {module:model/InlineObject54}
-     */
-    InlineObject54: InlineObject54,
-    /**
-     * The InlineObject55 model constructor.
-     * @property {module:model/InlineObject55}
-     */
-    InlineObject55: InlineObject55,
-    /**
-     * The InlineObject56 model constructor.
-     * @property {module:model/InlineObject56}
-     */
-    InlineObject56: InlineObject56,
-    /**
-     * The InlineObject57 model constructor.
-     * @property {module:model/InlineObject57}
-     */
-    InlineObject57: InlineObject57,
-    /**
-     * The InlineObject58 model constructor.
-     * @property {module:model/InlineObject58}
-     */
-    InlineObject58: InlineObject58,
-    /**
-     * The InlineObject59 model constructor.
-     * @property {module:model/InlineObject59}
-     */
-    InlineObject59: InlineObject59,
-    /**
-     * The InlineObject6 model constructor.
-     * @property {module:model/InlineObject6}
-     */
-    InlineObject6: InlineObject6,
-    /**
-     * The InlineObject60 model constructor.
-     * @property {module:model/InlineObject60}
-     */
-    InlineObject60: InlineObject60,
-    /**
-     * The InlineObject61 model constructor.
-     * @property {module:model/InlineObject61}
-     */
-    InlineObject61: InlineObject61,
-    /**
-     * The InlineObject62 model constructor.
-     * @property {module:model/InlineObject62}
-     */
-    InlineObject62: InlineObject62,
-    /**
-     * The InlineObject63 model constructor.
-     * @property {module:model/InlineObject63}
-     */
-    InlineObject63: InlineObject63,
-    /**
-     * The InlineObject64 model constructor.
-     * @property {module:model/InlineObject64}
-     */
-    InlineObject64: InlineObject64,
-    /**
-     * The InlineObject65 model constructor.
-     * @property {module:model/InlineObject65}
-     */
-    InlineObject65: InlineObject65,
-    /**
-     * The InlineObject66 model constructor.
-     * @property {module:model/InlineObject66}
-     */
-    InlineObject66: InlineObject66,
-    /**
-     * The InlineObject67 model constructor.
-     * @property {module:model/InlineObject67}
-     */
-    InlineObject67: InlineObject67,
-    /**
-     * The InlineObject68 model constructor.
-     * @property {module:model/InlineObject68}
-     */
-    InlineObject68: InlineObject68,
-    /**
-     * The InlineObject69 model constructor.
-     * @property {module:model/InlineObject69}
-     */
-    InlineObject69: InlineObject69,
-    /**
-     * The InlineObject7 model constructor.
-     * @property {module:model/InlineObject7}
-     */
-    InlineObject7: InlineObject7,
-    /**
-     * The InlineObject70 model constructor.
-     * @property {module:model/InlineObject70}
-     */
-    InlineObject70: InlineObject70,
-    /**
-     * The InlineObject71 model constructor.
-     * @property {module:model/InlineObject71}
-     */
-    InlineObject71: InlineObject71,
-    /**
-     * The InlineObject72 model constructor.
-     * @property {module:model/InlineObject72}
-     */
-    InlineObject72: InlineObject72,
-    /**
-     * The InlineObject73 model constructor.
-     * @property {module:model/InlineObject73}
-     */
-    InlineObject73: InlineObject73,
-    /**
-     * The InlineObject74 model constructor.
-     * @property {module:model/InlineObject74}
-     */
-    InlineObject74: InlineObject74,
-    /**
-     * The InlineObject75 model constructor.
-     * @property {module:model/InlineObject75}
-     */
-    InlineObject75: InlineObject75,
-    /**
-     * The InlineObject76 model constructor.
-     * @property {module:model/InlineObject76}
-     */
-    InlineObject76: InlineObject76,
-    /**
-     * The InlineObject8 model constructor.
-     * @property {module:model/InlineObject8}
-     */
-    InlineObject8: InlineObject8,
-    /**
-     * The InlineObject9 model constructor.
-     * @property {module:model/InlineObject9}
-     */
-    InlineObject9: InlineObject9,
     /**
      * The InlineResponse200 model constructor.
      * @property {module:model/InlineResponse200}
@@ -572,30 +272,110 @@
      */
     Ip: Ip,
     /**
+     * The IpActionTransfer model constructor.
+     * @property {module:model/IpActionTransfer}
+     */
+    IpActionTransfer: IpActionTransfer,
+    /**
+     * The IpCreate model constructor.
+     * @property {module:model/IpCreate}
+     */
+    IpCreate: IpCreate,
+    /**
+     * The IpPostAccessrights model constructor.
+     * @property {module:model/IpPostAccessrights}
+     */
+    IpPostAccessrights: IpPostAccessrights,
+    /**
      * The IpServices model constructor.
      * @property {module:model/IpServices}
      */
     IpServices: IpServices,
+    /**
+     * The IpUpdate model constructor.
+     * @property {module:model/IpUpdate}
+     */
+    IpUpdate: IpUpdate,
     /**
      * The Iso model constructor.
      * @property {module:model/Iso}
      */
     Iso: Iso,
     /**
+     * The IsoActionTransfer model constructor.
+     * @property {module:model/IsoActionTransfer}
+     */
+    IsoActionTransfer: IsoActionTransfer,
+    /**
+     * The IsoCreate model constructor.
+     * @property {module:model/IsoCreate}
+     */
+    IsoCreate: IsoCreate,
+    /**
+     * The IsoPostAccessrights model constructor.
+     * @property {module:model/IsoPostAccessrights}
+     */
+    IsoPostAccessrights: IsoPostAccessrights,
+    /**
      * The IsoServices model constructor.
      * @property {module:model/IsoServices}
      */
     IsoServices: IsoServices,
+    /**
+     * The IsoUpdate model constructor.
+     * @property {module:model/IsoUpdate}
+     */
+    IsoUpdate: IsoUpdate,
     /**
      * The LogArchive model constructor.
      * @property {module:model/LogArchive}
      */
     LogArchive: LogArchive,
     /**
+     * The LogArchiveActionTransfer model constructor.
+     * @property {module:model/LogArchiveActionTransfer}
+     */
+    LogArchiveActionTransfer: LogArchiveActionTransfer,
+    /**
+     * The LogArchiveCreate model constructor.
+     * @property {module:model/LogArchiveCreate}
+     */
+    LogArchiveCreate: LogArchiveCreate,
+    /**
+     * The LogArchivePatchCredentialcertificateId model constructor.
+     * @property {module:model/LogArchivePatchCredentialcertificateId}
+     */
+    LogArchivePatchCredentialcertificateId: LogArchivePatchCredentialcertificateId,
+    /**
+     * The LogArchivePatchCredentialpasswordId model constructor.
+     * @property {module:model/LogArchivePatchCredentialpasswordId}
+     */
+    LogArchivePatchCredentialpasswordId: LogArchivePatchCredentialpasswordId,
+    /**
+     * The LogArchivePostAccessrights model constructor.
+     * @property {module:model/LogArchivePostAccessrights}
+     */
+    LogArchivePostAccessrights: LogArchivePostAccessrights,
+    /**
+     * The LogArchivePostCredentialcertificate model constructor.
+     * @property {module:model/LogArchivePostCredentialcertificate}
+     */
+    LogArchivePostCredentialcertificate: LogArchivePostCredentialcertificate,
+    /**
+     * The LogArchivePostCredentialpassword model constructor.
+     * @property {module:model/LogArchivePostCredentialpassword}
+     */
+    LogArchivePostCredentialpassword: LogArchivePostCredentialpassword,
+    /**
      * The LogArchiveServices model constructor.
      * @property {module:model/LogArchiveServices}
      */
     LogArchiveServices: LogArchiveServices,
+    /**
+     * The LogArchiveUpdate model constructor.
+     * @property {module:model/LogArchiveUpdate}
+     */
+    LogArchiveUpdate: LogArchiveUpdate,
     /**
      * The Netadp model constructor.
      * @property {module:model/Netadp}
@@ -607,6 +387,11 @@
      */
     NetadpAssigned: NetadpAssigned,
     /**
+     * The NetadpPostAccessrights model constructor.
+     * @property {module:model/NetadpPostAccessrights}
+     */
+    NetadpPostAccessrights: NetadpPostAccessrights,
+    /**
      * The NetadpServices model constructor.
      * @property {module:model/NetadpServices}
      */
@@ -617,10 +402,25 @@
      */
     Netgw: Netgw,
     /**
+     * The NetgwCreate model constructor.
+     * @property {module:model/NetgwCreate}
+     */
+    NetgwCreate: NetgwCreate,
+    /**
+     * The NetgwCreatePublic model constructor.
+     * @property {module:model/NetgwCreatePublic}
+     */
+    NetgwCreatePublic: NetgwCreatePublic,
+    /**
      * The NetgwNetwork model constructor.
      * @property {module:model/NetgwNetwork}
      */
     NetgwNetwork: NetgwNetwork,
+    /**
+     * The NetgwPostAccessrights model constructor.
+     * @property {module:model/NetgwPostAccessrights}
+     */
+    NetgwPostAccessrights: NetgwPostAccessrights,
     /**
      * The NetgwPrimaryIP model constructor.
      * @property {module:model/NetgwPrimaryIP}
@@ -637,15 +437,15 @@
      */
     NetgwPrimaryIPMac: NetgwPrimaryIPMac,
     /**
-     * The NetgwPublic model constructor.
-     * @property {module:model/NetgwPublic}
-     */
-    NetgwPublic: NetgwPublic,
-    /**
      * The NetgwServices model constructor.
      * @property {module:model/NetgwServices}
      */
     NetgwServices: NetgwServices,
+    /**
+     * The NetgwUpdate model constructor.
+     * @property {module:model/NetgwUpdate}
+     */
+    NetgwUpdate: NetgwUpdate,
     /**
      * The NetgwVpn model constructor.
      * @property {module:model/NetgwVpn}
@@ -667,15 +467,35 @@
      */
     Network: Network,
     /**
+     * The NetworkCreate model constructor.
+     * @property {module:model/NetworkCreate}
+     */
+    NetworkCreate: NetworkCreate,
+    /**
      * The NetworkDns model constructor.
      * @property {module:model/NetworkDns}
      */
     NetworkDns: NetworkDns,
     /**
+     * The NetworkPostAccessrights model constructor.
+     * @property {module:model/NetworkPostAccessrights}
+     */
+    NetworkPostAccessrights: NetworkPostAccessrights,
+    /**
+     * The NetworkPostIp model constructor.
+     * @property {module:model/NetworkPostIp}
+     */
+    NetworkPostIp: NetworkPostIp,
+    /**
      * The NetworkServices model constructor.
      * @property {module:model/NetworkServices}
      */
     NetworkServices: NetworkServices,
+    /**
+     * The NetworkUpdate model constructor.
+     * @property {module:model/NetworkUpdate}
+     */
+    NetworkUpdate: NetworkUpdate,
     /**
      * The Organisation model constructor.
      * @property {module:model/Organisation}
@@ -687,20 +507,35 @@
      */
     OrganisationAccessRights: OrganisationAccessRights,
     /**
+     * The OrganisationActionTransferAccept model constructor.
+     * @property {module:model/OrganisationActionTransferAccept}
+     */
+    OrganisationActionTransferAccept: OrganisationActionTransferAccept,
+    /**
      * The OrganisationBilling model constructor.
      * @property {module:model/OrganisationBilling}
      */
     OrganisationBilling: OrganisationBilling,
     /**
-     * The OrganisationBilling1 model constructor.
-     * @property {module:model/OrganisationBilling1}
+     * The OrganisationCreate model constructor.
+     * @property {module:model/OrganisationCreate}
      */
-    OrganisationBilling1: OrganisationBilling1,
+    OrganisationCreate: OrganisationCreate,
     /**
-     * The OrganisationBillingAddress model constructor.
-     * @property {module:model/OrganisationBillingAddress}
+     * The OrganisationCreateAccessRights model constructor.
+     * @property {module:model/OrganisationCreateAccessRights}
      */
-    OrganisationBillingAddress: OrganisationBillingAddress,
+    OrganisationCreateAccessRights: OrganisationCreateAccessRights,
+    /**
+     * The OrganisationCreateBilling model constructor.
+     * @property {module:model/OrganisationCreateBilling}
+     */
+    OrganisationCreateBilling: OrganisationCreateBilling,
+    /**
+     * The OrganisationCreateBillingAddress model constructor.
+     * @property {module:model/OrganisationCreateBillingAddress}
+     */
+    OrganisationCreateBillingAddress: OrganisationCreateBillingAddress,
     /**
      * The OrganisationLimit model constructor.
      * @property {module:model/OrganisationLimit}
@@ -712,20 +547,30 @@
      */
     OrganisationLimitOrganisation: OrganisationLimitOrganisation,
     /**
+     * The OrganisationPostAccessrights model constructor.
+     * @property {module:model/OrganisationPostAccessrights}
+     */
+    OrganisationPostAccessrights: OrganisationPostAccessrights,
+    /**
      * The OrganisationTransfer model constructor.
      * @property {module:model/OrganisationTransfer}
      */
     OrganisationTransfer: OrganisationTransfer,
     /**
-     * The OrganisationorganisationIdBilling model constructor.
-     * @property {module:model/OrganisationorganisationIdBilling}
+     * The OrganisationUpdate model constructor.
+     * @property {module:model/OrganisationUpdate}
      */
-    OrganisationorganisationIdBilling: OrganisationorganisationIdBilling,
+    OrganisationUpdate: OrganisationUpdate,
     /**
-     * The OrganisationorganisationIdBillingAddress model constructor.
-     * @property {module:model/OrganisationorganisationIdBillingAddress}
+     * The OrganisationUpdateBilling model constructor.
+     * @property {module:model/OrganisationUpdateBilling}
      */
-    OrganisationorganisationIdBillingAddress: OrganisationorganisationIdBillingAddress,
+    OrganisationUpdateBilling: OrganisationUpdateBilling,
+    /**
+     * The OrganisationUpdateBillingAddress model constructor.
+     * @property {module:model/OrganisationUpdateBillingAddress}
+     */
+    OrganisationUpdateBillingAddress: OrganisationUpdateBillingAddress,
     /**
      * The Project model constructor.
      * @property {module:model/Project}
@@ -742,11 +587,6 @@
      */
     ProjectAccessRights: ProjectAccessRights,
     /**
-     * The ProjectAccessRights1 model constructor.
-     * @property {module:model/ProjectAccessRights1}
-     */
-    ProjectAccessRights1: ProjectAccessRights1,
-    /**
      * The ProjectBilling model constructor.
      * @property {module:model/ProjectBilling}
      */
@@ -756,6 +596,16 @@
      * @property {module:model/ProjectCompliance}
      */
     ProjectCompliance: ProjectCompliance,
+    /**
+     * The ProjectCreate model constructor.
+     * @property {module:model/ProjectCreate}
+     */
+    ProjectCreate: ProjectCreate,
+    /**
+     * The ProjectCreateAccessRights model constructor.
+     * @property {module:model/ProjectCreateAccessRights}
+     */
+    ProjectCreateAccessRights: ProjectCreateAccessRights,
     /**
      * The ProjectInvoices model constructor.
      * @property {module:model/ProjectInvoices}
@@ -802,6 +652,11 @@
      */
     ProjectPayments: ProjectPayments,
     /**
+     * The ProjectPostAccessrights model constructor.
+     * @property {module:model/ProjectPostAccessrights}
+     */
+    ProjectPostAccessrights: ProjectPostAccessrights,
+    /**
      * The ProjectRoles model constructor.
      * @property {module:model/ProjectRoles}
      */
@@ -827,10 +682,30 @@
      */
     ProjectTransfer: ProjectTransfer,
     /**
+     * The ProjectUpdate model constructor.
+     * @property {module:model/ProjectUpdate}
+     */
+    ProjectUpdate: ProjectUpdate,
+    /**
      * The Replica model constructor.
      * @property {module:model/Replica}
      */
     Replica: Replica,
+    /**
+     * The ReplicaActionImage model constructor.
+     * @property {module:model/ReplicaActionImage}
+     */
+    ReplicaActionImage: ReplicaActionImage,
+    /**
+     * The ReplicaCreate model constructor.
+     * @property {module:model/ReplicaCreate}
+     */
+    ReplicaCreate: ReplicaCreate,
+    /**
+     * The ReplicaPostAccessrights model constructor.
+     * @property {module:model/ReplicaPostAccessrights}
+     */
+    ReplicaPostAccessrights: ReplicaPostAccessrights,
     /**
      * The ReplicaServices model constructor.
      * @property {module:model/ReplicaServices}
@@ -842,80 +717,165 @@
      */
     Reservation: Reservation,
     /**
+     * The ReservationCreate model constructor.
+     * @property {module:model/ReservationCreate}
+     */
+    ReservationCreate: ReservationCreate,
+    /**
+     * The ReservationPostAccessrights model constructor.
+     * @property {module:model/ReservationPostAccessrights}
+     */
+    ReservationPostAccessrights: ReservationPostAccessrights,
+    /**
      * The ReservationServices model constructor.
      * @property {module:model/ReservationServices}
      */
     ReservationServices: ReservationServices,
+    /**
+     * The ReservationUpdate model constructor.
+     * @property {module:model/ReservationUpdate}
+     */
+    ReservationUpdate: ReservationUpdate,
     /**
      * The Snapshot model constructor.
      * @property {module:model/Snapshot}
      */
     Snapshot: Snapshot,
     /**
+     * The SnapshotCreate model constructor.
+     * @property {module:model/SnapshotCreate}
+     */
+    SnapshotCreate: SnapshotCreate,
+    /**
+     * The SnapshotPostAccessrights model constructor.
+     * @property {module:model/SnapshotPostAccessrights}
+     */
+    SnapshotPostAccessrights: SnapshotPostAccessrights,
+    /**
      * The SnapshotServices model constructor.
      * @property {module:model/SnapshotServices}
      */
     SnapshotServices: SnapshotServices,
+    /**
+     * The SnapshotUpdate model constructor.
+     * @property {module:model/SnapshotUpdate}
+     */
+    SnapshotUpdate: SnapshotUpdate,
     /**
      * The Vault model constructor.
      * @property {module:model/Vault}
      */
     Vault: Vault,
     /**
-     * The VaultCredential model constructor.
-     * @property {module:model/VaultCredential}
+     * The VaultCreate model constructor.
+     * @property {module:model/VaultCreate}
      */
-    VaultCredential: VaultCredential,
+    VaultCreate: VaultCreate,
     /**
-     * The VaultCredential1 model constructor.
-     * @property {module:model/VaultCredential1}
+     * The VaultCreateCredential model constructor.
+     * @property {module:model/VaultCreateCredential}
      */
-    VaultCredential1: VaultCredential1,
+    VaultCreateCredential: VaultCreateCredential,
     /**
-     * The VaultCredential1Password model constructor.
-     * @property {module:model/VaultCredential1Password}
+     * The VaultCreateCredentialCertificate model constructor.
+     * @property {module:model/VaultCreateCredentialCertificate}
      */
-    VaultCredential1Password: VaultCredential1Password,
+    VaultCreateCredentialCertificate: VaultCreateCredentialCertificate,
     /**
-     * The VaultCredentialCertificate model constructor.
-     * @property {module:model/VaultCredentialCertificate}
+     * The VaultCreateCredentialPassword model constructor.
+     * @property {module:model/VaultCreateCredentialPassword}
      */
-    VaultCredentialCertificate: VaultCredentialCertificate,
+    VaultCreateCredentialPassword: VaultCreateCredentialPassword,
     /**
-     * The VaultCredentialPassword model constructor.
-     * @property {module:model/VaultCredentialPassword}
+     * The VaultPatchCredentialcertificateId model constructor.
+     * @property {module:model/VaultPatchCredentialcertificateId}
      */
-    VaultCredentialPassword: VaultCredentialPassword,
+    VaultPatchCredentialcertificateId: VaultPatchCredentialcertificateId,
+    /**
+     * The VaultPatchCredentialpasswordId model constructor.
+     * @property {module:model/VaultPatchCredentialpasswordId}
+     */
+    VaultPatchCredentialpasswordId: VaultPatchCredentialpasswordId,
+    /**
+     * The VaultPostAccessrights model constructor.
+     * @property {module:model/VaultPostAccessrights}
+     */
+    VaultPostAccessrights: VaultPostAccessrights,
+    /**
+     * The VaultPostCredentialcertificate model constructor.
+     * @property {module:model/VaultPostCredentialcertificate}
+     */
+    VaultPostCredentialcertificate: VaultPostCredentialcertificate,
+    /**
+     * The VaultPostCredentialpassword model constructor.
+     * @property {module:model/VaultPostCredentialpassword}
+     */
+    VaultPostCredentialpassword: VaultPostCredentialpassword,
     /**
      * The VaultServices model constructor.
      * @property {module:model/VaultServices}
      */
     VaultServices: VaultServices,
     /**
+     * The VaultUpdate model constructor.
+     * @property {module:model/VaultUpdate}
+     */
+    VaultUpdate: VaultUpdate,
+    /**
      * The Vm model constructor.
      * @property {module:model/Vm}
      */
     Vm: Vm,
+    /**
+     * The VmActionImage model constructor.
+     * @property {module:model/VmActionImage}
+     */
+    VmActionImage: VmActionImage,
+    /**
+     * The VmActionPasswordReset model constructor.
+     * @property {module:model/VmActionPasswordReset}
+     */
+    VmActionPasswordReset: VmActionPasswordReset,
+    /**
+     * The VmCreate model constructor.
+     * @property {module:model/VmCreate}
+     */
+    VmCreate: VmCreate,
+    /**
+     * The VmCreateDisk model constructor.
+     * @property {module:model/VmCreateDisk}
+     */
+    VmCreateDisk: VmCreateDisk,
+    /**
+     * The VmCreateNetadp model constructor.
+     * @property {module:model/VmCreateNetadp}
+     */
+    VmCreateNetadp: VmCreateNetadp,
+    /**
+     * The VmCreatePassword model constructor.
+     * @property {module:model/VmCreatePassword}
+     */
+    VmCreatePassword: VmCreatePassword,
     /**
      * The VmData model constructor.
      * @property {module:model/VmData}
      */
     VmData: VmData,
     /**
-     * The VmDisk model constructor.
-     * @property {module:model/VmDisk}
+     * The VmPostAccessrights model constructor.
+     * @property {module:model/VmPostAccessrights}
      */
-    VmDisk: VmDisk,
+    VmPostAccessrights: VmPostAccessrights,
     /**
-     * The VmNetadp model constructor.
-     * @property {module:model/VmNetadp}
+     * The VmPostHdd model constructor.
+     * @property {module:model/VmPostHdd}
      */
-    VmNetadp: VmNetadp,
+    VmPostHdd: VmPostHdd,
     /**
-     * The VmPassword model constructor.
-     * @property {module:model/VmPassword}
+     * The VmPostNetadp model constructor.
+     * @property {module:model/VmPostNetadp}
      */
-    VmPassword: VmPassword,
+    VmPostNetadp: VmPostNetadp,
     /**
      * The VmServices model constructor.
      * @property {module:model/VmServices}
@@ -927,20 +887,55 @@
      */
     VmSourceImage: VmSourceImage,
     /**
+     * The VmUpdate model constructor.
+     * @property {module:model/VmUpdate}
+     */
+    VmUpdate: VmUpdate,
+    /**
      * The Vmhost model constructor.
      * @property {module:model/Vmhost}
      */
     Vmhost: Vmhost,
+    /**
+     * The VmhostActionMoveDisk model constructor.
+     * @property {module:model/VmhostActionMoveDisk}
+     */
+    VmhostActionMoveDisk: VmhostActionMoveDisk,
+    /**
+     * The VmhostActionMoveISO model constructor.
+     * @property {module:model/VmhostActionMoveISO}
+     */
+    VmhostActionMoveISO: VmhostActionMoveISO,
+    /**
+     * The VmhostActionMoveImage model constructor.
+     * @property {module:model/VmhostActionMoveImage}
+     */
+    VmhostActionMoveImage: VmhostActionMoveImage,
+    /**
+     * The VmhostActionMoveVM model constructor.
+     * @property {module:model/VmhostActionMoveVM}
+     */
+    VmhostActionMoveVM: VmhostActionMoveVM,
+    /**
+     * The VmhostPostAccessrights model constructor.
+     * @property {module:model/VmhostPostAccessrights}
+     */
+    VmhostPostAccessrights: VmhostPostAccessrights,
     /**
      * The VmhostServices model constructor.
      * @property {module:model/VmhostServices}
      */
     VmhostServices: VmhostServices,
     /**
-     * The VmhostvmhostIdEnabledServices model constructor.
-     * @property {module:model/VmhostvmhostIdEnabledServices}
+     * The VmhostUpdate model constructor.
+     * @property {module:model/VmhostUpdate}
      */
-    VmhostvmhostIdEnabledServices: VmhostvmhostIdEnabledServices,
+    VmhostUpdate: VmhostUpdate,
+    /**
+     * The VmhostUpdateEnabledServices model constructor.
+     * @property {module:model/VmhostUpdateEnabledServices}
+     */
+    VmhostUpdateEnabledServices: VmhostUpdateEnabledServices,
     /**
      * The ContainerApi service constructor.
      * @property {module:api/ContainerApi}

@@ -4,23 +4,23 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**actionOrganisationTransferAccept**](OrganisationApi.md#actionOrganisationTransferAccept) | **POST** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
-[**createOrganisation**](OrganisationApi.md#createOrganisation) | **POST** /organisation | Create
-[**listOrganisation**](OrganisationApi.md#listOrganisation) | **GET** /organisation | List
-[**operationOrganisationDeleteaccessrightsIdentity**](OrganisationApi.md#operationOrganisationDeleteaccessrightsIdentity) | **DELETE** /organisation/{organisationId}/accessrights/{identity} | /accessrights/:identity
-[**operationOrganisationDeletetagKey**](OrganisationApi.md#operationOrganisationDeletetagKey) | **DELETE** /organisation/{organisationId}/tag/{key} | /tag/:key
-[**operationOrganisationGettag**](OrganisationApi.md#operationOrganisationGettag) | **GET** /organisation/{organisationId}/tag/ | /tag/
-[**operationOrganisationListaccessrights**](OrganisationApi.md#operationOrganisationListaccessrights) | **GET** /organisation/{organisationId}/accessrights/ | /accessrights/
-[**operationOrganisationListqueue**](OrganisationApi.md#operationOrganisationListqueue) | **GET** /organisation/{organisationId}/queue/ | /queue/
-[**operationOrganisationPatchtag**](OrganisationApi.md#operationOrganisationPatchtag) | **PATCH** /organisation/{organisationId}/tag/ | /tag/
-[**operationOrganisationPostaccessrights**](OrganisationApi.md#operationOrganisationPostaccessrights) | **POST** /organisation/{organisationId}/accessrights/ | /accessrights/
-[**showOrganisation**](OrganisationApi.md#showOrganisation) | **GET** /organisation/{organisationId} | Get
-[**updateOrganisation**](OrganisationApi.md#updateOrganisation) | **PATCH** /organisation/{organisationId} | Update
+[**organisationActionTransferAccept**](OrganisationApi.md#organisationActionTransferAccept) | **POST** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
+[**organisationCreate**](OrganisationApi.md#organisationCreate) | **POST** /organisation | Create
+[**organisationDeleteAccessrightsIdentity**](OrganisationApi.md#organisationDeleteAccessrightsIdentity) | **DELETE** /organisation/{organisationId}/accessrights/{identity} | /accessrights/:identity
+[**organisationDeleteTagKey**](OrganisationApi.md#organisationDeleteTagKey) | **DELETE** /organisation/{organisationId}/tag/{key} | /tag/:key
+[**organisationGetTag**](OrganisationApi.md#organisationGetTag) | **GET** /organisation/{organisationId}/tag | /tag
+[**organisationList**](OrganisationApi.md#organisationList) | **GET** /organisation | List
+[**organisationListAccessrights**](OrganisationApi.md#organisationListAccessrights) | **GET** /organisation/{organisationId}/accessrights | /accessrights
+[**organisationListQueue**](OrganisationApi.md#organisationListQueue) | **GET** /organisation/{organisationId}/queue | /queue
+[**organisationPatchTag**](OrganisationApi.md#organisationPatchTag) | **PATCH** /organisation/{organisationId}/tag | /tag
+[**organisationPostAccessrights**](OrganisationApi.md#organisationPostAccessrights) | **POST** /organisation/{organisationId}/accessrights | /accessrights
+[**organisationShow**](OrganisationApi.md#organisationShow) | **GET** /organisation/{organisationId} | Get
+[**organisationUpdate**](OrganisationApi.md#organisationUpdate) | **PATCH** /organisation/{organisationId} | Update
 
 
-<a name="actionOrganisationTransferAccept"></a>
-# **actionOrganisationTransferAccept**
-> Organisation actionOrganisationTransferAccept(organisationId, opts)
+<a name="organisationActionTransferAccept"></a>
+# **organisationActionTransferAccept**
+> Organisation organisationActionTransferAccept(organisationId, organisationActionTransferAccept)
 
 /actions/transfer_accept
 
@@ -48,10 +48,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var opts = {
-  'inlineObject5': new HyperOneApi.InlineObject5() // InlineObject5 | 
-};
-apiInstance.actionOrganisationTransferAccept(organisationId, opts).then(function(data) {
+var organisationActionTransferAccept = new HyperOneApi.OrganisationActionTransferAccept(); // OrganisationActionTransferAccept | 
+apiInstance.organisationActionTransferAccept(organisationId, organisationActionTransferAccept).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -64,7 +62,7 @@ apiInstance.actionOrganisationTransferAccept(organisationId, opts).then(function
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisationId** | **String**| ID of organisation | 
- **inlineObject5** | [**InlineObject5**](InlineObject5.md)|  | [optional] 
+ **organisationActionTransferAccept** | [**OrganisationActionTransferAccept**](OrganisationActionTransferAccept.md)|  | 
 
 ### Return type
 
@@ -79,9 +77,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="createOrganisation"></a>
-# **createOrganisation**
-> Organisation createOrganisation(opts)
+<a name="organisationCreate"></a>
+# **organisationCreate**
+> Organisation organisationCreate(organisationCreate)
 
 Create
 
@@ -108,10 +106,8 @@ Session.apiKey = 'YOUR API KEY';
 //Session.apiKeyPrefix = 'Token';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
-var opts = {
-  'inlineObject3': new HyperOneApi.InlineObject3() // InlineObject3 | 
-};
-apiInstance.createOrganisation(opts).then(function(data) {
+var organisationCreate = new HyperOneApi.OrganisationCreate(); // OrganisationCreate | 
+apiInstance.organisationCreate(organisationCreate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -123,7 +119,7 @@ apiInstance.createOrganisation(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inlineObject3** | [**InlineObject3**](InlineObject3.md)|  | [optional] 
+ **organisationCreate** | [**OrganisationCreate**](OrganisationCreate.md)|  | 
 
 ### Return type
 
@@ -138,9 +134,178 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="listOrganisation"></a>
-# **listOrganisation**
-> [Organisation] listOrganisation(opts)
+<a name="organisationDeleteAccessrightsIdentity"></a>
+# **organisationDeleteAccessrightsIdentity**
+> Organisation organisationDeleteAccessrightsIdentity(organisationId, identity)
+
+/accessrights/:identity
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.OrganisationApi();
+var organisationId = "organisationId_example"; // String | ID of organisation
+var identity = "identity_example"; // String | identity
+apiInstance.organisationDeleteAccessrightsIdentity(organisationId, identity).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organisationId** | **String**| ID of organisation | 
+ **identity** | **String**| identity | 
+
+### Return type
+
+[**Organisation**](Organisation.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="organisationDeleteTagKey"></a>
+# **organisationDeleteTagKey**
+> Object organisationDeleteTagKey(organisationId, key)
+
+/tag/:key
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.OrganisationApi();
+var organisationId = "organisationId_example"; // String | ID of organisation
+var key = "key_example"; // String | key
+apiInstance.organisationDeleteTagKey(organisationId, key).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organisationId** | **String**| ID of organisation | 
+ **key** | **String**| key | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="organisationGetTag"></a>
+# **organisationGetTag**
+> Object organisationGetTag(organisationId)
+
+/tag
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.OrganisationApi();
+var organisationId = "organisationId_example"; // String | ID of organisation
+apiInstance.organisationGetTag(organisationId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organisationId** | **String**| ID of organisation | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="organisationList"></a>
+# **organisationList**
+> [Organisation] organisationList(opts)
 
 List
 
@@ -173,7 +338,7 @@ var opts = {
   'limit': "limit_example", // String | Filter by $limit
   'active': "active_example" // String | Filter by active
 };
-apiInstance.listOrganisation(opts).then(function(data) {
+apiInstance.organisationList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -203,68 +368,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationOrganisationDeleteaccessrightsIdentity"></a>
-# **operationOrganisationDeleteaccessrightsIdentity**
-> Organisation operationOrganisationDeleteaccessrightsIdentity(organisationId, identity)
+<a name="organisationListAccessrights"></a>
+# **organisationListAccessrights**
+> [OrganisationAccessRights] organisationListAccessrights(organisationId)
 
-/accessrights/:identity
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.OrganisationApi();
-var organisationId = "organisationId_example"; // String | ID of organisation
-var identity = "identity_example"; // String | identity
-apiInstance.operationOrganisationDeleteaccessrightsIdentity(organisationId, identity).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organisationId** | **String**| ID of organisation | 
- **identity** | **String**| identity | 
-
-### Return type
-
-[**Organisation**](Organisation.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationOrganisationDeletetagKey"></a>
-# **operationOrganisationDeletetagKey**
-> {String: String} operationOrganisationDeletetagKey(organisationId, key)
-
-/tag/:key
+/accessrights
 
 ### Example
 ```javascript
@@ -288,119 +396,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var key = "key_example"; // String | key
-apiInstance.operationOrganisationDeletetagKey(organisationId, key).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organisationId** | **String**| ID of organisation | 
- **key** | **String**| key | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationOrganisationGettag"></a>
-# **operationOrganisationGettag**
-> {String: String} operationOrganisationGettag(organisationId)
-
-/tag/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.OrganisationApi();
-var organisationId = "organisationId_example"; // String | ID of organisation
-apiInstance.operationOrganisationGettag(organisationId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organisationId** | **String**| ID of organisation | 
-
-### Return type
-
-**{String: String}**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="operationOrganisationListaccessrights"></a>
-# **operationOrganisationListaccessrights**
-> [OrganisationAccessRights] operationOrganisationListaccessrights(organisationId)
-
-/accessrights/
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.OrganisationApi();
-var organisationId = "organisationId_example"; // String | ID of organisation
-apiInstance.operationOrganisationListaccessrights(organisationId).then(function(data) {
+apiInstance.organisationListAccessrights(organisationId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -427,11 +423,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationOrganisationListqueue"></a>
-# **operationOrganisationListqueue**
-> [Event] operationOrganisationListqueue(organisationId)
+<a name="organisationListQueue"></a>
+# **organisationListQueue**
+> [Event] organisationListQueue(organisationId)
 
-/queue/
+/queue
 
 ### Example
 ```javascript
@@ -455,7 +451,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-apiInstance.operationOrganisationListqueue(organisationId).then(function(data) {
+apiInstance.organisationListQueue(organisationId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -482,11 +478,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="operationOrganisationPatchtag"></a>
-# **operationOrganisationPatchtag**
-> {String: String} operationOrganisationPatchtag(organisationId, requestBody)
+<a name="organisationPatchTag"></a>
+# **organisationPatchTag**
+> Object organisationPatchTag(organisationId, body)
 
-/tag/
+/tag
 
 ### Example
 ```javascript
@@ -510,8 +506,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.operationOrganisationPatchtag(organisationId, requestBody).then(function(data) {
+var body = null; // Object | 
+apiInstance.organisationPatchTag(organisationId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -524,11 +520,11 @@ apiInstance.operationOrganisationPatchtag(organisationId, requestBody).then(func
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisationId** | **String**| ID of organisation | 
- **requestBody** | [**{String: String}**](String.md)|  | 
+ **body** | **Object**|  | 
 
 ### Return type
 
-**{String: String}**
+**Object**
 
 ### Authorization
 
@@ -539,11 +535,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="operationOrganisationPostaccessrights"></a>
-# **operationOrganisationPostaccessrights**
-> OrganisationAccessRights operationOrganisationPostaccessrights(organisationId, opts)
+<a name="organisationPostAccessrights"></a>
+# **organisationPostAccessrights**
+> OrganisationAccessRights organisationPostAccessrights(organisationId, organisationPostAccessrights)
 
-/accessrights/
+/accessrights
 
 ### Example
 ```javascript
@@ -567,10 +563,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var opts = {
-  'inlineObject6': new HyperOneApi.InlineObject6() // InlineObject6 | 
-};
-apiInstance.operationOrganisationPostaccessrights(organisationId, opts).then(function(data) {
+var organisationPostAccessrights = new HyperOneApi.OrganisationPostAccessrights(); // OrganisationPostAccessrights | 
+apiInstance.organisationPostAccessrights(organisationId, organisationPostAccessrights).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -583,7 +577,7 @@ apiInstance.operationOrganisationPostaccessrights(organisationId, opts).then(fun
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisationId** | **String**| ID of organisation | 
- **inlineObject6** | [**InlineObject6**](InlineObject6.md)|  | [optional] 
+ **organisationPostAccessrights** | [**OrganisationPostAccessrights**](OrganisationPostAccessrights.md)|  | 
 
 ### Return type
 
@@ -598,9 +592,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="showOrganisation"></a>
-# **showOrganisation**
-> Organisation showOrganisation(organisationId)
+<a name="organisationShow"></a>
+# **organisationShow**
+> Organisation organisationShow(organisationId)
 
 Get
 
@@ -628,7 +622,7 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-apiInstance.showOrganisation(organisationId).then(function(data) {
+apiInstance.organisationShow(organisationId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -655,9 +649,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateOrganisation"></a>
-# **updateOrganisation**
-> Organisation updateOrganisation(organisationId, opts)
+<a name="organisationUpdate"></a>
+# **organisationUpdate**
+> Organisation organisationUpdate(organisationId, organisationUpdate)
 
 Update
 
@@ -685,10 +679,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var opts = {
-  'inlineObject4': new HyperOneApi.InlineObject4() // InlineObject4 | 
-};
-apiInstance.updateOrganisation(organisationId, opts).then(function(data) {
+var organisationUpdate = new HyperOneApi.OrganisationUpdate(); // OrganisationUpdate | 
+apiInstance.organisationUpdate(organisationId, organisationUpdate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -701,7 +693,7 @@ apiInstance.updateOrganisation(organisationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisationId** | **String**| ID of organisation | 
- **inlineObject4** | [**InlineObject4**](InlineObject4.md)|  | [optional] 
+ **organisationUpdate** | [**OrganisationUpdate**](OrganisationUpdate.md)|  | 
 
 ### Return type
 

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Event', 'model/InlineObject60', 'model/InlineObject61', 'model/InlineObject62', 'model/InlineObject63', 'model/InlineObject64', 'model/InlineObject65', 'model/InlineObject66', 'model/InlineObject67', 'model/LogArchive', 'model/LogArchiveServices'], factory);
+    define(['ApiClient', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Event', 'model/LogArchive', 'model/LogArchiveActionTransfer', 'model/LogArchiveCreate', 'model/LogArchivePatchCredentialcertificateId', 'model/LogArchivePatchCredentialpasswordId', 'model/LogArchivePostAccessrights', 'model/LogArchivePostCredentialcertificate', 'model/LogArchivePostCredentialpassword', 'model/LogArchiveServices', 'model/LogArchiveUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CredentialCertificate'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/InlineObject60'), require('../model/InlineObject61'), require('../model/InlineObject62'), require('../model/InlineObject63'), require('../model/InlineObject64'), require('../model/InlineObject65'), require('../model/InlineObject66'), require('../model/InlineObject67'), require('../model/LogArchive'), require('../model/LogArchiveServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/CredentialCertificate'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/LogArchive'), require('../model/LogArchiveActionTransfer'), require('../model/LogArchiveCreate'), require('../model/LogArchivePatchCredentialcertificateId'), require('../model/LogArchivePatchCredentialpasswordId'), require('../model/LogArchivePostAccessrights'), require('../model/LogArchivePostCredentialcertificate'), require('../model/LogArchivePostCredentialpassword'), require('../model/LogArchiveServices'), require('../model/LogArchiveUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.LogArchiveApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.InlineObject60, root.HyperOneApi.InlineObject61, root.HyperOneApi.InlineObject62, root.HyperOneApi.InlineObject63, root.HyperOneApi.InlineObject64, root.HyperOneApi.InlineObject65, root.HyperOneApi.InlineObject66, root.HyperOneApi.InlineObject67, root.HyperOneApi.LogArchive, root.HyperOneApi.LogArchiveServices);
+    root.HyperOneApi.LogArchiveApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.LogArchive, root.HyperOneApi.LogArchiveActionTransfer, root.HyperOneApi.LogArchiveCreate, root.HyperOneApi.LogArchivePatchCredentialcertificateId, root.HyperOneApi.LogArchivePatchCredentialpasswordId, root.HyperOneApi.LogArchivePostAccessrights, root.HyperOneApi.LogArchivePostCredentialcertificate, root.HyperOneApi.LogArchivePostCredentialpassword, root.HyperOneApi.LogArchiveServices, root.HyperOneApi.LogArchiveUpdate);
   }
-}(this, function(ApiClient, CredentialCertificate, CredentialPassword, Event, InlineObject60, InlineObject61, InlineObject62, InlineObject63, InlineObject64, InlineObject65, InlineObject66, InlineObject67, LogArchive, LogArchiveServices) {
+}(this, function(ApiClient, CredentialCertificate, CredentialPassword, Event, LogArchive, LogArchiveActionTransfer, LogArchiveCreate, LogArchivePatchCredentialcertificateId, LogArchivePatchCredentialpasswordId, LogArchivePostAccessrights, LogArchivePostCredentialcertificate, LogArchivePostCredentialpassword, LogArchiveServices, LogArchiveUpdate) {
   'use strict';
 
   /**
@@ -52,17 +52,20 @@
      * /actions/transfer
      * Action transfer
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject62} opts.inlineObject62 
+     * @param {module:model/LogArchiveActionTransfer} logArchiveActionTransfer 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.actionLogArchiveTransferWithHttpInfo = function(logArchiveId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject62'];
+    this.logArchiveActionTransferWithHttpInfo = function(logArchiveId, logArchiveActionTransfer) {
+      var postBody = logArchiveActionTransfer;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling actionLogArchiveTransfer");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveActionTransfer");
+      }
+
+      // verify the required parameter 'logArchiveActionTransfer' is set
+      if (logArchiveActionTransfer === undefined || logArchiveActionTransfer === null) {
+        throw new Error("Missing the required parameter 'logArchiveActionTransfer' when calling logArchiveActionTransfer");
       }
 
 
@@ -94,12 +97,11 @@
      * /actions/transfer
      * Action transfer
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject62} opts.inlineObject62 
+     * @param {module:model/LogArchiveActionTransfer} logArchiveActionTransfer 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
-    this.actionLogArchiveTransfer = function(logArchiveId, opts) {
-      return this.actionLogArchiveTransferWithHttpInfo(logArchiveId, opts)
+    this.logArchiveActionTransfer = function(logArchiveId, logArchiveActionTransfer) {
+      return this.logArchiveActionTransferWithHttpInfo(logArchiveId, logArchiveActionTransfer)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -109,13 +111,16 @@
     /**
      * Create
      * Create logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject60} opts.inlineObject60 
+     * @param {module:model/LogArchiveCreate} logArchiveCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.createLogArchiveWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject60'];
+    this.logArchiveCreateWithHttpInfo = function(logArchiveCreate) {
+      var postBody = logArchiveCreate;
+
+      // verify the required parameter 'logArchiveCreate' is set
+      if (logArchiveCreate === undefined || logArchiveCreate === null) {
+        throw new Error("Missing the required parameter 'logArchiveCreate' when calling logArchiveCreate");
+      }
 
 
       var pathParams = {
@@ -144,12 +149,11 @@
     /**
      * Create
      * Create logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject60} opts.inlineObject60 
+     * @param {module:model/LogArchiveCreate} logArchiveCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
-    this.createLogArchive = function(opts) {
-      return this.createLogArchiveWithHttpInfo(opts)
+    this.logArchiveCreate = function(logArchiveCreate) {
+      return this.logArchiveCreateWithHttpInfo(logArchiveCreate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -161,12 +165,12 @@
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteLogArchiveWithHttpInfo = function(logArchiveId) {
+    this.logArchiveDeleteWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling deleteLogArchive");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveDelete");
       }
 
 
@@ -199,8 +203,472 @@
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteLogArchive = function(logArchiveId) {
-      return this.deleteLogArchiveWithHttpInfo(logArchiveId)
+    this.logArchiveDelete = function(logArchiveId) {
+      return this.logArchiveDeleteWithHttpInfo(logArchiveId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
+     */
+    this.logArchiveDeleteAccessrightsIdentityWithHttpInfo = function(logArchiveId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling logArchiveDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LogArchive;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
+     */
+    this.logArchiveDeleteAccessrightsIdentity = function(logArchiveId, identity) {
+      return this.logArchiveDeleteAccessrightsIdentityWithHttpInfo(logArchiveId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
+     */
+    this.logArchiveDeleteCredentialcertificateIdWithHttpInfo = function(logArchiveId, id) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveDeleteCredentialcertificateId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling logArchiveDeleteCredentialcertificateId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LogArchive;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/certificate/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
+     */
+    this.logArchiveDeleteCredentialcertificateId = function(logArchiveId, id) {
+      return this.logArchiveDeleteCredentialcertificateIdWithHttpInfo(logArchiveId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /credential/password/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
+     */
+    this.logArchiveDeleteCredentialpasswordIdWithHttpInfo = function(logArchiveId, id) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveDeleteCredentialpasswordId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling logArchiveDeleteCredentialpasswordId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LogArchive;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/password/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /credential/password/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
+     */
+    this.logArchiveDeleteCredentialpasswordId = function(logArchiveId, id) {
+      return this.logArchiveDeleteCredentialpasswordIdWithHttpInfo(logArchiveId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.logArchiveDeleteTagKeyWithHttpInfo = function(logArchiveId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling logArchiveDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.logArchiveDeleteTagKey = function(logArchiveId, key) {
+      return this.logArchiveDeleteTagKeyWithHttpInfo(logArchiveId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
+     */
+    this.logArchiveGetCredentialcertificateIdWithHttpInfo = function(logArchiveId, id) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveGetCredentialcertificateId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling logArchiveGetCredentialcertificateId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CredentialCertificate;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/certificate/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /credential/certificate/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
+     */
+    this.logArchiveGetCredentialcertificateId = function(logArchiveId, id) {
+      return this.logArchiveGetCredentialcertificateIdWithHttpInfo(logArchiveId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /credential/password/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
+     */
+    this.logArchiveGetCredentialpasswordIdWithHttpInfo = function(logArchiveId, id) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveGetCredentialpasswordId");
+      }
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling logArchiveGetCredentialpasswordId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = CredentialPassword;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/credential/password/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /credential/password/:id
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} id id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
+     */
+    this.logArchiveGetCredentialpasswordId = function(logArchiveId, id) {
+      return this.logArchiveGetCredentialpasswordIdWithHttpInfo(logArchiveId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchiveServices} and HTTP response
+     */
+    this.logArchiveGetServicesServiceIdWithHttpInfo = function(logArchiveId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling logArchiveGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = LogArchiveServices;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} logArchiveId ID of logArchive
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchiveServices}
+     */
+    this.logArchiveGetServicesServiceId = function(logArchiveId, serviceId) {
+      return this.logArchiveGetServicesServiceIdWithHttpInfo(logArchiveId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.logArchiveGetTagWithHttpInfo = function(logArchiveId) {
+      var postBody = null;
+
+      // verify the required parameter 'logArchiveId' is set
+      if (logArchiveId === undefined || logArchiveId === null) {
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveGetTag");
+      }
+
+
+      var pathParams = {
+        'logArchiveId': logArchiveId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/logArchive/{logArchiveId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} logArchiveId ID of logArchive
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.logArchiveGetTag = function(logArchiveId) {
+      return this.logArchiveGetTagWithHttpInfo(logArchiveId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -214,7 +682,7 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LogArchive>} and HTTP response
      */
-    this.listLogArchiveWithHttpInfo = function(opts) {
+    this.logArchiveListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -250,8 +718,8 @@
      * @param {String} opts.name Filter by name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LogArchive>}
      */
-    this.listLogArchive = function(opts) {
-      return this.listLogArchiveWithHttpInfo(opts)
+    this.logArchiveList = function(opts) {
+      return this.logArchiveListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -259,480 +727,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
-     */
-    this.operationLogArchiveDeleteaccessrightsIdentityWithHttpInfo = function(logArchiveId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationLogArchiveDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LogArchive;
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
-     */
-    this.operationLogArchiveDeleteaccessrightsIdentity = function(logArchiveId, identity) {
-      return this.operationLogArchiveDeleteaccessrightsIdentityWithHttpInfo(logArchiveId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
-     */
-    this.operationLogArchiveDeletecredentialcertificateIdWithHttpInfo = function(logArchiveId, id) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveDeletecredentialcertificateId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationLogArchiveDeletecredentialcertificateId");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LogArchive;
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/credential/certificate/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
-     */
-    this.operationLogArchiveDeletecredentialcertificateId = function(logArchiveId, id) {
-      return this.operationLogArchiveDeletecredentialcertificateIdWithHttpInfo(logArchiveId, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/password/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
-     */
-    this.operationLogArchiveDeletecredentialpasswordIdWithHttpInfo = function(logArchiveId, id) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveDeletecredentialpasswordId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationLogArchiveDeletecredentialpasswordId");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LogArchive;
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/credential/password/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/password/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
-     */
-    this.operationLogArchiveDeletecredentialpasswordId = function(logArchiveId, id) {
-      return this.operationLogArchiveDeletecredentialpasswordIdWithHttpInfo(logArchiveId, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationLogArchiveDeletetagKeyWithHttpInfo = function(logArchiveId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationLogArchiveDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationLogArchiveDeletetagKey = function(logArchiveId, key) {
-      return this.operationLogArchiveDeletetagKeyWithHttpInfo(logArchiveId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
-     */
-    this.operationLogArchiveGetcredentialcertificateIdWithHttpInfo = function(logArchiveId, id) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveGetcredentialcertificateId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationLogArchiveGetcredentialcertificateId");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CredentialCertificate;
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/credential/certificate/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
-     */
-    this.operationLogArchiveGetcredentialcertificateId = function(logArchiveId, id) {
-      return this.operationLogArchiveGetcredentialcertificateIdWithHttpInfo(logArchiveId, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/password/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
-     */
-    this.operationLogArchiveGetcredentialpasswordIdWithHttpInfo = function(logArchiveId, id) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveGetcredentialpasswordId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationLogArchiveGetcredentialpasswordId");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CredentialPassword;
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/credential/password/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/password/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
-     */
-    this.operationLogArchiveGetcredentialpasswordId = function(logArchiveId, id) {
-      return this.operationLogArchiveGetcredentialpasswordIdWithHttpInfo(logArchiveId, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchiveServices} and HTTP response
-     */
-    this.operationLogArchiveGetservicesServiceIdWithHttpInfo = function(logArchiveId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationLogArchiveGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LogArchiveServices;
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchiveServices}
-     */
-    this.operationLogArchiveGetservicesServiceId = function(logArchiveId, serviceId) {
-      return this.operationLogArchiveGetservicesServiceIdWithHttpInfo(logArchiveId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} logArchiveId ID of logArchive
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationLogArchiveGettagWithHttpInfo = function(logArchiveId) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveGettag");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} logArchiveId ID of logArchive
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationLogArchiveGettag = function(logArchiveId) {
-      return this.operationLogArchiveGettagWithHttpInfo(logArchiveId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<String>} and HTTP response
      */
-    this.operationLogArchiveListaccessrightsWithHttpInfo = function(logArchiveId) {
+    this.logArchiveListAccessrightsWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveListaccessrights");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveListAccessrights");
       }
 
 
@@ -754,19 +758,19 @@
       var returnType = ['String'];
 
       return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/accessrights/', 'GET',
+        '/logArchive/{logArchiveId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<String>}
      */
-    this.operationLogArchiveListaccessrights = function(logArchiveId) {
-      return this.operationLogArchiveListaccessrightsWithHttpInfo(logArchiveId)
+    this.logArchiveListAccessrights = function(logArchiveId) {
+      return this.logArchiveListAccessrightsWithHttpInfo(logArchiveId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -778,12 +782,12 @@
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CredentialCertificate>} and HTTP response
      */
-    this.operationLogArchiveListcredentialcertificateWithHttpInfo = function(logArchiveId) {
+    this.logArchiveListCredentialcertificateWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveListcredentialcertificate");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveListCredentialcertificate");
       }
 
 
@@ -816,8 +820,8 @@
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CredentialCertificate>}
      */
-    this.operationLogArchiveListcredentialcertificate = function(logArchiveId) {
-      return this.operationLogArchiveListcredentialcertificateWithHttpInfo(logArchiveId)
+    this.logArchiveListCredentialcertificate = function(logArchiveId) {
+      return this.logArchiveListCredentialcertificateWithHttpInfo(logArchiveId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -829,12 +833,12 @@
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CredentialPassword>} and HTTP response
      */
-    this.operationLogArchiveListcredentialpasswordWithHttpInfo = function(logArchiveId) {
+    this.logArchiveListCredentialpasswordWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveListcredentialpassword");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveListCredentialpassword");
       }
 
 
@@ -867,8 +871,8 @@
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CredentialPassword>}
      */
-    this.operationLogArchiveListcredentialpassword = function(logArchiveId) {
-      return this.operationLogArchiveListcredentialpasswordWithHttpInfo(logArchiveId)
+    this.logArchiveListCredentialpassword = function(logArchiveId) {
+      return this.logArchiveListCredentialpasswordWithHttpInfo(logArchiveId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -876,16 +880,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationLogArchiveListqueueWithHttpInfo = function(logArchiveId) {
+    this.logArchiveListQueueWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveListqueue");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveListQueue");
       }
 
 
@@ -907,19 +911,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/queue/', 'GET',
+        '/logArchive/{logArchiveId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationLogArchiveListqueue = function(logArchiveId) {
-      return this.operationLogArchiveListqueueWithHttpInfo(logArchiveId)
+    this.logArchiveListQueue = function(logArchiveId) {
+      return this.logArchiveListQueueWithHttpInfo(logArchiveId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -927,16 +931,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LogArchiveServices>} and HTTP response
      */
-    this.operationLogArchiveListservicesWithHttpInfo = function(logArchiveId) {
+    this.logArchiveListServicesWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchiveListservices");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveListServices");
       }
 
 
@@ -958,19 +962,19 @@
       var returnType = [LogArchiveServices];
 
       return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/services/', 'GET',
+        '/logArchive/{logArchiveId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LogArchiveServices>}
      */
-    this.operationLogArchiveListservices = function(logArchiveId) {
-      return this.operationLogArchiveListservicesWithHttpInfo(logArchiveId)
+    this.logArchiveListServices = function(logArchiveId) {
+      return this.logArchiveListServicesWithHttpInfo(logArchiveId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -981,22 +985,25 @@
      * /credential/certificate/:id
      * @param {String} logArchiveId ID of logArchive
      * @param {String} id id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject66} opts.inlineObject66 
+     * @param {module:model/LogArchivePatchCredentialcertificateId} logArchivePatchCredentialcertificateId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.operationLogArchivePatchcredentialcertificateIdWithHttpInfo = function(logArchiveId, id, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject66'];
+    this.logArchivePatchCredentialcertificateIdWithHttpInfo = function(logArchiveId, id, logArchivePatchCredentialcertificateId) {
+      var postBody = logArchivePatchCredentialcertificateId;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePatchcredentialcertificateId");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePatchCredentialcertificateId");
       }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationLogArchivePatchcredentialcertificateId");
+        throw new Error("Missing the required parameter 'id' when calling logArchivePatchCredentialcertificateId");
+      }
+
+      // verify the required parameter 'logArchivePatchCredentialcertificateId' is set
+      if (logArchivePatchCredentialcertificateId === undefined || logArchivePatchCredentialcertificateId === null) {
+        throw new Error("Missing the required parameter 'logArchivePatchCredentialcertificateId' when calling logArchivePatchCredentialcertificateId");
       }
 
 
@@ -1029,12 +1036,11 @@
      * /credential/certificate/:id
      * @param {String} logArchiveId ID of logArchive
      * @param {String} id id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject66} opts.inlineObject66 
+     * @param {module:model/LogArchivePatchCredentialcertificateId} logArchivePatchCredentialcertificateId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
-    this.operationLogArchivePatchcredentialcertificateId = function(logArchiveId, id, opts) {
-      return this.operationLogArchivePatchcredentialcertificateIdWithHttpInfo(logArchiveId, id, opts)
+    this.logArchivePatchCredentialcertificateId = function(logArchiveId, id, logArchivePatchCredentialcertificateId) {
+      return this.logArchivePatchCredentialcertificateIdWithHttpInfo(logArchiveId, id, logArchivePatchCredentialcertificateId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1045,22 +1051,25 @@
      * /credential/password/:id
      * @param {String} logArchiveId ID of logArchive
      * @param {String} id id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject64} opts.inlineObject64 
+     * @param {module:model/LogArchivePatchCredentialpasswordId} logArchivePatchCredentialpasswordId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
      */
-    this.operationLogArchivePatchcredentialpasswordIdWithHttpInfo = function(logArchiveId, id, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject64'];
+    this.logArchivePatchCredentialpasswordIdWithHttpInfo = function(logArchiveId, id, logArchivePatchCredentialpasswordId) {
+      var postBody = logArchivePatchCredentialpasswordId;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePatchcredentialpasswordId");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePatchCredentialpasswordId");
       }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling operationLogArchivePatchcredentialpasswordId");
+        throw new Error("Missing the required parameter 'id' when calling logArchivePatchCredentialpasswordId");
+      }
+
+      // verify the required parameter 'logArchivePatchCredentialpasswordId' is set
+      if (logArchivePatchCredentialpasswordId === undefined || logArchivePatchCredentialpasswordId === null) {
+        throw new Error("Missing the required parameter 'logArchivePatchCredentialpasswordId' when calling logArchivePatchCredentialpasswordId");
       }
 
 
@@ -1093,12 +1102,11 @@
      * /credential/password/:id
      * @param {String} logArchiveId ID of logArchive
      * @param {String} id id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject64} opts.inlineObject64 
+     * @param {module:model/LogArchivePatchCredentialpasswordId} logArchivePatchCredentialpasswordId 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
      */
-    this.operationLogArchivePatchcredentialpasswordId = function(logArchiveId, id, opts) {
-      return this.operationLogArchivePatchcredentialpasswordIdWithHttpInfo(logArchiveId, id, opts)
+    this.logArchivePatchCredentialpasswordId = function(logArchiveId, id, logArchivePatchCredentialpasswordId) {
+      return this.logArchivePatchCredentialpasswordIdWithHttpInfo(logArchiveId, id, logArchivePatchCredentialpasswordId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1106,22 +1114,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationLogArchivePatchtagWithHttpInfo = function(logArchiveId, requestBody) {
-      var postBody = requestBody;
+    this.logArchivePatchTagWithHttpInfo = function(logArchiveId, body) {
+      var postBody = body;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePatchtag");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationLogArchivePatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling logArchivePatchTag");
       }
 
 
@@ -1140,23 +1148,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/tag/', 'PATCH',
+        '/logArchive/{logArchiveId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationLogArchivePatchtag = function(logArchiveId, requestBody) {
-      return this.operationLogArchivePatchtagWithHttpInfo(logArchiveId, requestBody)
+    this.logArchivePatchTag = function(logArchiveId, body) {
+      return this.logArchivePatchTagWithHttpInfo(logArchiveId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1164,19 +1172,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject67} opts.inlineObject67 
+     * @param {module:model/LogArchivePostAccessrights} logArchivePostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
-    this.operationLogArchivePostaccessrightsWithHttpInfo = function(logArchiveId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject67'];
+    this.logArchivePostAccessrightsWithHttpInfo = function(logArchiveId, logArchivePostAccessrights) {
+      var postBody = logArchivePostAccessrights;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePostaccessrights");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePostAccessrights");
+      }
+
+      // verify the required parameter 'logArchivePostAccessrights' is set
+      if (logArchivePostAccessrights === undefined || logArchivePostAccessrights === null) {
+        throw new Error("Missing the required parameter 'logArchivePostAccessrights' when calling logArchivePostAccessrights");
       }
 
 
@@ -1198,21 +1209,20 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/accessrights/', 'POST',
+        '/logArchive/{logArchiveId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject67} opts.inlineObject67 
+     * @param {module:model/LogArchivePostAccessrights} logArchivePostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
-    this.operationLogArchivePostaccessrights = function(logArchiveId, opts) {
-      return this.operationLogArchivePostaccessrightsWithHttpInfo(logArchiveId, opts)
+    this.logArchivePostAccessrights = function(logArchiveId, logArchivePostAccessrights) {
+      return this.logArchivePostAccessrightsWithHttpInfo(logArchiveId, logArchivePostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1222,17 +1232,20 @@
     /**
      * /credential/certificate
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject65} opts.inlineObject65 
+     * @param {module:model/LogArchivePostCredentialcertificate} logArchivePostCredentialcertificate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.operationLogArchivePostcredentialcertificateWithHttpInfo = function(logArchiveId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject65'];
+    this.logArchivePostCredentialcertificateWithHttpInfo = function(logArchiveId, logArchivePostCredentialcertificate) {
+      var postBody = logArchivePostCredentialcertificate;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePostcredentialcertificate");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePostCredentialcertificate");
+      }
+
+      // verify the required parameter 'logArchivePostCredentialcertificate' is set
+      if (logArchivePostCredentialcertificate === undefined || logArchivePostCredentialcertificate === null) {
+        throw new Error("Missing the required parameter 'logArchivePostCredentialcertificate' when calling logArchivePostCredentialcertificate");
       }
 
 
@@ -1263,12 +1276,11 @@
     /**
      * /credential/certificate
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject65} opts.inlineObject65 
+     * @param {module:model/LogArchivePostCredentialcertificate} logArchivePostCredentialcertificate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
-    this.operationLogArchivePostcredentialcertificate = function(logArchiveId, opts) {
-      return this.operationLogArchivePostcredentialcertificateWithHttpInfo(logArchiveId, opts)
+    this.logArchivePostCredentialcertificate = function(logArchiveId, logArchivePostCredentialcertificate) {
+      return this.logArchivePostCredentialcertificateWithHttpInfo(logArchiveId, logArchivePostCredentialcertificate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1278,17 +1290,20 @@
     /**
      * /credential/password
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject63} opts.inlineObject63 
+     * @param {module:model/LogArchivePostCredentialpassword} logArchivePostCredentialpassword 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialPassword} and HTTP response
      */
-    this.operationLogArchivePostcredentialpasswordWithHttpInfo = function(logArchiveId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject63'];
+    this.logArchivePostCredentialpasswordWithHttpInfo = function(logArchiveId, logArchivePostCredentialpassword) {
+      var postBody = logArchivePostCredentialpassword;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling operationLogArchivePostcredentialpassword");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePostCredentialpassword");
+      }
+
+      // verify the required parameter 'logArchivePostCredentialpassword' is set
+      if (logArchivePostCredentialpassword === undefined || logArchivePostCredentialpassword === null) {
+        throw new Error("Missing the required parameter 'logArchivePostCredentialpassword' when calling logArchivePostCredentialpassword");
       }
 
 
@@ -1319,12 +1334,11 @@
     /**
      * /credential/password
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject63} opts.inlineObject63 
+     * @param {module:model/LogArchivePostCredentialpassword} logArchivePostCredentialpassword 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialPassword}
      */
-    this.operationLogArchivePostcredentialpassword = function(logArchiveId, opts) {
-      return this.operationLogArchivePostcredentialpasswordWithHttpInfo(logArchiveId, opts)
+    this.logArchivePostCredentialpassword = function(logArchiveId, logArchivePostCredentialpassword) {
+      return this.logArchivePostCredentialpasswordWithHttpInfo(logArchiveId, logArchivePostCredentialpassword)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1337,12 +1351,12 @@
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.showLogArchiveWithHttpInfo = function(logArchiveId) {
+    this.logArchiveShowWithHttpInfo = function(logArchiveId) {
       var postBody = null;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling showLogArchive");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveShow");
       }
 
 
@@ -1376,8 +1390,8 @@
      * @param {String} logArchiveId ID of logArchive
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
-    this.showLogArchive = function(logArchiveId) {
-      return this.showLogArchiveWithHttpInfo(logArchiveId)
+    this.logArchiveShow = function(logArchiveId) {
+      return this.logArchiveShowWithHttpInfo(logArchiveId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1388,17 +1402,20 @@
      * Update
      * Returns modified logArchive
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject61} opts.inlineObject61 
+     * @param {module:model/LogArchiveUpdate} logArchiveUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
-    this.updateLogArchiveWithHttpInfo = function(logArchiveId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject61'];
+    this.logArchiveUpdateWithHttpInfo = function(logArchiveId, logArchiveUpdate) {
+      var postBody = logArchiveUpdate;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling updateLogArchive");
+        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveUpdate");
+      }
+
+      // verify the required parameter 'logArchiveUpdate' is set
+      if (logArchiveUpdate === undefined || logArchiveUpdate === null) {
+        throw new Error("Missing the required parameter 'logArchiveUpdate' when calling logArchiveUpdate");
       }
 
 
@@ -1430,12 +1447,11 @@
      * Update
      * Returns modified logArchive
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject61} opts.inlineObject61 
+     * @param {module:model/LogArchiveUpdate} logArchiveUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
-    this.updateLogArchive = function(logArchiveId, opts) {
-      return this.updateLogArchiveWithHttpInfo(logArchiveId, opts)
+    this.logArchiveUpdate = function(logArchiveId, logArchiveUpdate) {
+      return this.logArchiveUpdateWithHttpInfo(logArchiveId, logArchiveUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

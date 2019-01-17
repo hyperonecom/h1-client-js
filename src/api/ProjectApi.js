@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/InlineObject', 'model/InlineObject1', 'model/InlineObject2', 'model/Project', 'model/ProjectAccessRights', 'model/ProjectServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/Project', 'model/ProjectAccessRights', 'model/ProjectCreate', 'model/ProjectPostAccessrights', 'model/ProjectServices', 'model/ProjectUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineObject'), require('../model/InlineObject1'), require('../model/InlineObject2'), require('../model/Project'), require('../model/ProjectAccessRights'), require('../model/ProjectServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Project'), require('../model/ProjectAccessRights'), require('../model/ProjectCreate'), require('../model/ProjectPostAccessrights'), require('../model/ProjectServices'), require('../model/ProjectUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ProjectApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineObject, root.HyperOneApi.InlineObject1, root.HyperOneApi.InlineObject2, root.HyperOneApi.Project, root.HyperOneApi.ProjectAccessRights, root.HyperOneApi.ProjectServices);
+    root.HyperOneApi.ProjectApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Project, root.HyperOneApi.ProjectAccessRights, root.HyperOneApi.ProjectCreate, root.HyperOneApi.ProjectPostAccessrights, root.HyperOneApi.ProjectServices, root.HyperOneApi.ProjectUpdate);
   }
-}(this, function(ApiClient, Event, InlineObject, InlineObject1, InlineObject2, Project, ProjectAccessRights, ProjectServices) {
+}(this, function(ApiClient, Event, Project, ProjectAccessRights, ProjectCreate, ProjectPostAccessrights, ProjectServices, ProjectUpdate) {
   'use strict';
 
   /**
@@ -51,13 +51,16 @@
     /**
      * Create
      * Create project
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject} opts.inlineObject 
+     * @param {module:model/ProjectCreate} projectCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.createProjectWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject'];
+    this.projectCreateWithHttpInfo = function(projectCreate) {
+      var postBody = projectCreate;
+
+      // verify the required parameter 'projectCreate' is set
+      if (projectCreate === undefined || projectCreate === null) {
+        throw new Error("Missing the required parameter 'projectCreate' when calling projectCreate");
+      }
 
 
       var pathParams = {
@@ -86,12 +89,239 @@
     /**
      * Create
      * Create project
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject} opts.inlineObject 
+     * @param {module:model/ProjectCreate} projectCreate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
-    this.createProject = function(opts) {
-      return this.createProjectWithHttpInfo(opts)
+    this.projectCreate = function(projectCreate) {
+      return this.projectCreateWithHttpInfo(projectCreate)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /accessrights/:identity
+     * @param {String} projectId ID of project
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     */
+    this.projectDeleteAccessrightsIdentityWithHttpInfo = function(projectId, identity) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling projectDeleteAccessrightsIdentity");
+      }
+
+      // verify the required parameter 'identity' is set
+      if (identity === undefined || identity === null) {
+        throw new Error("Missing the required parameter 'identity' when calling projectDeleteAccessrightsIdentity");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId,
+        'identity': identity
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Project;
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/accessrights/{identity}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /accessrights/:identity
+     * @param {String} projectId ID of project
+     * @param {String} identity identity
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     */
+    this.projectDeleteAccessrightsIdentity = function(projectId, identity) {
+      return this.projectDeleteAccessrightsIdentityWithHttpInfo(projectId, identity)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag/:key
+     * @param {String} projectId ID of project
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.projectDeleteTagKeyWithHttpInfo = function(projectId, key) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling projectDeleteTagKey");
+      }
+
+      // verify the required parameter 'key' is set
+      if (key === undefined || key === null) {
+        throw new Error("Missing the required parameter 'key' when calling projectDeleteTagKey");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId,
+        'key': key
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/tag/{key}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag/:key
+     * @param {String} projectId ID of project
+     * @param {String} key key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.projectDeleteTagKey = function(projectId, key) {
+      return this.projectDeleteTagKeyWithHttpInfo(projectId, key)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /services/:serviceId
+     * @param {String} projectId ID of project
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectServices} and HTTP response
+     */
+    this.projectGetServicesServiceIdWithHttpInfo = function(projectId, serviceId) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling projectGetServicesServiceId");
+      }
+
+      // verify the required parameter 'serviceId' is set
+      if (serviceId === undefined || serviceId === null) {
+        throw new Error("Missing the required parameter 'serviceId' when calling projectGetServicesServiceId");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId,
+        'serviceId': serviceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = ProjectServices;
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/services/{serviceId}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /services/:serviceId
+     * @param {String} projectId ID of project
+     * @param {String} serviceId serviceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectServices}
+     */
+    this.projectGetServicesServiceId = function(projectId, serviceId) {
+      return this.projectGetServicesServiceIdWithHttpInfo(projectId, serviceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /tag
+     * @param {String} projectId ID of project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.projectGetTagWithHttpInfo = function(projectId) {
+      var postBody = null;
+
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling projectGetTag");
+      }
+
+
+      var pathParams = {
+        'projectId': projectId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/project/{projectId}/tag', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * /tag
+     * @param {String} projectId ID of project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.projectGetTag = function(projectId) {
+      return this.projectGetTagWithHttpInfo(projectId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -108,7 +338,7 @@
      * @param {String} opts.organisation Filter by organisation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
      */
-    this.listProjectWithHttpInfo = function(opts) {
+    this.projectListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -150,8 +380,8 @@
      * @param {String} opts.organisation Filter by organisation
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
      */
-    this.listProject = function(opts) {
-      return this.listProjectWithHttpInfo(opts)
+    this.projectList = function(opts) {
+      return this.projectListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -159,244 +389,16 @@
 
 
     /**
-     * /accessrights/:identity
-     * @param {String} projectId ID of project
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
-     */
-    this.operationProjectDeleteaccessrightsIdentityWithHttpInfo = function(projectId, identity) {
-      var postBody = null;
-
-      // verify the required parameter 'projectId' is set
-      if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling operationProjectDeleteaccessrightsIdentity");
-      }
-
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling operationProjectDeleteaccessrightsIdentity");
-      }
-
-
-      var pathParams = {
-        'projectId': projectId,
-        'identity': identity
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Project;
-
-      return this.apiClient.callApi(
-        '/project/{projectId}/accessrights/{identity}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /accessrights/:identity
-     * @param {String} projectId ID of project
-     * @param {String} identity identity
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
-     */
-    this.operationProjectDeleteaccessrightsIdentity = function(projectId, identity) {
-      return this.operationProjectDeleteaccessrightsIdentityWithHttpInfo(projectId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/:key
-     * @param {String} projectId ID of project
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationProjectDeletetagKeyWithHttpInfo = function(projectId, key) {
-      var postBody = null;
-
-      // verify the required parameter 'projectId' is set
-      if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling operationProjectDeletetagKey");
-      }
-
-      // verify the required parameter 'key' is set
-      if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling operationProjectDeletetagKey");
-      }
-
-
-      var pathParams = {
-        'projectId': projectId,
-        'key': key
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/project/{projectId}/tag/{key}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/:key
-     * @param {String} projectId ID of project
-     * @param {String} key key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationProjectDeletetagKey = function(projectId, key) {
-      return this.operationProjectDeletetagKeyWithHttpInfo(projectId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /services/:serviceId
-     * @param {String} projectId ID of project
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectServices} and HTTP response
-     */
-    this.operationProjectGetservicesServiceIdWithHttpInfo = function(projectId, serviceId) {
-      var postBody = null;
-
-      // verify the required parameter 'projectId' is set
-      if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling operationProjectGetservicesServiceId");
-      }
-
-      // verify the required parameter 'serviceId' is set
-      if (serviceId === undefined || serviceId === null) {
-        throw new Error("Missing the required parameter 'serviceId' when calling operationProjectGetservicesServiceId");
-      }
-
-
-      var pathParams = {
-        'projectId': projectId,
-        'serviceId': serviceId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = ProjectServices;
-
-      return this.apiClient.callApi(
-        '/project/{projectId}/services/{serviceId}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /services/:serviceId
-     * @param {String} projectId ID of project
-     * @param {String} serviceId serviceId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectServices}
-     */
-    this.operationProjectGetservicesServiceId = function(projectId, serviceId) {
-      return this.operationProjectGetservicesServiceIdWithHttpInfo(projectId, serviceId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /tag/
-     * @param {String} projectId ID of project
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
-     */
-    this.operationProjectGettagWithHttpInfo = function(projectId) {
-      var postBody = null;
-
-      // verify the required parameter 'projectId' is set
-      if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling operationProjectGettag");
-      }
-
-
-      var pathParams = {
-        'projectId': projectId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
-
-      return this.apiClient.callApi(
-        '/project/{projectId}/tag/', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /tag/
-     * @param {String} projectId ID of project
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
-     */
-    this.operationProjectGettag = function(projectId) {
-      return this.operationProjectGettagWithHttpInfo(projectId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /accessrights/
+     * /accessrights
      * @param {String} projectId ID of project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectAccessRights>} and HTTP response
      */
-    this.operationProjectListaccessrightsWithHttpInfo = function(projectId) {
+    this.projectListAccessrightsWithHttpInfo = function(projectId) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling operationProjectListaccessrights");
+        throw new Error("Missing the required parameter 'projectId' when calling projectListAccessrights");
       }
 
 
@@ -418,19 +420,19 @@
       var returnType = [ProjectAccessRights];
 
       return this.apiClient.callApi(
-        '/project/{projectId}/accessrights/', 'GET',
+        '/project/{projectId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} projectId ID of project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectAccessRights>}
      */
-    this.operationProjectListaccessrights = function(projectId) {
-      return this.operationProjectListaccessrightsWithHttpInfo(projectId)
+    this.projectListAccessrights = function(projectId) {
+      return this.projectListAccessrightsWithHttpInfo(projectId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -438,16 +440,16 @@
 
 
     /**
-     * /queue/
+     * /queue
      * @param {String} projectId ID of project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
-    this.operationProjectListqueueWithHttpInfo = function(projectId) {
+    this.projectListQueueWithHttpInfo = function(projectId) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling operationProjectListqueue");
+        throw new Error("Missing the required parameter 'projectId' when calling projectListQueue");
       }
 
 
@@ -469,19 +471,19 @@
       var returnType = [Event];
 
       return this.apiClient.callApi(
-        '/project/{projectId}/queue/', 'GET',
+        '/project/{projectId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /queue/
+     * /queue
      * @param {String} projectId ID of project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Event>}
      */
-    this.operationProjectListqueue = function(projectId) {
-      return this.operationProjectListqueueWithHttpInfo(projectId)
+    this.projectListQueue = function(projectId) {
+      return this.projectListQueueWithHttpInfo(projectId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -489,16 +491,16 @@
 
 
     /**
-     * /services/
+     * /services
      * @param {String} projectId ID of project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectServices>} and HTTP response
      */
-    this.operationProjectListservicesWithHttpInfo = function(projectId) {
+    this.projectListServicesWithHttpInfo = function(projectId) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling operationProjectListservices");
+        throw new Error("Missing the required parameter 'projectId' when calling projectListServices");
       }
 
 
@@ -520,19 +522,19 @@
       var returnType = [ProjectServices];
 
       return this.apiClient.callApi(
-        '/project/{projectId}/services/', 'GET',
+        '/project/{projectId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /services/
+     * /services
      * @param {String} projectId ID of project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectServices>}
      */
-    this.operationProjectListservices = function(projectId) {
-      return this.operationProjectListservicesWithHttpInfo(projectId)
+    this.projectListServices = function(projectId) {
+      return this.projectListServicesWithHttpInfo(projectId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -540,22 +542,22 @@
 
 
     /**
-     * /tag/
+     * /tag
      * @param {String} projectId ID of project
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.operationProjectPatchtagWithHttpInfo = function(projectId, requestBody) {
-      var postBody = requestBody;
+    this.projectPatchTagWithHttpInfo = function(projectId, body) {
+      var postBody = body;
 
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling operationProjectPatchtag");
+        throw new Error("Missing the required parameter 'projectId' when calling projectPatchTag");
       }
 
-      // verify the required parameter 'requestBody' is set
-      if (requestBody === undefined || requestBody === null) {
-        throw new Error("Missing the required parameter 'requestBody' when calling operationProjectPatchtag");
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling projectPatchTag");
       }
 
 
@@ -574,23 +576,23 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = {'String': 'String'};
+      var returnType = Object;
 
       return this.apiClient.callApi(
-        '/project/{projectId}/tag/', 'PATCH',
+        '/project/{projectId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /tag/
+     * /tag
      * @param {String} projectId ID of project
-     * @param {Object.<String, {String: String}>} requestBody 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
+     * @param {Object} body 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.operationProjectPatchtag = function(projectId, requestBody) {
-      return this.operationProjectPatchtagWithHttpInfo(projectId, requestBody)
+    this.projectPatchTag = function(projectId, body) {
+      return this.projectPatchTagWithHttpInfo(projectId, body)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -598,19 +600,22 @@
 
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} projectId ID of project
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject2} opts.inlineObject2 
+     * @param {module:model/ProjectPostAccessrights} projectPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ProjectAccessRights} and HTTP response
      */
-    this.operationProjectPostaccessrightsWithHttpInfo = function(projectId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject2'];
+    this.projectPostAccessrightsWithHttpInfo = function(projectId, projectPostAccessrights) {
+      var postBody = projectPostAccessrights;
 
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling operationProjectPostaccessrights");
+        throw new Error("Missing the required parameter 'projectId' when calling projectPostAccessrights");
+      }
+
+      // verify the required parameter 'projectPostAccessrights' is set
+      if (projectPostAccessrights === undefined || projectPostAccessrights === null) {
+        throw new Error("Missing the required parameter 'projectPostAccessrights' when calling projectPostAccessrights");
       }
 
 
@@ -632,21 +637,20 @@
       var returnType = ProjectAccessRights;
 
       return this.apiClient.callApi(
-        '/project/{projectId}/accessrights/', 'POST',
+        '/project/{projectId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * /accessrights/
+     * /accessrights
      * @param {String} projectId ID of project
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject2} opts.inlineObject2 
+     * @param {module:model/ProjectPostAccessrights} projectPostAccessrights 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ProjectAccessRights}
      */
-    this.operationProjectPostaccessrights = function(projectId, opts) {
-      return this.operationProjectPostaccessrightsWithHttpInfo(projectId, opts)
+    this.projectPostAccessrights = function(projectId, projectPostAccessrights) {
+      return this.projectPostAccessrightsWithHttpInfo(projectId, projectPostAccessrights)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -659,12 +663,12 @@
      * @param {String} projectId ID of project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.showProjectWithHttpInfo = function(projectId) {
+    this.projectShowWithHttpInfo = function(projectId) {
       var postBody = null;
 
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling showProject");
+        throw new Error("Missing the required parameter 'projectId' when calling projectShow");
       }
 
 
@@ -698,8 +702,8 @@
      * @param {String} projectId ID of project
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
-    this.showProject = function(projectId) {
-      return this.showProjectWithHttpInfo(projectId)
+    this.projectShow = function(projectId) {
+      return this.projectShowWithHttpInfo(projectId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -710,17 +714,20 @@
      * Update
      * Returns modified project
      * @param {String} projectId ID of project
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject1} opts.inlineObject1 
+     * @param {module:model/ProjectUpdate} projectUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
      */
-    this.updateProjectWithHttpInfo = function(projectId, opts) {
-      opts = opts || {};
-      var postBody = opts['inlineObject1'];
+    this.projectUpdateWithHttpInfo = function(projectId, projectUpdate) {
+      var postBody = projectUpdate;
 
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
-        throw new Error("Missing the required parameter 'projectId' when calling updateProject");
+        throw new Error("Missing the required parameter 'projectId' when calling projectUpdate");
+      }
+
+      // verify the required parameter 'projectUpdate' is set
+      if (projectUpdate === undefined || projectUpdate === null) {
+        throw new Error("Missing the required parameter 'projectUpdate' when calling projectUpdate");
       }
 
 
@@ -752,12 +759,11 @@
      * Update
      * Returns modified project
      * @param {String} projectId ID of project
-     * @param {Object} opts Optional parameters
-     * @param {module:model/InlineObject1} opts.inlineObject1 
+     * @param {module:model/ProjectUpdate} projectUpdate 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
      */
-    this.updateProject = function(projectId, opts) {
-      return this.updateProjectWithHttpInfo(projectId, opts)
+    this.projectUpdate = function(projectId, projectUpdate) {
+      return this.projectUpdateWithHttpInfo(projectId, projectUpdate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
