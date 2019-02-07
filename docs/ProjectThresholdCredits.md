@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**levels** | **String** |  | [optional] 
+**levels** | **[Number]** |  | [optional] 
 
 

@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**source** | **String** |  | [optional] 
+**source** | [**DiskMetadataSource**](DiskMetadataSource.md) |  | [optional] 
 
 

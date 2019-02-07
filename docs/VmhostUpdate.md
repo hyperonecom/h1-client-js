@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**enabledServices** | [**VmhostUpdateEnabledServices**](VmhostUpdateEnabledServices.md) |  | [optional] 
+**enabledServices** | **[String]** |  | [optional] 
 
 

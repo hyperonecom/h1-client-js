@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
-**role** | **String** |  | 
+**role** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
 
 
 <a name="RoleEnum"></a>

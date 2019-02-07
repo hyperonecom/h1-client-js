@@ -17,9 +17,8 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
-**primaryIP** | [**NetgwPrimaryIP**](NetgwPrimaryIP.md) |  | [optional] 
-**network** | [**NetgwNetwork**](NetgwNetwork.md) |  | [optional] 
-**vpn** | [**NetgwVpn**](NetgwVpn.md) |  | [optional] 
+**primaryIP** | **String** |  | [optional] 
+**network** | **String** |  | [optional] 
 
 
 <a name="StateEnum"></a>

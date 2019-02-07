@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **project** | **String** |  | [optional] 
 **macaddress** | **String** |  | [optional] 
 **speed** | **Number** |  | [optional] 
-**network** | [**NetgwNetwork**](NetgwNetwork.md) |  | [optional] 
-**ip** | [**NetgwPrimaryIP**](NetgwPrimaryIP.md) |  | [optional] 
+**network** | [**Network**](Network.md) |  | [optional] 
+**ip** | [**[Ip]**](Ip.md) |  | [optional] 
 **assigned** | [**NetadpAssigned**](NetadpAssigned.md) |  | [optional] 
 
 

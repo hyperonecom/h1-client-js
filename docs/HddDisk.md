@@ -6,10 +6,8 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
-**size** | **String** |  | [optional] 
-**tags** | **String** |  | [optional] 
-**processing** | **String** |  | [optional] 
-**vm** | **String** |  | [optional] 
-**persistent** | **String** |  | [optional] 
+**size** | **Number** |  | [optional] 
+**processing** | **Boolean** |  | [optional] 
+**persistent** | **Boolean** |  | [optional] 
 
 

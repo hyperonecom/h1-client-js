@@ -19,11 +19,10 @@ Name | Type | Description | Notes
 **tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
 **address** | **String** |  | [optional] 
-**mac** | [**NetgwPrimaryIPMac**](NetgwPrimaryIPMac.md) |  | [optional] 
 **network** | **String** |  | [optional] 
 **ptrRecord** | **String** |  | [optional] 
-**persistent** | **String** |  | [optional] 
-**associated** | [**NetgwPrimaryIPAssociated**](NetgwPrimaryIPAssociated.md) |  | [optional] 
+**persistent** | **Boolean** |  | [optional] 
+**associated** | [**IpAssociated**](IpAssociated.md) |  | [optional] 
 
 
 <a name="StateEnum"></a>

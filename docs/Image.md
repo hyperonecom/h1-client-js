@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
-**disks** | [**ImageDisks**](ImageDisks.md) |  | [optional] 
+**disks** | [**[ImageDisks]**](ImageDisks.md) |  | [optional] 
 **fileSize** | **Number** |  | [optional] 
 **vm** | [**ImageVm**](ImageVm.md) |  | [optional] 
 **description** | **String** |  | [optional] 

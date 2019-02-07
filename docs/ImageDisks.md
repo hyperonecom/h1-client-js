@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** |  | [optional] 
-**size** | **String** |  | [optional] 
-**fileSize** | **String** |  | [optional] 
-**attachedOn** | **String** |  | [optional] 
+**size** | **Number** |  | [optional] 
+**fileSize** | **Number** |  | [optional] 
+**attachedOn** | [**ImageAttachedOn**](ImageAttachedOn.md) |  | [optional] 
 **downloadUrl** | **String** |  | [optional] 
-**disk** | [**ImageDisksDisk**](ImageDisksDisk.md) |  | [optional] 
+**disk** | [**ImageDisk**](ImageDisk.md) |  | [optional] 
 
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **size** | **Number** |  | [optional] 
 **cloud** | **String** |  | [optional] 
-**metadata** | [**DiskCreateMetadata**](DiskCreateMetadata.md) |  | [optional] 
+**metadata** | [**DiskMetadata**](DiskMetadata.md) |  | [optional] 
 **tag** | [**Object**](.md) |  | [optional] 
 
 
