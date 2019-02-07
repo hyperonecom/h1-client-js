@@ -25,30 +25,30 @@ Method | HTTP request | Description
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let netadpId = "netadpId_example"; // String | ID of netadp
-let identity = "identity_example"; // String | identity
-apiInstance.netadpDeleteAccessrightsIdentity(netadpId, identity).then((data) => {
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+var identity = "identity_example"; // String | identity
+apiInstance.netadpDeleteAccessrightsIdentity(netadpId, identity).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -82,30 +82,30 @@ Name | Type | Description  | Notes
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let netadpId = "netadpId_example"; // String | ID of netadp
-let key = "key_example"; // String | key
-apiInstance.netadpDeleteTagKey(netadpId, key).then((data) => {
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+var key = "key_example"; // String | key
+apiInstance.netadpDeleteTagKey(netadpId, key).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -139,30 +139,30 @@ Name | Type | Description  | Notes
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let netadpId = "netadpId_example"; // String | ID of netadp
-let serviceId = "serviceId_example"; // String | serviceId
-apiInstance.netadpGetServicesServiceId(netadpId, serviceId).then((data) => {
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+var serviceId = "serviceId_example"; // String | serviceId
+apiInstance.netadpGetServicesServiceId(netadpId, serviceId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -196,29 +196,29 @@ Name | Type | Description  | Notes
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let netadpId = "netadpId_example"; // String | ID of netadp
-apiInstance.netadpGetTag(netadpId).then((data) => {
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+apiInstance.netadpGetTag(netadpId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -253,32 +253,32 @@ List netadp
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let opts = {
+var apiInstance = new HyperOneApi.NetadpApi();
+var opts = {
   'assignedResource': "assignedResource_example", // String | Filter by assigned.resource
   'assignedId': "assignedId_example" // String | Filter by assigned.id
 };
-apiInstance.netadpList(opts).then((data) => {
+apiInstance.netadpList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -312,29 +312,29 @@ Name | Type | Description  | Notes
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let netadpId = "netadpId_example"; // String | ID of netadp
-apiInstance.netadpListAccessrights(netadpId).then((data) => {
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+apiInstance.netadpListAccessrights(netadpId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -367,29 +367,29 @@ Name | Type | Description  | Notes
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let netadpId = "netadpId_example"; // String | ID of netadp
-apiInstance.netadpListQueue(netadpId).then((data) => {
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+apiInstance.netadpListQueue(netadpId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -422,29 +422,29 @@ Name | Type | Description  | Notes
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let netadpId = "netadpId_example"; // String | ID of netadp
-apiInstance.netadpListServices(netadpId).then((data) => {
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+apiInstance.netadpListServices(netadpId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -477,30 +477,30 @@ Name | Type | Description  | Notes
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let netadpId = "netadpId_example"; // String | ID of netadp
-let body = null; // Object | 
-apiInstance.netadpPatchTag(netadpId, body).then((data) => {
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+var body = null; // Object | 
+apiInstance.netadpPatchTag(netadpId, body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -534,30 +534,30 @@ Name | Type | Description  | Notes
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let netadpId = "netadpId_example"; // String | ID of netadp
-let netadpPostAccessrights = new HyperOneApi.NetadpPostAccessrights(); // NetadpPostAccessrights | 
-apiInstance.netadpPostAccessrights(netadpId, netadpPostAccessrights).then((data) => {
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+var netadpPostAccessrights = new HyperOneApi.NetadpPostAccessrights(); // NetadpPostAccessrights | 
+apiInstance.netadpPostAccessrights(netadpId, netadpPostAccessrights).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -593,29 +593,29 @@ Returns a single netadp
 
 ### Example
 ```javascript
-import HyperOneApi from 'hyper_one_api';
-let defaultClient = HyperOneApi.ApiClient.instance;
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure API key authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
 ServiceAccount.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //ServiceAccount.apiKeyPrefix = 'Token';
 // Configure API key authorization: Session
-let Session = defaultClient.authentications['Session'];
+var Session = defaultClient.authentications['Session'];
 Session.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix = 'Token';
 
-let apiInstance = new HyperOneApi.NetadpApi();
-let netadpId = "netadpId_example"; // String | ID of netadp
-apiInstance.netadpShow(netadpId).then((data) => {
+var apiInstance = new HyperOneApi.NetadpApi();
+var netadpId = "netadpId_example"; // String | ID of netadp
+apiInstance.netadpShow(netadpId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
