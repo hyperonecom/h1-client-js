@@ -103,8 +103,8 @@
       if (data.hasOwnProperty('project')) {
         obj['project'] = ApiClient.convertToType(data['project'], 'String');
       }
-      if (data.hasOwnProperty('url')) {
-        obj['url'] = ApiClient.convertToType(data['url'], 'String');
+      if (data.hasOwnProperty('image')) {
+        obj['image'] = ApiClient.convertToType(data['image'], 'String');
       }
     }
     return obj;
@@ -171,9 +171,9 @@
    */
   exports.prototype['project'] = undefined;
   /**
-   * @member {String} url
+   * @member {String} image
    */
-  exports.prototype['url'] = undefined;
+  exports.prototype['image'] = undefined;
 
 
   /**

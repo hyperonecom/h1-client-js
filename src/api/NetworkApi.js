@@ -78,11 +78,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Network;
-
       return this.apiClient.callApi(
         '/network', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -130,11 +129,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/network/{networkId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -188,11 +186,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Network;
-
       return this.apiClient.callApi(
         '/network/{networkId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -213,9 +210,10 @@
     /**
      * /ip/:ipId
      * @param {String} networkId ID of network
+     * @param {String} ipId ipId
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.networkDeleteIpIpIdWithHttpInfo = function(networkId) {
+    this.networkDeleteIpIpIdWithHttpInfo = function(networkId, ipId) {
       var postBody = null;
 
       // verify the required parameter 'networkId' is set
@@ -223,9 +221,15 @@
         throw new Error("Missing the required parameter 'networkId' when calling networkDeleteIpIpId");
       }
 
+      // verify the required parameter 'ipId' is set
+      if (ipId === undefined || ipId === null) {
+        throw new Error("Missing the required parameter 'ipId' when calling networkDeleteIpIpId");
+      }
+
 
       var pathParams = {
-        'networkId': networkId
+        'networkId': networkId,
+        'ipId': ipId
       };
       var queryParams = {
       };
@@ -240,21 +244,21 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
-        '/network/{networkId}/ip/:ipId', 'DELETE',
+        '/network/{networkId}/ip/{ipId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /ip/:ipId
      * @param {String} networkId ID of network
+     * @param {String} ipId ipId
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.networkDeleteIpIpId = function(networkId) {
-      return this.networkDeleteIpIpIdWithHttpInfo(networkId)
+    this.networkDeleteIpIpId = function(networkId, ipId) {
+      return this.networkDeleteIpIpIdWithHttpInfo(networkId, ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -298,11 +302,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/network/{networkId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -323,9 +326,10 @@
     /**
      * /ip/:ipId
      * @param {String} networkId ID of network
+     * @param {String} ipId ipId
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
-    this.networkGetIpIpIdWithHttpInfo = function(networkId) {
+    this.networkGetIpIpIdWithHttpInfo = function(networkId, ipId) {
       var postBody = null;
 
       // verify the required parameter 'networkId' is set
@@ -333,9 +337,15 @@
         throw new Error("Missing the required parameter 'networkId' when calling networkGetIpIpId");
       }
 
+      // verify the required parameter 'ipId' is set
+      if (ipId === undefined || ipId === null) {
+        throw new Error("Missing the required parameter 'ipId' when calling networkGetIpIpId");
+      }
+
 
       var pathParams = {
-        'networkId': networkId
+        'networkId': networkId,
+        'ipId': ipId
       };
       var queryParams = {
       };
@@ -350,21 +360,21 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
-        '/network/{networkId}/ip/:ipId', 'GET',
+        '/network/{networkId}/ip/{ipId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /ip/:ipId
      * @param {String} networkId ID of network
+     * @param {String} ipId ipId
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
-    this.networkGetIpIpId = function(networkId) {
-      return this.networkGetIpIpIdWithHttpInfo(networkId)
+    this.networkGetIpIpId = function(networkId, ipId) {
+      return this.networkGetIpIpIdWithHttpInfo(networkId, ipId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -408,11 +418,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = NetworkServices;
-
       return this.apiClient.callApi(
         '/network/{networkId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -460,11 +469,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/network/{networkId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -509,11 +517,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Network];
-
       return this.apiClient.callApi(
         '/network', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -562,11 +569,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/network/{networkId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -613,11 +619,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Ip];
-
       return this.apiClient.callApi(
         '/network/{networkId}/ip', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -664,11 +669,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/network/{networkId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -715,11 +719,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [NetworkServices];
-
       return this.apiClient.callApi(
         '/network/{networkId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -739,20 +742,20 @@
     /**
      * /tag
      * @param {String} networkId ID of network
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.networkPatchTagWithHttpInfo = function(networkId, body) {
-      var postBody = body;
+    this.networkPatchTagWithHttpInfo = function(networkId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling networkPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling networkPatchTag");
       }
 
 
@@ -772,22 +775,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/network/{networkId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} networkId ID of network
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.networkPatchTag = function(networkId, body) {
-      return this.networkPatchTagWithHttpInfo(networkId, body)
+    this.networkPatchTag = function(networkId, requestBody) {
+      return this.networkPatchTagWithHttpInfo(networkId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -798,7 +800,7 @@
      * /accessrights
      * @param {String} networkId ID of network
      * @param {module:model/NetworkPostAccessrights} networkPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Network} and HTTP response
      */
     this.networkPostAccessrightsWithHttpInfo = function(networkId, networkPostAccessrights) {
       var postBody = networkPostAccessrights;
@@ -829,12 +831,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Network;
       return this.apiClient.callApi(
         '/network/{networkId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -842,7 +843,7 @@
      * /accessrights
      * @param {String} networkId ID of network
      * @param {module:model/NetworkPostAccessrights} networkPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Network}
      */
     this.networkPostAccessrights = function(networkId, networkPostAccessrights) {
       return this.networkPostAccessrightsWithHttpInfo(networkId, networkPostAccessrights)
@@ -888,11 +889,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
         '/network/{networkId}/ip', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -941,11 +941,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Network;
-
       return this.apiClient.callApi(
         '/network/{networkId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1000,11 +999,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Network;
-
       return this.apiClient.callApi(
         '/network/{networkId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

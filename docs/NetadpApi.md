@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 <a name="netadpPatchTag"></a>
 # **netadpPatchTag**
-> Object netadpPatchTag(netadpId, body)
+> Object netadpPatchTag(netadpId, requestBody)
 
 /tag
 
@@ -497,8 +497,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
-var body = null; // Object | 
-apiInstance.netadpPatchTag(netadpId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.netadpPatchTag(netadpId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -511,7 +511,7 @@ apiInstance.netadpPatchTag(netadpId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **netadpId** | **String**| ID of netadp | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
 
 <a name="netadpPostAccessrights"></a>
 # **netadpPostAccessrights**
-> String netadpPostAccessrights(netadpId, netadpPostAccessrights)
+> Netadp netadpPostAccessrights(netadpId, netadpPostAccessrights)
 
 /accessrights
 
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Netadp**](Netadp.md)
 
 ### Authorization
 

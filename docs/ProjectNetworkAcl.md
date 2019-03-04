@@ -9,3 +9,14 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 
 
+<a name="TypeEnum"></a>
+## Enum: TypeEnum
+
+
+* `subnet` (value: `"subnet"`)
+
+* `geo` (value: `"geo"`)
+
+
+
+

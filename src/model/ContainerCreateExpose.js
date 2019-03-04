@@ -42,10 +42,14 @@
    * Constructs a new <code>ContainerCreateExpose</code>.
    * @alias module:model/ContainerCreateExpose
    * @class
+   * @param internal {String} 
+   * @param external {String} 
    */
-  var exports = function() {
+  var exports = function(internal, external) {
     var _this = this;
 
+    _this['internal'] = internal;
+    _this['external'] = external;
   };
 
   /**
@@ -58,24 +62,24 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('port')) {
-        obj['port'] = ApiClient.convertToType(data['port'], 'Number');
+      if (data.hasOwnProperty('internal')) {
+        obj['internal'] = ApiClient.convertToType(data['internal'], 'String');
       }
-      if (data.hasOwnProperty('host')) {
-        obj['host'] = ApiClient.convertToType(data['host'], 'String');
+      if (data.hasOwnProperty('external')) {
+        obj['external'] = ApiClient.convertToType(data['external'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Number} port
+   * @member {String} internal
    */
-  exports.prototype['port'] = undefined;
+  exports.prototype['internal'] = undefined;
   /**
-   * @member {String} host
+   * @member {String} external
    */
-  exports.prototype['host'] = undefined;
+  exports.prototype['external'] = undefined;
 
 
 

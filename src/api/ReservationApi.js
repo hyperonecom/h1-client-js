@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Reservation;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/actions/assign', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -139,11 +138,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Reservation;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/actions/extend', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -192,11 +190,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Reservation;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/actions/unassign', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -244,11 +241,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Reservation;
-
       return this.apiClient.callApi(
         '/reservation', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -296,11 +292,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -354,11 +349,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Reservation;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -413,11 +407,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -472,11 +465,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ReservationServices;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -524,11 +516,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -573,11 +564,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Reservation];
-
       return this.apiClient.callApi(
         '/reservation', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -626,11 +616,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -677,11 +666,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -728,11 +716,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [ReservationServices];
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -752,20 +739,20 @@
     /**
      * /tag
      * @param {String} reservationId ID of reservation
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.reservationPatchTagWithHttpInfo = function(reservationId, body) {
-      var postBody = body;
+    this.reservationPatchTagWithHttpInfo = function(reservationId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling reservationPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling reservationPatchTag");
       }
 
 
@@ -785,22 +772,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} reservationId ID of reservation
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.reservationPatchTag = function(reservationId, body) {
-      return this.reservationPatchTagWithHttpInfo(reservationId, body)
+    this.reservationPatchTag = function(reservationId, requestBody) {
+      return this.reservationPatchTagWithHttpInfo(reservationId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -811,7 +797,7 @@
      * /accessrights
      * @param {String} reservationId ID of reservation
      * @param {module:model/ReservationPostAccessrights} reservationPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Reservation} and HTTP response
      */
     this.reservationPostAccessrightsWithHttpInfo = function(reservationId, reservationPostAccessrights) {
       var postBody = reservationPostAccessrights;
@@ -842,12 +828,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Reservation;
       return this.apiClient.callApi(
         '/reservation/{reservationId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -855,7 +840,7 @@
      * /accessrights
      * @param {String} reservationId ID of reservation
      * @param {module:model/ReservationPostAccessrights} reservationPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Reservation}
      */
     this.reservationPostAccessrights = function(reservationId, reservationPostAccessrights) {
       return this.reservationPostAccessrightsWithHttpInfo(reservationId, reservationPostAccessrights)
@@ -896,11 +881,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Reservation;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -955,11 +939,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Reservation;
-
       return this.apiClient.callApi(
         '/reservation/{reservationId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

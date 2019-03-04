@@ -79,11 +79,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Container;
-
       return this.apiClient.callApi(
         '/container/{containerId}/actions/restart', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -132,11 +131,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Container;
-
       return this.apiClient.callApi(
         '/container/{containerId}/actions/start', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -185,11 +183,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Container;
-
       return this.apiClient.callApi(
         '/container/{containerId}/actions/stop', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -237,11 +234,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Container;
-
       return this.apiClient.callApi(
         '/container', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -289,11 +285,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/container/{containerId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -347,11 +342,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Container;
-
       return this.apiClient.callApi(
         '/container/{containerId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -406,11 +400,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/container/{containerId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -465,11 +458,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ContainerServices;
-
       return this.apiClient.callApi(
         '/container/{containerId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -517,11 +509,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/container/{containerId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -566,11 +557,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Container];
-
       return this.apiClient.callApi(
         '/container', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -619,11 +609,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/container/{containerId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -670,11 +659,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/container/{containerId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -721,11 +709,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [ContainerServices];
-
       return this.apiClient.callApi(
         '/container/{containerId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -745,20 +732,20 @@
     /**
      * /tag
      * @param {String} containerId ID of container
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.containerPatchTagWithHttpInfo = function(containerId, body) {
-      var postBody = body;
+    this.containerPatchTagWithHttpInfo = function(containerId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling containerPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling containerPatchTag");
       }
 
 
@@ -778,22 +765,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/container/{containerId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} containerId ID of container
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.containerPatchTag = function(containerId, body) {
-      return this.containerPatchTagWithHttpInfo(containerId, body)
+    this.containerPatchTag = function(containerId, requestBody) {
+      return this.containerPatchTagWithHttpInfo(containerId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -804,7 +790,7 @@
      * /accessrights
      * @param {String} containerId ID of container
      * @param {module:model/ContainerPostAccessrights} containerPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Container} and HTTP response
      */
     this.containerPostAccessrightsWithHttpInfo = function(containerId, containerPostAccessrights) {
       var postBody = containerPostAccessrights;
@@ -835,12 +821,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Container;
       return this.apiClient.callApi(
         '/container/{containerId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -848,7 +833,7 @@
      * /accessrights
      * @param {String} containerId ID of container
      * @param {module:model/ContainerPostAccessrights} containerPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Container}
      */
     this.containerPostAccessrights = function(containerId, containerPostAccessrights) {
       return this.containerPostAccessrightsWithHttpInfo(containerId, containerPostAccessrights)
@@ -889,11 +874,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Container;
-
       return this.apiClient.callApi(
         '/container/{containerId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -948,11 +932,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Container;
-
       return this.apiClient.callApi(
         '/container/{containerId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

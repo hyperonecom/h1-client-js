@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **state** | **String** |  | [optional] 
 **tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
-**url** | **String** |  | [optional] 
+**image** | **String** |  | [optional] 
 
 
 <a name="StateEnum"></a>

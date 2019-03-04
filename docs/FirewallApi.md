@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 
 <a name="firewallDeleteEgressRuleId"></a>
 # **firewallDeleteEgressRuleId**
-> InlineResponse200 firewallDeleteEgressRuleId(firewallId, ruleId)
+> InlineResponse2001 firewallDeleteEgressRuleId(firewallId, ruleId)
 
 /egress/:ruleId
 
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -434,7 +434,7 @@ Name | Type | Description  | Notes
 
 <a name="firewallDeleteIngressRuleId"></a>
 # **firewallDeleteIngressRuleId**
-> InlineResponse200 firewallDeleteIngressRuleId(firewallId, ruleId)
+> InlineResponse2001 firewallDeleteIngressRuleId(firewallId, ruleId)
 
 /ingress/:ruleId
 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
 
 <a name="firewallGetEgressRuleId"></a>
 # **firewallGetEgressRuleId**
-> InlineResponse200 firewallGetEgressRuleId(firewallId, ruleId)
+> InlineResponse2001 firewallGetEgressRuleId(firewallId, ruleId)
 
 /egress/:ruleId
 
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -605,7 +605,7 @@ Name | Type | Description  | Notes
 
 <a name="firewallGetIngressRuleId"></a>
 # **firewallGetIngressRuleId**
-> InlineResponse200 firewallGetIngressRuleId(firewallId, ruleId)
+> InlineResponse2001 firewallGetIngressRuleId(firewallId, ruleId)
 
 /ingress/:ruleId
 
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -888,7 +888,7 @@ Name | Type | Description  | Notes
 
 <a name="firewallListEgress"></a>
 # **firewallListEgress**
-> [InlineResponse200] firewallListEgress(firewallId)
+> [InlineResponse2001] firewallListEgress(firewallId)
 
 /egress
 
@@ -930,7 +930,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse200]**](InlineResponse200.md)
+[**[InlineResponse2001]**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -943,7 +943,7 @@ Name | Type | Description  | Notes
 
 <a name="firewallListIngress"></a>
 # **firewallListIngress**
-> [InlineResponse200] firewallListIngress(firewallId)
+> [InlineResponse2001] firewallListIngress(firewallId)
 
 /ingress
 
@@ -985,7 +985,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse200]**](InlineResponse200.md)
+[**[InlineResponse2001]**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -1108,7 +1108,7 @@ Name | Type | Description  | Notes
 
 <a name="firewallPatchTag"></a>
 # **firewallPatchTag**
-> Object firewallPatchTag(firewallId, body)
+> Object firewallPatchTag(firewallId, requestBody)
 
 /tag
 
@@ -1134,8 +1134,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
-var body = null; // Object | 
-apiInstance.firewallPatchTag(firewallId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.firewallPatchTag(firewallId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1148,7 +1148,7 @@ apiInstance.firewallPatchTag(firewallId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewallId** | **String**| ID of firewall | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -1165,7 +1165,7 @@ Name | Type | Description  | Notes
 
 <a name="firewallPostAccessrights"></a>
 # **firewallPostAccessrights**
-> String firewallPostAccessrights(firewallId, firewallPostAccessrights)
+> Firewall firewallPostAccessrights(firewallId, firewallPostAccessrights)
 
 /accessrights
 
@@ -1209,7 +1209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Firewall**](Firewall.md)
 
 ### Authorization
 
@@ -1222,7 +1222,7 @@ Name | Type | Description  | Notes
 
 <a name="firewallPostEgress"></a>
 # **firewallPostEgress**
-> InlineResponse200 firewallPostEgress(firewallId, firewallPostEgress)
+> InlineResponse2001 firewallPostEgress(firewallId, firewallPostEgress)
 
 /egress
 
@@ -1266,7 +1266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -1279,7 +1279,7 @@ Name | Type | Description  | Notes
 
 <a name="firewallPostIngress"></a>
 # **firewallPostIngress**
-> InlineResponse200 firewallPostIngress(firewallId, firewallPostIngress)
+> InlineResponse2001 firewallPostIngress(firewallId, firewallPostIngress)
 
 /ingress
 
@@ -1323,7 +1323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 

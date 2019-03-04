@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Event', 'model/LogArchive', 'model/LogArchiveActionTransfer', 'model/LogArchiveCreate', 'model/LogArchivePatchCredentialcertificateId', 'model/LogArchivePatchCredentialpasswordId', 'model/LogArchivePostAccessrights', 'model/LogArchivePostCredentialcertificate', 'model/LogArchivePostCredentialpassword', 'model/LogArchiveServices', 'model/LogArchiveUpdate'], factory);
+    define(['ApiClient', 'model/CredentialPassword', 'model/Event', 'model/LogArchive', 'model/LogArchiveActionTransfer', 'model/LogArchiveCreate', 'model/LogArchivePatchCredentialpasswordId', 'model/LogArchivePostAccessrights', 'model/LogArchivePostCredentialpassword', 'model/LogArchiveServices', 'model/LogArchiveUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CredentialCertificate'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/LogArchive'), require('../model/LogArchiveActionTransfer'), require('../model/LogArchiveCreate'), require('../model/LogArchivePatchCredentialcertificateId'), require('../model/LogArchivePatchCredentialpasswordId'), require('../model/LogArchivePostAccessrights'), require('../model/LogArchivePostCredentialcertificate'), require('../model/LogArchivePostCredentialpassword'), require('../model/LogArchiveServices'), require('../model/LogArchiveUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/LogArchive'), require('../model/LogArchiveActionTransfer'), require('../model/LogArchiveCreate'), require('../model/LogArchivePatchCredentialpasswordId'), require('../model/LogArchivePostAccessrights'), require('../model/LogArchivePostCredentialpassword'), require('../model/LogArchiveServices'), require('../model/LogArchiveUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.LogArchiveApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.LogArchive, root.HyperOneApi.LogArchiveActionTransfer, root.HyperOneApi.LogArchiveCreate, root.HyperOneApi.LogArchivePatchCredentialcertificateId, root.HyperOneApi.LogArchivePatchCredentialpasswordId, root.HyperOneApi.LogArchivePostAccessrights, root.HyperOneApi.LogArchivePostCredentialcertificate, root.HyperOneApi.LogArchivePostCredentialpassword, root.HyperOneApi.LogArchiveServices, root.HyperOneApi.LogArchiveUpdate);
+    root.HyperOneApi.LogArchiveApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.LogArchive, root.HyperOneApi.LogArchiveActionTransfer, root.HyperOneApi.LogArchiveCreate, root.HyperOneApi.LogArchivePatchCredentialpasswordId, root.HyperOneApi.LogArchivePostAccessrights, root.HyperOneApi.LogArchivePostCredentialpassword, root.HyperOneApi.LogArchiveServices, root.HyperOneApi.LogArchiveUpdate);
   }
-}(this, function(ApiClient, CredentialCertificate, CredentialPassword, Event, LogArchive, LogArchiveActionTransfer, LogArchiveCreate, LogArchivePatchCredentialcertificateId, LogArchivePatchCredentialpasswordId, LogArchivePostAccessrights, LogArchivePostCredentialcertificate, LogArchivePostCredentialpassword, LogArchiveServices, LogArchiveUpdate) {
+}(this, function(ApiClient, CredentialPassword, Event, LogArchive, LogArchiveActionTransfer, LogArchiveCreate, LogArchivePatchCredentialpasswordId, LogArchivePostAccessrights, LogArchivePostCredentialpassword, LogArchiveServices, LogArchiveUpdate) {
   'use strict';
 
   /**
@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LogArchive;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/actions/transfer', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -138,11 +137,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LogArchive;
-
       return this.apiClient.callApi(
         '/logArchive', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -190,11 +188,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -248,11 +245,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LogArchive;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -264,65 +260,6 @@
      */
     this.logArchiveDeleteAccessrightsIdentity = function(logArchiveId, identity) {
       return this.logArchiveDeleteAccessrightsIdentityWithHttpInfo(logArchiveId, identity)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
-     */
-    this.logArchiveDeleteCredentialcertificateIdWithHttpInfo = function(logArchiveId, id) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveDeleteCredentialcertificateId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling logArchiveDeleteCredentialcertificateId");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = LogArchive;
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/credential/certificate/{id}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
-     */
-    this.logArchiveDeleteCredentialcertificateId = function(logArchiveId, id) {
-      return this.logArchiveDeleteCredentialcertificateIdWithHttpInfo(logArchiveId, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -366,11 +303,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LogArchive;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/password/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -425,11 +361,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -441,65 +376,6 @@
      */
     this.logArchiveDeleteTagKey = function(logArchiveId, key) {
       return this.logArchiveDeleteTagKeyWithHttpInfo(logArchiveId, key)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
-     */
-    this.logArchiveGetCredentialcertificateIdWithHttpInfo = function(logArchiveId, id) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveGetCredentialcertificateId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling logArchiveGetCredentialcertificateId");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = CredentialCertificate;
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/credential/certificate/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
-     */
-    this.logArchiveGetCredentialcertificateId = function(logArchiveId, id) {
-      return this.logArchiveGetCredentialcertificateIdWithHttpInfo(logArchiveId, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -543,11 +419,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CredentialPassword;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/password/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -602,11 +477,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LogArchiveServices;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -654,11 +528,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -703,11 +576,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [LogArchive];
-
       return this.apiClient.callApi(
         '/logArchive', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -756,11 +628,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -771,57 +642,6 @@
      */
     this.logArchiveListAccessrights = function(logArchiveId) {
       return this.logArchiveListAccessrightsWithHttpInfo(logArchiveId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/certificate
-     * @param {String} logArchiveId ID of logArchive
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CredentialCertificate>} and HTTP response
-     */
-    this.logArchiveListCredentialcertificateWithHttpInfo = function(logArchiveId) {
-      var postBody = null;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveListCredentialcertificate");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = [CredentialCertificate];
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/credential/certificate', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/certificate
-     * @param {String} logArchiveId ID of logArchive
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CredentialCertificate>}
-     */
-    this.logArchiveListCredentialcertificate = function(logArchiveId) {
-      return this.logArchiveListCredentialcertificateWithHttpInfo(logArchiveId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -858,11 +678,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [CredentialPassword];
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/password', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -909,11 +728,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -960,11 +778,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [LogArchiveServices];
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -975,72 +792,6 @@
      */
     this.logArchiveListServices = function(logArchiveId) {
       return this.logArchiveListServicesWithHttpInfo(logArchiveId)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @param {module:model/LogArchivePatchCredentialcertificateId} logArchivePatchCredentialcertificateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
-     */
-    this.logArchivePatchCredentialcertificateIdWithHttpInfo = function(logArchiveId, id, logArchivePatchCredentialcertificateId) {
-      var postBody = logArchivePatchCredentialcertificateId;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePatchCredentialcertificateId");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling logArchivePatchCredentialcertificateId");
-      }
-
-      // verify the required parameter 'logArchivePatchCredentialcertificateId' is set
-      if (logArchivePatchCredentialcertificateId === undefined || logArchivePatchCredentialcertificateId === null) {
-        throw new Error("Missing the required parameter 'logArchivePatchCredentialcertificateId' when calling logArchivePatchCredentialcertificateId");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId,
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = CredentialCertificate;
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/credential/certificate/{id}', 'PATCH',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/certificate/:id
-     * @param {String} logArchiveId ID of logArchive
-     * @param {String} id id
-     * @param {module:model/LogArchivePatchCredentialcertificateId} logArchivePatchCredentialcertificateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
-     */
-    this.logArchivePatchCredentialcertificateId = function(logArchiveId, id, logArchivePatchCredentialcertificateId) {
-      return this.logArchivePatchCredentialcertificateIdWithHttpInfo(logArchiveId, id, logArchivePatchCredentialcertificateId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1090,11 +841,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialPassword;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/password/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1116,20 +866,20 @@
     /**
      * /tag
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.logArchivePatchTagWithHttpInfo = function(logArchiveId, body) {
-      var postBody = body;
+    this.logArchivePatchTagWithHttpInfo = function(logArchiveId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling logArchivePatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling logArchivePatchTag");
       }
 
 
@@ -1149,22 +899,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} logArchiveId ID of logArchive
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.logArchivePatchTag = function(logArchiveId, body) {
-      return this.logArchivePatchTagWithHttpInfo(logArchiveId, body)
+    this.logArchivePatchTag = function(logArchiveId, requestBody) {
+      return this.logArchivePatchTagWithHttpInfo(logArchiveId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1175,7 +924,7 @@
      * /accessrights
      * @param {String} logArchiveId ID of logArchive
      * @param {module:model/LogArchivePostAccessrights} logArchivePostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LogArchive} and HTTP response
      */
     this.logArchivePostAccessrightsWithHttpInfo = function(logArchiveId, logArchivePostAccessrights) {
       var postBody = logArchivePostAccessrights;
@@ -1206,12 +955,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = LogArchive;
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1219,68 +967,10 @@
      * /accessrights
      * @param {String} logArchiveId ID of logArchive
      * @param {module:model/LogArchivePostAccessrights} logArchivePostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LogArchive}
      */
     this.logArchivePostAccessrights = function(logArchiveId, logArchivePostAccessrights) {
       return this.logArchivePostAccessrightsWithHttpInfo(logArchiveId, logArchivePostAccessrights)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * /credential/certificate
-     * @param {String} logArchiveId ID of logArchive
-     * @param {module:model/LogArchivePostCredentialcertificate} logArchivePostCredentialcertificate 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
-     */
-    this.logArchivePostCredentialcertificateWithHttpInfo = function(logArchiveId, logArchivePostCredentialcertificate) {
-      var postBody = logArchivePostCredentialcertificate;
-
-      // verify the required parameter 'logArchiveId' is set
-      if (logArchiveId === undefined || logArchiveId === null) {
-        throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePostCredentialcertificate");
-      }
-
-      // verify the required parameter 'logArchivePostCredentialcertificate' is set
-      if (logArchivePostCredentialcertificate === undefined || logArchivePostCredentialcertificate === null) {
-        throw new Error("Missing the required parameter 'logArchivePostCredentialcertificate' when calling logArchivePostCredentialcertificate");
-      }
-
-
-      var pathParams = {
-        'logArchiveId': logArchiveId
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['Project', 'ServiceAccount', 'Session'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = CredentialCertificate;
-
-      return this.apiClient.callApi(
-        '/logArchive/{logArchiveId}/credential/certificate', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * /credential/certificate
-     * @param {String} logArchiveId ID of logArchive
-     * @param {module:model/LogArchivePostCredentialcertificate} logArchivePostCredentialcertificate 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
-     */
-    this.logArchivePostCredentialcertificate = function(logArchiveId, logArchivePostCredentialcertificate) {
-      return this.logArchivePostCredentialcertificateWithHttpInfo(logArchiveId, logArchivePostCredentialcertificate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1323,11 +1013,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialPassword;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}/credential/password', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1376,11 +1065,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LogArchive;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1435,11 +1123,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = LogArchive;
-
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

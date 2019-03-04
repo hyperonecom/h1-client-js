@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/OrganisationAccessRights', 'model/OrganisationBilling', 'model/OrganisationLimit', 'model/OrganisationTransfer', 'model/ProjectRoles'], factory);
+    define(['ApiClient', 'model/Event', 'model/OrganisationBilling', 'model/OrganisationLimit', 'model/OrganisationTransfer', 'model/ProjectAccessRights', 'model/ProjectRoles'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Event'), require('./OrganisationAccessRights'), require('./OrganisationBilling'), require('./OrganisationLimit'), require('./OrganisationTransfer'), require('./ProjectRoles'));
+    module.exports = factory(require('../ApiClient'), require('./Event'), require('./OrganisationBilling'), require('./OrganisationLimit'), require('./OrganisationTransfer'), require('./ProjectAccessRights'), require('./ProjectRoles'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.Organisation = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.OrganisationAccessRights, root.HyperOneApi.OrganisationBilling, root.HyperOneApi.OrganisationLimit, root.HyperOneApi.OrganisationTransfer, root.HyperOneApi.ProjectRoles);
+    root.HyperOneApi.Organisation = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.OrganisationBilling, root.HyperOneApi.OrganisationLimit, root.HyperOneApi.OrganisationTransfer, root.HyperOneApi.ProjectAccessRights, root.HyperOneApi.ProjectRoles);
   }
-}(this, function(ApiClient, Event, OrganisationAccessRights, OrganisationBilling, OrganisationLimit, OrganisationTransfer, ProjectRoles) {
+}(this, function(ApiClient, Event, OrganisationBilling, OrganisationLimit, OrganisationTransfer, ProjectAccessRights, ProjectRoles) {
   'use strict';
 
 
@@ -83,7 +83,7 @@
         obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'Date');
       }
       if (data.hasOwnProperty('accessRights')) {
-        obj['accessRights'] = ApiClient.convertToType(data['accessRights'], [OrganisationAccessRights]);
+        obj['accessRights'] = ApiClient.convertToType(data['accessRights'], [ProjectAccessRights]);
       }
       if (data.hasOwnProperty('processing')) {
         obj['processing'] = ApiClient.convertToType(data['processing'], 'Boolean');
@@ -158,7 +158,7 @@
    */
   exports.prototype['createdOn'] = undefined;
   /**
-   * @member {Array.<module:model/OrganisationAccessRights>} accessRights
+   * @member {Array.<module:model/ProjectAccessRights>} accessRights
    */
   exports.prototype['accessRights'] = undefined;
   /**

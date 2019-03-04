@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vault;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/actions/resize', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -145,11 +144,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vault;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/actions/snapshot', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -199,11 +197,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vault;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/actions/start', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -252,11 +249,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vault;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/actions/stop', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -304,11 +300,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vault;
-
       return this.apiClient.callApi(
         '/vault', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -362,11 +357,10 @@
       var contentTypes = ['application/json'];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -421,11 +415,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vault;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -480,11 +473,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vault;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -539,11 +531,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vault;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/password/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -598,11 +589,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -657,11 +647,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CredentialCertificate;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -716,11 +705,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CredentialPassword;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/password/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -775,11 +763,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = VaultServices;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -827,11 +814,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -876,11 +862,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Vault];
-
       return this.apiClient.callApi(
         '/vault', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -929,11 +914,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -980,11 +964,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [CredentialCertificate];
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1031,11 +1014,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [CredentialPassword];
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/password', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1082,11 +1064,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1133,11 +1114,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [VaultServices];
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1197,11 +1177,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialCertificate;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1263,11 +1242,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialPassword;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/password/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1289,20 +1267,20 @@
     /**
      * /tag
      * @param {String} vaultId ID of vault
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.vaultPatchTagWithHttpInfo = function(vaultId, body) {
-      var postBody = body;
+    this.vaultPatchTagWithHttpInfo = function(vaultId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling vaultPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling vaultPatchTag");
       }
 
 
@@ -1322,22 +1300,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} vaultId ID of vault
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.vaultPatchTag = function(vaultId, body) {
-      return this.vaultPatchTagWithHttpInfo(vaultId, body)
+    this.vaultPatchTag = function(vaultId, requestBody) {
+      return this.vaultPatchTagWithHttpInfo(vaultId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1348,7 +1325,7 @@
      * /accessrights
      * @param {String} vaultId ID of vault
      * @param {module:model/VaultPostAccessrights} vaultPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
      */
     this.vaultPostAccessrightsWithHttpInfo = function(vaultId, vaultPostAccessrights) {
       var postBody = vaultPostAccessrights;
@@ -1379,12 +1356,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Vault;
       return this.apiClient.callApi(
         '/vault/{vaultId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1392,7 +1368,7 @@
      * /accessrights
      * @param {String} vaultId ID of vault
      * @param {module:model/VaultPostAccessrights} vaultPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
      */
     this.vaultPostAccessrights = function(vaultId, vaultPostAccessrights) {
       return this.vaultPostAccessrightsWithHttpInfo(vaultId, vaultPostAccessrights)
@@ -1438,11 +1414,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialCertificate;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1496,11 +1471,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = CredentialPassword;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/password', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1549,11 +1523,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vault;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1608,11 +1581,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vault;
-
       return this.apiClient.callApi(
         '/vault/{vaultId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

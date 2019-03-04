@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vmhost;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/actions/moveDisk', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -145,11 +144,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vmhost;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/actions/moveISO', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -205,11 +203,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vmhost;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/actions/moveImage', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -265,11 +262,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vmhost;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/actions/moveVM', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -318,11 +314,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -376,11 +371,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vmhost;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -435,11 +429,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -494,11 +487,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = VmhostServices;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -546,11 +538,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -595,11 +586,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Vmhost];
-
       return this.apiClient.callApi(
         '/vmhost', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -648,11 +638,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -699,11 +688,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -750,11 +738,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [VmhostServices];
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -774,20 +761,20 @@
     /**
      * /tag
      * @param {String} vmhostId ID of vmhost
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.vmhostPatchTagWithHttpInfo = function(vmhostId, body) {
-      var postBody = body;
+    this.vmhostPatchTagWithHttpInfo = function(vmhostId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'vmhostId' is set
       if (vmhostId === undefined || vmhostId === null) {
         throw new Error("Missing the required parameter 'vmhostId' when calling vmhostPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling vmhostPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling vmhostPatchTag");
       }
 
 
@@ -807,22 +794,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} vmhostId ID of vmhost
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.vmhostPatchTag = function(vmhostId, body) {
-      return this.vmhostPatchTagWithHttpInfo(vmhostId, body)
+    this.vmhostPatchTag = function(vmhostId, requestBody) {
+      return this.vmhostPatchTagWithHttpInfo(vmhostId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -833,7 +819,7 @@
      * /accessrights
      * @param {String} vmhostId ID of vmhost
      * @param {module:model/VmhostPostAccessrights} vmhostPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vmhost} and HTTP response
      */
     this.vmhostPostAccessrightsWithHttpInfo = function(vmhostId, vmhostPostAccessrights) {
       var postBody = vmhostPostAccessrights;
@@ -864,12 +850,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Vmhost;
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -877,7 +862,7 @@
      * /accessrights
      * @param {String} vmhostId ID of vmhost
      * @param {module:model/VmhostPostAccessrights} vmhostPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vmhost}
      */
     this.vmhostPostAccessrights = function(vmhostId, vmhostPostAccessrights) {
       return this.vmhostPostAccessrightsWithHttpInfo(vmhostId, vmhostPostAccessrights)
@@ -918,11 +903,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vmhost;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -977,11 +961,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vmhost;
-
       return this.apiClient.callApi(
         '/vmhost/{vmhostId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

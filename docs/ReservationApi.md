@@ -760,7 +760,7 @@ Name | Type | Description  | Notes
 
 <a name="reservationPatchTag"></a>
 # **reservationPatchTag**
-> Object reservationPatchTag(reservationId, body)
+> Object reservationPatchTag(reservationId, requestBody)
 
 /tag
 
@@ -786,8 +786,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
-var body = null; // Object | 
-apiInstance.reservationPatchTag(reservationId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.reservationPatchTag(reservationId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -800,7 +800,7 @@ apiInstance.reservationPatchTag(reservationId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reservationId** | **String**| ID of reservation | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -817,7 +817,7 @@ Name | Type | Description  | Notes
 
 <a name="reservationPostAccessrights"></a>
 # **reservationPostAccessrights**
-> String reservationPostAccessrights(reservationId, reservationPostAccessrights)
+> Reservation reservationPostAccessrights(reservationId, reservationPostAccessrights)
 
 /accessrights
 
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Reservation**](Reservation.md)
 
 ### Authorization
 

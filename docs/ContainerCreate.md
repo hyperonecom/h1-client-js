@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **image** | **String** |  | 
 **registry** | [**ContainerCreateRegistry**](ContainerCreateRegistry.md) |  | [optional] 
 **service** | **String** |  | 
-**expose** | [**ContainerCreateExpose**](ContainerCreateExpose.md) |  | [optional] 
+**expose** | [**[ContainerCreateExpose]**](ContainerCreateExpose.md) |  | [optional] 
 **env** | **[String]** |  | [optional] 
 **command** | **String** |  | [optional] 
 **volumes** | [**[ContainerCreateVolumes]**](ContainerCreateVolumes.md) |  | [optional] 

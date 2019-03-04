@@ -684,7 +684,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var opts = {
-  'mac': "mac_example" // String | Filter by mac
+  'mac': "mac_example", // String | Filter by mac
+  'tag': {key: "null"} // {String: String} | Filter by tag
 };
 apiInstance.ipList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -699,6 +700,7 @@ apiInstance.ipList(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mac** | **String**| Filter by mac | [optional] 
+ **tag** | [**{String: String}**](String.md)| Filter by tag | [optional] 
 
 ### Return type
 
@@ -880,7 +882,7 @@ Name | Type | Description  | Notes
 
 <a name="ipPatchTag"></a>
 # **ipPatchTag**
-> Object ipPatchTag(ipId, body)
+> Object ipPatchTag(ipId, requestBody)
 
 /tag
 
@@ -906,8 +908,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IpApi();
 var ipId = "ipId_example"; // String | ID of ip
-var body = null; // Object | 
-apiInstance.ipPatchTag(ipId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.ipPatchTag(ipId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -920,7 +922,7 @@ apiInstance.ipPatchTag(ipId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ipId** | **String**| ID of ip | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -937,7 +939,7 @@ Name | Type | Description  | Notes
 
 <a name="ipPostAccessrights"></a>
 # **ipPostAccessrights**
-> String ipPostAccessrights(ipId, ipPostAccessrights)
+> Ip ipPostAccessrights(ipId, ipPostAccessrights)
 
 /accessrights
 
@@ -981,7 +983,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Ip**](Ip.md)
 
 ### Authorization
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **modifiedBy** | **String** |  | [optional] 
 **createdBy** | **String** |  | [optional] 
 **createdOn** | **Date** |  | [optional] 
-**accessRights** | [**[OrganisationAccessRights]**](OrganisationAccessRights.md) |  | [optional] 
+**accessRights** | [**[ProjectAccessRights]**](ProjectAccessRights.md) |  | [optional] 
 **processing** | **Boolean** |  | [optional] 
 **created** | **Boolean** |  | [optional] 
 **queue** | [**[Event]**](Event.md) |  | [optional] 

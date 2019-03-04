@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Organisation', 'model/OrganisationAccessRights', 'model/OrganisationActionTransferAccept', 'model/OrganisationCreate', 'model/OrganisationPostAccessrights', 'model/OrganisationUpdate'], factory);
+    define(['ApiClient', 'model/AccessrightsUserRole', 'model/Event', 'model/Organisation', 'model/OrganisationActionPaymentAssign', 'model/OrganisationActionTransferAccept', 'model/OrganisationCreate', 'model/OrganisationPostAccessrights', 'model/OrganisationUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Organisation'), require('../model/OrganisationAccessRights'), require('../model/OrganisationActionTransferAccept'), require('../model/OrganisationCreate'), require('../model/OrganisationPostAccessrights'), require('../model/OrganisationUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/AccessrightsUserRole'), require('../model/Event'), require('../model/Organisation'), require('../model/OrganisationActionPaymentAssign'), require('../model/OrganisationActionTransferAccept'), require('../model/OrganisationCreate'), require('../model/OrganisationPostAccessrights'), require('../model/OrganisationUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.OrganisationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Organisation, root.HyperOneApi.OrganisationAccessRights, root.HyperOneApi.OrganisationActionTransferAccept, root.HyperOneApi.OrganisationCreate, root.HyperOneApi.OrganisationPostAccessrights, root.HyperOneApi.OrganisationUpdate);
+    root.HyperOneApi.OrganisationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.AccessrightsUserRole, root.HyperOneApi.Event, root.HyperOneApi.Organisation, root.HyperOneApi.OrganisationActionPaymentAssign, root.HyperOneApi.OrganisationActionTransferAccept, root.HyperOneApi.OrganisationCreate, root.HyperOneApi.OrganisationPostAccessrights, root.HyperOneApi.OrganisationUpdate);
   }
-}(this, function(ApiClient, Event, Organisation, OrganisationAccessRights, OrganisationActionTransferAccept, OrganisationCreate, OrganisationPostAccessrights, OrganisationUpdate) {
+}(this, function(ApiClient, AccessrightsUserRole, Event, Organisation, OrganisationActionPaymentAssign, OrganisationActionTransferAccept, OrganisationCreate, OrganisationPostAccessrights, OrganisationUpdate) {
   'use strict';
 
   /**
@@ -46,6 +46,65 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
+
+
+    /**
+     * /actions/payment_assign
+     * Action payment_assign
+     * @param {String} organisationId ID of organisation
+     * @param {module:model/OrganisationActionPaymentAssign} organisationActionPaymentAssign 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
+     */
+    this.organisationActionPaymentAssignWithHttpInfo = function(organisationId, organisationActionPaymentAssign) {
+      var postBody = organisationActionPaymentAssign;
+
+      // verify the required parameter 'organisationId' is set
+      if (organisationId === undefined || organisationId === null) {
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationActionPaymentAssign");
+      }
+
+      // verify the required parameter 'organisationActionPaymentAssign' is set
+      if (organisationActionPaymentAssign === undefined || organisationActionPaymentAssign === null) {
+        throw new Error("Missing the required parameter 'organisationActionPaymentAssign' when calling organisationActionPaymentAssign");
+      }
+
+
+      var pathParams = {
+        'organisationId': organisationId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Organisation;
+      return this.apiClient.callApi(
+        '/organisation/{organisationId}/actions/payment_assign', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /actions/payment_assign
+     * Action payment_assign
+     * @param {String} organisationId ID of organisation
+     * @param {module:model/OrganisationActionPaymentAssign} organisationActionPaymentAssign 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
+     */
+    this.organisationActionPaymentAssign = function(organisationId, organisationActionPaymentAssign) {
+      return this.organisationActionPaymentAssignWithHttpInfo(organisationId, organisationActionPaymentAssign)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
 
     /**
@@ -85,11 +144,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Organisation;
-
       return this.apiClient.callApi(
         '/organisation/{organisationId}/actions/transfer_accept', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -138,11 +196,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Organisation;
-
       return this.apiClient.callApi(
         '/organisation', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -161,28 +218,28 @@
 
 
     /**
-     * /accessrights/:identity
+     * /accessrights/:id
      * @param {String} organisationId ID of organisation
-     * @param {String} identity identity
+     * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
-    this.organisationDeleteAccessrightsIdentityWithHttpInfo = function(organisationId, identity) {
+    this.organisationDeleteAccessrightsIdWithHttpInfo = function(organisationId, id) {
       var postBody = null;
 
       // verify the required parameter 'organisationId' is set
       if (organisationId === undefined || organisationId === null) {
-        throw new Error("Missing the required parameter 'organisationId' when calling organisationDeleteAccessrightsIdentity");
+        throw new Error("Missing the required parameter 'organisationId' when calling organisationDeleteAccessrightsId");
       }
 
-      // verify the required parameter 'identity' is set
-      if (identity === undefined || identity === null) {
-        throw new Error("Missing the required parameter 'identity' when calling organisationDeleteAccessrightsIdentity");
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling organisationDeleteAccessrightsId");
       }
 
 
       var pathParams = {
         'organisationId': organisationId,
-        'identity': identity
+        'id': id
       };
       var queryParams = {
       };
@@ -197,22 +254,21 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Organisation;
-
       return this.apiClient.callApi(
-        '/organisation/{organisationId}/accessrights/{identity}', 'DELETE',
+        '/organisation/{organisationId}/accessrights/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * /accessrights/:identity
+     * /accessrights/:id
      * @param {String} organisationId ID of organisation
-     * @param {String} identity identity
+     * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
      */
-    this.organisationDeleteAccessrightsIdentity = function(organisationId, identity) {
-      return this.organisationDeleteAccessrightsIdentityWithHttpInfo(organisationId, identity)
+    this.organisationDeleteAccessrightsId = function(organisationId, id) {
+      return this.organisationDeleteAccessrightsIdWithHttpInfo(organisationId, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -256,11 +312,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/organisation/{organisationId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -308,11 +363,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/organisation/{organisationId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -335,8 +389,8 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
      * @param {String} opts.billingCompany Filter by billing.company
-     * @param {String} opts.limit Filter by $limit
-     * @param {String} opts.active Filter by active
+     * @param {Number} opts.limit Filter by $limit
+     * @param {Boolean} opts.active Filter by active
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Organisation>} and HTTP response
      */
     this.organisationListWithHttpInfo = function(opts) {
@@ -363,11 +417,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Organisation];
-
       return this.apiClient.callApi(
         '/organisation', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -377,8 +430,8 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
      * @param {String} opts.billingCompany Filter by billing.company
-     * @param {String} opts.limit Filter by $limit
-     * @param {String} opts.active Filter by active
+     * @param {Number} opts.limit Filter by $limit
+     * @param {Boolean} opts.active Filter by active
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Organisation>}
      */
     this.organisationList = function(opts) {
@@ -392,7 +445,7 @@
     /**
      * /accessrights
      * @param {String} organisationId ID of organisation
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/OrganisationAccessRights>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AccessrightsUserRole>} and HTTP response
      */
     this.organisationListAccessrightsWithHttpInfo = function(organisationId) {
       var postBody = null;
@@ -418,19 +471,18 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [OrganisationAccessRights];
-
+      var returnType = [AccessrightsUserRole];
       return this.apiClient.callApi(
         '/organisation/{organisationId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /accessrights
      * @param {String} organisationId ID of organisation
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/OrganisationAccessRights>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AccessrightsUserRole>}
      */
     this.organisationListAccessrights = function(organisationId) {
       return this.organisationListAccessrightsWithHttpInfo(organisationId)
@@ -470,11 +522,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/organisation/{organisationId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -494,20 +545,20 @@
     /**
      * /tag
      * @param {String} organisationId ID of organisation
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.organisationPatchTagWithHttpInfo = function(organisationId, body) {
-      var postBody = body;
+    this.organisationPatchTagWithHttpInfo = function(organisationId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'organisationId' is set
       if (organisationId === undefined || organisationId === null) {
         throw new Error("Missing the required parameter 'organisationId' when calling organisationPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling organisationPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling organisationPatchTag");
       }
 
 
@@ -527,22 +578,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/organisation/{organisationId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} organisationId ID of organisation
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.organisationPatchTag = function(organisationId, body) {
-      return this.organisationPatchTagWithHttpInfo(organisationId, body)
+    this.organisationPatchTag = function(organisationId, requestBody) {
+      return this.organisationPatchTagWithHttpInfo(organisationId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -553,7 +603,7 @@
      * /accessrights
      * @param {String} organisationId ID of organisation
      * @param {module:model/OrganisationPostAccessrights} organisationPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OrganisationAccessRights} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Organisation} and HTTP response
      */
     this.organisationPostAccessrightsWithHttpInfo = function(organisationId, organisationPostAccessrights) {
       var postBody = organisationPostAccessrights;
@@ -584,12 +634,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = OrganisationAccessRights;
-
+      var returnType = Organisation;
       return this.apiClient.callApi(
         '/organisation/{organisationId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -597,7 +646,7 @@
      * /accessrights
      * @param {String} organisationId ID of organisation
      * @param {module:model/OrganisationPostAccessrights} organisationPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OrganisationAccessRights}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Organisation}
      */
     this.organisationPostAccessrights = function(organisationId, organisationPostAccessrights) {
       return this.organisationPostAccessrightsWithHttpInfo(organisationId, organisationPostAccessrights)
@@ -638,11 +687,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Organisation;
-
       return this.apiClient.callApi(
         '/organisation/{organisationId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -697,11 +745,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Organisation;
-
       return this.apiClient.callApi(
         '/organisation/{organisationId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

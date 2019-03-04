@@ -4,9 +4,10 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**organisationActionPaymentAssign**](OrganisationApi.md#organisationActionPaymentAssign) | **POST** /organisation/{organisationId}/actions/payment_assign | /actions/payment_assign
 [**organisationActionTransferAccept**](OrganisationApi.md#organisationActionTransferAccept) | **POST** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
 [**organisationCreate**](OrganisationApi.md#organisationCreate) | **POST** /organisation | Create
-[**organisationDeleteAccessrightsIdentity**](OrganisationApi.md#organisationDeleteAccessrightsIdentity) | **DELETE** /organisation/{organisationId}/accessrights/{identity} | /accessrights/:identity
+[**organisationDeleteAccessrightsId**](OrganisationApi.md#organisationDeleteAccessrightsId) | **DELETE** /organisation/{organisationId}/accessrights/{id} | /accessrights/:id
 [**organisationDeleteTagKey**](OrganisationApi.md#organisationDeleteTagKey) | **DELETE** /organisation/{organisationId}/tag/{key} | /tag/:key
 [**organisationGetTag**](OrganisationApi.md#organisationGetTag) | **GET** /organisation/{organisationId}/tag | /tag
 [**organisationList**](OrganisationApi.md#organisationList) | **GET** /organisation | List
@@ -17,6 +18,65 @@ Method | HTTP request | Description
 [**organisationShow**](OrganisationApi.md#organisationShow) | **GET** /organisation/{organisationId} | Get
 [**organisationUpdate**](OrganisationApi.md#organisationUpdate) | **PATCH** /organisation/{organisationId} | Update
 
+
+<a name="organisationActionPaymentAssign"></a>
+# **organisationActionPaymentAssign**
+> Organisation organisationActionPaymentAssign(organisationId, organisationActionPaymentAssign)
+
+/actions/payment_assign
+
+Action payment_assign
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.OrganisationApi();
+var organisationId = "organisationId_example"; // String | ID of organisation
+var organisationActionPaymentAssign = new HyperOneApi.OrganisationActionPaymentAssign(); // OrganisationActionPaymentAssign | 
+apiInstance.organisationActionPaymentAssign(organisationId, organisationActionPaymentAssign).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organisationId** | **String**| ID of organisation | 
+ **organisationActionPaymentAssign** | [**OrganisationActionPaymentAssign**](OrganisationActionPaymentAssign.md)|  | 
+
+### Return type
+
+[**Organisation**](Organisation.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="organisationActionTransferAccept"></a>
 # **organisationActionTransferAccept**
@@ -134,11 +194,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="organisationDeleteAccessrightsIdentity"></a>
-# **organisationDeleteAccessrightsIdentity**
-> Organisation organisationDeleteAccessrightsIdentity(organisationId, identity)
+<a name="organisationDeleteAccessrightsId"></a>
+# **organisationDeleteAccessrightsId**
+> Organisation organisationDeleteAccessrightsId(organisationId, id)
 
-/accessrights/:identity
+/accessrights/:id
 
 ### Example
 ```javascript
@@ -162,8 +222,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var identity = "identity_example"; // String | identity
-apiInstance.organisationDeleteAccessrightsIdentity(organisationId, identity).then(function(data) {
+var id = "id_example"; // String | id
+apiInstance.organisationDeleteAccessrightsId(organisationId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -176,7 +236,7 @@ apiInstance.organisationDeleteAccessrightsIdentity(organisationId, identity).the
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisationId** | **String**| ID of organisation | 
- **identity** | **String**| identity | 
+ **id** | **String**| id | 
 
 ### Return type
 
@@ -335,8 +395,8 @@ var apiInstance = new HyperOneApi.OrganisationApi();
 var opts = {
   'name': "name_example", // String | Filter by name
   'billingCompany': "billingCompany_example", // String | Filter by billing.company
-  'limit': "limit_example", // String | Filter by $limit
-  'active': "active_example" // String | Filter by active
+  'limit': 3.4, // Number | Filter by $limit
+  'active': true // Boolean | Filter by active
 };
 apiInstance.organisationList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -352,8 +412,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Filter by name | [optional] 
  **billingCompany** | **String**| Filter by billing.company | [optional] 
- **limit** | **String**| Filter by $limit | [optional] 
- **active** | **String**| Filter by active | [optional] 
+ **limit** | **Number**| Filter by $limit | [optional] 
+ **active** | **Boolean**| Filter by active | [optional] 
 
 ### Return type
 
@@ -370,7 +430,7 @@ Name | Type | Description  | Notes
 
 <a name="organisationListAccessrights"></a>
 # **organisationListAccessrights**
-> [OrganisationAccessRights] organisationListAccessrights(organisationId)
+> [AccessrightsUserRole] organisationListAccessrights(organisationId)
 
 /accessrights
 
@@ -412,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[OrganisationAccessRights]**](OrganisationAccessRights.md)
+[**[AccessrightsUserRole]**](AccessrightsUserRole.md)
 
 ### Authorization
 
@@ -480,7 +540,7 @@ Name | Type | Description  | Notes
 
 <a name="organisationPatchTag"></a>
 # **organisationPatchTag**
-> Object organisationPatchTag(organisationId, body)
+> Object organisationPatchTag(organisationId, requestBody)
 
 /tag
 
@@ -506,8 +566,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
-var body = null; // Object | 
-apiInstance.organisationPatchTag(organisationId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.organisationPatchTag(organisationId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -520,7 +580,7 @@ apiInstance.organisationPatchTag(organisationId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisationId** | **String**| ID of organisation | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -537,7 +597,7 @@ Name | Type | Description  | Notes
 
 <a name="organisationPostAccessrights"></a>
 # **organisationPostAccessrights**
-> OrganisationAccessRights organisationPostAccessrights(organisationId, organisationPostAccessrights)
+> Organisation organisationPostAccessrights(organisationId, organisationPostAccessrights)
 
 /accessrights
 
@@ -581,7 +641,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrganisationAccessRights**](OrganisationAccessRights.md)
+[**Organisation**](Organisation.md)
 
 ### Authorization
 

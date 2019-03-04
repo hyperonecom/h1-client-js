@@ -982,7 +982,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var opts = {
-  'name': "name_example" // String | Filter by name
+  'name': "name_example", // String | Filter by name
+  'tag': {key: "null"} // {String: String} | Filter by tag
 };
 apiInstance.vmList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -997,6 +998,7 @@ apiInstance.vmList(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Filter by name | [optional] 
+ **tag** | [**{String: String}**](String.md)| Filter by tag | [optional] 
 
 ### Return type
 
@@ -1288,7 +1290,7 @@ Name | Type | Description  | Notes
 
 <a name="vmPatchTag"></a>
 # **vmPatchTag**
-> Object vmPatchTag(vmId, body)
+> Object vmPatchTag(vmId, requestBody)
 
 /tag
 
@@ -1314,8 +1316,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmApi();
 var vmId = "vmId_example"; // String | ID of vm
-var body = null; // Object | 
-apiInstance.vmPatchTag(vmId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.vmPatchTag(vmId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1328,7 +1330,7 @@ apiInstance.vmPatchTag(vmId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -1345,7 +1347,7 @@ Name | Type | Description  | Notes
 
 <a name="vmPostAccessrights"></a>
 # **vmPostAccessrights**
-> String vmPostAccessrights(vmId, vmPostAccessrights)
+> Vm vmPostAccessrights(vmId, vmPostAccessrights)
 
 /accessrights
 
@@ -1389,7 +1391,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Vm**](Vm.md)
 
 ### Authorization
 

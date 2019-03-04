@@ -643,7 +643,7 @@ Name | Type | Description  | Notes
 
 <a name="replicaPatchTag"></a>
 # **replicaPatchTag**
-> Object replicaPatchTag(replicaId, body)
+> Object replicaPatchTag(replicaId, requestBody)
 
 /tag
 
@@ -669,8 +669,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
-var body = null; // Object | 
-apiInstance.replicaPatchTag(replicaId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.replicaPatchTag(replicaId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -683,7 +683,7 @@ apiInstance.replicaPatchTag(replicaId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **replicaId** | **String**| ID of replica | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -700,7 +700,7 @@ Name | Type | Description  | Notes
 
 <a name="replicaPostAccessrights"></a>
 # **replicaPostAccessrights**
-> String replicaPostAccessrights(replicaId, replicaPostAccessrights)
+> Replica replicaPostAccessrights(replicaId, replicaPostAccessrights)
 
 /accessrights
 
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Replica**](Replica.md)
 
 ### Authorization
 

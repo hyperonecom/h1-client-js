@@ -5,16 +5,22 @@ All URIs are relative to *https://api.hyperone.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**projectCreate**](ProjectApi.md#projectCreate) | **POST** /project | Create
-[**projectDeleteAccessrightsIdentity**](ProjectApi.md#projectDeleteAccessrightsIdentity) | **DELETE** /project/{projectId}/accessrights/{identity} | /accessrights/:identity
+[**projectDelete**](ProjectApi.md#projectDelete) | **DELETE** /project/{projectId} | Delete
+[**projectDeleteAccessrightsId**](ProjectApi.md#projectDeleteAccessrightsId) | **DELETE** /project/{projectId}/accessrights/{id} | /accessrights/:id
+[**projectDeleteCredentialStorecertificateId**](ProjectApi.md#projectDeleteCredentialStorecertificateId) | **DELETE** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 [**projectDeleteTagKey**](ProjectApi.md#projectDeleteTagKey) | **DELETE** /project/{projectId}/tag/{key} | /tag/:key
+[**projectGetCredentialStorecertificateId**](ProjectApi.md#projectGetCredentialStorecertificateId) | **GET** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 [**projectGetServicesServiceId**](ProjectApi.md#projectGetServicesServiceId) | **GET** /project/{projectId}/services/{serviceId} | /services/:serviceId
 [**projectGetTag**](ProjectApi.md#projectGetTag) | **GET** /project/{projectId}/tag | /tag
 [**projectList**](ProjectApi.md#projectList) | **GET** /project | List
 [**projectListAccessrights**](ProjectApi.md#projectListAccessrights) | **GET** /project/{projectId}/accessrights | /accessrights
+[**projectListCredentialStorecertificate**](ProjectApi.md#projectListCredentialStorecertificate) | **GET** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
 [**projectListQueue**](ProjectApi.md#projectListQueue) | **GET** /project/{projectId}/queue | /queue
 [**projectListServices**](ProjectApi.md#projectListServices) | **GET** /project/{projectId}/services | /services
+[**projectPatchCredentialStorecertificateId**](ProjectApi.md#projectPatchCredentialStorecertificateId) | **PATCH** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 [**projectPatchTag**](ProjectApi.md#projectPatchTag) | **PATCH** /project/{projectId}/tag | /tag
 [**projectPostAccessrights**](ProjectApi.md#projectPostAccessrights) | **POST** /project/{projectId}/accessrights | /accessrights
+[**projectPostCredentialStorecertificate**](ProjectApi.md#projectPostCredentialStorecertificate) | **POST** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
 [**projectShow**](ProjectApi.md#projectShow) | **GET** /project/{projectId} | Get
 [**projectUpdate**](ProjectApi.md#projectUpdate) | **PATCH** /project/{projectId} | Update
 
@@ -76,11 +82,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="projectDeleteAccessrightsIdentity"></a>
-# **projectDeleteAccessrightsIdentity**
-> Project projectDeleteAccessrightsIdentity(projectId, identity)
+<a name="projectDelete"></a>
+# **projectDelete**
+> projectDelete(projectId)
 
-/accessrights/:identity
+Delete
 
 ### Example
 ```javascript
@@ -104,8 +110,63 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
-var identity = "identity_example"; // String | identity
-apiInstance.projectDeleteAccessrightsIdentity(projectId, identity).then(function(data) {
+apiInstance.projectDelete(projectId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| ID of project | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="projectDeleteAccessrightsId"></a>
+# **projectDeleteAccessrightsId**
+> Project projectDeleteAccessrightsId(projectId, id)
+
+/accessrights/:id
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ProjectApi();
+var projectId = "projectId_example"; // String | ID of project
+var id = "id_example"; // String | id
+apiInstance.projectDeleteAccessrightsId(projectId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -118,11 +179,68 @@ apiInstance.projectDeleteAccessrightsIdentity(projectId, identity).then(function
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| ID of project | 
- **identity** | **String**| identity | 
+ **id** | **String**| id | 
 
 ### Return type
 
 [**Project**](Project.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="projectDeleteCredentialStorecertificateId"></a>
+# **projectDeleteCredentialStorecertificateId**
+> InlineResponse200 projectDeleteCredentialStorecertificateId(projectId, id)
+
+/credentialStore/certificate/:id
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ProjectApi();
+var projectId = "projectId_example"; // String | ID of project
+var id = "id_example"; // String | id
+apiInstance.projectDeleteCredentialStorecertificateId(projectId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| ID of project | 
+ **id** | **String**| id | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -180,6 +298,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="projectGetCredentialStorecertificateId"></a>
+# **projectGetCredentialStorecertificateId**
+> InlineResponse200 projectGetCredentialStorecertificateId(projectId, id)
+
+/credentialStore/certificate/:id
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ProjectApi();
+var projectId = "projectId_example"; // String | ID of project
+var id = "id_example"; // String | id
+apiInstance.projectGetCredentialStorecertificateId(projectId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| ID of project | 
+ **id** | **String**| id | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -333,8 +508,8 @@ Session.apiKey = 'YOUR API KEY';
 var apiInstance = new HyperOneApi.ProjectApi();
 var opts = {
   'name': "name_example", // String | Filter by name
-  'limit': "limit_example", // String | Filter by $limit
-  'active': "active_example", // String | Filter by active
+  'limit': 3.4, // Number | Filter by $limit
+  'active': true, // Boolean | Filter by active
   'organisation': "organisation_example" // String | Filter by organisation
 };
 apiInstance.projectList(opts).then(function(data) {
@@ -350,8 +525,8 @@ apiInstance.projectList(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Filter by name | [optional] 
- **limit** | **String**| Filter by $limit | [optional] 
- **active** | **String**| Filter by active | [optional] 
+ **limit** | **Number**| Filter by $limit | [optional] 
+ **active** | **Boolean**| Filter by active | [optional] 
  **organisation** | **String**| Filter by organisation | [optional] 
 
 ### Return type
@@ -369,7 +544,7 @@ Name | Type | Description  | Notes
 
 <a name="projectListAccessrights"></a>
 # **projectListAccessrights**
-> [ProjectAccessRights] projectListAccessrights(projectId)
+> [AccessrightsUserRole] projectListAccessrights(projectId)
 
 /accessrights
 
@@ -411,7 +586,62 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ProjectAccessRights]**](ProjectAccessRights.md)
+[**[AccessrightsUserRole]**](AccessrightsUserRole.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="projectListCredentialStorecertificate"></a>
+# **projectListCredentialStorecertificate**
+> [InlineResponse200] projectListCredentialStorecertificate(projectId)
+
+/credentialStore/certificate
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ProjectApi();
+var projectId = "projectId_example"; // String | ID of project
+apiInstance.projectListCredentialStorecertificate(projectId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| ID of project | 
+
+### Return type
+
+[**[InlineResponse200]**](InlineResponse200.md)
 
 ### Authorization
 
@@ -532,9 +762,68 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="projectPatchCredentialStorecertificateId"></a>
+# **projectPatchCredentialStorecertificateId**
+> InlineResponse200 projectPatchCredentialStorecertificateId(projectId, id, projectPatchCredentialStorecertificateId)
+
+/credentialStore/certificate/:id
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ProjectApi();
+var projectId = "projectId_example"; // String | ID of project
+var id = "id_example"; // String | id
+var projectPatchCredentialStorecertificateId = new HyperOneApi.ProjectPatchCredentialStorecertificateId(); // ProjectPatchCredentialStorecertificateId | 
+apiInstance.projectPatchCredentialStorecertificateId(projectId, id, projectPatchCredentialStorecertificateId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| ID of project | 
+ **id** | **String**| id | 
+ **projectPatchCredentialStorecertificateId** | [**ProjectPatchCredentialStorecertificateId**](ProjectPatchCredentialStorecertificateId.md)|  | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="projectPatchTag"></a>
 # **projectPatchTag**
-> Object projectPatchTag(projectId, body)
+> Object projectPatchTag(projectId, requestBody)
 
 /tag
 
@@ -560,8 +849,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
-var body = null; // Object | 
-apiInstance.projectPatchTag(projectId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.projectPatchTag(projectId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -574,7 +863,7 @@ apiInstance.projectPatchTag(projectId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| ID of project | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -591,7 +880,7 @@ Name | Type | Description  | Notes
 
 <a name="projectPostAccessrights"></a>
 # **projectPostAccessrights**
-> ProjectAccessRights projectPostAccessrights(projectId, projectPostAccessrights)
+> Project projectPostAccessrights(projectId, projectPostAccessrights)
 
 /accessrights
 
@@ -635,7 +924,64 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectAccessRights**](ProjectAccessRights.md)
+[**Project**](Project.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="projectPostCredentialStorecertificate"></a>
+# **projectPostCredentialStorecertificate**
+> InlineResponse200 projectPostCredentialStorecertificate(projectId, body)
+
+/credentialStore/certificate
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.ProjectApi();
+var projectId = "projectId_example"; // String | ID of project
+var body = "body_example"; // String | 
+apiInstance.projectPostCredentialStorecertificate(projectId, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectId** | **String**| ID of project | 
+ **body** | **String**|  | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 

@@ -644,7 +644,7 @@ Name | Type | Description  | Notes
 
 <a name="isoPatchTag"></a>
 # **isoPatchTag**
-> Object isoPatchTag(isoId, body)
+> Object isoPatchTag(isoId, requestBody)
 
 /tag
 
@@ -670,8 +670,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.IsoApi();
 var isoId = "isoId_example"; // String | ID of iso
-var body = null; // Object | 
-apiInstance.isoPatchTag(isoId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.isoPatchTag(isoId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -684,7 +684,7 @@ apiInstance.isoPatchTag(isoId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **isoId** | **String**| ID of iso | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -701,7 +701,7 @@ Name | Type | Description  | Notes
 
 <a name="isoPostAccessrights"></a>
 # **isoPostAccessrights**
-> String isoPostAccessrights(isoId, isoPostAccessrights)
+> Iso isoPostAccessrights(isoId, isoPostAccessrights)
 
 /accessrights
 
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Iso**](Iso.md)
 
 ### Authorization
 

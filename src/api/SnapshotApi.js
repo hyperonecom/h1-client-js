@@ -78,11 +78,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Snapshot;
-
       return this.apiClient.callApi(
         '/snapshot', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -130,11 +129,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -188,11 +186,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Snapshot;
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -247,11 +244,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -306,11 +302,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SnapshotServices;
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -358,11 +353,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -409,11 +403,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Snapshot];
-
       return this.apiClient.callApi(
         '/snapshot', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -463,11 +456,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -514,11 +506,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -565,11 +556,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [SnapshotServices];
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -589,20 +579,20 @@
     /**
      * /tag
      * @param {String} snapshotId ID of snapshot
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.snapshotPatchTagWithHttpInfo = function(snapshotId, body) {
-      var postBody = body;
+    this.snapshotPatchTagWithHttpInfo = function(snapshotId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling snapshotPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling snapshotPatchTag");
       }
 
 
@@ -622,22 +612,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} snapshotId ID of snapshot
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.snapshotPatchTag = function(snapshotId, body) {
-      return this.snapshotPatchTagWithHttpInfo(snapshotId, body)
+    this.snapshotPatchTag = function(snapshotId, requestBody) {
+      return this.snapshotPatchTagWithHttpInfo(snapshotId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -648,7 +637,7 @@
      * /accessrights
      * @param {String} snapshotId ID of snapshot
      * @param {module:model/SnapshotPostAccessrights} snapshotPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Snapshot} and HTTP response
      */
     this.snapshotPostAccessrightsWithHttpInfo = function(snapshotId, snapshotPostAccessrights) {
       var postBody = snapshotPostAccessrights;
@@ -679,12 +668,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Snapshot;
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -692,7 +680,7 @@
      * /accessrights
      * @param {String} snapshotId ID of snapshot
      * @param {module:model/SnapshotPostAccessrights} snapshotPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Snapshot}
      */
     this.snapshotPostAccessrights = function(snapshotId, snapshotPostAccessrights) {
       return this.snapshotPostAccessrightsWithHttpInfo(snapshotId, snapshotPostAccessrights)
@@ -733,11 +721,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Snapshot;
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -792,11 +779,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Snapshot;
-
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

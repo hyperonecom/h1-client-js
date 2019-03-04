@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 
 <a name="snapshotPatchTag"></a>
 # **snapshotPatchTag**
-> Object snapshotPatchTag(snapshotId, body)
+> Object snapshotPatchTag(snapshotId, requestBody)
 
 /tag
 
@@ -612,8 +612,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.SnapshotApi();
 var snapshotId = "snapshotId_example"; // String | ID of snapshot
-var body = null; // Object | 
-apiInstance.snapshotPatchTag(snapshotId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.snapshotPatchTag(snapshotId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -626,7 +626,7 @@ apiInstance.snapshotPatchTag(snapshotId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **snapshotId** | **String**| ID of snapshot | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -643,7 +643,7 @@ Name | Type | Description  | Notes
 
 <a name="snapshotPostAccessrights"></a>
 # **snapshotPostAccessrights**
-> String snapshotPostAccessrights(snapshotId, snapshotPostAccessrights)
+> Snapshot snapshotPostAccessrights(snapshotId, snapshotPostAccessrights)
 
 /accessrights
 
@@ -687,7 +687,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Snapshot**](Snapshot.md)
 
 ### Authorization
 

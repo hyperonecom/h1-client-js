@@ -75,7 +75,7 @@
   }
 
   /**
-   * @member {String} type
+   * @member {module:model/ProjectNetworkAcl.TypeEnum} type
    */
   exports.prototype['type'] = undefined;
   /**
@@ -91,6 +91,23 @@
    */
   exports.prototype['_id'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>type</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.TypeEnum = {
+    /**
+     * value: "subnet"
+     * @const
+     */
+    "subnet": "subnet",
+    /**
+     * value: "geo"
+     * @const
+     */
+    "geo": "geo"  };
 
 
   return exports;

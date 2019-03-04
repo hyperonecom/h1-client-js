@@ -83,7 +83,7 @@
         obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'Date');
       }
       if (data.hasOwnProperty('accessRights')) {
-        obj['accessRights'] = ProjectAccessRights.constructFromObject(data['accessRights']);
+        obj['accessRights'] = ApiClient.convertToType(data['accessRights'], [ProjectAccessRights]);
       }
       if (data.hasOwnProperty('processing')) {
         obj['processing'] = ApiClient.convertToType(data['processing'], 'Boolean');
@@ -113,10 +113,10 @@
         obj['billing'] = ProjectBilling.constructFromObject(data['billing']);
       }
       if (data.hasOwnProperty('invoices')) {
-        obj['invoices'] = ProjectInvoices.constructFromObject(data['invoices']);
+        obj['invoices'] = ApiClient.convertToType(data['invoices'], [ProjectInvoices]);
       }
       if (data.hasOwnProperty('payments')) {
-        obj['payments'] = Payment.constructFromObject(data['payments']);
+        obj['payments'] = ApiClient.convertToType(data['payments'], [Payment]);
       }
       if (data.hasOwnProperty('verified')) {
         obj['verified'] = ApiClient.convertToType(data['verified'], 'String');
@@ -134,7 +134,7 @@
         obj['roles'] = ApiClient.convertToType(data['roles'], [ProjectRoles]);
       }
       if (data.hasOwnProperty('networkAcl')) {
-        obj['networkAcl'] = ProjectNetworkAcl.constructFromObject(data['networkAcl']);
+        obj['networkAcl'] = ApiClient.convertToType(data['networkAcl'], [ProjectNetworkAcl]);
       }
       if (data.hasOwnProperty('compliance')) {
         obj['compliance'] = ProjectCompliance.constructFromObject(data['compliance']);
@@ -179,7 +179,7 @@
    */
   exports.prototype['createdOn'] = undefined;
   /**
-   * @member {module:model/ProjectAccessRights} accessRights
+   * @member {Array.<module:model/ProjectAccessRights>} accessRights
    */
   exports.prototype['accessRights'] = undefined;
   /**
@@ -219,11 +219,11 @@
    */
   exports.prototype['billing'] = undefined;
   /**
-   * @member {module:model/ProjectInvoices} invoices
+   * @member {Array.<module:model/ProjectInvoices>} invoices
    */
   exports.prototype['invoices'] = undefined;
   /**
-   * @member {module:model/Payment} payments
+   * @member {Array.<module:model/Payment>} payments
    */
   exports.prototype['payments'] = undefined;
   /**
@@ -247,7 +247,7 @@
    */
   exports.prototype['roles'] = undefined;
   /**
-   * @member {module:model/ProjectNetworkAcl} networkAcl
+   * @member {Array.<module:model/ProjectNetworkAcl>} networkAcl
    */
   exports.prototype['networkAcl'] = undefined;
   /**

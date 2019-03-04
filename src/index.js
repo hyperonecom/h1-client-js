@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Container', 'model/ContainerCreate', 'model/ContainerCreateExpose', 'model/ContainerCreateRegistry', 'model/ContainerCreateVolumes', 'model/ContainerPostAccessrights', 'model/ContainerServices', 'model/ContainerUpdate', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Disk', 'model/DiskActionResize', 'model/DiskActionTransfer', 'model/DiskCreate', 'model/DiskMetadata', 'model/DiskMetadataSource', 'model/DiskPostAccessrights', 'model/DiskServices', 'model/DiskUpdate', 'model/Event', 'model/EventResource', 'model/Firewall', 'model/FirewallActionAttach', 'model/FirewallActionTransfer', 'model/FirewallCreate', 'model/FirewallPostAccessrights', 'model/FirewallPostEgress', 'model/FirewallPostIngress', 'model/FirewallServices', 'model/FirewallUpdate', 'model/Hdd', 'model/HddDisk', 'model/Image', 'model/ImageActionTransfer', 'model/ImageAttachedOn', 'model/ImageCreate', 'model/ImageDisk', 'model/ImageDisks', 'model/ImagePostAccessrights', 'model/ImageServices', 'model/ImageUpdate', 'model/ImageVm', 'model/InlineResponse200', 'model/Ip', 'model/IpActionAllocate', 'model/IpActionAssociate', 'model/IpActionTransfer', 'model/IpAssociated', 'model/IpCreate', 'model/IpPostAccessrights', 'model/IpServices', 'model/IpUpdate', 'model/Iso', 'model/IsoActionTransfer', 'model/IsoCreate', 'model/IsoPostAccessrights', 'model/IsoServices', 'model/IsoUpdate', 'model/LogArchive', 'model/LogArchiveActionTransfer', 'model/LogArchiveCreate', 'model/LogArchivePatchCredentialcertificateId', 'model/LogArchivePatchCredentialpasswordId', 'model/LogArchivePostAccessrights', 'model/LogArchivePostCredentialcertificate', 'model/LogArchivePostCredentialpassword', 'model/LogArchiveServices', 'model/LogArchiveUpdate', 'model/Netadp', 'model/NetadpAssigned', 'model/NetadpPostAccessrights', 'model/NetadpServices', 'model/Netgw', 'model/NetgwActionAttach', 'model/NetgwActionAttachPrivate', 'model/NetgwCreate', 'model/NetgwCreatePublic', 'model/NetgwPostAccessrights', 'model/NetgwServices', 'model/NetgwUpdate', 'model/Network', 'model/NetworkCreate', 'model/NetworkDns', 'model/NetworkPostAccessrights', 'model/NetworkPostIp', 'model/NetworkServices', 'model/NetworkUpdate', 'model/Organisation', 'model/OrganisationAccessRights', 'model/OrganisationActionTransferAccept', 'model/OrganisationBilling', 'model/OrganisationBillingAddress', 'model/OrganisationCreate', 'model/OrganisationCreateAccessRights', 'model/OrganisationCreateBilling', 'model/OrganisationCreateBillingAddress', 'model/OrganisationLimit', 'model/OrganisationLimitOrganisation', 'model/OrganisationPostAccessrights', 'model/OrganisationTransfer', 'model/OrganisationUpdate', 'model/OrganisationUpdateBilling', 'model/OrganisationUpdateBillingAddress', 'model/Payment', 'model/Project', 'model/ProjectAccess', 'model/ProjectAccessRights', 'model/ProjectBilling', 'model/ProjectCompliance', 'model/ProjectCreate', 'model/ProjectCreateAccessRights', 'model/ProjectInvoices', 'model/ProjectInvoicesDuplicate', 'model/ProjectLimit', 'model/ProjectLimitDisk', 'model/ProjectLimitDomain', 'model/ProjectLimitIso', 'model/ProjectLimitVm', 'model/ProjectNetworkAcl', 'model/ProjectPostAccessrights', 'model/ProjectRoles', 'model/ProjectServices', 'model/ProjectThreshold', 'model/ProjectThresholdCredits', 'model/ProjectTransfer', 'model/ProjectUpdate', 'model/Replica', 'model/ReplicaActionImage', 'model/ReplicaCreate', 'model/ReplicaPostAccessrights', 'model/ReplicaServices', 'model/Reservation', 'model/ReservationActionAssign', 'model/ReservationCreate', 'model/ReservationPostAccessrights', 'model/ReservationServices', 'model/ReservationUpdate', 'model/Snapshot', 'model/SnapshotCreate', 'model/SnapshotPostAccessrights', 'model/SnapshotServices', 'model/SnapshotUpdate', 'model/Vault', 'model/VaultActionResize', 'model/VaultActionSnapshot', 'model/VaultCreate', 'model/VaultCreateCredential', 'model/VaultCreateCredentialCertificate', 'model/VaultCreateCredentialPassword', 'model/VaultDelete', 'model/VaultPatchCredentialcertificateId', 'model/VaultPatchCredentialpasswordId', 'model/VaultPostAccessrights', 'model/VaultPostCredentialcertificate', 'model/VaultPostCredentialpassword', 'model/VaultServices', 'model/VaultUpdate', 'model/Vm', 'model/VmActionFlavour', 'model/VmActionImage', 'model/VmActionPasswordReset', 'model/VmActionRename', 'model/VmCreate', 'model/VmCreateDisk', 'model/VmCreateNetadp', 'model/VmCreatePassword', 'model/VmData', 'model/VmDelete', 'model/VmPostAccessrights', 'model/VmPostHdd', 'model/VmPostNetadp', 'model/VmServices', 'model/VmSourceImage', 'model/VmUpdate', 'model/Vmhost', 'model/VmhostActionMoveDisk', 'model/VmhostActionMoveISO', 'model/VmhostActionMoveImage', 'model/VmhostActionMoveVM', 'model/VmhostPostAccessrights', 'model/VmhostServices', 'model/VmhostUpdate', 'api/ContainerApi', 'api/DiskApi', 'api/FirewallApi', 'api/ImageApi', 'api/IpApi', 'api/IsoApi', 'api/LogArchiveApi', 'api/NetadpApi', 'api/NetgwApi', 'api/NetworkApi', 'api/OrganisationApi', 'api/ProjectApi', 'api/ReplicaApi', 'api/ReservationApi', 'api/SnapshotApi', 'api/VaultApi', 'api/VmApi', 'api/VmhostApi'], factory);
+    define(['ApiClient', 'model/AccessrightsUserRole', 'model/Agent', 'model/AgentCreate', 'model/AgentCreateCredential', 'model/AgentPatchCredentialcertificateId', 'model/AgentPostAccessrights', 'model/AgentPostCredentialcertificate', 'model/AgentServices', 'model/AgentUpdate', 'model/Container', 'model/ContainerCreate', 'model/ContainerCreateExpose', 'model/ContainerCreateRegistry', 'model/ContainerCreateVolumes', 'model/ContainerPostAccessrights', 'model/ContainerServices', 'model/ContainerUpdate', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Disk', 'model/DiskActionResize', 'model/DiskActionTransfer', 'model/DiskCreate', 'model/DiskMetadata', 'model/DiskMetadataSource', 'model/DiskPostAccessrights', 'model/DiskServices', 'model/DiskUpdate', 'model/Event', 'model/EventResource', 'model/Firewall', 'model/FirewallActionAttach', 'model/FirewallActionTransfer', 'model/FirewallCreate', 'model/FirewallPostAccessrights', 'model/FirewallPostEgress', 'model/FirewallPostIngress', 'model/FirewallServices', 'model/FirewallUpdate', 'model/Hdd', 'model/HddDisk', 'model/Image', 'model/ImageActionTransfer', 'model/ImageAttachedOn', 'model/ImageCreate', 'model/ImageDisk', 'model/ImageDisks', 'model/ImagePostAccessrights', 'model/ImageServices', 'model/ImageUpdate', 'model/ImageVm', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/Ip', 'model/IpActionAllocate', 'model/IpActionAssociate', 'model/IpActionTransfer', 'model/IpAssociated', 'model/IpCreate', 'model/IpPostAccessrights', 'model/IpServices', 'model/IpUpdate', 'model/Iso', 'model/IsoActionTransfer', 'model/IsoCreate', 'model/IsoPostAccessrights', 'model/IsoServices', 'model/IsoUpdate', 'model/LogArchive', 'model/LogArchiveActionTransfer', 'model/LogArchiveCreate', 'model/LogArchiveCreateCredential', 'model/LogArchivePatchCredentialpasswordId', 'model/LogArchivePostAccessrights', 'model/LogArchivePostCredentialpassword', 'model/LogArchiveServices', 'model/LogArchiveUpdate', 'model/Netadp', 'model/NetadpAssigned', 'model/NetadpPostAccessrights', 'model/NetadpServices', 'model/Netgw', 'model/NetgwActionAttach', 'model/NetgwActionAttachPrivate', 'model/NetgwCreate', 'model/NetgwCreatePublic', 'model/NetgwPostAccessrights', 'model/NetgwServices', 'model/NetgwUpdate', 'model/Network', 'model/NetworkCreate', 'model/NetworkDns', 'model/NetworkPostAccessrights', 'model/NetworkPostIp', 'model/NetworkServices', 'model/NetworkUpdate', 'model/Organisation', 'model/OrganisationActionPaymentAssign', 'model/OrganisationActionTransferAccept', 'model/OrganisationBilling', 'model/OrganisationBillingAddress', 'model/OrganisationCreate', 'model/OrganisationCreateAccessRights', 'model/OrganisationCreateBilling', 'model/OrganisationCreateBillingAddress', 'model/OrganisationLimit', 'model/OrganisationLimitOrganisation', 'model/OrganisationPostAccessrights', 'model/OrganisationTransfer', 'model/OrganisationUpdate', 'model/OrganisationUpdateBilling', 'model/OrganisationUpdateBillingAddress', 'model/Payment', 'model/Project', 'model/ProjectAccess', 'model/ProjectAccessRights', 'model/ProjectBilling', 'model/ProjectCompliance', 'model/ProjectCreate', 'model/ProjectCreateAccessRights', 'model/ProjectDuplicate', 'model/ProjectInvoices', 'model/ProjectLimit', 'model/ProjectLimitDisk', 'model/ProjectLimitDomain', 'model/ProjectLimitIso', 'model/ProjectLimitVm', 'model/ProjectNetworkAcl', 'model/ProjectPatchCredentialStorecertificateId', 'model/ProjectPostAccessrights', 'model/ProjectRoles', 'model/ProjectServices', 'model/ProjectThreshold', 'model/ProjectThresholdCredits', 'model/ProjectTransfer', 'model/ProjectUpdate', 'model/Replica', 'model/ReplicaActionImage', 'model/ReplicaCreate', 'model/ReplicaPostAccessrights', 'model/ReplicaServices', 'model/Reservation', 'model/ReservationActionAssign', 'model/ReservationCreate', 'model/ReservationPostAccessrights', 'model/ReservationServices', 'model/ReservationUpdate', 'model/Service', 'model/ServiceBilling', 'model/ServiceBillingPrice', 'model/ServiceBillingReservations', 'model/Snapshot', 'model/SnapshotCreate', 'model/SnapshotPostAccessrights', 'model/SnapshotServices', 'model/SnapshotUpdate', 'model/Vault', 'model/VaultActionResize', 'model/VaultActionSnapshot', 'model/VaultCreate', 'model/VaultCreateCredential', 'model/VaultCreateCredentialCertificate', 'model/VaultCreateCredentialPassword', 'model/VaultDelete', 'model/VaultPatchCredentialcertificateId', 'model/VaultPatchCredentialpasswordId', 'model/VaultPostAccessrights', 'model/VaultPostCredentialcertificate', 'model/VaultPostCredentialpassword', 'model/VaultServices', 'model/VaultUpdate', 'model/Vm', 'model/VmActionFlavour', 'model/VmActionImage', 'model/VmActionPasswordReset', 'model/VmActionRename', 'model/VmCreate', 'model/VmCreateDisk', 'model/VmCreateNetadp', 'model/VmCreatePassword', 'model/VmData', 'model/VmDelete', 'model/VmPostAccessrights', 'model/VmPostHdd', 'model/VmPostNetadp', 'model/VmServices', 'model/VmSourceImage', 'model/VmUpdate', 'model/Vmhost', 'model/VmhostActionMoveDisk', 'model/VmhostActionMoveISO', 'model/VmhostActionMoveImage', 'model/VmhostActionMoveVM', 'model/VmhostPostAccessrights', 'model/VmhostServices', 'model/VmhostUpdate', 'model/Volume', 'model/VolumeCreate', 'model/VolumePostAccessrights', 'model/VolumeServices', 'model/VolumeUpdate', 'api/AgentApi', 'api/ContainerApi', 'api/DiskApi', 'api/FirewallApi', 'api/ImageApi', 'api/IpApi', 'api/IsoApi', 'api/LogArchiveApi', 'api/NetadpApi', 'api/NetgwApi', 'api/NetworkApi', 'api/OrganisationApi', 'api/ProjectApi', 'api/ReplicaApi', 'api/ReservationApi', 'api/ServiceApi', 'api/SnapshotApi', 'api/VaultApi', 'api/VmApi', 'api/VmhostApi', 'api/VolumeApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Container'), require('./model/ContainerCreate'), require('./model/ContainerCreateExpose'), require('./model/ContainerCreateRegistry'), require('./model/ContainerCreateVolumes'), require('./model/ContainerPostAccessrights'), require('./model/ContainerServices'), require('./model/ContainerUpdate'), require('./model/CredentialCertificate'), require('./model/CredentialPassword'), require('./model/Disk'), require('./model/DiskActionResize'), require('./model/DiskActionTransfer'), require('./model/DiskCreate'), require('./model/DiskMetadata'), require('./model/DiskMetadataSource'), require('./model/DiskPostAccessrights'), require('./model/DiskServices'), require('./model/DiskUpdate'), require('./model/Event'), require('./model/EventResource'), require('./model/Firewall'), require('./model/FirewallActionAttach'), require('./model/FirewallActionTransfer'), require('./model/FirewallCreate'), require('./model/FirewallPostAccessrights'), require('./model/FirewallPostEgress'), require('./model/FirewallPostIngress'), require('./model/FirewallServices'), require('./model/FirewallUpdate'), require('./model/Hdd'), require('./model/HddDisk'), require('./model/Image'), require('./model/ImageActionTransfer'), require('./model/ImageAttachedOn'), require('./model/ImageCreate'), require('./model/ImageDisk'), require('./model/ImageDisks'), require('./model/ImagePostAccessrights'), require('./model/ImageServices'), require('./model/ImageUpdate'), require('./model/ImageVm'), require('./model/InlineResponse200'), require('./model/Ip'), require('./model/IpActionAllocate'), require('./model/IpActionAssociate'), require('./model/IpActionTransfer'), require('./model/IpAssociated'), require('./model/IpCreate'), require('./model/IpPostAccessrights'), require('./model/IpServices'), require('./model/IpUpdate'), require('./model/Iso'), require('./model/IsoActionTransfer'), require('./model/IsoCreate'), require('./model/IsoPostAccessrights'), require('./model/IsoServices'), require('./model/IsoUpdate'), require('./model/LogArchive'), require('./model/LogArchiveActionTransfer'), require('./model/LogArchiveCreate'), require('./model/LogArchivePatchCredentialcertificateId'), require('./model/LogArchivePatchCredentialpasswordId'), require('./model/LogArchivePostAccessrights'), require('./model/LogArchivePostCredentialcertificate'), require('./model/LogArchivePostCredentialpassword'), require('./model/LogArchiveServices'), require('./model/LogArchiveUpdate'), require('./model/Netadp'), require('./model/NetadpAssigned'), require('./model/NetadpPostAccessrights'), require('./model/NetadpServices'), require('./model/Netgw'), require('./model/NetgwActionAttach'), require('./model/NetgwActionAttachPrivate'), require('./model/NetgwCreate'), require('./model/NetgwCreatePublic'), require('./model/NetgwPostAccessrights'), require('./model/NetgwServices'), require('./model/NetgwUpdate'), require('./model/Network'), require('./model/NetworkCreate'), require('./model/NetworkDns'), require('./model/NetworkPostAccessrights'), require('./model/NetworkPostIp'), require('./model/NetworkServices'), require('./model/NetworkUpdate'), require('./model/Organisation'), require('./model/OrganisationAccessRights'), require('./model/OrganisationActionTransferAccept'), require('./model/OrganisationBilling'), require('./model/OrganisationBillingAddress'), require('./model/OrganisationCreate'), require('./model/OrganisationCreateAccessRights'), require('./model/OrganisationCreateBilling'), require('./model/OrganisationCreateBillingAddress'), require('./model/OrganisationLimit'), require('./model/OrganisationLimitOrganisation'), require('./model/OrganisationPostAccessrights'), require('./model/OrganisationTransfer'), require('./model/OrganisationUpdate'), require('./model/OrganisationUpdateBilling'), require('./model/OrganisationUpdateBillingAddress'), require('./model/Payment'), require('./model/Project'), require('./model/ProjectAccess'), require('./model/ProjectAccessRights'), require('./model/ProjectBilling'), require('./model/ProjectCompliance'), require('./model/ProjectCreate'), require('./model/ProjectCreateAccessRights'), require('./model/ProjectInvoices'), require('./model/ProjectInvoicesDuplicate'), require('./model/ProjectLimit'), require('./model/ProjectLimitDisk'), require('./model/ProjectLimitDomain'), require('./model/ProjectLimitIso'), require('./model/ProjectLimitVm'), require('./model/ProjectNetworkAcl'), require('./model/ProjectPostAccessrights'), require('./model/ProjectRoles'), require('./model/ProjectServices'), require('./model/ProjectThreshold'), require('./model/ProjectThresholdCredits'), require('./model/ProjectTransfer'), require('./model/ProjectUpdate'), require('./model/Replica'), require('./model/ReplicaActionImage'), require('./model/ReplicaCreate'), require('./model/ReplicaPostAccessrights'), require('./model/ReplicaServices'), require('./model/Reservation'), require('./model/ReservationActionAssign'), require('./model/ReservationCreate'), require('./model/ReservationPostAccessrights'), require('./model/ReservationServices'), require('./model/ReservationUpdate'), require('./model/Snapshot'), require('./model/SnapshotCreate'), require('./model/SnapshotPostAccessrights'), require('./model/SnapshotServices'), require('./model/SnapshotUpdate'), require('./model/Vault'), require('./model/VaultActionResize'), require('./model/VaultActionSnapshot'), require('./model/VaultCreate'), require('./model/VaultCreateCredential'), require('./model/VaultCreateCredentialCertificate'), require('./model/VaultCreateCredentialPassword'), require('./model/VaultDelete'), require('./model/VaultPatchCredentialcertificateId'), require('./model/VaultPatchCredentialpasswordId'), require('./model/VaultPostAccessrights'), require('./model/VaultPostCredentialcertificate'), require('./model/VaultPostCredentialpassword'), require('./model/VaultServices'), require('./model/VaultUpdate'), require('./model/Vm'), require('./model/VmActionFlavour'), require('./model/VmActionImage'), require('./model/VmActionPasswordReset'), require('./model/VmActionRename'), require('./model/VmCreate'), require('./model/VmCreateDisk'), require('./model/VmCreateNetadp'), require('./model/VmCreatePassword'), require('./model/VmData'), require('./model/VmDelete'), require('./model/VmPostAccessrights'), require('./model/VmPostHdd'), require('./model/VmPostNetadp'), require('./model/VmServices'), require('./model/VmSourceImage'), require('./model/VmUpdate'), require('./model/Vmhost'), require('./model/VmhostActionMoveDisk'), require('./model/VmhostActionMoveISO'), require('./model/VmhostActionMoveImage'), require('./model/VmhostActionMoveVM'), require('./model/VmhostPostAccessrights'), require('./model/VmhostServices'), require('./model/VmhostUpdate'), require('./api/ContainerApi'), require('./api/DiskApi'), require('./api/FirewallApi'), require('./api/ImageApi'), require('./api/IpApi'), require('./api/IsoApi'), require('./api/LogArchiveApi'), require('./api/NetadpApi'), require('./api/NetgwApi'), require('./api/NetworkApi'), require('./api/OrganisationApi'), require('./api/ProjectApi'), require('./api/ReplicaApi'), require('./api/ReservationApi'), require('./api/SnapshotApi'), require('./api/VaultApi'), require('./api/VmApi'), require('./api/VmhostApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AccessrightsUserRole'), require('./model/Agent'), require('./model/AgentCreate'), require('./model/AgentCreateCredential'), require('./model/AgentPatchCredentialcertificateId'), require('./model/AgentPostAccessrights'), require('./model/AgentPostCredentialcertificate'), require('./model/AgentServices'), require('./model/AgentUpdate'), require('./model/Container'), require('./model/ContainerCreate'), require('./model/ContainerCreateExpose'), require('./model/ContainerCreateRegistry'), require('./model/ContainerCreateVolumes'), require('./model/ContainerPostAccessrights'), require('./model/ContainerServices'), require('./model/ContainerUpdate'), require('./model/CredentialCertificate'), require('./model/CredentialPassword'), require('./model/Disk'), require('./model/DiskActionResize'), require('./model/DiskActionTransfer'), require('./model/DiskCreate'), require('./model/DiskMetadata'), require('./model/DiskMetadataSource'), require('./model/DiskPostAccessrights'), require('./model/DiskServices'), require('./model/DiskUpdate'), require('./model/Event'), require('./model/EventResource'), require('./model/Firewall'), require('./model/FirewallActionAttach'), require('./model/FirewallActionTransfer'), require('./model/FirewallCreate'), require('./model/FirewallPostAccessrights'), require('./model/FirewallPostEgress'), require('./model/FirewallPostIngress'), require('./model/FirewallServices'), require('./model/FirewallUpdate'), require('./model/Hdd'), require('./model/HddDisk'), require('./model/Image'), require('./model/ImageActionTransfer'), require('./model/ImageAttachedOn'), require('./model/ImageCreate'), require('./model/ImageDisk'), require('./model/ImageDisks'), require('./model/ImagePostAccessrights'), require('./model/ImageServices'), require('./model/ImageUpdate'), require('./model/ImageVm'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/Ip'), require('./model/IpActionAllocate'), require('./model/IpActionAssociate'), require('./model/IpActionTransfer'), require('./model/IpAssociated'), require('./model/IpCreate'), require('./model/IpPostAccessrights'), require('./model/IpServices'), require('./model/IpUpdate'), require('./model/Iso'), require('./model/IsoActionTransfer'), require('./model/IsoCreate'), require('./model/IsoPostAccessrights'), require('./model/IsoServices'), require('./model/IsoUpdate'), require('./model/LogArchive'), require('./model/LogArchiveActionTransfer'), require('./model/LogArchiveCreate'), require('./model/LogArchiveCreateCredential'), require('./model/LogArchivePatchCredentialpasswordId'), require('./model/LogArchivePostAccessrights'), require('./model/LogArchivePostCredentialpassword'), require('./model/LogArchiveServices'), require('./model/LogArchiveUpdate'), require('./model/Netadp'), require('./model/NetadpAssigned'), require('./model/NetadpPostAccessrights'), require('./model/NetadpServices'), require('./model/Netgw'), require('./model/NetgwActionAttach'), require('./model/NetgwActionAttachPrivate'), require('./model/NetgwCreate'), require('./model/NetgwCreatePublic'), require('./model/NetgwPostAccessrights'), require('./model/NetgwServices'), require('./model/NetgwUpdate'), require('./model/Network'), require('./model/NetworkCreate'), require('./model/NetworkDns'), require('./model/NetworkPostAccessrights'), require('./model/NetworkPostIp'), require('./model/NetworkServices'), require('./model/NetworkUpdate'), require('./model/Organisation'), require('./model/OrganisationActionPaymentAssign'), require('./model/OrganisationActionTransferAccept'), require('./model/OrganisationBilling'), require('./model/OrganisationBillingAddress'), require('./model/OrganisationCreate'), require('./model/OrganisationCreateAccessRights'), require('./model/OrganisationCreateBilling'), require('./model/OrganisationCreateBillingAddress'), require('./model/OrganisationLimit'), require('./model/OrganisationLimitOrganisation'), require('./model/OrganisationPostAccessrights'), require('./model/OrganisationTransfer'), require('./model/OrganisationUpdate'), require('./model/OrganisationUpdateBilling'), require('./model/OrganisationUpdateBillingAddress'), require('./model/Payment'), require('./model/Project'), require('./model/ProjectAccess'), require('./model/ProjectAccessRights'), require('./model/ProjectBilling'), require('./model/ProjectCompliance'), require('./model/ProjectCreate'), require('./model/ProjectCreateAccessRights'), require('./model/ProjectDuplicate'), require('./model/ProjectInvoices'), require('./model/ProjectLimit'), require('./model/ProjectLimitDisk'), require('./model/ProjectLimitDomain'), require('./model/ProjectLimitIso'), require('./model/ProjectLimitVm'), require('./model/ProjectNetworkAcl'), require('./model/ProjectPatchCredentialStorecertificateId'), require('./model/ProjectPostAccessrights'), require('./model/ProjectRoles'), require('./model/ProjectServices'), require('./model/ProjectThreshold'), require('./model/ProjectThresholdCredits'), require('./model/ProjectTransfer'), require('./model/ProjectUpdate'), require('./model/Replica'), require('./model/ReplicaActionImage'), require('./model/ReplicaCreate'), require('./model/ReplicaPostAccessrights'), require('./model/ReplicaServices'), require('./model/Reservation'), require('./model/ReservationActionAssign'), require('./model/ReservationCreate'), require('./model/ReservationPostAccessrights'), require('./model/ReservationServices'), require('./model/ReservationUpdate'), require('./model/Service'), require('./model/ServiceBilling'), require('./model/ServiceBillingPrice'), require('./model/ServiceBillingReservations'), require('./model/Snapshot'), require('./model/SnapshotCreate'), require('./model/SnapshotPostAccessrights'), require('./model/SnapshotServices'), require('./model/SnapshotUpdate'), require('./model/Vault'), require('./model/VaultActionResize'), require('./model/VaultActionSnapshot'), require('./model/VaultCreate'), require('./model/VaultCreateCredential'), require('./model/VaultCreateCredentialCertificate'), require('./model/VaultCreateCredentialPassword'), require('./model/VaultDelete'), require('./model/VaultPatchCredentialcertificateId'), require('./model/VaultPatchCredentialpasswordId'), require('./model/VaultPostAccessrights'), require('./model/VaultPostCredentialcertificate'), require('./model/VaultPostCredentialpassword'), require('./model/VaultServices'), require('./model/VaultUpdate'), require('./model/Vm'), require('./model/VmActionFlavour'), require('./model/VmActionImage'), require('./model/VmActionPasswordReset'), require('./model/VmActionRename'), require('./model/VmCreate'), require('./model/VmCreateDisk'), require('./model/VmCreateNetadp'), require('./model/VmCreatePassword'), require('./model/VmData'), require('./model/VmDelete'), require('./model/VmPostAccessrights'), require('./model/VmPostHdd'), require('./model/VmPostNetadp'), require('./model/VmServices'), require('./model/VmSourceImage'), require('./model/VmUpdate'), require('./model/Vmhost'), require('./model/VmhostActionMoveDisk'), require('./model/VmhostActionMoveISO'), require('./model/VmhostActionMoveImage'), require('./model/VmhostActionMoveVM'), require('./model/VmhostPostAccessrights'), require('./model/VmhostServices'), require('./model/VmhostUpdate'), require('./model/Volume'), require('./model/VolumeCreate'), require('./model/VolumePostAccessrights'), require('./model/VolumeServices'), require('./model/VolumeUpdate'), require('./api/AgentApi'), require('./api/ContainerApi'), require('./api/DiskApi'), require('./api/FirewallApi'), require('./api/ImageApi'), require('./api/IpApi'), require('./api/IsoApi'), require('./api/LogArchiveApi'), require('./api/NetadpApi'), require('./api/NetgwApi'), require('./api/NetworkApi'), require('./api/OrganisationApi'), require('./api/ProjectApi'), require('./api/ReplicaApi'), require('./api/ReservationApi'), require('./api/ServiceApi'), require('./api/SnapshotApi'), require('./api/VaultApi'), require('./api/VmApi'), require('./api/VmhostApi'), require('./api/VolumeApi'));
   }
-}(function(ApiClient, Container, ContainerCreate, ContainerCreateExpose, ContainerCreateRegistry, ContainerCreateVolumes, ContainerPostAccessrights, ContainerServices, ContainerUpdate, CredentialCertificate, CredentialPassword, Disk, DiskActionResize, DiskActionTransfer, DiskCreate, DiskMetadata, DiskMetadataSource, DiskPostAccessrights, DiskServices, DiskUpdate, Event, EventResource, Firewall, FirewallActionAttach, FirewallActionTransfer, FirewallCreate, FirewallPostAccessrights, FirewallPostEgress, FirewallPostIngress, FirewallServices, FirewallUpdate, Hdd, HddDisk, Image, ImageActionTransfer, ImageAttachedOn, ImageCreate, ImageDisk, ImageDisks, ImagePostAccessrights, ImageServices, ImageUpdate, ImageVm, InlineResponse200, Ip, IpActionAllocate, IpActionAssociate, IpActionTransfer, IpAssociated, IpCreate, IpPostAccessrights, IpServices, IpUpdate, Iso, IsoActionTransfer, IsoCreate, IsoPostAccessrights, IsoServices, IsoUpdate, LogArchive, LogArchiveActionTransfer, LogArchiveCreate, LogArchivePatchCredentialcertificateId, LogArchivePatchCredentialpasswordId, LogArchivePostAccessrights, LogArchivePostCredentialcertificate, LogArchivePostCredentialpassword, LogArchiveServices, LogArchiveUpdate, Netadp, NetadpAssigned, NetadpPostAccessrights, NetadpServices, Netgw, NetgwActionAttach, NetgwActionAttachPrivate, NetgwCreate, NetgwCreatePublic, NetgwPostAccessrights, NetgwServices, NetgwUpdate, Network, NetworkCreate, NetworkDns, NetworkPostAccessrights, NetworkPostIp, NetworkServices, NetworkUpdate, Organisation, OrganisationAccessRights, OrganisationActionTransferAccept, OrganisationBilling, OrganisationBillingAddress, OrganisationCreate, OrganisationCreateAccessRights, OrganisationCreateBilling, OrganisationCreateBillingAddress, OrganisationLimit, OrganisationLimitOrganisation, OrganisationPostAccessrights, OrganisationTransfer, OrganisationUpdate, OrganisationUpdateBilling, OrganisationUpdateBillingAddress, Payment, Project, ProjectAccess, ProjectAccessRights, ProjectBilling, ProjectCompliance, ProjectCreate, ProjectCreateAccessRights, ProjectInvoices, ProjectInvoicesDuplicate, ProjectLimit, ProjectLimitDisk, ProjectLimitDomain, ProjectLimitIso, ProjectLimitVm, ProjectNetworkAcl, ProjectPostAccessrights, ProjectRoles, ProjectServices, ProjectThreshold, ProjectThresholdCredits, ProjectTransfer, ProjectUpdate, Replica, ReplicaActionImage, ReplicaCreate, ReplicaPostAccessrights, ReplicaServices, Reservation, ReservationActionAssign, ReservationCreate, ReservationPostAccessrights, ReservationServices, ReservationUpdate, Snapshot, SnapshotCreate, SnapshotPostAccessrights, SnapshotServices, SnapshotUpdate, Vault, VaultActionResize, VaultActionSnapshot, VaultCreate, VaultCreateCredential, VaultCreateCredentialCertificate, VaultCreateCredentialPassword, VaultDelete, VaultPatchCredentialcertificateId, VaultPatchCredentialpasswordId, VaultPostAccessrights, VaultPostCredentialcertificate, VaultPostCredentialpassword, VaultServices, VaultUpdate, Vm, VmActionFlavour, VmActionImage, VmActionPasswordReset, VmActionRename, VmCreate, VmCreateDisk, VmCreateNetadp, VmCreatePassword, VmData, VmDelete, VmPostAccessrights, VmPostHdd, VmPostNetadp, VmServices, VmSourceImage, VmUpdate, Vmhost, VmhostActionMoveDisk, VmhostActionMoveISO, VmhostActionMoveImage, VmhostActionMoveVM, VmhostPostAccessrights, VmhostServices, VmhostUpdate, ContainerApi, DiskApi, FirewallApi, ImageApi, IpApi, IsoApi, LogArchiveApi, NetadpApi, NetgwApi, NetworkApi, OrganisationApi, ProjectApi, ReplicaApi, ReservationApi, SnapshotApi, VaultApi, VmApi, VmhostApi) {
+}(function(ApiClient, AccessrightsUserRole, Agent, AgentCreate, AgentCreateCredential, AgentPatchCredentialcertificateId, AgentPostAccessrights, AgentPostCredentialcertificate, AgentServices, AgentUpdate, Container, ContainerCreate, ContainerCreateExpose, ContainerCreateRegistry, ContainerCreateVolumes, ContainerPostAccessrights, ContainerServices, ContainerUpdate, CredentialCertificate, CredentialPassword, Disk, DiskActionResize, DiskActionTransfer, DiskCreate, DiskMetadata, DiskMetadataSource, DiskPostAccessrights, DiskServices, DiskUpdate, Event, EventResource, Firewall, FirewallActionAttach, FirewallActionTransfer, FirewallCreate, FirewallPostAccessrights, FirewallPostEgress, FirewallPostIngress, FirewallServices, FirewallUpdate, Hdd, HddDisk, Image, ImageActionTransfer, ImageAttachedOn, ImageCreate, ImageDisk, ImageDisks, ImagePostAccessrights, ImageServices, ImageUpdate, ImageVm, InlineResponse200, InlineResponse2001, Ip, IpActionAllocate, IpActionAssociate, IpActionTransfer, IpAssociated, IpCreate, IpPostAccessrights, IpServices, IpUpdate, Iso, IsoActionTransfer, IsoCreate, IsoPostAccessrights, IsoServices, IsoUpdate, LogArchive, LogArchiveActionTransfer, LogArchiveCreate, LogArchiveCreateCredential, LogArchivePatchCredentialpasswordId, LogArchivePostAccessrights, LogArchivePostCredentialpassword, LogArchiveServices, LogArchiveUpdate, Netadp, NetadpAssigned, NetadpPostAccessrights, NetadpServices, Netgw, NetgwActionAttach, NetgwActionAttachPrivate, NetgwCreate, NetgwCreatePublic, NetgwPostAccessrights, NetgwServices, NetgwUpdate, Network, NetworkCreate, NetworkDns, NetworkPostAccessrights, NetworkPostIp, NetworkServices, NetworkUpdate, Organisation, OrganisationActionPaymentAssign, OrganisationActionTransferAccept, OrganisationBilling, OrganisationBillingAddress, OrganisationCreate, OrganisationCreateAccessRights, OrganisationCreateBilling, OrganisationCreateBillingAddress, OrganisationLimit, OrganisationLimitOrganisation, OrganisationPostAccessrights, OrganisationTransfer, OrganisationUpdate, OrganisationUpdateBilling, OrganisationUpdateBillingAddress, Payment, Project, ProjectAccess, ProjectAccessRights, ProjectBilling, ProjectCompliance, ProjectCreate, ProjectCreateAccessRights, ProjectDuplicate, ProjectInvoices, ProjectLimit, ProjectLimitDisk, ProjectLimitDomain, ProjectLimitIso, ProjectLimitVm, ProjectNetworkAcl, ProjectPatchCredentialStorecertificateId, ProjectPostAccessrights, ProjectRoles, ProjectServices, ProjectThreshold, ProjectThresholdCredits, ProjectTransfer, ProjectUpdate, Replica, ReplicaActionImage, ReplicaCreate, ReplicaPostAccessrights, ReplicaServices, Reservation, ReservationActionAssign, ReservationCreate, ReservationPostAccessrights, ReservationServices, ReservationUpdate, Service, ServiceBilling, ServiceBillingPrice, ServiceBillingReservations, Snapshot, SnapshotCreate, SnapshotPostAccessrights, SnapshotServices, SnapshotUpdate, Vault, VaultActionResize, VaultActionSnapshot, VaultCreate, VaultCreateCredential, VaultCreateCredentialCertificate, VaultCreateCredentialPassword, VaultDelete, VaultPatchCredentialcertificateId, VaultPatchCredentialpasswordId, VaultPostAccessrights, VaultPostCredentialcertificate, VaultPostCredentialpassword, VaultServices, VaultUpdate, Vm, VmActionFlavour, VmActionImage, VmActionPasswordReset, VmActionRename, VmCreate, VmCreateDisk, VmCreateNetadp, VmCreatePassword, VmData, VmDelete, VmPostAccessrights, VmPostHdd, VmPostNetadp, VmServices, VmSourceImage, VmUpdate, Vmhost, VmhostActionMoveDisk, VmhostActionMoveISO, VmhostActionMoveImage, VmhostActionMoveVM, VmhostPostAccessrights, VmhostServices, VmhostUpdate, Volume, VolumeCreate, VolumePostAccessrights, VolumeServices, VolumeUpdate, AgentApi, ContainerApi, DiskApi, FirewallApi, ImageApi, IpApi, IsoApi, LogArchiveApi, NetadpApi, NetgwApi, NetworkApi, OrganisationApi, ProjectApi, ReplicaApi, ReservationApi, ServiceApi, SnapshotApi, VaultApi, VmApi, VmhostApi, VolumeApi) {
   'use strict';
 
   /**
@@ -61,6 +61,51 @@
      * @property {module:ApiClient}
      */
     ApiClient: ApiClient,
+    /**
+     * The AccessrightsUserRole model constructor.
+     * @property {module:model/AccessrightsUserRole}
+     */
+    AccessrightsUserRole: AccessrightsUserRole,
+    /**
+     * The Agent model constructor.
+     * @property {module:model/Agent}
+     */
+    Agent: Agent,
+    /**
+     * The AgentCreate model constructor.
+     * @property {module:model/AgentCreate}
+     */
+    AgentCreate: AgentCreate,
+    /**
+     * The AgentCreateCredential model constructor.
+     * @property {module:model/AgentCreateCredential}
+     */
+    AgentCreateCredential: AgentCreateCredential,
+    /**
+     * The AgentPatchCredentialcertificateId model constructor.
+     * @property {module:model/AgentPatchCredentialcertificateId}
+     */
+    AgentPatchCredentialcertificateId: AgentPatchCredentialcertificateId,
+    /**
+     * The AgentPostAccessrights model constructor.
+     * @property {module:model/AgentPostAccessrights}
+     */
+    AgentPostAccessrights: AgentPostAccessrights,
+    /**
+     * The AgentPostCredentialcertificate model constructor.
+     * @property {module:model/AgentPostCredentialcertificate}
+     */
+    AgentPostCredentialcertificate: AgentPostCredentialcertificate,
+    /**
+     * The AgentServices model constructor.
+     * @property {module:model/AgentServices}
+     */
+    AgentServices: AgentServices,
+    /**
+     * The AgentUpdate model constructor.
+     * @property {module:model/AgentUpdate}
+     */
+    AgentUpdate: AgentUpdate,
     /**
      * The Container model constructor.
      * @property {module:model/Container}
@@ -277,6 +322,11 @@
      */
     InlineResponse200: InlineResponse200,
     /**
+     * The InlineResponse2001 model constructor.
+     * @property {module:model/InlineResponse2001}
+     */
+    InlineResponse2001: InlineResponse2001,
+    /**
      * The Ip model constructor.
      * @property {module:model/Ip}
      */
@@ -367,10 +417,10 @@
      */
     LogArchiveCreate: LogArchiveCreate,
     /**
-     * The LogArchivePatchCredentialcertificateId model constructor.
-     * @property {module:model/LogArchivePatchCredentialcertificateId}
+     * The LogArchiveCreateCredential model constructor.
+     * @property {module:model/LogArchiveCreateCredential}
      */
-    LogArchivePatchCredentialcertificateId: LogArchivePatchCredentialcertificateId,
+    LogArchiveCreateCredential: LogArchiveCreateCredential,
     /**
      * The LogArchivePatchCredentialpasswordId model constructor.
      * @property {module:model/LogArchivePatchCredentialpasswordId}
@@ -381,11 +431,6 @@
      * @property {module:model/LogArchivePostAccessrights}
      */
     LogArchivePostAccessrights: LogArchivePostAccessrights,
-    /**
-     * The LogArchivePostCredentialcertificate model constructor.
-     * @property {module:model/LogArchivePostCredentialcertificate}
-     */
-    LogArchivePostCredentialcertificate: LogArchivePostCredentialcertificate,
     /**
      * The LogArchivePostCredentialpassword model constructor.
      * @property {module:model/LogArchivePostCredentialpassword}
@@ -502,10 +547,10 @@
      */
     Organisation: Organisation,
     /**
-     * The OrganisationAccessRights model constructor.
-     * @property {module:model/OrganisationAccessRights}
+     * The OrganisationActionPaymentAssign model constructor.
+     * @property {module:model/OrganisationActionPaymentAssign}
      */
-    OrganisationAccessRights: OrganisationAccessRights,
+    OrganisationActionPaymentAssign: OrganisationActionPaymentAssign,
     /**
      * The OrganisationActionTransferAccept model constructor.
      * @property {module:model/OrganisationActionTransferAccept}
@@ -617,15 +662,15 @@
      */
     ProjectCreateAccessRights: ProjectCreateAccessRights,
     /**
+     * The ProjectDuplicate model constructor.
+     * @property {module:model/ProjectDuplicate}
+     */
+    ProjectDuplicate: ProjectDuplicate,
+    /**
      * The ProjectInvoices model constructor.
      * @property {module:model/ProjectInvoices}
      */
     ProjectInvoices: ProjectInvoices,
-    /**
-     * The ProjectInvoicesDuplicate model constructor.
-     * @property {module:model/ProjectInvoicesDuplicate}
-     */
-    ProjectInvoicesDuplicate: ProjectInvoicesDuplicate,
     /**
      * The ProjectLimit model constructor.
      * @property {module:model/ProjectLimit}
@@ -656,6 +701,11 @@
      * @property {module:model/ProjectNetworkAcl}
      */
     ProjectNetworkAcl: ProjectNetworkAcl,
+    /**
+     * The ProjectPatchCredentialStorecertificateId model constructor.
+     * @property {module:model/ProjectPatchCredentialStorecertificateId}
+     */
+    ProjectPatchCredentialStorecertificateId: ProjectPatchCredentialStorecertificateId,
     /**
      * The ProjectPostAccessrights model constructor.
      * @property {module:model/ProjectPostAccessrights}
@@ -746,6 +796,26 @@
      * @property {module:model/ReservationUpdate}
      */
     ReservationUpdate: ReservationUpdate,
+    /**
+     * The Service model constructor.
+     * @property {module:model/Service}
+     */
+    Service: Service,
+    /**
+     * The ServiceBilling model constructor.
+     * @property {module:model/ServiceBilling}
+     */
+    ServiceBilling: ServiceBilling,
+    /**
+     * The ServiceBillingPrice model constructor.
+     * @property {module:model/ServiceBillingPrice}
+     */
+    ServiceBillingPrice: ServiceBillingPrice,
+    /**
+     * The ServiceBillingReservations model constructor.
+     * @property {module:model/ServiceBillingReservations}
+     */
+    ServiceBillingReservations: ServiceBillingReservations,
     /**
      * The Snapshot model constructor.
      * @property {module:model/Snapshot}
@@ -972,6 +1042,36 @@
      */
     VmhostUpdate: VmhostUpdate,
     /**
+     * The Volume model constructor.
+     * @property {module:model/Volume}
+     */
+    Volume: Volume,
+    /**
+     * The VolumeCreate model constructor.
+     * @property {module:model/VolumeCreate}
+     */
+    VolumeCreate: VolumeCreate,
+    /**
+     * The VolumePostAccessrights model constructor.
+     * @property {module:model/VolumePostAccessrights}
+     */
+    VolumePostAccessrights: VolumePostAccessrights,
+    /**
+     * The VolumeServices model constructor.
+     * @property {module:model/VolumeServices}
+     */
+    VolumeServices: VolumeServices,
+    /**
+     * The VolumeUpdate model constructor.
+     * @property {module:model/VolumeUpdate}
+     */
+    VolumeUpdate: VolumeUpdate,
+    /**
+     * The AgentApi service constructor.
+     * @property {module:api/AgentApi}
+     */
+    AgentApi: AgentApi,
+    /**
      * The ContainerApi service constructor.
      * @property {module:api/ContainerApi}
      */
@@ -1042,6 +1142,11 @@
      */
     ReservationApi: ReservationApi,
     /**
+     * The ServiceApi service constructor.
+     * @property {module:api/ServiceApi}
+     */
+    ServiceApi: ServiceApi,
+    /**
      * The SnapshotApi service constructor.
      * @property {module:api/SnapshotApi}
      */
@@ -1060,7 +1165,12 @@
      * The VmhostApi service constructor.
      * @property {module:api/VmhostApi}
      */
-    VmhostApi: VmhostApi
+    VmhostApi: VmhostApi,
+    /**
+     * The VolumeApi service constructor.
+     * @property {module:api/VolumeApi}
+     */
+    VolumeApi: VolumeApi
   };
 
   return exports;

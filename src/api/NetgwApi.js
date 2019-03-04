@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Netgw;
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}/actions/attach', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -139,11 +138,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Netgw;
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}/actions/detach', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -191,11 +189,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Netgw;
-
       return this.apiClient.callApi(
         '/netgw', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -243,11 +240,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -301,11 +297,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Netgw;
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -360,11 +355,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -419,11 +413,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = NetgwServices;
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -471,11 +464,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -520,11 +512,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Netgw];
-
       return this.apiClient.callApi(
         '/netgw', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -573,11 +564,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -624,11 +614,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -675,11 +664,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [NetgwServices];
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -699,20 +687,20 @@
     /**
      * /tag
      * @param {String} netgwId ID of netgw
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.netgwPatchTagWithHttpInfo = function(netgwId, body) {
-      var postBody = body;
+    this.netgwPatchTagWithHttpInfo = function(netgwId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling netgwPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling netgwPatchTag");
       }
 
 
@@ -732,22 +720,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} netgwId ID of netgw
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.netgwPatchTag = function(netgwId, body) {
-      return this.netgwPatchTagWithHttpInfo(netgwId, body)
+    this.netgwPatchTag = function(netgwId, requestBody) {
+      return this.netgwPatchTagWithHttpInfo(netgwId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -758,7 +745,7 @@
      * /accessrights
      * @param {String} netgwId ID of netgw
      * @param {module:model/NetgwPostAccessrights} netgwPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Netgw} and HTTP response
      */
     this.netgwPostAccessrightsWithHttpInfo = function(netgwId, netgwPostAccessrights) {
       var postBody = netgwPostAccessrights;
@@ -789,12 +776,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Netgw;
       return this.apiClient.callApi(
         '/netgw/{netgwId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -802,7 +788,7 @@
      * /accessrights
      * @param {String} netgwId ID of netgw
      * @param {module:model/NetgwPostAccessrights} netgwPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Netgw}
      */
     this.netgwPostAccessrights = function(netgwId, netgwPostAccessrights) {
       return this.netgwPostAccessrightsWithHttpInfo(netgwId, netgwPostAccessrights)
@@ -843,11 +829,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Netgw;
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -902,11 +887,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Netgw;
-
       return this.apiClient.callApi(
         '/netgw/{netgwId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

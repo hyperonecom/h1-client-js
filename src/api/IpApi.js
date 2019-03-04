@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
         '/ip/{ipId}/actions/allocate', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -145,11 +144,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
         '/ip/{ipId}/actions/associate', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -199,11 +197,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
         '/ip/{ipId}/actions/disassociate', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -252,11 +249,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
         '/ip/{ipId}/actions/release', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -311,11 +307,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
         '/ip/{ipId}/actions/transfer', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -364,11 +359,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
         '/ip', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -416,11 +410,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/ip/{ipId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -474,11 +467,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
         '/ip/{ipId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -533,11 +525,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/ip/{ipId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -592,11 +583,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = IpServices;
-
       return this.apiClient.callApi(
         '/ip/{ipId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -644,11 +634,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/ip/{ipId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -670,6 +659,7 @@
      * List ip
      * @param {Object} opts Optional parameters
      * @param {String} opts.mac Filter by mac
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Ip>} and HTTP response
      */
     this.ipListWithHttpInfo = function(opts) {
@@ -681,6 +671,7 @@
       };
       var queryParams = {
         'mac': opts['mac'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -693,11 +684,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Ip];
-
       return this.apiClient.callApi(
         '/ip', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -706,6 +696,7 @@
      * List ip
      * @param {Object} opts Optional parameters
      * @param {String} opts.mac Filter by mac
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Ip>}
      */
     this.ipList = function(opts) {
@@ -746,11 +737,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/ip/{ipId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -797,11 +787,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/ip/{ipId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -848,11 +837,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [IpServices];
-
       return this.apiClient.callApi(
         '/ip/{ipId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -872,20 +860,20 @@
     /**
      * /tag
      * @param {String} ipId ID of ip
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.ipPatchTagWithHttpInfo = function(ipId, body) {
-      var postBody = body;
+    this.ipPatchTagWithHttpInfo = function(ipId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
         throw new Error("Missing the required parameter 'ipId' when calling ipPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling ipPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling ipPatchTag");
       }
 
 
@@ -905,22 +893,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/ip/{ipId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} ipId ID of ip
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.ipPatchTag = function(ipId, body) {
-      return this.ipPatchTagWithHttpInfo(ipId, body)
+    this.ipPatchTag = function(ipId, requestBody) {
+      return this.ipPatchTagWithHttpInfo(ipId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -931,7 +918,7 @@
      * /accessrights
      * @param {String} ipId ID of ip
      * @param {module:model/IpPostAccessrights} ipPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Ip} and HTTP response
      */
     this.ipPostAccessrightsWithHttpInfo = function(ipId, ipPostAccessrights) {
       var postBody = ipPostAccessrights;
@@ -962,12 +949,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Ip;
       return this.apiClient.callApi(
         '/ip/{ipId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -975,7 +961,7 @@
      * /accessrights
      * @param {String} ipId ID of ip
      * @param {module:model/IpPostAccessrights} ipPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Ip}
      */
     this.ipPostAccessrights = function(ipId, ipPostAccessrights) {
       return this.ipPostAccessrightsWithHttpInfo(ipId, ipPostAccessrights)
@@ -1016,11 +1002,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
         '/ip/{ipId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1075,11 +1060,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Ip;
-
       return this.apiClient.callApi(
         '/ip/{ipId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

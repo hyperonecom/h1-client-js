@@ -69,7 +69,7 @@
   }
 
   /**
-   * @member {String} role
+   * @member {module:model/ProjectAccessRights.RoleEnum} role
    */
   exports.prototype['role'] = undefined;
   /**
@@ -77,6 +77,33 @@
    */
   exports.prototype['id'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>role</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.RoleEnum = {
+    /**
+     * value: "owner"
+     * @const
+     */
+    "owner": "owner",
+    /**
+     * value: "billing"
+     * @const
+     */
+    "billing": "billing",
+    /**
+     * value: "user"
+     * @const
+     */
+    "user": "user",
+    /**
+     * value: "support"
+     * @const
+     */
+    "support": "support"  };
 
 
   return exports;

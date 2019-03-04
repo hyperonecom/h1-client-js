@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Disk;
-
       return this.apiClient.callApi(
         '/disk/{diskId}/actions/resize', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -145,11 +144,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Disk;
-
       return this.apiClient.callApi(
         '/disk/{diskId}/actions/transfer', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -198,11 +196,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Disk;
-
       return this.apiClient.callApi(
         '/disk', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -250,11 +247,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/disk/{diskId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -308,11 +304,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Disk;
-
       return this.apiClient.callApi(
         '/disk/{diskId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -367,11 +362,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/disk/{diskId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -426,11 +420,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DiskServices;
-
       return this.apiClient.callApi(
         '/disk/{diskId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -478,11 +471,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/disk/{diskId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -504,6 +496,7 @@
      * List disk
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Disk>} and HTTP response
      */
     this.diskListWithHttpInfo = function(opts) {
@@ -515,6 +508,7 @@
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -527,11 +521,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Disk];
-
       return this.apiClient.callApi(
         '/disk', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -540,6 +533,7 @@
      * List disk
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Disk>}
      */
     this.diskList = function(opts) {
@@ -580,11 +574,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/disk/{diskId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -631,11 +624,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/disk/{diskId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -682,11 +674,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [DiskServices];
-
       return this.apiClient.callApi(
         '/disk/{diskId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -706,20 +697,20 @@
     /**
      * /tag
      * @param {String} diskId ID of disk
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.diskPatchTagWithHttpInfo = function(diskId, body) {
-      var postBody = body;
+    this.diskPatchTagWithHttpInfo = function(diskId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling diskPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling diskPatchTag");
       }
 
 
@@ -739,22 +730,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/disk/{diskId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} diskId ID of disk
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.diskPatchTag = function(diskId, body) {
-      return this.diskPatchTagWithHttpInfo(diskId, body)
+    this.diskPatchTag = function(diskId, requestBody) {
+      return this.diskPatchTagWithHttpInfo(diskId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -765,7 +755,7 @@
      * /accessrights
      * @param {String} diskId ID of disk
      * @param {module:model/DiskPostAccessrights} diskPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
      */
     this.diskPostAccessrightsWithHttpInfo = function(diskId, diskPostAccessrights) {
       var postBody = diskPostAccessrights;
@@ -796,12 +786,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Disk;
       return this.apiClient.callApi(
         '/disk/{diskId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -809,7 +798,7 @@
      * /accessrights
      * @param {String} diskId ID of disk
      * @param {module:model/DiskPostAccessrights} diskPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
      */
     this.diskPostAccessrights = function(diskId, diskPostAccessrights) {
       return this.diskPostAccessrightsWithHttpInfo(diskId, diskPostAccessrights)
@@ -850,11 +839,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Disk;
-
       return this.apiClient.callApi(
         '/disk/{diskId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -909,11 +897,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Disk;
-
       return this.apiClient.callApi(
         '/disk/{diskId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

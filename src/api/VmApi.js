@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/flavour', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -145,11 +144,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/image', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -205,11 +203,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/password_reset', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -265,11 +262,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/rename', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -319,11 +315,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/restart', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -372,11 +367,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/start', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -425,11 +419,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/stop', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -478,11 +471,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/actions/turnoff', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -530,11 +522,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -588,11 +579,10 @@
       var contentTypes = ['application/json'];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/vm/{vmId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -647,11 +637,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -706,11 +695,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/hdd/{diskId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -765,11 +753,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/netadp/{netadpId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -824,11 +811,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -883,11 +869,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = VmServices;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -935,11 +920,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -961,6 +945,7 @@
      * List vm
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Vm>} and HTTP response
      */
     this.vmListWithHttpInfo = function(opts) {
@@ -972,6 +957,7 @@
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -984,11 +970,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Vm];
-
       return this.apiClient.callApi(
         '/vm', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -997,6 +982,7 @@
      * List vm
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Vm>}
      */
     this.vmList = function(opts) {
@@ -1037,11 +1023,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/vm/{vmId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1088,11 +1073,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Hdd];
-
       return this.apiClient.callApi(
         '/vm/{vmId}/hdd', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1139,11 +1123,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Netadp];
-
       return this.apiClient.callApi(
         '/vm/{vmId}/netadp', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1190,11 +1173,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/vm/{vmId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1241,11 +1223,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [VmServices];
-
       return this.apiClient.callApi(
         '/vm/{vmId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1265,20 +1246,20 @@
     /**
      * /tag
      * @param {String} vmId ID of vm
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.vmPatchTagWithHttpInfo = function(vmId, body) {
-      var postBody = body;
+    this.vmPatchTagWithHttpInfo = function(vmId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling vmPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling vmPatchTag");
       }
 
 
@@ -1298,22 +1279,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} vmId ID of vm
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.vmPatchTag = function(vmId, body) {
-      return this.vmPatchTagWithHttpInfo(vmId, body)
+    this.vmPatchTag = function(vmId, requestBody) {
+      return this.vmPatchTagWithHttpInfo(vmId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1324,7 +1304,7 @@
      * /accessrights
      * @param {String} vmId ID of vm
      * @param {module:model/VmPostAccessrights} vmPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vm} and HTTP response
      */
     this.vmPostAccessrightsWithHttpInfo = function(vmId, vmPostAccessrights) {
       var postBody = vmPostAccessrights;
@@ -1355,12 +1335,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Vm;
       return this.apiClient.callApi(
         '/vm/{vmId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1368,7 +1347,7 @@
      * /accessrights
      * @param {String} vmId ID of vm
      * @param {module:model/VmPostAccessrights} vmPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vm}
      */
     this.vmPostAccessrights = function(vmId, vmPostAccessrights) {
       return this.vmPostAccessrightsWithHttpInfo(vmId, vmPostAccessrights)
@@ -1414,11 +1393,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/hdd', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1472,11 +1450,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}/netadp', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1525,11 +1502,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1584,11 +1560,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Vm;
-
       return this.apiClient.callApi(
         '/vm/{vmId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

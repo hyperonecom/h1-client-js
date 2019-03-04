@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Image;
-
       return this.apiClient.callApi(
         '/image/{imageId}/actions/transfer', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -138,11 +137,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Image;
-
       return this.apiClient.callApi(
         '/image', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -190,11 +188,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/image/{imageId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -248,11 +245,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Image;
-
       return this.apiClient.callApi(
         '/image/{imageId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -307,11 +303,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/image/{imageId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -366,11 +361,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ImageServices;
-
       return this.apiClient.callApi(
         '/image/{imageId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -418,11 +412,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/image/{imageId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -467,11 +460,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Image];
-
       return this.apiClient.callApi(
         '/image', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -520,11 +512,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/image/{imageId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -571,11 +562,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/image/{imageId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -622,11 +612,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [ImageServices];
-
       return this.apiClient.callApi(
         '/image/{imageId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -646,20 +635,20 @@
     /**
      * /tag
      * @param {String} imageId ID of image
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.imagePatchTagWithHttpInfo = function(imageId, body) {
-      var postBody = body;
+    this.imagePatchTagWithHttpInfo = function(imageId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imagePatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling imagePatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling imagePatchTag");
       }
 
 
@@ -679,22 +668,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/image/{imageId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} imageId ID of image
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.imagePatchTag = function(imageId, body) {
-      return this.imagePatchTagWithHttpInfo(imageId, body)
+    this.imagePatchTag = function(imageId, requestBody) {
+      return this.imagePatchTagWithHttpInfo(imageId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -705,7 +693,7 @@
      * /accessrights
      * @param {String} imageId ID of image
      * @param {module:model/ImagePostAccessrights} imagePostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Image} and HTTP response
      */
     this.imagePostAccessrightsWithHttpInfo = function(imageId, imagePostAccessrights) {
       var postBody = imagePostAccessrights;
@@ -736,12 +724,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Image;
       return this.apiClient.callApi(
         '/image/{imageId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -749,7 +736,7 @@
      * /accessrights
      * @param {String} imageId ID of image
      * @param {module:model/ImagePostAccessrights} imagePostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Image}
      */
     this.imagePostAccessrights = function(imageId, imagePostAccessrights) {
       return this.imagePostAccessrightsWithHttpInfo(imageId, imagePostAccessrights)
@@ -790,11 +777,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Image;
-
       return this.apiClient.callApi(
         '/image/{imageId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -849,11 +835,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Image;
-
       return this.apiClient.callApi(
         '/image/{imageId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

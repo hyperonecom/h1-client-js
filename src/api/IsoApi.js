@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Iso;
-
       return this.apiClient.callApi(
         '/iso/{isoId}/actions/transfer', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -138,11 +137,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Iso;
-
       return this.apiClient.callApi(
         '/iso', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -190,11 +188,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/iso/{isoId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -248,11 +245,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Iso;
-
       return this.apiClient.callApi(
         '/iso/{isoId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -307,11 +303,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/iso/{isoId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -366,11 +361,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = IsoServices;
-
       return this.apiClient.callApi(
         '/iso/{isoId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -418,11 +412,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/iso/{isoId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -467,11 +460,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Iso];
-
       return this.apiClient.callApi(
         '/iso', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -520,11 +512,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/iso/{isoId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -571,11 +562,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/iso/{isoId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -622,11 +612,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [IsoServices];
-
       return this.apiClient.callApi(
         '/iso/{isoId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -646,20 +635,20 @@
     /**
      * /tag
      * @param {String} isoId ID of iso
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.isoPatchTagWithHttpInfo = function(isoId, body) {
-      var postBody = body;
+    this.isoPatchTagWithHttpInfo = function(isoId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling isoPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling isoPatchTag");
       }
 
 
@@ -679,22 +668,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/iso/{isoId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} isoId ID of iso
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.isoPatchTag = function(isoId, body) {
-      return this.isoPatchTagWithHttpInfo(isoId, body)
+    this.isoPatchTag = function(isoId, requestBody) {
+      return this.isoPatchTagWithHttpInfo(isoId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -705,7 +693,7 @@
      * /accessrights
      * @param {String} isoId ID of iso
      * @param {module:model/IsoPostAccessrights} isoPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Iso} and HTTP response
      */
     this.isoPostAccessrightsWithHttpInfo = function(isoId, isoPostAccessrights) {
       var postBody = isoPostAccessrights;
@@ -736,12 +724,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Iso;
       return this.apiClient.callApi(
         '/iso/{isoId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -749,7 +736,7 @@
      * /accessrights
      * @param {String} isoId ID of iso
      * @param {module:model/IsoPostAccessrights} isoPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Iso}
      */
     this.isoPostAccessrights = function(isoId, isoPostAccessrights) {
       return this.isoPostAccessrightsWithHttpInfo(isoId, isoPostAccessrights)
@@ -790,11 +777,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Iso;
-
       return this.apiClient.callApi(
         '/iso/{isoId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -849,11 +835,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Iso;
-
       return this.apiClient.callApi(
         '/iso/{isoId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

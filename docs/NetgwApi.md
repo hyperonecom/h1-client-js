@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 <a name="netgwPatchTag"></a>
 # **netgwPatchTag**
-> Object netgwPatchTag(netgwId, body)
+> Object netgwPatchTag(netgwId, requestBody)
 
 /tag
 
@@ -728,8 +728,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetgwApi();
 var netgwId = "netgwId_example"; // String | ID of netgw
-var body = null; // Object | 
-apiInstance.netgwPatchTag(netgwId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.netgwPatchTag(netgwId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -742,7 +742,7 @@ apiInstance.netgwPatchTag(netgwId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **netgwId** | **String**| ID of netgw | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -759,7 +759,7 @@ Name | Type | Description  | Notes
 
 <a name="netgwPostAccessrights"></a>
 # **netgwPostAccessrights**
-> String netgwPostAccessrights(netgwId, netgwPostAccessrights)
+> Netgw netgwPostAccessrights(netgwId, netgwPostAccessrights)
 
 /accessrights
 
@@ -803,7 +803,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Netgw**](Netgw.md)
 
 ### Authorization
 

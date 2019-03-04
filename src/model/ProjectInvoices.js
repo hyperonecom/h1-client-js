@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ProjectInvoicesDuplicate'], factory);
+    define(['ApiClient', 'model/ProjectDuplicate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ProjectInvoicesDuplicate'));
+    module.exports = factory(require('../ApiClient'), require('./ProjectDuplicate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ProjectInvoices = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.ProjectInvoicesDuplicate);
+    root.HyperOneApi.ProjectInvoices = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.ProjectDuplicate);
   }
-}(this, function(ApiClient, ProjectInvoicesDuplicate) {
+}(this, function(ApiClient, ProjectDuplicate) {
   'use strict';
 
 
@@ -77,7 +77,7 @@
         obj['organisation'] = ApiClient.convertToType(data['organisation'], 'String');
       }
       if (data.hasOwnProperty('duplicate')) {
-        obj['duplicate'] = ProjectInvoicesDuplicate.constructFromObject(data['duplicate']);
+        obj['duplicate'] = ProjectDuplicate.constructFromObject(data['duplicate']);
       }
     }
     return obj;
@@ -108,7 +108,7 @@
    */
   exports.prototype['organisation'] = undefined;
   /**
-   * @member {module:model/ProjectInvoicesDuplicate} duplicate
+   * @member {module:model/ProjectDuplicate} duplicate
    */
   exports.prototype['duplicate'] = undefined;
 

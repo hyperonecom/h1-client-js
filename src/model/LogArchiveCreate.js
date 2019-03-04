@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/VaultCreateCredential'], factory);
+    define(['ApiClient', 'model/LogArchiveCreateCredential'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./VaultCreateCredential'));
+    module.exports = factory(require('../ApiClient'), require('./LogArchiveCreateCredential'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.LogArchiveCreate = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.VaultCreateCredential);
+    root.HyperOneApi.LogArchiveCreate = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.LogArchiveCreateCredential);
   }
-}(this, function(ApiClient, VaultCreateCredential) {
+}(this, function(ApiClient, LogArchiveCreateCredential) {
   'use strict';
 
 
@@ -67,7 +67,7 @@
         obj['service'] = ApiClient.convertToType(data['service'], 'String');
       }
       if (data.hasOwnProperty('credential')) {
-        obj['credential'] = VaultCreateCredential.constructFromObject(data['credential']);
+        obj['credential'] = LogArchiveCreateCredential.constructFromObject(data['credential']);
       }
       if (data.hasOwnProperty('retention')) {
         obj['retention'] = ApiClient.convertToType(data['retention'], 'Number');
@@ -89,7 +89,7 @@
    */
   exports.prototype['service'] = '5b4e074d1d34e82848ce7499';
   /**
-   * @member {module:model/VaultCreateCredential} credential
+   * @member {module:model/LogArchiveCreateCredential} credential
    */
   exports.prototype['credential'] = undefined;
   /**

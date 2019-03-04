@@ -7,9 +7,9 @@ Method | HTTP request | Description
 [**networkCreate**](NetworkApi.md#networkCreate) | **POST** /network | Create
 [**networkDelete**](NetworkApi.md#networkDelete) | **DELETE** /network/{networkId} | Delete
 [**networkDeleteAccessrightsIdentity**](NetworkApi.md#networkDeleteAccessrightsIdentity) | **DELETE** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
-[**networkDeleteIpIpId**](NetworkApi.md#networkDeleteIpIpId) | **DELETE** /network/{networkId}/ip/:ipId | /ip/:ipId
+[**networkDeleteIpIpId**](NetworkApi.md#networkDeleteIpIpId) | **DELETE** /network/{networkId}/ip/{ipId} | /ip/:ipId
 [**networkDeleteTagKey**](NetworkApi.md#networkDeleteTagKey) | **DELETE** /network/{networkId}/tag/{key} | /tag/:key
-[**networkGetIpIpId**](NetworkApi.md#networkGetIpIpId) | **GET** /network/{networkId}/ip/:ipId | /ip/:ipId
+[**networkGetIpIpId**](NetworkApi.md#networkGetIpIpId) | **GET** /network/{networkId}/ip/{ipId} | /ip/:ipId
 [**networkGetServicesServiceId**](NetworkApi.md#networkGetServicesServiceId) | **GET** /network/{networkId}/services/{serviceId} | /services/:serviceId
 [**networkGetTag**](NetworkApi.md#networkGetTag) | **GET** /network/{networkId}/tag | /tag
 [**networkList**](NetworkApi.md#networkList) | **GET** /network | List
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 <a name="networkDeleteIpIpId"></a>
 # **networkDeleteIpIpId**
-> Ip networkDeleteIpIpId(networkId)
+> Ip networkDeleteIpIpId(networkId, ipId)
 
 /ip/:ipId
 
@@ -221,7 +221,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-apiInstance.networkDeleteIpIpId(networkId).then(function(data) {
+var ipId = "ipId_example"; // String | ipId
+apiInstance.networkDeleteIpIpId(networkId, ipId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -234,6 +235,7 @@ apiInstance.networkDeleteIpIpId(networkId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**| ID of network | 
+ **ipId** | **String**| ipId | 
 
 ### Return type
 
@@ -307,7 +309,7 @@ Name | Type | Description  | Notes
 
 <a name="networkGetIpIpId"></a>
 # **networkGetIpIpId**
-> Ip networkGetIpIpId(networkId)
+> Ip networkGetIpIpId(networkId, ipId)
 
 /ip/:ipId
 
@@ -333,7 +335,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-apiInstance.networkGetIpIpId(networkId).then(function(data) {
+var ipId = "ipId_example"; // String | ipId
+apiInstance.networkGetIpIpId(networkId, ipId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -346,6 +349,7 @@ apiInstance.networkGetIpIpId(networkId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**| ID of network | 
+ **ipId** | **String**| ipId | 
 
 ### Return type
 
@@ -753,7 +757,7 @@ Name | Type | Description  | Notes
 
 <a name="networkPatchTag"></a>
 # **networkPatchTag**
-> Object networkPatchTag(networkId, body)
+> Object networkPatchTag(networkId, requestBody)
 
 /tag
 
@@ -779,8 +783,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
-var body = null; // Object | 
-apiInstance.networkPatchTag(networkId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.networkPatchTag(networkId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -793,7 +797,7 @@ apiInstance.networkPatchTag(networkId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**| ID of network | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -810,7 +814,7 @@ Name | Type | Description  | Notes
 
 <a name="networkPostAccessrights"></a>
 # **networkPostAccessrights**
-> String networkPostAccessrights(networkId, networkPostAccessrights)
+> Network networkPostAccessrights(networkId, networkPostAccessrights)
 
 /accessrights
 
@@ -854,7 +858,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Network**](Network.md)
 
 ### Authorization
 

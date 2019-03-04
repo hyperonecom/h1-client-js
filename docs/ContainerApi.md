@@ -758,7 +758,7 @@ Name | Type | Description  | Notes
 
 <a name="containerPatchTag"></a>
 # **containerPatchTag**
-> Object containerPatchTag(containerId, body)
+> Object containerPatchTag(containerId, requestBody)
 
 /tag
 
@@ -784,8 +784,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ContainerApi();
 var containerId = "containerId_example"; // String | ID of container
-var body = null; // Object | 
-apiInstance.containerPatchTag(containerId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.containerPatchTag(containerId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -798,7 +798,7 @@ apiInstance.containerPatchTag(containerId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **containerId** | **String**| ID of container | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 
 <a name="containerPostAccessrights"></a>
 # **containerPostAccessrights**
-> String containerPostAccessrights(containerId, containerPostAccessrights)
+> Container containerPostAccessrights(containerId, containerPostAccessrights)
 
 /accessrights
 
@@ -859,7 +859,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Container**](Container.md)
 
 ### Authorization
 

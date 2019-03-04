@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Firewall', 'model/FirewallActionAttach', 'model/FirewallActionTransfer', 'model/FirewallCreate', 'model/FirewallPostAccessrights', 'model/FirewallPostEgress', 'model/FirewallPostIngress', 'model/FirewallServices', 'model/FirewallUpdate', 'model/InlineResponse200'], factory);
+    define(['ApiClient', 'model/Event', 'model/Firewall', 'model/FirewallActionAttach', 'model/FirewallActionTransfer', 'model/FirewallCreate', 'model/FirewallPostAccessrights', 'model/FirewallPostEgress', 'model/FirewallPostIngress', 'model/FirewallServices', 'model/FirewallUpdate', 'model/InlineResponse2001'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Firewall'), require('../model/FirewallActionAttach'), require('../model/FirewallActionTransfer'), require('../model/FirewallCreate'), require('../model/FirewallPostAccessrights'), require('../model/FirewallPostEgress'), require('../model/FirewallPostIngress'), require('../model/FirewallServices'), require('../model/FirewallUpdate'), require('../model/InlineResponse200'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Firewall'), require('../model/FirewallActionAttach'), require('../model/FirewallActionTransfer'), require('../model/FirewallCreate'), require('../model/FirewallPostAccessrights'), require('../model/FirewallPostEgress'), require('../model/FirewallPostIngress'), require('../model/FirewallServices'), require('../model/FirewallUpdate'), require('../model/InlineResponse2001'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.FirewallApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Firewall, root.HyperOneApi.FirewallActionAttach, root.HyperOneApi.FirewallActionTransfer, root.HyperOneApi.FirewallCreate, root.HyperOneApi.FirewallPostAccessrights, root.HyperOneApi.FirewallPostEgress, root.HyperOneApi.FirewallPostIngress, root.HyperOneApi.FirewallServices, root.HyperOneApi.FirewallUpdate, root.HyperOneApi.InlineResponse200);
+    root.HyperOneApi.FirewallApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Firewall, root.HyperOneApi.FirewallActionAttach, root.HyperOneApi.FirewallActionTransfer, root.HyperOneApi.FirewallCreate, root.HyperOneApi.FirewallPostAccessrights, root.HyperOneApi.FirewallPostEgress, root.HyperOneApi.FirewallPostIngress, root.HyperOneApi.FirewallServices, root.HyperOneApi.FirewallUpdate, root.HyperOneApi.InlineResponse2001);
   }
-}(this, function(ApiClient, Event, Firewall, FirewallActionAttach, FirewallActionTransfer, FirewallCreate, FirewallPostAccessrights, FirewallPostEgress, FirewallPostIngress, FirewallServices, FirewallUpdate, InlineResponse200) {
+}(this, function(ApiClient, Event, Firewall, FirewallActionAttach, FirewallActionTransfer, FirewallCreate, FirewallPostAccessrights, FirewallPostEgress, FirewallPostIngress, FirewallServices, FirewallUpdate, InlineResponse2001) {
   'use strict';
 
   /**
@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Firewall;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/actions/attach', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -139,11 +138,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Firewall;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/actions/detach', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -198,11 +196,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Firewall;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/actions/transfer', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -251,11 +248,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Firewall;
-
       return this.apiClient.callApi(
         '/firewall', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -303,11 +299,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -361,11 +356,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Firewall;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -387,7 +381,7 @@
      * /egress/:ruleId
      * @param {String} firewallId ID of firewall
      * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     this.firewallDeleteEgressRuleIdWithHttpInfo = function(firewallId, ruleId) {
       var postBody = null;
@@ -419,12 +413,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
-
+      var returnType = InlineResponse2001;
       return this.apiClient.callApi(
         '/firewall/{firewallId}/egress/{ruleId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -432,7 +425,7 @@
      * /egress/:ruleId
      * @param {String} firewallId ID of firewall
      * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     this.firewallDeleteEgressRuleId = function(firewallId, ruleId) {
       return this.firewallDeleteEgressRuleIdWithHttpInfo(firewallId, ruleId)
@@ -446,7 +439,7 @@
      * /ingress/:ruleId
      * @param {String} firewallId ID of firewall
      * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     this.firewallDeleteIngressRuleIdWithHttpInfo = function(firewallId, ruleId) {
       var postBody = null;
@@ -478,12 +471,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
-
+      var returnType = InlineResponse2001;
       return this.apiClient.callApi(
         '/firewall/{firewallId}/ingress/{ruleId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -491,7 +483,7 @@
      * /ingress/:ruleId
      * @param {String} firewallId ID of firewall
      * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     this.firewallDeleteIngressRuleId = function(firewallId, ruleId) {
       return this.firewallDeleteIngressRuleIdWithHttpInfo(firewallId, ruleId)
@@ -538,11 +530,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -564,7 +555,7 @@
      * /egress/:ruleId
      * @param {String} firewallId ID of firewall
      * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     this.firewallGetEgressRuleIdWithHttpInfo = function(firewallId, ruleId) {
       var postBody = null;
@@ -596,12 +587,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
-
+      var returnType = InlineResponse2001;
       return this.apiClient.callApi(
         '/firewall/{firewallId}/egress/{ruleId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -609,7 +599,7 @@
      * /egress/:ruleId
      * @param {String} firewallId ID of firewall
      * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     this.firewallGetEgressRuleId = function(firewallId, ruleId) {
       return this.firewallGetEgressRuleIdWithHttpInfo(firewallId, ruleId)
@@ -623,7 +613,7 @@
      * /ingress/:ruleId
      * @param {String} firewallId ID of firewall
      * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     this.firewallGetIngressRuleIdWithHttpInfo = function(firewallId, ruleId) {
       var postBody = null;
@@ -655,12 +645,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
-
+      var returnType = InlineResponse2001;
       return this.apiClient.callApi(
         '/firewall/{firewallId}/ingress/{ruleId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -668,7 +657,7 @@
      * /ingress/:ruleId
      * @param {String} firewallId ID of firewall
      * @param {String} ruleId ruleId
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     this.firewallGetIngressRuleId = function(firewallId, ruleId) {
       return this.firewallGetIngressRuleIdWithHttpInfo(firewallId, ruleId)
@@ -715,11 +704,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = FirewallServices;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -767,11 +755,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -816,11 +803,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Firewall];
-
       return this.apiClient.callApi(
         '/firewall', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -869,11 +855,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -893,7 +878,7 @@
     /**
      * /egress
      * @param {String} firewallId ID of firewall
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse200>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2001>} and HTTP response
      */
     this.firewallListEgressWithHttpInfo = function(firewallId) {
       var postBody = null;
@@ -919,19 +904,18 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [InlineResponse200];
-
+      var returnType = [InlineResponse2001];
       return this.apiClient.callApi(
         '/firewall/{firewallId}/egress', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /egress
      * @param {String} firewallId ID of firewall
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse200>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2001>}
      */
     this.firewallListEgress = function(firewallId) {
       return this.firewallListEgressWithHttpInfo(firewallId)
@@ -944,7 +928,7 @@
     /**
      * /ingress
      * @param {String} firewallId ID of firewall
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse200>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2001>} and HTTP response
      */
     this.firewallListIngressWithHttpInfo = function(firewallId) {
       var postBody = null;
@@ -970,19 +954,18 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [InlineResponse200];
-
+      var returnType = [InlineResponse2001];
       return this.apiClient.callApi(
         '/firewall/{firewallId}/ingress', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /ingress
      * @param {String} firewallId ID of firewall
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse200>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2001>}
      */
     this.firewallListIngress = function(firewallId) {
       return this.firewallListIngressWithHttpInfo(firewallId)
@@ -1022,11 +1005,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1073,11 +1055,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [FirewallServices];
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1097,20 +1078,20 @@
     /**
      * /tag
      * @param {String} firewallId ID of firewall
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.firewallPatchTagWithHttpInfo = function(firewallId, body) {
-      var postBody = body;
+    this.firewallPatchTagWithHttpInfo = function(firewallId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'firewallId' is set
       if (firewallId === undefined || firewallId === null) {
         throw new Error("Missing the required parameter 'firewallId' when calling firewallPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling firewallPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling firewallPatchTag");
       }
 
 
@@ -1130,22 +1111,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} firewallId ID of firewall
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.firewallPatchTag = function(firewallId, body) {
-      return this.firewallPatchTagWithHttpInfo(firewallId, body)
+    this.firewallPatchTag = function(firewallId, requestBody) {
+      return this.firewallPatchTagWithHttpInfo(firewallId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1156,7 +1136,7 @@
      * /accessrights
      * @param {String} firewallId ID of firewall
      * @param {module:model/FirewallPostAccessrights} firewallPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Firewall} and HTTP response
      */
     this.firewallPostAccessrightsWithHttpInfo = function(firewallId, firewallPostAccessrights) {
       var postBody = firewallPostAccessrights;
@@ -1187,12 +1167,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Firewall;
       return this.apiClient.callApi(
         '/firewall/{firewallId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1200,7 +1179,7 @@
      * /accessrights
      * @param {String} firewallId ID of firewall
      * @param {module:model/FirewallPostAccessrights} firewallPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Firewall}
      */
     this.firewallPostAccessrights = function(firewallId, firewallPostAccessrights) {
       return this.firewallPostAccessrightsWithHttpInfo(firewallId, firewallPostAccessrights)
@@ -1214,7 +1193,7 @@
      * /egress
      * @param {String} firewallId ID of firewall
      * @param {module:model/FirewallPostEgress} firewallPostEgress 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     this.firewallPostEgressWithHttpInfo = function(firewallId, firewallPostEgress) {
       var postBody = firewallPostEgress;
@@ -1245,12 +1224,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
-
+      var returnType = InlineResponse2001;
       return this.apiClient.callApi(
         '/firewall/{firewallId}/egress', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1258,7 +1236,7 @@
      * /egress
      * @param {String} firewallId ID of firewall
      * @param {module:model/FirewallPostEgress} firewallPostEgress 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     this.firewallPostEgress = function(firewallId, firewallPostEgress) {
       return this.firewallPostEgressWithHttpInfo(firewallId, firewallPostEgress)
@@ -1272,7 +1250,7 @@
      * /ingress
      * @param {String} firewallId ID of firewall
      * @param {module:model/FirewallPostIngress} firewallPostIngress 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     this.firewallPostIngressWithHttpInfo = function(firewallId, firewallPostIngress) {
       var postBody = firewallPostIngress;
@@ -1303,12 +1281,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
-
+      var returnType = InlineResponse2001;
       return this.apiClient.callApi(
         '/firewall/{firewallId}/ingress', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1316,7 +1293,7 @@
      * /ingress
      * @param {String} firewallId ID of firewall
      * @param {module:model/FirewallPostIngress} firewallPostIngress 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     this.firewallPostIngress = function(firewallId, firewallPostIngress) {
       return this.firewallPostIngressWithHttpInfo(firewallId, firewallPostIngress)
@@ -1357,11 +1334,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Firewall;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -1416,11 +1392,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Firewall;
-
       return this.apiClient.callApi(
         '/firewall/{firewallId}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 

@@ -42,10 +42,14 @@
    * Constructs a new <code>ProjectPostAccessrights</code>.
    * @alias module:model/ProjectPostAccessrights
    * @class
+   * @param id {String} 
+   * @param role {String} 
    */
-  var exports = function() {
+  var exports = function(id, role) {
     var _this = this;
 
+    _this['id'] = id;
+    _this['role'] = role;
   };
 
   /**
@@ -58,17 +62,24 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('identity')) {
-        obj['identity'] = ApiClient.convertToType(data['identity'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('role')) {
+        obj['role'] = ApiClient.convertToType(data['role'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} identity
+   * @member {String} id
    */
-  exports.prototype['identity'] = undefined;
+  exports.prototype['id'] = undefined;
+  /**
+   * @member {String} role
+   */
+  exports.prototype['role'] = undefined;
 
 
 

@@ -42,10 +42,12 @@
    * Constructs a new <code>VaultActionSnapshot</code>.
    * @alias module:model/VaultActionSnapshot
    * @class
+   * @param name {String} 
    */
-  var exports = function() {
+  var exports = function(name) {
     var _this = this;
 
+    _this['name'] = name;
   };
 
   /**
@@ -58,6 +60,9 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
       if (data.hasOwnProperty('service')) {
         obj['service'] = ApiClient.convertToType(data['service'], 'String');
       }
@@ -65,6 +70,10 @@
     return obj;
   }
 
+  /**
+   * @member {String} name
+   */
+  exports.prototype['name'] = undefined;
   /**
    * @member {String} service
    * @default '5badbeb585f66b3d085727eb'

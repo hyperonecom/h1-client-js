@@ -77,7 +77,7 @@
         obj['service'] = ApiClient.convertToType(data['service'], 'String');
       }
       if (data.hasOwnProperty('expose')) {
-        obj['expose'] = ContainerCreateExpose.constructFromObject(data['expose']);
+        obj['expose'] = ApiClient.convertToType(data['expose'], [ContainerCreateExpose]);
       }
       if (data.hasOwnProperty('env')) {
         obj['env'] = ApiClient.convertToType(data['env'], ['String']);
@@ -112,7 +112,7 @@
    */
   exports.prototype['service'] = undefined;
   /**
-   * @member {module:model/ContainerCreateExpose} expose
+   * @member {Array.<module:model/ContainerCreateExpose>} expose
    */
   exports.prototype['expose'] = undefined;
   /**

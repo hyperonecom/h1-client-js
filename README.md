@@ -112,9 +112,9 @@ Session.apiKey = "YOUR API KEY"
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Session.apiKeyPrefix['x-auth-token'] = "Token"
 
-var api = new HyperOneApi.ContainerApi()
-var containerId = "containerId_example"; // {String} ID of container
-api.containerActionRestart(containerId).then(function(data) {
+var api = new HyperOneApi.AgentApi()
+var agentCreate = new HyperOneApi.AgentCreate(); // {AgentCreate} 
+api.agentCreate(agentCreate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -129,6 +129,27 @@ All URIs are relative to *https://api.hyperone.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*HyperOneApi.AgentApi* | [**agentCreate**](docs/AgentApi.md#agentCreate) | **POST** /agent | Create
+*HyperOneApi.AgentApi* | [**agentDelete**](docs/AgentApi.md#agentDelete) | **DELETE** /agent/{agentId} | Delete
+*HyperOneApi.AgentApi* | [**agentDeleteAccessrightsIdentity**](docs/AgentApi.md#agentDeleteAccessrightsIdentity) | **DELETE** /agent/{agentId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.AgentApi* | [**agentDeleteCredentialcertificateId**](docs/AgentApi.md#agentDeleteCredentialcertificateId) | **DELETE** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
+*HyperOneApi.AgentApi* | [**agentDeleteTagKey**](docs/AgentApi.md#agentDeleteTagKey) | **DELETE** /agent/{agentId}/tag/{key} | /tag/:key
+*HyperOneApi.AgentApi* | [**agentGetCredentialcertificateId**](docs/AgentApi.md#agentGetCredentialcertificateId) | **GET** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
+*HyperOneApi.AgentApi* | [**agentGetServicesServiceId**](docs/AgentApi.md#agentGetServicesServiceId) | **GET** /agent/{agentId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.AgentApi* | [**agentGetTag**](docs/AgentApi.md#agentGetTag) | **GET** /agent/{agentId}/tag | /tag
+*HyperOneApi.AgentApi* | [**agentList**](docs/AgentApi.md#agentList) | **GET** /agent | List
+*HyperOneApi.AgentApi* | [**agentListAccessrights**](docs/AgentApi.md#agentListAccessrights) | **GET** /agent/{agentId}/accessrights | /accessrights
+*HyperOneApi.AgentApi* | [**agentListCredentialcertificate**](docs/AgentApi.md#agentListCredentialcertificate) | **GET** /agent/{agentId}/credential/certificate | /credential/certificate
+*HyperOneApi.AgentApi* | [**agentListEnabledServices**](docs/AgentApi.md#agentListEnabledServices) | **GET** /agent/{agentId}/enabledServices | /enabledServices
+*HyperOneApi.AgentApi* | [**agentListQueue**](docs/AgentApi.md#agentListQueue) | **GET** /agent/{agentId}/queue | /queue
+*HyperOneApi.AgentApi* | [**agentListServices**](docs/AgentApi.md#agentListServices) | **GET** /agent/{agentId}/services | /services
+*HyperOneApi.AgentApi* | [**agentPatchCredentialcertificateId**](docs/AgentApi.md#agentPatchCredentialcertificateId) | **PATCH** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
+*HyperOneApi.AgentApi* | [**agentPatchTag**](docs/AgentApi.md#agentPatchTag) | **PATCH** /agent/{agentId}/tag | /tag
+*HyperOneApi.AgentApi* | [**agentPostAccessrights**](docs/AgentApi.md#agentPostAccessrights) | **POST** /agent/{agentId}/accessrights | /accessrights
+*HyperOneApi.AgentApi* | [**agentPostCredentialcertificate**](docs/AgentApi.md#agentPostCredentialcertificate) | **POST** /agent/{agentId}/credential/certificate | /credential/certificate
+*HyperOneApi.AgentApi* | [**agentPutEnabledServices**](docs/AgentApi.md#agentPutEnabledServices) | **PUT** /agent/{agentId}/enabledServices | /enabledServices
+*HyperOneApi.AgentApi* | [**agentShow**](docs/AgentApi.md#agentShow) | **GET** /agent/{agentId} | Get
+*HyperOneApi.AgentApi* | [**agentUpdate**](docs/AgentApi.md#agentUpdate) | **PATCH** /agent/{agentId} | Update
 *HyperOneApi.ContainerApi* | [**containerActionRestart**](docs/ContainerApi.md#containerActionRestart) | **POST** /container/{containerId}/actions/restart | /actions/restart
 *HyperOneApi.ContainerApi* | [**containerActionStart**](docs/ContainerApi.md#containerActionStart) | **POST** /container/{containerId}/actions/start | /actions/start
 *HyperOneApi.ContainerApi* | [**containerActionStop**](docs/ContainerApi.md#containerActionStop) | **POST** /container/{containerId}/actions/stop | /actions/stop
@@ -240,24 +261,19 @@ Class | Method | HTTP request | Description
 *HyperOneApi.LogArchiveApi* | [**logArchiveCreate**](docs/LogArchiveApi.md#logArchiveCreate) | **POST** /logArchive | Create
 *HyperOneApi.LogArchiveApi* | [**logArchiveDelete**](docs/LogArchiveApi.md#logArchiveDelete) | **DELETE** /logArchive/{logArchiveId} | Delete
 *HyperOneApi.LogArchiveApi* | [**logArchiveDeleteAccessrightsIdentity**](docs/LogArchiveApi.md#logArchiveDeleteAccessrightsIdentity) | **DELETE** /logArchive/{logArchiveId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.LogArchiveApi* | [**logArchiveDeleteCredentialcertificateId**](docs/LogArchiveApi.md#logArchiveDeleteCredentialcertificateId) | **DELETE** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
 *HyperOneApi.LogArchiveApi* | [**logArchiveDeleteCredentialpasswordId**](docs/LogArchiveApi.md#logArchiveDeleteCredentialpasswordId) | **DELETE** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 *HyperOneApi.LogArchiveApi* | [**logArchiveDeleteTagKey**](docs/LogArchiveApi.md#logArchiveDeleteTagKey) | **DELETE** /logArchive/{logArchiveId}/tag/{key} | /tag/:key
-*HyperOneApi.LogArchiveApi* | [**logArchiveGetCredentialcertificateId**](docs/LogArchiveApi.md#logArchiveGetCredentialcertificateId) | **GET** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
 *HyperOneApi.LogArchiveApi* | [**logArchiveGetCredentialpasswordId**](docs/LogArchiveApi.md#logArchiveGetCredentialpasswordId) | **GET** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 *HyperOneApi.LogArchiveApi* | [**logArchiveGetServicesServiceId**](docs/LogArchiveApi.md#logArchiveGetServicesServiceId) | **GET** /logArchive/{logArchiveId}/services/{serviceId} | /services/:serviceId
 *HyperOneApi.LogArchiveApi* | [**logArchiveGetTag**](docs/LogArchiveApi.md#logArchiveGetTag) | **GET** /logArchive/{logArchiveId}/tag | /tag
 *HyperOneApi.LogArchiveApi* | [**logArchiveList**](docs/LogArchiveApi.md#logArchiveList) | **GET** /logArchive | List
 *HyperOneApi.LogArchiveApi* | [**logArchiveListAccessrights**](docs/LogArchiveApi.md#logArchiveListAccessrights) | **GET** /logArchive/{logArchiveId}/accessrights | /accessrights
-*HyperOneApi.LogArchiveApi* | [**logArchiveListCredentialcertificate**](docs/LogArchiveApi.md#logArchiveListCredentialcertificate) | **GET** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
 *HyperOneApi.LogArchiveApi* | [**logArchiveListCredentialpassword**](docs/LogArchiveApi.md#logArchiveListCredentialpassword) | **GET** /logArchive/{logArchiveId}/credential/password | /credential/password
 *HyperOneApi.LogArchiveApi* | [**logArchiveListQueue**](docs/LogArchiveApi.md#logArchiveListQueue) | **GET** /logArchive/{logArchiveId}/queue | /queue
 *HyperOneApi.LogArchiveApi* | [**logArchiveListServices**](docs/LogArchiveApi.md#logArchiveListServices) | **GET** /logArchive/{logArchiveId}/services | /services
-*HyperOneApi.LogArchiveApi* | [**logArchivePatchCredentialcertificateId**](docs/LogArchiveApi.md#logArchivePatchCredentialcertificateId) | **PATCH** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
 *HyperOneApi.LogArchiveApi* | [**logArchivePatchCredentialpasswordId**](docs/LogArchiveApi.md#logArchivePatchCredentialpasswordId) | **PATCH** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 *HyperOneApi.LogArchiveApi* | [**logArchivePatchTag**](docs/LogArchiveApi.md#logArchivePatchTag) | **PATCH** /logArchive/{logArchiveId}/tag | /tag
 *HyperOneApi.LogArchiveApi* | [**logArchivePostAccessrights**](docs/LogArchiveApi.md#logArchivePostAccessrights) | **POST** /logArchive/{logArchiveId}/accessrights | /accessrights
-*HyperOneApi.LogArchiveApi* | [**logArchivePostCredentialcertificate**](docs/LogArchiveApi.md#logArchivePostCredentialcertificate) | **POST** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
 *HyperOneApi.LogArchiveApi* | [**logArchivePostCredentialpassword**](docs/LogArchiveApi.md#logArchivePostCredentialpassword) | **POST** /logArchive/{logArchiveId}/credential/password | /credential/password
 *HyperOneApi.LogArchiveApi* | [**logArchiveShow**](docs/LogArchiveApi.md#logArchiveShow) | **GET** /logArchive/{logArchiveId} | Get
 *HyperOneApi.LogArchiveApi* | [**logArchiveUpdate**](docs/LogArchiveApi.md#logArchiveUpdate) | **PATCH** /logArchive/{logArchiveId} | Update
@@ -291,9 +307,9 @@ Class | Method | HTTP request | Description
 *HyperOneApi.NetworkApi* | [**networkCreate**](docs/NetworkApi.md#networkCreate) | **POST** /network | Create
 *HyperOneApi.NetworkApi* | [**networkDelete**](docs/NetworkApi.md#networkDelete) | **DELETE** /network/{networkId} | Delete
 *HyperOneApi.NetworkApi* | [**networkDeleteAccessrightsIdentity**](docs/NetworkApi.md#networkDeleteAccessrightsIdentity) | **DELETE** /network/{networkId}/accessrights/{identity} | /accessrights/:identity
-*HyperOneApi.NetworkApi* | [**networkDeleteIpIpId**](docs/NetworkApi.md#networkDeleteIpIpId) | **DELETE** /network/{networkId}/ip/:ipId | /ip/:ipId
+*HyperOneApi.NetworkApi* | [**networkDeleteIpIpId**](docs/NetworkApi.md#networkDeleteIpIpId) | **DELETE** /network/{networkId}/ip/{ipId} | /ip/:ipId
 *HyperOneApi.NetworkApi* | [**networkDeleteTagKey**](docs/NetworkApi.md#networkDeleteTagKey) | **DELETE** /network/{networkId}/tag/{key} | /tag/:key
-*HyperOneApi.NetworkApi* | [**networkGetIpIpId**](docs/NetworkApi.md#networkGetIpIpId) | **GET** /network/{networkId}/ip/:ipId | /ip/:ipId
+*HyperOneApi.NetworkApi* | [**networkGetIpIpId**](docs/NetworkApi.md#networkGetIpIpId) | **GET** /network/{networkId}/ip/{ipId} | /ip/:ipId
 *HyperOneApi.NetworkApi* | [**networkGetServicesServiceId**](docs/NetworkApi.md#networkGetServicesServiceId) | **GET** /network/{networkId}/services/{serviceId} | /services/:serviceId
 *HyperOneApi.NetworkApi* | [**networkGetTag**](docs/NetworkApi.md#networkGetTag) | **GET** /network/{networkId}/tag | /tag
 *HyperOneApi.NetworkApi* | [**networkList**](docs/NetworkApi.md#networkList) | **GET** /network | List
@@ -306,9 +322,10 @@ Class | Method | HTTP request | Description
 *HyperOneApi.NetworkApi* | [**networkPostIp**](docs/NetworkApi.md#networkPostIp) | **POST** /network/{networkId}/ip | /ip
 *HyperOneApi.NetworkApi* | [**networkShow**](docs/NetworkApi.md#networkShow) | **GET** /network/{networkId} | Get
 *HyperOneApi.NetworkApi* | [**networkUpdate**](docs/NetworkApi.md#networkUpdate) | **PATCH** /network/{networkId} | Update
+*HyperOneApi.OrganisationApi* | [**organisationActionPaymentAssign**](docs/OrganisationApi.md#organisationActionPaymentAssign) | **POST** /organisation/{organisationId}/actions/payment_assign | /actions/payment_assign
 *HyperOneApi.OrganisationApi* | [**organisationActionTransferAccept**](docs/OrganisationApi.md#organisationActionTransferAccept) | **POST** /organisation/{organisationId}/actions/transfer_accept | /actions/transfer_accept
 *HyperOneApi.OrganisationApi* | [**organisationCreate**](docs/OrganisationApi.md#organisationCreate) | **POST** /organisation | Create
-*HyperOneApi.OrganisationApi* | [**organisationDeleteAccessrightsIdentity**](docs/OrganisationApi.md#organisationDeleteAccessrightsIdentity) | **DELETE** /organisation/{organisationId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.OrganisationApi* | [**organisationDeleteAccessrightsId**](docs/OrganisationApi.md#organisationDeleteAccessrightsId) | **DELETE** /organisation/{organisationId}/accessrights/{id} | /accessrights/:id
 *HyperOneApi.OrganisationApi* | [**organisationDeleteTagKey**](docs/OrganisationApi.md#organisationDeleteTagKey) | **DELETE** /organisation/{organisationId}/tag/{key} | /tag/:key
 *HyperOneApi.OrganisationApi* | [**organisationGetTag**](docs/OrganisationApi.md#organisationGetTag) | **GET** /organisation/{organisationId}/tag | /tag
 *HyperOneApi.OrganisationApi* | [**organisationList**](docs/OrganisationApi.md#organisationList) | **GET** /organisation | List
@@ -319,16 +336,22 @@ Class | Method | HTTP request | Description
 *HyperOneApi.OrganisationApi* | [**organisationShow**](docs/OrganisationApi.md#organisationShow) | **GET** /organisation/{organisationId} | Get
 *HyperOneApi.OrganisationApi* | [**organisationUpdate**](docs/OrganisationApi.md#organisationUpdate) | **PATCH** /organisation/{organisationId} | Update
 *HyperOneApi.ProjectApi* | [**projectCreate**](docs/ProjectApi.md#projectCreate) | **POST** /project | Create
-*HyperOneApi.ProjectApi* | [**projectDeleteAccessrightsIdentity**](docs/ProjectApi.md#projectDeleteAccessrightsIdentity) | **DELETE** /project/{projectId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.ProjectApi* | [**projectDelete**](docs/ProjectApi.md#projectDelete) | **DELETE** /project/{projectId} | Delete
+*HyperOneApi.ProjectApi* | [**projectDeleteAccessrightsId**](docs/ProjectApi.md#projectDeleteAccessrightsId) | **DELETE** /project/{projectId}/accessrights/{id} | /accessrights/:id
+*HyperOneApi.ProjectApi* | [**projectDeleteCredentialStorecertificateId**](docs/ProjectApi.md#projectDeleteCredentialStorecertificateId) | **DELETE** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 *HyperOneApi.ProjectApi* | [**projectDeleteTagKey**](docs/ProjectApi.md#projectDeleteTagKey) | **DELETE** /project/{projectId}/tag/{key} | /tag/:key
+*HyperOneApi.ProjectApi* | [**projectGetCredentialStorecertificateId**](docs/ProjectApi.md#projectGetCredentialStorecertificateId) | **GET** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 *HyperOneApi.ProjectApi* | [**projectGetServicesServiceId**](docs/ProjectApi.md#projectGetServicesServiceId) | **GET** /project/{projectId}/services/{serviceId} | /services/:serviceId
 *HyperOneApi.ProjectApi* | [**projectGetTag**](docs/ProjectApi.md#projectGetTag) | **GET** /project/{projectId}/tag | /tag
 *HyperOneApi.ProjectApi* | [**projectList**](docs/ProjectApi.md#projectList) | **GET** /project | List
 *HyperOneApi.ProjectApi* | [**projectListAccessrights**](docs/ProjectApi.md#projectListAccessrights) | **GET** /project/{projectId}/accessrights | /accessrights
+*HyperOneApi.ProjectApi* | [**projectListCredentialStorecertificate**](docs/ProjectApi.md#projectListCredentialStorecertificate) | **GET** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
 *HyperOneApi.ProjectApi* | [**projectListQueue**](docs/ProjectApi.md#projectListQueue) | **GET** /project/{projectId}/queue | /queue
 *HyperOneApi.ProjectApi* | [**projectListServices**](docs/ProjectApi.md#projectListServices) | **GET** /project/{projectId}/services | /services
+*HyperOneApi.ProjectApi* | [**projectPatchCredentialStorecertificateId**](docs/ProjectApi.md#projectPatchCredentialStorecertificateId) | **PATCH** /project/{projectId}/credentialStore/certificate/{id} | /credentialStore/certificate/:id
 *HyperOneApi.ProjectApi* | [**projectPatchTag**](docs/ProjectApi.md#projectPatchTag) | **PATCH** /project/{projectId}/tag | /tag
 *HyperOneApi.ProjectApi* | [**projectPostAccessrights**](docs/ProjectApi.md#projectPostAccessrights) | **POST** /project/{projectId}/accessrights | /accessrights
+*HyperOneApi.ProjectApi* | [**projectPostCredentialStorecertificate**](docs/ProjectApi.md#projectPostCredentialStorecertificate) | **POST** /project/{projectId}/credentialStore/certificate | /credentialStore/certificate
 *HyperOneApi.ProjectApi* | [**projectShow**](docs/ProjectApi.md#projectShow) | **GET** /project/{projectId} | Get
 *HyperOneApi.ProjectApi* | [**projectUpdate**](docs/ProjectApi.md#projectUpdate) | **PATCH** /project/{projectId} | Update
 *HyperOneApi.ReplicaApi* | [**replicaActionImage**](docs/ReplicaApi.md#replicaActionImage) | **POST** /replica/{replicaId}/actions/image | /actions/image
@@ -362,6 +385,8 @@ Class | Method | HTTP request | Description
 *HyperOneApi.ReservationApi* | [**reservationPostAccessrights**](docs/ReservationApi.md#reservationPostAccessrights) | **POST** /reservation/{reservationId}/accessrights | /accessrights
 *HyperOneApi.ReservationApi* | [**reservationShow**](docs/ReservationApi.md#reservationShow) | **GET** /reservation/{reservationId} | Get
 *HyperOneApi.ReservationApi* | [**reservationUpdate**](docs/ReservationApi.md#reservationUpdate) | **PATCH** /reservation/{reservationId} | Update
+*HyperOneApi.ServiceApi* | [**serviceList**](docs/ServiceApi.md#serviceList) | **GET** /service | List
+*HyperOneApi.ServiceApi* | [**serviceShow**](docs/ServiceApi.md#serviceShow) | **GET** /service/{serviceId} | Get
 *HyperOneApi.SnapshotApi* | [**snapshotCreate**](docs/SnapshotApi.md#snapshotCreate) | **POST** /snapshot | Create
 *HyperOneApi.SnapshotApi* | [**snapshotDelete**](docs/SnapshotApi.md#snapshotDelete) | **DELETE** /snapshot/{snapshotId} | Delete
 *HyperOneApi.SnapshotApi* | [**snapshotDeleteAccessrightsIdentity**](docs/SnapshotApi.md#snapshotDeleteAccessrightsIdentity) | **DELETE** /snapshot/{snapshotId}/accessrights/{identity} | /accessrights/:identity
@@ -449,10 +474,33 @@ Class | Method | HTTP request | Description
 *HyperOneApi.VmhostApi* | [**vmhostPostAccessrights**](docs/VmhostApi.md#vmhostPostAccessrights) | **POST** /vmhost/{vmhostId}/accessrights | /accessrights
 *HyperOneApi.VmhostApi* | [**vmhostShow**](docs/VmhostApi.md#vmhostShow) | **GET** /vmhost/{vmhostId} | Get
 *HyperOneApi.VmhostApi* | [**vmhostUpdate**](docs/VmhostApi.md#vmhostUpdate) | **PATCH** /vmhost/{vmhostId} | Update
+*HyperOneApi.VolumeApi* | [**volumeCreate**](docs/VolumeApi.md#volumeCreate) | **POST** /volume | Create
+*HyperOneApi.VolumeApi* | [**volumeDelete**](docs/VolumeApi.md#volumeDelete) | **DELETE** /volume/{volumeId} | Delete
+*HyperOneApi.VolumeApi* | [**volumeDeleteAccessrightsIdentity**](docs/VolumeApi.md#volumeDeleteAccessrightsIdentity) | **DELETE** /volume/{volumeId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.VolumeApi* | [**volumeDeleteTagKey**](docs/VolumeApi.md#volumeDeleteTagKey) | **DELETE** /volume/{volumeId}/tag/{key} | /tag/:key
+*HyperOneApi.VolumeApi* | [**volumeGetServicesServiceId**](docs/VolumeApi.md#volumeGetServicesServiceId) | **GET** /volume/{volumeId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.VolumeApi* | [**volumeGetTag**](docs/VolumeApi.md#volumeGetTag) | **GET** /volume/{volumeId}/tag | /tag
+*HyperOneApi.VolumeApi* | [**volumeList**](docs/VolumeApi.md#volumeList) | **GET** /volume | List
+*HyperOneApi.VolumeApi* | [**volumeListAccessrights**](docs/VolumeApi.md#volumeListAccessrights) | **GET** /volume/{volumeId}/accessrights | /accessrights
+*HyperOneApi.VolumeApi* | [**volumeListQueue**](docs/VolumeApi.md#volumeListQueue) | **GET** /volume/{volumeId}/queue | /queue
+*HyperOneApi.VolumeApi* | [**volumeListServices**](docs/VolumeApi.md#volumeListServices) | **GET** /volume/{volumeId}/services | /services
+*HyperOneApi.VolumeApi* | [**volumePatchTag**](docs/VolumeApi.md#volumePatchTag) | **PATCH** /volume/{volumeId}/tag | /tag
+*HyperOneApi.VolumeApi* | [**volumePostAccessrights**](docs/VolumeApi.md#volumePostAccessrights) | **POST** /volume/{volumeId}/accessrights | /accessrights
+*HyperOneApi.VolumeApi* | [**volumeShow**](docs/VolumeApi.md#volumeShow) | **GET** /volume/{volumeId} | Get
+*HyperOneApi.VolumeApi* | [**volumeUpdate**](docs/VolumeApi.md#volumeUpdate) | **PATCH** /volume/{volumeId} | Update
 
 
 ## Documentation for Models
 
+ - [HyperOneApi.AccessrightsUserRole](docs/AccessrightsUserRole.md)
+ - [HyperOneApi.Agent](docs/Agent.md)
+ - [HyperOneApi.AgentCreate](docs/AgentCreate.md)
+ - [HyperOneApi.AgentCreateCredential](docs/AgentCreateCredential.md)
+ - [HyperOneApi.AgentPatchCredentialcertificateId](docs/AgentPatchCredentialcertificateId.md)
+ - [HyperOneApi.AgentPostAccessrights](docs/AgentPostAccessrights.md)
+ - [HyperOneApi.AgentPostCredentialcertificate](docs/AgentPostCredentialcertificate.md)
+ - [HyperOneApi.AgentServices](docs/AgentServices.md)
+ - [HyperOneApi.AgentUpdate](docs/AgentUpdate.md)
  - [HyperOneApi.Container](docs/Container.md)
  - [HyperOneApi.ContainerCreate](docs/ContainerCreate.md)
  - [HyperOneApi.ContainerCreateExpose](docs/ContainerCreateExpose.md)
@@ -496,6 +544,7 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.ImageUpdate](docs/ImageUpdate.md)
  - [HyperOneApi.ImageVm](docs/ImageVm.md)
  - [HyperOneApi.InlineResponse200](docs/InlineResponse200.md)
+ - [HyperOneApi.InlineResponse2001](docs/InlineResponse2001.md)
  - [HyperOneApi.Ip](docs/Ip.md)
  - [HyperOneApi.IpActionAllocate](docs/IpActionAllocate.md)
  - [HyperOneApi.IpActionAssociate](docs/IpActionAssociate.md)
@@ -514,10 +563,9 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.LogArchive](docs/LogArchive.md)
  - [HyperOneApi.LogArchiveActionTransfer](docs/LogArchiveActionTransfer.md)
  - [HyperOneApi.LogArchiveCreate](docs/LogArchiveCreate.md)
- - [HyperOneApi.LogArchivePatchCredentialcertificateId](docs/LogArchivePatchCredentialcertificateId.md)
+ - [HyperOneApi.LogArchiveCreateCredential](docs/LogArchiveCreateCredential.md)
  - [HyperOneApi.LogArchivePatchCredentialpasswordId](docs/LogArchivePatchCredentialpasswordId.md)
  - [HyperOneApi.LogArchivePostAccessrights](docs/LogArchivePostAccessrights.md)
- - [HyperOneApi.LogArchivePostCredentialcertificate](docs/LogArchivePostCredentialcertificate.md)
  - [HyperOneApi.LogArchivePostCredentialpassword](docs/LogArchivePostCredentialpassword.md)
  - [HyperOneApi.LogArchiveServices](docs/LogArchiveServices.md)
  - [HyperOneApi.LogArchiveUpdate](docs/LogArchiveUpdate.md)
@@ -541,7 +589,7 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.NetworkServices](docs/NetworkServices.md)
  - [HyperOneApi.NetworkUpdate](docs/NetworkUpdate.md)
  - [HyperOneApi.Organisation](docs/Organisation.md)
- - [HyperOneApi.OrganisationAccessRights](docs/OrganisationAccessRights.md)
+ - [HyperOneApi.OrganisationActionPaymentAssign](docs/OrganisationActionPaymentAssign.md)
  - [HyperOneApi.OrganisationActionTransferAccept](docs/OrganisationActionTransferAccept.md)
  - [HyperOneApi.OrganisationBilling](docs/OrganisationBilling.md)
  - [HyperOneApi.OrganisationBillingAddress](docs/OrganisationBillingAddress.md)
@@ -564,14 +612,15 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.ProjectCompliance](docs/ProjectCompliance.md)
  - [HyperOneApi.ProjectCreate](docs/ProjectCreate.md)
  - [HyperOneApi.ProjectCreateAccessRights](docs/ProjectCreateAccessRights.md)
+ - [HyperOneApi.ProjectDuplicate](docs/ProjectDuplicate.md)
  - [HyperOneApi.ProjectInvoices](docs/ProjectInvoices.md)
- - [HyperOneApi.ProjectInvoicesDuplicate](docs/ProjectInvoicesDuplicate.md)
  - [HyperOneApi.ProjectLimit](docs/ProjectLimit.md)
  - [HyperOneApi.ProjectLimitDisk](docs/ProjectLimitDisk.md)
  - [HyperOneApi.ProjectLimitDomain](docs/ProjectLimitDomain.md)
  - [HyperOneApi.ProjectLimitIso](docs/ProjectLimitIso.md)
  - [HyperOneApi.ProjectLimitVm](docs/ProjectLimitVm.md)
  - [HyperOneApi.ProjectNetworkAcl](docs/ProjectNetworkAcl.md)
+ - [HyperOneApi.ProjectPatchCredentialStorecertificateId](docs/ProjectPatchCredentialStorecertificateId.md)
  - [HyperOneApi.ProjectPostAccessrights](docs/ProjectPostAccessrights.md)
  - [HyperOneApi.ProjectRoles](docs/ProjectRoles.md)
  - [HyperOneApi.ProjectServices](docs/ProjectServices.md)
@@ -590,6 +639,10 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.ReservationPostAccessrights](docs/ReservationPostAccessrights.md)
  - [HyperOneApi.ReservationServices](docs/ReservationServices.md)
  - [HyperOneApi.ReservationUpdate](docs/ReservationUpdate.md)
+ - [HyperOneApi.Service](docs/Service.md)
+ - [HyperOneApi.ServiceBilling](docs/ServiceBilling.md)
+ - [HyperOneApi.ServiceBillingPrice](docs/ServiceBillingPrice.md)
+ - [HyperOneApi.ServiceBillingReservations](docs/ServiceBillingReservations.md)
  - [HyperOneApi.Snapshot](docs/Snapshot.md)
  - [HyperOneApi.SnapshotCreate](docs/SnapshotCreate.md)
  - [HyperOneApi.SnapshotPostAccessrights](docs/SnapshotPostAccessrights.md)
@@ -635,6 +688,11 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.VmhostPostAccessrights](docs/VmhostPostAccessrights.md)
  - [HyperOneApi.VmhostServices](docs/VmhostServices.md)
  - [HyperOneApi.VmhostUpdate](docs/VmhostUpdate.md)
+ - [HyperOneApi.Volume](docs/Volume.md)
+ - [HyperOneApi.VolumeCreate](docs/VolumeCreate.md)
+ - [HyperOneApi.VolumePostAccessrights](docs/VolumePostAccessrights.md)
+ - [HyperOneApi.VolumeServices](docs/VolumeServices.md)
+ - [HyperOneApi.VolumeUpdate](docs/VolumeUpdate.md)
 
 
 ## Documentation for Authorization

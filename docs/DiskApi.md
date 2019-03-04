@@ -508,7 +508,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.DiskApi();
 var opts = {
-  'name': "name_example" // String | Filter by name
+  'name': "name_example", // String | Filter by name
+  'tag': {key: "null"} // {String: String} | Filter by tag
 };
 apiInstance.diskList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -523,6 +524,7 @@ apiInstance.diskList(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Filter by name | [optional] 
+ **tag** | [**{String: String}**](String.md)| Filter by tag | [optional] 
 
 ### Return type
 
@@ -704,7 +706,7 @@ Name | Type | Description  | Notes
 
 <a name="diskPatchTag"></a>
 # **diskPatchTag**
-> Object diskPatchTag(diskId, body)
+> Object diskPatchTag(diskId, requestBody)
 
 /tag
 
@@ -730,8 +732,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.DiskApi();
 var diskId = "diskId_example"; // String | ID of disk
-var body = null; // Object | 
-apiInstance.diskPatchTag(diskId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.diskPatchTag(diskId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -744,7 +746,7 @@ apiInstance.diskPatchTag(diskId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diskId** | **String**| ID of disk | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -761,7 +763,7 @@ Name | Type | Description  | Notes
 
 <a name="diskPostAccessrights"></a>
 # **diskPostAccessrights**
-> String diskPostAccessrights(diskId, diskPostAccessrights)
+> Disk diskPostAccessrights(diskId, diskPostAccessrights)
 
 /accessrights
 
@@ -805,7 +807,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Disk**](Disk.md)
 
 ### Authorization
 

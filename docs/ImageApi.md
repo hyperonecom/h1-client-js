@@ -644,7 +644,7 @@ Name | Type | Description  | Notes
 
 <a name="imagePatchTag"></a>
 # **imagePatchTag**
-> Object imagePatchTag(imageId, body)
+> Object imagePatchTag(imageId, requestBody)
 
 /tag
 
@@ -670,8 +670,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.ImageApi();
 var imageId = "imageId_example"; // String | ID of image
-var body = null; // Object | 
-apiInstance.imagePatchTag(imageId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.imagePatchTag(imageId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -684,7 +684,7 @@ apiInstance.imagePatchTag(imageId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageId** | **String**| ID of image | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -701,7 +701,7 @@ Name | Type | Description  | Notes
 
 <a name="imagePostAccessrights"></a>
 # **imagePostAccessrights**
-> String imagePostAccessrights(imageId, imagePostAccessrights)
+> Image imagePostAccessrights(imageId, imagePostAccessrights)
 
 /accessrights
 
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Image**](Image.md)
 
 ### Authorization
 

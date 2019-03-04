@@ -1288,7 +1288,7 @@ Name | Type | Description  | Notes
 
 <a name="vaultPatchTag"></a>
 # **vaultPatchTag**
-> Object vaultPatchTag(vaultId, body)
+> Object vaultPatchTag(vaultId, requestBody)
 
 /tag
 
@@ -1314,8 +1314,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
-var body = null; // Object | 
-apiInstance.vaultPatchTag(vaultId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.vaultPatchTag(vaultId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1328,7 +1328,7 @@ apiInstance.vaultPatchTag(vaultId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vaultId** | **String**| ID of vault | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -1345,7 +1345,7 @@ Name | Type | Description  | Notes
 
 <a name="vaultPostAccessrights"></a>
 # **vaultPostAccessrights**
-> String vaultPostAccessrights(vaultId, vaultPostAccessrights)
+> Vault vaultPostAccessrights(vaultId, vaultPostAccessrights)
 
 /accessrights
 
@@ -1389,7 +1389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Vault**](Vault.md)
 
 ### Authorization
 

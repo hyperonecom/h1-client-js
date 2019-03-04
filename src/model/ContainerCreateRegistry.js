@@ -64,6 +64,9 @@
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
       }
+      if (data.hasOwnProperty('token')) {
+        obj['token'] = ApiClient.convertToType(data['token'], 'String');
+      }
     }
     return obj;
   }
@@ -76,6 +79,10 @@
    * @member {String} password
    */
   exports.prototype['password'] = undefined;
+  /**
+   * @member {String} token
+   */
+  exports.prototype['token'] = undefined;
 
 
 

@@ -8,24 +8,19 @@ Method | HTTP request | Description
 [**logArchiveCreate**](LogArchiveApi.md#logArchiveCreate) | **POST** /logArchive | Create
 [**logArchiveDelete**](LogArchiveApi.md#logArchiveDelete) | **DELETE** /logArchive/{logArchiveId} | Delete
 [**logArchiveDeleteAccessrightsIdentity**](LogArchiveApi.md#logArchiveDeleteAccessrightsIdentity) | **DELETE** /logArchive/{logArchiveId}/accessrights/{identity} | /accessrights/:identity
-[**logArchiveDeleteCredentialcertificateId**](LogArchiveApi.md#logArchiveDeleteCredentialcertificateId) | **DELETE** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
 [**logArchiveDeleteCredentialpasswordId**](LogArchiveApi.md#logArchiveDeleteCredentialpasswordId) | **DELETE** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 [**logArchiveDeleteTagKey**](LogArchiveApi.md#logArchiveDeleteTagKey) | **DELETE** /logArchive/{logArchiveId}/tag/{key} | /tag/:key
-[**logArchiveGetCredentialcertificateId**](LogArchiveApi.md#logArchiveGetCredentialcertificateId) | **GET** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
 [**logArchiveGetCredentialpasswordId**](LogArchiveApi.md#logArchiveGetCredentialpasswordId) | **GET** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 [**logArchiveGetServicesServiceId**](LogArchiveApi.md#logArchiveGetServicesServiceId) | **GET** /logArchive/{logArchiveId}/services/{serviceId} | /services/:serviceId
 [**logArchiveGetTag**](LogArchiveApi.md#logArchiveGetTag) | **GET** /logArchive/{logArchiveId}/tag | /tag
 [**logArchiveList**](LogArchiveApi.md#logArchiveList) | **GET** /logArchive | List
 [**logArchiveListAccessrights**](LogArchiveApi.md#logArchiveListAccessrights) | **GET** /logArchive/{logArchiveId}/accessrights | /accessrights
-[**logArchiveListCredentialcertificate**](LogArchiveApi.md#logArchiveListCredentialcertificate) | **GET** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
 [**logArchiveListCredentialpassword**](LogArchiveApi.md#logArchiveListCredentialpassword) | **GET** /logArchive/{logArchiveId}/credential/password | /credential/password
 [**logArchiveListQueue**](LogArchiveApi.md#logArchiveListQueue) | **GET** /logArchive/{logArchiveId}/queue | /queue
 [**logArchiveListServices**](LogArchiveApi.md#logArchiveListServices) | **GET** /logArchive/{logArchiveId}/services | /services
-[**logArchivePatchCredentialcertificateId**](LogArchiveApi.md#logArchivePatchCredentialcertificateId) | **PATCH** /logArchive/{logArchiveId}/credential/certificate/{id} | /credential/certificate/:id
 [**logArchivePatchCredentialpasswordId**](LogArchiveApi.md#logArchivePatchCredentialpasswordId) | **PATCH** /logArchive/{logArchiveId}/credential/password/{id} | /credential/password/:id
 [**logArchivePatchTag**](LogArchiveApi.md#logArchivePatchTag) | **PATCH** /logArchive/{logArchiveId}/tag | /tag
 [**logArchivePostAccessrights**](LogArchiveApi.md#logArchivePostAccessrights) | **POST** /logArchive/{logArchiveId}/accessrights | /accessrights
-[**logArchivePostCredentialcertificate**](LogArchiveApi.md#logArchivePostCredentialcertificate) | **POST** /logArchive/{logArchiveId}/credential/certificate | /credential/certificate
 [**logArchivePostCredentialpassword**](LogArchiveApi.md#logArchivePostCredentialpassword) | **POST** /logArchive/{logArchiveId}/credential/password | /credential/password
 [**logArchiveShow**](LogArchiveApi.md#logArchiveShow) | **GET** /logArchive/{logArchiveId} | Get
 [**logArchiveUpdate**](LogArchiveApi.md#logArchiveUpdate) | **PATCH** /logArchive/{logArchiveId} | Update
@@ -259,63 +254,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="logArchiveDeleteCredentialcertificateId"></a>
-# **logArchiveDeleteCredentialcertificateId**
-> LogArchive logArchiveDeleteCredentialcertificateId(logArchiveId, id)
-
-/credential/certificate/:id
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.LogArchiveApi();
-var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var id = "id_example"; // String | id
-apiInstance.logArchiveDeleteCredentialcertificateId(logArchiveId, id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **logArchiveId** | **String**| ID of logArchive | 
- **id** | **String**| id | 
-
-### Return type
-
-[**LogArchive**](LogArchive.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="logArchiveDeleteCredentialpasswordId"></a>
 # **logArchiveDeleteCredentialpasswordId**
 > LogArchive logArchiveDeleteCredentialpasswordId(logArchiveId, id)
@@ -420,63 +358,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="logArchiveGetCredentialcertificateId"></a>
-# **logArchiveGetCredentialcertificateId**
-> CredentialCertificate logArchiveGetCredentialcertificateId(logArchiveId, id)
-
-/credential/certificate/:id
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.LogArchiveApi();
-var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var id = "id_example"; // String | id
-apiInstance.logArchiveGetCredentialcertificateId(logArchiveId, id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **logArchiveId** | **String**| ID of logArchive | 
- **id** | **String**| id | 
-
-### Return type
-
-[**CredentialCertificate**](CredentialCertificate.md)
 
 ### Authorization
 
@@ -770,61 +651,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="logArchiveListCredentialcertificate"></a>
-# **logArchiveListCredentialcertificate**
-> [CredentialCertificate] logArchiveListCredentialcertificate(logArchiveId)
-
-/credential/certificate
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.LogArchiveApi();
-var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-apiInstance.logArchiveListCredentialcertificate(logArchiveId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **logArchiveId** | **String**| ID of logArchive | 
-
-### Return type
-
-[**[CredentialCertificate]**](CredentialCertificate.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="logArchiveListCredentialpassword"></a>
 # **logArchiveListCredentialpassword**
 > [CredentialPassword] logArchiveListCredentialpassword(logArchiveId)
@@ -990,65 +816,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="logArchivePatchCredentialcertificateId"></a>
-# **logArchivePatchCredentialcertificateId**
-> CredentialCertificate logArchivePatchCredentialcertificateId(logArchiveId, id, logArchivePatchCredentialcertificateId)
-
-/credential/certificate/:id
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.LogArchiveApi();
-var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var id = "id_example"; // String | id
-var logArchivePatchCredentialcertificateId = new HyperOneApi.LogArchivePatchCredentialcertificateId(); // LogArchivePatchCredentialcertificateId | 
-apiInstance.logArchivePatchCredentialcertificateId(logArchiveId, id, logArchivePatchCredentialcertificateId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **logArchiveId** | **String**| ID of logArchive | 
- **id** | **String**| id | 
- **logArchivePatchCredentialcertificateId** | [**LogArchivePatchCredentialcertificateId**](LogArchivePatchCredentialcertificateId.md)|  | 
-
-### Return type
-
-[**CredentialCertificate**](CredentialCertificate.md)
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
 <a name="logArchivePatchCredentialpasswordId"></a>
 # **logArchivePatchCredentialpasswordId**
 > CredentialPassword logArchivePatchCredentialpasswordId(logArchiveId, id, logArchivePatchCredentialpasswordId)
@@ -1110,7 +877,7 @@ Name | Type | Description  | Notes
 
 <a name="logArchivePatchTag"></a>
 # **logArchivePatchTag**
-> Object logArchivePatchTag(logArchiveId, body)
+> Object logArchivePatchTag(logArchiveId, requestBody)
 
 /tag
 
@@ -1136,8 +903,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.LogArchiveApi();
 var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var body = null; // Object | 
-apiInstance.logArchivePatchTag(logArchiveId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.logArchivePatchTag(logArchiveId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -1150,7 +917,7 @@ apiInstance.logArchivePatchTag(logArchiveId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **logArchiveId** | **String**| ID of logArchive | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -1167,7 +934,7 @@ Name | Type | Description  | Notes
 
 <a name="logArchivePostAccessrights"></a>
 # **logArchivePostAccessrights**
-> String logArchivePostAccessrights(logArchiveId, logArchivePostAccessrights)
+> LogArchive logArchivePostAccessrights(logArchiveId, logArchivePostAccessrights)
 
 /accessrights
 
@@ -1211,64 +978,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
-
-### Authorization
-
-[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="logArchivePostCredentialcertificate"></a>
-# **logArchivePostCredentialcertificate**
-> CredentialCertificate logArchivePostCredentialcertificate(logArchiveId, logArchivePostCredentialcertificate)
-
-/credential/certificate
-
-### Example
-```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
-// Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
-Project.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
-
-var apiInstance = new HyperOneApi.LogArchiveApi();
-var logArchiveId = "logArchiveId_example"; // String | ID of logArchive
-var logArchivePostCredentialcertificate = new HyperOneApi.LogArchivePostCredentialcertificate(); // LogArchivePostCredentialcertificate | 
-apiInstance.logArchivePostCredentialcertificate(logArchiveId, logArchivePostCredentialcertificate).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **logArchiveId** | **String**| ID of logArchive | 
- **logArchivePostCredentialcertificate** | [**LogArchivePostCredentialcertificate**](LogArchivePostCredentialcertificate.md)|  | 
-
-### Return type
-
-[**CredentialCertificate**](CredentialCertificate.md)
+[**LogArchive**](LogArchive.md)
 
 ### Authorization
 

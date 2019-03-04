@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **summary** | **String** |  | [optional] 
 **project** | **String** |  | [optional] 
 **organisation** | **String** |  | [optional] 
-**duplicate** | [**ProjectInvoicesDuplicate**](ProjectInvoicesDuplicate.md) |  | [optional] 
+**duplicate** | [**ProjectDuplicate**](ProjectDuplicate.md) |  | [optional] 
 
 

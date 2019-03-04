@@ -766,7 +766,7 @@ Name | Type | Description  | Notes
 
 <a name="vmhostPatchTag"></a>
 # **vmhostPatchTag**
-> Object vmhostPatchTag(vmhostId, body)
+> Object vmhostPatchTag(vmhostId, requestBody)
 
 /tag
 
@@ -792,8 +792,8 @@ Session.apiKey = 'YOUR API KEY';
 
 var apiInstance = new HyperOneApi.VmhostApi();
 var vmhostId = "vmhostId_example"; // String | ID of vmhost
-var body = null; // Object | 
-apiInstance.vmhostPatchTag(vmhostId, body).then(function(data) {
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.vmhostPatchTag(vmhostId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -806,7 +806,7 @@ apiInstance.vmhostPatchTag(vmhostId, body).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmhostId** | **String**| ID of vmhost | 
- **body** | **Object**|  | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
 
 ### Return type
 
@@ -823,7 +823,7 @@ Name | Type | Description  | Notes
 
 <a name="vmhostPostAccessrights"></a>
 # **vmhostPostAccessrights**
-> String vmhostPostAccessrights(vmhostId, vmhostPostAccessrights)
+> Vmhost vmhostPostAccessrights(vmhostId, vmhostPostAccessrights)
 
 /accessrights
 
@@ -867,7 +867,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**Vmhost**](Vmhost.md)
 
 ### Authorization
 

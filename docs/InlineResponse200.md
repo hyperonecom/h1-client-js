@@ -3,26 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**description** | **String** |  | [optional] 
-**createdOn** | **Date** |  | [optional] 
-**createdBy** | **String** |  | [optional] 
-**modifiedOn** | **Date** |  | [optional] 
-**modifiedBy** | **String** |  | [optional] 
-**priority** | **Number** |  | 
-**action** | **String** |  | 
-**filter** | **[String]** |  | [optional] 
-**external** | **[String]** |  | [optional] 
-**internal** | **[String]** |  | [optional] 
+**name** | **String** |  | 
+**createdOn** | **Date** |  | 
+**createdBy** | **String** |  | 
+**type** | **String** |  | 
+**value** | **String** |  | 
 
 
-<a name="ActionEnum"></a>
-## Enum: ActionEnum
+<a name="TypeEnum"></a>
+## Enum: TypeEnum
 
 
-* `allow` (value: `"allow"`)
-
-* `deny` (value: `"deny"`)
+* `ssh` (value: `"ssh"`)
 
 
 

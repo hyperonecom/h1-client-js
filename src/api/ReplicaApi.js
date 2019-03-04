@@ -85,11 +85,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Replica;
-
       return this.apiClient.callApi(
         '/replica/{replicaId}/actions/image', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -138,11 +137,10 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Replica;
-
       return this.apiClient.callApi(
         '/replica', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -190,11 +188,10 @@
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
-
       return this.apiClient.callApi(
         '/replica/{replicaId}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -248,11 +245,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Replica;
-
       return this.apiClient.callApi(
         '/replica/{replicaId}/accessrights/{identity}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -307,11 +303,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/replica/{replicaId}/tag/{key}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -366,11 +361,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ReplicaServices;
-
       return this.apiClient.callApi(
         '/replica/{replicaId}/services/{serviceId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -418,11 +412,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/replica/{replicaId}/tag', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -467,11 +460,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Replica];
-
       return this.apiClient.callApi(
         '/replica', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -520,11 +512,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
-
       return this.apiClient.callApi(
         '/replica/{replicaId}/accessrights', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -571,11 +562,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [Event];
-
       return this.apiClient.callApi(
         '/replica/{replicaId}/queue', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -622,11 +612,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [ReplicaServices];
-
       return this.apiClient.callApi(
         '/replica/{replicaId}/services', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -646,20 +635,20 @@
     /**
      * /tag
      * @param {String} replicaId ID of replica
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.replicaPatchTagWithHttpInfo = function(replicaId, body) {
-      var postBody = body;
+    this.replicaPatchTagWithHttpInfo = function(replicaId, requestBody) {
+      var postBody = requestBody;
 
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaPatchTag");
       }
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling replicaPatchTag");
+      // verify the required parameter 'requestBody' is set
+      if (requestBody === undefined || requestBody === null) {
+        throw new Error("Missing the required parameter 'requestBody' when calling replicaPatchTag");
       }
 
 
@@ -679,22 +668,21 @@
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = Object;
-
       return this.apiClient.callApi(
         '/replica/{replicaId}/tag', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
      * /tag
      * @param {String} replicaId ID of replica
-     * @param {Object} body 
+     * @param {Object.<String, {String: String}>} requestBody 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.replicaPatchTag = function(replicaId, body) {
-      return this.replicaPatchTagWithHttpInfo(replicaId, body)
+    this.replicaPatchTag = function(replicaId, requestBody) {
+      return this.replicaPatchTagWithHttpInfo(replicaId, requestBody)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -705,7 +693,7 @@
      * /accessrights
      * @param {String} replicaId ID of replica
      * @param {module:model/ReplicaPostAccessrights} replicaPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Replica} and HTTP response
      */
     this.replicaPostAccessrightsWithHttpInfo = function(replicaId, replicaPostAccessrights) {
       var postBody = replicaPostAccessrights;
@@ -736,12 +724,11 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
-
+      var returnType = Replica;
       return this.apiClient.callApi(
         '/replica/{replicaId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
@@ -749,7 +736,7 @@
      * /accessrights
      * @param {String} replicaId ID of replica
      * @param {module:model/ReplicaPostAccessrights} replicaPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Replica}
      */
     this.replicaPostAccessrights = function(replicaId, replicaPostAccessrights) {
       return this.replicaPostAccessrightsWithHttpInfo(replicaId, replicaPostAccessrights)
@@ -790,11 +777,10 @@
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Replica;
-
       return this.apiClient.callApi(
         '/replica/{replicaId}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
+        authNames, contentTypes, accepts, returnType, null
       );
     }
 
