@@ -25,7 +25,7 @@
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.LogArchivePostCredentialcertificate = factory(root.HyperOneApi.ApiClient);
+    root.HyperOneApi.AgentResource = factory(root.HyperOneApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -33,14 +33,14 @@
 
 
   /**
-   * The LogArchivePostCredentialcertificate model module.
-   * @module model/LogArchivePostCredentialcertificate
+   * The AgentResource model module.
+   * @module model/AgentResource
    * @version 0.0.2
    */
 
   /**
-   * Constructs a new <code>LogArchivePostCredentialcertificate</code>.
-   * @alias module:model/LogArchivePostCredentialcertificate
+   * Constructs a new <code>AgentResource</code>.
+   * @alias module:model/AgentResource
    * @class
    */
   var exports = function() {
@@ -49,40 +49,47 @@
   };
 
   /**
-   * Constructs a <code>LogArchivePostCredentialcertificate</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>AgentResource</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/LogArchivePostCredentialcertificate} obj Optional instance to populate.
-   * @return {module:model/LogArchivePostCredentialcertificate} The populated <code>LogArchivePostCredentialcertificate</code> instance.
+   * @param {module:model/AgentResource} obj Optional instance to populate.
+   * @return {module:model/AgentResource} The populated <code>AgentResource</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+      if (data.hasOwnProperty('_id')) {
+        obj['_id'] = ApiClient.convertToType(data['_id'], 'String');
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      if (data.hasOwnProperty('state')) {
+        obj['state'] = ApiClient.convertToType(data['state'], 'String');
       }
-      if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      if (data.hasOwnProperty('createdOn')) {
+        obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
       }
     }
     return obj;
   }
 
   /**
+   * @member {String} _id
+   */
+  exports.prototype['_id'] = undefined;
+  /**
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * @member {String} type
+   * @member {String} state
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype['state'] = undefined;
   /**
-   * @member {String} value
+   * @member {String} createdOn
    */
-  exports.prototype['value'] = undefined;
+  exports.prototype['createdOn'] = undefined;
 
 
 

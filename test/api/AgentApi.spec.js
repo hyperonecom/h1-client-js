@@ -180,6 +180,16 @@
         done();
       });
     });
+    describe('agentListResource', function() {
+      it('should call agentListResource successfully', function(done) {
+        //uncomment below and update the code to test agentListResource
+        //instance.agentListResource(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('agentListServices', function() {
       it('should call agentListServices successfully', function(done) {
         //uncomment below and update the code to test agentListServices

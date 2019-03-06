@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**agentListCredentialcertificate**](AgentApi.md#agentListCredentialcertificate) | **GET** /agent/{agentId}/credential/certificate | /credential/certificate
 [**agentListEnabledServices**](AgentApi.md#agentListEnabledServices) | **GET** /agent/{agentId}/enabledServices | /enabledServices
 [**agentListQueue**](AgentApi.md#agentListQueue) | **GET** /agent/{agentId}/queue | /queue
+[**agentListResource**](AgentApi.md#agentListResource) | **GET** /agent/{agentId}/resource | /resource
 [**agentListServices**](AgentApi.md#agentListServices) | **GET** /agent/{agentId}/services | /services
 [**agentPatchCredentialcertificateId**](AgentApi.md#agentPatchCredentialcertificateId) | **PATCH** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
 [**agentPatchTag**](AgentApi.md#agentPatchTag) | **PATCH** /agent/{agentId}/tag | /tag
@@ -748,6 +749,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Event]**](Event.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="agentListResource"></a>
+# **agentListResource**
+> [AgentResource] agentListResource(agentId)
+
+/resource
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.AgentApi();
+var agentId = "agentId_example"; // String | ID of agent
+apiInstance.agentListResource(agentId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **agentId** | **String**| ID of agent | 
+
+### Return type
+
+[**[AgentResource]**](AgentResource.md)
 
 ### Authorization
 

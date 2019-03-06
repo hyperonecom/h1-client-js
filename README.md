@@ -142,6 +142,7 @@ Class | Method | HTTP request | Description
 *HyperOneApi.AgentApi* | [**agentListCredentialcertificate**](docs/AgentApi.md#agentListCredentialcertificate) | **GET** /agent/{agentId}/credential/certificate | /credential/certificate
 *HyperOneApi.AgentApi* | [**agentListEnabledServices**](docs/AgentApi.md#agentListEnabledServices) | **GET** /agent/{agentId}/enabledServices | /enabledServices
 *HyperOneApi.AgentApi* | [**agentListQueue**](docs/AgentApi.md#agentListQueue) | **GET** /agent/{agentId}/queue | /queue
+*HyperOneApi.AgentApi* | [**agentListResource**](docs/AgentApi.md#agentListResource) | **GET** /agent/{agentId}/resource | /resource
 *HyperOneApi.AgentApi* | [**agentListServices**](docs/AgentApi.md#agentListServices) | **GET** /agent/{agentId}/services | /services
 *HyperOneApi.AgentApi* | [**agentPatchCredentialcertificateId**](docs/AgentApi.md#agentPatchCredentialcertificateId) | **PATCH** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
 *HyperOneApi.AgentApi* | [**agentPatchTag**](docs/AgentApi.md#agentPatchTag) | **PATCH** /agent/{agentId}/tag | /tag
@@ -499,6 +500,7 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.AgentPatchCredentialcertificateId](docs/AgentPatchCredentialcertificateId.md)
  - [HyperOneApi.AgentPostAccessrights](docs/AgentPostAccessrights.md)
  - [HyperOneApi.AgentPostCredentialcertificate](docs/AgentPostCredentialcertificate.md)
+ - [HyperOneApi.AgentResource](docs/AgentResource.md)
  - [HyperOneApi.AgentServices](docs/AgentServices.md)
  - [HyperOneApi.AgentUpdate](docs/AgentUpdate.md)
  - [HyperOneApi.Container](docs/Container.md)

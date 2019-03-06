@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Agent', 'model/AgentCreate', 'model/AgentPatchCredentialcertificateId', 'model/AgentPostAccessrights', 'model/AgentPostCredentialcertificate', 'model/AgentServices', 'model/AgentUpdate', 'model/CredentialCertificate', 'model/Event'], factory);
+    define(['ApiClient', 'model/Agent', 'model/AgentCreate', 'model/AgentPatchCredentialcertificateId', 'model/AgentPostAccessrights', 'model/AgentPostCredentialcertificate', 'model/AgentResource', 'model/AgentServices', 'model/AgentUpdate', 'model/CredentialCertificate', 'model/Event'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Agent'), require('../model/AgentCreate'), require('../model/AgentPatchCredentialcertificateId'), require('../model/AgentPostAccessrights'), require('../model/AgentPostCredentialcertificate'), require('../model/AgentServices'), require('../model/AgentUpdate'), require('../model/CredentialCertificate'), require('../model/Event'));
+    module.exports = factory(require('../ApiClient'), require('../model/Agent'), require('../model/AgentCreate'), require('../model/AgentPatchCredentialcertificateId'), require('../model/AgentPostAccessrights'), require('../model/AgentPostCredentialcertificate'), require('../model/AgentResource'), require('../model/AgentServices'), require('../model/AgentUpdate'), require('../model/CredentialCertificate'), require('../model/Event'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.AgentApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Agent, root.HyperOneApi.AgentCreate, root.HyperOneApi.AgentPatchCredentialcertificateId, root.HyperOneApi.AgentPostAccessrights, root.HyperOneApi.AgentPostCredentialcertificate, root.HyperOneApi.AgentServices, root.HyperOneApi.AgentUpdate, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.Event);
+    root.HyperOneApi.AgentApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Agent, root.HyperOneApi.AgentCreate, root.HyperOneApi.AgentPatchCredentialcertificateId, root.HyperOneApi.AgentPostAccessrights, root.HyperOneApi.AgentPostCredentialcertificate, root.HyperOneApi.AgentResource, root.HyperOneApi.AgentServices, root.HyperOneApi.AgentUpdate, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.Event);
   }
-}(this, function(ApiClient, Agent, AgentCreate, AgentPatchCredentialcertificateId, AgentPostAccessrights, AgentPostCredentialcertificate, AgentServices, AgentUpdate, CredentialCertificate, Event) {
+}(this, function(ApiClient, Agent, AgentCreate, AgentPatchCredentialcertificateId, AgentPostAccessrights, AgentPostCredentialcertificate, AgentResource, AgentServices, AgentUpdate, CredentialCertificate, Event) {
   'use strict';
 
   /**
@@ -733,6 +733,56 @@
      */
     this.agentListQueue = function(agentId) {
       return this.agentListQueueWithHttpInfo(agentId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /resource
+     * @param {String} agentId ID of agent
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AgentResource>} and HTTP response
+     */
+    this.agentListResourceWithHttpInfo = function(agentId) {
+      var postBody = null;
+
+      // verify the required parameter 'agentId' is set
+      if (agentId === undefined || agentId === null) {
+        throw new Error("Missing the required parameter 'agentId' when calling agentListResource");
+      }
+
+
+      var pathParams = {
+        'agentId': agentId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [AgentResource];
+      return this.apiClient.callApi(
+        '/agent/{agentId}/resource', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /resource
+     * @param {String} agentId ID of agent
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AgentResource>}
+     */
+    this.agentListResource = function(agentId) {
+      return this.agentListResourceWithHttpInfo(agentId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
