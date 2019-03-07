@@ -43,11 +43,15 @@
    * @alias module:model/VolumeCreate
    * @class
    * @param service {String} 
+   * @param name {String} 
+   * @param size {Number} 
    */
-  var exports = function(service) {
+  var exports = function(service, name, size) {
     var _this = this;
 
     _this['service'] = service;
+    _this['name'] = name;
+    _this['size'] = size;
   };
 
   /**

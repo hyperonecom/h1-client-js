@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/ProjectServices'], factory);
+    define(['ApiClient', 'model/ContainerExpose', 'model/ContainerVolumes', 'model/Event', 'model/ProjectServices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Event'), require('./ProjectServices'));
+    module.exports = factory(require('../ApiClient'), require('./ContainerExpose'), require('./ContainerVolumes'), require('./Event'), require('./ProjectServices'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.Container = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.ProjectServices);
+    root.HyperOneApi.Container = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.ContainerExpose, root.HyperOneApi.ContainerVolumes, root.HyperOneApi.Event, root.HyperOneApi.ProjectServices);
   }
-}(this, function(ApiClient, Event, ProjectServices) {
+}(this, function(ApiClient, ContainerExpose, ContainerVolumes, Event, ProjectServices) {
   'use strict';
 
 
@@ -106,6 +106,18 @@
       if (data.hasOwnProperty('image')) {
         obj['image'] = ApiClient.convertToType(data['image'], 'String');
       }
+      if (data.hasOwnProperty('command')) {
+        obj['command'] = ApiClient.convertToType(data['command'], 'String');
+      }
+      if (data.hasOwnProperty('volumes')) {
+        obj['volumes'] = ApiClient.convertToType(data['volumes'], [ContainerVolumes]);
+      }
+      if (data.hasOwnProperty('expose')) {
+        obj['expose'] = ApiClient.convertToType(data['expose'], [ContainerExpose]);
+      }
+      if (data.hasOwnProperty('env')) {
+        obj['env'] = ApiClient.convertToType(data['env'], ['String']);
+      }
     }
     return obj;
   }
@@ -174,6 +186,22 @@
    * @member {String} image
    */
   exports.prototype['image'] = undefined;
+  /**
+   * @member {String} command
+   */
+  exports.prototype['command'] = undefined;
+  /**
+   * @member {Array.<module:model/ContainerVolumes>} volumes
+   */
+  exports.prototype['volumes'] = undefined;
+  /**
+   * @member {Array.<module:model/ContainerExpose>} expose
+   */
+  exports.prototype['expose'] = undefined;
+  /**
+   * @member {Array.<String>} env
+   */
+  exports.prototype['env'] = undefined;
 
 
   /**

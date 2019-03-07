@@ -135,6 +135,7 @@ Class | Method | HTTP request | Description
 *HyperOneApi.AgentApi* | [**agentDeleteCredentialcertificateId**](docs/AgentApi.md#agentDeleteCredentialcertificateId) | **DELETE** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
 *HyperOneApi.AgentApi* | [**agentDeleteTagKey**](docs/AgentApi.md#agentDeleteTagKey) | **DELETE** /agent/{agentId}/tag/{key} | /tag/:key
 *HyperOneApi.AgentApi* | [**agentGetCredentialcertificateId**](docs/AgentApi.md#agentGetCredentialcertificateId) | **GET** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
+*HyperOneApi.AgentApi* | [**agentGetResourceResourceIdinspect**](docs/AgentApi.md#agentGetResourceResourceIdinspect) | **GET** /agent/{agentId}/resource/{resourceId}/inspect | /resource/:resourceId/inspect
 *HyperOneApi.AgentApi* | [**agentGetServicesServiceId**](docs/AgentApi.md#agentGetServicesServiceId) | **GET** /agent/{agentId}/services/{serviceId} | /services/:serviceId
 *HyperOneApi.AgentApi* | [**agentGetTag**](docs/AgentApi.md#agentGetTag) | **GET** /agent/{agentId}/tag | /tag
 *HyperOneApi.AgentApi* | [**agentList**](docs/AgentApi.md#agentList) | **GET** /agent | List
@@ -148,6 +149,7 @@ Class | Method | HTTP request | Description
 *HyperOneApi.AgentApi* | [**agentPatchTag**](docs/AgentApi.md#agentPatchTag) | **PATCH** /agent/{agentId}/tag | /tag
 *HyperOneApi.AgentApi* | [**agentPostAccessrights**](docs/AgentApi.md#agentPostAccessrights) | **POST** /agent/{agentId}/accessrights | /accessrights
 *HyperOneApi.AgentApi* | [**agentPostCredentialcertificate**](docs/AgentApi.md#agentPostCredentialcertificate) | **POST** /agent/{agentId}/credential/certificate | /credential/certificate
+*HyperOneApi.AgentApi* | [**agentPostResourceResourceIdactionsrecreate**](docs/AgentApi.md#agentPostResourceResourceIdactionsrecreate) | **POST** /agent/{agentId}/resource/{resourceId}/actions/recreate | /resource/:resourceId/actions/recreate
 *HyperOneApi.AgentApi* | [**agentPutEnabledServices**](docs/AgentApi.md#agentPutEnabledServices) | **PUT** /agent/{agentId}/enabledServices | /enabledServices
 *HyperOneApi.AgentApi* | [**agentShow**](docs/AgentApi.md#agentShow) | **GET** /agent/{agentId} | Get
 *HyperOneApi.AgentApi* | [**agentUpdate**](docs/AgentApi.md#agentUpdate) | **PATCH** /agent/{agentId} | Update
@@ -508,9 +510,11 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.ContainerCreateExpose](docs/ContainerCreateExpose.md)
  - [HyperOneApi.ContainerCreateRegistry](docs/ContainerCreateRegistry.md)
  - [HyperOneApi.ContainerCreateVolumes](docs/ContainerCreateVolumes.md)
+ - [HyperOneApi.ContainerExpose](docs/ContainerExpose.md)
  - [HyperOneApi.ContainerPostAccessrights](docs/ContainerPostAccessrights.md)
  - [HyperOneApi.ContainerServices](docs/ContainerServices.md)
  - [HyperOneApi.ContainerUpdate](docs/ContainerUpdate.md)
+ - [HyperOneApi.ContainerVolumes](docs/ContainerVolumes.md)
  - [HyperOneApi.CredentialCertificate](docs/CredentialCertificate.md)
  - [HyperOneApi.CredentialPassword](docs/CredentialPassword.md)
  - [HyperOneApi.Disk](docs/Disk.md)

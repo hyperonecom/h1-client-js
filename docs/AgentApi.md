@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**agentDeleteCredentialcertificateId**](AgentApi.md#agentDeleteCredentialcertificateId) | **DELETE** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
 [**agentDeleteTagKey**](AgentApi.md#agentDeleteTagKey) | **DELETE** /agent/{agentId}/tag/{key} | /tag/:key
 [**agentGetCredentialcertificateId**](AgentApi.md#agentGetCredentialcertificateId) | **GET** /agent/{agentId}/credential/certificate/{id} | /credential/certificate/:id
+[**agentGetResourceResourceIdinspect**](AgentApi.md#agentGetResourceResourceIdinspect) | **GET** /agent/{agentId}/resource/{resourceId}/inspect | /resource/:resourceId/inspect
 [**agentGetServicesServiceId**](AgentApi.md#agentGetServicesServiceId) | **GET** /agent/{agentId}/services/{serviceId} | /services/:serviceId
 [**agentGetTag**](AgentApi.md#agentGetTag) | **GET** /agent/{agentId}/tag | /tag
 [**agentList**](AgentApi.md#agentList) | **GET** /agent | List
@@ -23,6 +24,7 @@ Method | HTTP request | Description
 [**agentPatchTag**](AgentApi.md#agentPatchTag) | **PATCH** /agent/{agentId}/tag | /tag
 [**agentPostAccessrights**](AgentApi.md#agentPostAccessrights) | **POST** /agent/{agentId}/accessrights | /accessrights
 [**agentPostCredentialcertificate**](AgentApi.md#agentPostCredentialcertificate) | **POST** /agent/{agentId}/credential/certificate | /credential/certificate
+[**agentPostResourceResourceIdactionsrecreate**](AgentApi.md#agentPostResourceResourceIdactionsrecreate) | **POST** /agent/{agentId}/resource/{resourceId}/actions/recreate | /resource/:resourceId/actions/recreate
 [**agentPutEnabledServices**](AgentApi.md#agentPutEnabledServices) | **PUT** /agent/{agentId}/enabledServices | /enabledServices
 [**agentShow**](AgentApi.md#agentShow) | **GET** /agent/{agentId} | Get
 [**agentUpdate**](AgentApi.md#agentUpdate) | **PATCH** /agent/{agentId} | Update
@@ -358,6 +360,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CredentialCertificate**](CredentialCertificate.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="agentGetResourceResourceIdinspect"></a>
+# **agentGetResourceResourceIdinspect**
+> Object agentGetResourceResourceIdinspect(agentId, resourceId)
+
+/resource/:resourceId/inspect
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.AgentApi();
+var agentId = "agentId_example"; // String | ID of agent
+var resourceId = "resourceId_example"; // String | resourceId
+apiInstance.agentGetResourceResourceIdinspect(agentId, resourceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **agentId** | **String**| ID of agent | 
+ **resourceId** | **String**| resourceId | 
+
+### Return type
+
+**Object**
 
 ### Authorization
 
@@ -1097,6 +1156,63 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="agentPostResourceResourceIdactionsrecreate"></a>
+# **agentPostResourceResourceIdactionsrecreate**
+> AgentResource agentPostResourceResourceIdactionsrecreate(agentId, resourceId)
+
+/resource/:resourceId/actions/recreate
+
+### Example
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure API key authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//ServiceAccount.apiKeyPrefix = 'Token';
+// Configure API key authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Session.apiKeyPrefix = 'Token';
+
+var apiInstance = new HyperOneApi.AgentApi();
+var agentId = "agentId_example"; // String | ID of agent
+var resourceId = "resourceId_example"; // String | resourceId
+apiInstance.agentPostResourceResourceIdactionsrecreate(agentId, resourceId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **agentId** | **String**| ID of agent | 
+ **resourceId** | **String**| resourceId | 
+
+### Return type
+
+[**AgentResource**](AgentResource.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="agentPutEnabledServices"></a>

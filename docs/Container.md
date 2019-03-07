@@ -19,6 +19,10 @@ Name | Type | Description | Notes
 **tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
 **image** | **String** |  | [optional] 
+**command** | **String** |  | [optional] 
+**volumes** | [**[ContainerVolumes]**](ContainerVolumes.md) |  | [optional] 
+**expose** | [**[ContainerExpose]**](ContainerExpose.md) |  | [optional] 
+**env** | **[String]** |  | [optional] 
 
 
 <a name="StateEnum"></a>

@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **service** | **String** |  | 
-**name** | **String** |  | [optional] 
-**size** | **Number** |  | [optional] 
+**name** | **String** |  | 
+**size** | **Number** |  | 
 **tag** | [**Object**](.md) |  | [optional] 
 
 

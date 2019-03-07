@@ -382,6 +382,64 @@
 
 
     /**
+     * /resource/:resourceId/inspect
+     * @param {String} agentId ID of agent
+     * @param {String} resourceId resourceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.agentGetResourceResourceIdinspectWithHttpInfo = function(agentId, resourceId) {
+      var postBody = null;
+
+      // verify the required parameter 'agentId' is set
+      if (agentId === undefined || agentId === null) {
+        throw new Error("Missing the required parameter 'agentId' when calling agentGetResourceResourceIdinspect");
+      }
+
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling agentGetResourceResourceIdinspect");
+      }
+
+
+      var pathParams = {
+        'agentId': agentId,
+        'resourceId': resourceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+      return this.apiClient.callApi(
+        '/agent/{agentId}/resource/{resourceId}/inspect', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /resource/:resourceId/inspect
+     * @param {String} agentId ID of agent
+     * @param {String} resourceId resourceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.agentGetResourceResourceIdinspect = function(agentId, resourceId) {
+      return this.agentGetResourceResourceIdinspectWithHttpInfo(agentId, resourceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * /services/:serviceId
      * @param {String} agentId ID of agent
      * @param {String} serviceId serviceId
@@ -1069,6 +1127,64 @@
      */
     this.agentPostCredentialcertificate = function(agentId, agentPostCredentialcertificate) {
       return this.agentPostCredentialcertificateWithHttpInfo(agentId, agentPostCredentialcertificate)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /resource/:resourceId/actions/recreate
+     * @param {String} agentId ID of agent
+     * @param {String} resourceId resourceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AgentResource} and HTTP response
+     */
+    this.agentPostResourceResourceIdactionsrecreateWithHttpInfo = function(agentId, resourceId) {
+      var postBody = null;
+
+      // verify the required parameter 'agentId' is set
+      if (agentId === undefined || agentId === null) {
+        throw new Error("Missing the required parameter 'agentId' when calling agentPostResourceResourceIdactionsrecreate");
+      }
+
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling agentPostResourceResourceIdactionsrecreate");
+      }
+
+
+      var pathParams = {
+        'agentId': agentId,
+        'resourceId': resourceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = AgentResource;
+      return this.apiClient.callApi(
+        '/agent/{agentId}/resource/{resourceId}/actions/recreate', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /resource/:resourceId/actions/recreate
+     * @param {String} agentId ID of agent
+     * @param {String} resourceId resourceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AgentResource}
+     */
+    this.agentPostResourceResourceIdactionsrecreate = function(agentId, resourceId) {
+      return this.agentPostResourceResourceIdactionsrecreateWithHttpInfo(agentId, resourceId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
