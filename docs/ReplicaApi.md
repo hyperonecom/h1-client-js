@@ -20,8 +20,9 @@ Method | HTTP request | Description
 [**replicaShow**](ReplicaApi.md#replicaShow) | **GET** /replica/{replicaId} | Get
 
 
-<a name="replicaActionImage"></a>
-# **replicaActionImage**
+
+## replicaActionImage
+
 > Replica replicaActionImage(replicaId, replicaActionImage)
 
 /actions/image
@@ -29,6 +30,7 @@ Method | HTTP request | Description
 Action image
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -37,16 +39,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -60,6 +58,8 @@ apiInstance.replicaActionImage(replicaId, replicaActionImage).then(function(data
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -76,11 +76,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="replicaCreate"></a>
-# **replicaCreate**
+
+## replicaCreate
+
 > Replica replicaCreate(replicaCreate)
 
 Create
@@ -88,6 +89,7 @@ Create
 Create replica
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -96,16 +98,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaCreate = new HyperOneApi.ReplicaCreate(); // ReplicaCreate | 
@@ -118,6 +116,8 @@ apiInstance.replicaCreate(replicaCreate).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -133,16 +133,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="replicaDelete"></a>
-# **replicaDelete**
+
+## replicaDelete
+
 > replicaDelete(replicaId)
 
 Delete
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -151,16 +153,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -173,6 +171,8 @@ apiInstance.replicaDelete(replicaId).then(function() {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -188,16 +188,18 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="replicaDeleteAccessrightsIdentity"></a>
-# **replicaDeleteAccessrightsIdentity**
+
+## replicaDeleteAccessrightsIdentity
+
 > Replica replicaDeleteAccessrightsIdentity(replicaId, identity)
 
 /accessrights/:identity
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -206,16 +208,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -229,6 +227,8 @@ apiInstance.replicaDeleteAccessrightsIdentity(replicaId, identity).then(function
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -245,16 +245,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="replicaDeleteTagKey"></a>
-# **replicaDeleteTagKey**
+
+## replicaDeleteTagKey
+
 > Object replicaDeleteTagKey(replicaId, key)
 
 /tag/:key
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -263,16 +265,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -286,6 +284,8 @@ apiInstance.replicaDeleteTagKey(replicaId, key).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -302,16 +302,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="replicaGetServicesServiceId"></a>
-# **replicaGetServicesServiceId**
+
+## replicaGetServicesServiceId
+
 > ReplicaServices replicaGetServicesServiceId(replicaId, serviceId)
 
 /services/:serviceId
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -320,16 +322,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -343,6 +341,8 @@ apiInstance.replicaGetServicesServiceId(replicaId, serviceId).then(function(data
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -359,16 +359,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="replicaGetTag"></a>
-# **replicaGetTag**
+
+## replicaGetTag
+
 > Object replicaGetTag(replicaId)
 
 /tag
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -377,16 +379,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -399,6 +397,8 @@ apiInstance.replicaGetTag(replicaId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -414,11 +414,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="replicaList"></a>
-# **replicaList**
+
+## replicaList
+
 > [Replica] replicaList(opts)
 
 List
@@ -426,6 +427,7 @@ List
 List replica
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -434,16 +436,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var opts = {
@@ -459,6 +457,8 @@ apiInstance.replicaList(opts).then(function(data) {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Filter by name | [optional] 
@@ -473,16 +473,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="replicaListAccessrights"></a>
-# **replicaListAccessrights**
+
+## replicaListAccessrights
+
 > [String] replicaListAccessrights(replicaId)
 
 /accessrights
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -491,16 +493,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -513,6 +511,8 @@ apiInstance.replicaListAccessrights(replicaId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -528,16 +528,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="replicaListQueue"></a>
-# **replicaListQueue**
+
+## replicaListQueue
+
 > [Event] replicaListQueue(replicaId)
 
 /queue
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -546,16 +548,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -568,6 +566,8 @@ apiInstance.replicaListQueue(replicaId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -583,16 +583,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="replicaListServices"></a>
-# **replicaListServices**
+
+## replicaListServices
+
 > [ReplicaServices] replicaListServices(replicaId)
 
 /services
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -601,16 +603,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -623,6 +621,8 @@ apiInstance.replicaListServices(replicaId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -638,16 +638,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="replicaPatchTag"></a>
-# **replicaPatchTag**
+
+## replicaPatchTag
+
 > Object replicaPatchTag(replicaId, requestBody)
 
 /tag
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -656,16 +658,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -679,6 +677,8 @@ apiInstance.replicaPatchTag(replicaId, requestBody).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -695,16 +695,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="replicaPostAccessrights"></a>
-# **replicaPostAccessrights**
+
+## replicaPostAccessrights
+
 > Replica replicaPostAccessrights(replicaId, replicaPostAccessrights)
 
 /accessrights
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -713,16 +715,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -736,6 +734,8 @@ apiInstance.replicaPostAccessrights(replicaId, replicaPostAccessrights).then(fun
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -752,11 +752,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="replicaShow"></a>
-# **replicaShow**
+
+## replicaShow
+
 > Replica replicaShow(replicaId)
 
 Get
@@ -764,6 +765,7 @@ Get
 Returns a single replica
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -772,16 +774,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
@@ -794,6 +792,8 @@ apiInstance.replicaShow(replicaId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -809,6 +809,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

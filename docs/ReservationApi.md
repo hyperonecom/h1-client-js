@@ -23,8 +23,9 @@ Method | HTTP request | Description
 [**reservationUpdate**](ReservationApi.md#reservationUpdate) | **PATCH** /reservation/{reservationId} | Update
 
 
-<a name="reservationActionAssign"></a>
-# **reservationActionAssign**
+
+## reservationActionAssign
+
 > Reservation reservationActionAssign(reservationId, reservationActionAssign)
 
 /actions/assign
@@ -32,6 +33,7 @@ Method | HTTP request | Description
 Action assign
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -40,16 +42,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -63,6 +61,8 @@ apiInstance.reservationActionAssign(reservationId, reservationActionAssign).then
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -79,11 +79,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="reservationActionExtend"></a>
-# **reservationActionExtend**
+
+## reservationActionExtend
+
 > Reservation reservationActionExtend(reservationId)
 
 /actions/extend
@@ -91,6 +92,7 @@ Name | Type | Description  | Notes
 Action extend
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -99,16 +101,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -122,6 +120,8 @@ apiInstance.reservationActionExtend(reservationId).then(function(data) {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reservationId** | **String**| ID of reservation | 
@@ -136,11 +136,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationActionUnassign"></a>
-# **reservationActionUnassign**
+
+## reservationActionUnassign
+
 > Reservation reservationActionUnassign(reservationId)
 
 /actions/unassign
@@ -148,6 +149,7 @@ Name | Type | Description  | Notes
 Action unassign
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -156,16 +158,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -179,6 +177,8 @@ apiInstance.reservationActionUnassign(reservationId).then(function(data) {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reservationId** | **String**| ID of reservation | 
@@ -193,11 +193,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationCreate"></a>
-# **reservationCreate**
+
+## reservationCreate
+
 > Reservation reservationCreate(reservationCreate)
 
 Create
@@ -205,6 +206,7 @@ Create
 Create reservation
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -213,16 +215,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationCreate = new HyperOneApi.ReservationCreate(); // ReservationCreate | 
@@ -235,6 +233,8 @@ apiInstance.reservationCreate(reservationCreate).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -250,16 +250,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="reservationDelete"></a>
-# **reservationDelete**
+
+## reservationDelete
+
 > reservationDelete(reservationId)
 
 Delete
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -268,16 +270,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -290,6 +288,8 @@ apiInstance.reservationDelete(reservationId).then(function() {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -305,16 +305,18 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationDeleteAccessrightsIdentity"></a>
-# **reservationDeleteAccessrightsIdentity**
+
+## reservationDeleteAccessrightsIdentity
+
 > Reservation reservationDeleteAccessrightsIdentity(reservationId, identity)
 
 /accessrights/:identity
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -323,16 +325,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -346,6 +344,8 @@ apiInstance.reservationDeleteAccessrightsIdentity(reservationId, identity).then(
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -362,16 +362,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationDeleteTagKey"></a>
-# **reservationDeleteTagKey**
+
+## reservationDeleteTagKey
+
 > Object reservationDeleteTagKey(reservationId, key)
 
 /tag/:key
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -380,16 +382,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -403,6 +401,8 @@ apiInstance.reservationDeleteTagKey(reservationId, key).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -419,16 +419,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationGetServicesServiceId"></a>
-# **reservationGetServicesServiceId**
+
+## reservationGetServicesServiceId
+
 > ReservationServices reservationGetServicesServiceId(reservationId, serviceId)
 
 /services/:serviceId
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -437,16 +439,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -460,6 +458,8 @@ apiInstance.reservationGetServicesServiceId(reservationId, serviceId).then(funct
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -476,16 +476,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationGetTag"></a>
-# **reservationGetTag**
+
+## reservationGetTag
+
 > Object reservationGetTag(reservationId)
 
 /tag
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -494,16 +496,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -516,6 +514,8 @@ apiInstance.reservationGetTag(reservationId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -531,11 +531,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationList"></a>
-# **reservationList**
+
+## reservationList
+
 > [Reservation] reservationList(opts)
 
 List
@@ -543,6 +544,7 @@ List
 List reservation
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -551,20 +553,17 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var opts = {
-  'name': "name_example" // String | Filter by name
+  'name': "name_example", // String | Filter by name
+  'tag': {key: "null"} // {String: String} | Filter by tag
 };
 apiInstance.reservationList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -576,9 +575,12 @@ apiInstance.reservationList(opts).then(function(data) {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Filter by name | [optional] 
+ **tag** | [**{String: String}**](String.md)| Filter by tag | [optional] 
 
 ### Return type
 
@@ -590,16 +592,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationListAccessrights"></a>
-# **reservationListAccessrights**
+
+## reservationListAccessrights
+
 > [String] reservationListAccessrights(reservationId)
 
 /accessrights
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -608,16 +612,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -630,6 +630,8 @@ apiInstance.reservationListAccessrights(reservationId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -645,16 +647,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationListQueue"></a>
-# **reservationListQueue**
+
+## reservationListQueue
+
 > [Event] reservationListQueue(reservationId)
 
 /queue
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -663,16 +667,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -685,6 +685,8 @@ apiInstance.reservationListQueue(reservationId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -700,16 +702,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationListServices"></a>
-# **reservationListServices**
+
+## reservationListServices
+
 > [ReservationServices] reservationListServices(reservationId)
 
 /services
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -718,16 +722,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -740,6 +740,8 @@ apiInstance.reservationListServices(reservationId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -755,16 +757,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationPatchTag"></a>
-# **reservationPatchTag**
+
+## reservationPatchTag
+
 > Object reservationPatchTag(reservationId, requestBody)
 
 /tag
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -773,16 +777,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -796,6 +796,8 @@ apiInstance.reservationPatchTag(reservationId, requestBody).then(function(data) 
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -812,16 +814,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="reservationPostAccessrights"></a>
-# **reservationPostAccessrights**
+
+## reservationPostAccessrights
+
 > Reservation reservationPostAccessrights(reservationId, reservationPostAccessrights)
 
 /accessrights
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -830,16 +834,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -853,6 +853,8 @@ apiInstance.reservationPostAccessrights(reservationId, reservationPostAccessrigh
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -869,11 +871,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="reservationShow"></a>
-# **reservationShow**
+
+## reservationShow
+
 > Reservation reservationShow(reservationId)
 
 Get
@@ -881,6 +884,7 @@ Get
 Returns a single reservation
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -889,16 +893,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -911,6 +911,8 @@ apiInstance.reservationShow(reservationId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -926,11 +928,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="reservationUpdate"></a>
-# **reservationUpdate**
+
+## reservationUpdate
+
 > Reservation reservationUpdate(reservationId, reservationUpdate)
 
 Update
@@ -938,6 +941,7 @@ Update
 Returns modified reservation
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -946,16 +950,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
@@ -969,6 +969,8 @@ apiInstance.reservationUpdate(reservationId, reservationUpdate).then(function(da
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -985,6 +987,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

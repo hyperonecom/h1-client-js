@@ -1,6 +1,7 @@
 # HyperOneApi.Organisation
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
@@ -8,8 +9,8 @@ Name | Type | Description | Notes
 **services** | **String** |  | [optional] 
 **flavour** | **String** |  | [optional] 
 **modifiedOn** | **Date** |  | [optional] 
-**modifiedBy** | **String** |  | [optional] 
-**createdBy** | **String** |  | [optional] 
+**modifiedBy** | **String** |  | [optional] [default to &#39;&#39;]
+**createdBy** | **String** |  | [optional] [default to &#39;&#39;]
 **createdOn** | **Date** |  | [optional] 
 **accessRights** | [**[ProjectAccessRights]**](ProjectAccessRights.md) |  | [optional] 
 **processing** | **Boolean** |  | [optional] 
@@ -19,14 +20,14 @@ Name | Type | Description | Notes
 **tag** | [**Object**](.md) |  | [optional] 
 **project** | **String** |  | [optional] 
 **billing** | [**OrganisationBilling**](OrganisationBilling.md) |  | [optional] 
-**verified** | **Number** |  | [optional] 
+**verified** | **Number** |  | [optional] [default to 0]
 **limit** | [**OrganisationLimit**](OrganisationLimit.md) |  | [optional] 
 **roles** | [**[ProjectRoles]**](ProjectRoles.md) |  | [optional] 
 **transfer** | [**OrganisationTransfer**](OrganisationTransfer.md) |  | [optional] 
 **bankAccount** | **String** |  | [optional] 
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
 
 

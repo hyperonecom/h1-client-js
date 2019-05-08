@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Iso', 'model/IsoActionTransfer', 'model/IsoCreate', 'model/IsoPostAccessrights', 'model/IsoServices', 'model/IsoUpdate'], factory);
+    define(['ApiClient', 'model/Event', 'model/InlineResponse400', 'model/Iso', 'model/IsoActionTransfer', 'model/IsoCreate', 'model/IsoPostAccessrights', 'model/IsoServices', 'model/IsoUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Iso'), require('../model/IsoActionTransfer'), require('../model/IsoCreate'), require('../model/IsoPostAccessrights'), require('../model/IsoServices'), require('../model/IsoUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/Iso'), require('../model/IsoActionTransfer'), require('../model/IsoCreate'), require('../model/IsoPostAccessrights'), require('../model/IsoServices'), require('../model/IsoUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.IsoApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Iso, root.HyperOneApi.IsoActionTransfer, root.HyperOneApi.IsoCreate, root.HyperOneApi.IsoPostAccessrights, root.HyperOneApi.IsoServices, root.HyperOneApi.IsoUpdate);
+    root.HyperOneApi.IsoApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Iso, root.HyperOneApi.IsoActionTransfer, root.HyperOneApi.IsoCreate, root.HyperOneApi.IsoPostAccessrights, root.HyperOneApi.IsoServices, root.HyperOneApi.IsoUpdate);
   }
-}(this, function(ApiClient, Event, Iso, IsoActionTransfer, IsoCreate, IsoPostAccessrights, IsoServices, IsoUpdate) {
+}(this, function(ApiClient, Event, InlineResponse400, Iso, IsoActionTransfer, IsoCreate, IsoPostAccessrights, IsoServices, IsoUpdate) {
   'use strict';
 
   /**
@@ -57,17 +57,14 @@
      */
     this.isoActionTransferWithHttpInfo = function(isoId, isoActionTransfer) {
       var postBody = isoActionTransfer;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoActionTransfer");
       }
-
       // verify the required parameter 'isoActionTransfer' is set
       if (isoActionTransfer === undefined || isoActionTransfer === null) {
         throw new Error("Missing the required parameter 'isoActionTransfer' when calling isoActionTransfer");
       }
-
 
       var pathParams = {
         'isoId': isoId
@@ -115,12 +112,10 @@
      */
     this.isoCreateWithHttpInfo = function(isoCreate) {
       var postBody = isoCreate;
-
       // verify the required parameter 'isoCreate' is set
       if (isoCreate === undefined || isoCreate === null) {
         throw new Error("Missing the required parameter 'isoCreate' when calling isoCreate");
       }
-
 
       var pathParams = {
       };
@@ -165,12 +160,10 @@
      */
     this.isoDeleteWithHttpInfo = function(isoId) {
       var postBody = null;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoDelete");
       }
-
 
       var pathParams = {
         'isoId': isoId
@@ -186,7 +179,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/iso/{isoId}', 'DELETE',
@@ -216,17 +209,14 @@
      */
     this.isoDeleteAccessrightsIdentityWithHttpInfo = function(isoId, identity) {
       var postBody = null;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling isoDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'isoId': isoId,
@@ -274,17 +264,14 @@
      */
     this.isoDeleteTagKeyWithHttpInfo = function(isoId, key) {
       var postBody = null;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling isoDeleteTagKey");
       }
-
 
       var pathParams = {
         'isoId': isoId,
@@ -332,17 +319,14 @@
      */
     this.isoGetServicesServiceIdWithHttpInfo = function(isoId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling isoGetServicesServiceId");
       }
-
 
       var pathParams = {
         'isoId': isoId,
@@ -389,12 +373,10 @@
      */
     this.isoGetTagWithHttpInfo = function(isoId) {
       var postBody = null;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoGetTag");
       }
-
 
       var pathParams = {
         'isoId': isoId
@@ -437,17 +419,18 @@
      * List iso
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Iso>} and HTTP response
      */
     this.isoListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -472,6 +455,7 @@
      * List iso
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Iso>}
      */
     this.isoList = function(opts) {
@@ -489,12 +473,10 @@
      */
     this.isoListAccessrightsWithHttpInfo = function(isoId) {
       var postBody = null;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoListAccessrights");
       }
-
 
       var pathParams = {
         'isoId': isoId
@@ -539,12 +521,10 @@
      */
     this.isoListQueueWithHttpInfo = function(isoId) {
       var postBody = null;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoListQueue");
       }
-
 
       var pathParams = {
         'isoId': isoId
@@ -589,12 +569,10 @@
      */
     this.isoListServicesWithHttpInfo = function(isoId) {
       var postBody = null;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoListServices");
       }
-
 
       var pathParams = {
         'isoId': isoId
@@ -640,17 +618,14 @@
      */
     this.isoPatchTagWithHttpInfo = function(isoId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling isoPatchTag");
       }
-
 
       var pathParams = {
         'isoId': isoId
@@ -697,17 +672,14 @@
      */
     this.isoPostAccessrightsWithHttpInfo = function(isoId, isoPostAccessrights) {
       var postBody = isoPostAccessrights;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoPostAccessrights");
       }
-
       // verify the required parameter 'isoPostAccessrights' is set
       if (isoPostAccessrights === undefined || isoPostAccessrights === null) {
         throw new Error("Missing the required parameter 'isoPostAccessrights' when calling isoPostAccessrights");
       }
-
 
       var pathParams = {
         'isoId': isoId
@@ -754,12 +726,10 @@
      */
     this.isoShowWithHttpInfo = function(isoId) {
       var postBody = null;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoShow");
       }
-
 
       var pathParams = {
         'isoId': isoId
@@ -807,17 +777,14 @@
      */
     this.isoUpdateWithHttpInfo = function(isoId, isoUpdate) {
       var postBody = isoUpdate;
-
       // verify the required parameter 'isoId' is set
       if (isoId === undefined || isoId === null) {
         throw new Error("Missing the required parameter 'isoId' when calling isoUpdate");
       }
-
       // verify the required parameter 'isoUpdate' is set
       if (isoUpdate === undefined || isoUpdate === null) {
         throw new Error("Missing the required parameter 'isoUpdate' when calling isoUpdate");
       }
-
 
       var pathParams = {
         'isoId': isoId

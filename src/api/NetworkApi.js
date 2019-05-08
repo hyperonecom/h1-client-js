@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Ip', 'model/Network', 'model/NetworkCreate', 'model/NetworkPostAccessrights', 'model/NetworkPostIp', 'model/NetworkServices', 'model/NetworkUpdate'], factory);
+    define(['ApiClient', 'model/Event', 'model/InlineResponse400', 'model/Ip', 'model/Network', 'model/NetworkCreate', 'model/NetworkPostAccessrights', 'model/NetworkPostIp', 'model/NetworkServices', 'model/NetworkUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Ip'), require('../model/Network'), require('../model/NetworkCreate'), require('../model/NetworkPostAccessrights'), require('../model/NetworkPostIp'), require('../model/NetworkServices'), require('../model/NetworkUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/Ip'), require('../model/Network'), require('../model/NetworkCreate'), require('../model/NetworkPostAccessrights'), require('../model/NetworkPostIp'), require('../model/NetworkServices'), require('../model/NetworkUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.NetworkApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Ip, root.HyperOneApi.Network, root.HyperOneApi.NetworkCreate, root.HyperOneApi.NetworkPostAccessrights, root.HyperOneApi.NetworkPostIp, root.HyperOneApi.NetworkServices, root.HyperOneApi.NetworkUpdate);
+    root.HyperOneApi.NetworkApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Ip, root.HyperOneApi.Network, root.HyperOneApi.NetworkCreate, root.HyperOneApi.NetworkPostAccessrights, root.HyperOneApi.NetworkPostIp, root.HyperOneApi.NetworkServices, root.HyperOneApi.NetworkUpdate);
   }
-}(this, function(ApiClient, Event, Ip, Network, NetworkCreate, NetworkPostAccessrights, NetworkPostIp, NetworkServices, NetworkUpdate) {
+}(this, function(ApiClient, Event, InlineResponse400, Ip, Network, NetworkCreate, NetworkPostAccessrights, NetworkPostIp, NetworkServices, NetworkUpdate) {
   'use strict';
 
   /**
@@ -56,12 +56,10 @@
      */
     this.networkCreateWithHttpInfo = function(networkCreate) {
       var postBody = networkCreate;
-
       // verify the required parameter 'networkCreate' is set
       if (networkCreate === undefined || networkCreate === null) {
         throw new Error("Missing the required parameter 'networkCreate' when calling networkCreate");
       }
-
 
       var pathParams = {
       };
@@ -106,12 +104,10 @@
      */
     this.networkDeleteWithHttpInfo = function(networkId) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkDelete");
       }
-
 
       var pathParams = {
         'networkId': networkId
@@ -127,7 +123,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/network/{networkId}', 'DELETE',
@@ -157,17 +153,14 @@
      */
     this.networkDeleteAccessrightsIdentityWithHttpInfo = function(networkId, identity) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling networkDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'networkId': networkId,
@@ -215,17 +208,14 @@
      */
     this.networkDeleteIpIpIdWithHttpInfo = function(networkId, ipId) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkDeleteIpIpId");
       }
-
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
         throw new Error("Missing the required parameter 'ipId' when calling networkDeleteIpIpId");
       }
-
 
       var pathParams = {
         'networkId': networkId,
@@ -273,17 +263,14 @@
      */
     this.networkDeleteTagKeyWithHttpInfo = function(networkId, key) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling networkDeleteTagKey");
       }
-
 
       var pathParams = {
         'networkId': networkId,
@@ -331,17 +318,14 @@
      */
     this.networkGetIpIpIdWithHttpInfo = function(networkId, ipId) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkGetIpIpId");
       }
-
       // verify the required parameter 'ipId' is set
       if (ipId === undefined || ipId === null) {
         throw new Error("Missing the required parameter 'ipId' when calling networkGetIpIpId");
       }
-
 
       var pathParams = {
         'networkId': networkId,
@@ -389,17 +373,14 @@
      */
     this.networkGetServicesServiceIdWithHttpInfo = function(networkId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling networkGetServicesServiceId");
       }
-
 
       var pathParams = {
         'networkId': networkId,
@@ -446,12 +427,10 @@
      */
     this.networkGetTagWithHttpInfo = function(networkId) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkGetTag");
       }
-
 
       var pathParams = {
         'networkId': networkId
@@ -494,17 +473,18 @@
      * List network
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Network>} and HTTP response
      */
     this.networkListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -529,6 +509,7 @@
      * List network
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Network>}
      */
     this.networkList = function(opts) {
@@ -546,12 +527,10 @@
      */
     this.networkListAccessrightsWithHttpInfo = function(networkId) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkListAccessrights");
       }
-
 
       var pathParams = {
         'networkId': networkId
@@ -596,12 +575,10 @@
      */
     this.networkListIpWithHttpInfo = function(networkId) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkListIp");
       }
-
 
       var pathParams = {
         'networkId': networkId
@@ -646,12 +623,10 @@
      */
     this.networkListQueueWithHttpInfo = function(networkId) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkListQueue");
       }
-
 
       var pathParams = {
         'networkId': networkId
@@ -696,12 +671,10 @@
      */
     this.networkListServicesWithHttpInfo = function(networkId) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkListServices");
       }
-
 
       var pathParams = {
         'networkId': networkId
@@ -747,17 +720,14 @@
      */
     this.networkPatchTagWithHttpInfo = function(networkId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling networkPatchTag");
       }
-
 
       var pathParams = {
         'networkId': networkId
@@ -804,17 +774,14 @@
      */
     this.networkPostAccessrightsWithHttpInfo = function(networkId, networkPostAccessrights) {
       var postBody = networkPostAccessrights;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkPostAccessrights");
       }
-
       // verify the required parameter 'networkPostAccessrights' is set
       if (networkPostAccessrights === undefined || networkPostAccessrights === null) {
         throw new Error("Missing the required parameter 'networkPostAccessrights' when calling networkPostAccessrights");
       }
-
 
       var pathParams = {
         'networkId': networkId
@@ -861,17 +828,14 @@
      */
     this.networkPostIpWithHttpInfo = function(networkId, networkPostIp) {
       var postBody = networkPostIp;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkPostIp");
       }
-
       // verify the required parameter 'networkPostIp' is set
       if (networkPostIp === undefined || networkPostIp === null) {
         throw new Error("Missing the required parameter 'networkPostIp' when calling networkPostIp");
       }
-
 
       var pathParams = {
         'networkId': networkId
@@ -918,12 +882,10 @@
      */
     this.networkShowWithHttpInfo = function(networkId) {
       var postBody = null;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkShow");
       }
-
 
       var pathParams = {
         'networkId': networkId
@@ -971,17 +933,14 @@
      */
     this.networkUpdateWithHttpInfo = function(networkId, networkUpdate) {
       var postBody = networkUpdate;
-
       // verify the required parameter 'networkId' is set
       if (networkId === undefined || networkId === null) {
         throw new Error("Missing the required parameter 'networkId' when calling networkUpdate");
       }
-
       // verify the required parameter 'networkUpdate' is set
       if (networkUpdate === undefined || networkUpdate === null) {
         throw new Error("Missing the required parameter 'networkUpdate' when calling networkUpdate");
       }
-
 
       var pathParams = {
         'networkId': networkId

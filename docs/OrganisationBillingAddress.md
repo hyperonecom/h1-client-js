@@ -1,6 +1,7 @@
 # HyperOneApi.OrganisationBillingAddress
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **street** | **String** |  | 

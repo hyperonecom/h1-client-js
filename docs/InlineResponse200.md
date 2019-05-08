@@ -1,20 +1,29 @@
 # HyperOneApi.InlineResponse200
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | 
-**createdOn** | **Date** |  | 
-**createdBy** | **String** |  | 
-**type** | **String** |  | 
-**value** | **String** |  | 
+**name** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
+**createdOn** | **Date** |  | [optional] 
+**createdBy** | **String** |  | [optional] [default to &#39;&#39;]
+**modifiedOn** | **Date** |  | [optional] 
+**modifiedBy** | **String** |  | [optional] [default to &#39;&#39;]
+**priority** | **Number** |  | 
+**action** | **String** |  | 
+**filter** | **[String]** |  | [optional] 
+**external** | **[String]** |  | [optional] 
+**internal** | **[String]** |  | [optional] 
 
 
-<a name="TypeEnum"></a>
-## Enum: TypeEnum
+
+## Enum: ActionEnum
 
 
-* `ssh` (value: `"ssh"`)
+* `allow` (value: `"allow"`)
+
+* `deny` (value: `"deny"`)
 
 
 

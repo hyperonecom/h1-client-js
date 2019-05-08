@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Disk', 'model/DiskActionResize', 'model/DiskActionTransfer', 'model/DiskCreate', 'model/DiskPostAccessrights', 'model/DiskServices', 'model/DiskUpdate', 'model/Event'], factory);
+    define(['ApiClient', 'model/Disk', 'model/DiskActionClone', 'model/DiskActionResize', 'model/DiskActionTransfer', 'model/DiskCreate', 'model/DiskPostAccessrights', 'model/DiskServices', 'model/DiskUpdate', 'model/Event', 'model/InlineResponse400'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Disk'), require('../model/DiskActionResize'), require('../model/DiskActionTransfer'), require('../model/DiskCreate'), require('../model/DiskPostAccessrights'), require('../model/DiskServices'), require('../model/DiskUpdate'), require('../model/Event'));
+    module.exports = factory(require('../ApiClient'), require('../model/Disk'), require('../model/DiskActionClone'), require('../model/DiskActionResize'), require('../model/DiskActionTransfer'), require('../model/DiskCreate'), require('../model/DiskPostAccessrights'), require('../model/DiskServices'), require('../model/DiskUpdate'), require('../model/Event'), require('../model/InlineResponse400'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.DiskApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Disk, root.HyperOneApi.DiskActionResize, root.HyperOneApi.DiskActionTransfer, root.HyperOneApi.DiskCreate, root.HyperOneApi.DiskPostAccessrights, root.HyperOneApi.DiskServices, root.HyperOneApi.DiskUpdate, root.HyperOneApi.Event);
+    root.HyperOneApi.DiskApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Disk, root.HyperOneApi.DiskActionClone, root.HyperOneApi.DiskActionResize, root.HyperOneApi.DiskActionTransfer, root.HyperOneApi.DiskCreate, root.HyperOneApi.DiskPostAccessrights, root.HyperOneApi.DiskServices, root.HyperOneApi.DiskUpdate, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400);
   }
-}(this, function(ApiClient, Disk, DiskActionResize, DiskActionTransfer, DiskCreate, DiskPostAccessrights, DiskServices, DiskUpdate, Event) {
+}(this, function(ApiClient, Disk, DiskActionClone, DiskActionResize, DiskActionTransfer, DiskCreate, DiskPostAccessrights, DiskServices, DiskUpdate, Event, InlineResponse400) {
   'use strict';
 
   /**
@@ -49,6 +49,62 @@
 
 
     /**
+     * /actions/clone
+     * Action clone
+     * @param {String} diskId ID of disk
+     * @param {module:model/DiskActionClone} diskActionClone 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Disk} and HTTP response
+     */
+    this.diskActionCloneWithHttpInfo = function(diskId, diskActionClone) {
+      var postBody = diskActionClone;
+      // verify the required parameter 'diskId' is set
+      if (diskId === undefined || diskId === null) {
+        throw new Error("Missing the required parameter 'diskId' when calling diskActionClone");
+      }
+      // verify the required parameter 'diskActionClone' is set
+      if (diskActionClone === undefined || diskActionClone === null) {
+        throw new Error("Missing the required parameter 'diskActionClone' when calling diskActionClone");
+      }
+
+      var pathParams = {
+        'diskId': diskId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Disk;
+      return this.apiClient.callApi(
+        '/disk/{diskId}/actions/clone', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /actions/clone
+     * Action clone
+     * @param {String} diskId ID of disk
+     * @param {module:model/DiskActionClone} diskActionClone 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Disk}
+     */
+    this.diskActionClone = function(diskId, diskActionClone) {
+      return this.diskActionCloneWithHttpInfo(diskId, diskActionClone)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * /actions/resize
      * Action resize
      * @param {String} diskId ID of disk
@@ -57,17 +113,14 @@
      */
     this.diskActionResizeWithHttpInfo = function(diskId, diskActionResize) {
       var postBody = diskActionResize;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskActionResize");
       }
-
       // verify the required parameter 'diskActionResize' is set
       if (diskActionResize === undefined || diskActionResize === null) {
         throw new Error("Missing the required parameter 'diskActionResize' when calling diskActionResize");
       }
-
 
       var pathParams = {
         'diskId': diskId
@@ -116,17 +169,14 @@
      */
     this.diskActionTransferWithHttpInfo = function(diskId, diskActionTransfer) {
       var postBody = diskActionTransfer;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskActionTransfer");
       }
-
       // verify the required parameter 'diskActionTransfer' is set
       if (diskActionTransfer === undefined || diskActionTransfer === null) {
         throw new Error("Missing the required parameter 'diskActionTransfer' when calling diskActionTransfer");
       }
-
 
       var pathParams = {
         'diskId': diskId
@@ -174,12 +224,10 @@
      */
     this.diskCreateWithHttpInfo = function(diskCreate) {
       var postBody = diskCreate;
-
       // verify the required parameter 'diskCreate' is set
       if (diskCreate === undefined || diskCreate === null) {
         throw new Error("Missing the required parameter 'diskCreate' when calling diskCreate");
       }
-
 
       var pathParams = {
       };
@@ -224,12 +272,10 @@
      */
     this.diskDeleteWithHttpInfo = function(diskId) {
       var postBody = null;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskDelete");
       }
-
 
       var pathParams = {
         'diskId': diskId
@@ -245,7 +291,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/disk/{diskId}', 'DELETE',
@@ -275,17 +321,14 @@
      */
     this.diskDeleteAccessrightsIdentityWithHttpInfo = function(diskId, identity) {
       var postBody = null;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling diskDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'diskId': diskId,
@@ -333,17 +376,14 @@
      */
     this.diskDeleteTagKeyWithHttpInfo = function(diskId, key) {
       var postBody = null;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling diskDeleteTagKey");
       }
-
 
       var pathParams = {
         'diskId': diskId,
@@ -391,17 +431,14 @@
      */
     this.diskGetServicesServiceIdWithHttpInfo = function(diskId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling diskGetServicesServiceId");
       }
-
 
       var pathParams = {
         'diskId': diskId,
@@ -448,12 +485,10 @@
      */
     this.diskGetTagWithHttpInfo = function(diskId) {
       var postBody = null;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskGetTag");
       }
-
 
       var pathParams = {
         'diskId': diskId
@@ -503,7 +538,6 @@
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
@@ -551,12 +585,10 @@
      */
     this.diskListAccessrightsWithHttpInfo = function(diskId) {
       var postBody = null;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskListAccessrights");
       }
-
 
       var pathParams = {
         'diskId': diskId
@@ -601,12 +633,10 @@
      */
     this.diskListQueueWithHttpInfo = function(diskId) {
       var postBody = null;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskListQueue");
       }
-
 
       var pathParams = {
         'diskId': diskId
@@ -651,12 +681,10 @@
      */
     this.diskListServicesWithHttpInfo = function(diskId) {
       var postBody = null;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskListServices");
       }
-
 
       var pathParams = {
         'diskId': diskId
@@ -702,17 +730,14 @@
      */
     this.diskPatchTagWithHttpInfo = function(diskId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling diskPatchTag");
       }
-
 
       var pathParams = {
         'diskId': diskId
@@ -759,17 +784,14 @@
      */
     this.diskPostAccessrightsWithHttpInfo = function(diskId, diskPostAccessrights) {
       var postBody = diskPostAccessrights;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskPostAccessrights");
       }
-
       // verify the required parameter 'diskPostAccessrights' is set
       if (diskPostAccessrights === undefined || diskPostAccessrights === null) {
         throw new Error("Missing the required parameter 'diskPostAccessrights' when calling diskPostAccessrights");
       }
-
 
       var pathParams = {
         'diskId': diskId
@@ -816,12 +838,10 @@
      */
     this.diskShowWithHttpInfo = function(diskId) {
       var postBody = null;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskShow");
       }
-
 
       var pathParams = {
         'diskId': diskId
@@ -869,17 +889,14 @@
      */
     this.diskUpdateWithHttpInfo = function(diskId, diskUpdate) {
       var postBody = diskUpdate;
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling diskUpdate");
       }
-
       // verify the required parameter 'diskUpdate' is set
       if (diskUpdate === undefined || diskUpdate === null) {
         throw new Error("Missing the required parameter 'diskUpdate' when calling diskUpdate");
       }
-
 
       var pathParams = {
         'diskId': diskId

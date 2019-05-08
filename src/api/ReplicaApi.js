@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Replica', 'model/ReplicaActionImage', 'model/ReplicaCreate', 'model/ReplicaPostAccessrights', 'model/ReplicaServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/InlineResponse400', 'model/Replica', 'model/ReplicaActionImage', 'model/ReplicaCreate', 'model/ReplicaPostAccessrights', 'model/ReplicaServices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Replica'), require('../model/ReplicaActionImage'), require('../model/ReplicaCreate'), require('../model/ReplicaPostAccessrights'), require('../model/ReplicaServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/Replica'), require('../model/ReplicaActionImage'), require('../model/ReplicaCreate'), require('../model/ReplicaPostAccessrights'), require('../model/ReplicaServices'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ReplicaApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Replica, root.HyperOneApi.ReplicaActionImage, root.HyperOneApi.ReplicaCreate, root.HyperOneApi.ReplicaPostAccessrights, root.HyperOneApi.ReplicaServices);
+    root.HyperOneApi.ReplicaApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Replica, root.HyperOneApi.ReplicaActionImage, root.HyperOneApi.ReplicaCreate, root.HyperOneApi.ReplicaPostAccessrights, root.HyperOneApi.ReplicaServices);
   }
-}(this, function(ApiClient, Event, Replica, ReplicaActionImage, ReplicaCreate, ReplicaPostAccessrights, ReplicaServices) {
+}(this, function(ApiClient, Event, InlineResponse400, Replica, ReplicaActionImage, ReplicaCreate, ReplicaPostAccessrights, ReplicaServices) {
   'use strict';
 
   /**
@@ -57,17 +57,14 @@
      */
     this.replicaActionImageWithHttpInfo = function(replicaId, replicaActionImage) {
       var postBody = replicaActionImage;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaActionImage");
       }
-
       // verify the required parameter 'replicaActionImage' is set
       if (replicaActionImage === undefined || replicaActionImage === null) {
         throw new Error("Missing the required parameter 'replicaActionImage' when calling replicaActionImage");
       }
-
 
       var pathParams = {
         'replicaId': replicaId
@@ -115,12 +112,10 @@
      */
     this.replicaCreateWithHttpInfo = function(replicaCreate) {
       var postBody = replicaCreate;
-
       // verify the required parameter 'replicaCreate' is set
       if (replicaCreate === undefined || replicaCreate === null) {
         throw new Error("Missing the required parameter 'replicaCreate' when calling replicaCreate");
       }
-
 
       var pathParams = {
       };
@@ -165,12 +160,10 @@
      */
     this.replicaDeleteWithHttpInfo = function(replicaId) {
       var postBody = null;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaDelete");
       }
-
 
       var pathParams = {
         'replicaId': replicaId
@@ -186,7 +179,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/replica/{replicaId}', 'DELETE',
@@ -216,17 +209,14 @@
      */
     this.replicaDeleteAccessrightsIdentityWithHttpInfo = function(replicaId, identity) {
       var postBody = null;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling replicaDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'replicaId': replicaId,
@@ -274,17 +264,14 @@
      */
     this.replicaDeleteTagKeyWithHttpInfo = function(replicaId, key) {
       var postBody = null;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling replicaDeleteTagKey");
       }
-
 
       var pathParams = {
         'replicaId': replicaId,
@@ -332,17 +319,14 @@
      */
     this.replicaGetServicesServiceIdWithHttpInfo = function(replicaId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling replicaGetServicesServiceId");
       }
-
 
       var pathParams = {
         'replicaId': replicaId,
@@ -389,12 +373,10 @@
      */
     this.replicaGetTagWithHttpInfo = function(replicaId) {
       var postBody = null;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaGetTag");
       }
-
 
       var pathParams = {
         'replicaId': replicaId
@@ -443,7 +425,6 @@
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
@@ -489,12 +470,10 @@
      */
     this.replicaListAccessrightsWithHttpInfo = function(replicaId) {
       var postBody = null;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaListAccessrights");
       }
-
 
       var pathParams = {
         'replicaId': replicaId
@@ -539,12 +518,10 @@
      */
     this.replicaListQueueWithHttpInfo = function(replicaId) {
       var postBody = null;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaListQueue");
       }
-
 
       var pathParams = {
         'replicaId': replicaId
@@ -589,12 +566,10 @@
      */
     this.replicaListServicesWithHttpInfo = function(replicaId) {
       var postBody = null;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaListServices");
       }
-
 
       var pathParams = {
         'replicaId': replicaId
@@ -640,17 +615,14 @@
      */
     this.replicaPatchTagWithHttpInfo = function(replicaId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling replicaPatchTag");
       }
-
 
       var pathParams = {
         'replicaId': replicaId
@@ -697,17 +669,14 @@
      */
     this.replicaPostAccessrightsWithHttpInfo = function(replicaId, replicaPostAccessrights) {
       var postBody = replicaPostAccessrights;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaPostAccessrights");
       }
-
       // verify the required parameter 'replicaPostAccessrights' is set
       if (replicaPostAccessrights === undefined || replicaPostAccessrights === null) {
         throw new Error("Missing the required parameter 'replicaPostAccessrights' when calling replicaPostAccessrights");
       }
-
 
       var pathParams = {
         'replicaId': replicaId
@@ -754,12 +723,10 @@
      */
     this.replicaShowWithHttpInfo = function(replicaId) {
       var postBody = null;
-
       // verify the required parameter 'replicaId' is set
       if (replicaId === undefined || replicaId === null) {
         throw new Error("Missing the required parameter 'replicaId' when calling replicaShow");
       }
-
 
       var pathParams = {
         'replicaId': replicaId

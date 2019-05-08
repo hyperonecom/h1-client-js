@@ -147,12 +147,14 @@
   exports.prototype['modifiedOn'] = undefined;
   /**
    * @member {String} modifiedBy
+   * @default ''
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype['modifiedBy'] = '';
   /**
    * @member {String} createdBy
+   * @default ''
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype['createdBy'] = '';
   /**
    * @member {Date} createdOn
    */
@@ -191,8 +193,9 @@
   exports.prototype['billing'] = undefined;
   /**
    * @member {Number} verified
+   * @default 0
    */
-  exports.prototype['verified'] = undefined;
+  exports.prototype['verified'] = 0;
   /**
    * @member {module:model/OrganisationLimit} limit
    */

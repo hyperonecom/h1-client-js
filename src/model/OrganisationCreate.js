@@ -61,6 +61,9 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('service')) {
+        obj['service'] = ApiClient.convertToType(data['service'], 'String');
+      }
       if (data.hasOwnProperty('billing')) {
         obj['billing'] = OrganisationCreateBilling.constructFromObject(data['billing']);
       }
@@ -78,6 +81,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * @member {String} service
+   * @default '5c9cc1c3255c16c3e899a4e8'
+   */
+  exports.prototype['service'] = '5c9cc1c3255c16c3e899a4e8';
   /**
    * @member {module:model/OrganisationCreateBilling} billing
    */

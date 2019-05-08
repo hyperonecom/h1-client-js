@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
+    define(['expect.js', process.cwd()+'/src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.HyperOneApi);
@@ -50,6 +50,26 @@
   }
 
   describe('AgentApi', function() {
+    describe('agentActionStart', function() {
+      it('should call agentActionStart successfully', function(done) {
+        //uncomment below and update the code to test agentActionStart
+        //instance.agentActionStart(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('agentActionSuspend', function() {
+      it('should call agentActionSuspend successfully', function(done) {
+        //uncomment below and update the code to test agentActionSuspend
+        //instance.agentActionSuspend(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('agentCreate', function() {
       it('should call agentCreate successfully', function(done) {
         //uncomment below and update the code to test agentCreate
@@ -104,6 +124,26 @@
       it('should call agentGetCredentialcertificateId successfully', function(done) {
         //uncomment below and update the code to test agentGetCredentialcertificateId
         //instance.agentGetCredentialcertificateId(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('agentGetInspect', function() {
+      it('should call agentGetInspect successfully', function(done) {
+        //uncomment below and update the code to test agentGetInspect
+        //instance.agentGetInspect(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('agentGetResourceResourceIdinspect', function() {
+      it('should call agentGetResourceResourceIdinspect successfully', function(done) {
+        //uncomment below and update the code to test agentGetResourceResourceIdinspect
+        //instance.agentGetResourceResourceIdinspect(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -190,6 +230,16 @@
         done();
       });
     });
+    describe('agentListResourceResourceIdqueue', function() {
+      it('should call agentListResourceResourceIdqueue successfully', function(done) {
+        //uncomment below and update the code to test agentListResourceResourceIdqueue
+        //instance.agentListResourceResourceIdqueue(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('agentListServices', function() {
       it('should call agentListServices successfully', function(done) {
         //uncomment below and update the code to test agentListServices
@@ -234,6 +284,16 @@
       it('should call agentPostCredentialcertificate successfully', function(done) {
         //uncomment below and update the code to test agentPostCredentialcertificate
         //instance.agentPostCredentialcertificate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('agentPostResourceResourceIdactionsrecreate', function() {
+      it('should call agentPostResourceResourceIdactionsrecreate successfully', function(done) {
+        //uncomment below and update the code to test agentPostResourceResourceIdactionsrecreate
+        //instance.agentPostResourceResourceIdactionsrecreate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

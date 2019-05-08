@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
+    define(['expect.js', process.cwd()+'/src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.HyperOneApi);
@@ -154,6 +154,16 @@
       it('should call containerListAccessrights successfully', function(done) {
         //uncomment below and update the code to test containerListAccessrights
         //instance.containerListAccessrights(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('containerListProcess', function() {
+      it('should call containerListProcess successfully', function(done) {
+        //uncomment below and update the code to test containerListProcess
+        //instance.containerListProcess(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

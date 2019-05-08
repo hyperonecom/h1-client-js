@@ -1,13 +1,14 @@
 # HyperOneApi.ProjectAccess
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **path** | **String** |  | 
 **method** | **String** |  | 
 
 
-<a name="MethodEnum"></a>
+
 ## Enum: MethodEnum
 
 

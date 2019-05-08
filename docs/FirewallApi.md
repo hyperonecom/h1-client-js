@@ -31,8 +31,9 @@ Method | HTTP request | Description
 [**firewallUpdate**](FirewallApi.md#firewallUpdate) | **PATCH** /firewall/{firewallId} | Update
 
 
-<a name="firewallActionAttach"></a>
-# **firewallActionAttach**
+
+## firewallActionAttach
+
 > Firewall firewallActionAttach(firewallId, firewallActionAttach)
 
 /actions/attach
@@ -40,6 +41,7 @@ Method | HTTP request | Description
 Action attach
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -48,16 +50,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -71,6 +69,8 @@ apiInstance.firewallActionAttach(firewallId, firewallActionAttach).then(function
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -87,11 +87,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="firewallActionDetach"></a>
-# **firewallActionDetach**
+
+## firewallActionDetach
+
 > Firewall firewallActionDetach(firewallId)
 
 /actions/detach
@@ -99,6 +100,7 @@ Name | Type | Description  | Notes
 Action detach
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -107,16 +109,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -129,6 +127,8 @@ apiInstance.firewallActionDetach(firewallId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -144,11 +144,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallActionTransfer"></a>
-# **firewallActionTransfer**
+
+## firewallActionTransfer
+
 > Firewall firewallActionTransfer(firewallId, firewallActionTransfer)
 
 /actions/transfer
@@ -156,6 +157,7 @@ Name | Type | Description  | Notes
 Action transfer
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -164,16 +166,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -187,6 +185,8 @@ apiInstance.firewallActionTransfer(firewallId, firewallActionTransfer).then(func
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -203,11 +203,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="firewallCreate"></a>
-# **firewallCreate**
+
+## firewallCreate
+
 > Firewall firewallCreate(firewallCreate)
 
 Create
@@ -215,6 +216,7 @@ Create
 Create firewall
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -223,16 +225,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallCreate = new HyperOneApi.FirewallCreate(); // FirewallCreate | 
@@ -245,6 +243,8 @@ apiInstance.firewallCreate(firewallCreate).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -260,16 +260,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="firewallDelete"></a>
-# **firewallDelete**
+
+## firewallDelete
+
 > firewallDelete(firewallId)
 
 Delete
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -278,16 +280,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -300,6 +298,8 @@ apiInstance.firewallDelete(firewallId).then(function() {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -315,16 +315,18 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallDeleteAccessrightsIdentity"></a>
-# **firewallDeleteAccessrightsIdentity**
+
+## firewallDeleteAccessrightsIdentity
+
 > Firewall firewallDeleteAccessrightsIdentity(firewallId, identity)
 
 /accessrights/:identity
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -333,16 +335,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -356,6 +354,8 @@ apiInstance.firewallDeleteAccessrightsIdentity(firewallId, identity).then(functi
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -372,16 +372,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallDeleteEgressRuleId"></a>
-# **firewallDeleteEgressRuleId**
-> InlineResponse2001 firewallDeleteEgressRuleId(firewallId, ruleId)
+
+## firewallDeleteEgressRuleId
+
+> InlineResponse200 firewallDeleteEgressRuleId(firewallId, ruleId)
 
 /egress/:ruleId
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -390,16 +392,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -414,6 +412,8 @@ apiInstance.firewallDeleteEgressRuleId(firewallId, ruleId).then(function(data) {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewallId** | **String**| ID of firewall | 
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -429,16 +429,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallDeleteIngressRuleId"></a>
-# **firewallDeleteIngressRuleId**
-> InlineResponse2001 firewallDeleteIngressRuleId(firewallId, ruleId)
+
+## firewallDeleteIngressRuleId
+
+> InlineResponse200 firewallDeleteIngressRuleId(firewallId, ruleId)
 
 /ingress/:ruleId
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -447,16 +449,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -471,6 +469,8 @@ apiInstance.firewallDeleteIngressRuleId(firewallId, ruleId).then(function(data) 
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewallId** | **String**| ID of firewall | 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -486,16 +486,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallDeleteTagKey"></a>
-# **firewallDeleteTagKey**
+
+## firewallDeleteTagKey
+
 > Object firewallDeleteTagKey(firewallId, key)
 
 /tag/:key
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -504,16 +506,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -527,6 +525,8 @@ apiInstance.firewallDeleteTagKey(firewallId, key).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -543,16 +543,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallGetEgressRuleId"></a>
-# **firewallGetEgressRuleId**
-> InlineResponse2001 firewallGetEgressRuleId(firewallId, ruleId)
+
+## firewallGetEgressRuleId
+
+> InlineResponse200 firewallGetEgressRuleId(firewallId, ruleId)
 
 /egress/:ruleId
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -561,16 +563,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -585,6 +583,8 @@ apiInstance.firewallGetEgressRuleId(firewallId, ruleId).then(function(data) {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewallId** | **String**| ID of firewall | 
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -600,16 +600,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallGetIngressRuleId"></a>
-# **firewallGetIngressRuleId**
-> InlineResponse2001 firewallGetIngressRuleId(firewallId, ruleId)
+
+## firewallGetIngressRuleId
+
+> InlineResponse200 firewallGetIngressRuleId(firewallId, ruleId)
 
 /ingress/:ruleId
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -618,16 +620,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -642,6 +640,8 @@ apiInstance.firewallGetIngressRuleId(firewallId, ruleId).then(function(data) {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewallId** | **String**| ID of firewall | 
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -657,16 +657,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallGetServicesServiceId"></a>
-# **firewallGetServicesServiceId**
+
+## firewallGetServicesServiceId
+
 > FirewallServices firewallGetServicesServiceId(firewallId, serviceId)
 
 /services/:serviceId
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -675,16 +677,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -698,6 +696,8 @@ apiInstance.firewallGetServicesServiceId(firewallId, serviceId).then(function(da
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -714,16 +714,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallGetTag"></a>
-# **firewallGetTag**
+
+## firewallGetTag
+
 > Object firewallGetTag(firewallId)
 
 /tag
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -732,16 +734,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -754,6 +752,8 @@ apiInstance.firewallGetTag(firewallId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -769,11 +769,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallList"></a>
-# **firewallList**
+
+## firewallList
+
 > [Firewall] firewallList(opts)
 
 List
@@ -781,6 +782,7 @@ List
 List firewall
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -789,20 +791,17 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var opts = {
-  'name': "name_example" // String | Filter by name
+  'name': "name_example", // String | Filter by name
+  'tag': {key: "null"} // {String: String} | Filter by tag
 };
 apiInstance.firewallList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -814,9 +813,12 @@ apiInstance.firewallList(opts).then(function(data) {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Filter by name | [optional] 
+ **tag** | [**{String: String}**](String.md)| Filter by tag | [optional] 
 
 ### Return type
 
@@ -828,16 +830,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallListAccessrights"></a>
-# **firewallListAccessrights**
+
+## firewallListAccessrights
+
 > [String] firewallListAccessrights(firewallId)
 
 /accessrights
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -846,16 +850,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -868,6 +868,8 @@ apiInstance.firewallListAccessrights(firewallId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -883,16 +885,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallListEgress"></a>
-# **firewallListEgress**
-> [InlineResponse2001] firewallListEgress(firewallId)
+
+## firewallListEgress
+
+> [InlineResponse200] firewallListEgress(firewallId)
 
 /egress
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -901,16 +905,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -924,13 +924,15 @@ apiInstance.firewallListEgress(firewallId).then(function(data) {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewallId** | **String**| ID of firewall | 
 
 ### Return type
 
-[**[InlineResponse2001]**](InlineResponse2001.md)
+[**[InlineResponse200]**](InlineResponse200.md)
 
 ### Authorization
 
@@ -938,16 +940,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallListIngress"></a>
-# **firewallListIngress**
-> [InlineResponse2001] firewallListIngress(firewallId)
+
+## firewallListIngress
+
+> [InlineResponse200] firewallListIngress(firewallId)
 
 /ingress
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -956,16 +960,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -979,13 +979,15 @@ apiInstance.firewallListIngress(firewallId).then(function(data) {
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewallId** | **String**| ID of firewall | 
 
 ### Return type
 
-[**[InlineResponse2001]**](InlineResponse2001.md)
+[**[InlineResponse200]**](InlineResponse200.md)
 
 ### Authorization
 
@@ -993,16 +995,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallListQueue"></a>
-# **firewallListQueue**
+
+## firewallListQueue
+
 > [Event] firewallListQueue(firewallId)
 
 /queue
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -1011,16 +1015,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -1033,6 +1033,8 @@ apiInstance.firewallListQueue(firewallId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1048,16 +1050,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallListServices"></a>
-# **firewallListServices**
+
+## firewallListServices
+
 > [FirewallServices] firewallListServices(firewallId)
 
 /services
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -1066,16 +1070,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -1088,6 +1088,8 @@ apiInstance.firewallListServices(firewallId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1103,16 +1105,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallPatchTag"></a>
-# **firewallPatchTag**
+
+## firewallPatchTag
+
 > Object firewallPatchTag(firewallId, requestBody)
 
 /tag
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -1121,16 +1125,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -1144,6 +1144,8 @@ apiInstance.firewallPatchTag(firewallId, requestBody).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1160,16 +1162,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="firewallPostAccessrights"></a>
-# **firewallPostAccessrights**
+
+## firewallPostAccessrights
+
 > Firewall firewallPostAccessrights(firewallId, firewallPostAccessrights)
 
 /accessrights
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -1178,16 +1182,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -1201,6 +1201,8 @@ apiInstance.firewallPostAccessrights(firewallId, firewallPostAccessrights).then(
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1217,16 +1219,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="firewallPostEgress"></a>
-# **firewallPostEgress**
-> InlineResponse2001 firewallPostEgress(firewallId, firewallPostEgress)
+
+## firewallPostEgress
+
+> InlineResponse200 firewallPostEgress(firewallId, firewallPostEgress)
 
 /egress
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -1235,16 +1239,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -1259,6 +1259,8 @@ apiInstance.firewallPostEgress(firewallId, firewallPostEgress).then(function(dat
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewallId** | **String**| ID of firewall | 
@@ -1266,7 +1268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -1274,16 +1276,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="firewallPostIngress"></a>
-# **firewallPostIngress**
-> InlineResponse2001 firewallPostIngress(firewallId, firewallPostIngress)
+
+## firewallPostIngress
+
+> InlineResponse200 firewallPostIngress(firewallId, firewallPostIngress)
 
 /ingress
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -1292,16 +1296,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -1316,6 +1316,8 @@ apiInstance.firewallPostIngress(firewallId, firewallPostIngress).then(function(d
 
 ### Parameters
 
+
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewallId** | **String**| ID of firewall | 
@@ -1323,7 +1325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -1331,11 +1333,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="firewallShow"></a>
-# **firewallShow**
+
+## firewallShow
+
 > Firewall firewallShow(firewallId)
 
 Get
@@ -1343,6 +1346,7 @@ Get
 Returns a single firewall
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -1351,16 +1355,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -1373,6 +1373,8 @@ apiInstance.firewallShow(firewallId).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1388,11 +1390,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="firewallUpdate"></a>
-# **firewallUpdate**
+
+## firewallUpdate
+
 > Firewall firewallUpdate(firewallId, firewallUpdate)
 
 Update
@@ -1400,6 +1403,7 @@ Update
 Returns modified firewall
 
 ### Example
+
 ```javascript
 var HyperOneApi = require('hyper_one_api');
 var defaultClient = HyperOneApi.ApiClient.instance;
@@ -1408,16 +1412,12 @@ var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
-// Configure API key authorization: ServiceAccount
+// Configure Bearer access token for authorization: ServiceAccount
 var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//ServiceAccount.apiKeyPrefix = 'Token';
-// Configure API key authorization: Session
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
 var Session = defaultClient.authentications['Session'];
-Session.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Session.apiKeyPrefix = 'Token';
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperOneApi.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
@@ -1431,6 +1431,8 @@ apiInstance.firewallUpdate(firewallId, firewallUpdate).then(function(data) {
 ```
 
 ### Parameters
+
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1447,6 +1449,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

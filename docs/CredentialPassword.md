@@ -1,6 +1,7 @@
 # HyperOneApi.CredentialPassword
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdBy** | **String** |  | [optional] 

@@ -1,6 +1,7 @@
 # HyperOneApi.ServiceBilling
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **price** | [**ServiceBillingPrice**](ServiceBillingPrice.md) |  | [optional] 

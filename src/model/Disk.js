@@ -147,12 +147,14 @@
   exports.prototype['modifiedOn'] = undefined;
   /**
    * @member {String} modifiedBy
+   * @default ''
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype['modifiedBy'] = '';
   /**
    * @member {String} createdBy
+   * @default ''
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype['createdBy'] = '';
   /**
    * @member {Date} createdOn
    */

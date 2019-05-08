@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Netgw', 'model/NetgwActionAttach', 'model/NetgwCreate', 'model/NetgwPostAccessrights', 'model/NetgwServices', 'model/NetgwUpdate'], factory);
+    define(['ApiClient', 'model/Event', 'model/InlineResponse400', 'model/Netgw', 'model/NetgwActionAttach', 'model/NetgwCreate', 'model/NetgwPostAccessrights', 'model/NetgwServices', 'model/NetgwUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Netgw'), require('../model/NetgwActionAttach'), require('../model/NetgwCreate'), require('../model/NetgwPostAccessrights'), require('../model/NetgwServices'), require('../model/NetgwUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/Netgw'), require('../model/NetgwActionAttach'), require('../model/NetgwCreate'), require('../model/NetgwPostAccessrights'), require('../model/NetgwServices'), require('../model/NetgwUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.NetgwApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Netgw, root.HyperOneApi.NetgwActionAttach, root.HyperOneApi.NetgwCreate, root.HyperOneApi.NetgwPostAccessrights, root.HyperOneApi.NetgwServices, root.HyperOneApi.NetgwUpdate);
+    root.HyperOneApi.NetgwApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Netgw, root.HyperOneApi.NetgwActionAttach, root.HyperOneApi.NetgwCreate, root.HyperOneApi.NetgwPostAccessrights, root.HyperOneApi.NetgwServices, root.HyperOneApi.NetgwUpdate);
   }
-}(this, function(ApiClient, Event, Netgw, NetgwActionAttach, NetgwCreate, NetgwPostAccessrights, NetgwServices, NetgwUpdate) {
+}(this, function(ApiClient, Event, InlineResponse400, Netgw, NetgwActionAttach, NetgwCreate, NetgwPostAccessrights, NetgwServices, NetgwUpdate) {
   'use strict';
 
   /**
@@ -57,17 +57,14 @@
      */
     this.netgwActionAttachWithHttpInfo = function(netgwId, netgwActionAttach) {
       var postBody = netgwActionAttach;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwActionAttach");
       }
-
       // verify the required parameter 'netgwActionAttach' is set
       if (netgwActionAttach === undefined || netgwActionAttach === null) {
         throw new Error("Missing the required parameter 'netgwActionAttach' when calling netgwActionAttach");
       }
-
 
       var pathParams = {
         'netgwId': netgwId
@@ -115,12 +112,10 @@
      */
     this.netgwActionDetachWithHttpInfo = function(netgwId) {
       var postBody = null;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwActionDetach");
       }
-
 
       var pathParams = {
         'netgwId': netgwId
@@ -167,12 +162,10 @@
      */
     this.netgwCreateWithHttpInfo = function(netgwCreate) {
       var postBody = netgwCreate;
-
       // verify the required parameter 'netgwCreate' is set
       if (netgwCreate === undefined || netgwCreate === null) {
         throw new Error("Missing the required parameter 'netgwCreate' when calling netgwCreate");
       }
-
 
       var pathParams = {
       };
@@ -217,12 +210,10 @@
      */
     this.netgwDeleteWithHttpInfo = function(netgwId) {
       var postBody = null;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwDelete");
       }
-
 
       var pathParams = {
         'netgwId': netgwId
@@ -238,7 +229,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/netgw/{netgwId}', 'DELETE',
@@ -268,17 +259,14 @@
      */
     this.netgwDeleteAccessrightsIdentityWithHttpInfo = function(netgwId, identity) {
       var postBody = null;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling netgwDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'netgwId': netgwId,
@@ -326,17 +314,14 @@
      */
     this.netgwDeleteTagKeyWithHttpInfo = function(netgwId, key) {
       var postBody = null;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling netgwDeleteTagKey");
       }
-
 
       var pathParams = {
         'netgwId': netgwId,
@@ -384,17 +369,14 @@
      */
     this.netgwGetServicesServiceIdWithHttpInfo = function(netgwId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling netgwGetServicesServiceId");
       }
-
 
       var pathParams = {
         'netgwId': netgwId,
@@ -441,12 +423,10 @@
      */
     this.netgwGetTagWithHttpInfo = function(netgwId) {
       var postBody = null;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwGetTag");
       }
-
 
       var pathParams = {
         'netgwId': netgwId
@@ -489,17 +469,18 @@
      * List netgw
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Netgw>} and HTTP response
      */
     this.netgwListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -524,6 +505,7 @@
      * List netgw
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Netgw>}
      */
     this.netgwList = function(opts) {
@@ -541,12 +523,10 @@
      */
     this.netgwListAccessrightsWithHttpInfo = function(netgwId) {
       var postBody = null;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwListAccessrights");
       }
-
 
       var pathParams = {
         'netgwId': netgwId
@@ -591,12 +571,10 @@
      */
     this.netgwListQueueWithHttpInfo = function(netgwId) {
       var postBody = null;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwListQueue");
       }
-
 
       var pathParams = {
         'netgwId': netgwId
@@ -641,12 +619,10 @@
      */
     this.netgwListServicesWithHttpInfo = function(netgwId) {
       var postBody = null;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwListServices");
       }
-
 
       var pathParams = {
         'netgwId': netgwId
@@ -692,17 +668,14 @@
      */
     this.netgwPatchTagWithHttpInfo = function(netgwId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling netgwPatchTag");
       }
-
 
       var pathParams = {
         'netgwId': netgwId
@@ -749,17 +722,14 @@
      */
     this.netgwPostAccessrightsWithHttpInfo = function(netgwId, netgwPostAccessrights) {
       var postBody = netgwPostAccessrights;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwPostAccessrights");
       }
-
       // verify the required parameter 'netgwPostAccessrights' is set
       if (netgwPostAccessrights === undefined || netgwPostAccessrights === null) {
         throw new Error("Missing the required parameter 'netgwPostAccessrights' when calling netgwPostAccessrights");
       }
-
 
       var pathParams = {
         'netgwId': netgwId
@@ -806,12 +776,10 @@
      */
     this.netgwShowWithHttpInfo = function(netgwId) {
       var postBody = null;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwShow");
       }
-
 
       var pathParams = {
         'netgwId': netgwId
@@ -859,17 +827,14 @@
      */
     this.netgwUpdateWithHttpInfo = function(netgwId, netgwUpdate) {
       var postBody = netgwUpdate;
-
       // verify the required parameter 'netgwId' is set
       if (netgwId === undefined || netgwId === null) {
         throw new Error("Missing the required parameter 'netgwId' when calling netgwUpdate");
       }
-
       // verify the required parameter 'netgwUpdate' is set
       if (netgwUpdate === undefined || netgwUpdate === null) {
         throw new Error("Missing the required parameter 'netgwUpdate' when calling netgwUpdate");
       }
-
 
       var pathParams = {
         'netgwId': netgwId

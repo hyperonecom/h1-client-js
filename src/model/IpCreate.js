@@ -58,8 +58,14 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      if (data.hasOwnProperty('service')) {
-        obj['service'] = ApiClient.convertToType(data['service'], 'String');
+      if (data.hasOwnProperty('network')) {
+        obj['network'] = ApiClient.convertToType(data['network'], 'String');
+      }
+      if (data.hasOwnProperty('ptrRecord')) {
+        obj['ptrRecord'] = ApiClient.convertToType(data['ptrRecord'], 'String');
+      }
+      if (data.hasOwnProperty('address')) {
+        obj['address'] = ApiClient.convertToType(data['address'], 'String');
       }
       if (data.hasOwnProperty('tag')) {
         obj['tag'] = ApiClient.convertToType(data['tag'], Object);
@@ -69,10 +75,17 @@
   }
 
   /**
-   * @member {String} service
-   * @default '5721c6f59ce9da3f72e30fd1'
+   * @member {String} network
    */
-  exports.prototype['service'] = '5721c6f59ce9da3f72e30fd1';
+  exports.prototype['network'] = undefined;
+  /**
+   * @member {String} ptrRecord
+   */
+  exports.prototype['ptrRecord'] = undefined;
+  /**
+   * @member {String} address
+   */
+  exports.prototype['address'] = undefined;
   /**
    * @member {Object} tag
    */

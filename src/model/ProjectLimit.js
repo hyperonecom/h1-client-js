@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ProjectLimitDisk', 'model/ProjectLimitDomain', 'model/ProjectLimitIso', 'model/ProjectLimitVm'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ProjectLimitDisk'), require('./ProjectLimitDomain'), require('./ProjectLimitIso'), require('./ProjectLimitVm'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ProjectLimit = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.ProjectLimitDisk, root.HyperOneApi.ProjectLimitDomain, root.HyperOneApi.ProjectLimitIso, root.HyperOneApi.ProjectLimitVm);
+    root.HyperOneApi.ProjectLimit = factory(root.HyperOneApi.ApiClient);
   }
-}(this, function(ApiClient, ProjectLimitDisk, ProjectLimitDomain, ProjectLimitIso, ProjectLimitVm) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -59,100 +59,128 @@
     if (data) {
       obj = obj || new exports();
       if (data.hasOwnProperty('vm')) {
-        obj['vm'] = ProjectLimitVm.constructFromObject(data['vm']);
+        obj['vm'] = Object.constructFromObject(data['vm']);
       }
       if (data.hasOwnProperty('disk')) {
-        obj['disk'] = ProjectLimitDisk.constructFromObject(data['disk']);
+        obj['disk'] = Object.constructFromObject(data['disk']);
       }
       if (data.hasOwnProperty('iso')) {
-        obj['iso'] = ProjectLimitIso.constructFromObject(data['iso']);
+        obj['iso'] = Object.constructFromObject(data['iso']);
       }
       if (data.hasOwnProperty('network')) {
-        obj['network'] = ProjectLimitIso.constructFromObject(data['network']);
+        obj['network'] = Object.constructFromObject(data['network']);
       }
       if (data.hasOwnProperty('image')) {
-        obj['image'] = ProjectLimitIso.constructFromObject(data['image']);
+        obj['image'] = Object.constructFromObject(data['image']);
       }
       if (data.hasOwnProperty('ip')) {
-        obj['ip'] = ProjectLimitIso.constructFromObject(data['ip']);
+        obj['ip'] = Object.constructFromObject(data['ip']);
       }
       if (data.hasOwnProperty('firewall')) {
-        obj['firewall'] = ProjectLimitIso.constructFromObject(data['firewall']);
+        obj['firewall'] = Object.constructFromObject(data['firewall']);
       }
       if (data.hasOwnProperty('netgw')) {
-        obj['netgw'] = ProjectLimitIso.constructFromObject(data['netgw']);
+        obj['netgw'] = Object.constructFromObject(data['netgw']);
       }
       if (data.hasOwnProperty('vault')) {
-        obj['vault'] = ProjectLimitDisk.constructFromObject(data['vault']);
+        obj['vault'] = Object.constructFromObject(data['vault']);
       }
       if (data.hasOwnProperty('snapshot')) {
-        obj['snapshot'] = ProjectLimitIso.constructFromObject(data['snapshot']);
+        obj['snapshot'] = Object.constructFromObject(data['snapshot']);
       }
       if (data.hasOwnProperty('domain')) {
-        obj['domain'] = ProjectLimitDomain.constructFromObject(data['domain']);
+        obj['domain'] = Object.constructFromObject(data['domain']);
       }
       if (data.hasOwnProperty('logArchive')) {
-        obj['logArchive'] = ProjectLimitIso.constructFromObject(data['logArchive']);
+        obj['logArchive'] = Object.constructFromObject(data['logArchive']);
       }
       if (data.hasOwnProperty('reservation')) {
-        obj['reservation'] = ProjectLimitIso.constructFromObject(data['reservation']);
+        obj['reservation'] = Object.constructFromObject(data['reservation']);
+      }
+      if (data.hasOwnProperty('container')) {
+        obj['container'] = Object.constructFromObject(data['container']);
+      }
+      if (data.hasOwnProperty('volume')) {
+        obj['volume'] = Object.constructFromObject(data['volume']);
+      }
+      if (data.hasOwnProperty('agent')) {
+        obj['agent'] = Object.constructFromObject(data['agent']);
+      }
+      if (data.hasOwnProperty('website')) {
+        obj['website'] = Object.constructFromObject(data['website']);
       }
     }
     return obj;
   }
 
   /**
-   * @member {module:model/ProjectLimitVm} vm
+   * @member {Object} vm
    */
   exports.prototype['vm'] = undefined;
   /**
-   * @member {module:model/ProjectLimitDisk} disk
+   * @member {Object} disk
    */
   exports.prototype['disk'] = undefined;
   /**
-   * @member {module:model/ProjectLimitIso} iso
+   * @member {Object} iso
    */
   exports.prototype['iso'] = undefined;
   /**
-   * @member {module:model/ProjectLimitIso} network
+   * @member {Object} network
    */
   exports.prototype['network'] = undefined;
   /**
-   * @member {module:model/ProjectLimitIso} image
+   * @member {Object} image
    */
   exports.prototype['image'] = undefined;
   /**
-   * @member {module:model/ProjectLimitIso} ip
+   * @member {Object} ip
    */
   exports.prototype['ip'] = undefined;
   /**
-   * @member {module:model/ProjectLimitIso} firewall
+   * @member {Object} firewall
    */
   exports.prototype['firewall'] = undefined;
   /**
-   * @member {module:model/ProjectLimitIso} netgw
+   * @member {Object} netgw
    */
   exports.prototype['netgw'] = undefined;
   /**
-   * @member {module:model/ProjectLimitDisk} vault
+   * @member {Object} vault
    */
   exports.prototype['vault'] = undefined;
   /**
-   * @member {module:model/ProjectLimitIso} snapshot
+   * @member {Object} snapshot
    */
   exports.prototype['snapshot'] = undefined;
   /**
-   * @member {module:model/ProjectLimitDomain} domain
+   * @member {Object} domain
    */
   exports.prototype['domain'] = undefined;
   /**
-   * @member {module:model/ProjectLimitIso} logArchive
+   * @member {Object} logArchive
    */
   exports.prototype['logArchive'] = undefined;
   /**
-   * @member {module:model/ProjectLimitIso} reservation
+   * @member {Object} reservation
    */
   exports.prototype['reservation'] = undefined;
+  /**
+   * @member {Object} container
+   */
+  exports.prototype['container'] = undefined;
+  /**
+   * @member {Object} volume
+   */
+  exports.prototype['volume'] = undefined;
+  /**
+   * @member {Object} agent
+   */
+  exports.prototype['agent'] = undefined;
+  /**
+   * @member {Object} website
+   */
+  exports.prototype['website'] = undefined;
 
 
 

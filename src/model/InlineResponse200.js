@@ -42,20 +42,14 @@
    * Constructs a new <code>InlineResponse200</code>.
    * @alias module:model/InlineResponse200
    * @class
-   * @param name {String} 
-   * @param createdOn {Date} 
-   * @param createdBy {String} 
-   * @param type {module:model/InlineResponse200.TypeEnum} 
-   * @param value {String} 
+   * @param priority {Number} 
+   * @param action {module:model/InlineResponse200.ActionEnum} 
    */
-  var exports = function(name, createdOn, createdBy, type, value) {
+  var exports = function(priority, action) {
     var _this = this;
 
-    _this['name'] = name;
-    _this['createdOn'] = createdOn;
-    _this['createdBy'] = createdBy;
-    _this['type'] = type;
-    _this['value'] = value;
+    _this['priority'] = priority;
+    _this['action'] = action;
   };
 
   /**
@@ -71,17 +65,35 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
       if (data.hasOwnProperty('createdOn')) {
         obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'Date');
       }
       if (data.hasOwnProperty('createdBy')) {
         obj['createdBy'] = ApiClient.convertToType(data['createdBy'], 'String');
       }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      if (data.hasOwnProperty('modifiedOn')) {
+        obj['modifiedOn'] = ApiClient.convertToType(data['modifiedOn'], 'Date');
       }
-      if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      if (data.hasOwnProperty('modifiedBy')) {
+        obj['modifiedBy'] = ApiClient.convertToType(data['modifiedBy'], 'String');
+      }
+      if (data.hasOwnProperty('priority')) {
+        obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
+      }
+      if (data.hasOwnProperty('action')) {
+        obj['action'] = ApiClient.convertToType(data['action'], 'String');
+      }
+      if (data.hasOwnProperty('filter')) {
+        obj['filter'] = ApiClient.convertToType(data['filter'], ['String']);
+      }
+      if (data.hasOwnProperty('external')) {
+        obj['external'] = ApiClient.convertToType(data['external'], ['String']);
+      }
+      if (data.hasOwnProperty('internal')) {
+        obj['internal'] = ApiClient.convertToType(data['internal'], ['String']);
       }
     }
     return obj;
@@ -92,34 +104,65 @@
    */
   exports.prototype['name'] = undefined;
   /**
+   * @member {String} description
+   */
+  exports.prototype['description'] = undefined;
+  /**
    * @member {Date} createdOn
    */
   exports.prototype['createdOn'] = undefined;
   /**
    * @member {String} createdBy
+   * @default ''
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype['createdBy'] = '';
   /**
-   * @member {module:model/InlineResponse200.TypeEnum} type
+   * @member {Date} modifiedOn
    */
-  exports.prototype['type'] = undefined;
+  exports.prototype['modifiedOn'] = undefined;
   /**
-   * @member {String} value
+   * @member {String} modifiedBy
+   * @default ''
    */
-  exports.prototype['value'] = undefined;
+  exports.prototype['modifiedBy'] = '';
+  /**
+   * @member {Number} priority
+   */
+  exports.prototype['priority'] = undefined;
+  /**
+   * @member {module:model/InlineResponse200.ActionEnum} action
+   */
+  exports.prototype['action'] = undefined;
+  /**
+   * @member {Array.<String>} filter
+   */
+  exports.prototype['filter'] = undefined;
+  /**
+   * @member {Array.<String>} external
+   */
+  exports.prototype['external'] = undefined;
+  /**
+   * @member {Array.<String>} internal
+   */
+  exports.prototype['internal'] = undefined;
 
 
   /**
-   * Allowed values for the <code>type</code> property.
+   * Allowed values for the <code>action</code> property.
    * @enum {String}
    * @readonly
    */
-  exports.TypeEnum = {
+  exports.ActionEnum = {
     /**
-     * value: "ssh"
+     * value: "allow"
      * @const
      */
-    "ssh": "ssh"  };
+    "allow": "allow",
+    /**
+     * value: "deny"
+     * @const
+     */
+    "deny": "deny"  };
 
 
   return exports;

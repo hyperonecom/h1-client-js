@@ -1,13 +1,14 @@
 # HyperOneApi.ProjectAccessRights
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **role** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
 
 
-<a name="RoleEnum"></a>
+
 ## Enum: RoleEnum
 
 

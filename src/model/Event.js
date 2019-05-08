@@ -101,8 +101,9 @@
   exports.prototype['queued'] = undefined;
   /**
    * @member {module:model/Event.StateEnum} state
+   * @default 'pending'
    */
-  exports.prototype['state'] = undefined;
+  exports.prototype['state'] = 'pending';
   /**
    * @member {String} stage
    */

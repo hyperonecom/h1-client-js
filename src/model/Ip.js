@@ -106,6 +106,9 @@
       if (data.hasOwnProperty('address')) {
         obj['address'] = ApiClient.convertToType(data['address'], 'String');
       }
+      if (data.hasOwnProperty('fqdn')) {
+        obj['fqdn'] = ApiClient.convertToType(data['fqdn'], 'String');
+      }
       if (data.hasOwnProperty('network')) {
         obj['network'] = ApiClient.convertToType(data['network'], 'String');
       }
@@ -144,12 +147,14 @@
   exports.prototype['modifiedOn'] = undefined;
   /**
    * @member {String} modifiedBy
+   * @default ''
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype['modifiedBy'] = '';
   /**
    * @member {String} createdBy
+   * @default ''
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype['createdBy'] = '';
   /**
    * @member {Date} createdOn
    */
@@ -186,6 +191,10 @@
    * @member {String} address
    */
   exports.prototype['address'] = undefined;
+  /**
+   * @member {String} fqdn
+   */
+  exports.prototype['fqdn'] = undefined;
   /**
    * @member {String} network
    */

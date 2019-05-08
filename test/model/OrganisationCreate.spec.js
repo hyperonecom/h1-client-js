@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
+    define(['expect.js', process.cwd()+'/src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.HyperOneApi);
@@ -58,6 +58,12 @@
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
+      //var instance = new HyperOneApi.OrganisationCreate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property service (base name: "service")', function() {
+      // uncomment below and update the code to test the property service
       //var instance = new HyperOneApi.OrganisationCreate();
       //expect(instance).to.be();
     });

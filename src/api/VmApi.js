@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Hdd', 'model/Netadp', 'model/Vm', 'model/VmActionFlavour', 'model/VmActionImage', 'model/VmActionPasswordReset', 'model/VmActionRename', 'model/VmCreate', 'model/VmDelete', 'model/VmPostAccessrights', 'model/VmPostHdd', 'model/VmPostNetadp', 'model/VmServices', 'model/VmUpdate'], factory);
+    define(['ApiClient', 'model/Event', 'model/Hdd', 'model/InlineResponse400', 'model/Netadp', 'model/Vm', 'model/VmActionFlavour', 'model/VmActionImage', 'model/VmActionPasswordReset', 'model/VmActionRename', 'model/VmCreate', 'model/VmDelete', 'model/VmPostAccessrights', 'model/VmPostHdd', 'model/VmPostNetadp', 'model/VmServices', 'model/VmUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Hdd'), require('../model/Netadp'), require('../model/Vm'), require('../model/VmActionFlavour'), require('../model/VmActionImage'), require('../model/VmActionPasswordReset'), require('../model/VmActionRename'), require('../model/VmCreate'), require('../model/VmDelete'), require('../model/VmPostAccessrights'), require('../model/VmPostHdd'), require('../model/VmPostNetadp'), require('../model/VmServices'), require('../model/VmUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Hdd'), require('../model/InlineResponse400'), require('../model/Netadp'), require('../model/Vm'), require('../model/VmActionFlavour'), require('../model/VmActionImage'), require('../model/VmActionPasswordReset'), require('../model/VmActionRename'), require('../model/VmCreate'), require('../model/VmDelete'), require('../model/VmPostAccessrights'), require('../model/VmPostHdd'), require('../model/VmPostNetadp'), require('../model/VmServices'), require('../model/VmUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.VmApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Hdd, root.HyperOneApi.Netadp, root.HyperOneApi.Vm, root.HyperOneApi.VmActionFlavour, root.HyperOneApi.VmActionImage, root.HyperOneApi.VmActionPasswordReset, root.HyperOneApi.VmActionRename, root.HyperOneApi.VmCreate, root.HyperOneApi.VmDelete, root.HyperOneApi.VmPostAccessrights, root.HyperOneApi.VmPostHdd, root.HyperOneApi.VmPostNetadp, root.HyperOneApi.VmServices, root.HyperOneApi.VmUpdate);
+    root.HyperOneApi.VmApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Hdd, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Netadp, root.HyperOneApi.Vm, root.HyperOneApi.VmActionFlavour, root.HyperOneApi.VmActionImage, root.HyperOneApi.VmActionPasswordReset, root.HyperOneApi.VmActionRename, root.HyperOneApi.VmCreate, root.HyperOneApi.VmDelete, root.HyperOneApi.VmPostAccessrights, root.HyperOneApi.VmPostHdd, root.HyperOneApi.VmPostNetadp, root.HyperOneApi.VmServices, root.HyperOneApi.VmUpdate);
   }
-}(this, function(ApiClient, Event, Hdd, Netadp, Vm, VmActionFlavour, VmActionImage, VmActionPasswordReset, VmActionRename, VmCreate, VmDelete, VmPostAccessrights, VmPostHdd, VmPostNetadp, VmServices, VmUpdate) {
+}(this, function(ApiClient, Event, Hdd, InlineResponse400, Netadp, Vm, VmActionFlavour, VmActionImage, VmActionPasswordReset, VmActionRename, VmCreate, VmDelete, VmPostAccessrights, VmPostHdd, VmPostNetadp, VmServices, VmUpdate) {
   'use strict';
 
   /**
@@ -57,17 +57,14 @@
      */
     this.vmActionFlavourWithHttpInfo = function(vmId, vmActionFlavour) {
       var postBody = vmActionFlavour;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmActionFlavour");
       }
-
       // verify the required parameter 'vmActionFlavour' is set
       if (vmActionFlavour === undefined || vmActionFlavour === null) {
         throw new Error("Missing the required parameter 'vmActionFlavour' when calling vmActionFlavour");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -116,17 +113,14 @@
      */
     this.vmActionImageWithHttpInfo = function(vmId, vmActionImage) {
       var postBody = vmActionImage;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmActionImage");
       }
-
       // verify the required parameter 'vmActionImage' is set
       if (vmActionImage === undefined || vmActionImage === null) {
         throw new Error("Missing the required parameter 'vmActionImage' when calling vmActionImage");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -175,17 +169,14 @@
      */
     this.vmActionPasswordResetWithHttpInfo = function(vmId, vmActionPasswordReset) {
       var postBody = vmActionPasswordReset;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmActionPasswordReset");
       }
-
       // verify the required parameter 'vmActionPasswordReset' is set
       if (vmActionPasswordReset === undefined || vmActionPasswordReset === null) {
         throw new Error("Missing the required parameter 'vmActionPasswordReset' when calling vmActionPasswordReset");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -234,17 +225,14 @@
      */
     this.vmActionRenameWithHttpInfo = function(vmId, vmActionRename) {
       var postBody = vmActionRename;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmActionRename");
       }
-
       // verify the required parameter 'vmActionRename' is set
       if (vmActionRename === undefined || vmActionRename === null) {
         throw new Error("Missing the required parameter 'vmActionRename' when calling vmActionRename");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -292,12 +280,10 @@
      */
     this.vmActionRestartWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmActionRestart");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -344,12 +330,10 @@
      */
     this.vmActionStartWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmActionStart");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -396,12 +380,10 @@
      */
     this.vmActionStopWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmActionStop");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -448,12 +430,10 @@
      */
     this.vmActionTurnoffWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmActionTurnoff");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -500,12 +480,10 @@
      */
     this.vmCreateWithHttpInfo = function(vmCreate) {
       var postBody = vmCreate;
-
       // verify the required parameter 'vmCreate' is set
       if (vmCreate === undefined || vmCreate === null) {
         throw new Error("Missing the required parameter 'vmCreate' when calling vmCreate");
       }
-
 
       var pathParams = {
       };
@@ -551,17 +529,14 @@
      */
     this.vmDeleteWithHttpInfo = function(vmId, vmDelete) {
       var postBody = vmDelete;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmDelete");
       }
-
       // verify the required parameter 'vmDelete' is set
       if (vmDelete === undefined || vmDelete === null) {
         throw new Error("Missing the required parameter 'vmDelete' when calling vmDelete");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -577,7 +552,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/vm/{vmId}', 'DELETE',
@@ -608,17 +583,14 @@
      */
     this.vmDeleteAccessrightsIdentityWithHttpInfo = function(vmId, identity) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling vmDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'vmId': vmId,
@@ -666,17 +638,14 @@
      */
     this.vmDeleteHddDiskIdWithHttpInfo = function(vmId, diskId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmDeleteHddDiskId");
       }
-
       // verify the required parameter 'diskId' is set
       if (diskId === undefined || diskId === null) {
         throw new Error("Missing the required parameter 'diskId' when calling vmDeleteHddDiskId");
       }
-
 
       var pathParams = {
         'vmId': vmId,
@@ -724,17 +693,14 @@
      */
     this.vmDeleteNetadpNetadpIdWithHttpInfo = function(vmId, netadpId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmDeleteNetadpNetadpId");
       }
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling vmDeleteNetadpNetadpId");
       }
-
 
       var pathParams = {
         'vmId': vmId,
@@ -782,17 +748,14 @@
      */
     this.vmDeleteTagKeyWithHttpInfo = function(vmId, key) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling vmDeleteTagKey");
       }
-
 
       var pathParams = {
         'vmId': vmId,
@@ -840,17 +803,14 @@
      */
     this.vmGetServicesServiceIdWithHttpInfo = function(vmId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling vmGetServicesServiceId");
       }
-
 
       var pathParams = {
         'vmId': vmId,
@@ -897,12 +857,10 @@
      */
     this.vmGetTagWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmGetTag");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -952,7 +910,6 @@
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
@@ -1000,12 +957,10 @@
      */
     this.vmListAccessrightsWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmListAccessrights");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -1050,12 +1005,10 @@
      */
     this.vmListHddWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmListHdd");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -1100,12 +1053,10 @@
      */
     this.vmListNetadpWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmListNetadp");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -1150,12 +1101,10 @@
      */
     this.vmListQueueWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmListQueue");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -1200,12 +1149,10 @@
      */
     this.vmListServicesWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmListServices");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -1251,17 +1198,14 @@
      */
     this.vmPatchTagWithHttpInfo = function(vmId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling vmPatchTag");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -1308,17 +1252,14 @@
      */
     this.vmPostAccessrightsWithHttpInfo = function(vmId, vmPostAccessrights) {
       var postBody = vmPostAccessrights;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmPostAccessrights");
       }
-
       // verify the required parameter 'vmPostAccessrights' is set
       if (vmPostAccessrights === undefined || vmPostAccessrights === null) {
         throw new Error("Missing the required parameter 'vmPostAccessrights' when calling vmPostAccessrights");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -1365,17 +1306,14 @@
      */
     this.vmPostHddWithHttpInfo = function(vmId, vmPostHdd) {
       var postBody = vmPostHdd;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmPostHdd");
       }
-
       // verify the required parameter 'vmPostHdd' is set
       if (vmPostHdd === undefined || vmPostHdd === null) {
         throw new Error("Missing the required parameter 'vmPostHdd' when calling vmPostHdd");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -1422,17 +1360,14 @@
      */
     this.vmPostNetadpWithHttpInfo = function(vmId, vmPostNetadp) {
       var postBody = vmPostNetadp;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmPostNetadp");
       }
-
       // verify the required parameter 'vmPostNetadp' is set
       if (vmPostNetadp === undefined || vmPostNetadp === null) {
         throw new Error("Missing the required parameter 'vmPostNetadp' when calling vmPostNetadp");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -1479,12 +1414,10 @@
      */
     this.vmShowWithHttpInfo = function(vmId) {
       var postBody = null;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmShow");
       }
-
 
       var pathParams = {
         'vmId': vmId
@@ -1532,17 +1465,14 @@
      */
     this.vmUpdateWithHttpInfo = function(vmId, vmUpdate) {
       var postBody = vmUpdate;
-
       // verify the required parameter 'vmId' is set
       if (vmId === undefined || vmId === null) {
         throw new Error("Missing the required parameter 'vmId' when calling vmUpdate");
       }
-
       // verify the required parameter 'vmUpdate' is set
       if (vmUpdate === undefined || vmUpdate === null) {
         throw new Error("Missing the required parameter 'vmUpdate' when calling vmUpdate");
       }
-
 
       var pathParams = {
         'vmId': vmId

@@ -1,9 +1,10 @@
 # HyperOneApi.ProjectLimitDisk
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **Number** |  | 
-**size** | **Number** |  | 
+**count** | **Number** |  | [default to 3]
+**size** | **Number** |  | [default to 2048]
 
 

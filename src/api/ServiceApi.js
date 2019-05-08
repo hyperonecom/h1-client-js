@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Service'], factory);
+    define(['ApiClient', 'model/InlineResponse400', 'model/Service'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Service'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse400'), require('../model/Service'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ServiceApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Service);
+    root.HyperOneApi.ServiceApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Service);
   }
-}(this, function(ApiClient, Service) {
+}(this, function(ApiClient, InlineResponse400, Service) {
   'use strict';
 
   /**
@@ -60,7 +60,6 @@
     this.serviceListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
-
 
       var pathParams = {
       };
@@ -112,12 +111,10 @@
      */
     this.serviceShowWithHttpInfo = function(serviceId) {
       var postBody = null;
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling serviceShow");
       }
-
 
       var pathParams = {
         'serviceId': serviceId

@@ -118,6 +118,9 @@
       if (data.hasOwnProperty('data')) {
         obj['data'] = VmData.constructFromObject(data['data']);
       }
+      if (data.hasOwnProperty('fqdn')) {
+        obj['fqdn'] = ApiClient.convertToType(data['fqdn'], 'String');
+      }
     }
     return obj;
   }
@@ -144,12 +147,14 @@
   exports.prototype['modifiedOn'] = undefined;
   /**
    * @member {String} modifiedBy
+   * @default ''
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype['modifiedBy'] = '';
   /**
    * @member {String} createdBy
+   * @default ''
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype['createdBy'] = '';
   /**
    * @member {Date} createdOn
    */
@@ -202,6 +207,10 @@
    * @member {module:model/VmData} data
    */
   exports.prototype['data'] = undefined;
+  /**
+   * @member {String} fqdn
+   */
+  exports.prototype['fqdn'] = undefined;
 
 
   /**

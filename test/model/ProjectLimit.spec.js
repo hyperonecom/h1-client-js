@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
+    define(['expect.js', process.cwd()+'/src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.HyperOneApi);
@@ -130,6 +130,30 @@
 
     it('should have the property reservation (base name: "reservation")', function() {
       // uncomment below and update the code to test the property reservation
+      //var instance = new HyperOneApi.ProjectLimit();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property container (base name: "container")', function() {
+      // uncomment below and update the code to test the property container
+      //var instance = new HyperOneApi.ProjectLimit();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property volume (base name: "volume")', function() {
+      // uncomment below and update the code to test the property volume
+      //var instance = new HyperOneApi.ProjectLimit();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property agent (base name: "agent")', function() {
+      // uncomment below and update the code to test the property agent
+      //var instance = new HyperOneApi.ProjectLimit();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property website (base name: "website")', function() {
+      // uncomment below and update the code to test the property website
       //var instance = new HyperOneApi.ProjectLimit();
       //expect(instance).to.be();
     });

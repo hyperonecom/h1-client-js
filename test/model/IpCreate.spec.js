@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
+    define(['expect.js', process.cwd()+'/src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.HyperOneApi);
@@ -56,8 +56,20 @@
       //expect(instance).to.be.a(HyperOneApi.IpCreate);
     });
 
-    it('should have the property service (base name: "service")', function() {
-      // uncomment below and update the code to test the property service
+    it('should have the property network (base name: "network")', function() {
+      // uncomment below and update the code to test the property network
+      //var instance = new HyperOneApi.IpCreate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property ptrRecord (base name: "ptrRecord")', function() {
+      // uncomment below and update the code to test the property ptrRecord
+      //var instance = new HyperOneApi.IpCreate();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property address (base name: "address")', function() {
+      // uncomment below and update the code to test the property address
       //var instance = new HyperOneApi.IpCreate();
       //expect(instance).to.be();
     });

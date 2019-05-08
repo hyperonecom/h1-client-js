@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Reservation', 'model/ReservationActionAssign', 'model/ReservationCreate', 'model/ReservationPostAccessrights', 'model/ReservationServices', 'model/ReservationUpdate'], factory);
+    define(['ApiClient', 'model/Event', 'model/InlineResponse400', 'model/Reservation', 'model/ReservationActionAssign', 'model/ReservationCreate', 'model/ReservationPostAccessrights', 'model/ReservationServices', 'model/ReservationUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Reservation'), require('../model/ReservationActionAssign'), require('../model/ReservationCreate'), require('../model/ReservationPostAccessrights'), require('../model/ReservationServices'), require('../model/ReservationUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/Reservation'), require('../model/ReservationActionAssign'), require('../model/ReservationCreate'), require('../model/ReservationPostAccessrights'), require('../model/ReservationServices'), require('../model/ReservationUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ReservationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Reservation, root.HyperOneApi.ReservationActionAssign, root.HyperOneApi.ReservationCreate, root.HyperOneApi.ReservationPostAccessrights, root.HyperOneApi.ReservationServices, root.HyperOneApi.ReservationUpdate);
+    root.HyperOneApi.ReservationApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Reservation, root.HyperOneApi.ReservationActionAssign, root.HyperOneApi.ReservationCreate, root.HyperOneApi.ReservationPostAccessrights, root.HyperOneApi.ReservationServices, root.HyperOneApi.ReservationUpdate);
   }
-}(this, function(ApiClient, Event, Reservation, ReservationActionAssign, ReservationCreate, ReservationPostAccessrights, ReservationServices, ReservationUpdate) {
+}(this, function(ApiClient, Event, InlineResponse400, Reservation, ReservationActionAssign, ReservationCreate, ReservationPostAccessrights, ReservationServices, ReservationUpdate) {
   'use strict';
 
   /**
@@ -57,17 +57,14 @@
      */
     this.reservationActionAssignWithHttpInfo = function(reservationId, reservationActionAssign) {
       var postBody = reservationActionAssign;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationActionAssign");
       }
-
       // verify the required parameter 'reservationActionAssign' is set
       if (reservationActionAssign === undefined || reservationActionAssign === null) {
         throw new Error("Missing the required parameter 'reservationActionAssign' when calling reservationActionAssign");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -115,12 +112,10 @@
      */
     this.reservationActionExtendWithHttpInfo = function(reservationId) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationActionExtend");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -167,12 +162,10 @@
      */
     this.reservationActionUnassignWithHttpInfo = function(reservationId) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationActionUnassign");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -219,12 +212,10 @@
      */
     this.reservationCreateWithHttpInfo = function(reservationCreate) {
       var postBody = reservationCreate;
-
       // verify the required parameter 'reservationCreate' is set
       if (reservationCreate === undefined || reservationCreate === null) {
         throw new Error("Missing the required parameter 'reservationCreate' when calling reservationCreate");
       }
-
 
       var pathParams = {
       };
@@ -269,12 +260,10 @@
      */
     this.reservationDeleteWithHttpInfo = function(reservationId) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationDelete");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -290,7 +279,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/reservation/{reservationId}', 'DELETE',
@@ -320,17 +309,14 @@
      */
     this.reservationDeleteAccessrightsIdentityWithHttpInfo = function(reservationId, identity) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling reservationDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'reservationId': reservationId,
@@ -378,17 +364,14 @@
      */
     this.reservationDeleteTagKeyWithHttpInfo = function(reservationId, key) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling reservationDeleteTagKey");
       }
-
 
       var pathParams = {
         'reservationId': reservationId,
@@ -436,17 +419,14 @@
      */
     this.reservationGetServicesServiceIdWithHttpInfo = function(reservationId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling reservationGetServicesServiceId");
       }
-
 
       var pathParams = {
         'reservationId': reservationId,
@@ -493,12 +473,10 @@
      */
     this.reservationGetTagWithHttpInfo = function(reservationId) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationGetTag");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -541,17 +519,18 @@
      * List reservation
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Reservation>} and HTTP response
      */
     this.reservationListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -576,6 +555,7 @@
      * List reservation
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Reservation>}
      */
     this.reservationList = function(opts) {
@@ -593,12 +573,10 @@
      */
     this.reservationListAccessrightsWithHttpInfo = function(reservationId) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationListAccessrights");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -643,12 +621,10 @@
      */
     this.reservationListQueueWithHttpInfo = function(reservationId) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationListQueue");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -693,12 +669,10 @@
      */
     this.reservationListServicesWithHttpInfo = function(reservationId) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationListServices");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -744,17 +718,14 @@
      */
     this.reservationPatchTagWithHttpInfo = function(reservationId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling reservationPatchTag");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -801,17 +772,14 @@
      */
     this.reservationPostAccessrightsWithHttpInfo = function(reservationId, reservationPostAccessrights) {
       var postBody = reservationPostAccessrights;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationPostAccessrights");
       }
-
       // verify the required parameter 'reservationPostAccessrights' is set
       if (reservationPostAccessrights === undefined || reservationPostAccessrights === null) {
         throw new Error("Missing the required parameter 'reservationPostAccessrights' when calling reservationPostAccessrights");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -858,12 +826,10 @@
      */
     this.reservationShowWithHttpInfo = function(reservationId) {
       var postBody = null;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationShow");
       }
-
 
       var pathParams = {
         'reservationId': reservationId
@@ -911,17 +877,14 @@
      */
     this.reservationUpdateWithHttpInfo = function(reservationId, reservationUpdate) {
       var postBody = reservationUpdate;
-
       // verify the required parameter 'reservationId' is set
       if (reservationId === undefined || reservationId === null) {
         throw new Error("Missing the required parameter 'reservationId' when calling reservationUpdate");
       }
-
       // verify the required parameter 'reservationUpdate' is set
       if (reservationUpdate === undefined || reservationUpdate === null) {
         throw new Error("Missing the required parameter 'reservationUpdate' when calling reservationUpdate");
       }
-
 
       var pathParams = {
         'reservationId': reservationId

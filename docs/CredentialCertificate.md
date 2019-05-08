@@ -1,6 +1,7 @@
 # HyperOneApi.CredentialCertificate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdBy** | **String** |  | [optional] 

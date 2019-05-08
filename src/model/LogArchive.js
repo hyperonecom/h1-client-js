@@ -109,6 +109,9 @@
       if (data.hasOwnProperty('retention')) {
         obj['retention'] = ApiClient.convertToType(data['retention'], 'Number');
       }
+      if (data.hasOwnProperty('fqdn')) {
+        obj['fqdn'] = ApiClient.convertToType(data['fqdn'], 'String');
+      }
     }
     return obj;
   }
@@ -135,12 +138,14 @@
   exports.prototype['modifiedOn'] = undefined;
   /**
    * @member {String} modifiedBy
+   * @default ''
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype['modifiedBy'] = '';
   /**
    * @member {String} createdBy
+   * @default ''
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype['createdBy'] = '';
   /**
    * @member {Date} createdOn
    */
@@ -179,8 +184,13 @@
   exports.prototype['sizeUsed'] = undefined;
   /**
    * @member {Number} retention
+   * @default 30
    */
-  exports.prototype['retention'] = undefined;
+  exports.prototype['retention'] = 30;
+  /**
+   * @member {String} fqdn
+   */
+  exports.prototype['fqdn'] = undefined;
 
 
   /**

@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Container', 'model/ContainerCreate', 'model/ContainerPostAccessrights', 'model/ContainerServices', 'model/ContainerUpdate', 'model/Event'], factory);
+    define(['ApiClient', 'model/Container', 'model/ContainerCreate', 'model/ContainerPostAccessrights', 'model/ContainerProcess', 'model/ContainerServices', 'model/ContainerUpdate', 'model/Event', 'model/InlineResponse400'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Container'), require('../model/ContainerCreate'), require('../model/ContainerPostAccessrights'), require('../model/ContainerServices'), require('../model/ContainerUpdate'), require('../model/Event'));
+    module.exports = factory(require('../ApiClient'), require('../model/Container'), require('../model/ContainerCreate'), require('../model/ContainerPostAccessrights'), require('../model/ContainerProcess'), require('../model/ContainerServices'), require('../model/ContainerUpdate'), require('../model/Event'), require('../model/InlineResponse400'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ContainerApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Container, root.HyperOneApi.ContainerCreate, root.HyperOneApi.ContainerPostAccessrights, root.HyperOneApi.ContainerServices, root.HyperOneApi.ContainerUpdate, root.HyperOneApi.Event);
+    root.HyperOneApi.ContainerApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Container, root.HyperOneApi.ContainerCreate, root.HyperOneApi.ContainerPostAccessrights, root.HyperOneApi.ContainerProcess, root.HyperOneApi.ContainerServices, root.HyperOneApi.ContainerUpdate, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400);
   }
-}(this, function(ApiClient, Container, ContainerCreate, ContainerPostAccessrights, ContainerServices, ContainerUpdate, Event) {
+}(this, function(ApiClient, Container, ContainerCreate, ContainerPostAccessrights, ContainerProcess, ContainerServices, ContainerUpdate, Event, InlineResponse400) {
   'use strict';
 
   /**
@@ -56,12 +56,10 @@
      */
     this.containerActionRestartWithHttpInfo = function(containerId) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerActionRestart");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -108,12 +106,10 @@
      */
     this.containerActionStartWithHttpInfo = function(containerId) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerActionStart");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -160,12 +156,10 @@
      */
     this.containerActionStopWithHttpInfo = function(containerId) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerActionStop");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -212,12 +206,10 @@
      */
     this.containerCreateWithHttpInfo = function(containerCreate) {
       var postBody = containerCreate;
-
       // verify the required parameter 'containerCreate' is set
       if (containerCreate === undefined || containerCreate === null) {
         throw new Error("Missing the required parameter 'containerCreate' when calling containerCreate");
       }
-
 
       var pathParams = {
       };
@@ -262,12 +254,10 @@
      */
     this.containerDeleteWithHttpInfo = function(containerId) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerDelete");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -283,7 +273,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/container/{containerId}', 'DELETE',
@@ -313,17 +303,14 @@
      */
     this.containerDeleteAccessrightsIdentityWithHttpInfo = function(containerId, identity) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling containerDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'containerId': containerId,
@@ -371,17 +358,14 @@
      */
     this.containerDeleteTagKeyWithHttpInfo = function(containerId, key) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling containerDeleteTagKey");
       }
-
 
       var pathParams = {
         'containerId': containerId,
@@ -429,17 +413,14 @@
      */
     this.containerGetServicesServiceIdWithHttpInfo = function(containerId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling containerGetServicesServiceId");
       }
-
 
       var pathParams = {
         'containerId': containerId,
@@ -486,12 +467,10 @@
      */
     this.containerGetTagWithHttpInfo = function(containerId) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerGetTag");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -534,17 +513,18 @@
      * List container
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Container>} and HTTP response
      */
     this.containerListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -569,6 +549,7 @@
      * List container
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Container>}
      */
     this.containerList = function(opts) {
@@ -586,12 +567,10 @@
      */
     this.containerListAccessrightsWithHttpInfo = function(containerId) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerListAccessrights");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -630,18 +609,64 @@
 
 
     /**
+     * /process
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ContainerProcess>} and HTTP response
+     */
+    this.containerListProcessWithHttpInfo = function(containerId) {
+      var postBody = null;
+      // verify the required parameter 'containerId' is set
+      if (containerId === undefined || containerId === null) {
+        throw new Error("Missing the required parameter 'containerId' when calling containerListProcess");
+      }
+
+      var pathParams = {
+        'containerId': containerId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ContainerProcess];
+      return this.apiClient.callApi(
+        '/container/{containerId}/process', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /process
+     * @param {String} containerId ID of container
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ContainerProcess>}
+     */
+    this.containerListProcess = function(containerId) {
+      return this.containerListProcessWithHttpInfo(containerId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * /queue
      * @param {String} containerId ID of container
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Event>} and HTTP response
      */
     this.containerListQueueWithHttpInfo = function(containerId) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerListQueue");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -686,12 +711,10 @@
      */
     this.containerListServicesWithHttpInfo = function(containerId) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerListServices");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -737,17 +760,14 @@
      */
     this.containerPatchTagWithHttpInfo = function(containerId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling containerPatchTag");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -794,17 +814,14 @@
      */
     this.containerPostAccessrightsWithHttpInfo = function(containerId, containerPostAccessrights) {
       var postBody = containerPostAccessrights;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerPostAccessrights");
       }
-
       // verify the required parameter 'containerPostAccessrights' is set
       if (containerPostAccessrights === undefined || containerPostAccessrights === null) {
         throw new Error("Missing the required parameter 'containerPostAccessrights' when calling containerPostAccessrights");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -851,12 +868,10 @@
      */
     this.containerShowWithHttpInfo = function(containerId) {
       var postBody = null;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerShow");
       }
-
 
       var pathParams = {
         'containerId': containerId
@@ -904,17 +919,14 @@
      */
     this.containerUpdateWithHttpInfo = function(containerId, containerUpdate) {
       var postBody = containerUpdate;
-
       // verify the required parameter 'containerId' is set
       if (containerId === undefined || containerId === null) {
         throw new Error("Missing the required parameter 'containerId' when calling containerUpdate");
       }
-
       // verify the required parameter 'containerUpdate' is set
       if (containerUpdate === undefined || containerUpdate === null) {
         throw new Error("Missing the required parameter 'containerUpdate' when calling containerUpdate");
       }
-
 
       var pathParams = {
         'containerId': containerId

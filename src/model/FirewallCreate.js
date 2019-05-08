@@ -42,10 +42,12 @@
    * Constructs a new <code>FirewallCreate</code>.
    * @alias module:model/FirewallCreate
    * @class
+   * @param name {String} 
    */
-  var exports = function() {
+  var exports = function(name) {
     var _this = this;
 
+    _this['name'] = name;
   };
 
   /**

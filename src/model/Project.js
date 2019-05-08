@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Payment', 'model/ProjectAccessRights', 'model/ProjectBilling', 'model/ProjectCompliance', 'model/ProjectInvoices', 'model/ProjectLimit', 'model/ProjectNetworkAcl', 'model/ProjectRoles', 'model/ProjectServices', 'model/ProjectThreshold', 'model/ProjectTransfer'], factory);
+    define(['ApiClient', 'model/Event', 'model/Payment', 'model/ProjectAccessRights', 'model/ProjectBilling', 'model/ProjectCompliance', 'model/ProjectInvoices', 'model/ProjectLimit', 'model/ProjectRoles', 'model/ProjectServices', 'model/ProjectThreshold', 'model/ProjectTransfer', 'model/UserNetworkAcl'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Event'), require('./Payment'), require('./ProjectAccessRights'), require('./ProjectBilling'), require('./ProjectCompliance'), require('./ProjectInvoices'), require('./ProjectLimit'), require('./ProjectNetworkAcl'), require('./ProjectRoles'), require('./ProjectServices'), require('./ProjectThreshold'), require('./ProjectTransfer'));
+    module.exports = factory(require('../ApiClient'), require('./Event'), require('./Payment'), require('./ProjectAccessRights'), require('./ProjectBilling'), require('./ProjectCompliance'), require('./ProjectInvoices'), require('./ProjectLimit'), require('./ProjectRoles'), require('./ProjectServices'), require('./ProjectThreshold'), require('./ProjectTransfer'), require('./UserNetworkAcl'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.Project = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Payment, root.HyperOneApi.ProjectAccessRights, root.HyperOneApi.ProjectBilling, root.HyperOneApi.ProjectCompliance, root.HyperOneApi.ProjectInvoices, root.HyperOneApi.ProjectLimit, root.HyperOneApi.ProjectNetworkAcl, root.HyperOneApi.ProjectRoles, root.HyperOneApi.ProjectServices, root.HyperOneApi.ProjectThreshold, root.HyperOneApi.ProjectTransfer);
+    root.HyperOneApi.Project = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Payment, root.HyperOneApi.ProjectAccessRights, root.HyperOneApi.ProjectBilling, root.HyperOneApi.ProjectCompliance, root.HyperOneApi.ProjectInvoices, root.HyperOneApi.ProjectLimit, root.HyperOneApi.ProjectRoles, root.HyperOneApi.ProjectServices, root.HyperOneApi.ProjectThreshold, root.HyperOneApi.ProjectTransfer, root.HyperOneApi.UserNetworkAcl);
   }
-}(this, function(ApiClient, Event, Payment, ProjectAccessRights, ProjectBilling, ProjectCompliance, ProjectInvoices, ProjectLimit, ProjectNetworkAcl, ProjectRoles, ProjectServices, ProjectThreshold, ProjectTransfer) {
+}(this, function(ApiClient, Event, Payment, ProjectAccessRights, ProjectBilling, ProjectCompliance, ProjectInvoices, ProjectLimit, ProjectRoles, ProjectServices, ProjectThreshold, ProjectTransfer, UserNetworkAcl) {
   'use strict';
 
 
@@ -134,7 +134,7 @@
         obj['roles'] = ApiClient.convertToType(data['roles'], [ProjectRoles]);
       }
       if (data.hasOwnProperty('networkAcl')) {
-        obj['networkAcl'] = ApiClient.convertToType(data['networkAcl'], [ProjectNetworkAcl]);
+        obj['networkAcl'] = ApiClient.convertToType(data['networkAcl'], [UserNetworkAcl]);
       }
       if (data.hasOwnProperty('compliance')) {
         obj['compliance'] = ProjectCompliance.constructFromObject(data['compliance']);
@@ -168,12 +168,14 @@
   exports.prototype['modifiedOn'] = undefined;
   /**
    * @member {String} modifiedBy
+   * @default ''
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype['modifiedBy'] = '';
   /**
    * @member {String} createdBy
+   * @default ''
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype['createdBy'] = '';
   /**
    * @member {Date} createdOn
    */
@@ -232,8 +234,9 @@
   exports.prototype['verified'] = undefined;
   /**
    * @member {Boolean} active
+   * @default true
    */
-  exports.prototype['active'] = undefined;
+  exports.prototype['active'] = true;
   /**
    * @member {module:model/ProjectLimit} limit
    */
@@ -247,7 +250,7 @@
    */
   exports.prototype['roles'] = undefined;
   /**
-   * @member {Array.<module:model/ProjectNetworkAcl>} networkAcl
+   * @member {Array.<module:model/UserNetworkAcl>} networkAcl
    */
   exports.prototype['networkAcl'] = undefined;
   /**

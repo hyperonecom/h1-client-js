@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ContainerExpose', 'model/ContainerVolumes', 'model/Event', 'model/ProjectServices'], factory);
+    define(['ApiClient', 'model/ContainerExpose', 'model/ContainerProcess', 'model/ContainerVolumes', 'model/Event', 'model/ProjectServices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ContainerExpose'), require('./ContainerVolumes'), require('./Event'), require('./ProjectServices'));
+    module.exports = factory(require('../ApiClient'), require('./ContainerExpose'), require('./ContainerProcess'), require('./ContainerVolumes'), require('./Event'), require('./ProjectServices'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.Container = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.ContainerExpose, root.HyperOneApi.ContainerVolumes, root.HyperOneApi.Event, root.HyperOneApi.ProjectServices);
+    root.HyperOneApi.Container = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.ContainerExpose, root.HyperOneApi.ContainerProcess, root.HyperOneApi.ContainerVolumes, root.HyperOneApi.Event, root.HyperOneApi.ProjectServices);
   }
-}(this, function(ApiClient, ContainerExpose, ContainerVolumes, Event, ProjectServices) {
+}(this, function(ApiClient, ContainerExpose, ContainerProcess, ContainerVolumes, Event, ProjectServices) {
   'use strict';
 
 
@@ -118,6 +118,12 @@
       if (data.hasOwnProperty('env')) {
         obj['env'] = ApiClient.convertToType(data['env'], ['String']);
       }
+      if (data.hasOwnProperty('fqdn')) {
+        obj['fqdn'] = ApiClient.convertToType(data['fqdn'], 'String');
+      }
+      if (data.hasOwnProperty('process')) {
+        obj['process'] = ContainerProcess.constructFromObject(data['process']);
+      }
     }
     return obj;
   }
@@ -144,12 +150,14 @@
   exports.prototype['modifiedOn'] = undefined;
   /**
    * @member {String} modifiedBy
+   * @default ''
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype['modifiedBy'] = '';
   /**
    * @member {String} createdBy
+   * @default ''
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype['createdBy'] = '';
   /**
    * @member {Date} createdOn
    */
@@ -202,6 +210,14 @@
    * @member {Array.<String>} env
    */
   exports.prototype['env'] = undefined;
+  /**
+   * @member {String} fqdn
+   */
+  exports.prototype['fqdn'] = undefined;
+  /**
+   * @member {module:model/ContainerProcess} process
+   */
+  exports.prototype['process'] = undefined;
 
 
   /**

@@ -81,8 +81,9 @@
   exports.prototype['target'] = undefined;
   /**
    * @member {String} sourcePath
+   * @default ''
    */
-  exports.prototype['sourcePath'] = undefined;
+  exports.prototype['sourcePath'] = '';
   /**
    * @member {String} source
    */

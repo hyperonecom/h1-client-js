@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
+    define(['expect.js', process.cwd()+'/src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.HyperOneApi);
@@ -148,6 +148,42 @@
 
     it('should have the property image (base name: "image")', function() {
       // uncomment below and update the code to test the property image
+      //var instance = new HyperOneApi.Container();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property command (base name: "command")', function() {
+      // uncomment below and update the code to test the property command
+      //var instance = new HyperOneApi.Container();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property volumes (base name: "volumes")', function() {
+      // uncomment below and update the code to test the property volumes
+      //var instance = new HyperOneApi.Container();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expose (base name: "expose")', function() {
+      // uncomment below and update the code to test the property expose
+      //var instance = new HyperOneApi.Container();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property env (base name: "env")', function() {
+      // uncomment below and update the code to test the property env
+      //var instance = new HyperOneApi.Container();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property fqdn (base name: "fqdn")', function() {
+      // uncomment below and update the code to test the property fqdn
+      //var instance = new HyperOneApi.Container();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property process (base name: "process")', function() {
+      // uncomment below and update the code to test the property process
       //var instance = new HyperOneApi.Container();
       //expect(instance).to.be();
     });

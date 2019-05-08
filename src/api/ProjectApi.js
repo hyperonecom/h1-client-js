@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccessrightsUserRole', 'model/Event', 'model/InlineResponse200', 'model/Project', 'model/ProjectCreate', 'model/ProjectPatchCredentialStorecertificateId', 'model/ProjectPostAccessrights', 'model/ProjectServices', 'model/ProjectUpdate'], factory);
+    define(['ApiClient', 'model/AccessrightsUserRole', 'model/CredentialCertificate', 'model/Event', 'model/InlineResponse400', 'model/Project', 'model/ProjectCreate', 'model/ProjectLimit', 'model/ProjectPatchCredentialStorecertificateId', 'model/ProjectPostAccessrights', 'model/ProjectPostCredentialStorecertificate', 'model/ProjectServices', 'model/ProjectUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AccessrightsUserRole'), require('../model/Event'), require('../model/InlineResponse200'), require('../model/Project'), require('../model/ProjectCreate'), require('../model/ProjectPatchCredentialStorecertificateId'), require('../model/ProjectPostAccessrights'), require('../model/ProjectServices'), require('../model/ProjectUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/AccessrightsUserRole'), require('../model/CredentialCertificate'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/Project'), require('../model/ProjectCreate'), require('../model/ProjectLimit'), require('../model/ProjectPatchCredentialStorecertificateId'), require('../model/ProjectPostAccessrights'), require('../model/ProjectPostCredentialStorecertificate'), require('../model/ProjectServices'), require('../model/ProjectUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ProjectApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.AccessrightsUserRole, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse200, root.HyperOneApi.Project, root.HyperOneApi.ProjectCreate, root.HyperOneApi.ProjectPatchCredentialStorecertificateId, root.HyperOneApi.ProjectPostAccessrights, root.HyperOneApi.ProjectServices, root.HyperOneApi.ProjectUpdate);
+    root.HyperOneApi.ProjectApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.AccessrightsUserRole, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Project, root.HyperOneApi.ProjectCreate, root.HyperOneApi.ProjectLimit, root.HyperOneApi.ProjectPatchCredentialStorecertificateId, root.HyperOneApi.ProjectPostAccessrights, root.HyperOneApi.ProjectPostCredentialStorecertificate, root.HyperOneApi.ProjectServices, root.HyperOneApi.ProjectUpdate);
   }
-}(this, function(ApiClient, AccessrightsUserRole, Event, InlineResponse200, Project, ProjectCreate, ProjectPatchCredentialStorecertificateId, ProjectPostAccessrights, ProjectServices, ProjectUpdate) {
+}(this, function(ApiClient, AccessrightsUserRole, CredentialCertificate, Event, InlineResponse400, Project, ProjectCreate, ProjectLimit, ProjectPatchCredentialStorecertificateId, ProjectPostAccessrights, ProjectPostCredentialStorecertificate, ProjectServices, ProjectUpdate) {
   'use strict';
 
   /**
@@ -56,12 +56,10 @@
      */
     this.projectCreateWithHttpInfo = function(projectCreate) {
       var postBody = projectCreate;
-
       // verify the required parameter 'projectCreate' is set
       if (projectCreate === undefined || projectCreate === null) {
         throw new Error("Missing the required parameter 'projectCreate' when calling projectCreate");
       }
-
 
       var pathParams = {
       };
@@ -106,12 +104,10 @@
      */
     this.projectDeleteWithHttpInfo = function(projectId) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectDelete");
       }
-
 
       var pathParams = {
         'projectId': projectId
@@ -127,7 +123,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/project/{projectId}', 'DELETE',
@@ -153,21 +149,18 @@
      * /accessrights/:id
      * @param {String} projectId ID of project
      * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.projectDeleteAccessrightsIdWithHttpInfo = function(projectId, id) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectDeleteAccessrightsId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling projectDeleteAccessrightsId");
       }
-
 
       var pathParams = {
         'projectId': projectId,
@@ -185,7 +178,7 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = Project;
+      var returnType = null;
       return this.apiClient.callApi(
         '/project/{projectId}/accessrights/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
@@ -197,7 +190,7 @@
      * /accessrights/:id
      * @param {String} projectId ID of project
      * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.projectDeleteAccessrightsId = function(projectId, id) {
       return this.projectDeleteAccessrightsIdWithHttpInfo(projectId, id)
@@ -211,21 +204,18 @@
      * /credentialStore/certificate/:id
      * @param {String} projectId ID of project
      * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
     this.projectDeleteCredentialStorecertificateIdWithHttpInfo = function(projectId, id) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectDeleteCredentialStorecertificateId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling projectDeleteCredentialStorecertificateId");
       }
-
 
       var pathParams = {
         'projectId': projectId,
@@ -243,7 +233,7 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
+      var returnType = CredentialCertificate;
       return this.apiClient.callApi(
         '/project/{projectId}/credentialStore/certificate/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
@@ -255,7 +245,7 @@
      * /credentialStore/certificate/:id
      * @param {String} projectId ID of project
      * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
     this.projectDeleteCredentialStorecertificateId = function(projectId, id) {
       return this.projectDeleteCredentialStorecertificateIdWithHttpInfo(projectId, id)
@@ -273,17 +263,14 @@
      */
     this.projectDeleteTagKeyWithHttpInfo = function(projectId, key) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling projectDeleteTagKey");
       }
-
 
       var pathParams = {
         'projectId': projectId,
@@ -327,21 +314,18 @@
      * /credentialStore/certificate/:id
      * @param {String} projectId ID of project
      * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
     this.projectGetCredentialStorecertificateIdWithHttpInfo = function(projectId, id) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectGetCredentialStorecertificateId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling projectGetCredentialStorecertificateId");
       }
-
 
       var pathParams = {
         'projectId': projectId,
@@ -359,7 +343,7 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
+      var returnType = CredentialCertificate;
       return this.apiClient.callApi(
         '/project/{projectId}/credentialStore/certificate/{id}', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
@@ -371,7 +355,7 @@
      * /credentialStore/certificate/:id
      * @param {String} projectId ID of project
      * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
     this.projectGetCredentialStorecertificateId = function(projectId, id) {
       return this.projectGetCredentialStorecertificateIdWithHttpInfo(projectId, id)
@@ -389,17 +373,14 @@
      */
     this.projectGetServicesServiceIdWithHttpInfo = function(projectId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling projectGetServicesServiceId");
       }
-
 
       var pathParams = {
         'projectId': projectId,
@@ -446,12 +427,10 @@
      */
     this.projectGetTagWithHttpInfo = function(projectId) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectGetTag");
       }
-
 
       var pathParams = {
         'projectId': projectId
@@ -497,12 +476,13 @@
      * @param {Number} opts.limit Filter by $limit
      * @param {Boolean} opts.active Filter by active
      * @param {String} opts.organisation Filter by organisation
+     * @param {String} opts.accessRightsId Filter by accessRights.id
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Project>} and HTTP response
      */
     this.projectListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
-
 
       var pathParams = {
       };
@@ -511,6 +491,8 @@
         '$limit': opts['limit'],
         'active': opts['active'],
         'organisation': opts['organisation'],
+        'accessRights.id': opts['accessRightsId'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -538,6 +520,8 @@
      * @param {Number} opts.limit Filter by $limit
      * @param {Boolean} opts.active Filter by active
      * @param {String} opts.organisation Filter by organisation
+     * @param {String} opts.accessRightsId Filter by accessRights.id
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Project>}
      */
     this.projectList = function(opts) {
@@ -555,12 +539,10 @@
      */
     this.projectListAccessrightsWithHttpInfo = function(projectId) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectListAccessrights");
       }
-
 
       var pathParams = {
         'projectId': projectId
@@ -601,16 +583,14 @@
     /**
      * /credentialStore/certificate
      * @param {String} projectId ID of project
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse200>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CredentialCertificate>} and HTTP response
      */
     this.projectListCredentialStorecertificateWithHttpInfo = function(projectId) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectListCredentialStorecertificate");
       }
-
 
       var pathParams = {
         'projectId': projectId
@@ -627,7 +607,7 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [InlineResponse200];
+      var returnType = [CredentialCertificate];
       return this.apiClient.callApi(
         '/project/{projectId}/credentialStore/certificate', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
@@ -638,10 +618,58 @@
     /**
      * /credentialStore/certificate
      * @param {String} projectId ID of project
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse200>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CredentialCertificate>}
      */
     this.projectListCredentialStorecertificate = function(projectId) {
       return this.projectListCredentialStorecertificateWithHttpInfo(projectId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /limit
+     * @param {String} projectId ID of project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ProjectLimit>} and HTTP response
+     */
+    this.projectListLimitWithHttpInfo = function(projectId) {
+      var postBody = null;
+      // verify the required parameter 'projectId' is set
+      if (projectId === undefined || projectId === null) {
+        throw new Error("Missing the required parameter 'projectId' when calling projectListLimit");
+      }
+
+      var pathParams = {
+        'projectId': projectId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [ProjectLimit];
+      return this.apiClient.callApi(
+        '/project/{projectId}/limit', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /limit
+     * @param {String} projectId ID of project
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ProjectLimit>}
+     */
+    this.projectListLimit = function(projectId) {
+      return this.projectListLimitWithHttpInfo(projectId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -655,12 +683,10 @@
      */
     this.projectListQueueWithHttpInfo = function(projectId) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectListQueue");
       }
-
 
       var pathParams = {
         'projectId': projectId
@@ -705,12 +731,10 @@
      */
     this.projectListServicesWithHttpInfo = function(projectId) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectListServices");
       }
-
 
       var pathParams = {
         'projectId': projectId
@@ -753,26 +777,22 @@
      * @param {String} projectId ID of project
      * @param {String} id id
      * @param {module:model/ProjectPatchCredentialStorecertificateId} projectPatchCredentialStorecertificateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
     this.projectPatchCredentialStorecertificateIdWithHttpInfo = function(projectId, id, projectPatchCredentialStorecertificateId) {
       var postBody = projectPatchCredentialStorecertificateId;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectPatchCredentialStorecertificateId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling projectPatchCredentialStorecertificateId");
       }
-
       // verify the required parameter 'projectPatchCredentialStorecertificateId' is set
       if (projectPatchCredentialStorecertificateId === undefined || projectPatchCredentialStorecertificateId === null) {
         throw new Error("Missing the required parameter 'projectPatchCredentialStorecertificateId' when calling projectPatchCredentialStorecertificateId");
       }
-
 
       var pathParams = {
         'projectId': projectId,
@@ -790,7 +810,7 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
+      var returnType = CredentialCertificate;
       return this.apiClient.callApi(
         '/project/{projectId}/credentialStore/certificate/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
@@ -803,7 +823,7 @@
      * @param {String} projectId ID of project
      * @param {String} id id
      * @param {module:model/ProjectPatchCredentialStorecertificateId} projectPatchCredentialStorecertificateId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
     this.projectPatchCredentialStorecertificateId = function(projectId, id, projectPatchCredentialStorecertificateId) {
       return this.projectPatchCredentialStorecertificateIdWithHttpInfo(projectId, id, projectPatchCredentialStorecertificateId)
@@ -821,17 +841,14 @@
      */
     this.projectPatchTagWithHttpInfo = function(projectId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling projectPatchTag");
       }
-
 
       var pathParams = {
         'projectId': projectId
@@ -874,21 +891,18 @@
      * /accessrights
      * @param {String} projectId ID of project
      * @param {module:model/ProjectPostAccessrights} projectPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Project} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.projectPostAccessrightsWithHttpInfo = function(projectId, projectPostAccessrights) {
       var postBody = projectPostAccessrights;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectPostAccessrights");
       }
-
       // verify the required parameter 'projectPostAccessrights' is set
       if (projectPostAccessrights === undefined || projectPostAccessrights === null) {
         throw new Error("Missing the required parameter 'projectPostAccessrights' when calling projectPostAccessrights");
       }
-
 
       var pathParams = {
         'projectId': projectId
@@ -905,7 +919,7 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = Project;
+      var returnType = null;
       return this.apiClient.callApi(
         '/project/{projectId}/accessrights', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
@@ -917,7 +931,7 @@
      * /accessrights
      * @param {String} projectId ID of project
      * @param {module:model/ProjectPostAccessrights} projectPostAccessrights 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Project}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.projectPostAccessrights = function(projectId, projectPostAccessrights) {
       return this.projectPostAccessrightsWithHttpInfo(projectId, projectPostAccessrights)
@@ -930,22 +944,19 @@
     /**
      * /credentialStore/certificate
      * @param {String} projectId ID of project
-     * @param {String} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     * @param {module:model/ProjectPostCredentialStorecertificate} projectPostCredentialStorecertificate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
-    this.projectPostCredentialStorecertificateWithHttpInfo = function(projectId, body) {
-      var postBody = body;
-
+    this.projectPostCredentialStorecertificateWithHttpInfo = function(projectId, projectPostCredentialStorecertificate) {
+      var postBody = projectPostCredentialStorecertificate;
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectPostCredentialStorecertificate");
       }
-
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling projectPostCredentialStorecertificate");
+      // verify the required parameter 'projectPostCredentialStorecertificate' is set
+      if (projectPostCredentialStorecertificate === undefined || projectPostCredentialStorecertificate === null) {
+        throw new Error("Missing the required parameter 'projectPostCredentialStorecertificate' when calling projectPostCredentialStorecertificate");
       }
-
 
       var pathParams = {
         'projectId': projectId
@@ -962,7 +973,7 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
+      var returnType = CredentialCertificate;
       return this.apiClient.callApi(
         '/project/{projectId}/credentialStore/certificate', 'POST',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
@@ -973,11 +984,11 @@
     /**
      * /credentialStore/certificate
      * @param {String} projectId ID of project
-     * @param {String} body 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     * @param {module:model/ProjectPostCredentialStorecertificate} projectPostCredentialStorecertificate 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
-    this.projectPostCredentialStorecertificate = function(projectId, body) {
-      return this.projectPostCredentialStorecertificateWithHttpInfo(projectId, body)
+    this.projectPostCredentialStorecertificate = function(projectId, projectPostCredentialStorecertificate) {
+      return this.projectPostCredentialStorecertificateWithHttpInfo(projectId, projectPostCredentialStorecertificate)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -992,12 +1003,10 @@
      */
     this.projectShowWithHttpInfo = function(projectId) {
       var postBody = null;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectShow");
       }
-
 
       var pathParams = {
         'projectId': projectId
@@ -1045,17 +1054,14 @@
      */
     this.projectUpdateWithHttpInfo = function(projectId, projectUpdate) {
       var postBody = projectUpdate;
-
       // verify the required parameter 'projectId' is set
       if (projectId === undefined || projectId === null) {
         throw new Error("Missing the required parameter 'projectId' when calling projectUpdate");
       }
-
       // verify the required parameter 'projectUpdate' is set
       if (projectUpdate === undefined || projectUpdate === null) {
         throw new Error("Missing the required parameter 'projectUpdate' when calling projectUpdate");
       }
-
 
       var pathParams = {
         'projectId': projectId

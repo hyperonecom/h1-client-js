@@ -56,8 +56,8 @@
      */
     this.authentications = {
       'Project': {type: 'apiKey', 'in': 'header', name: 'x-project'},
-      'ServiceAccount': {type: 'apiKey', 'in': 'header', name: 'x-auth-token'},
-      'Session': {type: 'apiKey', 'in': 'header', name: 'x-auth-token'}
+      'ServiceAccount': {type: 'bearer'},
+      'Session': {type: 'bearer'}
     };
     /**
      * The default HTTP headers to be included for all API calls.

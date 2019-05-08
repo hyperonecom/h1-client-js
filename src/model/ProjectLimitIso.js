@@ -69,8 +69,9 @@
 
   /**
    * @member {Number} count
+   * @default 5
    */
-  exports.prototype['count'] = undefined;
+  exports.prototype['count'] = 5;
 
 
 

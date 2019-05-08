@@ -1,6 +1,7 @@
 # HyperOneApi.ProjectBilling
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **credits** | **Number** |  | [optional] 

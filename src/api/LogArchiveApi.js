@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CredentialPassword', 'model/Event', 'model/LogArchive', 'model/LogArchiveActionTransfer', 'model/LogArchiveCreate', 'model/LogArchivePatchCredentialpasswordId', 'model/LogArchivePostAccessrights', 'model/LogArchivePostCredentialpassword', 'model/LogArchiveServices', 'model/LogArchiveUpdate'], factory);
+    define(['ApiClient', 'model/CredentialPassword', 'model/Event', 'model/InlineResponse400', 'model/LogArchive', 'model/LogArchiveActionTransfer', 'model/LogArchiveCreate', 'model/LogArchivePatchCredentialpasswordId', 'model/LogArchivePostAccessrights', 'model/LogArchivePostCredentialpassword', 'model/LogArchiveServices', 'model/LogArchiveUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/LogArchive'), require('../model/LogArchiveActionTransfer'), require('../model/LogArchiveCreate'), require('../model/LogArchivePatchCredentialpasswordId'), require('../model/LogArchivePostAccessrights'), require('../model/LogArchivePostCredentialpassword'), require('../model/LogArchiveServices'), require('../model/LogArchiveUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/LogArchive'), require('../model/LogArchiveActionTransfer'), require('../model/LogArchiveCreate'), require('../model/LogArchivePatchCredentialpasswordId'), require('../model/LogArchivePostAccessrights'), require('../model/LogArchivePostCredentialpassword'), require('../model/LogArchiveServices'), require('../model/LogArchiveUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.LogArchiveApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.LogArchive, root.HyperOneApi.LogArchiveActionTransfer, root.HyperOneApi.LogArchiveCreate, root.HyperOneApi.LogArchivePatchCredentialpasswordId, root.HyperOneApi.LogArchivePostAccessrights, root.HyperOneApi.LogArchivePostCredentialpassword, root.HyperOneApi.LogArchiveServices, root.HyperOneApi.LogArchiveUpdate);
+    root.HyperOneApi.LogArchiveApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.LogArchive, root.HyperOneApi.LogArchiveActionTransfer, root.HyperOneApi.LogArchiveCreate, root.HyperOneApi.LogArchivePatchCredentialpasswordId, root.HyperOneApi.LogArchivePostAccessrights, root.HyperOneApi.LogArchivePostCredentialpassword, root.HyperOneApi.LogArchiveServices, root.HyperOneApi.LogArchiveUpdate);
   }
-}(this, function(ApiClient, CredentialPassword, Event, LogArchive, LogArchiveActionTransfer, LogArchiveCreate, LogArchivePatchCredentialpasswordId, LogArchivePostAccessrights, LogArchivePostCredentialpassword, LogArchiveServices, LogArchiveUpdate) {
+}(this, function(ApiClient, CredentialPassword, Event, InlineResponse400, LogArchive, LogArchiveActionTransfer, LogArchiveCreate, LogArchivePatchCredentialpasswordId, LogArchivePostAccessrights, LogArchivePostCredentialpassword, LogArchiveServices, LogArchiveUpdate) {
   'use strict';
 
   /**
@@ -57,17 +57,14 @@
      */
     this.logArchiveActionTransferWithHttpInfo = function(logArchiveId, logArchiveActionTransfer) {
       var postBody = logArchiveActionTransfer;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveActionTransfer");
       }
-
       // verify the required parameter 'logArchiveActionTransfer' is set
       if (logArchiveActionTransfer === undefined || logArchiveActionTransfer === null) {
         throw new Error("Missing the required parameter 'logArchiveActionTransfer' when calling logArchiveActionTransfer");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -115,12 +112,10 @@
      */
     this.logArchiveCreateWithHttpInfo = function(logArchiveCreate) {
       var postBody = logArchiveCreate;
-
       // verify the required parameter 'logArchiveCreate' is set
       if (logArchiveCreate === undefined || logArchiveCreate === null) {
         throw new Error("Missing the required parameter 'logArchiveCreate' when calling logArchiveCreate");
       }
-
 
       var pathParams = {
       };
@@ -165,12 +160,10 @@
      */
     this.logArchiveDeleteWithHttpInfo = function(logArchiveId) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveDelete");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -186,7 +179,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/logArchive/{logArchiveId}', 'DELETE',
@@ -216,17 +209,14 @@
      */
     this.logArchiveDeleteAccessrightsIdentityWithHttpInfo = function(logArchiveId, identity) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling logArchiveDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId,
@@ -274,17 +264,14 @@
      */
     this.logArchiveDeleteCredentialpasswordIdWithHttpInfo = function(logArchiveId, id) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveDeleteCredentialpasswordId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling logArchiveDeleteCredentialpasswordId");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId,
@@ -332,17 +319,14 @@
      */
     this.logArchiveDeleteTagKeyWithHttpInfo = function(logArchiveId, key) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling logArchiveDeleteTagKey");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId,
@@ -390,17 +374,14 @@
      */
     this.logArchiveGetCredentialpasswordIdWithHttpInfo = function(logArchiveId, id) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveGetCredentialpasswordId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling logArchiveGetCredentialpasswordId");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId,
@@ -448,17 +429,14 @@
      */
     this.logArchiveGetServicesServiceIdWithHttpInfo = function(logArchiveId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling logArchiveGetServicesServiceId");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId,
@@ -505,12 +483,10 @@
      */
     this.logArchiveGetTagWithHttpInfo = function(logArchiveId) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveGetTag");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -553,17 +529,18 @@
      * List logArchive
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LogArchive>} and HTTP response
      */
     this.logArchiveListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -588,6 +565,7 @@
      * List logArchive
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LogArchive>}
      */
     this.logArchiveList = function(opts) {
@@ -605,12 +583,10 @@
      */
     this.logArchiveListAccessrightsWithHttpInfo = function(logArchiveId) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveListAccessrights");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -655,12 +631,10 @@
      */
     this.logArchiveListCredentialpasswordWithHttpInfo = function(logArchiveId) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveListCredentialpassword");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -705,12 +679,10 @@
      */
     this.logArchiveListQueueWithHttpInfo = function(logArchiveId) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveListQueue");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -755,12 +727,10 @@
      */
     this.logArchiveListServicesWithHttpInfo = function(logArchiveId) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveListServices");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -807,22 +777,18 @@
      */
     this.logArchivePatchCredentialpasswordIdWithHttpInfo = function(logArchiveId, id, logArchivePatchCredentialpasswordId) {
       var postBody = logArchivePatchCredentialpasswordId;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePatchCredentialpasswordId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling logArchivePatchCredentialpasswordId");
       }
-
       // verify the required parameter 'logArchivePatchCredentialpasswordId' is set
       if (logArchivePatchCredentialpasswordId === undefined || logArchivePatchCredentialpasswordId === null) {
         throw new Error("Missing the required parameter 'logArchivePatchCredentialpasswordId' when calling logArchivePatchCredentialpasswordId");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId,
@@ -871,17 +837,14 @@
      */
     this.logArchivePatchTagWithHttpInfo = function(logArchiveId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling logArchivePatchTag");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -928,17 +891,14 @@
      */
     this.logArchivePostAccessrightsWithHttpInfo = function(logArchiveId, logArchivePostAccessrights) {
       var postBody = logArchivePostAccessrights;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePostAccessrights");
       }
-
       // verify the required parameter 'logArchivePostAccessrights' is set
       if (logArchivePostAccessrights === undefined || logArchivePostAccessrights === null) {
         throw new Error("Missing the required parameter 'logArchivePostAccessrights' when calling logArchivePostAccessrights");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -985,17 +945,14 @@
      */
     this.logArchivePostCredentialpasswordWithHttpInfo = function(logArchiveId, logArchivePostCredentialpassword) {
       var postBody = logArchivePostCredentialpassword;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchivePostCredentialpassword");
       }
-
       // verify the required parameter 'logArchivePostCredentialpassword' is set
       if (logArchivePostCredentialpassword === undefined || logArchivePostCredentialpassword === null) {
         throw new Error("Missing the required parameter 'logArchivePostCredentialpassword' when calling logArchivePostCredentialpassword");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -1042,12 +999,10 @@
      */
     this.logArchiveShowWithHttpInfo = function(logArchiveId) {
       var postBody = null;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveShow");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId
@@ -1095,17 +1050,14 @@
      */
     this.logArchiveUpdateWithHttpInfo = function(logArchiveId, logArchiveUpdate) {
       var postBody = logArchiveUpdate;
-
       // verify the required parameter 'logArchiveId' is set
       if (logArchiveId === undefined || logArchiveId === null) {
         throw new Error("Missing the required parameter 'logArchiveId' when calling logArchiveUpdate");
       }
-
       // verify the required parameter 'logArchiveUpdate' is set
       if (logArchiveUpdate === undefined || logArchiveUpdate === null) {
         throw new Error("Missing the required parameter 'logArchiveUpdate' when calling logArchiveUpdate");
       }
-
 
       var pathParams = {
         'logArchiveId': logArchiveId

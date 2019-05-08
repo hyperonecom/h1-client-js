@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Event', 'model/Vault', 'model/VaultActionResize', 'model/VaultActionSnapshot', 'model/VaultCreate', 'model/VaultDelete', 'model/VaultPatchCredentialcertificateId', 'model/VaultPatchCredentialpasswordId', 'model/VaultPostAccessrights', 'model/VaultPostCredentialcertificate', 'model/VaultPostCredentialpassword', 'model/VaultServices', 'model/VaultUpdate'], factory);
+    define(['ApiClient', 'model/CredentialCertificate', 'model/CredentialPassword', 'model/Event', 'model/InlineResponse400', 'model/Vault', 'model/VaultActionResize', 'model/VaultActionSnapshot', 'model/VaultCreate', 'model/VaultDelete', 'model/VaultPatchCredentialcertificateId', 'model/VaultPatchCredentialpasswordId', 'model/VaultPostAccessrights', 'model/VaultPostCredentialcertificate', 'model/VaultPostCredentialpassword', 'model/VaultServices', 'model/VaultUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CredentialCertificate'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/Vault'), require('../model/VaultActionResize'), require('../model/VaultActionSnapshot'), require('../model/VaultCreate'), require('../model/VaultDelete'), require('../model/VaultPatchCredentialcertificateId'), require('../model/VaultPatchCredentialpasswordId'), require('../model/VaultPostAccessrights'), require('../model/VaultPostCredentialcertificate'), require('../model/VaultPostCredentialpassword'), require('../model/VaultServices'), require('../model/VaultUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/CredentialCertificate'), require('../model/CredentialPassword'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/Vault'), require('../model/VaultActionResize'), require('../model/VaultActionSnapshot'), require('../model/VaultCreate'), require('../model/VaultDelete'), require('../model/VaultPatchCredentialcertificateId'), require('../model/VaultPatchCredentialpasswordId'), require('../model/VaultPostAccessrights'), require('../model/VaultPostCredentialcertificate'), require('../model/VaultPostCredentialpassword'), require('../model/VaultServices'), require('../model/VaultUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.VaultApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.Vault, root.HyperOneApi.VaultActionResize, root.HyperOneApi.VaultActionSnapshot, root.HyperOneApi.VaultCreate, root.HyperOneApi.VaultDelete, root.HyperOneApi.VaultPatchCredentialcertificateId, root.HyperOneApi.VaultPatchCredentialpasswordId, root.HyperOneApi.VaultPostAccessrights, root.HyperOneApi.VaultPostCredentialcertificate, root.HyperOneApi.VaultPostCredentialpassword, root.HyperOneApi.VaultServices, root.HyperOneApi.VaultUpdate);
+    root.HyperOneApi.VaultApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.CredentialPassword, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Vault, root.HyperOneApi.VaultActionResize, root.HyperOneApi.VaultActionSnapshot, root.HyperOneApi.VaultCreate, root.HyperOneApi.VaultDelete, root.HyperOneApi.VaultPatchCredentialcertificateId, root.HyperOneApi.VaultPatchCredentialpasswordId, root.HyperOneApi.VaultPostAccessrights, root.HyperOneApi.VaultPostCredentialcertificate, root.HyperOneApi.VaultPostCredentialpassword, root.HyperOneApi.VaultServices, root.HyperOneApi.VaultUpdate);
   }
-}(this, function(ApiClient, CredentialCertificate, CredentialPassword, Event, Vault, VaultActionResize, VaultActionSnapshot, VaultCreate, VaultDelete, VaultPatchCredentialcertificateId, VaultPatchCredentialpasswordId, VaultPostAccessrights, VaultPostCredentialcertificate, VaultPostCredentialpassword, VaultServices, VaultUpdate) {
+}(this, function(ApiClient, CredentialCertificate, CredentialPassword, Event, InlineResponse400, Vault, VaultActionResize, VaultActionSnapshot, VaultCreate, VaultDelete, VaultPatchCredentialcertificateId, VaultPatchCredentialpasswordId, VaultPostAccessrights, VaultPostCredentialcertificate, VaultPostCredentialpassword, VaultServices, VaultUpdate) {
   'use strict';
 
   /**
@@ -57,17 +57,14 @@
      */
     this.vaultActionResizeWithHttpInfo = function(vaultId, vaultActionResize) {
       var postBody = vaultActionResize;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultActionResize");
       }
-
       // verify the required parameter 'vaultActionResize' is set
       if (vaultActionResize === undefined || vaultActionResize === null) {
         throw new Error("Missing the required parameter 'vaultActionResize' when calling vaultActionResize");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -116,17 +113,14 @@
      */
     this.vaultActionSnapshotWithHttpInfo = function(vaultId, vaultActionSnapshot) {
       var postBody = vaultActionSnapshot;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultActionSnapshot");
       }
-
       // verify the required parameter 'vaultActionSnapshot' is set
       if (vaultActionSnapshot === undefined || vaultActionSnapshot === null) {
         throw new Error("Missing the required parameter 'vaultActionSnapshot' when calling vaultActionSnapshot");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -174,12 +168,10 @@
      */
     this.vaultActionStartWithHttpInfo = function(vaultId) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultActionStart");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -226,12 +218,10 @@
      */
     this.vaultActionStopWithHttpInfo = function(vaultId) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultActionStop");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -278,12 +268,10 @@
      */
     this.vaultCreateWithHttpInfo = function(vaultCreate) {
       var postBody = vaultCreate;
-
       // verify the required parameter 'vaultCreate' is set
       if (vaultCreate === undefined || vaultCreate === null) {
         throw new Error("Missing the required parameter 'vaultCreate' when calling vaultCreate");
       }
-
 
       var pathParams = {
       };
@@ -329,17 +317,14 @@
      */
     this.vaultDeleteWithHttpInfo = function(vaultId, vaultDelete) {
       var postBody = vaultDelete;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultDelete");
       }
-
       // verify the required parameter 'vaultDelete' is set
       if (vaultDelete === undefined || vaultDelete === null) {
         throw new Error("Missing the required parameter 'vaultDelete' when calling vaultDelete");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -355,7 +340,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = ['application/json'];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/vault/{vaultId}', 'DELETE',
@@ -386,17 +371,14 @@
      */
     this.vaultDeleteAccessrightsIdentityWithHttpInfo = function(vaultId, identity) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling vaultDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'vaultId': vaultId,
@@ -440,21 +422,18 @@
      * /credential/certificate/:id
      * @param {String} vaultId ID of vault
      * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Vault} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
     this.vaultDeleteCredentialcertificateIdWithHttpInfo = function(vaultId, id) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultDeleteCredentialcertificateId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling vaultDeleteCredentialcertificateId");
       }
-
 
       var pathParams = {
         'vaultId': vaultId,
@@ -472,7 +451,7 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = Vault;
+      var returnType = CredentialCertificate;
       return this.apiClient.callApi(
         '/vault/{vaultId}/credential/certificate/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
@@ -484,7 +463,7 @@
      * /credential/certificate/:id
      * @param {String} vaultId ID of vault
      * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Vault}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
     this.vaultDeleteCredentialcertificateId = function(vaultId, id) {
       return this.vaultDeleteCredentialcertificateIdWithHttpInfo(vaultId, id)
@@ -502,17 +481,14 @@
      */
     this.vaultDeleteCredentialpasswordIdWithHttpInfo = function(vaultId, id) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultDeleteCredentialpasswordId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling vaultDeleteCredentialpasswordId");
       }
-
 
       var pathParams = {
         'vaultId': vaultId,
@@ -560,17 +536,14 @@
      */
     this.vaultDeleteTagKeyWithHttpInfo = function(vaultId, key) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling vaultDeleteTagKey");
       }
-
 
       var pathParams = {
         'vaultId': vaultId,
@@ -618,17 +591,14 @@
      */
     this.vaultGetCredentialcertificateIdWithHttpInfo = function(vaultId, id) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultGetCredentialcertificateId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling vaultGetCredentialcertificateId");
       }
-
 
       var pathParams = {
         'vaultId': vaultId,
@@ -676,17 +646,14 @@
      */
     this.vaultGetCredentialpasswordIdWithHttpInfo = function(vaultId, id) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultGetCredentialpasswordId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling vaultGetCredentialpasswordId");
       }
-
 
       var pathParams = {
         'vaultId': vaultId,
@@ -734,17 +701,14 @@
      */
     this.vaultGetServicesServiceIdWithHttpInfo = function(vaultId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling vaultGetServicesServiceId");
       }
-
 
       var pathParams = {
         'vaultId': vaultId,
@@ -791,12 +755,10 @@
      */
     this.vaultGetTagWithHttpInfo = function(vaultId) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultGetTag");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -839,17 +801,18 @@
      * List vault
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Vault>} and HTTP response
      */
     this.vaultListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -874,6 +837,7 @@
      * List vault
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Vault>}
      */
     this.vaultList = function(opts) {
@@ -891,12 +855,10 @@
      */
     this.vaultListAccessrightsWithHttpInfo = function(vaultId) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultListAccessrights");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -941,12 +903,10 @@
      */
     this.vaultListCredentialcertificateWithHttpInfo = function(vaultId) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultListCredentialcertificate");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -991,12 +951,10 @@
      */
     this.vaultListCredentialpasswordWithHttpInfo = function(vaultId) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultListCredentialpassword");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -1041,12 +999,10 @@
      */
     this.vaultListQueueWithHttpInfo = function(vaultId) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultListQueue");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -1091,12 +1047,10 @@
      */
     this.vaultListServicesWithHttpInfo = function(vaultId) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultListServices");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -1143,22 +1097,18 @@
      */
     this.vaultPatchCredentialcertificateIdWithHttpInfo = function(vaultId, id, vaultPatchCredentialcertificateId) {
       var postBody = vaultPatchCredentialcertificateId;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultPatchCredentialcertificateId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling vaultPatchCredentialcertificateId");
       }
-
       // verify the required parameter 'vaultPatchCredentialcertificateId' is set
       if (vaultPatchCredentialcertificateId === undefined || vaultPatchCredentialcertificateId === null) {
         throw new Error("Missing the required parameter 'vaultPatchCredentialcertificateId' when calling vaultPatchCredentialcertificateId");
       }
-
 
       var pathParams = {
         'vaultId': vaultId,
@@ -1208,22 +1158,18 @@
      */
     this.vaultPatchCredentialpasswordIdWithHttpInfo = function(vaultId, id, vaultPatchCredentialpasswordId) {
       var postBody = vaultPatchCredentialpasswordId;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultPatchCredentialpasswordId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling vaultPatchCredentialpasswordId");
       }
-
       // verify the required parameter 'vaultPatchCredentialpasswordId' is set
       if (vaultPatchCredentialpasswordId === undefined || vaultPatchCredentialpasswordId === null) {
         throw new Error("Missing the required parameter 'vaultPatchCredentialpasswordId' when calling vaultPatchCredentialpasswordId");
       }
-
 
       var pathParams = {
         'vaultId': vaultId,
@@ -1272,17 +1218,14 @@
      */
     this.vaultPatchTagWithHttpInfo = function(vaultId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling vaultPatchTag");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -1329,17 +1272,14 @@
      */
     this.vaultPostAccessrightsWithHttpInfo = function(vaultId, vaultPostAccessrights) {
       var postBody = vaultPostAccessrights;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultPostAccessrights");
       }
-
       // verify the required parameter 'vaultPostAccessrights' is set
       if (vaultPostAccessrights === undefined || vaultPostAccessrights === null) {
         throw new Error("Missing the required parameter 'vaultPostAccessrights' when calling vaultPostAccessrights");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -1386,17 +1326,14 @@
      */
     this.vaultPostCredentialcertificateWithHttpInfo = function(vaultId, vaultPostCredentialcertificate) {
       var postBody = vaultPostCredentialcertificate;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultPostCredentialcertificate");
       }
-
       // verify the required parameter 'vaultPostCredentialcertificate' is set
       if (vaultPostCredentialcertificate === undefined || vaultPostCredentialcertificate === null) {
         throw new Error("Missing the required parameter 'vaultPostCredentialcertificate' when calling vaultPostCredentialcertificate");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -1443,17 +1380,14 @@
      */
     this.vaultPostCredentialpasswordWithHttpInfo = function(vaultId, vaultPostCredentialpassword) {
       var postBody = vaultPostCredentialpassword;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultPostCredentialpassword");
       }
-
       // verify the required parameter 'vaultPostCredentialpassword' is set
       if (vaultPostCredentialpassword === undefined || vaultPostCredentialpassword === null) {
         throw new Error("Missing the required parameter 'vaultPostCredentialpassword' when calling vaultPostCredentialpassword");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -1500,12 +1434,10 @@
      */
     this.vaultShowWithHttpInfo = function(vaultId) {
       var postBody = null;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultShow");
       }
-
 
       var pathParams = {
         'vaultId': vaultId
@@ -1553,17 +1485,14 @@
      */
     this.vaultUpdateWithHttpInfo = function(vaultId, vaultUpdate) {
       var postBody = vaultUpdate;
-
       // verify the required parameter 'vaultId' is set
       if (vaultId === undefined || vaultId === null) {
         throw new Error("Missing the required parameter 'vaultId' when calling vaultUpdate");
       }
-
       // verify the required parameter 'vaultUpdate' is set
       if (vaultUpdate === undefined || vaultUpdate === null) {
         throw new Error("Missing the required parameter 'vaultUpdate' when calling vaultUpdate");
       }
-
 
       var pathParams = {
         'vaultId': vaultId

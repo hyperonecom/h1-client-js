@@ -1,6 +1,7 @@
 # HyperOneApi.Container
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
@@ -8,8 +9,8 @@ Name | Type | Description | Notes
 **services** | [**[ProjectServices]**](ProjectServices.md) |  | [optional] 
 **flavour** | **String** |  | [optional] 
 **modifiedOn** | **Date** |  | [optional] 
-**modifiedBy** | **String** |  | [optional] 
-**createdBy** | **String** |  | [optional] 
+**modifiedBy** | **String** |  | [optional] [default to &#39;&#39;]
+**createdBy** | **String** |  | [optional] [default to &#39;&#39;]
 **createdOn** | **Date** |  | [optional] 
 **accessRights** | **[String]** |  | [optional] 
 **processing** | **Boolean** |  | [optional] 
@@ -23,9 +24,11 @@ Name | Type | Description | Notes
 **volumes** | [**[ContainerVolumes]**](ContainerVolumes.md) |  | [optional] 
 **expose** | [**[ContainerExpose]**](ContainerExpose.md) |  | [optional] 
 **env** | **[String]** |  | [optional] 
+**fqdn** | **String** |  | [optional] 
+**process** | [**ContainerProcess**](ContainerProcess.md) |  | [optional] 
 
 
-<a name="StateEnum"></a>
+
 ## Enum: StateEnum
 
 

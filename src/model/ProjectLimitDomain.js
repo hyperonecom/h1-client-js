@@ -74,12 +74,14 @@
 
   /**
    * @member {Number} count
+   * @default 20
    */
-  exports.prototype['count'] = undefined;
+  exports.prototype['count'] = 20;
   /**
    * @member {Number} record
+   * @default 1000
    */
-  exports.prototype['record'] = undefined;
+  exports.prototype['record'] = 1000;
 
 
 

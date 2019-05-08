@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
+    define(['expect.js', process.cwd()+'/src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.HyperOneApi);
@@ -62,6 +62,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instance = new HyperOneApi.InlineResponse200();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdOn (base name: "createdOn")', function() {
       // uncomment below and update the code to test the property createdOn
       //var instance = new HyperOneApi.InlineResponse200();
@@ -74,14 +80,44 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property modifiedOn (base name: "modifiedOn")', function() {
+      // uncomment below and update the code to test the property modifiedOn
       //var instance = new HyperOneApi.InlineResponse200();
       //expect(instance).to.be();
     });
 
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
+    it('should have the property modifiedBy (base name: "modifiedBy")', function() {
+      // uncomment below and update the code to test the property modifiedBy
+      //var instance = new HyperOneApi.InlineResponse200();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property priority (base name: "priority")', function() {
+      // uncomment below and update the code to test the property priority
+      //var instance = new HyperOneApi.InlineResponse200();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property action (base name: "action")', function() {
+      // uncomment below and update the code to test the property action
+      //var instance = new HyperOneApi.InlineResponse200();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property filter (base name: "filter")', function() {
+      // uncomment below and update the code to test the property filter
+      //var instance = new HyperOneApi.InlineResponse200();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property external (base name: "external")', function() {
+      // uncomment below and update the code to test the property external
+      //var instance = new HyperOneApi.InlineResponse200();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property internal (base name: "internal")', function() {
+      // uncomment below and update the code to test the property internal
       //var instance = new HyperOneApi.InlineResponse200();
       //expect(instance).to.be();
     });

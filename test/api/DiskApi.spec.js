@@ -16,10 +16,10 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
-    define(['expect.js', '../../src/index'], factory);
+    define(['expect.js', process.cwd()+'/src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require('../../src/index'));
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.HyperOneApi);
@@ -50,6 +50,16 @@
   }
 
   describe('DiskApi', function() {
+    describe('diskActionClone', function() {
+      it('should call diskActionClone successfully', function(done) {
+        //uncomment below and update the code to test diskActionClone
+        //instance.diskActionClone(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('diskActionResize', function() {
       it('should call diskActionResize successfully', function(done) {
         //uncomment below and update the code to test diskActionResize

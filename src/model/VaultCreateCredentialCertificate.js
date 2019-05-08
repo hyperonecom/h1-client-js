@@ -42,10 +42,16 @@
    * Constructs a new <code>VaultCreateCredentialCertificate</code>.
    * @alias module:model/VaultCreateCredentialCertificate
    * @class
+   * @param name {String} 
+   * @param type {String} 
+   * @param value {String} 
    */
-  var exports = function() {
+  var exports = function(name, type, value) {
     var _this = this;
 
+    _this['name'] = name;
+    _this['type'] = type;
+    _this['value'] = value;
   };
 
   /**

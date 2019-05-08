@@ -70,6 +70,9 @@
       if (data.hasOwnProperty('createdOn')) {
         obj['createdOn'] = ApiClient.convertToType(data['createdOn'], 'String');
       }
+      if (data.hasOwnProperty('project')) {
+        obj['project'] = ApiClient.convertToType(data['project'], 'String');
+      }
     }
     return obj;
   }
@@ -90,6 +93,10 @@
    * @member {String} createdOn
    */
   exports.prototype['createdOn'] = undefined;
+  /**
+   * @member {String} project
+   */
+  exports.prototype['project'] = undefined;
 
 
 

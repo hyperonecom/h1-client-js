@@ -44,12 +44,14 @@
    * @class
    * @param internal {String} 
    * @param external {String} 
+   * @param protocol {String} 
    */
-  var exports = function(internal, external) {
+  var exports = function(internal, external, protocol) {
     var _this = this;
 
     _this['internal'] = internal;
     _this['external'] = external;
+    _this['protocol'] = protocol;
   };
 
   /**
@@ -68,6 +70,9 @@
       if (data.hasOwnProperty('external')) {
         obj['external'] = ApiClient.convertToType(data['external'], 'String');
       }
+      if (data.hasOwnProperty('protocol')) {
+        obj['protocol'] = ApiClient.convertToType(data['protocol'], 'String');
+      }
     }
     return obj;
   }
@@ -80,6 +85,10 @@
    * @member {String} external
    */
   exports.prototype['external'] = undefined;
+  /**
+   * @member {String} protocol
+   */
+  exports.prototype['protocol'] = undefined;
 
 
 

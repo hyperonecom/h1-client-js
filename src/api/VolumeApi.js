@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Volume', 'model/VolumeCreate', 'model/VolumePostAccessrights', 'model/VolumeServices', 'model/VolumeUpdate'], factory);
+    define(['ApiClient', 'model/Event', 'model/InlineResponse400', 'model/Volume', 'model/VolumeCreate', 'model/VolumePostAccessrights', 'model/VolumeServices', 'model/VolumeUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Volume'), require('../model/VolumeCreate'), require('../model/VolumePostAccessrights'), require('../model/VolumeServices'), require('../model/VolumeUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/Volume'), require('../model/VolumeCreate'), require('../model/VolumePostAccessrights'), require('../model/VolumeServices'), require('../model/VolumeUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.VolumeApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Volume, root.HyperOneApi.VolumeCreate, root.HyperOneApi.VolumePostAccessrights, root.HyperOneApi.VolumeServices, root.HyperOneApi.VolumeUpdate);
+    root.HyperOneApi.VolumeApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Volume, root.HyperOneApi.VolumeCreate, root.HyperOneApi.VolumePostAccessrights, root.HyperOneApi.VolumeServices, root.HyperOneApi.VolumeUpdate);
   }
-}(this, function(ApiClient, Event, Volume, VolumeCreate, VolumePostAccessrights, VolumeServices, VolumeUpdate) {
+}(this, function(ApiClient, Event, InlineResponse400, Volume, VolumeCreate, VolumePostAccessrights, VolumeServices, VolumeUpdate) {
   'use strict';
 
   /**
@@ -56,12 +56,10 @@
      */
     this.volumeCreateWithHttpInfo = function(volumeCreate) {
       var postBody = volumeCreate;
-
       // verify the required parameter 'volumeCreate' is set
       if (volumeCreate === undefined || volumeCreate === null) {
         throw new Error("Missing the required parameter 'volumeCreate' when calling volumeCreate");
       }
-
 
       var pathParams = {
       };
@@ -106,12 +104,10 @@
      */
     this.volumeDeleteWithHttpInfo = function(volumeId) {
       var postBody = null;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumeDelete");
       }
-
 
       var pathParams = {
         'volumeId': volumeId
@@ -127,7 +123,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/volume/{volumeId}', 'DELETE',
@@ -157,17 +153,14 @@
      */
     this.volumeDeleteAccessrightsIdentityWithHttpInfo = function(volumeId, identity) {
       var postBody = null;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumeDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling volumeDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'volumeId': volumeId,
@@ -215,17 +208,14 @@
      */
     this.volumeDeleteTagKeyWithHttpInfo = function(volumeId, key) {
       var postBody = null;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumeDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling volumeDeleteTagKey");
       }
-
 
       var pathParams = {
         'volumeId': volumeId,
@@ -273,17 +263,14 @@
      */
     this.volumeGetServicesServiceIdWithHttpInfo = function(volumeId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumeGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling volumeGetServicesServiceId");
       }
-
 
       var pathParams = {
         'volumeId': volumeId,
@@ -330,12 +317,10 @@
      */
     this.volumeGetTagWithHttpInfo = function(volumeId) {
       var postBody = null;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumeGetTag");
       }
-
 
       var pathParams = {
         'volumeId': volumeId
@@ -378,17 +363,18 @@
      * List volume
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Volume>} and HTTP response
      */
     this.volumeListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -413,6 +399,7 @@
      * List volume
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Volume>}
      */
     this.volumeList = function(opts) {
@@ -430,12 +417,10 @@
      */
     this.volumeListAccessrightsWithHttpInfo = function(volumeId) {
       var postBody = null;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumeListAccessrights");
       }
-
 
       var pathParams = {
         'volumeId': volumeId
@@ -480,12 +465,10 @@
      */
     this.volumeListQueueWithHttpInfo = function(volumeId) {
       var postBody = null;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumeListQueue");
       }
-
 
       var pathParams = {
         'volumeId': volumeId
@@ -530,12 +513,10 @@
      */
     this.volumeListServicesWithHttpInfo = function(volumeId) {
       var postBody = null;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumeListServices");
       }
-
 
       var pathParams = {
         'volumeId': volumeId
@@ -581,17 +562,14 @@
      */
     this.volumePatchTagWithHttpInfo = function(volumeId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumePatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling volumePatchTag");
       }
-
 
       var pathParams = {
         'volumeId': volumeId
@@ -638,17 +616,14 @@
      */
     this.volumePostAccessrightsWithHttpInfo = function(volumeId, volumePostAccessrights) {
       var postBody = volumePostAccessrights;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumePostAccessrights");
       }
-
       // verify the required parameter 'volumePostAccessrights' is set
       if (volumePostAccessrights === undefined || volumePostAccessrights === null) {
         throw new Error("Missing the required parameter 'volumePostAccessrights' when calling volumePostAccessrights");
       }
-
 
       var pathParams = {
         'volumeId': volumeId
@@ -695,12 +670,10 @@
      */
     this.volumeShowWithHttpInfo = function(volumeId) {
       var postBody = null;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumeShow");
       }
-
 
       var pathParams = {
         'volumeId': volumeId
@@ -748,17 +721,14 @@
      */
     this.volumeUpdateWithHttpInfo = function(volumeId, volumeUpdate) {
       var postBody = volumeUpdate;
-
       // verify the required parameter 'volumeId' is set
       if (volumeId === undefined || volumeId === null) {
         throw new Error("Missing the required parameter 'volumeId' when calling volumeUpdate");
       }
-
       // verify the required parameter 'volumeUpdate' is set
       if (volumeUpdate === undefined || volumeUpdate === null) {
         throw new Error("Missing the required parameter 'volumeUpdate' when calling volumeUpdate");
       }
-
 
       var pathParams = {
         'volumeId': volumeId

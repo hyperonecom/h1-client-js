@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Image', 'model/ImageActionTransfer', 'model/ImageCreate', 'model/ImagePostAccessrights', 'model/ImageServices', 'model/ImageUpdate'], factory);
+    define(['ApiClient', 'model/Event', 'model/Image', 'model/ImageActionTransfer', 'model/ImageCreate', 'model/ImagePostAccessrights', 'model/ImageServices', 'model/ImageUpdate', 'model/InlineResponse400'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Image'), require('../model/ImageActionTransfer'), require('../model/ImageCreate'), require('../model/ImagePostAccessrights'), require('../model/ImageServices'), require('../model/ImageUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Image'), require('../model/ImageActionTransfer'), require('../model/ImageCreate'), require('../model/ImagePostAccessrights'), require('../model/ImageServices'), require('../model/ImageUpdate'), require('../model/InlineResponse400'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.ImageApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Image, root.HyperOneApi.ImageActionTransfer, root.HyperOneApi.ImageCreate, root.HyperOneApi.ImagePostAccessrights, root.HyperOneApi.ImageServices, root.HyperOneApi.ImageUpdate);
+    root.HyperOneApi.ImageApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Image, root.HyperOneApi.ImageActionTransfer, root.HyperOneApi.ImageCreate, root.HyperOneApi.ImagePostAccessrights, root.HyperOneApi.ImageServices, root.HyperOneApi.ImageUpdate, root.HyperOneApi.InlineResponse400);
   }
-}(this, function(ApiClient, Event, Image, ImageActionTransfer, ImageCreate, ImagePostAccessrights, ImageServices, ImageUpdate) {
+}(this, function(ApiClient, Event, Image, ImageActionTransfer, ImageCreate, ImagePostAccessrights, ImageServices, ImageUpdate, InlineResponse400) {
   'use strict';
 
   /**
@@ -57,17 +57,14 @@
      */
     this.imageActionTransferWithHttpInfo = function(imageId, imageActionTransfer) {
       var postBody = imageActionTransfer;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageActionTransfer");
       }
-
       // verify the required parameter 'imageActionTransfer' is set
       if (imageActionTransfer === undefined || imageActionTransfer === null) {
         throw new Error("Missing the required parameter 'imageActionTransfer' when calling imageActionTransfer");
       }
-
 
       var pathParams = {
         'imageId': imageId
@@ -115,12 +112,10 @@
      */
     this.imageCreateWithHttpInfo = function(imageCreate) {
       var postBody = imageCreate;
-
       // verify the required parameter 'imageCreate' is set
       if (imageCreate === undefined || imageCreate === null) {
         throw new Error("Missing the required parameter 'imageCreate' when calling imageCreate");
       }
-
 
       var pathParams = {
       };
@@ -165,12 +160,10 @@
      */
     this.imageDeleteWithHttpInfo = function(imageId) {
       var postBody = null;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageDelete");
       }
-
 
       var pathParams = {
         'imageId': imageId
@@ -186,7 +179,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/image/{imageId}', 'DELETE',
@@ -216,17 +209,14 @@
      */
     this.imageDeleteAccessrightsIdentityWithHttpInfo = function(imageId, identity) {
       var postBody = null;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling imageDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'imageId': imageId,
@@ -274,17 +264,14 @@
      */
     this.imageDeleteTagKeyWithHttpInfo = function(imageId, key) {
       var postBody = null;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling imageDeleteTagKey");
       }
-
 
       var pathParams = {
         'imageId': imageId,
@@ -332,17 +319,14 @@
      */
     this.imageGetServicesServiceIdWithHttpInfo = function(imageId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling imageGetServicesServiceId");
       }
-
 
       var pathParams = {
         'imageId': imageId,
@@ -389,12 +373,10 @@
      */
     this.imageGetTagWithHttpInfo = function(imageId) {
       var postBody = null;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageGetTag");
       }
-
 
       var pathParams = {
         'imageId': imageId
@@ -437,17 +419,18 @@
      * List image
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Image>} and HTTP response
      */
     this.imageListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -472,6 +455,7 @@
      * List image
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Image>}
      */
     this.imageList = function(opts) {
@@ -489,12 +473,10 @@
      */
     this.imageListAccessrightsWithHttpInfo = function(imageId) {
       var postBody = null;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageListAccessrights");
       }
-
 
       var pathParams = {
         'imageId': imageId
@@ -539,12 +521,10 @@
      */
     this.imageListQueueWithHttpInfo = function(imageId) {
       var postBody = null;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageListQueue");
       }
-
 
       var pathParams = {
         'imageId': imageId
@@ -589,12 +569,10 @@
      */
     this.imageListServicesWithHttpInfo = function(imageId) {
       var postBody = null;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageListServices");
       }
-
 
       var pathParams = {
         'imageId': imageId
@@ -640,17 +618,14 @@
      */
     this.imagePatchTagWithHttpInfo = function(imageId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imagePatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling imagePatchTag");
       }
-
 
       var pathParams = {
         'imageId': imageId
@@ -697,17 +672,14 @@
      */
     this.imagePostAccessrightsWithHttpInfo = function(imageId, imagePostAccessrights) {
       var postBody = imagePostAccessrights;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imagePostAccessrights");
       }
-
       // verify the required parameter 'imagePostAccessrights' is set
       if (imagePostAccessrights === undefined || imagePostAccessrights === null) {
         throw new Error("Missing the required parameter 'imagePostAccessrights' when calling imagePostAccessrights");
       }
-
 
       var pathParams = {
         'imageId': imageId
@@ -754,12 +726,10 @@
      */
     this.imageShowWithHttpInfo = function(imageId) {
       var postBody = null;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageShow");
       }
-
 
       var pathParams = {
         'imageId': imageId
@@ -807,17 +777,14 @@
      */
     this.imageUpdateWithHttpInfo = function(imageId, imageUpdate) {
       var postBody = imageUpdate;
-
       // verify the required parameter 'imageId' is set
       if (imageId === undefined || imageId === null) {
         throw new Error("Missing the required parameter 'imageId' when calling imageUpdate");
       }
-
       // verify the required parameter 'imageUpdate' is set
       if (imageUpdate === undefined || imageUpdate === null) {
         throw new Error("Missing the required parameter 'imageUpdate' when calling imageUpdate");
       }
-
 
       var pathParams = {
         'imageId': imageId

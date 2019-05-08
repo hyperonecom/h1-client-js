@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Snapshot', 'model/SnapshotCreate', 'model/SnapshotPostAccessrights', 'model/SnapshotServices', 'model/SnapshotUpdate'], factory);
+    define(['ApiClient', 'model/Event', 'model/InlineResponse400', 'model/Snapshot', 'model/SnapshotCreate', 'model/SnapshotPostAccessrights', 'model/SnapshotServices', 'model/SnapshotUpdate'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Snapshot'), require('../model/SnapshotCreate'), require('../model/SnapshotPostAccessrights'), require('../model/SnapshotServices'), require('../model/SnapshotUpdate'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/Snapshot'), require('../model/SnapshotCreate'), require('../model/SnapshotPostAccessrights'), require('../model/SnapshotServices'), require('../model/SnapshotUpdate'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.SnapshotApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Snapshot, root.HyperOneApi.SnapshotCreate, root.HyperOneApi.SnapshotPostAccessrights, root.HyperOneApi.SnapshotServices, root.HyperOneApi.SnapshotUpdate);
+    root.HyperOneApi.SnapshotApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Snapshot, root.HyperOneApi.SnapshotCreate, root.HyperOneApi.SnapshotPostAccessrights, root.HyperOneApi.SnapshotServices, root.HyperOneApi.SnapshotUpdate);
   }
-}(this, function(ApiClient, Event, Snapshot, SnapshotCreate, SnapshotPostAccessrights, SnapshotServices, SnapshotUpdate) {
+}(this, function(ApiClient, Event, InlineResponse400, Snapshot, SnapshotCreate, SnapshotPostAccessrights, SnapshotServices, SnapshotUpdate) {
   'use strict';
 
   /**
@@ -56,12 +56,10 @@
      */
     this.snapshotCreateWithHttpInfo = function(snapshotCreate) {
       var postBody = snapshotCreate;
-
       // verify the required parameter 'snapshotCreate' is set
       if (snapshotCreate === undefined || snapshotCreate === null) {
         throw new Error("Missing the required parameter 'snapshotCreate' when calling snapshotCreate");
       }
-
 
       var pathParams = {
       };
@@ -106,12 +104,10 @@
      */
     this.snapshotDeleteWithHttpInfo = function(snapshotId) {
       var postBody = null;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotDelete");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId
@@ -127,7 +123,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/snapshot/{snapshotId}', 'DELETE',
@@ -157,17 +153,14 @@
      */
     this.snapshotDeleteAccessrightsIdentityWithHttpInfo = function(snapshotId, identity) {
       var postBody = null;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling snapshotDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId,
@@ -215,17 +208,14 @@
      */
     this.snapshotDeleteTagKeyWithHttpInfo = function(snapshotId, key) {
       var postBody = null;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling snapshotDeleteTagKey");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId,
@@ -273,17 +263,14 @@
      */
     this.snapshotGetServicesServiceIdWithHttpInfo = function(snapshotId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling snapshotGetServicesServiceId");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId,
@@ -330,12 +317,10 @@
      */
     this.snapshotGetTagWithHttpInfo = function(snapshotId) {
       var postBody = null;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotGetTag");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId
@@ -379,18 +364,19 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
      * @param {String} opts.vault Filter by vault
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Snapshot>} and HTTP response
      */
     this.snapshotListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
         'vault': opts['vault'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -416,6 +402,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
      * @param {String} opts.vault Filter by vault
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Snapshot>}
      */
     this.snapshotList = function(opts) {
@@ -433,12 +420,10 @@
      */
     this.snapshotListAccessrightsWithHttpInfo = function(snapshotId) {
       var postBody = null;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotListAccessrights");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId
@@ -483,12 +468,10 @@
      */
     this.snapshotListQueueWithHttpInfo = function(snapshotId) {
       var postBody = null;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotListQueue");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId
@@ -533,12 +516,10 @@
      */
     this.snapshotListServicesWithHttpInfo = function(snapshotId) {
       var postBody = null;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotListServices");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId
@@ -584,17 +565,14 @@
      */
     this.snapshotPatchTagWithHttpInfo = function(snapshotId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling snapshotPatchTag");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId
@@ -641,17 +619,14 @@
      */
     this.snapshotPostAccessrightsWithHttpInfo = function(snapshotId, snapshotPostAccessrights) {
       var postBody = snapshotPostAccessrights;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotPostAccessrights");
       }
-
       // verify the required parameter 'snapshotPostAccessrights' is set
       if (snapshotPostAccessrights === undefined || snapshotPostAccessrights === null) {
         throw new Error("Missing the required parameter 'snapshotPostAccessrights' when calling snapshotPostAccessrights");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId
@@ -698,12 +673,10 @@
      */
     this.snapshotShowWithHttpInfo = function(snapshotId) {
       var postBody = null;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotShow");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId
@@ -751,17 +724,14 @@
      */
     this.snapshotUpdateWithHttpInfo = function(snapshotId, snapshotUpdate) {
       var postBody = snapshotUpdate;
-
       // verify the required parameter 'snapshotId' is set
       if (snapshotId === undefined || snapshotId === null) {
         throw new Error("Missing the required parameter 'snapshotId' when calling snapshotUpdate");
       }
-
       // verify the required parameter 'snapshotUpdate' is set
       if (snapshotUpdate === undefined || snapshotUpdate === null) {
         throw new Error("Missing the required parameter 'snapshotUpdate' when calling snapshotUpdate");
       }
-
 
       var pathParams = {
         'snapshotId': snapshotId

@@ -109,6 +109,9 @@
       if (data.hasOwnProperty('sizeUsed')) {
         obj['sizeUsed'] = ApiClient.convertToType(data['sizeUsed'], 'Number');
       }
+      if (data.hasOwnProperty('fqdn')) {
+        obj['fqdn'] = ApiClient.convertToType(data['fqdn'], 'String');
+      }
     }
     return obj;
   }
@@ -135,12 +138,14 @@
   exports.prototype['modifiedOn'] = undefined;
   /**
    * @member {String} modifiedBy
+   * @default ''
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype['modifiedBy'] = '';
   /**
    * @member {String} createdBy
+   * @default ''
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype['createdBy'] = '';
   /**
    * @member {Date} createdOn
    */
@@ -181,6 +186,10 @@
    * @member {Number} sizeUsed
    */
   exports.prototype['sizeUsed'] = undefined;
+  /**
+   * @member {String} fqdn
+   */
+  exports.prototype['fqdn'] = undefined;
 
 
   /**

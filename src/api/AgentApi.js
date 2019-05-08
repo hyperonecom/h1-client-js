@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Agent', 'model/AgentCreate', 'model/AgentPatchCredentialcertificateId', 'model/AgentPostAccessrights', 'model/AgentPostCredentialcertificate', 'model/AgentResource', 'model/AgentServices', 'model/AgentUpdate', 'model/CredentialCertificate', 'model/Event'], factory);
+    define(['ApiClient', 'model/Agent', 'model/AgentCreate', 'model/AgentPatchCredentialcertificateId', 'model/AgentPostAccessrights', 'model/AgentPostCredentialcertificate', 'model/AgentResource', 'model/AgentResourceEvent', 'model/AgentServices', 'model/AgentUpdate', 'model/CredentialCertificate', 'model/Event', 'model/InlineResponse400'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Agent'), require('../model/AgentCreate'), require('../model/AgentPatchCredentialcertificateId'), require('../model/AgentPostAccessrights'), require('../model/AgentPostCredentialcertificate'), require('../model/AgentResource'), require('../model/AgentServices'), require('../model/AgentUpdate'), require('../model/CredentialCertificate'), require('../model/Event'));
+    module.exports = factory(require('../ApiClient'), require('../model/Agent'), require('../model/AgentCreate'), require('../model/AgentPatchCredentialcertificateId'), require('../model/AgentPostAccessrights'), require('../model/AgentPostCredentialcertificate'), require('../model/AgentResource'), require('../model/AgentResourceEvent'), require('../model/AgentServices'), require('../model/AgentUpdate'), require('../model/CredentialCertificate'), require('../model/Event'), require('../model/InlineResponse400'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.AgentApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Agent, root.HyperOneApi.AgentCreate, root.HyperOneApi.AgentPatchCredentialcertificateId, root.HyperOneApi.AgentPostAccessrights, root.HyperOneApi.AgentPostCredentialcertificate, root.HyperOneApi.AgentResource, root.HyperOneApi.AgentServices, root.HyperOneApi.AgentUpdate, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.Event);
+    root.HyperOneApi.AgentApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Agent, root.HyperOneApi.AgentCreate, root.HyperOneApi.AgentPatchCredentialcertificateId, root.HyperOneApi.AgentPostAccessrights, root.HyperOneApi.AgentPostCredentialcertificate, root.HyperOneApi.AgentResource, root.HyperOneApi.AgentResourceEvent, root.HyperOneApi.AgentServices, root.HyperOneApi.AgentUpdate, root.HyperOneApi.CredentialCertificate, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400);
   }
-}(this, function(ApiClient, Agent, AgentCreate, AgentPatchCredentialcertificateId, AgentPostAccessrights, AgentPostCredentialcertificate, AgentResource, AgentServices, AgentUpdate, CredentialCertificate, Event) {
+}(this, function(ApiClient, Agent, AgentCreate, AgentPatchCredentialcertificateId, AgentPostAccessrights, AgentPostCredentialcertificate, AgentResource, AgentResourceEvent, AgentServices, AgentUpdate, CredentialCertificate, Event, InlineResponse400) {
   'use strict';
 
   /**
@@ -49,6 +49,106 @@
 
 
     /**
+     * /actions/start
+     * Action start
+     * @param {String} agentId ID of agent
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Agent} and HTTP response
+     */
+    this.agentActionStartWithHttpInfo = function(agentId) {
+      var postBody = null;
+      // verify the required parameter 'agentId' is set
+      if (agentId === undefined || agentId === null) {
+        throw new Error("Missing the required parameter 'agentId' when calling agentActionStart");
+      }
+
+      var pathParams = {
+        'agentId': agentId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Agent;
+      return this.apiClient.callApi(
+        '/agent/{agentId}/actions/start', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /actions/start
+     * Action start
+     * @param {String} agentId ID of agent
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Agent}
+     */
+    this.agentActionStart = function(agentId) {
+      return this.agentActionStartWithHttpInfo(agentId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * /actions/suspend
+     * Action suspend
+     * @param {String} agentId ID of agent
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Agent} and HTTP response
+     */
+    this.agentActionSuspendWithHttpInfo = function(agentId) {
+      var postBody = null;
+      // verify the required parameter 'agentId' is set
+      if (agentId === undefined || agentId === null) {
+        throw new Error("Missing the required parameter 'agentId' when calling agentActionSuspend");
+      }
+
+      var pathParams = {
+        'agentId': agentId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Agent;
+      return this.apiClient.callApi(
+        '/agent/{agentId}/actions/suspend', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /actions/suspend
+     * Action suspend
+     * @param {String} agentId ID of agent
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Agent}
+     */
+    this.agentActionSuspend = function(agentId) {
+      return this.agentActionSuspendWithHttpInfo(agentId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create
      * Create agent
      * @param {module:model/AgentCreate} agentCreate 
@@ -56,12 +156,10 @@
      */
     this.agentCreateWithHttpInfo = function(agentCreate) {
       var postBody = agentCreate;
-
       // verify the required parameter 'agentCreate' is set
       if (agentCreate === undefined || agentCreate === null) {
         throw new Error("Missing the required parameter 'agentCreate' when calling agentCreate");
       }
-
 
       var pathParams = {
       };
@@ -106,12 +204,10 @@
      */
     this.agentDeleteWithHttpInfo = function(agentId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentDelete");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -127,7 +223,7 @@
 
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
-      var accepts = [];
+      var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi(
         '/agent/{agentId}', 'DELETE',
@@ -157,17 +253,14 @@
      */
     this.agentDeleteAccessrightsIdentityWithHttpInfo = function(agentId, identity) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling agentDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'agentId': agentId,
@@ -211,21 +304,18 @@
      * /credential/certificate/:id
      * @param {String} agentId ID of agent
      * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Agent} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CredentialCertificate} and HTTP response
      */
     this.agentDeleteCredentialcertificateIdWithHttpInfo = function(agentId, id) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentDeleteCredentialcertificateId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling agentDeleteCredentialcertificateId");
       }
-
 
       var pathParams = {
         'agentId': agentId,
@@ -243,7 +333,7 @@
       var authNames = ['Project', 'ServiceAccount', 'Session'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = Agent;
+      var returnType = CredentialCertificate;
       return this.apiClient.callApi(
         '/agent/{agentId}/credential/certificate/{id}', 'DELETE',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
@@ -255,7 +345,7 @@
      * /credential/certificate/:id
      * @param {String} agentId ID of agent
      * @param {String} id id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Agent}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CredentialCertificate}
      */
     this.agentDeleteCredentialcertificateId = function(agentId, id) {
       return this.agentDeleteCredentialcertificateIdWithHttpInfo(agentId, id)
@@ -273,17 +363,14 @@
      */
     this.agentDeleteTagKeyWithHttpInfo = function(agentId, key) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling agentDeleteTagKey");
       }
-
 
       var pathParams = {
         'agentId': agentId,
@@ -331,17 +418,14 @@
      */
     this.agentGetCredentialcertificateIdWithHttpInfo = function(agentId, id) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentGetCredentialcertificateId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling agentGetCredentialcertificateId");
       }
-
 
       var pathParams = {
         'agentId': agentId,
@@ -382,6 +466,54 @@
 
 
     /**
+     * /inspect
+     * @param {String} agentId ID of agent
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.agentGetInspectWithHttpInfo = function(agentId) {
+      var postBody = null;
+      // verify the required parameter 'agentId' is set
+      if (agentId === undefined || agentId === null) {
+        throw new Error("Missing the required parameter 'agentId' when calling agentGetInspect");
+      }
+
+      var pathParams = {
+        'agentId': agentId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Object;
+      return this.apiClient.callApi(
+        '/agent/{agentId}/inspect', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /inspect
+     * @param {String} agentId ID of agent
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.agentGetInspect = function(agentId) {
+      return this.agentGetInspectWithHttpInfo(agentId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * /resource/:resourceId/inspect
      * @param {String} agentId ID of agent
      * @param {String} resourceId resourceId
@@ -389,17 +521,14 @@
      */
     this.agentGetResourceResourceIdinspectWithHttpInfo = function(agentId, resourceId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentGetResourceResourceIdinspect");
       }
-
       // verify the required parameter 'resourceId' is set
       if (resourceId === undefined || resourceId === null) {
         throw new Error("Missing the required parameter 'resourceId' when calling agentGetResourceResourceIdinspect");
       }
-
 
       var pathParams = {
         'agentId': agentId,
@@ -447,17 +576,14 @@
      */
     this.agentGetServicesServiceIdWithHttpInfo = function(agentId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling agentGetServicesServiceId");
       }
-
 
       var pathParams = {
         'agentId': agentId,
@@ -504,12 +630,10 @@
      */
     this.agentGetTagWithHttpInfo = function(agentId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentGetTag");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -552,17 +676,18 @@
      * List agent
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Agent>} and HTTP response
      */
     this.agentListWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
         'name': opts['name'],
+        'tag': opts['tag'],
       };
       var collectionQueryParams = {
       };
@@ -587,6 +712,7 @@
      * List agent
      * @param {Object} opts Optional parameters
      * @param {String} opts.name Filter by name
+     * @param {Object.<String, {String: String}>} opts.tag Filter by tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Agent>}
      */
     this.agentList = function(opts) {
@@ -604,12 +730,10 @@
      */
     this.agentListAccessrightsWithHttpInfo = function(agentId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentListAccessrights");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -654,12 +778,10 @@
      */
     this.agentListCredentialcertificateWithHttpInfo = function(agentId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentListCredentialcertificate");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -704,12 +826,10 @@
      */
     this.agentListEnabledServicesWithHttpInfo = function(agentId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentListEnabledServices");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -754,12 +874,10 @@
      */
     this.agentListQueueWithHttpInfo = function(agentId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentListQueue");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -804,12 +922,10 @@
      */
     this.agentListResourceWithHttpInfo = function(agentId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentListResource");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -848,18 +964,71 @@
 
 
     /**
+     * /resource/:resourceId/queue
+     * @param {String} agentId ID of agent
+     * @param {String} resourceId resourceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AgentResourceEvent>} and HTTP response
+     */
+    this.agentListResourceResourceIdqueueWithHttpInfo = function(agentId, resourceId) {
+      var postBody = null;
+      // verify the required parameter 'agentId' is set
+      if (agentId === undefined || agentId === null) {
+        throw new Error("Missing the required parameter 'agentId' when calling agentListResourceResourceIdqueue");
+      }
+      // verify the required parameter 'resourceId' is set
+      if (resourceId === undefined || resourceId === null) {
+        throw new Error("Missing the required parameter 'resourceId' when calling agentListResourceResourceIdqueue");
+      }
+
+      var pathParams = {
+        'agentId': agentId,
+        'resourceId': resourceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Project', 'ServiceAccount', 'Session'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = [AgentResourceEvent];
+      return this.apiClient.callApi(
+        '/agent/{agentId}/resource/{resourceId}/queue', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * /resource/:resourceId/queue
+     * @param {String} agentId ID of agent
+     * @param {String} resourceId resourceId
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AgentResourceEvent>}
+     */
+    this.agentListResourceResourceIdqueue = function(agentId, resourceId) {
+      return this.agentListResourceResourceIdqueueWithHttpInfo(agentId, resourceId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * /services
      * @param {String} agentId ID of agent
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AgentServices>} and HTTP response
      */
     this.agentListServicesWithHttpInfo = function(agentId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentListServices");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -906,22 +1075,18 @@
      */
     this.agentPatchCredentialcertificateIdWithHttpInfo = function(agentId, id, agentPatchCredentialcertificateId) {
       var postBody = agentPatchCredentialcertificateId;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentPatchCredentialcertificateId");
       }
-
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
         throw new Error("Missing the required parameter 'id' when calling agentPatchCredentialcertificateId");
       }
-
       // verify the required parameter 'agentPatchCredentialcertificateId' is set
       if (agentPatchCredentialcertificateId === undefined || agentPatchCredentialcertificateId === null) {
         throw new Error("Missing the required parameter 'agentPatchCredentialcertificateId' when calling agentPatchCredentialcertificateId");
       }
-
 
       var pathParams = {
         'agentId': agentId,
@@ -970,17 +1135,14 @@
      */
     this.agentPatchTagWithHttpInfo = function(agentId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling agentPatchTag");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -1027,17 +1189,14 @@
      */
     this.agentPostAccessrightsWithHttpInfo = function(agentId, agentPostAccessrights) {
       var postBody = agentPostAccessrights;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentPostAccessrights");
       }
-
       // verify the required parameter 'agentPostAccessrights' is set
       if (agentPostAccessrights === undefined || agentPostAccessrights === null) {
         throw new Error("Missing the required parameter 'agentPostAccessrights' when calling agentPostAccessrights");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -1084,17 +1243,14 @@
      */
     this.agentPostCredentialcertificateWithHttpInfo = function(agentId, agentPostCredentialcertificate) {
       var postBody = agentPostCredentialcertificate;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentPostCredentialcertificate");
       }
-
       // verify the required parameter 'agentPostCredentialcertificate' is set
       if (agentPostCredentialcertificate === undefined || agentPostCredentialcertificate === null) {
         throw new Error("Missing the required parameter 'agentPostCredentialcertificate' when calling agentPostCredentialcertificate");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -1141,17 +1297,14 @@
      */
     this.agentPostResourceResourceIdactionsrecreateWithHttpInfo = function(agentId, resourceId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentPostResourceResourceIdactionsrecreate");
       }
-
       // verify the required parameter 'resourceId' is set
       if (resourceId === undefined || resourceId === null) {
         throw new Error("Missing the required parameter 'resourceId' when calling agentPostResourceResourceIdactionsrecreate");
       }
-
 
       var pathParams = {
         'agentId': agentId,
@@ -1199,17 +1352,14 @@
      */
     this.agentPutEnabledServicesWithHttpInfo = function(agentId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentPutEnabledServices");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling agentPutEnabledServices");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -1256,12 +1406,10 @@
      */
     this.agentShowWithHttpInfo = function(agentId) {
       var postBody = null;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentShow");
       }
-
 
       var pathParams = {
         'agentId': agentId
@@ -1309,17 +1457,14 @@
      */
     this.agentUpdateWithHttpInfo = function(agentId, agentUpdate) {
       var postBody = agentUpdate;
-
       // verify the required parameter 'agentId' is set
       if (agentId === undefined || agentId === null) {
         throw new Error("Missing the required parameter 'agentId' when calling agentUpdate");
       }
-
       // verify the required parameter 'agentUpdate' is set
       if (agentUpdate === undefined || agentUpdate === null) {
         throw new Error("Missing the required parameter 'agentUpdate' when calling agentUpdate");
       }
-
 
       var pathParams = {
         'agentId': agentId

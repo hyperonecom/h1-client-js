@@ -109,6 +109,9 @@
       if (data.hasOwnProperty('speed')) {
         obj['speed'] = ApiClient.convertToType(data['speed'], 'Number');
       }
+      if (data.hasOwnProperty('fqdn')) {
+        obj['fqdn'] = ApiClient.convertToType(data['fqdn'], 'String');
+      }
       if (data.hasOwnProperty('network')) {
         obj['network'] = Network.constructFromObject(data['network']);
       }
@@ -144,12 +147,14 @@
   exports.prototype['modifiedOn'] = undefined;
   /**
    * @member {String} modifiedBy
+   * @default ''
    */
-  exports.prototype['modifiedBy'] = undefined;
+  exports.prototype['modifiedBy'] = '';
   /**
    * @member {String} createdBy
+   * @default ''
    */
-  exports.prototype['createdBy'] = undefined;
+  exports.prototype['createdBy'] = '';
   /**
    * @member {Date} createdOn
    */
@@ -190,6 +195,10 @@
    * @member {Number} speed
    */
   exports.prototype['speed'] = undefined;
+  /**
+   * @member {String} fqdn
+   */
+  exports.prototype['fqdn'] = undefined;
   /**
    * @member {module:model/Network} network
    */

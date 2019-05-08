@@ -1,6 +1,7 @@
 # HyperOneApi.OrganisationLimit
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **organisation** | [**OrganisationLimitOrganisation**](OrganisationLimitOrganisation.md) |  | [optional] 

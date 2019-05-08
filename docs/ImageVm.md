@@ -1,6 +1,7 @@
 # HyperOneApi.ImageVm
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **flavour** | **String** |  | [optional] 

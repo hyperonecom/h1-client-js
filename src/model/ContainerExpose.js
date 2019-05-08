@@ -42,12 +42,14 @@
    * Constructs a new <code>ContainerExpose</code>.
    * @alias module:model/ContainerExpose
    * @class
+   * @param protocol {String} 
    * @param external {String} 
    * @param internal {String} 
    */
-  var exports = function(external, internal) {
+  var exports = function(protocol, external, internal) {
     var _this = this;
 
+    _this['protocol'] = protocol;
     _this['external'] = external;
     _this['internal'] = internal;
   };
@@ -62,6 +64,9 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+      if (data.hasOwnProperty('protocol')) {
+        obj['protocol'] = ApiClient.convertToType(data['protocol'], 'String');
+      }
       if (data.hasOwnProperty('external')) {
         obj['external'] = ApiClient.convertToType(data['external'], 'String');
       }
@@ -72,6 +77,10 @@
     return obj;
   }
 
+  /**
+   * @member {String} protocol
+   */
+  exports.prototype['protocol'] = undefined;
   /**
    * @member {String} external
    */

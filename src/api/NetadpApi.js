@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Event', 'model/Netadp', 'model/NetadpPostAccessrights', 'model/NetadpServices'], factory);
+    define(['ApiClient', 'model/Event', 'model/InlineResponse400', 'model/Netadp', 'model/NetadpPostAccessrights', 'model/NetadpServices'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/Netadp'), require('../model/NetadpPostAccessrights'), require('../model/NetadpServices'));
+    module.exports = factory(require('../ApiClient'), require('../model/Event'), require('../model/InlineResponse400'), require('../model/Netadp'), require('../model/NetadpPostAccessrights'), require('../model/NetadpServices'));
   } else {
     // Browser globals (root is window)
     if (!root.HyperOneApi) {
       root.HyperOneApi = {};
     }
-    root.HyperOneApi.NetadpApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.Netadp, root.HyperOneApi.NetadpPostAccessrights, root.HyperOneApi.NetadpServices);
+    root.HyperOneApi.NetadpApi = factory(root.HyperOneApi.ApiClient, root.HyperOneApi.Event, root.HyperOneApi.InlineResponse400, root.HyperOneApi.Netadp, root.HyperOneApi.NetadpPostAccessrights, root.HyperOneApi.NetadpServices);
   }
-}(this, function(ApiClient, Event, Netadp, NetadpPostAccessrights, NetadpServices) {
+}(this, function(ApiClient, Event, InlineResponse400, Netadp, NetadpPostAccessrights, NetadpServices) {
   'use strict';
 
   /**
@@ -56,17 +56,14 @@
      */
     this.netadpDeleteAccessrightsIdentityWithHttpInfo = function(netadpId, identity) {
       var postBody = null;
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling netadpDeleteAccessrightsIdentity");
       }
-
       // verify the required parameter 'identity' is set
       if (identity === undefined || identity === null) {
         throw new Error("Missing the required parameter 'identity' when calling netadpDeleteAccessrightsIdentity");
       }
-
 
       var pathParams = {
         'netadpId': netadpId,
@@ -114,17 +111,14 @@
      */
     this.netadpDeleteTagKeyWithHttpInfo = function(netadpId, key) {
       var postBody = null;
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling netadpDeleteTagKey");
       }
-
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
         throw new Error("Missing the required parameter 'key' when calling netadpDeleteTagKey");
       }
-
 
       var pathParams = {
         'netadpId': netadpId,
@@ -172,17 +166,14 @@
      */
     this.netadpGetServicesServiceIdWithHttpInfo = function(netadpId, serviceId) {
       var postBody = null;
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling netadpGetServicesServiceId");
       }
-
       // verify the required parameter 'serviceId' is set
       if (serviceId === undefined || serviceId === null) {
         throw new Error("Missing the required parameter 'serviceId' when calling netadpGetServicesServiceId");
       }
-
 
       var pathParams = {
         'netadpId': netadpId,
@@ -229,12 +220,10 @@
      */
     this.netadpGetTagWithHttpInfo = function(netadpId) {
       var postBody = null;
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling netadpGetTag");
       }
-
 
       var pathParams = {
         'netadpId': netadpId
@@ -284,7 +273,6 @@
       opts = opts || {};
       var postBody = null;
 
-
       var pathParams = {
       };
       var queryParams = {
@@ -332,12 +320,10 @@
      */
     this.netadpListAccessrightsWithHttpInfo = function(netadpId) {
       var postBody = null;
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling netadpListAccessrights");
       }
-
 
       var pathParams = {
         'netadpId': netadpId
@@ -382,12 +368,10 @@
      */
     this.netadpListQueueWithHttpInfo = function(netadpId) {
       var postBody = null;
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling netadpListQueue");
       }
-
 
       var pathParams = {
         'netadpId': netadpId
@@ -432,12 +416,10 @@
      */
     this.netadpListServicesWithHttpInfo = function(netadpId) {
       var postBody = null;
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling netadpListServices");
       }
-
 
       var pathParams = {
         'netadpId': netadpId
@@ -483,17 +465,14 @@
      */
     this.netadpPatchTagWithHttpInfo = function(netadpId, requestBody) {
       var postBody = requestBody;
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling netadpPatchTag");
       }
-
       // verify the required parameter 'requestBody' is set
       if (requestBody === undefined || requestBody === null) {
         throw new Error("Missing the required parameter 'requestBody' when calling netadpPatchTag");
       }
-
 
       var pathParams = {
         'netadpId': netadpId
@@ -540,17 +519,14 @@
      */
     this.netadpPostAccessrightsWithHttpInfo = function(netadpId, netadpPostAccessrights) {
       var postBody = netadpPostAccessrights;
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling netadpPostAccessrights");
       }
-
       // verify the required parameter 'netadpPostAccessrights' is set
       if (netadpPostAccessrights === undefined || netadpPostAccessrights === null) {
         throw new Error("Missing the required parameter 'netadpPostAccessrights' when calling netadpPostAccessrights");
       }
-
 
       var pathParams = {
         'netadpId': netadpId
@@ -597,12 +573,10 @@
      */
     this.netadpShowWithHttpInfo = function(netadpId) {
       var postBody = null;
-
       // verify the required parameter 'netadpId' is set
       if (netadpId === undefined || netadpId === null) {
         throw new Error("Missing the required parameter 'netadpId' when calling netadpShow");
       }
-
 
       var pathParams = {
         'netadpId': netadpId

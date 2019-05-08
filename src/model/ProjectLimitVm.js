@@ -74,12 +74,14 @@
 
   /**
    * @member {Number} count
+   * @default 3
    */
-  exports.prototype['count'] = undefined;
+  exports.prototype['count'] = 3;
   /**
    * @member {Number} memory
+   * @default 10
    */
-  exports.prototype['memory'] = undefined;
+  exports.prototype['memory'] = 10;
 
 
 
