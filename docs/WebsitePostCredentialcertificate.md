@@ -4,8 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**type** | **String** |  | [optional] 
-**value** | **String** |  | [optional] 
+**name** | **String** |  | 
+**type** | **String** |  | 
+**value** | **String** |  | 
+
+
+
+## Enum: TypeEnum
+
+
+* `ssh` (value: `"ssh"`)
+
+
 
 

@@ -10,3 +10,16 @@ Name | Type | Description | Notes
 **token** | **String** |  | [optional] 
 
 
+
+## Enum: TypeEnum
+
+
+* `totp` (value: `"totp"`)
+
+* `otac` (value: `"otac"`)
+
+* `sha512` (value: `"sha512"`)
+
+
+
+

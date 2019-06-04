@@ -164,6 +164,27 @@ Class | Method | HTTP request | Description
 *HyperOneApi.ContainerApi* | [**containerPostAccessrights**](docs/ContainerApi.md#containerPostAccessrights) | **POST** /container/{containerId}/accessrights | /accessrights
 *HyperOneApi.ContainerApi* | [**containerShow**](docs/ContainerApi.md#containerShow) | **GET** /container/{containerId} | Get
 *HyperOneApi.ContainerApi* | [**containerUpdate**](docs/ContainerApi.md#containerUpdate) | **PATCH** /container/{containerId} | Update
+*HyperOneApi.DatabaseApi* | [**databaseActionStart**](docs/DatabaseApi.md#databaseActionStart) | **POST** /database/{databaseId}/actions/start | /actions/start
+*HyperOneApi.DatabaseApi* | [**databaseActionStop**](docs/DatabaseApi.md#databaseActionStop) | **POST** /database/{databaseId}/actions/stop | /actions/stop
+*HyperOneApi.DatabaseApi* | [**databaseCreate**](docs/DatabaseApi.md#databaseCreate) | **POST** /database | Create
+*HyperOneApi.DatabaseApi* | [**databaseDelete**](docs/DatabaseApi.md#databaseDelete) | **DELETE** /database/{databaseId} | Delete
+*HyperOneApi.DatabaseApi* | [**databaseDeleteAccessrightsIdentity**](docs/DatabaseApi.md#databaseDeleteAccessrightsIdentity) | **DELETE** /database/{databaseId}/accessrights/{identity} | /accessrights/:identity
+*HyperOneApi.DatabaseApi* | [**databaseDeleteCredentialpasswordId**](docs/DatabaseApi.md#databaseDeleteCredentialpasswordId) | **DELETE** /database/{databaseId}/credential/password/{id} | /credential/password/:id
+*HyperOneApi.DatabaseApi* | [**databaseDeleteTagKey**](docs/DatabaseApi.md#databaseDeleteTagKey) | **DELETE** /database/{databaseId}/tag/{key} | /tag/:key
+*HyperOneApi.DatabaseApi* | [**databaseGetCredentialpasswordId**](docs/DatabaseApi.md#databaseGetCredentialpasswordId) | **GET** /database/{databaseId}/credential/password/{id} | /credential/password/:id
+*HyperOneApi.DatabaseApi* | [**databaseGetServicesServiceId**](docs/DatabaseApi.md#databaseGetServicesServiceId) | **GET** /database/{databaseId}/services/{serviceId} | /services/:serviceId
+*HyperOneApi.DatabaseApi* | [**databaseGetTag**](docs/DatabaseApi.md#databaseGetTag) | **GET** /database/{databaseId}/tag | /tag
+*HyperOneApi.DatabaseApi* | [**databaseList**](docs/DatabaseApi.md#databaseList) | **GET** /database | List
+*HyperOneApi.DatabaseApi* | [**databaseListAccessrights**](docs/DatabaseApi.md#databaseListAccessrights) | **GET** /database/{databaseId}/accessrights | /accessrights
+*HyperOneApi.DatabaseApi* | [**databaseListCredentialpassword**](docs/DatabaseApi.md#databaseListCredentialpassword) | **GET** /database/{databaseId}/credential/password | /credential/password
+*HyperOneApi.DatabaseApi* | [**databaseListQueue**](docs/DatabaseApi.md#databaseListQueue) | **GET** /database/{databaseId}/queue | /queue
+*HyperOneApi.DatabaseApi* | [**databaseListServices**](docs/DatabaseApi.md#databaseListServices) | **GET** /database/{databaseId}/services | /services
+*HyperOneApi.DatabaseApi* | [**databasePatchCredentialpasswordId**](docs/DatabaseApi.md#databasePatchCredentialpasswordId) | **PATCH** /database/{databaseId}/credential/password/{id} | /credential/password/:id
+*HyperOneApi.DatabaseApi* | [**databasePatchTag**](docs/DatabaseApi.md#databasePatchTag) | **PATCH** /database/{databaseId}/tag | /tag
+*HyperOneApi.DatabaseApi* | [**databasePostAccessrights**](docs/DatabaseApi.md#databasePostAccessrights) | **POST** /database/{databaseId}/accessrights | /accessrights
+*HyperOneApi.DatabaseApi* | [**databasePostCredentialpassword**](docs/DatabaseApi.md#databasePostCredentialpassword) | **POST** /database/{databaseId}/credential/password | /credential/password
+*HyperOneApi.DatabaseApi* | [**databaseShow**](docs/DatabaseApi.md#databaseShow) | **GET** /database/{databaseId} | Get
+*HyperOneApi.DatabaseApi* | [**databaseUpdate**](docs/DatabaseApi.md#databaseUpdate) | **PATCH** /database/{databaseId} | Update
 *HyperOneApi.DiskApi* | [**diskActionClone**](docs/DiskApi.md#diskActionClone) | **POST** /disk/{diskId}/actions/clone | /actions/clone
 *HyperOneApi.DiskApi* | [**diskActionResize**](docs/DiskApi.md#diskActionResize) | **POST** /disk/{diskId}/actions/resize | /actions/resize
 *HyperOneApi.DiskApi* | [**diskActionTransfer**](docs/DiskApi.md#diskActionTransfer) | **POST** /disk/{diskId}/actions/transfer | /actions/transfer
@@ -488,6 +509,7 @@ Class | Method | HTTP request | Description
 *HyperOneApi.VolumeApi* | [**volumeUpdate**](docs/VolumeApi.md#volumeUpdate) | **PATCH** /volume/{volumeId} | Update
 *HyperOneApi.WebsiteApi* | [**websiteActionStart**](docs/WebsiteApi.md#websiteActionStart) | **POST** /website/{websiteId}/actions/start | /actions/start
 *HyperOneApi.WebsiteApi* | [**websiteActionStop**](docs/WebsiteApi.md#websiteActionStop) | **POST** /website/{websiteId}/actions/stop | /actions/stop
+*HyperOneApi.WebsiteApi* | [**websiteActionUpdateDomain**](docs/WebsiteApi.md#websiteActionUpdateDomain) | **POST** /website/{websiteId}/actions/update_domain | /actions/update_domain
 *HyperOneApi.WebsiteApi* | [**websiteCreate**](docs/WebsiteApi.md#websiteCreate) | **POST** /website | Create
 *HyperOneApi.WebsiteApi* | [**websiteDelete**](docs/WebsiteApi.md#websiteDelete) | **DELETE** /website/{websiteId} | Delete
 *HyperOneApi.WebsiteApi* | [**websiteDeleteAccessrightsIdentity**](docs/WebsiteApi.md#websiteDeleteAccessrightsIdentity) | **DELETE** /website/{websiteId}/accessrights/{identity} | /accessrights/:identity
@@ -540,6 +562,15 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.ContainerVolumes](docs/ContainerVolumes.md)
  - [HyperOneApi.CredentialCertificate](docs/CredentialCertificate.md)
  - [HyperOneApi.CredentialPassword](docs/CredentialPassword.md)
+ - [HyperOneApi.Database](docs/Database.md)
+ - [HyperOneApi.DatabaseCreate](docs/DatabaseCreate.md)
+ - [HyperOneApi.DatabaseCreateCredential](docs/DatabaseCreateCredential.md)
+ - [HyperOneApi.DatabaseCreateCredentialPassword](docs/DatabaseCreateCredentialPassword.md)
+ - [HyperOneApi.DatabasePatchCredentialpasswordId](docs/DatabasePatchCredentialpasswordId.md)
+ - [HyperOneApi.DatabasePostAccessrights](docs/DatabasePostAccessrights.md)
+ - [HyperOneApi.DatabasePostCredentialpassword](docs/DatabasePostCredentialpassword.md)
+ - [HyperOneApi.DatabaseServices](docs/DatabaseServices.md)
+ - [HyperOneApi.DatabaseUpdate](docs/DatabaseUpdate.md)
  - [HyperOneApi.Disk](docs/Disk.md)
  - [HyperOneApi.DiskActionClone](docs/DiskActionClone.md)
  - [HyperOneApi.DiskActionResize](docs/DiskActionResize.md)
@@ -733,6 +764,7 @@ Class | Method | HTTP request | Description
  - [HyperOneApi.VolumeServices](docs/VolumeServices.md)
  - [HyperOneApi.VolumeUpdate](docs/VolumeUpdate.md)
  - [HyperOneApi.Website](docs/Website.md)
+ - [HyperOneApi.WebsiteActionUpdateDomain](docs/WebsiteActionUpdateDomain.md)
  - [HyperOneApi.WebsiteCreate](docs/WebsiteCreate.md)
  - [HyperOneApi.WebsitePatchCredentialcertificateId](docs/WebsitePatchCredentialcertificateId.md)
  - [HyperOneApi.WebsitePatchCredentialpasswordId](docs/WebsitePatchCredentialpasswordId.md)

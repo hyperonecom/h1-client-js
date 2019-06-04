@@ -10,3 +10,12 @@ Name | Type | Description | Notes
 **token** | **String** |  | [optional] 
 
 
+
+## Enum: TypeEnum
+
+
+* `sha512` (value: `"sha512"`)
+
+
+
+

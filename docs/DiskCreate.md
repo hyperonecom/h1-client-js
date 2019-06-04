@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **size** | **Number** |  | [optional] 
 **cloud** | **String** |  | [optional] 
 **metadata** | [**DiskMetadata**](DiskMetadata.md) |  | [optional] 
+**source** | **String** |  | [optional] 
 **tag** | [**Object**](.md) |  | [optional] 
 
 

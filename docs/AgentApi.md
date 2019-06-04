@@ -1489,7 +1489,7 @@ apiInstance.agentPutEnabledServices(agentId, requestBody).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agentId** | **String**| ID of agent | 
- **requestBody** | [**[String]**](Array.md)|  | 
+ **requestBody** | [**[String]**](String.md)|  | 
 
 ### Return type
 

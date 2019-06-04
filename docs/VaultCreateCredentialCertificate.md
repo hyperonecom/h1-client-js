@@ -9,3 +9,12 @@ Name | Type | Description | Notes
 **value** | **String** |  | 
 
 
+
+## Enum: TypeEnum
+
+
+* `ssh` (value: `"ssh"`)
+
+
+
+

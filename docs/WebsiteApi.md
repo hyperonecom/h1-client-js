@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**websiteActionStart**](WebsiteApi.md#websiteActionStart) | **POST** /website/{websiteId}/actions/start | /actions/start
 [**websiteActionStop**](WebsiteApi.md#websiteActionStop) | **POST** /website/{websiteId}/actions/stop | /actions/stop
+[**websiteActionUpdateDomain**](WebsiteApi.md#websiteActionUpdateDomain) | **POST** /website/{websiteId}/actions/update_domain | /actions/update_domain
 [**websiteCreate**](WebsiteApi.md#websiteCreate) | **POST** /website | Create
 [**websiteDelete**](WebsiteApi.md#websiteDelete) | **DELETE** /website/{websiteId} | Delete
 [**websiteDeleteAccessrightsIdentity**](WebsiteApi.md#websiteDeleteAccessrightsIdentity) | **DELETE** /website/{websiteId}/accessrights/{identity} | /accessrights/:identity
@@ -144,6 +145,65 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## websiteActionUpdateDomain
+
+> Website websiteActionUpdateDomain(websiteId, websiteActionUpdateDomain)
+
+/actions/update_domain
+
+Action update_domain
+
+### Example
+
+```javascript
+var HyperOneApi = require('hyper_one_api');
+var defaultClient = HyperOneApi.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HyperOneApi.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websiteActionUpdateDomain = new HyperOneApi.WebsiteActionUpdateDomain(); // WebsiteActionUpdateDomain | 
+apiInstance.websiteActionUpdateDomain(websiteId, websiteActionUpdateDomain).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **websiteId** | **String**| ID of website | 
+ **websiteActionUpdateDomain** | [**WebsiteActionUpdateDomain**](WebsiteActionUpdateDomain.md)|  | 
+
+### Return type
+
+[**Website**](Website.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
