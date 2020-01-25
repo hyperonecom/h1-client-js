@@ -58,34 +58,35 @@ Action restart
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let opts = {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var opts = {
   'xIdempotencyKey': "xIdempotencyKey_example" // String | 
 };
-apiInstance.websiteActionRestart(websiteId, opts).then((data) => {
+apiInstance.websiteActionRestart(websiteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -118,34 +119,35 @@ Action start
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let opts = {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var opts = {
   'xIdempotencyKey': "xIdempotencyKey_example" // String | 
 };
-apiInstance.websiteActionStart(websiteId, opts).then((data) => {
+apiInstance.websiteActionStart(websiteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -178,34 +180,35 @@ Action stop
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let opts = {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var opts = {
   'xIdempotencyKey': "xIdempotencyKey_example" // String | 
 };
-apiInstance.websiteActionStop(websiteId, opts).then((data) => {
+apiInstance.websiteActionStop(websiteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -238,35 +241,36 @@ Action transfer
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let websiteActionTransfer = new HyperoneClient.WebsiteActionTransfer(); // WebsiteActionTransfer | 
-let opts = {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websiteActionTransfer = new HyperoneClient.WebsiteActionTransfer(); // WebsiteActionTransfer | 
+var opts = {
   'xIdempotencyKey': "xIdempotencyKey_example" // String | 
 };
-apiInstance.websiteActionTransfer(websiteId, websiteActionTransfer, opts).then((data) => {
+apiInstance.websiteActionTransfer(websiteId, websiteActionTransfer, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -300,35 +304,36 @@ Action update_domain
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let websiteActionUpdateDomain = new HyperoneClient.WebsiteActionUpdateDomain(); // WebsiteActionUpdateDomain | 
-let opts = {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websiteActionUpdateDomain = new HyperoneClient.WebsiteActionUpdateDomain(); // WebsiteActionUpdateDomain | 
+var opts = {
   'xIdempotencyKey': "xIdempotencyKey_example" // String | 
 };
-apiInstance.websiteActionUpdateDomain(websiteId, websiteActionUpdateDomain, opts).then((data) => {
+apiInstance.websiteActionUpdateDomain(websiteId, websiteActionUpdateDomain, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -362,34 +367,35 @@ Create website
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteCreate = new HyperoneClient.WebsiteCreate(); // WebsiteCreate | 
-let opts = {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteCreate = new HyperoneClient.WebsiteCreate(); // WebsiteCreate | 
+var opts = {
   'xIdempotencyKey': "xIdempotencyKey_example" // String | 
 };
-apiInstance.websiteCreate(websiteCreate, opts).then((data) => {
+apiInstance.websiteCreate(websiteCreate, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -420,31 +426,32 @@ Delete
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-apiInstance.websiteDelete(websiteId).then(() => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+apiInstance.websiteDelete(websiteId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -474,32 +481,33 @@ null (empty response body)
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let identity = "identity_example"; // String | identity
-apiInstance.websiteDeleteAccessrightsIdentity(websiteId, identity).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var identity = "identity_example"; // String | identity
+apiInstance.websiteDeleteAccessrightsIdentity(websiteId, identity).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -530,32 +538,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-apiInstance.websiteDeleteCredentialId(websiteId, id).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+apiInstance.websiteDeleteCredentialId(websiteId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -586,32 +595,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-apiInstance.websiteDeleteCredentialcertificateId(websiteId, id).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+apiInstance.websiteDeleteCredentialcertificateId(websiteId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -642,32 +652,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-apiInstance.websiteDeleteCredentialpasswordId(websiteId, id).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+apiInstance.websiteDeleteCredentialpasswordId(websiteId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -698,32 +709,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-apiInstance.websiteDeleteSnapshotId(websiteId, id).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+apiInstance.websiteDeleteSnapshotId(websiteId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -754,32 +766,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let key = "key_example"; // String | key
-apiInstance.websiteDeleteTagKey(websiteId, key).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var key = "key_example"; // String | key
+apiInstance.websiteDeleteTagKey(websiteId, key).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -810,32 +823,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-apiInstance.websiteGetCredentialId(websiteId, id).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+apiInstance.websiteGetCredentialId(websiteId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -866,32 +880,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-apiInstance.websiteGetCredentialcertificateId(websiteId, id).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+apiInstance.websiteGetCredentialcertificateId(websiteId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -922,32 +937,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-apiInstance.websiteGetCredentialpasswordId(websiteId, id).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+apiInstance.websiteGetCredentialpasswordId(websiteId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -978,32 +994,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let serviceId = "serviceId_example"; // String | serviceId
-apiInstance.websiteGetServicesServiceId(websiteId, serviceId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var serviceId = "serviceId_example"; // String | serviceId
+apiInstance.websiteGetServicesServiceId(websiteId, serviceId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1034,32 +1051,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-apiInstance.websiteGetSnapshotId(websiteId, id).then(() => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+apiInstance.websiteGetSnapshotId(websiteId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1090,34 +1108,35 @@ null (empty response body)
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let opts = {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var opts = {
   'incremental': "incremental_example" // String | incremental
 };
-apiInstance.websiteGetSnapshotIddownload(websiteId, opts).then(() => {
+apiInstance.websiteGetSnapshotIddownload(websiteId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1148,31 +1167,32 @@ null (empty response body)
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-apiInstance.websiteGetTag(websiteId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+apiInstance.websiteGetTag(websiteId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1204,34 +1224,35 @@ List website
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let opts = {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var opts = {
   'name': "name_example", // String | Filter by name
   'tag': {key: "null"} // {String: String} | Filter by tag
 };
-apiInstance.websiteList(opts).then((data) => {
+apiInstance.websiteList(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1262,31 +1283,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-apiInstance.websiteListAccessrights(websiteId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+apiInstance.websiteListAccessrights(websiteId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1316,31 +1338,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-apiInstance.websiteListCredential(websiteId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+apiInstance.websiteListCredential(websiteId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1370,31 +1393,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-apiInstance.websiteListCredentialcertificate(websiteId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+apiInstance.websiteListCredentialcertificate(websiteId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1424,31 +1448,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-apiInstance.websiteListCredentialpassword(websiteId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+apiInstance.websiteListCredentialpassword(websiteId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1478,35 +1503,36 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let opts = {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var opts = {
   'limit': 3.4, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
-apiInstance.websiteListQueue(websiteId, opts).then((data) => {
+apiInstance.websiteListQueue(websiteId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1538,31 +1564,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-apiInstance.websiteListServices(websiteId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+apiInstance.websiteListServices(websiteId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1592,31 +1619,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-apiInstance.websiteListSnapshot(websiteId).then(() => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+apiInstance.websiteListSnapshot(websiteId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1646,33 +1674,34 @@ null (empty response body)
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-let websitePatchCredentialId = new HyperoneClient.WebsitePatchCredentialId(); // WebsitePatchCredentialId | 
-apiInstance.websitePatchCredentialId(websiteId, id, websitePatchCredentialId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+var websitePatchCredentialId = new HyperoneClient.WebsitePatchCredentialId(); // WebsitePatchCredentialId | 
+apiInstance.websitePatchCredentialId(websiteId, id, websitePatchCredentialId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1704,33 +1733,34 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-let websitePatchCredentialcertificateId = new HyperoneClient.WebsitePatchCredentialcertificateId(); // WebsitePatchCredentialcertificateId | 
-apiInstance.websitePatchCredentialcertificateId(websiteId, id, websitePatchCredentialcertificateId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+var websitePatchCredentialcertificateId = new HyperoneClient.WebsitePatchCredentialcertificateId(); // WebsitePatchCredentialcertificateId | 
+apiInstance.websitePatchCredentialcertificateId(websiteId, id, websitePatchCredentialcertificateId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1762,33 +1792,34 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let id = "id_example"; // String | id
-let websitePatchCredentialpasswordId = new HyperoneClient.WebsitePatchCredentialpasswordId(); // WebsitePatchCredentialpasswordId | 
-apiInstance.websitePatchCredentialpasswordId(websiteId, id, websitePatchCredentialpasswordId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+var websitePatchCredentialpasswordId = new HyperoneClient.WebsitePatchCredentialpasswordId(); // WebsitePatchCredentialpasswordId | 
+apiInstance.websitePatchCredentialpasswordId(websiteId, id, websitePatchCredentialpasswordId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1820,32 +1851,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let requestBody = {key: "null"}; // {String: String} | 
-apiInstance.websitePatchTag(websiteId, requestBody).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.websitePatchTag(websiteId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1876,32 +1908,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let websitePostAccessrights = new HyperoneClient.WebsitePostAccessrights(); // WebsitePostAccessrights | 
-apiInstance.websitePostAccessrights(websiteId, websitePostAccessrights).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websitePostAccessrights = new HyperoneClient.WebsitePostAccessrights(); // WebsitePostAccessrights | 
+apiInstance.websitePostAccessrights(websiteId, websitePostAccessrights).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1932,32 +1965,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let websitePostCredential = new HyperoneClient.WebsitePostCredential(); // WebsitePostCredential | 
-apiInstance.websitePostCredential(websiteId, websitePostCredential).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websitePostCredential = new HyperoneClient.WebsitePostCredential(); // WebsitePostCredential | 
+apiInstance.websitePostCredential(websiteId, websitePostCredential).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -1988,32 +2022,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let websitePostCredentialcertificate = new HyperoneClient.WebsitePostCredentialcertificate(); // WebsitePostCredentialcertificate | 
-apiInstance.websitePostCredentialcertificate(websiteId, websitePostCredentialcertificate).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websitePostCredentialcertificate = new HyperoneClient.WebsitePostCredentialcertificate(); // WebsitePostCredentialcertificate | 
+apiInstance.websitePostCredentialcertificate(websiteId, websitePostCredentialcertificate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -2044,32 +2079,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let websitePostCredentialpassword = new HyperoneClient.WebsitePostCredentialpassword(); // WebsitePostCredentialpassword | 
-apiInstance.websitePostCredentialpassword(websiteId, websitePostCredentialpassword).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websitePostCredentialpassword = new HyperoneClient.WebsitePostCredentialpassword(); // WebsitePostCredentialpassword | 
+apiInstance.websitePostCredentialpassword(websiteId, websitePostCredentialpassword).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -2100,32 +2136,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let websitePostSnapshot = new HyperoneClient.WebsitePostSnapshot(); // WebsitePostSnapshot | 
-apiInstance.websitePostSnapshot(websiteId, websitePostSnapshot).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websitePostSnapshot = new HyperoneClient.WebsitePostSnapshot(); // WebsitePostSnapshot | 
+apiInstance.websitePostSnapshot(websiteId, websitePostSnapshot).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -2156,32 +2193,33 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let requestBody = {key: "null"}; // {String: String} | 
-apiInstance.websitePutTag(websiteId, requestBody).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var requestBody = {key: "null"}; // {String: String} | 
+apiInstance.websitePutTag(websiteId, requestBody).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -2214,31 +2252,32 @@ Returns a single website
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-apiInstance.websiteShow(websiteId).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+apiInstance.websiteShow(websiteId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes
@@ -2270,32 +2309,33 @@ Returns modified website
 ### Example
 
 ```javascript
-import HyperoneClient from 'hyperone-client';
-let defaultClient = HyperoneClient.ApiClient.instance;
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-let Project = defaultClient.authentications['Project'];
+var Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-let ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
 // Configure Bearer access token for authorization: Session
-let Session = defaultClient.authentications['Session'];
-Session.accessToken = "YOUR ACCESS TOKEN"
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new HyperoneClient.WebsiteApi();
-let websiteId = "websiteId_example"; // String | ID of website
-let websiteUpdate = new HyperoneClient.WebsiteUpdate(); // WebsiteUpdate | 
-apiInstance.websiteUpdate(websiteId, websiteUpdate).then((data) => {
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websiteUpdate = new HyperoneClient.WebsiteUpdate(); // WebsiteUpdate | 
+apiInstance.websiteUpdate(websiteId, websiteUpdate).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
 ```
 
 ### Parameters
+
 
 
 Name | Type | Description  | Notes

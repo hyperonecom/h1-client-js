@@ -5,3 +5,4 @@ additionalProperties:
   licenseName: MIT
   projectDescription: "Client description for HyperOne"
   usePromises: true
+  useES6: false
