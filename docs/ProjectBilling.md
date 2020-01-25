@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectBilling
+# HyperoneClient.ProjectBilling
 
 ## Properties
 

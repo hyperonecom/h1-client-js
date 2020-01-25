@@ -1,9 +1,9 @@
-# HyperOneApi.OrganisationLimitOrganisation
+# HyperoneClient.OrganisationLimitOrganisation
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**project** | **Object** |  | [optional] 
+**project** | [**ProjectLimitContainer**](ProjectLimitContainer.md) |  | [optional] 
 
 

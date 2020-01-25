@@ -1,20 +1,21 @@
-# HyperOneApi.User
+# HyperoneClient.User
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**name** | **String** |  | [optional] [default to &#39;&#39;]
-**familyName** | **String** |  | [optional] [default to &#39;&#39;]
+**id** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
+**familyName** | **String** |  | [optional] 
 **createdOn** | **Date** |  | [optional] 
 **modifiedOn** | **Date** |  | [optional] 
 **passwordReset** | [**UserPasswordReset**](UserPasswordReset.md) |  | [optional] 
-**verified** | **Boolean** |  | [optional] [default to false]
+**verified** | **Boolean** |  | [optional] 
 **lang** | **String** |  | [optional] [default to &#39;en&#39;]
-**phone** | **String** |  | [optional] [default to &#39;&#39;]
-**lastLogin** | [**[UserLastLogin]**](UserLastLogin.md) |  | [optional] 
+**phone** | **String** |  | [optional] 
 **limit** | [**UserLimit**](UserLimit.md) |  | [optional] 
+**services** | [**[UserServices]**](UserServices.md) |  | [optional] 
 **credential** | [**UserCredential**](UserCredential.md) |  | [optional] 
 **networkAcl** | [**[UserNetworkAcl]**](UserNetworkAcl.md) |  | [optional] 
 

@@ -1,4 +1,4 @@
-# HyperOneApi.DiskApi
+# HyperoneClient.DiskApi
 
 All URIs are relative to *https://api.hyperone.com/v1*
 
@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**diskDelete**](DiskApi.md#diskDelete) | **DELETE** /disk/{diskId} | Delete
 [**diskDeleteAccessrightsIdentity**](DiskApi.md#diskDeleteAccessrightsIdentity) | **DELETE** /disk/{diskId}/accessrights/{identity} | /accessrights/:identity
 [**diskDeleteTagKey**](DiskApi.md#diskDeleteTagKey) | **DELETE** /disk/{diskId}/tag/{key} | /tag/:key
+[**diskGetDownload**](DiskApi.md#diskGetDownload) | **GET** /disk/{diskId}/download | /download
 [**diskGetServicesServiceId**](DiskApi.md#diskGetServicesServiceId) | **GET** /disk/{diskId}/services/{serviceId} | /services/:serviceId
 [**diskGetTag**](DiskApi.md#diskGetTag) | **GET** /disk/{diskId}/tag | /tag
 [**diskList**](DiskApi.md#diskList) | **GET** /disk | List
@@ -19,6 +20,7 @@ Method | HTTP request | Description
 [**diskListServices**](DiskApi.md#diskListServices) | **GET** /disk/{diskId}/services | /services
 [**diskPatchTag**](DiskApi.md#diskPatchTag) | **PATCH** /disk/{diskId}/tag | /tag
 [**diskPostAccessrights**](DiskApi.md#diskPostAccessrights) | **POST** /disk/{diskId}/accessrights | /accessrights
+[**diskPutTag**](DiskApi.md#diskPutTag) | **PUT** /disk/{diskId}/tag | /tag
 [**diskShow**](DiskApi.md#diskShow) | **GET** /disk/{diskId} | Get
 [**diskUpdate**](DiskApi.md#diskUpdate) | **PATCH** /disk/{diskId} | Update
 
@@ -26,7 +28,7 @@ Method | HTTP request | Description
 
 ## diskActionClone
 
-> Disk diskActionClone(diskId, diskActionClone)
+> Disk diskActionClone(diskId, diskActionClone, opts)
 
 /actions/clone
 
@@ -35,26 +37,29 @@ Action clone
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-var diskActionClone = new HyperOneApi.DiskActionClone(); // DiskActionClone | 
-apiInstance.diskActionClone(diskId, diskActionClone).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let diskActionClone = new HyperoneClient.DiskActionClone(); // DiskActionClone | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.diskActionClone(diskId, diskActionClone, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -63,11 +68,11 @@ apiInstance.diskActionClone(diskId, diskActionClone).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diskId** | **String**| ID of disk | 
  **diskActionClone** | [**DiskActionClone**](DiskActionClone.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -85,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## diskActionResize
 
-> Disk diskActionResize(diskId, diskActionResize)
+> Disk diskActionResize(diskId, diskActionResize, opts)
 
 /actions/resize
 
@@ -94,26 +99,29 @@ Action resize
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-var diskActionResize = new HyperOneApi.DiskActionResize(); // DiskActionResize | 
-apiInstance.diskActionResize(diskId, diskActionResize).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let diskActionResize = new HyperoneClient.DiskActionResize(); // DiskActionResize | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.diskActionResize(diskId, diskActionResize, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -122,11 +130,11 @@ apiInstance.diskActionResize(diskId, diskActionResize).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diskId** | **String**| ID of disk | 
  **diskActionResize** | [**DiskActionResize**](DiskActionResize.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -144,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## diskActionTransfer
 
-> Disk diskActionTransfer(diskId, diskActionTransfer)
+> Disk diskActionTransfer(diskId, diskActionTransfer, opts)
 
 /actions/transfer
 
@@ -153,26 +161,29 @@ Action transfer
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-var diskActionTransfer = new HyperOneApi.DiskActionTransfer(); // DiskActionTransfer | 
-apiInstance.diskActionTransfer(diskId, diskActionTransfer).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let diskActionTransfer = new HyperoneClient.DiskActionTransfer(); // DiskActionTransfer | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.diskActionTransfer(diskId, diskActionTransfer, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -181,11 +192,11 @@ apiInstance.diskActionTransfer(diskId, diskActionTransfer).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diskId** | **String**| ID of disk | 
  **diskActionTransfer** | [**DiskActionTransfer**](DiskActionTransfer.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -203,7 +214,7 @@ Name | Type | Description  | Notes
 
 ## diskCreate
 
-> Disk diskCreate(diskCreate)
+> Disk diskCreate(diskCreate, opts)
 
 Create
 
@@ -212,25 +223,28 @@ Create disk
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskCreate = new HyperOneApi.DiskCreate(); // DiskCreate | 
-apiInstance.diskCreate(diskCreate).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskCreate = new HyperoneClient.DiskCreate(); // DiskCreate | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.diskCreate(diskCreate, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -239,10 +253,10 @@ apiInstance.diskCreate(diskCreate).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diskCreate** | [**DiskCreate**](DiskCreate.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -267,32 +281,31 @@ Delete
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-apiInstance.diskDelete(diskId).then(function() {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+apiInstance.diskDelete(diskId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -322,33 +335,32 @@ null (empty response body)
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-var identity = "identity_example"; // String | identity
-apiInstance.diskDeleteAccessrightsIdentity(diskId, identity).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let identity = "identity_example"; // String | identity
+apiInstance.diskDeleteAccessrightsIdentity(diskId, identity).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -372,40 +384,39 @@ Name | Type | Description  | Notes
 
 ## diskDeleteTagKey
 
-> Object diskDeleteTagKey(diskId, key)
+> {String: String} diskDeleteTagKey(diskId, key)
 
 /tag/:key
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-var key = "key_example"; // String | key
-apiInstance.diskDeleteTagKey(diskId, key).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let key = "key_example"; // String | key
+apiInstance.diskDeleteTagKey(diskId, key).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -415,7 +426,61 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## diskGetDownload
+
+> diskGetDownload(diskId)
+
+/download
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+apiInstance.diskGetDownload(diskId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
@@ -436,33 +501,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.diskGetServicesServiceId(diskId, serviceId).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let serviceId = "serviceId_example"; // String | serviceId
+apiInstance.diskGetServicesServiceId(diskId, serviceId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -486,32 +550,32 @@ Name | Type | Description  | Notes
 
 ## diskGetTag
 
-> Object diskGetTag(diskId)
+> {String: String} diskGetTag(diskId)
 
 /tag
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-apiInstance.diskGetTag(diskId).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+apiInstance.diskGetTag(diskId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -520,14 +584,13 @@ apiInstance.diskGetTag(diskId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diskId** | **String**| ID of disk | 
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -550,35 +613,34 @@ List disk
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var opts = {
+let apiInstance = new HyperoneClient.DiskApi();
+let opts = {
   'name': "name_example", // String | Filter by name
   'tag': {key: "null"} // {String: String} | Filter by tag
 };
-apiInstance.diskList(opts).then(function(data) {
+apiInstance.diskList(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -609,32 +671,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-apiInstance.diskListAccessrights(diskId).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+apiInstance.diskListAccessrights(diskId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -657,32 +718,36 @@ Name | Type | Description  | Notes
 
 ## diskListQueue
 
-> [Event] diskListQueue(diskId)
+> [Event] diskListQueue(diskId, opts)
 
 /queue
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-apiInstance.diskListQueue(diskId).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let opts = {
+  'limit': 3.4, // Number | $limit
+  'skip': 3.4 // Number | $skip
+};
+apiInstance.diskListQueue(diskId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -691,10 +756,11 @@ apiInstance.diskListQueue(diskId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **diskId** | **String**| ID of disk | 
+ **limit** | **Number**| $limit | [optional] 
+ **skip** | **Number**| $skip | [optional] 
 
 ### Return type
 
@@ -719,32 +785,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-apiInstance.diskListServices(diskId).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+apiInstance.diskListServices(diskId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -767,40 +832,39 @@ Name | Type | Description  | Notes
 
 ## diskPatchTag
 
-> Object diskPatchTag(diskId, requestBody)
+> {String: String} diskPatchTag(diskId, requestBody)
 
 /tag
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.diskPatchTag(diskId, requestBody).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let requestBody = {key: "null"}; // {String: String} | 
+apiInstance.diskPatchTag(diskId, requestBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -810,7 +874,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -831,33 +895,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-var diskPostAccessrights = new HyperOneApi.DiskPostAccessrights(); // DiskPostAccessrights | 
-apiInstance.diskPostAccessrights(diskId, diskPostAccessrights).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let diskPostAccessrights = new HyperoneClient.DiskPostAccessrights(); // DiskPostAccessrights | 
+apiInstance.diskPostAccessrights(diskId, diskPostAccessrights).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -868,6 +931,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Disk**](Disk.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## diskPutTag
+
+> {String: String} diskPutTag(diskId, requestBody)
+
+/tag
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let requestBody = {key: "null"}; // {String: String} | 
+apiInstance.diskPutTag(diskId, requestBody).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **diskId** | **String**| ID of disk | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
+
+### Return type
+
+**{String: String}**
 
 ### Authorization
 
@@ -890,32 +1009,31 @@ Returns a single disk
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-apiInstance.diskShow(diskId).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+apiInstance.diskShow(diskId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -947,33 +1065,32 @@ Returns modified disk
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DiskApi();
-var diskId = "diskId_example"; // String | ID of disk
-var diskUpdate = new HyperOneApi.DiskUpdate(); // DiskUpdate | 
-apiInstance.diskUpdate(diskId, diskUpdate).then(function(data) {
+let apiInstance = new HyperoneClient.DiskApi();
+let diskId = "diskId_example"; // String | ID of disk
+let diskUpdate = new HyperoneClient.DiskUpdate(); // DiskUpdate | 
+apiInstance.diskUpdate(diskId, diskUpdate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes

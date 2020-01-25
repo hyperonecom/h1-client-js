@@ -1,4 +1,4 @@
-# HyperOneApi.IsoServices
+# HyperoneClient.IsoServices
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectLimitVolume
+# HyperoneClient.ProjectLimitVolume
 
 ## Properties
 

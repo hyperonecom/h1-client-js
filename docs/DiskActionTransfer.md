@@ -1,4 +1,4 @@
-# HyperOneApi.DiskActionTransfer
+# HyperoneClient.DiskActionTransfer
 
 ## Properties
 

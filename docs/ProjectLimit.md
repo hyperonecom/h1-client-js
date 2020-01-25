@@ -1,26 +1,31 @@
-# HyperOneApi.ProjectLimit
+# HyperoneClient.ProjectLimit
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**vm** | **Object** |  | [optional] 
-**disk** | **Object** |  | [optional] 
-**iso** | **Object** |  | [optional] 
-**network** | **Object** |  | [optional] 
-**image** | **Object** |  | [optional] 
-**ip** | **Object** |  | [optional] 
-**firewall** | **Object** |  | [optional] 
-**netgw** | **Object** |  | [optional] 
-**vault** | **Object** |  | [optional] 
-**snapshot** | **Object** |  | [optional] 
-**domain** | **Object** |  | [optional] 
-**logArchive** | **Object** |  | [optional] 
-**reservation** | **Object** |  | [optional] 
-**container** | **Object** |  | [optional] 
-**volume** | **Object** |  | [optional] 
-**agent** | **Object** |  | [optional] 
-**website** | **Object** |  | [optional] 
-**database** | **Object** |  | [optional] 
+**agent** | [**ProjectLimitAgent**](ProjectLimitAgent.md) |  | [optional] 
+**container** | [**ProjectLimitContainer**](ProjectLimitContainer.md) |  | [optional] 
+**database** | [**ProjectLimitContainer**](ProjectLimitContainer.md) |  | [optional] 
+**journal** | [**ProjectLimitContainer**](ProjectLimitContainer.md) |  | [optional] 
+**registry** | [**ProjectLimitRegistry**](ProjectLimitRegistry.md) |  | [optional] 
+**volume** | [**ProjectLimitVolume**](ProjectLimitVolume.md) |  | [optional] 
+**website** | [**ProjectLimitContainer**](ProjectLimitContainer.md) |  | [optional] 
+**zone** | [**ProjectLimitContainer**](ProjectLimitContainer.md) |  | [optional] 
+**disk** | [**ProjectLimitDisk**](ProjectLimitDisk.md) |  | [optional] 
+**firewall** | [**ProjectLimitContainer**](ProjectLimitContainer.md) |  | [optional] 
+**image** | [**ProjectLimitContainer**](ProjectLimitContainer.md) |  | [optional] 
+**ip** | [**ProjectLimitContainer**](ProjectLimitContainer.md) |  | [optional] 
+**iso** | [**ProjectLimitRegistry**](ProjectLimitRegistry.md) |  | [optional] 
+**netadp** | **String** |  | [optional] 
+**netgw** | [**ProjectLimitContainer**](ProjectLimitContainer.md) |  | [optional] 
+**network** | [**ProjectLimitNetwork**](ProjectLimitNetwork.md) |  | [optional] 
+**replica** | **String** |  | [optional] 
+**snapshot** | [**ProjectLimitSnapshot**](ProjectLimitSnapshot.md) |  | [optional] 
+**user** | **String** |  | [optional] 
+**vault** | [**ProjectLimitVault**](ProjectLimitVault.md) |  | [optional] 
+**vm** | [**ProjectLimitVm**](ProjectLimitVm.md) |  | [optional] 
+**reservation** | [**ProjectLimitReservation**](ProjectLimitReservation.md) |  | [optional] 
+**vmhost** | **String** |  | [optional] 
 
 

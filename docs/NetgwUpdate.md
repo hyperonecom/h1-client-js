@@ -1,4 +1,4 @@
-# HyperOneApi.NetgwUpdate
+# HyperoneClient.NetgwUpdate
 
 ## Properties
 

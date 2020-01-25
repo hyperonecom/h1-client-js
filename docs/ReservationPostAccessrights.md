@@ -1,4 +1,4 @@
-# HyperOneApi.ReservationPostAccessrights
+# HyperoneClient.ReservationPostAccessrights
 
 ## Properties
 

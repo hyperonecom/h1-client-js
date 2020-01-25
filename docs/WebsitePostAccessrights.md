@@ -1,4 +1,4 @@
-# HyperOneApi.WebsitePostAccessrights
+# HyperoneClient.WebsitePostAccessrights
 
 ## Properties
 

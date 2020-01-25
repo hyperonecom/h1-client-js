@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectPostAccessrights
+# HyperoneClient.ProjectPostAccessrights
 
 ## Properties
 

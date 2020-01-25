@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectCreateAccessRights
+# HyperoneClient.ProjectCreateAccessRights
 
 ## Properties
 

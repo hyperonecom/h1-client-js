@@ -1,4 +1,4 @@
-# HyperOneApi.ReservationActionAssign
+# HyperoneClient.ReservationActionAssign
 
 ## Properties
 

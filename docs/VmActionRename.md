@@ -1,4 +1,4 @@
-# HyperOneApi.VmActionRename
+# HyperoneClient.VmActionRename
 
 ## Properties
 

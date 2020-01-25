@@ -1,4 +1,4 @@
-# HyperOneApi.VmSourceImage
+# HyperoneClient.VmSourceImage
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.NetadpAssigned
+# HyperoneClient.NetadpAssigned
 
 ## Properties
 

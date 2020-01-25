@@ -1,4 +1,4 @@
-# HyperOneApi.ContainerCreateRegistry
+# HyperoneClient.ContainerCreateRegistry
 
 ## Properties
 

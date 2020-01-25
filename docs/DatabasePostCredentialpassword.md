@@ -1,4 +1,4 @@
-# HyperOneApi.DatabasePostCredentialpassword
+# HyperoneClient.DatabasePostCredentialpassword
 
 ## Properties
 
@@ -8,14 +8,5 @@ Name | Type | Description | Notes
 **type** | **String** |  | 
 **value** | **String** |  | 
 **token** | **String** |  | [optional] 
-
-
-
-## Enum: TypeEnum
-
-
-* `double-sha1` (value: `"double-sha1"`)
-
-
 
 

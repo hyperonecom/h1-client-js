@@ -1,4 +1,4 @@
-# HyperOneApi.IsoUpdate
+# HyperoneClient.IsoUpdate
 
 ## Properties
 

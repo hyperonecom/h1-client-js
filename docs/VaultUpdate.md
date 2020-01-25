@@ -1,4 +1,4 @@
-# HyperOneApi.VaultUpdate
+# HyperoneClient.VaultUpdate
 
 ## Properties
 

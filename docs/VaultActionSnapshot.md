@@ -1,4 +1,4 @@
-# HyperOneApi.VaultActionSnapshot
+# HyperoneClient.VaultActionSnapshot
 
 ## Properties
 

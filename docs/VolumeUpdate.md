@@ -1,4 +1,4 @@
-# HyperOneApi.VolumeUpdate
+# HyperoneClient.VolumeUpdate
 
 ## Properties
 

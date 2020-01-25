@@ -1,4 +1,4 @@
-# HyperOneApi.OrganisationActionPaymentAssign
+# HyperoneClient.OrganisationActionPaymentAssign
 
 ## Properties
 

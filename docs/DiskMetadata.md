@@ -1,4 +1,4 @@
-# HyperOneApi.DiskMetadata
+# HyperoneClient.DiskMetadata
 
 ## Properties
 

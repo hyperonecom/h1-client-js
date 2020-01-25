@@ -1,4 +1,4 @@
-# HyperOneApi.VolumeApi
+# HyperoneClient.VolumeApi
 
 All URIs are relative to *https://api.hyperone.com/v1*
 
@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**volumeListServices**](VolumeApi.md#volumeListServices) | **GET** /volume/{volumeId}/services | /services
 [**volumePatchTag**](VolumeApi.md#volumePatchTag) | **PATCH** /volume/{volumeId}/tag | /tag
 [**volumePostAccessrights**](VolumeApi.md#volumePostAccessrights) | **POST** /volume/{volumeId}/accessrights | /accessrights
+[**volumePutTag**](VolumeApi.md#volumePutTag) | **PUT** /volume/{volumeId}/tag | /tag
 [**volumeShow**](VolumeApi.md#volumeShow) | **GET** /volume/{volumeId} | Get
 [**volumeUpdate**](VolumeApi.md#volumeUpdate) | **PATCH** /volume/{volumeId} | Update
 
@@ -23,7 +24,7 @@ Method | HTTP request | Description
 
 ## volumeCreate
 
-> Volume volumeCreate(volumeCreate)
+> Volume volumeCreate(volumeCreate, opts)
 
 Create
 
@@ -32,25 +33,28 @@ Create volume
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeCreate = new HyperOneApi.VolumeCreate(); // VolumeCreate | 
-apiInstance.volumeCreate(volumeCreate).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeCreate = new HyperoneClient.VolumeCreate(); // VolumeCreate | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.volumeCreate(volumeCreate, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -59,10 +63,10 @@ apiInstance.volumeCreate(volumeCreate).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **volumeCreate** | [**VolumeCreate**](VolumeCreate.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -87,32 +91,31 @@ Delete
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-apiInstance.volumeDelete(volumeId).then(function() {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+apiInstance.volumeDelete(volumeId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -142,33 +145,32 @@ null (empty response body)
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-var identity = "identity_example"; // String | identity
-apiInstance.volumeDeleteAccessrightsIdentity(volumeId, identity).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+let identity = "identity_example"; // String | identity
+apiInstance.volumeDeleteAccessrightsIdentity(volumeId, identity).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -192,40 +194,39 @@ Name | Type | Description  | Notes
 
 ## volumeDeleteTagKey
 
-> Object volumeDeleteTagKey(volumeId, key)
+> {String: String} volumeDeleteTagKey(volumeId, key)
 
 /tag/:key
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-var key = "key_example"; // String | key
-apiInstance.volumeDeleteTagKey(volumeId, key).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+let key = "key_example"; // String | key
+apiInstance.volumeDeleteTagKey(volumeId, key).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -235,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -256,33 +257,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.volumeGetServicesServiceId(volumeId, serviceId).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+let serviceId = "serviceId_example"; // String | serviceId
+apiInstance.volumeGetServicesServiceId(volumeId, serviceId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -306,32 +306,32 @@ Name | Type | Description  | Notes
 
 ## volumeGetTag
 
-> Object volumeGetTag(volumeId)
+> {String: String} volumeGetTag(volumeId)
 
 /tag
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-apiInstance.volumeGetTag(volumeId).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+apiInstance.volumeGetTag(volumeId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -340,14 +340,13 @@ apiInstance.volumeGetTag(volumeId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **volumeId** | **String**| ID of volume | 
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -370,35 +369,34 @@ List volume
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var opts = {
+let apiInstance = new HyperoneClient.VolumeApi();
+let opts = {
   'name': "name_example", // String | Filter by name
   'tag': {key: "null"} // {String: String} | Filter by tag
 };
-apiInstance.volumeList(opts).then(function(data) {
+apiInstance.volumeList(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -429,32 +427,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-apiInstance.volumeListAccessrights(volumeId).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+apiInstance.volumeListAccessrights(volumeId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -477,32 +474,36 @@ Name | Type | Description  | Notes
 
 ## volumeListQueue
 
-> [Event] volumeListQueue(volumeId)
+> [Event] volumeListQueue(volumeId, opts)
 
 /queue
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-apiInstance.volumeListQueue(volumeId).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+let opts = {
+  'limit': 3.4, // Number | $limit
+  'skip': 3.4 // Number | $skip
+};
+apiInstance.volumeListQueue(volumeId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -511,10 +512,11 @@ apiInstance.volumeListQueue(volumeId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **volumeId** | **String**| ID of volume | 
+ **limit** | **Number**| $limit | [optional] 
+ **skip** | **Number**| $skip | [optional] 
 
 ### Return type
 
@@ -539,32 +541,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-apiInstance.volumeListServices(volumeId).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+apiInstance.volumeListServices(volumeId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -587,40 +588,39 @@ Name | Type | Description  | Notes
 
 ## volumePatchTag
 
-> Object volumePatchTag(volumeId, requestBody)
+> {String: String} volumePatchTag(volumeId, requestBody)
 
 /tag
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.volumePatchTag(volumeId, requestBody).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+let requestBody = {key: "null"}; // {String: String} | 
+apiInstance.volumePatchTag(volumeId, requestBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -651,33 +651,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-var volumePostAccessrights = new HyperOneApi.VolumePostAccessrights(); // VolumePostAccessrights | 
-apiInstance.volumePostAccessrights(volumeId, volumePostAccessrights).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+let volumePostAccessrights = new HyperoneClient.VolumePostAccessrights(); // VolumePostAccessrights | 
+apiInstance.volumePostAccessrights(volumeId, volumePostAccessrights).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -688,6 +687,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Volume**](Volume.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## volumePutTag
+
+> {String: String} volumePutTag(volumeId, requestBody)
+
+/tag
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+let requestBody = {key: "null"}; // {String: String} | 
+apiInstance.volumePutTag(volumeId, requestBody).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **volumeId** | **String**| ID of volume | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
+
+### Return type
+
+**{String: String}**
 
 ### Authorization
 
@@ -710,32 +765,31 @@ Returns a single volume
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-apiInstance.volumeShow(volumeId).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+apiInstance.volumeShow(volumeId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -767,33 +821,32 @@ Returns modified volume
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VolumeApi();
-var volumeId = "volumeId_example"; // String | ID of volume
-var volumeUpdate = new HyperOneApi.VolumeUpdate(); // VolumeUpdate | 
-apiInstance.volumeUpdate(volumeId, volumeUpdate).then(function(data) {
+let apiInstance = new HyperoneClient.VolumeApi();
+let volumeId = "volumeId_example"; // String | ID of volume
+let volumeUpdate = new HyperoneClient.VolumeUpdate(); // VolumeUpdate | 
+apiInstance.volumeUpdate(volumeId, volumeUpdate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes

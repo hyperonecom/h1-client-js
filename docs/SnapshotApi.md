@@ -1,4 +1,4 @@
-# HyperOneApi.SnapshotApi
+# HyperoneClient.SnapshotApi
 
 All URIs are relative to *https://api.hyperone.com/v1*
 
@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**snapshotListServices**](SnapshotApi.md#snapshotListServices) | **GET** /snapshot/{snapshotId}/services | /services
 [**snapshotPatchTag**](SnapshotApi.md#snapshotPatchTag) | **PATCH** /snapshot/{snapshotId}/tag | /tag
 [**snapshotPostAccessrights**](SnapshotApi.md#snapshotPostAccessrights) | **POST** /snapshot/{snapshotId}/accessrights | /accessrights
+[**snapshotPutTag**](SnapshotApi.md#snapshotPutTag) | **PUT** /snapshot/{snapshotId}/tag | /tag
 [**snapshotShow**](SnapshotApi.md#snapshotShow) | **GET** /snapshot/{snapshotId} | Get
 [**snapshotUpdate**](SnapshotApi.md#snapshotUpdate) | **PATCH** /snapshot/{snapshotId} | Update
 
@@ -23,7 +24,7 @@ Method | HTTP request | Description
 
 ## snapshotCreate
 
-> Snapshot snapshotCreate(snapshotCreate)
+> Snapshot snapshotCreate(snapshotCreate, opts)
 
 Create
 
@@ -32,25 +33,28 @@ Create snapshot
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotCreate = new HyperOneApi.SnapshotCreate(); // SnapshotCreate | 
-apiInstance.snapshotCreate(snapshotCreate).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotCreate = new HyperoneClient.SnapshotCreate(); // SnapshotCreate | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.snapshotCreate(snapshotCreate, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -59,10 +63,10 @@ apiInstance.snapshotCreate(snapshotCreate).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **snapshotCreate** | [**SnapshotCreate**](SnapshotCreate.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -87,32 +91,31 @@ Delete
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-apiInstance.snapshotDelete(snapshotId).then(function() {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+apiInstance.snapshotDelete(snapshotId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -142,33 +145,32 @@ null (empty response body)
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-var identity = "identity_example"; // String | identity
-apiInstance.snapshotDeleteAccessrightsIdentity(snapshotId, identity).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+let identity = "identity_example"; // String | identity
+apiInstance.snapshotDeleteAccessrightsIdentity(snapshotId, identity).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -192,40 +194,39 @@ Name | Type | Description  | Notes
 
 ## snapshotDeleteTagKey
 
-> Object snapshotDeleteTagKey(snapshotId, key)
+> {String: String} snapshotDeleteTagKey(snapshotId, key)
 
 /tag/:key
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-var key = "key_example"; // String | key
-apiInstance.snapshotDeleteTagKey(snapshotId, key).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+let key = "key_example"; // String | key
+apiInstance.snapshotDeleteTagKey(snapshotId, key).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -235,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -256,33 +257,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.snapshotGetServicesServiceId(snapshotId, serviceId).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+let serviceId = "serviceId_example"; // String | serviceId
+apiInstance.snapshotGetServicesServiceId(snapshotId, serviceId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -306,32 +306,32 @@ Name | Type | Description  | Notes
 
 ## snapshotGetTag
 
-> Object snapshotGetTag(snapshotId)
+> {String: String} snapshotGetTag(snapshotId)
 
 /tag
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-apiInstance.snapshotGetTag(snapshotId).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+apiInstance.snapshotGetTag(snapshotId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -340,14 +340,13 @@ apiInstance.snapshotGetTag(snapshotId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **snapshotId** | **String**| ID of snapshot | 
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -370,36 +369,35 @@ List snapshot
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var opts = {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let opts = {
   'name': "name_example", // String | Filter by name
   'vault': "vault_example", // String | Filter by vault
   'tag': {key: "null"} // {String: String} | Filter by tag
 };
-apiInstance.snapshotList(opts).then(function(data) {
+apiInstance.snapshotList(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -431,32 +429,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-apiInstance.snapshotListAccessrights(snapshotId).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+apiInstance.snapshotListAccessrights(snapshotId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -479,32 +476,36 @@ Name | Type | Description  | Notes
 
 ## snapshotListQueue
 
-> [Event] snapshotListQueue(snapshotId)
+> [Event] snapshotListQueue(snapshotId, opts)
 
 /queue
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-apiInstance.snapshotListQueue(snapshotId).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+let opts = {
+  'limit': 3.4, // Number | $limit
+  'skip': 3.4 // Number | $skip
+};
+apiInstance.snapshotListQueue(snapshotId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -513,10 +514,11 @@ apiInstance.snapshotListQueue(snapshotId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **snapshotId** | **String**| ID of snapshot | 
+ **limit** | **Number**| $limit | [optional] 
+ **skip** | **Number**| $skip | [optional] 
 
 ### Return type
 
@@ -541,32 +543,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-apiInstance.snapshotListServices(snapshotId).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+apiInstance.snapshotListServices(snapshotId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -589,40 +590,39 @@ Name | Type | Description  | Notes
 
 ## snapshotPatchTag
 
-> Object snapshotPatchTag(snapshotId, requestBody)
+> {String: String} snapshotPatchTag(snapshotId, requestBody)
 
 /tag
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.snapshotPatchTag(snapshotId, requestBody).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+let requestBody = {key: "null"}; // {String: String} | 
+apiInstance.snapshotPatchTag(snapshotId, requestBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -653,33 +653,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-var snapshotPostAccessrights = new HyperOneApi.SnapshotPostAccessrights(); // SnapshotPostAccessrights | 
-apiInstance.snapshotPostAccessrights(snapshotId, snapshotPostAccessrights).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+let snapshotPostAccessrights = new HyperoneClient.SnapshotPostAccessrights(); // SnapshotPostAccessrights | 
+apiInstance.snapshotPostAccessrights(snapshotId, snapshotPostAccessrights).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -690,6 +689,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Snapshot**](Snapshot.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## snapshotPutTag
+
+> {String: String} snapshotPutTag(snapshotId, requestBody)
+
+/tag
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+let requestBody = {key: "null"}; // {String: String} | 
+apiInstance.snapshotPutTag(snapshotId, requestBody).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **snapshotId** | **String**| ID of snapshot | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
+
+### Return type
+
+**{String: String}**
 
 ### Authorization
 
@@ -712,32 +767,31 @@ Returns a single snapshot
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-apiInstance.snapshotShow(snapshotId).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+apiInstance.snapshotShow(snapshotId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -769,33 +823,32 @@ Returns modified snapshot
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.SnapshotApi();
-var snapshotId = "snapshotId_example"; // String | ID of snapshot
-var snapshotUpdate = new HyperOneApi.SnapshotUpdate(); // SnapshotUpdate | 
-apiInstance.snapshotUpdate(snapshotId, snapshotUpdate).then(function(data) {
+let apiInstance = new HyperoneClient.SnapshotApi();
+let snapshotId = "snapshotId_example"; // String | ID of snapshot
+let snapshotUpdate = new HyperoneClient.SnapshotUpdate(); // SnapshotUpdate | 
+apiInstance.snapshotUpdate(snapshotId, snapshotUpdate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes

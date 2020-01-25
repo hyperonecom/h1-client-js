@@ -1,4 +1,4 @@
-# HyperOneApi.VmActionFlavour
+# HyperoneClient.VmActionFlavour
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.SnapshotServices
+# HyperoneClient.SnapshotServices
 
 ## Properties
 

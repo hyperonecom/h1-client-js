@@ -1,4 +1,4 @@
-# HyperOneApi.ContainerCreate
+# HyperoneClient.ContainerCreate
 
 ## Properties
 
@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **image** | **String** |  | 
 **registry** | [**ContainerCreateRegistry**](ContainerCreateRegistry.md) |  | [optional] 
 **service** | **String** |  | 
-**expose** | [**[ContainerCreateExpose]**](ContainerCreateExpose.md) |  | [optional] 
+**expose** | [**[ContainerExpose]**](ContainerExpose.md) |  | [optional] 
 **env** | **[String]** |  | [optional] 
 **command** | **String** |  | [optional] 
-**volumes** | [**[ContainerCreateVolumes]**](ContainerCreateVolumes.md) |  | [optional] 
-**tag** | [**Object**](.md) |  | [optional] 
+**volumes** | [**[ContainerVolumes]**](ContainerVolumes.md) |  | [optional] 
+**tag** | **{String: String}** |  | [optional] 
 
 

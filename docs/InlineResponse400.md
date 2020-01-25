@@ -1,4 +1,4 @@
-# HyperOneApi.InlineResponse400
+# HyperoneClient.InlineResponse400
 
 ## Properties
 

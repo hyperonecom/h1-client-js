@@ -1,4 +1,4 @@
-# HyperOneApi.UserPatchCredentialpasswordId
+# HyperoneClient.UserPatchCredentialpasswordId
 
 ## Properties
 

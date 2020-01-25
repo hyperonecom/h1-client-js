@@ -1,4 +1,4 @@
-# HyperOneApi.VaultServices
+# HyperoneClient.VaultServices
 
 ## Properties
 

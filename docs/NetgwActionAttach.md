@@ -1,4 +1,4 @@
-# HyperOneApi.NetgwActionAttach
+# HyperoneClient.NetgwActionAttach
 
 ## Properties
 

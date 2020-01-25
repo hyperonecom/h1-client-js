@@ -1,4 +1,4 @@
-# HyperOneApi.NetworkPostAccessrights
+# HyperoneClient.NetworkPostAccessrights
 
 ## Properties
 

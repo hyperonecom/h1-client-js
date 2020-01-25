@@ -1,9 +1,10 @@
-# HyperOneApi.Service
+# HyperoneClient.Service
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
 **resource** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 

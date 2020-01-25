@@ -1,4 +1,4 @@
-# HyperOneApi.IpActionAssociate
+# HyperoneClient.IpActionAssociate
 
 ## Properties
 

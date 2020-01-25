@@ -1,4 +1,4 @@
-# HyperOneApi.NetgwCreatePublic
+# HyperoneClient.NetgwCreatePublic
 
 ## Properties
 

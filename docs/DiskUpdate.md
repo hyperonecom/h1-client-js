@@ -1,4 +1,4 @@
-# HyperOneApi.DiskUpdate
+# HyperoneClient.DiskUpdate
 
 ## Properties
 

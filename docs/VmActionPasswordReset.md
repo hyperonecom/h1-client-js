@@ -1,4 +1,4 @@
-# HyperOneApi.VmActionPasswordReset
+# HyperoneClient.VmActionPasswordReset
 
 ## Properties
 

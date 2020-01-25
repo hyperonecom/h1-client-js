@@ -1,4 +1,4 @@
-# HyperOneApi.AgentPostAccessrights
+# HyperoneClient.AgentPostAccessrights
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.IpActionTransfer
+# HyperoneClient.IpActionTransfer
 
 ## Properties
 

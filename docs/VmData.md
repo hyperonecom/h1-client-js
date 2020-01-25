@@ -1,4 +1,4 @@
-# HyperOneApi.VmData
+# HyperoneClient.VmData
 
 ## Properties
 

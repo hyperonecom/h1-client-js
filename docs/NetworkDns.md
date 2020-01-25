@@ -1,4 +1,4 @@
-# HyperOneApi.NetworkDns
+# HyperoneClient.NetworkDns
 
 ## Properties
 

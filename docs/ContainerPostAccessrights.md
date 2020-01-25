@@ -1,4 +1,4 @@
-# HyperOneApi.ContainerPostAccessrights
+# HyperoneClient.ContainerPostAccessrights
 
 ## Properties
 

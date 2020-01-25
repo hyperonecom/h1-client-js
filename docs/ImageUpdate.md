@@ -1,4 +1,4 @@
-# HyperOneApi.ImageUpdate
+# HyperoneClient.ImageUpdate
 
 ## Properties
 

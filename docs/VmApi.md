@@ -1,4 +1,4 @@
-# HyperOneApi.VmApi
+# HyperoneClient.VmApi
 
 All URIs are relative to *https://api.hyperone.com/v1*
 
@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**vmDeleteHddDiskId**](VmApi.md#vmDeleteHddDiskId) | **DELETE** /vm/{vmId}/hdd/{diskId} | /hdd/:diskId
 [**vmDeleteNetadpNetadpId**](VmApi.md#vmDeleteNetadpNetadpId) | **DELETE** /vm/{vmId}/netadp/{netadpId} | /netadp/:netadpId
 [**vmDeleteTagKey**](VmApi.md#vmDeleteTagKey) | **DELETE** /vm/{vmId}/tag/{key} | /tag/:key
+[**vmGetConsole**](VmApi.md#vmGetConsole) | **GET** /vm/{vmId}/console | /console
 [**vmGetServicesServiceId**](VmApi.md#vmGetServicesServiceId) | **GET** /vm/{vmId}/services/{serviceId} | /services/:serviceId
 [**vmGetTag**](VmApi.md#vmGetTag) | **GET** /vm/{vmId}/tag | /tag
 [**vmList**](VmApi.md#vmList) | **GET** /vm | List
@@ -30,6 +31,7 @@ Method | HTTP request | Description
 [**vmPostAccessrights**](VmApi.md#vmPostAccessrights) | **POST** /vm/{vmId}/accessrights | /accessrights
 [**vmPostHdd**](VmApi.md#vmPostHdd) | **POST** /vm/{vmId}/hdd | /hdd
 [**vmPostNetadp**](VmApi.md#vmPostNetadp) | **POST** /vm/{vmId}/netadp | /netadp
+[**vmPutTag**](VmApi.md#vmPutTag) | **PUT** /vm/{vmId}/tag | /tag
 [**vmShow**](VmApi.md#vmShow) | **GET** /vm/{vmId} | Get
 [**vmUpdate**](VmApi.md#vmUpdate) | **PATCH** /vm/{vmId} | Update
 
@@ -37,7 +39,7 @@ Method | HTTP request | Description
 
 ## vmActionFlavour
 
-> Vm vmActionFlavour(vmId, vmActionFlavour)
+> Vm vmActionFlavour(vmId, vmActionFlavour, opts)
 
 /actions/flavour
 
@@ -46,26 +48,29 @@ Action flavour
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var vmActionFlavour = new HyperOneApi.VmActionFlavour(); // VmActionFlavour | 
-apiInstance.vmActionFlavour(vmId, vmActionFlavour).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let vmActionFlavour = new HyperoneClient.VmActionFlavour(); // VmActionFlavour | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.vmActionFlavour(vmId, vmActionFlavour, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -74,11 +79,11 @@ apiInstance.vmActionFlavour(vmId, vmActionFlavour).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
  **vmActionFlavour** | [**VmActionFlavour**](VmActionFlavour.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -96,7 +101,7 @@ Name | Type | Description  | Notes
 
 ## vmActionImage
 
-> Vm vmActionImage(vmId, vmActionImage)
+> Vm vmActionImage(vmId, vmActionImage, opts)
 
 /actions/image
 
@@ -105,26 +110,29 @@ Action image
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var vmActionImage = new HyperOneApi.VmActionImage(); // VmActionImage | 
-apiInstance.vmActionImage(vmId, vmActionImage).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let vmActionImage = new HyperoneClient.VmActionImage(); // VmActionImage | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.vmActionImage(vmId, vmActionImage, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -133,11 +141,11 @@ apiInstance.vmActionImage(vmId, vmActionImage).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
  **vmActionImage** | [**VmActionImage**](VmActionImage.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -155,7 +163,7 @@ Name | Type | Description  | Notes
 
 ## vmActionPasswordReset
 
-> Vm vmActionPasswordReset(vmId, vmActionPasswordReset)
+> Vm vmActionPasswordReset(vmId, vmActionPasswordReset, opts)
 
 /actions/password_reset
 
@@ -164,26 +172,29 @@ Action password_reset
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var vmActionPasswordReset = new HyperOneApi.VmActionPasswordReset(); // VmActionPasswordReset | 
-apiInstance.vmActionPasswordReset(vmId, vmActionPasswordReset).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let vmActionPasswordReset = new HyperoneClient.VmActionPasswordReset(); // VmActionPasswordReset | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.vmActionPasswordReset(vmId, vmActionPasswordReset, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -192,11 +203,11 @@ apiInstance.vmActionPasswordReset(vmId, vmActionPasswordReset).then(function(dat
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
  **vmActionPasswordReset** | [**VmActionPasswordReset**](VmActionPasswordReset.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -214,7 +225,7 @@ Name | Type | Description  | Notes
 
 ## vmActionRename
 
-> Vm vmActionRename(vmId, vmActionRename)
+> Vm vmActionRename(vmId, vmActionRename, opts)
 
 /actions/rename
 
@@ -223,26 +234,29 @@ Action rename
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var vmActionRename = new HyperOneApi.VmActionRename(); // VmActionRename | 
-apiInstance.vmActionRename(vmId, vmActionRename).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let vmActionRename = new HyperoneClient.VmActionRename(); // VmActionRename | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.vmActionRename(vmId, vmActionRename, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -251,11 +265,11 @@ apiInstance.vmActionRename(vmId, vmActionRename).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
  **vmActionRename** | [**VmActionRename**](VmActionRename.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -273,7 +287,7 @@ Name | Type | Description  | Notes
 
 ## vmActionRestart
 
-> Vm vmActionRestart(vmId)
+> Vm vmActionRestart(vmId, opts)
 
 /actions/restart
 
@@ -282,25 +296,28 @@ Action restart
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmActionRestart(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.vmActionRestart(vmId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -309,10 +326,10 @@ apiInstance.vmActionRestart(vmId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -330,7 +347,7 @@ Name | Type | Description  | Notes
 
 ## vmActionStart
 
-> Vm vmActionStart(vmId)
+> Vm vmActionStart(vmId, opts)
 
 /actions/start
 
@@ -339,25 +356,28 @@ Action start
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmActionStart(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.vmActionStart(vmId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -366,10 +386,10 @@ apiInstance.vmActionStart(vmId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -387,7 +407,7 @@ Name | Type | Description  | Notes
 
 ## vmActionStop
 
-> Vm vmActionStop(vmId)
+> Vm vmActionStop(vmId, opts)
 
 /actions/stop
 
@@ -396,25 +416,28 @@ Action stop
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmActionStop(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.vmActionStop(vmId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -423,10 +446,10 @@ apiInstance.vmActionStop(vmId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -444,7 +467,7 @@ Name | Type | Description  | Notes
 
 ## vmActionTurnoff
 
-> Vm vmActionTurnoff(vmId)
+> Vm vmActionTurnoff(vmId, opts)
 
 /actions/turnoff
 
@@ -453,25 +476,28 @@ Action turnoff
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmActionTurnoff(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.vmActionTurnoff(vmId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -480,10 +506,10 @@ apiInstance.vmActionTurnoff(vmId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -501,7 +527,7 @@ Name | Type | Description  | Notes
 
 ## vmCreate
 
-> Vm vmCreate(vmCreate)
+> Vm vmCreate(vmCreate, opts)
 
 Create
 
@@ -510,25 +536,28 @@ Create vm
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmCreate = new HyperOneApi.VmCreate(); // VmCreate | 
-apiInstance.vmCreate(vmCreate).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmCreate = new HyperoneClient.VmCreate(); // VmCreate | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.vmCreate(vmCreate, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -537,10 +566,10 @@ apiInstance.vmCreate(vmCreate).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmCreate** | [**VmCreate**](VmCreate.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -565,33 +594,32 @@ Delete
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var vmDelete = new HyperOneApi.VmDelete(); // VmDelete | 
-apiInstance.vmDelete(vmId, vmDelete).then(function() {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let vmDelete = new HyperoneClient.VmDelete(); // VmDelete | 
+apiInstance.vmDelete(vmId, vmDelete).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -622,33 +650,32 @@ null (empty response body)
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var identity = "identity_example"; // String | identity
-apiInstance.vmDeleteAccessrightsIdentity(vmId, identity).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let identity = "identity_example"; // String | identity
+apiInstance.vmDeleteAccessrightsIdentity(vmId, identity).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -672,40 +699,39 @@ Name | Type | Description  | Notes
 
 ## vmDeleteHddDiskId
 
-> Vm vmDeleteHddDiskId(vmId, diskId)
+> Hdd vmDeleteHddDiskId(vmId, diskId)
 
 /hdd/:diskId
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var diskId = "diskId_example"; // String | diskId
-apiInstance.vmDeleteHddDiskId(vmId, diskId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let diskId = "diskId_example"; // String | diskId
+apiInstance.vmDeleteHddDiskId(vmId, diskId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -715,7 +741,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Vm**](Vm.md)
+[**Hdd**](Hdd.md)
 
 ### Authorization
 
@@ -729,40 +755,39 @@ Name | Type | Description  | Notes
 
 ## vmDeleteNetadpNetadpId
 
-> Vm vmDeleteNetadpNetadpId(vmId, netadpId)
+> Netadp vmDeleteNetadpNetadpId(vmId, netadpId)
 
 /netadp/:netadpId
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var netadpId = "netadpId_example"; // String | netadpId
-apiInstance.vmDeleteNetadpNetadpId(vmId, netadpId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let netadpId = "netadpId_example"; // String | netadpId
+apiInstance.vmDeleteNetadpNetadpId(vmId, netadpId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -772,7 +797,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Vm**](Vm.md)
+[**Netadp**](Netadp.md)
 
 ### Authorization
 
@@ -786,40 +811,39 @@ Name | Type | Description  | Notes
 
 ## vmDeleteTagKey
 
-> Object vmDeleteTagKey(vmId, key)
+> {String: String} vmDeleteTagKey(vmId, key)
 
 /tag/:key
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var key = "key_example"; // String | key
-apiInstance.vmDeleteTagKey(vmId, key).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let key = "key_example"; // String | key
+apiInstance.vmDeleteTagKey(vmId, key).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -829,7 +853,61 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## vmGetConsole
+
+> vmGetConsole(vmId)
+
+/console
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+apiInstance.vmGetConsole(vmId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
@@ -850,33 +928,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.vmGetServicesServiceId(vmId, serviceId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let serviceId = "serviceId_example"; // String | serviceId
+apiInstance.vmGetServicesServiceId(vmId, serviceId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -900,32 +977,32 @@ Name | Type | Description  | Notes
 
 ## vmGetTag
 
-> Object vmGetTag(vmId)
+> {String: String} vmGetTag(vmId)
 
 /tag
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmGetTag(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+apiInstance.vmGetTag(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -934,14 +1011,13 @@ apiInstance.vmGetTag(vmId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -964,35 +1040,34 @@ List vm
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var opts = {
+let apiInstance = new HyperoneClient.VmApi();
+let opts = {
   'name': "name_example", // String | Filter by name
   'tag': {key: "null"} // {String: String} | Filter by tag
 };
-apiInstance.vmList(opts).then(function(data) {
+apiInstance.vmList(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1023,32 +1098,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmListAccessrights(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+apiInstance.vmListAccessrights(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1078,32 +1152,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmListHdd(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+apiInstance.vmListHdd(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1133,32 +1206,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmListNetadp(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+apiInstance.vmListNetadp(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1181,32 +1253,36 @@ Name | Type | Description  | Notes
 
 ## vmListQueue
 
-> [Event] vmListQueue(vmId)
+> [Event] vmListQueue(vmId, opts)
 
 /queue
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmListQueue(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let opts = {
+  'limit': 3.4, // Number | $limit
+  'skip': 3.4 // Number | $skip
+};
+apiInstance.vmListQueue(vmId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1215,10 +1291,11 @@ apiInstance.vmListQueue(vmId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmId** | **String**| ID of vm | 
+ **limit** | **Number**| $limit | [optional] 
+ **skip** | **Number**| $skip | [optional] 
 
 ### Return type
 
@@ -1243,32 +1320,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmListServices(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+apiInstance.vmListServices(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1291,40 +1367,39 @@ Name | Type | Description  | Notes
 
 ## vmPatchTag
 
-> Object vmPatchTag(vmId, requestBody)
+> {String: String} vmPatchTag(vmId, requestBody)
 
 /tag
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.vmPatchTag(vmId, requestBody).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let requestBody = {key: "null"}; // {String: String} | 
+apiInstance.vmPatchTag(vmId, requestBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1334,7 +1409,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -1355,33 +1430,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var vmPostAccessrights = new HyperOneApi.VmPostAccessrights(); // VmPostAccessrights | 
-apiInstance.vmPostAccessrights(vmId, vmPostAccessrights).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let vmPostAccessrights = new HyperoneClient.VmPostAccessrights(); // VmPostAccessrights | 
+apiInstance.vmPostAccessrights(vmId, vmPostAccessrights).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1405,40 +1479,39 @@ Name | Type | Description  | Notes
 
 ## vmPostHdd
 
-> Vm vmPostHdd(vmId, vmPostHdd)
+> Hdd vmPostHdd(vmId, vmPostHdd)
 
 /hdd
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var vmPostHdd = new HyperOneApi.VmPostHdd(); // VmPostHdd | 
-apiInstance.vmPostHdd(vmId, vmPostHdd).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let vmPostHdd = new HyperoneClient.VmPostHdd(); // VmPostHdd | 
+apiInstance.vmPostHdd(vmId, vmPostHdd).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1448,7 +1521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Vm**](Vm.md)
+[**Hdd**](Hdd.md)
 
 ### Authorization
 
@@ -1462,40 +1535,39 @@ Name | Type | Description  | Notes
 
 ## vmPostNetadp
 
-> Vm vmPostNetadp(vmId, vmPostNetadp)
+> Netadp vmPostNetadp(vmId, vmPostNetadp)
 
 /netadp
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var vmPostNetadp = new HyperOneApi.VmPostNetadp(); // VmPostNetadp | 
-apiInstance.vmPostNetadp(vmId, vmPostNetadp).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let vmPostNetadp = new HyperoneClient.VmPostNetadp(); // VmPostNetadp | 
+apiInstance.vmPostNetadp(vmId, vmPostNetadp).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1505,7 +1577,63 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Vm**](Vm.md)
+[**Netadp**](Netadp.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## vmPutTag
+
+> {String: String} vmPutTag(vmId, requestBody)
+
+/tag
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let requestBody = {key: "null"}; // {String: String} | 
+apiInstance.vmPutTag(vmId, requestBody).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vmId** | **String**| ID of vm | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
+
+### Return type
+
+**{String: String}**
 
 ### Authorization
 
@@ -1528,32 +1656,31 @@ Returns a single vm
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-apiInstance.vmShow(vmId).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+apiInstance.vmShow(vmId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1585,33 +1712,32 @@ Returns modified vm
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.VmApi();
-var vmId = "vmId_example"; // String | ID of vm
-var vmUpdate = new HyperOneApi.VmUpdate(); // VmUpdate | 
-apiInstance.vmUpdate(vmId, vmUpdate).then(function(data) {
+let apiInstance = new HyperoneClient.VmApi();
+let vmId = "vmId_example"; // String | ID of vm
+let vmUpdate = new HyperoneClient.VmUpdate(); // VmUpdate | 
+apiInstance.vmUpdate(vmId, vmUpdate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes

@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectLimitReservation
+# HyperoneClient.ProjectLimitReservation
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.FirewallPostAccessrights
+# HyperoneClient.FirewallPostAccessrights
 
 ## Properties
 

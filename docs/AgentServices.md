@@ -1,4 +1,4 @@
-# HyperOneApi.AgentServices
+# HyperoneClient.AgentServices
 
 ## Properties
 

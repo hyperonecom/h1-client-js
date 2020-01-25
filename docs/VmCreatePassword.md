@@ -1,4 +1,4 @@
-# HyperOneApi.VmCreatePassword
+# HyperoneClient.VmCreatePassword
 
 ## Properties
 

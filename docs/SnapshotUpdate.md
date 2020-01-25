@@ -1,4 +1,4 @@
-# HyperOneApi.SnapshotUpdate
+# HyperoneClient.SnapshotUpdate
 
 ## Properties
 

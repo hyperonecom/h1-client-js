@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectTransfer
+# HyperoneClient.ProjectTransfer
 
 ## Properties
 

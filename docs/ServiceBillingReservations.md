@@ -1,4 +1,4 @@
-# HyperOneApi.ServiceBillingReservations
+# HyperoneClient.ServiceBillingReservations
 
 ## Properties
 

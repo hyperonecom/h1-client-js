@@ -1,4 +1,4 @@
-# HyperOneApi.VmUpdate
+# HyperoneClient.VmUpdate
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.ReplicaPostAccessrights
+# HyperoneClient.ReplicaPostAccessrights
 
 ## Properties
 

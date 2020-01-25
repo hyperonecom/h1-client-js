@@ -1,4 +1,4 @@
-# HyperOneApi.NetgwPostAccessrights
+# HyperoneClient.NetgwPostAccessrights
 
 ## Properties
 

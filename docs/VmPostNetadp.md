@@ -1,13 +1,13 @@
-# HyperOneApi.VmPostNetadp
+# HyperoneClient.VmPostNetadp
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**service** | **String** |  | [optional] 
+**service** | **String** |  | 
 **network** | **String** |  | [optional] 
 **ip** | **String** |  | [optional] 
-**tag** | [**Object**](.md) |  | [optional] 
-**vlanIds** | **String** |  | [optional] 
+**tag** | **{String: String}** |  | [optional] 
+**firewall** | **String** |  | [optional] 
 
 

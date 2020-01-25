@@ -1,4 +1,4 @@
-# HyperOneApi.OrganisationActionTransferAccept
+# HyperoneClient.OrganisationActionTransferAccept
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.ImageServices
+# HyperoneClient.ImageServices
 
 ## Properties
 

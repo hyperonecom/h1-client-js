@@ -1,4 +1,4 @@
-# HyperOneApi.IsoPostAccessrights
+# HyperoneClient.IsoPostAccessrights
 
 ## Properties
 

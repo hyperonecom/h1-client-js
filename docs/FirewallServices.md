@@ -1,4 +1,4 @@
-# HyperOneApi.FirewallServices
+# HyperoneClient.FirewallServices
 
 ## Properties
 

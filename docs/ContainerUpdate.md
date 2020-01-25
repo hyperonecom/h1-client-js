@@ -1,4 +1,4 @@
-# HyperOneApi.ContainerUpdate
+# HyperoneClient.ContainerUpdate
 
 ## Properties
 

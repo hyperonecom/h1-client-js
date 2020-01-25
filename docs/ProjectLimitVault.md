@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectLimitVault
+# HyperoneClient.ProjectLimitVault
 
 ## Properties
 

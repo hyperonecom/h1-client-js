@@ -1,29 +1,28 @@
-# HyperOneApi.Project
+# HyperoneClient.Project
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **services** | [**[ProjectServices]**](ProjectServices.md) |  | [optional] 
 **flavour** | **String** |  | [optional] 
 **modifiedOn** | **Date** |  | [optional] 
-**modifiedBy** | **String** |  | [optional] [default to &#39;&#39;]
-**createdBy** | **String** |  | [optional] [default to &#39;&#39;]
+**modifiedBy** | **String** |  | [optional] 
+**createdBy** | **String** |  | [optional] 
 **createdOn** | **Date** |  | [optional] 
 **accessRights** | [**[ProjectAccessRights]**](ProjectAccessRights.md) |  | [optional] 
 **processing** | **Boolean** |  | [optional] 
 **created** | **Boolean** |  | [optional] 
 **queue** | [**[Event]**](Event.md) |  | [optional] 
 **state** | **String** |  | [optional] 
-**tag** | [**Object**](.md) |  | [optional] 
+**tag** | **{String: String}** |  | [optional] 
 **project** | **String** |  | [optional] 
 **bankAccount** | **String** |  | [optional] 
 **organisation** | **String** |  | [optional] 
 **billing** | [**ProjectBilling**](ProjectBilling.md) |  | [optional] 
-**invoices** | [**[ProjectInvoices]**](ProjectInvoices.md) |  | [optional] 
-**payments** | [**[Payment]**](Payment.md) |  | [optional] 
 **verified** | **String** |  | [optional] 
 **active** | **Boolean** |  | [optional] [default to true]
 **limit** | [**ProjectLimit**](ProjectLimit.md) |  | [optional] 

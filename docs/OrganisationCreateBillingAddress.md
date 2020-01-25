@@ -1,4 +1,4 @@
-# HyperOneApi.OrganisationCreateBillingAddress
+# HyperoneClient.OrganisationCreateBillingAddress
 
 ## Properties
 

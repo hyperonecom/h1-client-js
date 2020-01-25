@@ -1,4 +1,4 @@
-# HyperOneApi.VaultPatchCredentialcertificateId
+# HyperoneClient.VaultPatchCredentialcertificateId
 
 ## Properties
 

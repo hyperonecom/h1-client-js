@@ -1,4 +1,4 @@
-# HyperOneApi.VmServices
+# HyperoneClient.VmServices
 
 ## Properties
 

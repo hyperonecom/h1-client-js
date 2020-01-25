@@ -1,4 +1,4 @@
-# HyperOneApi.DatabaseCreate
+# HyperoneClient.DatabaseCreate
 
 ## Properties
 
@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
 **service** | **String** |  | 
-**credential** | [**DatabaseCreateCredential**](DatabaseCreateCredential.md) |  | [optional] 
-**tag** | [**Object**](.md) |  | [optional] 
+**tag** | **{String: String}** |  | [optional] 
 
 

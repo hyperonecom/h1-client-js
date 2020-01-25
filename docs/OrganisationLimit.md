@@ -1,4 +1,4 @@
-# HyperOneApi.OrganisationLimit
+# HyperoneClient.OrganisationLimit
 
 ## Properties
 

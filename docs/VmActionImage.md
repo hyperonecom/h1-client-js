@@ -1,4 +1,4 @@
-# HyperOneApi.VmActionImage
+# HyperoneClient.VmActionImage
 
 ## Properties
 

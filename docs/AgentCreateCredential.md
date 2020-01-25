@@ -1,9 +1,9 @@
-# HyperOneApi.AgentCreateCredential
+# HyperoneClient.AgentCreateCredential
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**certificate** | [**[VaultCreateCredentialCertificate]**](VaultCreateCredentialCertificate.md) |  | [optional] 
+**certificate** | [**[AgentCreateCredentialCertificate]**](AgentCreateCredentialCertificate.md) |  | [optional] 
 
 

@@ -1,4 +1,4 @@
-# HyperOneApi.WebsiteActionUpdateDomain
+# HyperoneClient.WebsiteActionUpdateDomain
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.ContainerServices
+# HyperoneClient.ContainerServices
 
 ## Properties
 

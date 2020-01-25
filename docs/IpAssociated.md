@@ -1,4 +1,4 @@
-# HyperOneApi.IpAssociated
+# HyperoneClient.IpAssociated
 
 ## Properties
 

@@ -1,10 +1,10 @@
-# HyperOneApi.ProjectRoles
+# HyperoneClient.ProjectRoles
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**access** | [**[ProjectAccess]**](ProjectAccess.md) |  | [optional] 
 **name** | **String** |  | 
+**access** | [**[AuthTokenAccess]**](AuthTokenAccess.md) |  | [optional] 
 
 

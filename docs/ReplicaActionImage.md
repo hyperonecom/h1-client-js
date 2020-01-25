@@ -1,4 +1,4 @@
-# HyperOneApi.ReplicaActionImage
+# HyperoneClient.ReplicaActionImage
 
 ## Properties
 

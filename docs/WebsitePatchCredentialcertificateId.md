@@ -1,4 +1,4 @@
-# HyperOneApi.WebsitePatchCredentialcertificateId
+# HyperoneClient.WebsitePatchCredentialcertificateId
 
 ## Properties
 

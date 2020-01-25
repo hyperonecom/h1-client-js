@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectLimitAgent
+# HyperoneClient.ProjectLimitAgent
 
 ## Properties
 

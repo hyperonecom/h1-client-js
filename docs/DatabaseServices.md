@@ -1,4 +1,4 @@
-# HyperOneApi.DatabaseServices
+# HyperoneClient.DatabaseServices
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.ImagePostAccessrights
+# HyperoneClient.ImagePostAccessrights
 
 ## Properties
 

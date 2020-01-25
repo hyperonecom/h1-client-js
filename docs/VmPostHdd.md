@@ -1,4 +1,4 @@
-# HyperOneApi.VmPostHdd
+# HyperoneClient.VmPostHdd
 
 ## Properties
 

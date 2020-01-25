@@ -1,4 +1,4 @@
-# HyperOneApi.WebsiteUpdate
+# HyperoneClient.WebsiteUpdate
 
 ## Properties
 

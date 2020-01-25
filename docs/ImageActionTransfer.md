@@ -1,4 +1,4 @@
-# HyperOneApi.ImageActionTransfer
+# HyperoneClient.ImageActionTransfer
 
 ## Properties
 

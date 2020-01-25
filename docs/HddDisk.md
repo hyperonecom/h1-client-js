@@ -1,9 +1,10 @@
-# HyperOneApi.HddDisk
+# HyperoneClient.HddDisk
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 

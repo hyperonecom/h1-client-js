@@ -1,9 +1,9 @@
-# HyperOneApi.ProjectCompliance
+# HyperoneClient.ProjectCompliance
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**logArchive** | **String** |  | [optional] 
+**journal** | **String** |  | [optional] 
 
 

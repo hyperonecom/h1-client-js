@@ -1,11 +1,11 @@
-# HyperOneApi.ContainerExpose
+# HyperoneClient.ContainerExpose
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**protocol** | **String** |  | 
-**external** | **String** |  | 
 **internal** | **String** |  | 
+**external** | **String** |  | 
+**protocol** | **String** |  | 
 
 

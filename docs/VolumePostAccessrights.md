@@ -1,4 +1,4 @@
-# HyperOneApi.VolumePostAccessrights
+# HyperoneClient.VolumePostAccessrights
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.UserPostCredentialpassword
+# HyperoneClient.UserPostCredentialpassword
 
 ## Properties
 
@@ -8,18 +8,5 @@ Name | Type | Description | Notes
 **type** | **String** |  | 
 **value** | **String** |  | 
 **token** | **String** |  | [optional] 
-
-
-
-## Enum: TypeEnum
-
-
-* `totp` (value: `"totp"`)
-
-* `otac` (value: `"otac"`)
-
-* `sha512` (value: `"sha512"`)
-
-
 
 

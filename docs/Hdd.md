@@ -1,4 +1,4 @@
-# HyperOneApi.Hdd
+# HyperoneClient.Hdd
 
 ## Properties
 
@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **controllerNumber** | **String** |  | [optional] 
 **controllerLocation** | **Number** |  | [optional] 
 **disk** | [**HddDisk**](HddDisk.md) |  | [optional] 
+**id** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
 
 

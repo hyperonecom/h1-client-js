@@ -1,0 +1,7 @@
+apiPackage: "h1-client"
+projectName: "hyperone-client"
+projectVersion: 0.0.3
+additionalProperties:
+  licenseName: MIT
+  projectDescription: "Client description for HyperOne"
+  usePromises: true

@@ -1,4 +1,4 @@
-# HyperOneApi.ImageDisks
+# HyperoneClient.ImageDisks
 
 ## Properties
 
@@ -10,5 +10,24 @@ Name | Type | Description | Notes
 **attachedOn** | [**ImageAttachedOn**](ImageAttachedOn.md) |  | [optional] 
 **downloadUrl** | **String** |  | [optional] 
 **disk** | [**ImageDisk**](ImageDisk.md) |  | [optional] 
+
+
+
+## Enum: TypeEnum
+
+
+* `archive` (value: `"archive"`)
+
+* `volume` (value: `"volume"`)
+
+* `ssd` (value: `"ssd"`)
+
+* `hissd` (value: `"hissd"`)
+
+* `ephemeral-hissd` (value: `"ephemeral-hissd"`)
+
+* `replica` (value: `"replica"`)
+
+
 
 

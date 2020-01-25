@@ -1,4 +1,4 @@
-# HyperOneApi.ReservationUpdate
+# HyperoneClient.ReservationUpdate
 
 ## Properties
 

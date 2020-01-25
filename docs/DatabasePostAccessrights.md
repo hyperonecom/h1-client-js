@@ -1,4 +1,4 @@
-# HyperOneApi.DatabasePostAccessrights
+# HyperoneClient.DatabasePostAccessrights
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.EventResource
+# HyperoneClient.EventResource
 
 ## Properties
 

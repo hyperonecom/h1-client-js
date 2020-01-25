@@ -1,4 +1,4 @@
-# HyperOneApi.NetworkServices
+# HyperoneClient.NetworkServices
 
 ## Properties
 

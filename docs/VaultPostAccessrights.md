@@ -1,4 +1,4 @@
-# HyperOneApi.VaultPostAccessrights
+# HyperoneClient.VaultPostAccessrights
 
 ## Properties
 

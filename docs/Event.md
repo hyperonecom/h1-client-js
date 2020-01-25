@@ -1,9 +1,10 @@
-# HyperOneApi.Event
+# HyperoneClient.Event
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **createdBy** | **String** |  | [optional] 

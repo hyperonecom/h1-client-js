@@ -1,4 +1,4 @@
-# HyperOneApi.DiskPostAccessrights
+# HyperoneClient.DiskPostAccessrights
 
 ## Properties
 

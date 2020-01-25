@@ -1,4 +1,4 @@
-# HyperOneApi.ReservationServices
+# HyperoneClient.ReservationServices
 
 ## Properties
 

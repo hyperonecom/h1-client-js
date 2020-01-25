@@ -1,4 +1,4 @@
-# HyperOneApi.DatabaseApi
+# HyperoneClient.DatabaseApi
 
 All URIs are relative to *https://api.hyperone.com/v1*
 
@@ -6,23 +6,30 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**databaseActionStart**](DatabaseApi.md#databaseActionStart) | **POST** /database/{databaseId}/actions/start | /actions/start
 [**databaseActionStop**](DatabaseApi.md#databaseActionStop) | **POST** /database/{databaseId}/actions/stop | /actions/stop
+[**databaseActionTransfer**](DatabaseApi.md#databaseActionTransfer) | **POST** /database/{databaseId}/actions/transfer | /actions/transfer
 [**databaseCreate**](DatabaseApi.md#databaseCreate) | **POST** /database | Create
 [**databaseDelete**](DatabaseApi.md#databaseDelete) | **DELETE** /database/{databaseId} | Delete
 [**databaseDeleteAccessrightsIdentity**](DatabaseApi.md#databaseDeleteAccessrightsIdentity) | **DELETE** /database/{databaseId}/accessrights/{identity} | /accessrights/:identity
+[**databaseDeleteCredentialId**](DatabaseApi.md#databaseDeleteCredentialId) | **DELETE** /database/{databaseId}/credential/{id} | /credential/:id
 [**databaseDeleteCredentialpasswordId**](DatabaseApi.md#databaseDeleteCredentialpasswordId) | **DELETE** /database/{databaseId}/credential/password/{id} | /credential/password/:id
 [**databaseDeleteTagKey**](DatabaseApi.md#databaseDeleteTagKey) | **DELETE** /database/{databaseId}/tag/{key} | /tag/:key
+[**databaseGetCredentialId**](DatabaseApi.md#databaseGetCredentialId) | **GET** /database/{databaseId}/credential/{id} | /credential/:id
 [**databaseGetCredentialpasswordId**](DatabaseApi.md#databaseGetCredentialpasswordId) | **GET** /database/{databaseId}/credential/password/{id} | /credential/password/:id
 [**databaseGetServicesServiceId**](DatabaseApi.md#databaseGetServicesServiceId) | **GET** /database/{databaseId}/services/{serviceId} | /services/:serviceId
 [**databaseGetTag**](DatabaseApi.md#databaseGetTag) | **GET** /database/{databaseId}/tag | /tag
 [**databaseList**](DatabaseApi.md#databaseList) | **GET** /database | List
 [**databaseListAccessrights**](DatabaseApi.md#databaseListAccessrights) | **GET** /database/{databaseId}/accessrights | /accessrights
+[**databaseListCredential**](DatabaseApi.md#databaseListCredential) | **GET** /database/{databaseId}/credential | /credential
 [**databaseListCredentialpassword**](DatabaseApi.md#databaseListCredentialpassword) | **GET** /database/{databaseId}/credential/password | /credential/password
 [**databaseListQueue**](DatabaseApi.md#databaseListQueue) | **GET** /database/{databaseId}/queue | /queue
 [**databaseListServices**](DatabaseApi.md#databaseListServices) | **GET** /database/{databaseId}/services | /services
+[**databasePatchCredentialId**](DatabaseApi.md#databasePatchCredentialId) | **PATCH** /database/{databaseId}/credential/{id} | /credential/:id
 [**databasePatchCredentialpasswordId**](DatabaseApi.md#databasePatchCredentialpasswordId) | **PATCH** /database/{databaseId}/credential/password/{id} | /credential/password/:id
 [**databasePatchTag**](DatabaseApi.md#databasePatchTag) | **PATCH** /database/{databaseId}/tag | /tag
 [**databasePostAccessrights**](DatabaseApi.md#databasePostAccessrights) | **POST** /database/{databaseId}/accessrights | /accessrights
+[**databasePostCredential**](DatabaseApi.md#databasePostCredential) | **POST** /database/{databaseId}/credential | /credential
 [**databasePostCredentialpassword**](DatabaseApi.md#databasePostCredentialpassword) | **POST** /database/{databaseId}/credential/password | /credential/password
+[**databasePutTag**](DatabaseApi.md#databasePutTag) | **PUT** /database/{databaseId}/tag | /tag
 [**databaseShow**](DatabaseApi.md#databaseShow) | **GET** /database/{databaseId} | Get
 [**databaseUpdate**](DatabaseApi.md#databaseUpdate) | **PATCH** /database/{databaseId} | Update
 
@@ -30,7 +37,7 @@ Method | HTTP request | Description
 
 ## databaseActionStart
 
-> Database databaseActionStart(databaseId)
+> Database databaseActionStart(databaseId, opts)
 
 /actions/start
 
@@ -39,25 +46,28 @@ Action start
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-apiInstance.databaseActionStart(databaseId).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.databaseActionStart(databaseId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -66,10 +76,10 @@ apiInstance.databaseActionStart(databaseId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **databaseId** | **String**| ID of database | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -87,7 +97,7 @@ Name | Type | Description  | Notes
 
 ## databaseActionStop
 
-> Database databaseActionStop(databaseId)
+> Database databaseActionStop(databaseId, opts)
 
 /actions/stop
 
@@ -96,25 +106,28 @@ Action stop
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-apiInstance.databaseActionStop(databaseId).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.databaseActionStop(databaseId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -123,10 +136,10 @@ apiInstance.databaseActionStop(databaseId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **databaseId** | **String**| ID of database | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -142,36 +155,40 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## databaseCreate
+## databaseActionTransfer
 
-> Database databaseCreate(databaseCreate)
+> Database databaseActionTransfer(databaseId, databaseActionTransfer, opts)
 
-Create
+/actions/transfer
 
-Create database
+Action transfer
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseCreate = new HyperOneApi.DatabaseCreate(); // DatabaseCreate | 
-apiInstance.databaseCreate(databaseCreate).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let databaseActionTransfer = new HyperoneClient.DatabaseActionTransfer(); // DatabaseActionTransfer | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.databaseActionTransfer(databaseId, databaseActionTransfer, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -180,10 +197,71 @@ apiInstance.databaseCreate(databaseCreate).then(function(data) {
 ### Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **databaseId** | **String**| ID of database | 
+ **databaseActionTransfer** | [**DatabaseActionTransfer**](DatabaseActionTransfer.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
+
+### Return type
+
+[**Database**](Database.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## databaseCreate
+
+> Database databaseCreate(databaseCreate, opts)
+
+Create
+
+Create database
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseCreate = new HyperoneClient.DatabaseCreate(); // DatabaseCreate | 
+let opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.databaseCreate(databaseCreate, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **databaseCreate** | [**DatabaseCreate**](DatabaseCreate.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
 
@@ -208,32 +286,31 @@ Delete
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-apiInstance.databaseDelete(databaseId).then(function() {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+apiInstance.databaseDelete(databaseId).then(() => {
   console.log('API called successfully.');
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -263,26 +340,26 @@ null (empty response body)
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-var identity = "identity_example"; // String | identity
-apiInstance.databaseDeleteAccessrightsIdentity(databaseId, identity).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let identity = "identity_example"; // String | identity
+apiInstance.databaseDeleteAccessrightsIdentity(databaseId, identity).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -291,11 +368,66 @@ apiInstance.databaseDeleteAccessrightsIdentity(databaseId, identity).then(functi
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **databaseId** | **String**| ID of database | 
  **identity** | **String**| identity | 
+
+### Return type
+
+[**Database**](Database.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## databaseDeleteCredentialId
+
+> Database databaseDeleteCredentialId(databaseId, id)
+
+/credential/:id
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let id = "id_example"; // String | id
+apiInstance.databaseDeleteCredentialId(databaseId, id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **databaseId** | **String**| ID of database | 
+ **id** | **String**| id | 
 
 ### Return type
 
@@ -320,33 +452,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-var id = "id_example"; // String | id
-apiInstance.databaseDeleteCredentialpasswordId(databaseId, id).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let id = "id_example"; // String | id
+apiInstance.databaseDeleteCredentialpasswordId(databaseId, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -370,40 +501,39 @@ Name | Type | Description  | Notes
 
 ## databaseDeleteTagKey
 
-> Object databaseDeleteTagKey(databaseId, key)
+> {String: String} databaseDeleteTagKey(databaseId, key)
 
 /tag/:key
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-var key = "key_example"; // String | key
-apiInstance.databaseDeleteTagKey(databaseId, key).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let key = "key_example"; // String | key
+apiInstance.databaseDeleteTagKey(databaseId, key).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -413,7 +543,63 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## databaseGetCredentialId
+
+> Credential databaseGetCredentialId(databaseId, id)
+
+/credential/:id
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let id = "id_example"; // String | id
+apiInstance.databaseGetCredentialId(databaseId, id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **databaseId** | **String**| ID of database | 
+ **id** | **String**| id | 
+
+### Return type
+
+[**Credential**](Credential.md)
 
 ### Authorization
 
@@ -427,40 +613,39 @@ Name | Type | Description  | Notes
 
 ## databaseGetCredentialpasswordId
 
-> CredentialPassword databaseGetCredentialpasswordId(databaseId, id)
+> Credential databaseGetCredentialpasswordId(databaseId, id)
 
 /credential/password/:id
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-var id = "id_example"; // String | id
-apiInstance.databaseGetCredentialpasswordId(databaseId, id).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let id = "id_example"; // String | id
+apiInstance.databaseGetCredentialpasswordId(databaseId, id).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -470,7 +655,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CredentialPassword**](CredentialPassword.md)
+[**Credential**](Credential.md)
 
 ### Authorization
 
@@ -491,33 +676,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-var serviceId = "serviceId_example"; // String | serviceId
-apiInstance.databaseGetServicesServiceId(databaseId, serviceId).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let serviceId = "serviceId_example"; // String | serviceId
+apiInstance.databaseGetServicesServiceId(databaseId, serviceId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -541,32 +725,32 @@ Name | Type | Description  | Notes
 
 ## databaseGetTag
 
-> Object databaseGetTag(databaseId)
+> {String: String} databaseGetTag(databaseId)
 
 /tag
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-apiInstance.databaseGetTag(databaseId).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+apiInstance.databaseGetTag(databaseId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -575,14 +759,13 @@ apiInstance.databaseGetTag(databaseId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **databaseId** | **String**| ID of database | 
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -605,35 +788,34 @@ List database
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var opts = {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let opts = {
   'name': "name_example", // String | Filter by name
   'tag': {key: "null"} // {String: String} | Filter by tag
 };
-apiInstance.databaseList(opts).then(function(data) {
+apiInstance.databaseList(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -664,32 +846,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-apiInstance.databaseListAccessrights(databaseId).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+apiInstance.databaseListAccessrights(databaseId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -710,34 +891,34 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## databaseListCredentialpassword
+## databaseListCredential
 
-> [CredentialPassword] databaseListCredentialpassword(databaseId)
+> [Credential] databaseListCredential(databaseId)
 
-/credential/password
+/credential
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-apiInstance.databaseListCredentialpassword(databaseId).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+apiInstance.databaseListCredential(databaseId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -746,6 +927,59 @@ apiInstance.databaseListCredentialpassword(databaseId).then(function(data) {
 ### Parameters
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **databaseId** | **String**| ID of database | 
+
+### Return type
+
+[**[Credential]**](Credential.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## databaseListCredentialpassword
+
+> [Credential] databaseListCredentialpassword(databaseId)
+
+/credential/password
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+apiInstance.databaseListCredentialpassword(databaseId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -753,7 +987,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[CredentialPassword]**](CredentialPassword.md)
+[**[Credential]**](Credential.md)
 
 ### Authorization
 
@@ -767,32 +1001,36 @@ Name | Type | Description  | Notes
 
 ## databaseListQueue
 
-> [Event] databaseListQueue(databaseId)
+> [Event] databaseListQueue(databaseId, opts)
 
 /queue
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-apiInstance.databaseListQueue(databaseId).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let opts = {
+  'limit': 3.4, // Number | $limit
+  'skip': 3.4 // Number | $skip
+};
+apiInstance.databaseListQueue(databaseId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -801,10 +1039,11 @@ apiInstance.databaseListQueue(databaseId).then(function(data) {
 ### Parameters
 
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **databaseId** | **String**| ID of database | 
+ **limit** | **Number**| $limit | [optional] 
+ **skip** | **Number**| $skip | [optional] 
 
 ### Return type
 
@@ -829,32 +1068,31 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-apiInstance.databaseListServices(databaseId).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+apiInstance.databaseListServices(databaseId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -875,36 +1113,36 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## databasePatchCredentialpasswordId
+## databasePatchCredentialId
 
-> CredentialPassword databasePatchCredentialpasswordId(databaseId, id, databasePatchCredentialpasswordId)
+> Credential databasePatchCredentialId(databaseId, id, databasePatchCredentialId)
 
-/credential/password/:id
+/credential/:id
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-var id = "id_example"; // String | id
-var databasePatchCredentialpasswordId = new HyperOneApi.DatabasePatchCredentialpasswordId(); // DatabasePatchCredentialpasswordId | 
-apiInstance.databasePatchCredentialpasswordId(databaseId, id, databasePatchCredentialpasswordId).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let id = "id_example"; // String | id
+let databasePatchCredentialId = new HyperoneClient.DatabasePatchCredentialId(); // DatabasePatchCredentialId | 
+apiInstance.databasePatchCredentialId(databaseId, id, databasePatchCredentialId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -912,6 +1150,63 @@ apiInstance.databasePatchCredentialpasswordId(databaseId, id, databasePatchCrede
 
 ### Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **databaseId** | **String**| ID of database | 
+ **id** | **String**| id | 
+ **databasePatchCredentialId** | [**DatabasePatchCredentialId**](DatabasePatchCredentialId.md)|  | 
+
+### Return type
+
+[**Credential**](Credential.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## databasePatchCredentialpasswordId
+
+> Credential databasePatchCredentialpasswordId(databaseId, id, databasePatchCredentialpasswordId)
+
+/credential/password/:id
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let id = "id_example"; // String | id
+let databasePatchCredentialpasswordId = new HyperoneClient.DatabasePatchCredentialpasswordId(); // DatabasePatchCredentialpasswordId | 
+apiInstance.databasePatchCredentialpasswordId(databaseId, id, databasePatchCredentialpasswordId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
 
 
 Name | Type | Description  | Notes
@@ -922,7 +1217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CredentialPassword**](CredentialPassword.md)
+[**Credential**](Credential.md)
 
 ### Authorization
 
@@ -936,40 +1231,39 @@ Name | Type | Description  | Notes
 
 ## databasePatchTag
 
-> Object databasePatchTag(databaseId, requestBody)
+> {String: String} databasePatchTag(databaseId, requestBody)
 
 /tag
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-var requestBody = {key: "null"}; // {String: String} | 
-apiInstance.databasePatchTag(databaseId, requestBody).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let requestBody = {key: "null"}; // {String: String} | 
+apiInstance.databasePatchTag(databaseId, requestBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -979,7 +1273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**{String: String}**
 
 ### Authorization
 
@@ -1000,33 +1294,32 @@ Name | Type | Description  | Notes
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-var databasePostAccessrights = new HyperOneApi.DatabasePostAccessrights(); // DatabasePostAccessrights | 
-apiInstance.databasePostAccessrights(databaseId, databasePostAccessrights).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let databasePostAccessrights = new HyperoneClient.DatabasePostAccessrights(); // DatabasePostAccessrights | 
+apiInstance.databasePostAccessrights(databaseId, databasePostAccessrights).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1048,35 +1341,35 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## databasePostCredentialpassword
+## databasePostCredential
 
-> CredentialPassword databasePostCredentialpassword(databaseId, databasePostCredentialpassword)
+> Credential databasePostCredential(databaseId, databasePostCredential)
 
-/credential/password
+/credential
 
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-var databasePostCredentialpassword = new HyperOneApi.DatabasePostCredentialpassword(); // DatabasePostCredentialpassword | 
-apiInstance.databasePostCredentialpassword(databaseId, databasePostCredentialpassword).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let databasePostCredential = new HyperoneClient.DatabasePostCredential(); // DatabasePostCredential | 
+apiInstance.databasePostCredential(databaseId, databasePostCredential).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
@@ -1084,6 +1377,61 @@ apiInstance.databasePostCredentialpassword(databaseId, databasePostCredentialpas
 
 ### Parameters
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **databaseId** | **String**| ID of database | 
+ **databasePostCredential** | [**DatabasePostCredential**](DatabasePostCredential.md)|  | 
+
+### Return type
+
+[**Credential**](Credential.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## databasePostCredentialpassword
+
+> Credential databasePostCredentialpassword(databaseId, databasePostCredentialpassword)
+
+/credential/password
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let databasePostCredentialpassword = new HyperoneClient.DatabasePostCredentialpassword(); // DatabasePostCredentialpassword | 
+apiInstance.databasePostCredentialpassword(databaseId, databasePostCredentialpassword).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
 
 
 Name | Type | Description  | Notes
@@ -1093,7 +1441,63 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CredentialPassword**](CredentialPassword.md)
+[**Credential**](Credential.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## databasePutTag
+
+> {String: String} databasePutTag(databaseId, requestBody)
+
+/tag
+
+### Example
+
+```javascript
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+let Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
+// Configure Bearer access token for authorization: Session
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let requestBody = {key: "null"}; // {String: String} | 
+apiInstance.databasePutTag(databaseId, requestBody).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **databaseId** | **String**| ID of database | 
+ **requestBody** | [**{String: String}**](String.md)|  | 
+
+### Return type
+
+**{String: String}**
 
 ### Authorization
 
@@ -1116,32 +1520,31 @@ Returns a single database
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-apiInstance.databaseShow(databaseId).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+apiInstance.databaseShow(databaseId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes
@@ -1173,33 +1576,32 @@ Returns modified database
 ### Example
 
 ```javascript
-var HyperOneApi = require('hyper_one_api');
-var defaultClient = HyperOneApi.ApiClient.instance;
+import HyperoneClient from 'hyperone-client';
+let defaultClient = HyperoneClient.ApiClient.instance;
 // Configure API key authorization: Project
-var Project = defaultClient.authentications['Project'];
+let Project = defaultClient.authentications['Project'];
 Project.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Project.apiKeyPrefix = 'Token';
 // Configure Bearer access token for authorization: ServiceAccount
-var ServiceAccount = defaultClient.authentications['ServiceAccount'];
-ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+let ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = "YOUR ACCESS TOKEN"
 // Configure Bearer access token for authorization: Session
-var Session = defaultClient.authentications['Session'];
-Session.accessToken = 'YOUR ACCESS TOKEN';
+let Session = defaultClient.authentications['Session'];
+Session.accessToken = "YOUR ACCESS TOKEN"
 
-var apiInstance = new HyperOneApi.DatabaseApi();
-var databaseId = "databaseId_example"; // String | ID of database
-var databaseUpdate = new HyperOneApi.DatabaseUpdate(); // DatabaseUpdate | 
-apiInstance.databaseUpdate(databaseId, databaseUpdate).then(function(data) {
+let apiInstance = new HyperoneClient.DatabaseApi();
+let databaseId = "databaseId_example"; // String | ID of database
+let databaseUpdate = new HyperoneClient.DatabaseUpdate(); // DatabaseUpdate | 
+apiInstance.databaseUpdate(databaseId, databaseUpdate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
+}, (error) => {
   console.error(error);
 });
 
 ```
 
 ### Parameters
-
 
 
 Name | Type | Description  | Notes

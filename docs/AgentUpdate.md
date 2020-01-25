@@ -1,4 +1,4 @@
-# HyperOneApi.AgentUpdate
+# HyperoneClient.AgentUpdate
 
 ## Properties
 

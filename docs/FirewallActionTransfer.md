@@ -1,4 +1,4 @@
-# HyperOneApi.FirewallActionTransfer
+# HyperoneClient.FirewallActionTransfer
 
 ## Properties
 

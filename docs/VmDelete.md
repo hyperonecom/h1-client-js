@@ -1,4 +1,4 @@
-# HyperOneApi.VmDelete
+# HyperoneClient.VmDelete
 
 ## Properties
 

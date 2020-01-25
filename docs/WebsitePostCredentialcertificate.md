@@ -1,4 +1,4 @@
-# HyperOneApi.WebsitePostCredentialcertificate
+# HyperoneClient.WebsitePostCredentialcertificate
 
 ## Properties
 
@@ -7,14 +7,6 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **type** | **String** |  | 
 **value** | **String** |  | 
-
-
-
-## Enum: TypeEnum
-
-
-* `ssh` (value: `"ssh"`)
-
-
+**token** | **String** |  | [optional] 
 
 

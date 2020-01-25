@@ -1,4 +1,4 @@
-# HyperOneApi.OrganisationUpdate
+# HyperoneClient.OrganisationUpdate
 
 ## Properties
 

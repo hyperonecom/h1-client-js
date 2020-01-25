@@ -1,4 +1,4 @@
-# HyperOneApi.IpUpdate
+# HyperoneClient.IpUpdate
 
 ## Properties
 

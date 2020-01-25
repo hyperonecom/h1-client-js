@@ -1,4 +1,4 @@
-# HyperOneApi.VaultDelete
+# HyperoneClient.VaultDelete
 
 ## Properties
 

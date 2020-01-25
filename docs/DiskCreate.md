@@ -1,4 +1,4 @@
-# HyperOneApi.DiskCreate
+# HyperoneClient.DiskCreate
 
 ## Properties
 
@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **cloud** | **String** |  | [optional] 
 **metadata** | [**DiskMetadata**](DiskMetadata.md) |  | [optional] 
 **source** | **String** |  | [optional] 
-**tag** | [**Object**](.md) |  | [optional] 
+**tag** | **{String: String}** |  | [optional] 
 
 

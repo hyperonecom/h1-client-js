@@ -1,4 +1,4 @@
-# HyperOneApi.DiskActionClone
+# HyperoneClient.DiskActionClone
 
 ## Properties
 

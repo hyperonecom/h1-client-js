@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectUpdate
+# HyperoneClient.ProjectUpdate
 
 ## Properties
 

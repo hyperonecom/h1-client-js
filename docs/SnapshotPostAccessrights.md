@@ -1,4 +1,4 @@
-# HyperOneApi.SnapshotPostAccessrights
+# HyperoneClient.SnapshotPostAccessrights
 
 ## Properties
 

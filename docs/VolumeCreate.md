@@ -1,4 +1,4 @@
-# HyperOneApi.VolumeCreate
+# HyperoneClient.VolumeCreate
 
 ## Properties
 
@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **service** | **String** |  | 
 **name** | **String** |  | 
 **size** | **Number** |  | 
-**tag** | [**Object**](.md) |  | [optional] 
+**tag** | **{String: String}** |  | [optional] 
 
 

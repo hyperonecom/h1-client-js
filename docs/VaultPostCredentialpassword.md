@@ -1,4 +1,4 @@
-# HyperOneApi.VaultPostCredentialpassword
+# HyperoneClient.VaultPostCredentialpassword
 
 ## Properties
 
@@ -8,14 +8,5 @@ Name | Type | Description | Notes
 **type** | **String** |  | 
 **value** | **String** |  | 
 **token** | **String** |  | [optional] 
-
-
-
-## Enum: TypeEnum
-
-
-* `sha512` (value: `"sha512"`)
-
-
 
 

@@ -1,4 +1,4 @@
-# HyperOneApi.FirewallPostEgress
+# HyperoneClient.FirewallPostEgress
 
 ## Properties
 

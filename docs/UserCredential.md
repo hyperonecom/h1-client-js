@@ -1,10 +1,10 @@
-# HyperOneApi.UserCredential
+# HyperoneClient.UserCredential
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**password** | [**UserCredentialPassword**](UserCredentialPassword.md) |  | [optional] 
-**certificate** | [**UserCredentialPassword**](UserCredentialPassword.md) |  | [optional] 
+**certificate** | [**UserCredentialCertificate**](UserCredentialCertificate.md) |  | [optional] 
+**password** | [**UserCredentialCertificate**](UserCredentialCertificate.md) |  | [optional] 
 
 

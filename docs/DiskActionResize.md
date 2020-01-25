@@ -1,4 +1,4 @@
-# HyperOneApi.DiskActionResize
+# HyperoneClient.DiskActionResize
 
 ## Properties
 

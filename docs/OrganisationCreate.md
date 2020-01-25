@@ -1,4 +1,4 @@
-# HyperOneApi.OrganisationCreate
+# HyperoneClient.OrganisationCreate
 
 ## Properties
 
@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **service** | **String** |  | [optional] [default to &#39;5c9cc1c3255c16c3e899a4e8&#39;]
 **billing** | [**OrganisationCreateBilling**](OrganisationCreateBilling.md) |  | [optional] 
 **accessRights** | [**[OrganisationCreateAccessRights]**](OrganisationCreateAccessRights.md) |  | [optional] 
-**tag** | [**Object**](.md) |  | [optional] 
+**tag** | **{String: String}** |  | [optional] 
 
 

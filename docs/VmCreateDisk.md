@@ -1,4 +1,4 @@
-# HyperOneApi.VmCreateDisk
+# HyperoneClient.VmCreateDisk
 
 ## Properties
 

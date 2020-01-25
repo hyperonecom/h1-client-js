@@ -1,9 +1,9 @@
-# HyperOneApi.UserLimit
+# HyperoneClient.UserLimit
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**organisation** | **Object** |  | [optional] 
+**organisation** | [**ProjectLimitNetwork**](ProjectLimitNetwork.md) |  | [optional] 
 
 

@@ -1,4 +1,4 @@
-# HyperOneApi.OrganisationPostAccessrights
+# HyperoneClient.OrganisationPostAccessrights
 
 ## Properties
 

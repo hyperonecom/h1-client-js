@@ -1,4 +1,4 @@
-# HyperOneApi.WebsiteServices
+# HyperoneClient.WebsiteServices
 
 ## Properties
 

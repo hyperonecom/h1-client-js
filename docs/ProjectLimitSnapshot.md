@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectLimitSnapshot
+# HyperoneClient.ProjectLimitSnapshot
 
 ## Properties
 

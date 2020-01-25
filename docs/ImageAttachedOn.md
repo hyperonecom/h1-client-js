@@ -1,11 +1,11 @@
-# HyperOneApi.ImageAttachedOn
+# HyperoneClient.ImageAttachedOn
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**controllerLocation** | **Number** |  | 
-**controllerNumber** | **Number** |  | 
 **controllerType** | **String** |  | 
+**controllerNumber** | **Number** |  | 
+**controllerLocation** | **Number** |  | 
 
 

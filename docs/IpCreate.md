@@ -1,4 +1,4 @@
-# HyperOneApi.IpCreate
+# HyperoneClient.IpCreate
 
 ## Properties
 
@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **network** | **String** |  | [optional] 
 **ptrRecord** | **String** |  | [optional] 
 **address** | **String** |  | [optional] 
-**tag** | [**Object**](.md) |  | [optional] 
+**tag** | **{String: String}** |  | [optional] 
 
 

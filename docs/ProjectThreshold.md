@@ -1,4 +1,4 @@
-# HyperOneApi.ProjectThreshold
+# HyperoneClient.ProjectThreshold
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# HyperOneApi.DiskServices
+# HyperoneClient.DiskServices
 
 ## Properties
 

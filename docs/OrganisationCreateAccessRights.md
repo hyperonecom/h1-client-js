@@ -1,4 +1,4 @@
-# HyperOneApi.OrganisationCreateAccessRights
+# HyperoneClient.OrganisationCreateAccessRights
 
 ## Properties
 
