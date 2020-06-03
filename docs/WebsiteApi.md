@@ -9,26 +9,30 @@ Method | HTTP request | Description
 [**websiteActionStop**](WebsiteApi.md#websiteActionStop) | **POST** /website/{websiteId}/actions/stop | /actions/stop
 [**websiteActionTransfer**](WebsiteApi.md#websiteActionTransfer) | **POST** /website/{websiteId}/actions/transfer | /actions/transfer
 [**websiteActionUpdateDomain**](WebsiteApi.md#websiteActionUpdateDomain) | **POST** /website/{websiteId}/actions/update_domain | /actions/update_domain
+[**websiteActionUpdateImage**](WebsiteApi.md#websiteActionUpdateImage) | **POST** /website/{websiteId}/actions/update_image | /actions/update_image
 [**websiteCreate**](WebsiteApi.md#websiteCreate) | **POST** /website | Create
 [**websiteDelete**](WebsiteApi.md#websiteDelete) | **DELETE** /website/{websiteId} | Delete
 [**websiteDeleteAccessrightsIdentity**](WebsiteApi.md#websiteDeleteAccessrightsIdentity) | **DELETE** /website/{websiteId}/accessrights/{identity} | /accessrights/:identity
 [**websiteDeleteCredentialId**](WebsiteApi.md#websiteDeleteCredentialId) | **DELETE** /website/{websiteId}/credential/{id} | /credential/:id
 [**websiteDeleteCredentialcertificateId**](WebsiteApi.md#websiteDeleteCredentialcertificateId) | **DELETE** /website/{websiteId}/credential/certificate/{id} | /credential/certificate/:id
 [**websiteDeleteCredentialpasswordId**](WebsiteApi.md#websiteDeleteCredentialpasswordId) | **DELETE** /website/{websiteId}/credential/password/{id} | /credential/password/:id
+[**websiteDeleteEnvId**](WebsiteApi.md#websiteDeleteEnvId) | **DELETE** /website/{websiteId}/env/{id} | /env/:id
 [**websiteDeleteSnapshotId**](WebsiteApi.md#websiteDeleteSnapshotId) | **DELETE** /website/{websiteId}/snapshot/{id} | /snapshot/:id
 [**websiteDeleteTagKey**](WebsiteApi.md#websiteDeleteTagKey) | **DELETE** /website/{websiteId}/tag/{key} | /tag/:key
 [**websiteGetCredentialId**](WebsiteApi.md#websiteGetCredentialId) | **GET** /website/{websiteId}/credential/{id} | /credential/:id
 [**websiteGetCredentialcertificateId**](WebsiteApi.md#websiteGetCredentialcertificateId) | **GET** /website/{websiteId}/credential/certificate/{id} | /credential/certificate/:id
 [**websiteGetCredentialpasswordId**](WebsiteApi.md#websiteGetCredentialpasswordId) | **GET** /website/{websiteId}/credential/password/{id} | /credential/password/:id
+[**websiteGetEnvId**](WebsiteApi.md#websiteGetEnvId) | **GET** /website/{websiteId}/env/{id} | /env/:id
 [**websiteGetServicesServiceId**](WebsiteApi.md#websiteGetServicesServiceId) | **GET** /website/{websiteId}/services/{serviceId} | /services/:serviceId
 [**websiteGetSnapshotId**](WebsiteApi.md#websiteGetSnapshotId) | **GET** /website/{websiteId}/snapshot/{id} | /snapshot/:id
-[**websiteGetSnapshotIddownload**](WebsiteApi.md#websiteGetSnapshotIddownload) | **GET** /website/{websiteId}/snapshot/:id/download | /snapshot/:id/download
+[**websiteGetSnapshotIddownload**](WebsiteApi.md#websiteGetSnapshotIddownload) | **GET** /website/{websiteId}/snapshot/{id}/download | /snapshot/:id/download
 [**websiteGetTag**](WebsiteApi.md#websiteGetTag) | **GET** /website/{websiteId}/tag | /tag
 [**websiteList**](WebsiteApi.md#websiteList) | **GET** /website | List
 [**websiteListAccessrights**](WebsiteApi.md#websiteListAccessrights) | **GET** /website/{websiteId}/accessrights | /accessrights
 [**websiteListCredential**](WebsiteApi.md#websiteListCredential) | **GET** /website/{websiteId}/credential | /credential
 [**websiteListCredentialcertificate**](WebsiteApi.md#websiteListCredentialcertificate) | **GET** /website/{websiteId}/credential/certificate | /credential/certificate
 [**websiteListCredentialpassword**](WebsiteApi.md#websiteListCredentialpassword) | **GET** /website/{websiteId}/credential/password | /credential/password
+[**websiteListEnv**](WebsiteApi.md#websiteListEnv) | **GET** /website/{websiteId}/env | /env
 [**websiteListQueue**](WebsiteApi.md#websiteListQueue) | **GET** /website/{websiteId}/queue | /queue
 [**websiteListServices**](WebsiteApi.md#websiteListServices) | **GET** /website/{websiteId}/services | /services
 [**websiteListSnapshot**](WebsiteApi.md#websiteListSnapshot) | **GET** /website/{websiteId}/snapshot | /snapshot
@@ -40,6 +44,7 @@ Method | HTTP request | Description
 [**websitePostCredential**](WebsiteApi.md#websitePostCredential) | **POST** /website/{websiteId}/credential | /credential
 [**websitePostCredentialcertificate**](WebsiteApi.md#websitePostCredentialcertificate) | **POST** /website/{websiteId}/credential/certificate | /credential/certificate
 [**websitePostCredentialpassword**](WebsiteApi.md#websitePostCredentialpassword) | **POST** /website/{websiteId}/credential/password | /credential/password
+[**websitePostEnv**](WebsiteApi.md#websitePostEnv) | **POST** /website/{websiteId}/env | /env
 [**websitePostSnapshot**](WebsiteApi.md#websitePostSnapshot) | **POST** /website/{websiteId}/snapshot | /snapshot
 [**websitePutTag**](WebsiteApi.md#websitePutTag) | **PUT** /website/{websiteId}/tag | /tag
 [**websiteShow**](WebsiteApi.md#websiteShow) | **GET** /website/{websiteId} | Get
@@ -340,6 +345,69 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **websiteId** | **String**| ID of website | 
  **websiteActionUpdateDomain** | [**WebsiteActionUpdateDomain**](WebsiteActionUpdateDomain.md)|  | 
+ **xIdempotencyKey** | **String**|  | [optional] 
+
+### Return type
+
+[**Website**](Website.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## websiteActionUpdateImage
+
+> Website websiteActionUpdateImage(websiteId, websiteActionUpdateImage, opts)
+
+/actions/update_image
+
+Action update_image
+
+### Example
+
+```javascript
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websiteActionUpdateImage = new HyperoneClient.WebsiteActionUpdateImage(); // WebsiteActionUpdateImage | 
+var opts = {
+  'xIdempotencyKey': "xIdempotencyKey_example" // String | 
+};
+apiInstance.websiteActionUpdateImage(websiteId, websiteActionUpdateImage, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **websiteId** | **String**| ID of website | 
+ **websiteActionUpdateImage** | [**WebsiteActionUpdateImage**](WebsiteActionUpdateImage.md)|  | 
  **xIdempotencyKey** | **String**|  | [optional] 
 
 ### Return type
@@ -700,6 +768,63 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## websiteDeleteEnvId
+
+> websiteDeleteEnvId(websiteId, id)
+
+/env/:id
+
+### Example
+
+```javascript
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+apiInstance.websiteDeleteEnvId(websiteId, id).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **websiteId** | **String**| ID of website | 
+ **id** | **String**| id | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## websiteDeleteSnapshotId
 
 > Website websiteDeleteSnapshotId(websiteId, id)
@@ -985,6 +1110,63 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## websiteGetEnvId
+
+> WebsiteEnv websiteGetEnvId(websiteId, id)
+
+/env/:id
+
+### Example
+
+```javascript
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
+apiInstance.websiteGetEnvId(websiteId, id).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **websiteId** | **String**| ID of website | 
+ **id** | **String**| id | 
+
+### Return type
+
+[**WebsiteEnv**](WebsiteEnv.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## websiteGetServicesServiceId
 
 > WebsiteServices websiteGetServicesServiceId(websiteId, serviceId)
@@ -1101,7 +1283,7 @@ null (empty response body)
 
 ## websiteGetSnapshotIddownload
 
-> websiteGetSnapshotIddownload(websiteId, opts)
+> websiteGetSnapshotIddownload(websiteId, id, opts)
 
 /snapshot/:id/download
 
@@ -1124,10 +1306,11 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperoneClient.WebsiteApi();
 var websiteId = "websiteId_example"; // String | ID of website
+var id = "id_example"; // String | id
 var opts = {
   'incremental': "incremental_example" // String | incremental
 };
-apiInstance.websiteGetSnapshotIddownload(websiteId, opts).then(function() {
+apiInstance.websiteGetSnapshotIddownload(websiteId, id, opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1142,6 +1325,7 @@ apiInstance.websiteGetSnapshotIddownload(websiteId, opts).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **websiteId** | **String**| ID of website | 
+ **id** | **String**| id | 
  **incremental** | **String**| incremental | [optional] 
 
 ### Return type
@@ -1494,6 +1678,61 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## websiteListEnv
+
+> [WebsiteEnv] websiteListEnv(websiteId)
+
+/env
+
+### Example
+
+```javascript
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+apiInstance.websiteListEnv(websiteId).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **websiteId** | **String**| ID of website | 
+
+### Return type
+
+[**[WebsiteEnv]**](WebsiteEnv.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## websiteListQueue
 
 > [Event] websiteListQueue(websiteId, opts)
@@ -1520,7 +1759,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.WebsiteApi();
 var websiteId = "websiteId_example"; // String | ID of website
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.websiteListQueue(websiteId, opts).then(function(data) {
@@ -1538,7 +1777,7 @@ apiInstance.websiteListQueue(websiteId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **websiteId** | **String**| ID of website | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type
@@ -2116,6 +2355,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Credential**](Credential.md)
+
+### Authorization
+
+[Project](../README.md#Project), [ServiceAccount](../README.md#ServiceAccount), [Session](../README.md#Session)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## websitePostEnv
+
+> WebsiteEnv websitePostEnv(websiteId, websitePostEnv)
+
+/env
+
+### Example
+
+```javascript
+var HyperoneClient = require('hyperone-client');
+var defaultClient = HyperoneClient.ApiClient.instance;
+// Configure API key authorization: Project
+var Project = defaultClient.authentications['Project'];
+Project.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Project.apiKeyPrefix = 'Token';
+// Configure Bearer access token for authorization: ServiceAccount
+var ServiceAccount = defaultClient.authentications['ServiceAccount'];
+ServiceAccount.accessToken = 'YOUR ACCESS TOKEN';
+// Configure Bearer access token for authorization: Session
+var Session = defaultClient.authentications['Session'];
+Session.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HyperoneClient.WebsiteApi();
+var websiteId = "websiteId_example"; // String | ID of website
+var websitePostEnv = new HyperoneClient.WebsitePostEnv(); // WebsitePostEnv | 
+apiInstance.websitePostEnv(websiteId, websitePostEnv).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **websiteId** | **String**| ID of website | 
+ **websitePostEnv** | [**WebsitePostEnv**](WebsitePostEnv.md)|  | 
+
+### Return type
+
+[**WebsiteEnv**](WebsiteEnv.md)
 
 ### Authorization
 

@@ -11,5 +11,7 @@ Name | Type | Description | Notes
 **data** | [**Object**](.md) |  | [optional] 
 **sourceService** | **String** |  | [optional] 
 **quantity** | **Number** |  | [optional] 
+**id** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
 
 

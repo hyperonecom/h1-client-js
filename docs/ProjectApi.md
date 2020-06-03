@@ -1151,7 +1151,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.ProjectApi();
 var projectId = "projectId_example"; // String | ID of project
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.projectListQueue(projectId, opts).then(function(data) {
@@ -1169,7 +1169,7 @@ apiInstance.projectListQueue(projectId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| ID of project | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **disk** | [**[VmCreateDisk]**](VmCreateDisk.md) |  | [optional] 
 **netadp** | [**[VmCreateNetadp]**](VmCreateNetadp.md) |  | [optional] 
 **boot** | **Boolean** |  | [optional] 
-**cloud** | **String** |  | [optional] 
+**cloud** | **String** |  | [optional] [default to &#39;public&#39;]
 **tag** | **{String: String}** |  | [optional] 
 
 

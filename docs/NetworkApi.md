@@ -805,7 +805,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.NetworkApi();
 var networkId = "networkId_example"; // String | ID of network
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.networkListQueue(networkId, opts).then(function(data) {
@@ -823,7 +823,7 @@ apiInstance.networkListQueue(networkId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **networkId** | **String**| ID of network | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **resource** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **billing** | [**ServiceBilling**](ServiceBilling.md) |  | [optional] 
+**display** | [**ServiceDisplay**](ServiceDisplay.md) |  | [optional] 
 **data** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **availableServices** | **[String]** |  | [optional] 

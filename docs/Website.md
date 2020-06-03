@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **project** | **String** |  | [optional] 
 **image** | **String** |  | [optional] 
 **domain** | **[String]** |  | [optional] 
+**env** | [**[WebsiteEnv]**](WebsiteEnv.md) |  | [optional] 
 **fqdn** | **String** |  | [optional] 
 
 

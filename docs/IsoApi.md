@@ -570,7 +570,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.IsoApi();
 var isoId = "isoId_example"; // String | ID of iso
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.isoListQueue(isoId, opts).then(function(data) {
@@ -588,7 +588,7 @@ apiInstance.isoListQueue(isoId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **isoId** | **String**| ID of iso | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

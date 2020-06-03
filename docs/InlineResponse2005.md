@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **filter** | **[String]** |  | [optional] 
 **external** | **[String]** |  | [optional] 
 **internal** | **[String]** |  | [optional] 
+**id** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
 
 
 

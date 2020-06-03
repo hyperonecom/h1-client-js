@@ -567,7 +567,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.ReplicaApi();
 var replicaId = "replicaId_example"; // String | ID of replica
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.replicaListQueue(replicaId, opts).then(function(data) {
@@ -585,7 +585,7 @@ apiInstance.replicaListQueue(replicaId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **replicaId** | **String**| ID of replica | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

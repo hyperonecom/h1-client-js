@@ -1282,7 +1282,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.VaultApi();
 var vaultId = "vaultId_example"; // String | ID of vault
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.vaultListQueue(vaultId, opts).then(function(data) {
@@ -1300,7 +1300,7 @@ apiInstance.vaultListQueue(vaultId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vaultId** | **String**| ID of vault | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

@@ -24,7 +24,6 @@ Name | Type | Description | Notes
 **size** | **Number** |  | [optional] 
 **vm** | **String** |  | [optional] 
 **persistent** | **Boolean** |  | [optional] 
-**downloadUrl** | **String** |  | [optional] 
 **metadata** | [**DiskMetadata**](DiskMetadata.md) |  | [optional] 
 
 

@@ -1286,7 +1286,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.RegistryApi();
 var registryId = "registryId_example"; // String | ID of registry
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.registryListQueue(registryId, opts).then(function(data) {
@@ -1304,7 +1304,7 @@ apiInstance.registryListQueue(registryId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **registryId** | **String**| ID of registry | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

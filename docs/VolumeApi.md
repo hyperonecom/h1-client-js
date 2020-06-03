@@ -506,7 +506,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.VolumeApi();
 var volumeId = "volumeId_example"; // String | ID of volume
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.volumeListQueue(volumeId, opts).then(function(data) {
@@ -524,7 +524,7 @@ apiInstance.volumeListQueue(volumeId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **volumeId** | **String**| ID of volume | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

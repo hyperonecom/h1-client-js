@@ -632,7 +632,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.ReservationApi();
 var reservationId = "reservationId_example"; // String | ID of reservation
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.reservationListQueue(reservationId, opts).then(function(data) {
@@ -650,7 +650,7 @@ apiInstance.reservationListQueue(reservationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reservationId** | **String**| ID of reservation | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

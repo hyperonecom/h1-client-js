@@ -647,7 +647,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.OrganisationApi();
 var organisationId = "organisationId_example"; // String | ID of organisation
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.organisationListQueue(organisationId, opts).then(function(data) {
@@ -665,7 +665,7 @@ apiInstance.organisationListQueue(organisationId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisationId** | **String**| ID of organisation | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

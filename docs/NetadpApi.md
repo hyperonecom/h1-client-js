@@ -513,7 +513,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.NetadpApi();
 var netadpId = "netadpId_example"; // String | ID of netadp
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.netadpListQueue(netadpId, opts).then(function(data) {
@@ -531,7 +531,7 @@ apiInstance.netadpListQueue(netadpId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **netadpId** | **String**| ID of netadp | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

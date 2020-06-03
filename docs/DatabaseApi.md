@@ -1042,7 +1042,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.DatabaseApi();
 var databaseId = "databaseId_example"; // String | ID of database
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.databaseListQueue(databaseId, opts).then(function(data) {
@@ -1060,7 +1060,7 @@ apiInstance.databaseListQueue(databaseId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **databaseId** | **String**| ID of database | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

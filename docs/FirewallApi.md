@@ -1044,7 +1044,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.FirewallApi();
 var firewallId = "firewallId_example"; // String | ID of firewall
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.firewallListQueue(firewallId, opts).then(function(data) {
@@ -1062,7 +1062,7 @@ apiInstance.firewallListQueue(firewallId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewallId** | **String**| ID of firewall | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

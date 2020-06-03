@@ -21,7 +21,6 @@ Name | Type | Description | Notes
 **tag** | **{String: String}** |  | [optional] 
 **project** | **String** |  | [optional] 
 **address** | **String** |  | [optional] 
-**broadcast** | **String** |  | [optional] 
 **gateway** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **dns** | [**NetworkDns**](NetworkDns.md) |  | [optional] 

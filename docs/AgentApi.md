@@ -751,7 +751,7 @@ Name | Type | Description  | Notes
 
 ## agentGetInspect
 
-> Object agentGetInspect(agentId)
+> AnyType agentGetInspect(agentId)
 
 /inspect
 
@@ -792,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**AnyType**](AnyType.md)
 
 ### Authorization
 
@@ -806,7 +806,7 @@ Name | Type | Description  | Notes
 
 ## agentGetResourceResourceIdinspect
 
-> Object agentGetResourceResourceIdinspect(agentId, resourceId)
+> AnyType agentGetResourceResourceIdinspect(agentId, resourceId)
 
 /resource/:resourceId/inspect
 
@@ -849,7 +849,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**AnyType**](AnyType.md)
 
 ### Authorization
 
@@ -1280,7 +1280,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.AgentApi();
 var agentId = "agentId_example"; // String | ID of agent
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.agentListQueue(agentId, opts).then(function(data) {
@@ -1298,7 +1298,7 @@ apiInstance.agentListQueue(agentId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agentId** | **String**| ID of agent | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

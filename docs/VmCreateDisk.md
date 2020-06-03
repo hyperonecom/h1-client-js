@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **size** | **Number** |  | [optional] 
 **service** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**cloud** | **String** |  | [optional] 
+**cloud** | **String** |  | [optional] [default to &#39;public&#39;]
 
 

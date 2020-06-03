@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **value** | **String** |  | 
 **createdOn** | **Date** |  | 
 **createdBy** | **String** |  | 
+**id** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
 
 
 

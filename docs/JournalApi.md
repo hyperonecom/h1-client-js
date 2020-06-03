@@ -1052,7 +1052,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.JournalApi();
 var journalId = "journalId_example"; // String | ID of journal
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.journalListQueue(journalId, opts).then(function(data) {
@@ -1070,7 +1070,7 @@ apiInstance.journalListQueue(journalId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **journalId** | **String**| ID of journal | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

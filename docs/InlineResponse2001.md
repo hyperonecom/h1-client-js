@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **type** | **String** |  | 
 **value** | **String** |  | 
 **createdOn** | **Date** |  | 
+**id** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
 
 
 

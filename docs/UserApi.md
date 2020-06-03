@@ -5,12 +5,12 @@ All URIs are relative to *https://api.hyperone.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**userDeleteCredentialId**](UserApi.md#userDeleteCredentialId) | **DELETE** /user/{userId}/credential/{id} | /credential/:id
-[**userDeleteCredentialauthtokenId**](UserApi.md#userDeleteCredentialauthtokenId) | **DELETE** /user/{userId}/credential/authtoken/:id | /credential/authtoken/:id
+[**userDeleteCredentialauthtokenId**](UserApi.md#userDeleteCredentialauthtokenId) | **DELETE** /user/{userId}/credential/authtoken/{id} | /credential/authtoken/:id
 [**userDeleteCredentialcertificateId**](UserApi.md#userDeleteCredentialcertificateId) | **DELETE** /user/{userId}/credential/certificate/{id} | /credential/certificate/:id
 [**userDeleteCredentialpasswordId**](UserApi.md#userDeleteCredentialpasswordId) | **DELETE** /user/{userId}/credential/password/{id} | /credential/password/:id
 [**userDeleteTagKey**](UserApi.md#userDeleteTagKey) | **DELETE** /user/{userId}/tag/{key} | /tag/:key
 [**userGetCredentialId**](UserApi.md#userGetCredentialId) | **GET** /user/{userId}/credential/{id} | /credential/:id
-[**userGetCredentialauthtokenId**](UserApi.md#userGetCredentialauthtokenId) | **GET** /user/{userId}/credential/authtoken/:id | /credential/authtoken/:id
+[**userGetCredentialauthtokenId**](UserApi.md#userGetCredentialauthtokenId) | **GET** /user/{userId}/credential/authtoken/{id} | /credential/authtoken/:id
 [**userGetCredentialcertificateId**](UserApi.md#userGetCredentialcertificateId) | **GET** /user/{userId}/credential/certificate/{id} | /credential/certificate/:id
 [**userGetCredentialpasswordId**](UserApi.md#userGetCredentialpasswordId) | **GET** /user/{userId}/credential/password/{id} | /credential/password/:id
 [**userGetServicesServiceId**](UserApi.md#userGetServicesServiceId) | **GET** /user/{userId}/services/{serviceId} | /services/:serviceId
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ## userDeleteCredentialauthtokenId
 
-> userDeleteCredentialauthtokenId(userId, invitationId)
+> userDeleteCredentialauthtokenId(userId, id)
 
 /credential/authtoken/:id
 
@@ -118,8 +118,8 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperoneClient.UserApi();
 var userId = "userId_example"; // String | ID of user
-var invitationId = "invitationId_example"; // String | invitationId
-apiInstance.userDeleteCredentialauthtokenId(userId, invitationId).then(function() {
+var id = "id_example"; // String | id
+apiInstance.userDeleteCredentialauthtokenId(userId, id).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -134,7 +134,7 @@ apiInstance.userDeleteCredentialauthtokenId(userId, invitationId).then(function(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| ID of user | 
- **invitationId** | **String**| invitationId | 
+ **id** | **String**| id | 
 
 ### Return type
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ## userGetCredentialauthtokenId
 
-> AuthToken userGetCredentialauthtokenId(userId, invitationId)
+> AuthToken userGetCredentialauthtokenId(userId, id)
 
 /credential/authtoken/:id
 
@@ -403,8 +403,8 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HyperoneClient.UserApi();
 var userId = "userId_example"; // String | ID of user
-var invitationId = "invitationId_example"; // String | invitationId
-apiInstance.userGetCredentialauthtokenId(userId, invitationId).then(function(data) {
+var id = "id_example"; // String | id
+apiInstance.userGetCredentialauthtokenId(userId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -419,7 +419,7 @@ apiInstance.userGetCredentialauthtokenId(userId, invitationId).then(function(dat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| ID of user | 
- **invitationId** | **String**| invitationId | 
+ **id** | **String**| id | 
 
 ### Return type
 

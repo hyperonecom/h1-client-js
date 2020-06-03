@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**services** | **String** |  | [optional] 
 **flavour** | **String** |  | [optional] 
 **modifiedOn** | **Date** |  | [optional] 
 **modifiedBy** | **String** |  | [optional] 

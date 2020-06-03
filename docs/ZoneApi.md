@@ -627,7 +627,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.ZoneApi();
 var zoneId = "zoneId_example"; // String | ID of zone
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.zoneListQueue(zoneId, opts).then(function(data) {
@@ -645,7 +645,7 @@ apiInstance.zoneListQueue(zoneId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **zoneId** | **String**| ID of zone | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

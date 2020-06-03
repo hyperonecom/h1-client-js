@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **bankAccount** | **String** |  | [optional] 
 **organisation** | **String** |  | [optional] 
 **billing** | [**ProjectBilling**](ProjectBilling.md) |  | [optional] 
-**verified** | **String** |  | [optional] 
 **active** | **Boolean** |  | [optional] [default to true]
 **limit** | [**ProjectLimit**](ProjectLimit.md) |  | [optional] 
 **threshold** | [**ProjectThreshold**](ProjectThreshold.md) |  | [optional] 

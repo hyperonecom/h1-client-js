@@ -513,12 +513,12 @@ Class | Method | HTTP request | Description
 *HyperoneClient.SnapshotApi* | [**snapshotShow**](docs/SnapshotApi.md#snapshotShow) | **GET** /snapshot/{snapshotId} | Get
 *HyperoneClient.SnapshotApi* | [**snapshotUpdate**](docs/SnapshotApi.md#snapshotUpdate) | **PATCH** /snapshot/{snapshotId} | Update
 *HyperoneClient.UserApi* | [**userDeleteCredentialId**](docs/UserApi.md#userDeleteCredentialId) | **DELETE** /user/{userId}/credential/{id} | /credential/:id
-*HyperoneClient.UserApi* | [**userDeleteCredentialauthtokenId**](docs/UserApi.md#userDeleteCredentialauthtokenId) | **DELETE** /user/{userId}/credential/authtoken/:id | /credential/authtoken/:id
+*HyperoneClient.UserApi* | [**userDeleteCredentialauthtokenId**](docs/UserApi.md#userDeleteCredentialauthtokenId) | **DELETE** /user/{userId}/credential/authtoken/{id} | /credential/authtoken/:id
 *HyperoneClient.UserApi* | [**userDeleteCredentialcertificateId**](docs/UserApi.md#userDeleteCredentialcertificateId) | **DELETE** /user/{userId}/credential/certificate/{id} | /credential/certificate/:id
 *HyperoneClient.UserApi* | [**userDeleteCredentialpasswordId**](docs/UserApi.md#userDeleteCredentialpasswordId) | **DELETE** /user/{userId}/credential/password/{id} | /credential/password/:id
 *HyperoneClient.UserApi* | [**userDeleteTagKey**](docs/UserApi.md#userDeleteTagKey) | **DELETE** /user/{userId}/tag/{key} | /tag/:key
 *HyperoneClient.UserApi* | [**userGetCredentialId**](docs/UserApi.md#userGetCredentialId) | **GET** /user/{userId}/credential/{id} | /credential/:id
-*HyperoneClient.UserApi* | [**userGetCredentialauthtokenId**](docs/UserApi.md#userGetCredentialauthtokenId) | **GET** /user/{userId}/credential/authtoken/:id | /credential/authtoken/:id
+*HyperoneClient.UserApi* | [**userGetCredentialauthtokenId**](docs/UserApi.md#userGetCredentialauthtokenId) | **GET** /user/{userId}/credential/authtoken/{id} | /credential/authtoken/:id
 *HyperoneClient.UserApi* | [**userGetCredentialcertificateId**](docs/UserApi.md#userGetCredentialcertificateId) | **GET** /user/{userId}/credential/certificate/{id} | /credential/certificate/:id
 *HyperoneClient.UserApi* | [**userGetCredentialpasswordId**](docs/UserApi.md#userGetCredentialpasswordId) | **GET** /user/{userId}/credential/password/{id} | /credential/password/:id
 *HyperoneClient.UserApi* | [**userGetServicesServiceId**](docs/UserApi.md#userGetServicesServiceId) | **GET** /user/{userId}/services/{serviceId} | /services/:serviceId
@@ -637,26 +637,30 @@ Class | Method | HTTP request | Description
 *HyperoneClient.WebsiteApi* | [**websiteActionStop**](docs/WebsiteApi.md#websiteActionStop) | **POST** /website/{websiteId}/actions/stop | /actions/stop
 *HyperoneClient.WebsiteApi* | [**websiteActionTransfer**](docs/WebsiteApi.md#websiteActionTransfer) | **POST** /website/{websiteId}/actions/transfer | /actions/transfer
 *HyperoneClient.WebsiteApi* | [**websiteActionUpdateDomain**](docs/WebsiteApi.md#websiteActionUpdateDomain) | **POST** /website/{websiteId}/actions/update_domain | /actions/update_domain
+*HyperoneClient.WebsiteApi* | [**websiteActionUpdateImage**](docs/WebsiteApi.md#websiteActionUpdateImage) | **POST** /website/{websiteId}/actions/update_image | /actions/update_image
 *HyperoneClient.WebsiteApi* | [**websiteCreate**](docs/WebsiteApi.md#websiteCreate) | **POST** /website | Create
 *HyperoneClient.WebsiteApi* | [**websiteDelete**](docs/WebsiteApi.md#websiteDelete) | **DELETE** /website/{websiteId} | Delete
 *HyperoneClient.WebsiteApi* | [**websiteDeleteAccessrightsIdentity**](docs/WebsiteApi.md#websiteDeleteAccessrightsIdentity) | **DELETE** /website/{websiteId}/accessrights/{identity} | /accessrights/:identity
 *HyperoneClient.WebsiteApi* | [**websiteDeleteCredentialId**](docs/WebsiteApi.md#websiteDeleteCredentialId) | **DELETE** /website/{websiteId}/credential/{id} | /credential/:id
 *HyperoneClient.WebsiteApi* | [**websiteDeleteCredentialcertificateId**](docs/WebsiteApi.md#websiteDeleteCredentialcertificateId) | **DELETE** /website/{websiteId}/credential/certificate/{id} | /credential/certificate/:id
 *HyperoneClient.WebsiteApi* | [**websiteDeleteCredentialpasswordId**](docs/WebsiteApi.md#websiteDeleteCredentialpasswordId) | **DELETE** /website/{websiteId}/credential/password/{id} | /credential/password/:id
+*HyperoneClient.WebsiteApi* | [**websiteDeleteEnvId**](docs/WebsiteApi.md#websiteDeleteEnvId) | **DELETE** /website/{websiteId}/env/{id} | /env/:id
 *HyperoneClient.WebsiteApi* | [**websiteDeleteSnapshotId**](docs/WebsiteApi.md#websiteDeleteSnapshotId) | **DELETE** /website/{websiteId}/snapshot/{id} | /snapshot/:id
 *HyperoneClient.WebsiteApi* | [**websiteDeleteTagKey**](docs/WebsiteApi.md#websiteDeleteTagKey) | **DELETE** /website/{websiteId}/tag/{key} | /tag/:key
 *HyperoneClient.WebsiteApi* | [**websiteGetCredentialId**](docs/WebsiteApi.md#websiteGetCredentialId) | **GET** /website/{websiteId}/credential/{id} | /credential/:id
 *HyperoneClient.WebsiteApi* | [**websiteGetCredentialcertificateId**](docs/WebsiteApi.md#websiteGetCredentialcertificateId) | **GET** /website/{websiteId}/credential/certificate/{id} | /credential/certificate/:id
 *HyperoneClient.WebsiteApi* | [**websiteGetCredentialpasswordId**](docs/WebsiteApi.md#websiteGetCredentialpasswordId) | **GET** /website/{websiteId}/credential/password/{id} | /credential/password/:id
+*HyperoneClient.WebsiteApi* | [**websiteGetEnvId**](docs/WebsiteApi.md#websiteGetEnvId) | **GET** /website/{websiteId}/env/{id} | /env/:id
 *HyperoneClient.WebsiteApi* | [**websiteGetServicesServiceId**](docs/WebsiteApi.md#websiteGetServicesServiceId) | **GET** /website/{websiteId}/services/{serviceId} | /services/:serviceId
 *HyperoneClient.WebsiteApi* | [**websiteGetSnapshotId**](docs/WebsiteApi.md#websiteGetSnapshotId) | **GET** /website/{websiteId}/snapshot/{id} | /snapshot/:id
-*HyperoneClient.WebsiteApi* | [**websiteGetSnapshotIddownload**](docs/WebsiteApi.md#websiteGetSnapshotIddownload) | **GET** /website/{websiteId}/snapshot/:id/download | /snapshot/:id/download
+*HyperoneClient.WebsiteApi* | [**websiteGetSnapshotIddownload**](docs/WebsiteApi.md#websiteGetSnapshotIddownload) | **GET** /website/{websiteId}/snapshot/{id}/download | /snapshot/:id/download
 *HyperoneClient.WebsiteApi* | [**websiteGetTag**](docs/WebsiteApi.md#websiteGetTag) | **GET** /website/{websiteId}/tag | /tag
 *HyperoneClient.WebsiteApi* | [**websiteList**](docs/WebsiteApi.md#websiteList) | **GET** /website | List
 *HyperoneClient.WebsiteApi* | [**websiteListAccessrights**](docs/WebsiteApi.md#websiteListAccessrights) | **GET** /website/{websiteId}/accessrights | /accessrights
 *HyperoneClient.WebsiteApi* | [**websiteListCredential**](docs/WebsiteApi.md#websiteListCredential) | **GET** /website/{websiteId}/credential | /credential
 *HyperoneClient.WebsiteApi* | [**websiteListCredentialcertificate**](docs/WebsiteApi.md#websiteListCredentialcertificate) | **GET** /website/{websiteId}/credential/certificate | /credential/certificate
 *HyperoneClient.WebsiteApi* | [**websiteListCredentialpassword**](docs/WebsiteApi.md#websiteListCredentialpassword) | **GET** /website/{websiteId}/credential/password | /credential/password
+*HyperoneClient.WebsiteApi* | [**websiteListEnv**](docs/WebsiteApi.md#websiteListEnv) | **GET** /website/{websiteId}/env | /env
 *HyperoneClient.WebsiteApi* | [**websiteListQueue**](docs/WebsiteApi.md#websiteListQueue) | **GET** /website/{websiteId}/queue | /queue
 *HyperoneClient.WebsiteApi* | [**websiteListServices**](docs/WebsiteApi.md#websiteListServices) | **GET** /website/{websiteId}/services | /services
 *HyperoneClient.WebsiteApi* | [**websiteListSnapshot**](docs/WebsiteApi.md#websiteListSnapshot) | **GET** /website/{websiteId}/snapshot | /snapshot
@@ -668,6 +672,7 @@ Class | Method | HTTP request | Description
 *HyperoneClient.WebsiteApi* | [**websitePostCredential**](docs/WebsiteApi.md#websitePostCredential) | **POST** /website/{websiteId}/credential | /credential
 *HyperoneClient.WebsiteApi* | [**websitePostCredentialcertificate**](docs/WebsiteApi.md#websitePostCredentialcertificate) | **POST** /website/{websiteId}/credential/certificate | /credential/certificate
 *HyperoneClient.WebsiteApi* | [**websitePostCredentialpassword**](docs/WebsiteApi.md#websitePostCredentialpassword) | **POST** /website/{websiteId}/credential/password | /credential/password
+*HyperoneClient.WebsiteApi* | [**websitePostEnv**](docs/WebsiteApi.md#websitePostEnv) | **POST** /website/{websiteId}/env | /env
 *HyperoneClient.WebsiteApi* | [**websitePostSnapshot**](docs/WebsiteApi.md#websitePostSnapshot) | **POST** /website/{websiteId}/snapshot | /snapshot
 *HyperoneClient.WebsiteApi* | [**websitePutTag**](docs/WebsiteApi.md#websitePutTag) | **PUT** /website/{websiteId}/tag | /tag
 *HyperoneClient.WebsiteApi* | [**websiteShow**](docs/WebsiteApi.md#websiteShow) | **GET** /website/{websiteId} | Get
@@ -851,6 +856,7 @@ Class | Method | HTTP request | Description
  - [HyperoneClient.OrganisationUpdateBillingAddress](docs/OrganisationUpdateBillingAddress.md)
  - [HyperoneClient.Payment](docs/Payment.md)
  - [HyperoneClient.Proforma](docs/Proforma.md)
+ - [HyperoneClient.ProformaArray](docs/ProformaArray.md)
  - [HyperoneClient.ProformaSeller](docs/ProformaSeller.md)
  - [HyperoneClient.Project](docs/Project.md)
  - [HyperoneClient.ProjectAccessRights](docs/ProjectAccessRights.md)
@@ -863,8 +869,11 @@ Class | Method | HTTP request | Description
  - [HyperoneClient.ProjectLimitContainer](docs/ProjectLimitContainer.md)
  - [HyperoneClient.ProjectLimitDisk](docs/ProjectLimitDisk.md)
  - [HyperoneClient.ProjectLimitNetwork](docs/ProjectLimitNetwork.md)
+ - [HyperoneClient.ProjectLimitPolicy](docs/ProjectLimitPolicy.md)
  - [HyperoneClient.ProjectLimitRegistry](docs/ProjectLimitRegistry.md)
  - [HyperoneClient.ProjectLimitReservation](docs/ProjectLimitReservation.md)
+ - [HyperoneClient.ProjectLimitRole](docs/ProjectLimitRole.md)
+ - [HyperoneClient.ProjectLimitSa](docs/ProjectLimitSa.md)
  - [HyperoneClient.ProjectLimitSnapshot](docs/ProjectLimitSnapshot.md)
  - [HyperoneClient.ProjectLimitVault](docs/ProjectLimitVault.md)
  - [HyperoneClient.ProjectLimitVm](docs/ProjectLimitVm.md)
@@ -906,6 +915,8 @@ Class | Method | HTTP request | Description
  - [HyperoneClient.ServiceBilling](docs/ServiceBilling.md)
  - [HyperoneClient.ServiceBillingPrice](docs/ServiceBillingPrice.md)
  - [HyperoneClient.ServiceBillingReservations](docs/ServiceBillingReservations.md)
+ - [HyperoneClient.ServiceDisplay](docs/ServiceDisplay.md)
+ - [HyperoneClient.ServiceDisplayUnit](docs/ServiceDisplayUnit.md)
  - [HyperoneClient.Snapshot](docs/Snapshot.md)
  - [HyperoneClient.SnapshotCreate](docs/SnapshotCreate.md)
  - [HyperoneClient.SnapshotPostAccessrights](docs/SnapshotPostAccessrights.md)
@@ -967,9 +978,12 @@ Class | Method | HTTP request | Description
  - [HyperoneClient.Website](docs/Website.md)
  - [HyperoneClient.WebsiteActionTransfer](docs/WebsiteActionTransfer.md)
  - [HyperoneClient.WebsiteActionUpdateDomain](docs/WebsiteActionUpdateDomain.md)
+ - [HyperoneClient.WebsiteActionUpdateImage](docs/WebsiteActionUpdateImage.md)
  - [HyperoneClient.WebsiteCreate](docs/WebsiteCreate.md)
  - [HyperoneClient.WebsiteCreateCredential](docs/WebsiteCreateCredential.md)
+ - [HyperoneClient.WebsiteCreateEnv](docs/WebsiteCreateEnv.md)
  - [HyperoneClient.WebsiteCreateSource](docs/WebsiteCreateSource.md)
+ - [HyperoneClient.WebsiteEnv](docs/WebsiteEnv.md)
  - [HyperoneClient.WebsitePatchCredentialId](docs/WebsitePatchCredentialId.md)
  - [HyperoneClient.WebsitePatchCredentialcertificateId](docs/WebsitePatchCredentialcertificateId.md)
  - [HyperoneClient.WebsitePatchCredentialpasswordId](docs/WebsitePatchCredentialpasswordId.md)
@@ -977,6 +991,7 @@ Class | Method | HTTP request | Description
  - [HyperoneClient.WebsitePostCredential](docs/WebsitePostCredential.md)
  - [HyperoneClient.WebsitePostCredentialcertificate](docs/WebsitePostCredentialcertificate.md)
  - [HyperoneClient.WebsitePostCredentialpassword](docs/WebsitePostCredentialpassword.md)
+ - [HyperoneClient.WebsitePostEnv](docs/WebsitePostEnv.md)
  - [HyperoneClient.WebsitePostSnapshot](docs/WebsitePostSnapshot.md)
  - [HyperoneClient.WebsiteServices](docs/WebsiteServices.md)
  - [HyperoneClient.WebsiteUpdate](docs/WebsiteUpdate.md)

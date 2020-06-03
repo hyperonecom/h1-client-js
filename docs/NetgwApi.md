@@ -632,7 +632,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.NetgwApi();
 var netgwId = "netgwId_example"; // String | ID of netgw
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.netgwListQueue(netgwId, opts).then(function(data) {
@@ -650,7 +650,7 @@ apiInstance.netgwListQueue(netgwId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **netgwId** | **String**| ID of netgw | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

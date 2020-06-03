@@ -385,7 +385,7 @@ Session.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HyperoneClient.VmhostApi();
 var vmhostId = "vmhostId_example"; // String | ID of vmhost
 var opts = {
-  'limit': 3.4, // Number | $limit
+  'limit': 100, // Number | $limit
   'skip': 3.4 // Number | $skip
 };
 apiInstance.vmhostListQueue(vmhostId, opts).then(function(data) {
@@ -403,7 +403,7 @@ apiInstance.vmhostListQueue(vmhostId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vmhostId** | **String**| ID of vmhost | 
- **limit** | **Number**| $limit | [optional] 
+ **limit** | **Number**| $limit | [optional] [default to 100]
  **skip** | **Number**| $skip | [optional] 
 
 ### Return type

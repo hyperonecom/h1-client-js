@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
 **image** | **String** |  | 
+**env** | [**[WebsiteCreateEnv]**](WebsiteCreateEnv.md) |  | [optional] 
 **service** | **String** |  | 
 **source** | [**WebsiteCreateSource**](WebsiteCreateSource.md) |  | [optional] 
 **credential** | [**WebsiteCreateCredential**](WebsiteCreateCredential.md) |  | [optional] 
