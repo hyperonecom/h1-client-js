@@ -1,45 +1,74 @@
-## hyperone@0.1.0
+# h1-client-ts
 
-This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
+H1-client-ts is an automatically generated library used to interact with
+[HyperOne API](https://www.hyperone.com/tools/api/).
 
-Environment
-* Node.js
-* Webpack
-* Browserify
+## Installation
 
-Language level
-* ES5 - you must have a Promises/A+ library installed
-* ES6
+You are able to get this library using [npm](https://www.npmjs.com/get-npm),
+or [yarn](https://classic.yarnpkg.com/en/docs/install/).
 
-Module system
-* CommonJS
-* ES6 module system
+### Installation using yarn
 
-It can be used in both TypeScript and JavaScript. In TypeScript, the definition should be automatically resolved via `package.json`. ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
-
-### Building
-
-To build and compile the typescript sources to javascript use:
-```
-npm install
-npm run build
+```shell
+yarn add h1-client-ts
 ```
 
-### Publishing
+### Installation using npm
 
-First build the package then run ```npm publish```
-
-### Consuming
-
-navigate to the folder of your consuming project and run one of the following commands.
-
-_published:_
-
-```
-npm install hyperone@0.1.0 --save
+```shell
+npm i h1-client-ts
 ```
 
-_unPublished (not recommended):_
+## Usage
 
+The recommended way to use this package is to use it along with [@hyperone/credentials](https://www.npmjs.com/package/@hyperone/credentials) library.
+To to that install _@hyperone/credentials_ using your package manager:
+
+yarn:
+
+```shell
+yarn add @hyperone/credentials
 ```
-npm install PATH_TO_GENERATED_PACKAGE --save
+
+npm:
+
+```shell
+npm i @hyperone/credentials
+```
+
+Then import use it as a token provider in your code:
+
+```typescript
+import { getPassportCredentialsHelper } from "@hyperone/credentials";
+import { Credentials } from "h1-client-ts";
+
+const helper = getPassportCredentialsHelper();
+const config = new Configuration({
+  accessToken: helper.getToken("https://api.hyperone.com/v2"), // token audience
+});
+```
+
+You can acquire more knoweledge about _@hyperone/credentials_ library on [its GitHub page](https://github.com/hyperonecom/h1-credentials-helper-ts).
+
+Configuration object allows you to use choosen API client.
+
+Example:
+
+```typescript
+import { getPassportCredentialsHelper } from "@hyperone/credentials";
+import { Configuration, IamProjectApi } from "hyperone";
+
+const helper = getPassportCredentialsHelper();
+const config = new Configuration({
+  accessToken: helper.getToken("https://api.hyperone.com/v2"), // token audience
+});
+
+const getProjects = async () => {
+  const projectApiClient = new IamProjectApi(config);
+  const response = await projectApiClient.projectList();
+  console.log(response);
+};
+
+getProjects();
+```
