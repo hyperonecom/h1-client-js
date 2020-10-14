@@ -16,14 +16,58 @@
 
 ### Properties
 
-* [credits](_api_.projectthreshold.md#credits)
+* [id](_api_.projectthreshold.md#id)
+* [name](_api_.projectthreshold.md#name)
+* [type](_api_.projectthreshold.md#type)
+* [uri](_api_.projectthreshold.md#uri)
+* [value](_api_.projectthreshold.md#value)
 
 ## Properties
 
-### credits
+### id
 
-• `Optional` **credits**: [ProjectThresholdCredits](_api_.projectthresholdcredits.md)
+• `Optional` **id**: string
 
-*Defined in api.ts:4742*
+*Defined in api.ts:4934*
+
+**`memberof`** ProjectThreshold
+
+___
+
+### name
+
+• `Optional` **name**: string
+
+*Defined in api.ts:4940*
+
+**`memberof`** ProjectThreshold
+
+___
+
+### type
+
+• `Optional` **type**: string
+
+*Defined in api.ts:4946*
+
+**`memberof`** ProjectThreshold
+
+___
+
+### uri
+
+• `Optional` **uri**: string
+
+*Defined in api.ts:4958*
+
+**`memberof`** ProjectThreshold
+
+___
+
+### value
+
+• `Optional` **value**: number
+
+*Defined in api.ts:4952*
 
 **`memberof`** ProjectThreshold

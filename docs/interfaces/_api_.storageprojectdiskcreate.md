@@ -16,7 +16,6 @@
 
 ### Properties
 
-* [metadata](_api_.storageprojectdiskcreate.md#metadata)
 * [name](_api_.storageprojectdiskcreate.md#name)
 * [service](_api_.storageprojectdiskcreate.md#service)
 * [size](_api_.storageprojectdiskcreate.md#size)
@@ -26,21 +25,11 @@
 
 ## Properties
 
-### metadata
-
-• `Optional` **metadata**: [DiskMetadata](_api_.diskmetadata.md)
-
-*Defined in api.ts:5814*
-
-**`memberof`** StorageProjectDiskCreate
-
-___
-
 ### name
 
 •  **name**: string
 
-*Defined in api.ts:5784*
+*Defined in api.ts:5974*
 
 **`memberof`** StorageProjectDiskCreate
 
@@ -50,7 +39,7 @@ ___
 
 •  **service**: string
 
-*Defined in api.ts:5790*
+*Defined in api.ts:5980*
 
 **`memberof`** StorageProjectDiskCreate
 
@@ -60,7 +49,7 @@ ___
 
 •  **size**: number
 
-*Defined in api.ts:5796*
+*Defined in api.ts:5986*
 
 **`memberof`** StorageProjectDiskCreate
 
@@ -68,9 +57,9 @@ ___
 
 ### source
 
-• `Optional` **source**: string
+• `Optional` **source**: any
 
-*Defined in api.ts:5802*
+*Defined in api.ts:5992*
 
 **`memberof`** StorageProjectDiskCreate
 
@@ -80,7 +69,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5820*
+*Defined in api.ts:6004*
 
 **`memberof`** StorageProjectDiskCreate
 
@@ -90,6 +79,6 @@ ___
 
 • `Optional` **vm**: string
 
-*Defined in api.ts:5808*
+*Defined in api.ts:5998*
 
 **`memberof`** StorageProjectDiskCreate

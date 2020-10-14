@@ -26,7 +26,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:989*
+*Defined in api.ts:1027*
 
 **`memberof`** ContainerProjectRegistryCreate
 
@@ -36,7 +36,7 @@ ___
 
 •  **service**: string
 
-*Defined in api.ts:995*
+*Defined in api.ts:1033*
 
 **`memberof`** ContainerProjectRegistryCreate
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:1001*
+*Defined in api.ts:1039*
 
 **`memberof`** ContainerProjectRegistryCreate

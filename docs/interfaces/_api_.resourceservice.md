@@ -29,7 +29,7 @@
 
 • `Optional` **billing**: string
 
-*Defined in api.ts:5326*
+*Defined in api.ts:5516*
 
 **`memberof`** ResourceService
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **data**: { [key:string]: string;  }
 
-*Defined in api.ts:5332*
+*Defined in api.ts:5522*
 
 **`memberof`** ResourceService
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5302*
+*Defined in api.ts:5492*
 
 **`memberof`** ResourceService
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5308*
+*Defined in api.ts:5498*
 
 **`memberof`** ResourceService
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **sourceService**: string
 
-*Defined in api.ts:5320*
+*Defined in api.ts:5510*
 
 **`memberof`** ResourceService
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:5314*
+*Defined in api.ts:5504*
 
 **`memberof`** ResourceService

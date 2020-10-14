@@ -30,7 +30,7 @@
 
 • `Optional` **agent**: string
 
-*Defined in api.ts:298*
+*Defined in api.ts:299*
 
 **`memberof`** Attempt
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:292*
+*Defined in api.ts:293*
 
 **`memberof`** Attempt
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **error**: boolean
 
-*Defined in api.ts:274*
+*Defined in api.ts:275*
 
 **`memberof`** Attempt
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:262*
+*Defined in api.ts:263*
 
 **`memberof`** Attempt
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **status**: number
 
-*Defined in api.ts:268*
+*Defined in api.ts:269*
 
 **`memberof`** Attempt
 
@@ -80,7 +80,7 @@ ___
 
 • `Optional` **stderr**: { [key:string]: string;  }
 
-*Defined in api.ts:286*
+*Defined in api.ts:287*
 
 **`memberof`** Attempt
 
@@ -90,6 +90,6 @@ ___
 
 • `Optional` **stdout**: { [key:string]: string;  }
 
-*Defined in api.ts:280*
+*Defined in api.ts:281*
 
 **`memberof`** Attempt

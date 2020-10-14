@@ -16,39 +16,17 @@
 
 ### Properties
 
-* [metadata](_api_.storageprojectisocreate.md#metadata)
 * [name](_api_.storageprojectisocreate.md#name)
-* [size](_api_.storageprojectisocreate.md#size)
 * [source](_api_.storageprojectisocreate.md#source)
 * [tag](_api_.storageprojectisocreate.md#tag)
 
 ## Properties
 
-### metadata
-
-• `Optional` **metadata**: [DiskMetadata](_api_.diskmetadata.md)
-
-*Defined in api.ts:5965*
-
-**`memberof`** StorageProjectIsoCreate
-
-___
-
 ### name
 
 •  **name**: string
 
-*Defined in api.ts:5947*
-
-**`memberof`** StorageProjectIsoCreate
-
-___
-
-### size
-
-• `Optional` **size**: number
-
-*Defined in api.ts:5953*
+*Defined in api.ts:6131*
 
 **`memberof`** StorageProjectIsoCreate
 
@@ -56,9 +34,9 @@ ___
 
 ### source
 
-• `Optional` **source**: string
+•  **source**: string
 
-*Defined in api.ts:5959*
+*Defined in api.ts:6137*
 
 **`memberof`** StorageProjectIsoCreate
 
@@ -68,6 +46,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5971*
+*Defined in api.ts:6143*
 
 **`memberof`** StorageProjectIsoCreate

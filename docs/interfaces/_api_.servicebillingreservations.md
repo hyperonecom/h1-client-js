@@ -27,7 +27,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5708*
+*Defined in api.ts:5898*
 
 **`memberof`** ServiceBillingReservations
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **period**: string
 
-*Defined in api.ts:5714*
+*Defined in api.ts:5904*
 
 **`memberof`** ServiceBillingReservations
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **price**: [ServiceBillingPrice](_api_.servicebillingprice.md)
 
-*Defined in api.ts:5720*
+*Defined in api.ts:5910*
 
 **`memberof`** ServiceBillingReservations
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **resourcePrice**: [ServiceBillingPrice](_api_.servicebillingprice.md)
 
-*Defined in api.ts:5726*
+*Defined in api.ts:5916*
 
 **`memberof`** ServiceBillingReservations

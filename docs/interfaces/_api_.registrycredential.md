@@ -31,7 +31,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:5049*
+*Defined in api.ts:5239*
 
 **`memberof`** RegistryCredential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5055*
+*Defined in api.ts:5245*
 
 **`memberof`** RegistryCredential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **fingerprint**: string
 
-*Defined in api.ts:5073*
+*Defined in api.ts:5263*
 
 **`memberof`** RegistryCredential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5037*
+*Defined in api.ts:5227*
 
 **`memberof`** RegistryCredential
 
@@ -71,7 +71,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:5043*
+*Defined in api.ts:5233*
 
 **`memberof`** RegistryCredential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **token**: string
 
-*Defined in api.ts:5079*
+*Defined in api.ts:5269*
 
 **`memberof`** RegistryCredential
 
@@ -91,7 +91,7 @@ ___
 
 •  **type**: [RegistryCredentialTypeEnum](../enums/_api_.registrycredentialtypeenum.md)
 
-*Defined in api.ts:5061*
+*Defined in api.ts:5251*
 
 **`memberof`** RegistryCredential
 
@@ -101,6 +101,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:5067*
+*Defined in api.ts:5257*
 
 **`memberof`** RegistryCredential

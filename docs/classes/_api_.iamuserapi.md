@@ -28,18 +28,18 @@ IamUserApi - object-oriented interface
 
 ### Methods
 
-* [userCredentialAuthtokenDelete](_api_.iamuserapi.md#usercredentialauthtokendelete)
-* [userCredentialAuthtokenGet](_api_.iamuserapi.md#usercredentialauthtokenget)
-* [userCredentialAuthtokenList](_api_.iamuserapi.md#usercredentialauthtokenlist)
-* [userCredentialCreate](_api_.iamuserapi.md#usercredentialcreate)
-* [userCredentialDelete](_api_.iamuserapi.md#usercredentialdelete)
-* [userCredentialGet](_api_.iamuserapi.md#usercredentialget)
-* [userCredentialList](_api_.iamuserapi.md#usercredentiallist)
-* [userCredentialPatch](_api_.iamuserapi.md#usercredentialpatch)
-* [userGet](_api_.iamuserapi.md#userget)
-* [userServiceGet](_api_.iamuserapi.md#userserviceget)
-* [userServiceList](_api_.iamuserapi.md#userservicelist)
-* [userUpdate](_api_.iamuserapi.md#userupdate)
+* [iamUserCredentialAuthtokenDelete](_api_.iamuserapi.md#iamusercredentialauthtokendelete)
+* [iamUserCredentialAuthtokenGet](_api_.iamuserapi.md#iamusercredentialauthtokenget)
+* [iamUserCredentialAuthtokenList](_api_.iamuserapi.md#iamusercredentialauthtokenlist)
+* [iamUserCredentialCreate](_api_.iamuserapi.md#iamusercredentialcreate)
+* [iamUserCredentialDelete](_api_.iamuserapi.md#iamusercredentialdelete)
+* [iamUserCredentialGet](_api_.iamuserapi.md#iamusercredentialget)
+* [iamUserCredentialList](_api_.iamuserapi.md#iamusercredentiallist)
+* [iamUserCredentialPatch](_api_.iamuserapi.md#iamusercredentialpatch)
+* [iamUserGet](_api_.iamuserapi.md#iamuserget)
+* [iamUserServiceGet](_api_.iamuserapi.md#iamuserserviceget)
+* [iamUserServiceList](_api_.iamuserapi.md#iamuserservicelist)
+* [iamUserUpdate](_api_.iamuserapi.md#iamuserupdate)
 
 ## Constructors
 
@@ -93,11 +93,11 @@ ___
 
 ## Methods
 
-### userCredentialAuthtokenDelete
+### iamUserCredentialAuthtokenDelete
 
-▸ **userCredentialAuthtokenDelete**(`userId`: string, `authtokenId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
+▸ **iamUserCredentialAuthtokenDelete**(`userId`: string, `authtokenId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:38006*
+*Defined in api.ts:38597*
 
 Delete iam/user.credential
 
@@ -119,11 +119,11 @@ Name | Type | Description |
 
 ___
 
-### userCredentialAuthtokenGet
+### iamUserCredentialAuthtokenGet
 
-▸ **userCredentialAuthtokenGet**(`userId`: string, `authtokenId`: string, `options?`: any): Promise\<AxiosResponse\<[AuthToken](../interfaces/_api_.authtoken.md)>>
+▸ **iamUserCredentialAuthtokenGet**(`userId`: string, `authtokenId`: string, `options?`: any): Promise\<AxiosResponse\<[AuthToken](../interfaces/_api_.authtoken.md)>>
 
-*Defined in api.ts:38019*
+*Defined in api.ts:38610*
 
 Get iam/user.credential
 
@@ -145,11 +145,11 @@ Name | Type | Description |
 
 ___
 
-### userCredentialAuthtokenList
+### iamUserCredentialAuthtokenList
 
-▸ **userCredentialAuthtokenList**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[AuthToken](../interfaces/_api_.authtoken.md)[]>>
+▸ **iamUserCredentialAuthtokenList**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[AuthToken](../interfaces/_api_.authtoken.md)[]>>
 
-*Defined in api.ts:38031*
+*Defined in api.ts:38622*
 
 List iam/user.credential
 
@@ -170,11 +170,11 @@ Name | Type | Description |
 
 ___
 
-### userCredentialCreate
+### iamUserCredentialCreate
 
-▸ **userCredentialCreate**(`userId`: string, `userCredential`: [UserCredential](../interfaces/_api_.usercredential.md), `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)>>
+▸ **iamUserCredentialCreate**(`userId`: string, `userCredential`: [UserCredential](../interfaces/_api_.usercredential.md), `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)>>
 
-*Defined in api.ts:38044*
+*Defined in api.ts:38635*
 
 Create iam/user.credential
 
@@ -196,11 +196,11 @@ Name | Type | Description |
 
 ___
 
-### userCredentialDelete
+### iamUserCredentialDelete
 
-▸ **userCredentialDelete**(`userId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[User](../interfaces/_api_.user.md)>>
+▸ **iamUserCredentialDelete**(`userId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[User](../interfaces/_api_.user.md)>>
 
-*Defined in api.ts:38057*
+*Defined in api.ts:38648*
 
 Delete iam/user.credential
 
@@ -222,11 +222,11 @@ Name | Type | Description |
 
 ___
 
-### userCredentialGet
+### iamUserCredentialGet
 
-▸ **userCredentialGet**(`userId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)>>
+▸ **iamUserCredentialGet**(`userId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)>>
 
-*Defined in api.ts:38070*
+*Defined in api.ts:38661*
 
 Get iam/user.credential
 
@@ -248,11 +248,11 @@ Name | Type | Description |
 
 ___
 
-### userCredentialList
+### iamUserCredentialList
 
-▸ **userCredentialList**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)[]>>
+▸ **iamUserCredentialList**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)[]>>
 
-*Defined in api.ts:38082*
+*Defined in api.ts:38673*
 
 List iam/user.credential
 
@@ -273,11 +273,11 @@ Name | Type | Description |
 
 ___
 
-### userCredentialPatch
+### iamUserCredentialPatch
 
-▸ **userCredentialPatch**(`userId`: string, `credentialId`: string, `userCredentialPatch`: [UserCredentialPatch](../interfaces/_api_.usercredentialpatch.md), `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)>>
+▸ **iamUserCredentialPatch**(`userId`: string, `credentialId`: string, `iamUserCredentialPatch`: [IamUserCredentialPatch](../interfaces/_api_.iamusercredentialpatch.md), `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)>>
 
-*Defined in api.ts:38096*
+*Defined in api.ts:38687*
 
 Update iam/user.credential
 
@@ -293,18 +293,18 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `userId` | string | User Id |
 `credentialId` | string | credentialId |
-`userCredentialPatch` | [UserCredentialPatch](../interfaces/_api_.usercredentialpatch.md) |  |
+`iamUserCredentialPatch` | [IamUserCredentialPatch](../interfaces/_api_.iamusercredentialpatch.md) |  |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)>>
 
 ___
 
-### userGet
+### iamUserGet
 
-▸ **userGet**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[User](../interfaces/_api_.user.md)>>
+▸ **iamUserGet**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[User](../interfaces/_api_.user.md)>>
 
-*Defined in api.ts:38108*
+*Defined in api.ts:38699*
 
 Returns a single user
 
@@ -325,11 +325,11 @@ Name | Type | Description |
 
 ___
 
-### userServiceGet
+### iamUserServiceGet
 
-▸ **userServiceGet**(`userId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
+▸ **iamUserServiceGet**(`userId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:38121*
+*Defined in api.ts:38712*
 
 Get iam/user.service
 
@@ -351,11 +351,11 @@ Name | Type | Description |
 
 ___
 
-### userServiceList
+### iamUserServiceList
 
-▸ **userServiceList**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
+▸ **iamUserServiceList**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:38133*
+*Defined in api.ts:38724*
 
 List iam/user.service
 
@@ -376,11 +376,11 @@ Name | Type | Description |
 
 ___
 
-### userUpdate
+### iamUserUpdate
 
-▸ **userUpdate**(`userId`: string, `userUpdate`: [UserUpdate](../interfaces/_api_.userupdate.md), `options?`: any): Promise\<AxiosResponse\<[User](../interfaces/_api_.user.md)>>
+▸ **iamUserUpdate**(`userId`: string, `iamUserUpdate`: [IamUserUpdate](../interfaces/_api_.iamuserupdate.md), `options?`: any): Promise\<AxiosResponse\<[User](../interfaces/_api_.user.md)>>
 
-*Defined in api.ts:38146*
+*Defined in api.ts:38737*
 
 Returns modified user
 
@@ -395,7 +395,7 @@ Returns modified user
 Name | Type | Description |
 ------ | ------ | ------ |
 `userId` | string | User Id |
-`userUpdate` | [UserUpdate](../interfaces/_api_.userupdate.md) |  |
+`iamUserUpdate` | [IamUserUpdate](../interfaces/_api_.iamuserupdate.md) |  |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[User](../interfaces/_api_.user.md)>>

@@ -38,7 +38,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:1311*
+*Defined in api.ts:1368*
 
 **`memberof`** Disk
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:1305*
+*Defined in api.ts:1362*
 
 **`memberof`** Disk
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:1287*
+*Defined in api.ts:1344*
 
 **`memberof`** Disk
 
@@ -68,7 +68,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1275*
+*Defined in api.ts:1332*
 
 **`memberof`** Disk
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **metadata**: [DiskMetadata](_api_.diskmetadata.md)
 
-*Defined in api.ts:1353*
+*Defined in api.ts:1410*
 
 **`memberof`** Disk
 
@@ -88,7 +88,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:1299*
+*Defined in api.ts:1356*
 
 **`memberof`** Disk
 
@@ -98,7 +98,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:1293*
+*Defined in api.ts:1350*
 
 **`memberof`** Disk
 
@@ -108,7 +108,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:1281*
+*Defined in api.ts:1338*
 
 **`memberof`** Disk
 
@@ -118,7 +118,7 @@ ___
 
 • `Optional` **persistent**: boolean
 
-*Defined in api.ts:1347*
+*Defined in api.ts:1404*
 
 **`memberof`** Disk
 
@@ -128,7 +128,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:1323*
+*Defined in api.ts:1380*
 
 **`memberof`** Disk
 
@@ -138,7 +138,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in api.ts:1335*
+*Defined in api.ts:1392*
 
 **`memberof`** Disk
 
@@ -148,7 +148,7 @@ ___
 
 • `Optional` **state**: [DiskStateEnum](../enums/_api_.diskstateenum.md)
 
-*Defined in api.ts:1317*
+*Defined in api.ts:1374*
 
 **`memberof`** Disk
 
@@ -158,7 +158,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:1359*
+*Defined in api.ts:1416*
 
 **`memberof`** Disk
 
@@ -168,7 +168,7 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:1329*
+*Defined in api.ts:1386*
 
 **`memberof`** Disk
 
@@ -178,6 +178,6 @@ ___
 
 • `Optional` **vm**: string
 
-*Defined in api.ts:1341*
+*Defined in api.ts:1398*
 
 **`memberof`** Disk

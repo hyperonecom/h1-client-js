@@ -105,6 +105,7 @@ export interface Agent {
     */
 export enum AgentStateEnum {
     Online = 'Online',
+    Suspended = 'Suspended',
     Unknown = 'Unknown',
     Processing = 'Processing',
     NotCreated = 'NotCreated'
@@ -978,6 +979,43 @@ export interface ComputeProjectVmUpdate {
 /**
  * 
  * @export
+ * @interface ContainerImage
+ */
+export interface ContainerImage {
+    /**
+     * 
+     * @type {string}
+     * @memberof ContainerImage
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContainerImage
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContainerImage
+     */
+    digest: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContainerImage
+     */
+    createdOn: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContainerImage
+     */
+    modifiedOn: string;
+}
+/**
+ * 
+ * @export
  * @interface ContainerProjectRegistryCreate
  */
 export interface ContainerProjectRegistryCreate {
@@ -1038,6 +1076,25 @@ export interface ContainerProjectRegistryUpdate {
      * @memberof ContainerProjectRegistryUpdate
      */
     name?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ContainerRepository
+ */
+export interface ContainerRepository {
+    /**
+     * 
+     * @type {string}
+     * @memberof ContainerRepository
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ContainerRepository
+     */
+    name: string;
 }
 /**
  * 
@@ -1785,6 +1842,121 @@ export interface IamActor {
 /**
  * 
  * @export
+ * @interface IamOrganisationCreate
+ */
+export interface IamOrganisationCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamOrganisationCreate
+     */
+    name: string;
+    /**
+     * 
+     * @type {OrganisationBilling}
+     * @memberof IamOrganisationCreate
+     */
+    billing?: OrganisationBilling;
+}
+/**
+ * 
+ * @export
+ * @interface IamOrganisationInvitationAccept
+ */
+export interface IamOrganisationInvitationAccept {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamOrganisationInvitationAccept
+     */
+    token: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamOrganisationOwnershipCreate
+ */
+export interface IamOrganisationOwnershipCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamOrganisationOwnershipCreate
+     */
+    email: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamOrganisationPaymentAllocate
+ */
+export interface IamOrganisationPaymentAllocate {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamOrganisationPaymentAllocate
+     */
+    project: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamOrganisationProformaCreate
+ */
+export interface IamOrganisationProformaCreate {
+    /**
+     * 
+     * @type {number}
+     * @memberof IamOrganisationProformaCreate
+     */
+    amount: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof IamOrganisationProformaCreate
+     */
+    project: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamOrganisationTransferAccept
+ */
+export interface IamOrganisationTransferAccept {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamOrganisationTransferAccept
+     */
+    payment: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IamOrganisationTransferAccept
+     */
+    project: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamOrganisationUpdate
+ */
+export interface IamOrganisationUpdate {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamOrganisationUpdate
+     */
+    name?: string;
+    /**
+     * 
+     * @type {OrganisationBilling1}
+     * @memberof IamOrganisationUpdate
+     */
+    billing?: OrganisationBilling1;
+}
+/**
+ * 
+ * @export
  * @interface IamPermission
  */
 export interface IamPermission {
@@ -1800,6 +1972,70 @@ export interface IamPermission {
      * @memberof IamPermission
      */
     value: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamProjectCreate
+ */
+export interface IamProjectCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectCreate
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectCreate
+     */
+    organisation: string;
+    /**
+     * 
+     * @type {Array<Tag>}
+     * @memberof IamProjectCreate
+     */
+    tag?: Array<Tag>;
+}
+/**
+ * 
+ * @export
+ * @interface IamProjectCredentialStorePatch
+ */
+export interface IamProjectCredentialStorePatch {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectCredentialStorePatch
+     */
+    name: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamProjectInvitationAccept
+ */
+export interface IamProjectInvitationAccept {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectInvitationAccept
+     */
+    token: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamProjectOwnershipCreate
+ */
+export interface IamProjectOwnershipCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectOwnershipCreate
+     */
+    email: string;
 }
 /**
  * 
@@ -1844,6 +2080,25 @@ export interface IamProjectPolicyUpdate {
      * @memberof IamProjectPolicyUpdate
      */
     name?: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamProjectQuotaLimitPatch
+ */
+export interface IamProjectQuotaLimitPatch {
+    /**
+     * 
+     * @type {number}
+     * @memberof IamProjectQuotaLimitPatch
+     */
+    user?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof IamProjectQuotaLimitPatch
+     */
+    effective?: number;
 }
 /**
  * 
@@ -1955,6 +2210,98 @@ export interface IamProjectSaUpdate {
 /**
  * 
  * @export
+ * @interface IamProjectThresholdCreate
+ */
+export interface IamProjectThresholdCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectThresholdCreate
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectThresholdCreate
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectThresholdCreate
+     */
+    type?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof IamProjectThresholdCreate
+     */
+    value?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectThresholdCreate
+     */
+    uri?: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamProjectUpdate
+ */
+export interface IamProjectUpdate {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectUpdate
+     */
+    name?: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamUserCredentialPatch
+ */
+export interface IamUserCredentialPatch {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamUserCredentialPatch
+     */
+    name: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamUserUpdate
+ */
+export interface IamUserUpdate {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamUserUpdate
+     */
+    phone?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IamUserUpdate
+     */
+    lang?: IamUserUpdateLangEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum IamUserUpdateLangEnum {
+    En = 'en',
+    Pl = 'pl'
+}
+
+/**
+ * 
+ * @export
  * @interface Image
  */
 export interface Image {
@@ -2024,6 +2371,12 @@ export interface Image {
      * @memberof Image
      */
     description?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Image
+     */
+    disks?: number;
     /**
      * 
      * @type {number}
@@ -2950,21 +3303,70 @@ export enum MessageDataMimeEnum {
 /**
  * 
  * @export
- * @interface MetadataSource
+ * @interface Metric
  */
-export interface MetadataSource {
+export interface Metric {
     /**
      * 
      * @type {string}
-     * @memberof MetadataSource
+     * @memberof Metric
      */
-    filename?: string;
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Metric
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Metric
+     */
+    unit: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Metric
+     */
+    resource: string;
+    /**
+     * 
+     * @type {MetricScale}
+     * @memberof Metric
+     */
+    scale?: MetricScale;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof Metric
+     */
+    columns?: Array<string>;
+    /**
+     * 
+     * @type {Array<Array<number>>}
+     * @memberof Metric
+     */
+    values?: Array<Array<number>>;
+}
+/**
+ * 
+ * @export
+ * @interface MetricScale
+ */
+export interface MetricScale {
     /**
      * 
      * @type {number}
-     * @memberof MetadataSource
+     * @memberof MetricScale
      */
-    size?: number;
+    min?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof MetricScale
+     */
+    max?: number;
 }
 /**
  * 
@@ -3864,83 +4266,6 @@ export interface OrganisationBilling1 {
 /**
  * 
  * @export
- * @interface OrganisationCreate
- */
-export interface OrganisationCreate {
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganisationCreate
-     */
-    name: string;
-    /**
-     * 
-     * @type {OrganisationBilling}
-     * @memberof OrganisationCreate
-     */
-    billing?: OrganisationBilling;
-}
-/**
- * 
- * @export
- * @interface OrganisationInvitationAccept
- */
-export interface OrganisationInvitationAccept {
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganisationInvitationAccept
-     */
-    token: string;
-}
-/**
- * 
- * @export
- * @interface OrganisationOwnershipCreate
- */
-export interface OrganisationOwnershipCreate {
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganisationOwnershipCreate
-     */
-    email: string;
-}
-/**
- * 
- * @export
- * @interface OrganisationPaymentAllocate
- */
-export interface OrganisationPaymentAllocate {
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganisationPaymentAllocate
-     */
-    project: string;
-}
-/**
- * 
- * @export
- * @interface OrganisationProformaCreate
- */
-export interface OrganisationProformaCreate {
-    /**
-     * 
-     * @type {number}
-     * @memberof OrganisationProformaCreate
-     */
-    amount: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganisationProformaCreate
-     */
-    project: string;
-}
-/**
- * 
- * @export
  * @interface OrganisationTransfer
  */
 export interface OrganisationTransfer {
@@ -3956,44 +4281,6 @@ export interface OrganisationTransfer {
      * @memberof OrganisationTransfer
      */
     id?: string;
-}
-/**
- * 
- * @export
- * @interface OrganisationTransferAccept
- */
-export interface OrganisationTransferAccept {
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganisationTransferAccept
-     */
-    payment: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganisationTransferAccept
-     */
-    project: string;
-}
-/**
- * 
- * @export
- * @interface OrganisationUpdate
- */
-export interface OrganisationUpdate {
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganisationUpdate
-     */
-    name?: string;
-    /**
-     * 
-     * @type {OrganisationBilling1}
-     * @memberof OrganisationUpdate
-     */
-    billing?: OrganisationBilling1;
 }
 /**
  * 
@@ -4443,18 +4730,6 @@ export interface Project {
     billing?: ProjectBilling;
     /**
      * 
-     * @type {boolean}
-     * @memberof Project
-     */
-    active?: boolean;
-    /**
-     * 
-     * @type {ProjectThreshold}
-     * @memberof Project
-     */
-    threshold?: ProjectThreshold;
-    /**
-     * 
      * @type {Array<ProjectNetworkAcl>}
      * @memberof Project
      */
@@ -4530,31 +4805,6 @@ export interface ProjectCompliance {
 /**
  * 
  * @export
- * @interface ProjectCreate
- */
-export interface ProjectCreate {
-    /**
-     * 
-     * @type {string}
-     * @memberof ProjectCreate
-     */
-    name: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ProjectCreate
-     */
-    organisation: string;
-    /**
-     * 
-     * @type {Array<Tag>}
-     * @memberof ProjectCreate
-     */
-    tag?: Array<Tag>;
-}
-/**
- * 
- * @export
  * @interface ProjectCredential
  */
 export interface ProjectCredential {
@@ -4619,19 +4869,6 @@ export enum ProjectCredentialTypeEnum {
 /**
  * 
  * @export
- * @interface ProjectCredentialStorePatch
- */
-export interface ProjectCredentialStorePatch {
-    /**
-     * 
-     * @type {string}
-     * @memberof ProjectCredentialStorePatch
-     */
-    name: string;
-}
-/**
- * 
- * @export
  * @interface ProjectFeature
  */
 export interface ProjectFeature {
@@ -4641,19 +4878,6 @@ export interface ProjectFeature {
      * @memberof ProjectFeature
      */
     earlyAdopter?: boolean;
-}
-/**
- * 
- * @export
- * @interface ProjectInvitationAccept
- */
-export interface ProjectInvitationAccept {
-    /**
-     * 
-     * @type {string}
-     * @memberof ProjectInvitationAccept
-     */
-    token: string;
 }
 /**
  * 
@@ -4699,60 +4923,39 @@ export enum ProjectNetworkAclTypeEnum {
 /**
  * 
  * @export
- * @interface ProjectOwnershipCreate
- */
-export interface ProjectOwnershipCreate {
-    /**
-     * 
-     * @type {string}
-     * @memberof ProjectOwnershipCreate
-     */
-    email: string;
-}
-/**
- * 
- * @export
- * @interface ProjectQuotaLimitPatch
- */
-export interface ProjectQuotaLimitPatch {
-    /**
-     * 
-     * @type {number}
-     * @memberof ProjectQuotaLimitPatch
-     */
-    user?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ProjectQuotaLimitPatch
-     */
-    effective?: number;
-}
-/**
- * 
- * @export
  * @interface ProjectThreshold
  */
 export interface ProjectThreshold {
     /**
      * 
-     * @type {ProjectThresholdCredits}
+     * @type {string}
      * @memberof ProjectThreshold
      */
-    credits?: ProjectThresholdCredits;
-}
-/**
- * 
- * @export
- * @interface ProjectThresholdCredits
- */
-export interface ProjectThresholdCredits {
+    id?: string;
     /**
      * 
-     * @type {Array<number>}
-     * @memberof ProjectThresholdCredits
+     * @type {string}
+     * @memberof ProjectThreshold
      */
-    levels?: Array<number>;
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProjectThreshold
+     */
+    type?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ProjectThreshold
+     */
+    value?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProjectThreshold
+     */
+    uri?: string;
 }
 /**
  * 
@@ -4766,19 +4969,6 @@ export interface ProjectTransfer {
      * @memberof ProjectTransfer
      */
     organisation?: string;
-}
-/**
- * 
- * @export
- * @interface ProjectUpdate
- */
-export interface ProjectUpdate {
-    /**
-     * 
-     * @type {string}
-     * @memberof ProjectUpdate
-     */
-    name?: string;
 }
 /**
  * 
@@ -5796,22 +5986,16 @@ export interface StorageProjectDiskCreate {
     size: number;
     /**
      * 
-     * @type {string}
+     * @type {any}
      * @memberof StorageProjectDiskCreate
      */
-    source?: string;
+    source?: any;
     /**
      * 
      * @type {string}
      * @memberof StorageProjectDiskCreate
      */
     vm?: string;
-    /**
-     * 
-     * @type {DiskMetadata}
-     * @memberof StorageProjectDiskCreate
-     */
-    metadata?: DiskMetadata;
     /**
      * 
      * @type {Array<Tag>}
@@ -5947,22 +6131,10 @@ export interface StorageProjectIsoCreate {
     name: string;
     /**
      * 
-     * @type {number}
-     * @memberof StorageProjectIsoCreate
-     */
-    size?: number;
-    /**
-     * 
      * @type {string}
      * @memberof StorageProjectIsoCreate
      */
-    source?: string;
-    /**
-     * 
-     * @type {DiskMetadata}
-     * @memberof StorageProjectIsoCreate
-     */
-    metadata?: DiskMetadata;
+    source: string;
     /**
      * 
      * @type {Array<Tag>}
@@ -6517,19 +6689,6 @@ export enum UserCredentialTypeEnum {
 /**
  * 
  * @export
- * @interface UserCredentialPatch
- */
-export interface UserCredentialPatch {
-    /**
-     * 
-     * @type {string}
-     * @memberof UserCredentialPatch
-     */
-    name: string;
-}
-/**
- * 
- * @export
  * @interface UserLimit
  */
 export interface UserLimit {
@@ -6553,35 +6712,6 @@ export interface UserLimitOrganisation {
      */
     count: number;
 }
-/**
- * 
- * @export
- * @interface UserUpdate
- */
-export interface UserUpdate {
-    /**
-     * 
-     * @type {string}
-     * @memberof UserUpdate
-     */
-    phone?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserUpdate
-     */
-    lang?: UserUpdateLangEnum;
-}
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum UserUpdateLangEnum {
-    En = 'en',
-    Pl = 'pl'
-}
-
 /**
  * 
  * @export
@@ -11550,6 +11680,68 @@ export const ComputeProjectVmApiAxiosParamCreator = function (configuration?: Co
             };
         },
         /**
+         * List compute/vm.metric
+         * @summary List compute/vm.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {'1d' | '12h' | '6h' | '1h'} [period] period
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        computeProjectVmMetricList: async (projectId: string, locationId: string, vmId: string, period?: '1d' | '12h' | '6h' | '1h', options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling computeProjectVmMetricList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling computeProjectVmMetricList.');
+            }
+            // verify required parameter 'vmId' is not null or undefined
+            if (vmId === null || vmId === undefined) {
+                throw new RequiredError('vmId','Required parameter vmId was null or undefined when calling computeProjectVmMetricList.');
+            }
+            const localVarPath = `/compute/{locationId}/project/{projectId}/vm/{vmId}/metric`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"vmId"}}`, encodeURIComponent(String(vmId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if (period !== undefined) {
+                localVarQueryParameter['period'] = period;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * action password_reset
          * @summary Password reset compute/vm
          * @param {string} projectId Project Id
@@ -12653,6 +12845,23 @@ export const ComputeProjectVmApiFp = function(configuration?: Configuration) {
             };
         },
         /**
+         * List compute/vm.metric
+         * @summary List compute/vm.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {'1d' | '12h' | '6h' | '1h'} [period] period
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async computeProjectVmMetricList(projectId: string, locationId: string, vmId: string, period?: '1d' | '12h' | '6h' | '1h', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Metric>>> {
+            const localVarAxiosArgs = await ComputeProjectVmApiAxiosParamCreator(configuration).computeProjectVmMetricList(projectId, locationId, vmId, period, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * action password_reset
          * @summary Password reset compute/vm
          * @param {string} projectId Project Id
@@ -13055,6 +13264,19 @@ export const ComputeProjectVmApiFactory = function (configuration?: Configuratio
             return ComputeProjectVmApiFp(configuration).computeProjectVmList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
+         * List compute/vm.metric
+         * @summary List compute/vm.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {'1d' | '12h' | '6h' | '1h'} [period] period
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        computeProjectVmMetricList(projectId: string, locationId: string, vmId: string, period?: '1d' | '12h' | '6h' | '1h', options?: any): AxiosPromise<Array<Metric>> {
+            return ComputeProjectVmApiFp(configuration).computeProjectVmMetricList(projectId, locationId, vmId, period, options).then((request) => request(axios, basePath));
+        },
+        /**
          * action password_reset
          * @summary Password reset compute/vm
          * @param {string} projectId Project Id
@@ -13423,6 +13645,21 @@ export class ComputeProjectVmApi extends BaseAPI {
      */
     public computeProjectVmList(projectId: string, locationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any) {
         return ComputeProjectVmApiFp(this.configuration).computeProjectVmList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List compute/vm.metric
+     * @summary List compute/vm.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} vmId Vm Id
+     * @param {'1d' | '12h' | '6h' | '1h'} [period] period
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ComputeProjectVmApi
+     */
+    public computeProjectVmMetricList(projectId: string, locationId: string, vmId: string, period?: '1d' | '12h' | '6h' | '1h', options?: any) {
+        return ComputeProjectVmApiFp(this.configuration).computeProjectVmMetricList(projectId, locationId, vmId, period, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -15879,7 +16116,7 @@ export const ContainerProjectRegistryApiFp = function(configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async containerProjectRegistryRepositoryGet(projectId: string, locationId: string, registryId: string, repositoryId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async containerProjectRegistryRepositoryGet(projectId: string, locationId: string, registryId: string, repositoryId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ContainerRepository>> {
             const localVarAxiosArgs = await ContainerProjectRegistryApiAxiosParamCreator(configuration).containerProjectRegistryRepositoryGet(projectId, locationId, registryId, repositoryId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -15915,7 +16152,7 @@ export const ContainerProjectRegistryApiFp = function(configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async containerProjectRegistryRepositoryImageGet(projectId: string, locationId: string, registryId: string, repositoryId: string, imageId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async containerProjectRegistryRepositoryImageGet(projectId: string, locationId: string, registryId: string, repositoryId: string, imageId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ContainerImage>> {
             const localVarAxiosArgs = await ContainerProjectRegistryApiAxiosParamCreator(configuration).containerProjectRegistryRepositoryImageGet(projectId, locationId, registryId, repositoryId, imageId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -15932,7 +16169,7 @@ export const ContainerProjectRegistryApiFp = function(configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async containerProjectRegistryRepositoryImageList(projectId: string, locationId: string, registryId: string, repositoryId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async containerProjectRegistryRepositoryImageList(projectId: string, locationId: string, registryId: string, repositoryId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ContainerImage>>> {
             const localVarAxiosArgs = await ContainerProjectRegistryApiAxiosParamCreator(configuration).containerProjectRegistryRepositoryImageList(projectId, locationId, registryId, repositoryId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -15948,7 +16185,7 @@ export const ContainerProjectRegistryApiFp = function(configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async containerProjectRegistryRepositoryList(projectId: string, locationId: string, registryId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async containerProjectRegistryRepositoryList(projectId: string, locationId: string, registryId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ContainerRepository>>> {
             const localVarAxiosArgs = await ContainerProjectRegistryApiAxiosParamCreator(configuration).containerProjectRegistryRepositoryList(projectId, locationId, registryId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -16354,7 +16591,7 @@ export const ContainerProjectRegistryApiFactory = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        containerProjectRegistryRepositoryGet(projectId: string, locationId: string, registryId: string, repositoryId: string, options?: any): AxiosPromise<void> {
+        containerProjectRegistryRepositoryGet(projectId: string, locationId: string, registryId: string, repositoryId: string, options?: any): AxiosPromise<ContainerRepository> {
             return ContainerProjectRegistryApiFp(configuration).containerProjectRegistryRepositoryGet(projectId, locationId, registryId, repositoryId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -16382,7 +16619,7 @@ export const ContainerProjectRegistryApiFactory = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        containerProjectRegistryRepositoryImageGet(projectId: string, locationId: string, registryId: string, repositoryId: string, imageId: string, options?: any): AxiosPromise<void> {
+        containerProjectRegistryRepositoryImageGet(projectId: string, locationId: string, registryId: string, repositoryId: string, imageId: string, options?: any): AxiosPromise<ContainerImage> {
             return ContainerProjectRegistryApiFp(configuration).containerProjectRegistryRepositoryImageGet(projectId, locationId, registryId, repositoryId, imageId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -16395,7 +16632,7 @@ export const ContainerProjectRegistryApiFactory = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        containerProjectRegistryRepositoryImageList(projectId: string, locationId: string, registryId: string, repositoryId: string, options?: any): AxiosPromise<void> {
+        containerProjectRegistryRepositoryImageList(projectId: string, locationId: string, registryId: string, repositoryId: string, options?: any): AxiosPromise<Array<ContainerImage>> {
             return ContainerProjectRegistryApiFp(configuration).containerProjectRegistryRepositoryImageList(projectId, locationId, registryId, repositoryId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -16407,7 +16644,7 @@ export const ContainerProjectRegistryApiFactory = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        containerProjectRegistryRepositoryList(projectId: string, locationId: string, registryId: string, options?: any): AxiosPromise<void> {
+        containerProjectRegistryRepositoryList(projectId: string, locationId: string, registryId: string, options?: any): AxiosPromise<Array<ContainerRepository>> {
             return ContainerProjectRegistryApiFp(configuration).containerProjectRegistryRepositoryList(projectId, locationId, registryId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -22126,10 +22363,10 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationBillingList: async (organisationId: string, start?: string, end?: string, resourceType?: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationBillingList: async (organisationId: string, start?: string, end?: string, resourceType?: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationBillingList.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationBillingList.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/billing`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -22183,15 +22420,15 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
         /**
          * Create organisation
          * @summary Create iam/organisation
-         * @param {OrganisationCreate} organisationCreate 
+         * @param {IamOrganisationCreate} iamOrganisationCreate 
          * @param {string} [xIdempotencyKey] Idempotency key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationCreate: async (organisationCreate: OrganisationCreate, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'organisationCreate' is not null or undefined
-            if (organisationCreate === null || organisationCreate === undefined) {
-                throw new RequiredError('organisationCreate','Required parameter organisationCreate was null or undefined when calling organisationCreate.');
+        iamOrganisationCreate: async (iamOrganisationCreate: IamOrganisationCreate, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'iamOrganisationCreate' is not null or undefined
+            if (iamOrganisationCreate === null || iamOrganisationCreate === undefined) {
+                throw new RequiredError('iamOrganisationCreate','Required parameter iamOrganisationCreate was null or undefined when calling iamOrganisationCreate.');
             }
             const localVarPath = `/iam/organisation`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
@@ -22225,8 +22462,8 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof organisationCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(organisationCreate !== undefined ? organisationCreate : {}) : (organisationCreate || "");
+            const needsSerialization = (typeof iamOrganisationCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamOrganisationCreate !== undefined ? iamOrganisationCreate : {}) : (iamOrganisationCreate || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -22240,10 +22477,10 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationDelete: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationDelete: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationDelete.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationDelete.');
             }
             const localVarPath = `/iam/organisation/{organisationId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -22286,14 +22523,14 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationEventGet: async (organisationId: string, eventId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationEventGet: async (organisationId: string, eventId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationEventGet.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationEventGet.');
             }
             // verify required parameter 'eventId' is not null or undefined
             if (eventId === null || eventId === undefined) {
-                throw new RequiredError('eventId','Required parameter eventId was null or undefined when calling organisationEventGet.');
+                throw new RequiredError('eventId','Required parameter eventId was null or undefined when calling iamOrganisationEventGet.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/event/{eventId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -22338,10 +22575,10 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationEventList: async (organisationId: string, $limit?: number, $skip?: number, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationEventList: async (organisationId: string, $limit?: number, $skip?: number, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationEventList.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationEventList.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/event`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -22391,10 +22628,10 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationGet: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationGet: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationGet.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationGet.');
             }
             const localVarPath = `/iam/organisation/{organisationId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -22430,26 +22667,26 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action accept
+         * @summary Accept iam/organisation.invitation
          * @param {string} organisationId Organisation Id
          * @param {string} invitationId invitationId
-         * @param {OrganisationInvitationAccept} organisationInvitationAccept 
+         * @param {IamOrganisationInvitationAccept} iamOrganisationInvitationAccept 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvitationAccept: async (organisationId: string, invitationId: string, organisationInvitationAccept: OrganisationInvitationAccept, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationInvitationAccept: async (organisationId: string, invitationId: string, iamOrganisationInvitationAccept: IamOrganisationInvitationAccept, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationInvitationAccept.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationInvitationAccept.');
             }
             // verify required parameter 'invitationId' is not null or undefined
             if (invitationId === null || invitationId === undefined) {
-                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling organisationInvitationAccept.');
+                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling iamOrganisationInvitationAccept.');
             }
-            // verify required parameter 'organisationInvitationAccept' is not null or undefined
-            if (organisationInvitationAccept === null || organisationInvitationAccept === undefined) {
-                throw new RequiredError('organisationInvitationAccept','Required parameter organisationInvitationAccept was null or undefined when calling organisationInvitationAccept.');
+            // verify required parameter 'iamOrganisationInvitationAccept' is not null or undefined
+            if (iamOrganisationInvitationAccept === null || iamOrganisationInvitationAccept === undefined) {
+                throw new RequiredError('iamOrganisationInvitationAccept','Required parameter iamOrganisationInvitationAccept was null or undefined when calling iamOrganisationInvitationAccept.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/invitation/{invitationId}/actions/accept`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -22481,8 +22718,8 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof organisationInvitationAccept !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(organisationInvitationAccept !== undefined ? organisationInvitationAccept : {}) : (organisationInvitationAccept || "");
+            const needsSerialization = (typeof iamOrganisationInvitationAccept !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamOrganisationInvitationAccept !== undefined ? iamOrganisationInvitationAccept : {}) : (iamOrganisationInvitationAccept || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -22497,14 +22734,14 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvitationDelete: async (organisationId: string, invitationId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationInvitationDelete: async (organisationId: string, invitationId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationInvitationDelete.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationInvitationDelete.');
             }
             // verify required parameter 'invitationId' is not null or undefined
             if (invitationId === null || invitationId === undefined) {
-                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling organisationInvitationDelete.');
+                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling iamOrganisationInvitationDelete.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/invitation/{invitationId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -22548,14 +22785,14 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvitationGet: async (organisationId: string, invitationId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationInvitationGet: async (organisationId: string, invitationId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationInvitationGet.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationInvitationGet.');
             }
             // verify required parameter 'invitationId' is not null or undefined
             if (invitationId === null || invitationId === undefined) {
-                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling organisationInvitationGet.');
+                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling iamOrganisationInvitationGet.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/invitation/{invitationId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -22599,10 +22836,10 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvitationList: async (organisationId: string, resource?: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationInvitationList: async (organisationId: string, resource?: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationInvitationList.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationInvitationList.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/invitation`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -22642,21 +22879,21 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action download
+         * @summary Download iam/organisation.invoice
          * @param {string} organisationId Organisation Id
          * @param {string} invoiceId invoiceId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvoiceDownload: async (organisationId: string, invoiceId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationInvoiceDownload: async (organisationId: string, invoiceId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationInvoiceDownload.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationInvoiceDownload.');
             }
             // verify required parameter 'invoiceId' is not null or undefined
             if (invoiceId === null || invoiceId === undefined) {
-                throw new RequiredError('invoiceId','Required parameter invoiceId was null or undefined when calling organisationInvoiceDownload.');
+                throw new RequiredError('invoiceId','Required parameter invoiceId was null or undefined when calling iamOrganisationInvoiceDownload.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/invoice/{invoiceId}/actions/download`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -22700,14 +22937,14 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvoiceGet: async (organisationId: string, invoiceId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationInvoiceGet: async (organisationId: string, invoiceId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationInvoiceGet.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationInvoiceGet.');
             }
             // verify required parameter 'invoiceId' is not null or undefined
             if (invoiceId === null || invoiceId === undefined) {
-                throw new RequiredError('invoiceId','Required parameter invoiceId was null or undefined when calling organisationInvoiceGet.');
+                throw new RequiredError('invoiceId','Required parameter invoiceId was null or undefined when calling iamOrganisationInvoiceGet.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/invoice/{invoiceId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -22750,10 +22987,10 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvoiceList: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationInvoiceList: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationInvoiceList.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationInvoiceList.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/invoice`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -22798,7 +23035,7 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationList: async (name?: string, billingCompany?: string, $limit?: number, active?: boolean, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationList: async (name?: string, billingCompany?: string, $limit?: number, active?: boolean, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/iam/organisation`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -22851,18 +23088,18 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * Create iam/organisation.ownership
          * @summary Create iam/organisation.ownership
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationOwnershipCreate} organisationOwnershipCreate 
+         * @param {IamOrganisationOwnershipCreate} iamOrganisationOwnershipCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationOwnershipCreate: async (organisationId: string, organisationOwnershipCreate: OrganisationOwnershipCreate, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationOwnershipCreate: async (organisationId: string, iamOrganisationOwnershipCreate: IamOrganisationOwnershipCreate, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationOwnershipCreate.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationOwnershipCreate.');
             }
-            // verify required parameter 'organisationOwnershipCreate' is not null or undefined
-            if (organisationOwnershipCreate === null || organisationOwnershipCreate === undefined) {
-                throw new RequiredError('organisationOwnershipCreate','Required parameter organisationOwnershipCreate was null or undefined when calling organisationOwnershipCreate.');
+            // verify required parameter 'iamOrganisationOwnershipCreate' is not null or undefined
+            if (iamOrganisationOwnershipCreate === null || iamOrganisationOwnershipCreate === undefined) {
+                throw new RequiredError('iamOrganisationOwnershipCreate','Required parameter iamOrganisationOwnershipCreate was null or undefined when calling iamOrganisationOwnershipCreate.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/ownership`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -22893,8 +23130,8 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof organisationOwnershipCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(organisationOwnershipCreate !== undefined ? organisationOwnershipCreate : {}) : (organisationOwnershipCreate || "");
+            const needsSerialization = (typeof iamOrganisationOwnershipCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamOrganisationOwnershipCreate !== undefined ? iamOrganisationOwnershipCreate : {}) : (iamOrganisationOwnershipCreate || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -22909,14 +23146,14 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationOwnershipDelete: async (organisationId: string, ownershipId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationOwnershipDelete: async (organisationId: string, ownershipId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationOwnershipDelete.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationOwnershipDelete.');
             }
             // verify required parameter 'ownershipId' is not null or undefined
             if (ownershipId === null || ownershipId === undefined) {
-                throw new RequiredError('ownershipId','Required parameter ownershipId was null or undefined when calling organisationOwnershipDelete.');
+                throw new RequiredError('ownershipId','Required parameter ownershipId was null or undefined when calling iamOrganisationOwnershipDelete.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/ownership/{ownershipId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -22960,14 +23197,14 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationOwnershipGet: async (organisationId: string, ownershipId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationOwnershipGet: async (organisationId: string, ownershipId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationOwnershipGet.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationOwnershipGet.');
             }
             // verify required parameter 'ownershipId' is not null or undefined
             if (ownershipId === null || ownershipId === undefined) {
-                throw new RequiredError('ownershipId','Required parameter ownershipId was null or undefined when calling organisationOwnershipGet.');
+                throw new RequiredError('ownershipId','Required parameter ownershipId was null or undefined when calling iamOrganisationOwnershipGet.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/ownership/{ownershipId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -23010,10 +23247,10 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationOwnershipList: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationOwnershipList: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationOwnershipList.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationOwnershipList.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/ownership`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -23049,26 +23286,26 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action allocate
+         * @summary Allocate iam/organisation.payment
          * @param {string} organisationId Organisation Id
          * @param {string} paymentId paymentId
-         * @param {OrganisationPaymentAllocate} organisationPaymentAllocate 
+         * @param {IamOrganisationPaymentAllocate} iamOrganisationPaymentAllocate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationPaymentAllocate: async (organisationId: string, paymentId: string, organisationPaymentAllocate: OrganisationPaymentAllocate, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationPaymentAllocate: async (organisationId: string, paymentId: string, iamOrganisationPaymentAllocate: IamOrganisationPaymentAllocate, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationPaymentAllocate.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationPaymentAllocate.');
             }
             // verify required parameter 'paymentId' is not null or undefined
             if (paymentId === null || paymentId === undefined) {
-                throw new RequiredError('paymentId','Required parameter paymentId was null or undefined when calling organisationPaymentAllocate.');
+                throw new RequiredError('paymentId','Required parameter paymentId was null or undefined when calling iamOrganisationPaymentAllocate.');
             }
-            // verify required parameter 'organisationPaymentAllocate' is not null or undefined
-            if (organisationPaymentAllocate === null || organisationPaymentAllocate === undefined) {
-                throw new RequiredError('organisationPaymentAllocate','Required parameter organisationPaymentAllocate was null or undefined when calling organisationPaymentAllocate.');
+            // verify required parameter 'iamOrganisationPaymentAllocate' is not null or undefined
+            if (iamOrganisationPaymentAllocate === null || iamOrganisationPaymentAllocate === undefined) {
+                throw new RequiredError('iamOrganisationPaymentAllocate','Required parameter iamOrganisationPaymentAllocate was null or undefined when calling iamOrganisationPaymentAllocate.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/payment/{paymentId}/actions/allocate`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -23100,8 +23337,8 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof organisationPaymentAllocate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(organisationPaymentAllocate !== undefined ? organisationPaymentAllocate : {}) : (organisationPaymentAllocate || "");
+            const needsSerialization = (typeof iamOrganisationPaymentAllocate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamOrganisationPaymentAllocate !== undefined ? iamOrganisationPaymentAllocate : {}) : (iamOrganisationPaymentAllocate || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -23116,14 +23353,14 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationPaymentGet: async (organisationId: string, paymentId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationPaymentGet: async (organisationId: string, paymentId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationPaymentGet.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationPaymentGet.');
             }
             // verify required parameter 'paymentId' is not null or undefined
             if (paymentId === null || paymentId === undefined) {
-                throw new RequiredError('paymentId','Required parameter paymentId was null or undefined when calling organisationPaymentGet.');
+                throw new RequiredError('paymentId','Required parameter paymentId was null or undefined when calling iamOrganisationPaymentGet.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/payment/{paymentId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -23166,10 +23403,10 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationPaymentList: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationPaymentList: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationPaymentList.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationPaymentList.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/payment`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -23208,18 +23445,18 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * Create iam/organisation.proforma
          * @summary Create iam/organisation.proforma
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationProformaCreate} organisationProformaCreate 
+         * @param {IamOrganisationProformaCreate} iamOrganisationProformaCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationProformaCreate: async (organisationId: string, organisationProformaCreate: OrganisationProformaCreate, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationProformaCreate: async (organisationId: string, iamOrganisationProformaCreate: IamOrganisationProformaCreate, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationProformaCreate.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationProformaCreate.');
             }
-            // verify required parameter 'organisationProformaCreate' is not null or undefined
-            if (organisationProformaCreate === null || organisationProformaCreate === undefined) {
-                throw new RequiredError('organisationProformaCreate','Required parameter organisationProformaCreate was null or undefined when calling organisationProformaCreate.');
+            // verify required parameter 'iamOrganisationProformaCreate' is not null or undefined
+            if (iamOrganisationProformaCreate === null || iamOrganisationProformaCreate === undefined) {
+                throw new RequiredError('iamOrganisationProformaCreate','Required parameter iamOrganisationProformaCreate was null or undefined when calling iamOrganisationProformaCreate.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/proforma`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -23250,8 +23487,8 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof organisationProformaCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(organisationProformaCreate !== undefined ? organisationProformaCreate : {}) : (organisationProformaCreate || "");
+            const needsSerialization = (typeof iamOrganisationProformaCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamOrganisationProformaCreate !== undefined ? iamOrganisationProformaCreate : {}) : (iamOrganisationProformaCreate || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -23259,21 +23496,21 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action download
+         * @summary Download iam/organisation.proforma
          * @param {string} organisationId Organisation Id
          * @param {string} proformaId proformaId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationProformaDownload: async (organisationId: string, proformaId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationProformaDownload: async (organisationId: string, proformaId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationProformaDownload.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationProformaDownload.');
             }
             // verify required parameter 'proformaId' is not null or undefined
             if (proformaId === null || proformaId === undefined) {
-                throw new RequiredError('proformaId','Required parameter proformaId was null or undefined when calling organisationProformaDownload.');
+                throw new RequiredError('proformaId','Required parameter proformaId was null or undefined when calling iamOrganisationProformaDownload.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/proforma/{proformaId}/actions/download`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -23317,14 +23554,14 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationProformaGet: async (organisationId: string, proformaId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationProformaGet: async (organisationId: string, proformaId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationProformaGet.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationProformaGet.');
             }
             // verify required parameter 'proformaId' is not null or undefined
             if (proformaId === null || proformaId === undefined) {
-                throw new RequiredError('proformaId','Required parameter proformaId was null or undefined when calling organisationProformaGet.');
+                throw new RequiredError('proformaId','Required parameter proformaId was null or undefined when calling iamOrganisationProformaGet.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/proforma/{proformaId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
@@ -23367,10 +23604,10 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationProformaList: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationProformaList: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationProformaList.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationProformaList.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/proforma`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -23409,19 +23646,19 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * action transfer_accept
          * @summary Transfer accept iam/organisation
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationTransferAccept} organisationTransferAccept 
+         * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
          * @param {string} [xIdempotencyKey] Idempotency key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationTransferAccept: async (organisationId: string, organisationTransferAccept: OrganisationTransferAccept, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationTransferAccept: async (organisationId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationTransferAccept.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationTransferAccept.');
             }
-            // verify required parameter 'organisationTransferAccept' is not null or undefined
-            if (organisationTransferAccept === null || organisationTransferAccept === undefined) {
-                throw new RequiredError('organisationTransferAccept','Required parameter organisationTransferAccept was null or undefined when calling organisationTransferAccept.');
+            // verify required parameter 'iamOrganisationTransferAccept' is not null or undefined
+            if (iamOrganisationTransferAccept === null || iamOrganisationTransferAccept === undefined) {
+                throw new RequiredError('iamOrganisationTransferAccept','Required parameter iamOrganisationTransferAccept was null or undefined when calling iamOrganisationTransferAccept.');
             }
             const localVarPath = `/iam/organisation/{organisationId}/actions/transfer_accept`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -23456,8 +23693,8 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof organisationTransferAccept !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(organisationTransferAccept !== undefined ? organisationTransferAccept : {}) : (organisationTransferAccept || "");
+            const needsSerialization = (typeof iamOrganisationTransferAccept !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamOrganisationTransferAccept !== undefined ? iamOrganisationTransferAccept : {}) : (iamOrganisationTransferAccept || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -23468,18 +23705,18 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
          * Returns modified organisation
          * @summary Update iam/organisation
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationUpdate} organisationUpdate 
+         * @param {IamOrganisationUpdate} iamOrganisationUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationUpdate: async (organisationId: string, organisationUpdate: OrganisationUpdate, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationUpdate: async (organisationId: string, iamOrganisationUpdate: IamOrganisationUpdate, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
-                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling organisationUpdate.');
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationUpdate.');
             }
-            // verify required parameter 'organisationUpdate' is not null or undefined
-            if (organisationUpdate === null || organisationUpdate === undefined) {
-                throw new RequiredError('organisationUpdate','Required parameter organisationUpdate was null or undefined when calling organisationUpdate.');
+            // verify required parameter 'iamOrganisationUpdate' is not null or undefined
+            if (iamOrganisationUpdate === null || iamOrganisationUpdate === undefined) {
+                throw new RequiredError('iamOrganisationUpdate','Required parameter iamOrganisationUpdate was null or undefined when calling iamOrganisationUpdate.');
             }
             const localVarPath = `/iam/organisation/{organisationId}`
                 .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
@@ -23510,8 +23747,8 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof organisationUpdate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(organisationUpdate !== undefined ? organisationUpdate : {}) : (organisationUpdate || "");
+            const needsSerialization = (typeof iamOrganisationUpdate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamOrganisationUpdate !== undefined ? iamOrganisationUpdate : {}) : (iamOrganisationUpdate || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -23537,8 +23774,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationBillingList(organisationId: string, start?: string, end?: string, resourceType?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Billing>>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationBillingList(organisationId, start, end, resourceType, options);
+        async iamOrganisationBillingList(organisationId: string, start?: string, end?: string, resourceType?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Billing>>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationBillingList(organisationId, start, end, resourceType, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23547,13 +23784,13 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
         /**
          * Create organisation
          * @summary Create iam/organisation
-         * @param {OrganisationCreate} organisationCreate 
+         * @param {IamOrganisationCreate} iamOrganisationCreate 
          * @param {string} [xIdempotencyKey] Idempotency key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationCreate(organisationCreate: OrganisationCreate, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationCreate(organisationCreate, xIdempotencyKey, options);
+        async iamOrganisationCreate(iamOrganisationCreate: IamOrganisationCreate, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationCreate(iamOrganisationCreate, xIdempotencyKey, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23566,8 +23803,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationDelete(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationDelete(organisationId, options);
+        async iamOrganisationDelete(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationDelete(organisationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23581,8 +23818,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationEventGet(organisationId: string, eventId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Event>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationEventGet(organisationId, eventId, options);
+        async iamOrganisationEventGet(organisationId: string, eventId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Event>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationEventGet(organisationId, eventId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23597,8 +23834,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationEventList(organisationId: string, $limit?: number, $skip?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Event>>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationEventList(organisationId, $limit, $skip, options);
+        async iamOrganisationEventList(organisationId: string, $limit?: number, $skip?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Event>>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationEventList(organisationId, $limit, $skip, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23611,24 +23848,24 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationGet(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationGet(organisationId, options);
+        async iamOrganisationGet(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationGet(organisationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action accept
+         * @summary Accept iam/organisation.invitation
          * @param {string} organisationId Organisation Id
          * @param {string} invitationId invitationId
-         * @param {OrganisationInvitationAccept} organisationInvitationAccept 
+         * @param {IamOrganisationInvitationAccept} iamOrganisationInvitationAccept 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationInvitationAccept(organisationId: string, invitationId: string, organisationInvitationAccept: OrganisationInvitationAccept, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Invitation>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationInvitationAccept(organisationId, invitationId, organisationInvitationAccept, options);
+        async iamOrganisationInvitationAccept(organisationId: string, invitationId: string, iamOrganisationInvitationAccept: IamOrganisationInvitationAccept, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Invitation>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationInvitationAccept(organisationId, invitationId, iamOrganisationInvitationAccept, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23642,8 +23879,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationInvitationDelete(organisationId: string, invitationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationInvitationDelete(organisationId, invitationId, options);
+        async iamOrganisationInvitationDelete(organisationId: string, invitationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationInvitationDelete(organisationId, invitationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23657,8 +23894,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationInvitationGet(organisationId: string, invitationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Invitation>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationInvitationGet(organisationId, invitationId, options);
+        async iamOrganisationInvitationGet(organisationId: string, invitationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Invitation>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationInvitationGet(organisationId, invitationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23672,23 +23909,23 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationInvitationList(organisationId: string, resource?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Invitation>>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationInvitationList(organisationId, resource, options);
+        async iamOrganisationInvitationList(organisationId: string, resource?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Invitation>>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationInvitationList(organisationId, resource, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action download
+         * @summary Download iam/organisation.invoice
          * @param {string} organisationId Organisation Id
          * @param {string} invoiceId invoiceId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationInvoiceDownload(organisationId: string, invoiceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationInvoiceDownload(organisationId, invoiceId, options);
+        async iamOrganisationInvoiceDownload(organisationId: string, invoiceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationInvoiceDownload(organisationId, invoiceId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23702,8 +23939,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationInvoiceGet(organisationId: string, invoiceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Proforma>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationInvoiceGet(organisationId, invoiceId, options);
+        async iamOrganisationInvoiceGet(organisationId: string, invoiceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Proforma>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationInvoiceGet(organisationId, invoiceId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23716,8 +23953,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationInvoiceList(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Invoice>>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationInvoiceList(organisationId, options);
+        async iamOrganisationInvoiceList(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Invoice>>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationInvoiceList(organisationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23733,8 +23970,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationList(name?: string, billingCompany?: string, $limit?: number, active?: boolean, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Organisation>>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationList(name, billingCompany, $limit, active, options);
+        async iamOrganisationList(name?: string, billingCompany?: string, $limit?: number, active?: boolean, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Organisation>>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationList(name, billingCompany, $limit, active, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23744,12 +23981,12 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * Create iam/organisation.ownership
          * @summary Create iam/organisation.ownership
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationOwnershipCreate} organisationOwnershipCreate 
+         * @param {IamOrganisationOwnershipCreate} iamOrganisationOwnershipCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationOwnershipCreate(organisationId: string, organisationOwnershipCreate: OrganisationOwnershipCreate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationOwnershipCreate(organisationId, organisationOwnershipCreate, options);
+        async iamOrganisationOwnershipCreate(organisationId: string, iamOrganisationOwnershipCreate: IamOrganisationOwnershipCreate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationOwnershipCreate(organisationId, iamOrganisationOwnershipCreate, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23763,8 +24000,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationOwnershipDelete(organisationId: string, ownershipId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationOwnershipDelete(organisationId, ownershipId, options);
+        async iamOrganisationOwnershipDelete(organisationId: string, ownershipId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationOwnershipDelete(organisationId, ownershipId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23778,8 +24015,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationOwnershipGet(organisationId: string, ownershipId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Ownership>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationOwnershipGet(organisationId, ownershipId, options);
+        async iamOrganisationOwnershipGet(organisationId: string, ownershipId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Ownership>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationOwnershipGet(organisationId, ownershipId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23792,24 +24029,24 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationOwnershipList(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Ownership>>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationOwnershipList(organisationId, options);
+        async iamOrganisationOwnershipList(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Ownership>>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationOwnershipList(organisationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action allocate
+         * @summary Allocate iam/organisation.payment
          * @param {string} organisationId Organisation Id
          * @param {string} paymentId paymentId
-         * @param {OrganisationPaymentAllocate} organisationPaymentAllocate 
+         * @param {IamOrganisationPaymentAllocate} iamOrganisationPaymentAllocate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationPaymentAllocate(organisationId: string, paymentId: string, organisationPaymentAllocate: OrganisationPaymentAllocate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Payment>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationPaymentAllocate(organisationId, paymentId, organisationPaymentAllocate, options);
+        async iamOrganisationPaymentAllocate(organisationId: string, paymentId: string, iamOrganisationPaymentAllocate: IamOrganisationPaymentAllocate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Payment>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationPaymentAllocate(organisationId, paymentId, iamOrganisationPaymentAllocate, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23823,8 +24060,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationPaymentGet(organisationId: string, paymentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Payment>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationPaymentGet(organisationId, paymentId, options);
+        async iamOrganisationPaymentGet(organisationId: string, paymentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Payment>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationPaymentGet(organisationId, paymentId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23837,8 +24074,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationPaymentList(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Payment>>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationPaymentList(organisationId, options);
+        async iamOrganisationPaymentList(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Payment>>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationPaymentList(organisationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23848,27 +24085,27 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * Create iam/organisation.proforma
          * @summary Create iam/organisation.proforma
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationProformaCreate} organisationProformaCreate 
+         * @param {IamOrganisationProformaCreate} iamOrganisationProformaCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationProformaCreate(organisationId: string, organisationProformaCreate: OrganisationProformaCreate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Proforma>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationProformaCreate(organisationId, organisationProformaCreate, options);
+        async iamOrganisationProformaCreate(organisationId: string, iamOrganisationProformaCreate: IamOrganisationProformaCreate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Proforma>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationProformaCreate(organisationId, iamOrganisationProformaCreate, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action download
+         * @summary Download iam/organisation.proforma
          * @param {string} organisationId Organisation Id
          * @param {string} proformaId proformaId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationProformaDownload(organisationId: string, proformaId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationProformaDownload(organisationId, proformaId, options);
+        async iamOrganisationProformaDownload(organisationId: string, proformaId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationProformaDownload(organisationId, proformaId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23882,8 +24119,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationProformaGet(organisationId: string, proformaId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Proforma>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationProformaGet(organisationId, proformaId, options);
+        async iamOrganisationProformaGet(organisationId: string, proformaId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Proforma>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationProformaGet(organisationId, proformaId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23896,8 +24133,8 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationProformaList(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Proforma>>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationProformaList(organisationId, options);
+        async iamOrganisationProformaList(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Proforma>>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationProformaList(organisationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23907,13 +24144,13 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * action transfer_accept
          * @summary Transfer accept iam/organisation
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationTransferAccept} organisationTransferAccept 
+         * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
          * @param {string} [xIdempotencyKey] Idempotency key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationTransferAccept(organisationId: string, organisationTransferAccept: OrganisationTransferAccept, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationTransferAccept(organisationId, organisationTransferAccept, xIdempotencyKey, options);
+        async iamOrganisationTransferAccept(organisationId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationTransferAccept(organisationId, iamOrganisationTransferAccept, xIdempotencyKey, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23923,12 +24160,12 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * Returns modified organisation
          * @summary Update iam/organisation
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationUpdate} organisationUpdate 
+         * @param {IamOrganisationUpdate} iamOrganisationUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async organisationUpdate(organisationId: string, organisationUpdate: OrganisationUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).organisationUpdate(organisationId, organisationUpdate, options);
+        async iamOrganisationUpdate(organisationId: string, iamOrganisationUpdate: IamOrganisationUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationUpdate(organisationId, iamOrganisationUpdate, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23953,19 +24190,19 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationBillingList(organisationId: string, start?: string, end?: string, resourceType?: string, options?: any): AxiosPromise<Array<Billing>> {
-            return IamOrganisationApiFp(configuration).organisationBillingList(organisationId, start, end, resourceType, options).then((request) => request(axios, basePath));
+        iamOrganisationBillingList(organisationId: string, start?: string, end?: string, resourceType?: string, options?: any): AxiosPromise<Array<Billing>> {
+            return IamOrganisationApiFp(configuration).iamOrganisationBillingList(organisationId, start, end, resourceType, options).then((request) => request(axios, basePath));
         },
         /**
          * Create organisation
          * @summary Create iam/organisation
-         * @param {OrganisationCreate} organisationCreate 
+         * @param {IamOrganisationCreate} iamOrganisationCreate 
          * @param {string} [xIdempotencyKey] Idempotency key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationCreate(organisationCreate: OrganisationCreate, xIdempotencyKey?: string, options?: any): AxiosPromise<Organisation> {
-            return IamOrganisationApiFp(configuration).organisationCreate(organisationCreate, xIdempotencyKey, options).then((request) => request(axios, basePath));
+        iamOrganisationCreate(iamOrganisationCreate: IamOrganisationCreate, xIdempotencyKey?: string, options?: any): AxiosPromise<Organisation> {
+            return IamOrganisationApiFp(configuration).iamOrganisationCreate(iamOrganisationCreate, xIdempotencyKey, options).then((request) => request(axios, basePath));
         },
         /**
          * Delete organisation
@@ -23974,8 +24211,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationDelete(organisationId: string, options?: any): AxiosPromise<void> {
-            return IamOrganisationApiFp(configuration).organisationDelete(organisationId, options).then((request) => request(axios, basePath));
+        iamOrganisationDelete(organisationId: string, options?: any): AxiosPromise<void> {
+            return IamOrganisationApiFp(configuration).iamOrganisationDelete(organisationId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/organisation.event
@@ -23985,8 +24222,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationEventGet(organisationId: string, eventId: string, options?: any): AxiosPromise<Event> {
-            return IamOrganisationApiFp(configuration).organisationEventGet(organisationId, eventId, options).then((request) => request(axios, basePath));
+        iamOrganisationEventGet(organisationId: string, eventId: string, options?: any): AxiosPromise<Event> {
+            return IamOrganisationApiFp(configuration).iamOrganisationEventGet(organisationId, eventId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/organisation.event
@@ -23997,8 +24234,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationEventList(organisationId: string, $limit?: number, $skip?: number, options?: any): AxiosPromise<Array<Event>> {
-            return IamOrganisationApiFp(configuration).organisationEventList(organisationId, $limit, $skip, options).then((request) => request(axios, basePath));
+        iamOrganisationEventList(organisationId: string, $limit?: number, $skip?: number, options?: any): AxiosPromise<Array<Event>> {
+            return IamOrganisationApiFp(configuration).iamOrganisationEventList(organisationId, $limit, $skip, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a single organisation
@@ -24007,20 +24244,20 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationGet(organisationId: string, options?: any): AxiosPromise<Organisation> {
-            return IamOrganisationApiFp(configuration).organisationGet(organisationId, options).then((request) => request(axios, basePath));
+        iamOrganisationGet(organisationId: string, options?: any): AxiosPromise<Organisation> {
+            return IamOrganisationApiFp(configuration).iamOrganisationGet(organisationId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action accept
+         * @summary Accept iam/organisation.invitation
          * @param {string} organisationId Organisation Id
          * @param {string} invitationId invitationId
-         * @param {OrganisationInvitationAccept} organisationInvitationAccept 
+         * @param {IamOrganisationInvitationAccept} iamOrganisationInvitationAccept 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvitationAccept(organisationId: string, invitationId: string, organisationInvitationAccept: OrganisationInvitationAccept, options?: any): AxiosPromise<Invitation> {
-            return IamOrganisationApiFp(configuration).organisationInvitationAccept(organisationId, invitationId, organisationInvitationAccept, options).then((request) => request(axios, basePath));
+        iamOrganisationInvitationAccept(organisationId: string, invitationId: string, iamOrganisationInvitationAccept: IamOrganisationInvitationAccept, options?: any): AxiosPromise<Invitation> {
+            return IamOrganisationApiFp(configuration).iamOrganisationInvitationAccept(organisationId, invitationId, iamOrganisationInvitationAccept, options).then((request) => request(axios, basePath));
         },
         /**
          * Delete iam/organisation.invitation
@@ -24030,8 +24267,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvitationDelete(organisationId: string, invitationId: string, options?: any): AxiosPromise<void> {
-            return IamOrganisationApiFp(configuration).organisationInvitationDelete(organisationId, invitationId, options).then((request) => request(axios, basePath));
+        iamOrganisationInvitationDelete(organisationId: string, invitationId: string, options?: any): AxiosPromise<void> {
+            return IamOrganisationApiFp(configuration).iamOrganisationInvitationDelete(organisationId, invitationId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/organisation.invitation
@@ -24041,8 +24278,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvitationGet(organisationId: string, invitationId: string, options?: any): AxiosPromise<Invitation> {
-            return IamOrganisationApiFp(configuration).organisationInvitationGet(organisationId, invitationId, options).then((request) => request(axios, basePath));
+        iamOrganisationInvitationGet(organisationId: string, invitationId: string, options?: any): AxiosPromise<Invitation> {
+            return IamOrganisationApiFp(configuration).iamOrganisationInvitationGet(organisationId, invitationId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/organisation.invitation
@@ -24052,19 +24289,19 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvitationList(organisationId: string, resource?: string, options?: any): AxiosPromise<Array<Invitation>> {
-            return IamOrganisationApiFp(configuration).organisationInvitationList(organisationId, resource, options).then((request) => request(axios, basePath));
+        iamOrganisationInvitationList(organisationId: string, resource?: string, options?: any): AxiosPromise<Array<Invitation>> {
+            return IamOrganisationApiFp(configuration).iamOrganisationInvitationList(organisationId, resource, options).then((request) => request(axios, basePath));
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action download
+         * @summary Download iam/organisation.invoice
          * @param {string} organisationId Organisation Id
          * @param {string} invoiceId invoiceId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvoiceDownload(organisationId: string, invoiceId: string, options?: any): AxiosPromise<any> {
-            return IamOrganisationApiFp(configuration).organisationInvoiceDownload(organisationId, invoiceId, options).then((request) => request(axios, basePath));
+        iamOrganisationInvoiceDownload(organisationId: string, invoiceId: string, options?: any): AxiosPromise<any> {
+            return IamOrganisationApiFp(configuration).iamOrganisationInvoiceDownload(organisationId, invoiceId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/organisation.invoice
@@ -24074,8 +24311,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvoiceGet(organisationId: string, invoiceId: string, options?: any): AxiosPromise<Proforma> {
-            return IamOrganisationApiFp(configuration).organisationInvoiceGet(organisationId, invoiceId, options).then((request) => request(axios, basePath));
+        iamOrganisationInvoiceGet(organisationId: string, invoiceId: string, options?: any): AxiosPromise<Proforma> {
+            return IamOrganisationApiFp(configuration).iamOrganisationInvoiceGet(organisationId, invoiceId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/organisation.invoice
@@ -24084,8 +24321,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationInvoiceList(organisationId: string, options?: any): AxiosPromise<Array<Invoice>> {
-            return IamOrganisationApiFp(configuration).organisationInvoiceList(organisationId, options).then((request) => request(axios, basePath));
+        iamOrganisationInvoiceList(organisationId: string, options?: any): AxiosPromise<Array<Invoice>> {
+            return IamOrganisationApiFp(configuration).iamOrganisationInvoiceList(organisationId, options).then((request) => request(axios, basePath));
         },
         /**
          * List organisation
@@ -24097,19 +24334,19 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationList(name?: string, billingCompany?: string, $limit?: number, active?: boolean, options?: any): AxiosPromise<Array<Organisation>> {
-            return IamOrganisationApiFp(configuration).organisationList(name, billingCompany, $limit, active, options).then((request) => request(axios, basePath));
+        iamOrganisationList(name?: string, billingCompany?: string, $limit?: number, active?: boolean, options?: any): AxiosPromise<Array<Organisation>> {
+            return IamOrganisationApiFp(configuration).iamOrganisationList(name, billingCompany, $limit, active, options).then((request) => request(axios, basePath));
         },
         /**
          * Create iam/organisation.ownership
          * @summary Create iam/organisation.ownership
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationOwnershipCreate} organisationOwnershipCreate 
+         * @param {IamOrganisationOwnershipCreate} iamOrganisationOwnershipCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationOwnershipCreate(organisationId: string, organisationOwnershipCreate: OrganisationOwnershipCreate, options?: any): AxiosPromise<Organisation> {
-            return IamOrganisationApiFp(configuration).organisationOwnershipCreate(organisationId, organisationOwnershipCreate, options).then((request) => request(axios, basePath));
+        iamOrganisationOwnershipCreate(organisationId: string, iamOrganisationOwnershipCreate: IamOrganisationOwnershipCreate, options?: any): AxiosPromise<Organisation> {
+            return IamOrganisationApiFp(configuration).iamOrganisationOwnershipCreate(organisationId, iamOrganisationOwnershipCreate, options).then((request) => request(axios, basePath));
         },
         /**
          * Delete iam/organisation.ownership
@@ -24119,8 +24356,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationOwnershipDelete(organisationId: string, ownershipId: string, options?: any): AxiosPromise<void> {
-            return IamOrganisationApiFp(configuration).organisationOwnershipDelete(organisationId, ownershipId, options).then((request) => request(axios, basePath));
+        iamOrganisationOwnershipDelete(organisationId: string, ownershipId: string, options?: any): AxiosPromise<void> {
+            return IamOrganisationApiFp(configuration).iamOrganisationOwnershipDelete(organisationId, ownershipId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/organisation.ownership
@@ -24130,8 +24367,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationOwnershipGet(organisationId: string, ownershipId: string, options?: any): AxiosPromise<Ownership> {
-            return IamOrganisationApiFp(configuration).organisationOwnershipGet(organisationId, ownershipId, options).then((request) => request(axios, basePath));
+        iamOrganisationOwnershipGet(organisationId: string, ownershipId: string, options?: any): AxiosPromise<Ownership> {
+            return IamOrganisationApiFp(configuration).iamOrganisationOwnershipGet(organisationId, ownershipId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/organisation.ownership
@@ -24140,20 +24377,20 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationOwnershipList(organisationId: string, options?: any): AxiosPromise<Array<Ownership>> {
-            return IamOrganisationApiFp(configuration).organisationOwnershipList(organisationId, options).then((request) => request(axios, basePath));
+        iamOrganisationOwnershipList(organisationId: string, options?: any): AxiosPromise<Array<Ownership>> {
+            return IamOrganisationApiFp(configuration).iamOrganisationOwnershipList(organisationId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action allocate
+         * @summary Allocate iam/organisation.payment
          * @param {string} organisationId Organisation Id
          * @param {string} paymentId paymentId
-         * @param {OrganisationPaymentAllocate} organisationPaymentAllocate 
+         * @param {IamOrganisationPaymentAllocate} iamOrganisationPaymentAllocate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationPaymentAllocate(organisationId: string, paymentId: string, organisationPaymentAllocate: OrganisationPaymentAllocate, options?: any): AxiosPromise<Payment> {
-            return IamOrganisationApiFp(configuration).organisationPaymentAllocate(organisationId, paymentId, organisationPaymentAllocate, options).then((request) => request(axios, basePath));
+        iamOrganisationPaymentAllocate(organisationId: string, paymentId: string, iamOrganisationPaymentAllocate: IamOrganisationPaymentAllocate, options?: any): AxiosPromise<Payment> {
+            return IamOrganisationApiFp(configuration).iamOrganisationPaymentAllocate(organisationId, paymentId, iamOrganisationPaymentAllocate, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/organisation.payment
@@ -24163,8 +24400,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationPaymentGet(organisationId: string, paymentId: string, options?: any): AxiosPromise<Payment> {
-            return IamOrganisationApiFp(configuration).organisationPaymentGet(organisationId, paymentId, options).then((request) => request(axios, basePath));
+        iamOrganisationPaymentGet(organisationId: string, paymentId: string, options?: any): AxiosPromise<Payment> {
+            return IamOrganisationApiFp(configuration).iamOrganisationPaymentGet(organisationId, paymentId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/organisation.payment
@@ -24173,30 +24410,30 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationPaymentList(organisationId: string, options?: any): AxiosPromise<Array<Payment>> {
-            return IamOrganisationApiFp(configuration).organisationPaymentList(organisationId, options).then((request) => request(axios, basePath));
+        iamOrganisationPaymentList(organisationId: string, options?: any): AxiosPromise<Array<Payment>> {
+            return IamOrganisationApiFp(configuration).iamOrganisationPaymentList(organisationId, options).then((request) => request(axios, basePath));
         },
         /**
          * Create iam/organisation.proforma
          * @summary Create iam/organisation.proforma
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationProformaCreate} organisationProformaCreate 
+         * @param {IamOrganisationProformaCreate} iamOrganisationProformaCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationProformaCreate(organisationId: string, organisationProformaCreate: OrganisationProformaCreate, options?: any): AxiosPromise<Proforma> {
-            return IamOrganisationApiFp(configuration).organisationProformaCreate(organisationId, organisationProformaCreate, options).then((request) => request(axios, basePath));
+        iamOrganisationProformaCreate(organisationId: string, iamOrganisationProformaCreate: IamOrganisationProformaCreate, options?: any): AxiosPromise<Proforma> {
+            return IamOrganisationApiFp(configuration).iamOrganisationProformaCreate(organisationId, iamOrganisationProformaCreate, options).then((request) => request(axios, basePath));
         },
         /**
-         * Create iam/organisation.actions
-         * @summary Create iam/organisation.actions
+         * action download
+         * @summary Download iam/organisation.proforma
          * @param {string} organisationId Organisation Id
          * @param {string} proformaId proformaId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationProformaDownload(organisationId: string, proformaId: string, options?: any): AxiosPromise<any> {
-            return IamOrganisationApiFp(configuration).organisationProformaDownload(organisationId, proformaId, options).then((request) => request(axios, basePath));
+        iamOrganisationProformaDownload(organisationId: string, proformaId: string, options?: any): AxiosPromise<any> {
+            return IamOrganisationApiFp(configuration).iamOrganisationProformaDownload(organisationId, proformaId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/organisation.proforma
@@ -24206,8 +24443,8 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationProformaGet(organisationId: string, proformaId: string, options?: any): AxiosPromise<Proforma> {
-            return IamOrganisationApiFp(configuration).organisationProformaGet(organisationId, proformaId, options).then((request) => request(axios, basePath));
+        iamOrganisationProformaGet(organisationId: string, proformaId: string, options?: any): AxiosPromise<Proforma> {
+            return IamOrganisationApiFp(configuration).iamOrganisationProformaGet(organisationId, proformaId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/organisation.proforma
@@ -24216,31 +24453,31 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationProformaList(organisationId: string, options?: any): AxiosPromise<Array<Proforma>> {
-            return IamOrganisationApiFp(configuration).organisationProformaList(organisationId, options).then((request) => request(axios, basePath));
+        iamOrganisationProformaList(organisationId: string, options?: any): AxiosPromise<Array<Proforma>> {
+            return IamOrganisationApiFp(configuration).iamOrganisationProformaList(organisationId, options).then((request) => request(axios, basePath));
         },
         /**
          * action transfer_accept
          * @summary Transfer accept iam/organisation
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationTransferAccept} organisationTransferAccept 
+         * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
          * @param {string} [xIdempotencyKey] Idempotency key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationTransferAccept(organisationId: string, organisationTransferAccept: OrganisationTransferAccept, xIdempotencyKey?: string, options?: any): AxiosPromise<Organisation> {
-            return IamOrganisationApiFp(configuration).organisationTransferAccept(organisationId, organisationTransferAccept, xIdempotencyKey, options).then((request) => request(axios, basePath));
+        iamOrganisationTransferAccept(organisationId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, xIdempotencyKey?: string, options?: any): AxiosPromise<Organisation> {
+            return IamOrganisationApiFp(configuration).iamOrganisationTransferAccept(organisationId, iamOrganisationTransferAccept, xIdempotencyKey, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns modified organisation
          * @summary Update iam/organisation
          * @param {string} organisationId Organisation Id
-         * @param {OrganisationUpdate} organisationUpdate 
+         * @param {IamOrganisationUpdate} iamOrganisationUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        organisationUpdate(organisationId: string, organisationUpdate: OrganisationUpdate, options?: any): AxiosPromise<Organisation> {
-            return IamOrganisationApiFp(configuration).organisationUpdate(organisationId, organisationUpdate, options).then((request) => request(axios, basePath));
+        iamOrganisationUpdate(organisationId: string, iamOrganisationUpdate: IamOrganisationUpdate, options?: any): AxiosPromise<Organisation> {
+            return IamOrganisationApiFp(configuration).iamOrganisationUpdate(organisationId, iamOrganisationUpdate, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -24263,21 +24500,21 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationBillingList(organisationId: string, start?: string, end?: string, resourceType?: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationBillingList(organisationId, start, end, resourceType, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationBillingList(organisationId: string, start?: string, end?: string, resourceType?: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationBillingList(organisationId, start, end, resourceType, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Create organisation
      * @summary Create iam/organisation
-     * @param {OrganisationCreate} organisationCreate 
+     * @param {IamOrganisationCreate} iamOrganisationCreate 
      * @param {string} [xIdempotencyKey] Idempotency key
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationCreate(organisationCreate: OrganisationCreate, xIdempotencyKey?: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationCreate(organisationCreate, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationCreate(iamOrganisationCreate: IamOrganisationCreate, xIdempotencyKey?: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationCreate(iamOrganisationCreate, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24288,8 +24525,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationDelete(organisationId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationDelete(organisationId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationDelete(organisationId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationDelete(organisationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24301,8 +24538,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationEventGet(organisationId: string, eventId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationEventGet(organisationId, eventId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationEventGet(organisationId: string, eventId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationEventGet(organisationId, eventId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24315,8 +24552,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationEventList(organisationId: string, $limit?: number, $skip?: number, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationEventList(organisationId, $limit, $skip, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationEventList(organisationId: string, $limit?: number, $skip?: number, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationEventList(organisationId, $limit, $skip, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24327,22 +24564,22 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationGet(organisationId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationGet(organisationId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationGet(organisationId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationGet(organisationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Create iam/organisation.actions
-     * @summary Create iam/organisation.actions
+     * action accept
+     * @summary Accept iam/organisation.invitation
      * @param {string} organisationId Organisation Id
      * @param {string} invitationId invitationId
-     * @param {OrganisationInvitationAccept} organisationInvitationAccept 
+     * @param {IamOrganisationInvitationAccept} iamOrganisationInvitationAccept 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationInvitationAccept(organisationId: string, invitationId: string, organisationInvitationAccept: OrganisationInvitationAccept, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationInvitationAccept(organisationId, invitationId, organisationInvitationAccept, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationInvitationAccept(organisationId: string, invitationId: string, iamOrganisationInvitationAccept: IamOrganisationInvitationAccept, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationInvitationAccept(organisationId, invitationId, iamOrganisationInvitationAccept, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24354,8 +24591,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationInvitationDelete(organisationId: string, invitationId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationInvitationDelete(organisationId, invitationId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationInvitationDelete(organisationId: string, invitationId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationInvitationDelete(organisationId, invitationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24367,8 +24604,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationInvitationGet(organisationId: string, invitationId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationInvitationGet(organisationId, invitationId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationInvitationGet(organisationId: string, invitationId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationInvitationGet(organisationId, invitationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24380,21 +24617,21 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationInvitationList(organisationId: string, resource?: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationInvitationList(organisationId, resource, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationInvitationList(organisationId: string, resource?: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationInvitationList(organisationId, resource, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Create iam/organisation.actions
-     * @summary Create iam/organisation.actions
+     * action download
+     * @summary Download iam/organisation.invoice
      * @param {string} organisationId Organisation Id
      * @param {string} invoiceId invoiceId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationInvoiceDownload(organisationId: string, invoiceId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationInvoiceDownload(organisationId, invoiceId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationInvoiceDownload(organisationId: string, invoiceId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationInvoiceDownload(organisationId, invoiceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24406,8 +24643,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationInvoiceGet(organisationId: string, invoiceId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationInvoiceGet(organisationId, invoiceId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationInvoiceGet(organisationId: string, invoiceId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationInvoiceGet(organisationId, invoiceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24418,8 +24655,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationInvoiceList(organisationId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationInvoiceList(organisationId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationInvoiceList(organisationId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationInvoiceList(organisationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24433,21 +24670,21 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationList(name?: string, billingCompany?: string, $limit?: number, active?: boolean, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationList(name, billingCompany, $limit, active, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationList(name?: string, billingCompany?: string, $limit?: number, active?: boolean, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationList(name, billingCompany, $limit, active, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Create iam/organisation.ownership
      * @summary Create iam/organisation.ownership
      * @param {string} organisationId Organisation Id
-     * @param {OrganisationOwnershipCreate} organisationOwnershipCreate 
+     * @param {IamOrganisationOwnershipCreate} iamOrganisationOwnershipCreate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationOwnershipCreate(organisationId: string, organisationOwnershipCreate: OrganisationOwnershipCreate, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationOwnershipCreate(organisationId, organisationOwnershipCreate, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationOwnershipCreate(organisationId: string, iamOrganisationOwnershipCreate: IamOrganisationOwnershipCreate, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationOwnershipCreate(organisationId, iamOrganisationOwnershipCreate, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24459,8 +24696,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationOwnershipDelete(organisationId: string, ownershipId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationOwnershipDelete(organisationId, ownershipId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationOwnershipDelete(organisationId: string, ownershipId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationOwnershipDelete(organisationId, ownershipId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24472,8 +24709,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationOwnershipGet(organisationId: string, ownershipId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationOwnershipGet(organisationId, ownershipId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationOwnershipGet(organisationId: string, ownershipId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationOwnershipGet(organisationId, ownershipId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24484,22 +24721,22 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationOwnershipList(organisationId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationOwnershipList(organisationId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationOwnershipList(organisationId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationOwnershipList(organisationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Create iam/organisation.actions
-     * @summary Create iam/organisation.actions
+     * action allocate
+     * @summary Allocate iam/organisation.payment
      * @param {string} organisationId Organisation Id
      * @param {string} paymentId paymentId
-     * @param {OrganisationPaymentAllocate} organisationPaymentAllocate 
+     * @param {IamOrganisationPaymentAllocate} iamOrganisationPaymentAllocate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationPaymentAllocate(organisationId: string, paymentId: string, organisationPaymentAllocate: OrganisationPaymentAllocate, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationPaymentAllocate(organisationId, paymentId, organisationPaymentAllocate, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationPaymentAllocate(organisationId: string, paymentId: string, iamOrganisationPaymentAllocate: IamOrganisationPaymentAllocate, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationPaymentAllocate(organisationId, paymentId, iamOrganisationPaymentAllocate, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24511,8 +24748,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationPaymentGet(organisationId: string, paymentId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationPaymentGet(organisationId, paymentId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationPaymentGet(organisationId: string, paymentId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationPaymentGet(organisationId, paymentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24523,34 +24760,34 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationPaymentList(organisationId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationPaymentList(organisationId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationPaymentList(organisationId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationPaymentList(organisationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Create iam/organisation.proforma
      * @summary Create iam/organisation.proforma
      * @param {string} organisationId Organisation Id
-     * @param {OrganisationProformaCreate} organisationProformaCreate 
+     * @param {IamOrganisationProformaCreate} iamOrganisationProformaCreate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationProformaCreate(organisationId: string, organisationProformaCreate: OrganisationProformaCreate, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationProformaCreate(organisationId, organisationProformaCreate, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationProformaCreate(organisationId: string, iamOrganisationProformaCreate: IamOrganisationProformaCreate, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationProformaCreate(organisationId, iamOrganisationProformaCreate, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Create iam/organisation.actions
-     * @summary Create iam/organisation.actions
+     * action download
+     * @summary Download iam/organisation.proforma
      * @param {string} organisationId Organisation Id
      * @param {string} proformaId proformaId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationProformaDownload(organisationId: string, proformaId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationProformaDownload(organisationId, proformaId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationProformaDownload(organisationId: string, proformaId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationProformaDownload(organisationId, proformaId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24562,8 +24799,8 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationProformaGet(organisationId: string, proformaId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationProformaGet(organisationId, proformaId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationProformaGet(organisationId: string, proformaId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationProformaGet(organisationId, proformaId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -24574,35 +24811,35 @@ export class IamOrganisationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationProformaList(organisationId: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationProformaList(organisationId, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationProformaList(organisationId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationProformaList(organisationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * action transfer_accept
      * @summary Transfer accept iam/organisation
      * @param {string} organisationId Organisation Id
-     * @param {OrganisationTransferAccept} organisationTransferAccept 
+     * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
      * @param {string} [xIdempotencyKey] Idempotency key
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationTransferAccept(organisationId: string, organisationTransferAccept: OrganisationTransferAccept, xIdempotencyKey?: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationTransferAccept(organisationId, organisationTransferAccept, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationTransferAccept(organisationId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, xIdempotencyKey?: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationTransferAccept(organisationId, iamOrganisationTransferAccept, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns modified organisation
      * @summary Update iam/organisation
      * @param {string} organisationId Organisation Id
-     * @param {OrganisationUpdate} organisationUpdate 
+     * @param {IamOrganisationUpdate} iamOrganisationUpdate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public organisationUpdate(organisationId: string, organisationUpdate: OrganisationUpdate, options?: any) {
-        return IamOrganisationApiFp(this.configuration).organisationUpdate(organisationId, organisationUpdate, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationUpdate(organisationId: string, iamOrganisationUpdate: IamOrganisationUpdate, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationUpdate(organisationId, iamOrganisationUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 
 }
@@ -28328,10 +28565,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectBillingList: async (projectId: string, start?: string, end?: string, resourceType?: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectBillingList: async (projectId: string, start?: string, end?: string, resourceType?: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectBillingList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectBillingList.');
             }
             const localVarPath = `/iam/project/{projectId}/billing`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -28385,15 +28622,15 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
         /**
          * Create project
          * @summary Create iam/project
-         * @param {ProjectCreate} projectCreate 
+         * @param {IamProjectCreate} iamProjectCreate 
          * @param {string} [xIdempotencyKey] Idempotency key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCreate: async (projectCreate: ProjectCreate, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'projectCreate' is not null or undefined
-            if (projectCreate === null || projectCreate === undefined) {
-                throw new RequiredError('projectCreate','Required parameter projectCreate was null or undefined when calling projectCreate.');
+        iamProjectCreate: async (iamProjectCreate: IamProjectCreate, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'iamProjectCreate' is not null or undefined
+            if (iamProjectCreate === null || iamProjectCreate === undefined) {
+                throw new RequiredError('iamProjectCreate','Required parameter iamProjectCreate was null or undefined when calling iamProjectCreate.');
             }
             const localVarPath = `/iam/project`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
@@ -28427,8 +28664,8 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof projectCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(projectCreate !== undefined ? projectCreate : {}) : (projectCreate || "");
+            const needsSerialization = (typeof iamProjectCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamProjectCreate !== undefined ? iamProjectCreate : {}) : (iamProjectCreate || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -28443,14 +28680,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCredentialStoreCreate: async (projectId: string, projectCredential: ProjectCredential, options: any = {}): Promise<RequestArgs> => {
+        iamProjectCredentialStoreCreate: async (projectId: string, projectCredential: ProjectCredential, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectCredentialStoreCreate.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectCredentialStoreCreate.');
             }
             // verify required parameter 'projectCredential' is not null or undefined
             if (projectCredential === null || projectCredential === undefined) {
-                throw new RequiredError('projectCredential','Required parameter projectCredential was null or undefined when calling projectCredentialStoreCreate.');
+                throw new RequiredError('projectCredential','Required parameter projectCredential was null or undefined when calling iamProjectCredentialStoreCreate.');
             }
             const localVarPath = `/iam/project/{projectId}/credentialStore`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -28493,22 +28730,22 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * Delete iam/project.credentialStore
          * @summary Delete iam/project.credentialStore
          * @param {string} projectId Project Id
-         * @param {string} credentialId credentialId
+         * @param {string} credentialStoreId credentialStoreId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCredentialStoreDelete: async (projectId: string, credentialId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectCredentialStoreDelete: async (projectId: string, credentialStoreId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectCredentialStoreDelete.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectCredentialStoreDelete.');
             }
-            // verify required parameter 'credentialId' is not null or undefined
-            if (credentialId === null || credentialId === undefined) {
-                throw new RequiredError('credentialId','Required parameter credentialId was null or undefined when calling projectCredentialStoreDelete.');
+            // verify required parameter 'credentialStoreId' is not null or undefined
+            if (credentialStoreId === null || credentialStoreId === undefined) {
+                throw new RequiredError('credentialStoreId','Required parameter credentialStoreId was null or undefined when calling iamProjectCredentialStoreDelete.');
             }
-            const localVarPath = `/iam/project/{projectId}/credentialStore/{credentialId}`
+            const localVarPath = `/iam/project/{projectId}/credentialStore/{credentialStoreId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
-                .replace(`{${"credentialId"}}`, encodeURIComponent(String(credentialId)));
+                .replace(`{${"credentialStoreId"}}`, encodeURIComponent(String(credentialStoreId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
@@ -28544,22 +28781,22 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * Get iam/project.credentialStore
          * @summary Get iam/project.credentialStore
          * @param {string} projectId Project Id
-         * @param {string} credentialId credentialId
+         * @param {string} credentialStoreId credentialStoreId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCredentialStoreGet: async (projectId: string, credentialId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectCredentialStoreGet: async (projectId: string, credentialStoreId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectCredentialStoreGet.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectCredentialStoreGet.');
             }
-            // verify required parameter 'credentialId' is not null or undefined
-            if (credentialId === null || credentialId === undefined) {
-                throw new RequiredError('credentialId','Required parameter credentialId was null or undefined when calling projectCredentialStoreGet.');
+            // verify required parameter 'credentialStoreId' is not null or undefined
+            if (credentialStoreId === null || credentialStoreId === undefined) {
+                throw new RequiredError('credentialStoreId','Required parameter credentialStoreId was null or undefined when calling iamProjectCredentialStoreGet.');
             }
-            const localVarPath = `/iam/project/{projectId}/credentialStore/{credentialId}`
+            const localVarPath = `/iam/project/{projectId}/credentialStore/{credentialStoreId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
-                .replace(`{${"credentialId"}}`, encodeURIComponent(String(credentialId)));
+                .replace(`{${"credentialStoreId"}}`, encodeURIComponent(String(credentialStoreId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
@@ -28598,10 +28835,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCredentialStoreList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectCredentialStoreList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectCredentialStoreList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectCredentialStoreList.');
             }
             const localVarPath = `/iam/project/{projectId}/credentialStore`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -28640,27 +28877,27 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * Update iam/project.credentialStore
          * @summary Update iam/project.credentialStore
          * @param {string} projectId Project Id
-         * @param {string} credentialId credentialId
-         * @param {ProjectCredentialStorePatch} projectCredentialStorePatch 
+         * @param {string} credentialStoreId credentialStoreId
+         * @param {IamProjectCredentialStorePatch} iamProjectCredentialStorePatch 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCredentialStorePatch: async (projectId: string, credentialId: string, projectCredentialStorePatch: ProjectCredentialStorePatch, options: any = {}): Promise<RequestArgs> => {
+        iamProjectCredentialStorePatch: async (projectId: string, credentialStoreId: string, iamProjectCredentialStorePatch: IamProjectCredentialStorePatch, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectCredentialStorePatch.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectCredentialStorePatch.');
             }
-            // verify required parameter 'credentialId' is not null or undefined
-            if (credentialId === null || credentialId === undefined) {
-                throw new RequiredError('credentialId','Required parameter credentialId was null or undefined when calling projectCredentialStorePatch.');
+            // verify required parameter 'credentialStoreId' is not null or undefined
+            if (credentialStoreId === null || credentialStoreId === undefined) {
+                throw new RequiredError('credentialStoreId','Required parameter credentialStoreId was null or undefined when calling iamProjectCredentialStorePatch.');
             }
-            // verify required parameter 'projectCredentialStorePatch' is not null or undefined
-            if (projectCredentialStorePatch === null || projectCredentialStorePatch === undefined) {
-                throw new RequiredError('projectCredentialStorePatch','Required parameter projectCredentialStorePatch was null or undefined when calling projectCredentialStorePatch.');
+            // verify required parameter 'iamProjectCredentialStorePatch' is not null or undefined
+            if (iamProjectCredentialStorePatch === null || iamProjectCredentialStorePatch === undefined) {
+                throw new RequiredError('iamProjectCredentialStorePatch','Required parameter iamProjectCredentialStorePatch was null or undefined when calling iamProjectCredentialStorePatch.');
             }
-            const localVarPath = `/iam/project/{projectId}/credentialStore/{credentialId}`
+            const localVarPath = `/iam/project/{projectId}/credentialStore/{credentialStoreId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
-                .replace(`{${"credentialId"}}`, encodeURIComponent(String(credentialId)));
+                .replace(`{${"credentialStoreId"}}`, encodeURIComponent(String(credentialStoreId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
@@ -28688,8 +28925,8 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof projectCredentialStorePatch !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(projectCredentialStorePatch !== undefined ? projectCredentialStorePatch : {}) : (projectCredentialStorePatch || "");
+            const needsSerialization = (typeof iamProjectCredentialStorePatch !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamProjectCredentialStorePatch !== undefined ? iamProjectCredentialStorePatch : {}) : (iamProjectCredentialStorePatch || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -28703,10 +28940,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectDelete: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectDelete: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectDelete.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectDelete.');
             }
             const localVarPath = `/iam/project/{projectId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -28749,14 +28986,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectEventGet: async (projectId: string, eventId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectEventGet: async (projectId: string, eventId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectEventGet.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectEventGet.');
             }
             // verify required parameter 'eventId' is not null or undefined
             if (eventId === null || eventId === undefined) {
-                throw new RequiredError('eventId','Required parameter eventId was null or undefined when calling projectEventGet.');
+                throw new RequiredError('eventId','Required parameter eventId was null or undefined when calling iamProjectEventGet.');
             }
             const localVarPath = `/iam/project/{projectId}/event/{eventId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -28801,10 +29038,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectEventList: async (projectId: string, $limit?: number, $skip?: number, options: any = {}): Promise<RequestArgs> => {
+        iamProjectEventList: async (projectId: string, $limit?: number, $skip?: number, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectEventList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectEventList.');
             }
             const localVarPath = `/iam/project/{projectId}/event`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -28854,10 +29091,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectGet: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectGet: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectGet.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectGet.');
             }
             const localVarPath = `/iam/project/{projectId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -28893,26 +29130,26 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * Create iam/project.actions
-         * @summary Create iam/project.actions
+         * action accept
+         * @summary Accept iam/project.invitation
          * @param {string} projectId Project Id
          * @param {string} invitationId invitationId
-         * @param {ProjectInvitationAccept} projectInvitationAccept 
+         * @param {IamProjectInvitationAccept} iamProjectInvitationAccept 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectInvitationAccept: async (projectId: string, invitationId: string, projectInvitationAccept: ProjectInvitationAccept, options: any = {}): Promise<RequestArgs> => {
+        iamProjectInvitationAccept: async (projectId: string, invitationId: string, iamProjectInvitationAccept: IamProjectInvitationAccept, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectInvitationAccept.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectInvitationAccept.');
             }
             // verify required parameter 'invitationId' is not null or undefined
             if (invitationId === null || invitationId === undefined) {
-                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling projectInvitationAccept.');
+                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling iamProjectInvitationAccept.');
             }
-            // verify required parameter 'projectInvitationAccept' is not null or undefined
-            if (projectInvitationAccept === null || projectInvitationAccept === undefined) {
-                throw new RequiredError('projectInvitationAccept','Required parameter projectInvitationAccept was null or undefined when calling projectInvitationAccept.');
+            // verify required parameter 'iamProjectInvitationAccept' is not null or undefined
+            if (iamProjectInvitationAccept === null || iamProjectInvitationAccept === undefined) {
+                throw new RequiredError('iamProjectInvitationAccept','Required parameter iamProjectInvitationAccept was null or undefined when calling iamProjectInvitationAccept.');
             }
             const localVarPath = `/iam/project/{projectId}/invitation/{invitationId}/actions/accept`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -28944,8 +29181,8 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof projectInvitationAccept !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(projectInvitationAccept !== undefined ? projectInvitationAccept : {}) : (projectInvitationAccept || "");
+            const needsSerialization = (typeof iamProjectInvitationAccept !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamProjectInvitationAccept !== undefined ? iamProjectInvitationAccept : {}) : (iamProjectInvitationAccept || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -28960,14 +29197,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectInvitationDelete: async (projectId: string, invitationId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectInvitationDelete: async (projectId: string, invitationId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectInvitationDelete.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectInvitationDelete.');
             }
             // verify required parameter 'invitationId' is not null or undefined
             if (invitationId === null || invitationId === undefined) {
-                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling projectInvitationDelete.');
+                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling iamProjectInvitationDelete.');
             }
             const localVarPath = `/iam/project/{projectId}/invitation/{invitationId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -29011,14 +29248,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectInvitationGet: async (projectId: string, invitationId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectInvitationGet: async (projectId: string, invitationId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectInvitationGet.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectInvitationGet.');
             }
             // verify required parameter 'invitationId' is not null or undefined
             if (invitationId === null || invitationId === undefined) {
-                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling projectInvitationGet.');
+                throw new RequiredError('invitationId','Required parameter invitationId was null or undefined when calling iamProjectInvitationGet.');
             }
             const localVarPath = `/iam/project/{projectId}/invitation/{invitationId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -29062,10 +29299,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectInvitationList: async (projectId: string, resource?: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectInvitationList: async (projectId: string, resource?: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectInvitationList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectInvitationList.');
             }
             const localVarPath = `/iam/project/{projectId}/invitation`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -29111,10 +29348,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectInvoiceList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectInvoiceList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectInvoiceList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectInvoiceList.');
             }
             const localVarPath = `/iam/project/{projectId}/invoice`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -29162,7 +29399,7 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectList: async (name?: string, $limit?: number, active?: boolean, organisation?: string, $lean?: boolean, tagValue?: string, tagKey?: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectList: async (name?: string, $limit?: number, active?: boolean, organisation?: string, $lean?: boolean, tagValue?: string, tagKey?: string, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/iam/project`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -29227,18 +29464,18 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * Create iam/project.ownership
          * @summary Create iam/project.ownership
          * @param {string} projectId Project Id
-         * @param {ProjectOwnershipCreate} projectOwnershipCreate 
+         * @param {IamProjectOwnershipCreate} iamProjectOwnershipCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectOwnershipCreate: async (projectId: string, projectOwnershipCreate: ProjectOwnershipCreate, options: any = {}): Promise<RequestArgs> => {
+        iamProjectOwnershipCreate: async (projectId: string, iamProjectOwnershipCreate: IamProjectOwnershipCreate, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectOwnershipCreate.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectOwnershipCreate.');
             }
-            // verify required parameter 'projectOwnershipCreate' is not null or undefined
-            if (projectOwnershipCreate === null || projectOwnershipCreate === undefined) {
-                throw new RequiredError('projectOwnershipCreate','Required parameter projectOwnershipCreate was null or undefined when calling projectOwnershipCreate.');
+            // verify required parameter 'iamProjectOwnershipCreate' is not null or undefined
+            if (iamProjectOwnershipCreate === null || iamProjectOwnershipCreate === undefined) {
+                throw new RequiredError('iamProjectOwnershipCreate','Required parameter iamProjectOwnershipCreate was null or undefined when calling iamProjectOwnershipCreate.');
             }
             const localVarPath = `/iam/project/{projectId}/ownership`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -29269,8 +29506,8 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof projectOwnershipCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(projectOwnershipCreate !== undefined ? projectOwnershipCreate : {}) : (projectOwnershipCreate || "");
+            const needsSerialization = (typeof iamProjectOwnershipCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamProjectOwnershipCreate !== undefined ? iamProjectOwnershipCreate : {}) : (iamProjectOwnershipCreate || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -29285,14 +29522,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectOwnershipDelete: async (projectId: string, ownershipId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectOwnershipDelete: async (projectId: string, ownershipId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectOwnershipDelete.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectOwnershipDelete.');
             }
             // verify required parameter 'ownershipId' is not null or undefined
             if (ownershipId === null || ownershipId === undefined) {
-                throw new RequiredError('ownershipId','Required parameter ownershipId was null or undefined when calling projectOwnershipDelete.');
+                throw new RequiredError('ownershipId','Required parameter ownershipId was null or undefined when calling iamProjectOwnershipDelete.');
             }
             const localVarPath = `/iam/project/{projectId}/ownership/{ownershipId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -29336,14 +29573,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectOwnershipGet: async (projectId: string, ownershipId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectOwnershipGet: async (projectId: string, ownershipId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectOwnershipGet.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectOwnershipGet.');
             }
             // verify required parameter 'ownershipId' is not null or undefined
             if (ownershipId === null || ownershipId === undefined) {
-                throw new RequiredError('ownershipId','Required parameter ownershipId was null or undefined when calling projectOwnershipGet.');
+                throw new RequiredError('ownershipId','Required parameter ownershipId was null or undefined when calling iamProjectOwnershipGet.');
             }
             const localVarPath = `/iam/project/{projectId}/ownership/{ownershipId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -29386,10 +29623,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectOwnershipList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectOwnershipList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectOwnershipList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectOwnershipList.');
             }
             const localVarPath = `/iam/project/{projectId}/ownership`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -29431,10 +29668,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectPaymentList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectPaymentList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectPaymentList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectPaymentList.');
             }
             const localVarPath = `/iam/project/{projectId}/payment`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -29476,10 +29713,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectProformaList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectProformaList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectProformaList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectProformaList.');
             }
             const localVarPath = `/iam/project/{projectId}/proforma`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -29522,14 +29759,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectQuotaGet: async (projectId: string, quotaId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectQuotaGet: async (projectId: string, quotaId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectQuotaGet.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectQuotaGet.');
             }
             // verify required parameter 'quotaId' is not null or undefined
             if (quotaId === null || quotaId === undefined) {
-                throw new RequiredError('quotaId','Required parameter quotaId was null or undefined when calling projectQuotaGet.');
+                throw new RequiredError('quotaId','Required parameter quotaId was null or undefined when calling iamProjectQuotaGet.');
             }
             const localVarPath = `/iam/project/{projectId}/quota/{quotaId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -29570,22 +29807,22 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @summary Update iam/project.limit
          * @param {string} projectId Project Id
          * @param {string} quotaId quotaId
-         * @param {ProjectQuotaLimitPatch} projectQuotaLimitPatch 
+         * @param {IamProjectQuotaLimitPatch} iamProjectQuotaLimitPatch 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectQuotaLimitPatch: async (projectId: string, quotaId: string, projectQuotaLimitPatch: ProjectQuotaLimitPatch, options: any = {}): Promise<RequestArgs> => {
+        iamProjectQuotaLimitPatch: async (projectId: string, quotaId: string, iamProjectQuotaLimitPatch: IamProjectQuotaLimitPatch, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectQuotaLimitPatch.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectQuotaLimitPatch.');
             }
             // verify required parameter 'quotaId' is not null or undefined
             if (quotaId === null || quotaId === undefined) {
-                throw new RequiredError('quotaId','Required parameter quotaId was null or undefined when calling projectQuotaLimitPatch.');
+                throw new RequiredError('quotaId','Required parameter quotaId was null or undefined when calling iamProjectQuotaLimitPatch.');
             }
-            // verify required parameter 'projectQuotaLimitPatch' is not null or undefined
-            if (projectQuotaLimitPatch === null || projectQuotaLimitPatch === undefined) {
-                throw new RequiredError('projectQuotaLimitPatch','Required parameter projectQuotaLimitPatch was null or undefined when calling projectQuotaLimitPatch.');
+            // verify required parameter 'iamProjectQuotaLimitPatch' is not null or undefined
+            if (iamProjectQuotaLimitPatch === null || iamProjectQuotaLimitPatch === undefined) {
+                throw new RequiredError('iamProjectQuotaLimitPatch','Required parameter iamProjectQuotaLimitPatch was null or undefined when calling iamProjectQuotaLimitPatch.');
             }
             const localVarPath = `/iam/project/{projectId}/quota/{quotaId}/limit`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -29617,8 +29854,8 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof projectQuotaLimitPatch !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(projectQuotaLimitPatch !== undefined ? projectQuotaLimitPatch : {}) : (projectQuotaLimitPatch || "");
+            const needsSerialization = (typeof iamProjectQuotaLimitPatch !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamProjectQuotaLimitPatch !== undefined ? iamProjectQuotaLimitPatch : {}) : (iamProjectQuotaLimitPatch || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -29632,10 +29869,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectQuotaList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectQuotaList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectQuotaList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectQuotaList.');
             }
             const localVarPath = `/iam/project/{projectId}/quota`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -29678,14 +29915,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectServiceGet: async (projectId: string, serviceId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectServiceGet: async (projectId: string, serviceId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectServiceGet.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectServiceGet.');
             }
             // verify required parameter 'serviceId' is not null or undefined
             if (serviceId === null || serviceId === undefined) {
-                throw new RequiredError('serviceId','Required parameter serviceId was null or undefined when calling projectServiceGet.');
+                throw new RequiredError('serviceId','Required parameter serviceId was null or undefined when calling iamProjectServiceGet.');
             }
             const localVarPath = `/iam/project/{projectId}/service/{serviceId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -29728,10 +29965,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectServiceList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectServiceList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectServiceList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectServiceList.');
             }
             const localVarPath = `/iam/project/{projectId}/service`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -29774,14 +30011,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectTagCreate: async (projectId: string, tag: Tag, options: any = {}): Promise<RequestArgs> => {
+        iamProjectTagCreate: async (projectId: string, tag: Tag, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectTagCreate.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectTagCreate.');
             }
             // verify required parameter 'tag' is not null or undefined
             if (tag === null || tag === undefined) {
-                throw new RequiredError('tag','Required parameter tag was null or undefined when calling projectTagCreate.');
+                throw new RequiredError('tag','Required parameter tag was null or undefined when calling iamProjectTagCreate.');
             }
             const localVarPath = `/iam/project/{projectId}/tag`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -29828,14 +30065,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectTagDelete: async (projectId: string, tagId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectTagDelete: async (projectId: string, tagId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectTagDelete.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectTagDelete.');
             }
             // verify required parameter 'tagId' is not null or undefined
             if (tagId === null || tagId === undefined) {
-                throw new RequiredError('tagId','Required parameter tagId was null or undefined when calling projectTagDelete.');
+                throw new RequiredError('tagId','Required parameter tagId was null or undefined when calling iamProjectTagDelete.');
             }
             const localVarPath = `/iam/project/{projectId}/tag/{tagId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -29879,14 +30116,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectTagGet: async (projectId: string, tagId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectTagGet: async (projectId: string, tagId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectTagGet.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectTagGet.');
             }
             // verify required parameter 'tagId' is not null or undefined
             if (tagId === null || tagId === undefined) {
-                throw new RequiredError('tagId','Required parameter tagId was null or undefined when calling projectTagGet.');
+                throw new RequiredError('tagId','Required parameter tagId was null or undefined when calling iamProjectTagGet.');
             }
             const localVarPath = `/iam/project/{projectId}/tag/{tagId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
@@ -29929,10 +30166,10 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectTagList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectTagList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectTagList.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectTagList.');
             }
             const localVarPath = `/iam/project/{projectId}/tag`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -29975,14 +30212,14 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectTagPut: async (projectId: string, tag: Array<Tag>, options: any = {}): Promise<RequestArgs> => {
+        iamProjectTagPut: async (projectId: string, tag: Array<Tag>, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectTagPut.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectTagPut.');
             }
             // verify required parameter 'tag' is not null or undefined
             if (tag === null || tag === undefined) {
-                throw new RequiredError('tag','Required parameter tag was null or undefined when calling projectTagPut.');
+                throw new RequiredError('tag','Required parameter tag was null or undefined when calling iamProjectTagPut.');
             }
             const localVarPath = `/iam/project/{projectId}/tag`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -30022,21 +30259,222 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
-         * Returns modified project
-         * @summary Update iam/project
+         * Create iam/project.threshold
+         * @summary Create iam/project.threshold
          * @param {string} projectId Project Id
-         * @param {ProjectUpdate} projectUpdate 
+         * @param {IamProjectThresholdCreate} iamProjectThresholdCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectUpdate: async (projectId: string, projectUpdate: ProjectUpdate, options: any = {}): Promise<RequestArgs> => {
+        iamProjectThresholdCreate: async (projectId: string, iamProjectThresholdCreate: IamProjectThresholdCreate, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling projectUpdate.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectThresholdCreate.');
             }
-            // verify required parameter 'projectUpdate' is not null or undefined
-            if (projectUpdate === null || projectUpdate === undefined) {
-                throw new RequiredError('projectUpdate','Required parameter projectUpdate was null or undefined when calling projectUpdate.');
+            // verify required parameter 'iamProjectThresholdCreate' is not null or undefined
+            if (iamProjectThresholdCreate === null || iamProjectThresholdCreate === undefined) {
+                throw new RequiredError('iamProjectThresholdCreate','Required parameter iamProjectThresholdCreate was null or undefined when calling iamProjectThresholdCreate.');
+            }
+            const localVarPath = `/iam/project/{projectId}/threshold`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof iamProjectThresholdCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamProjectThresholdCreate !== undefined ? iamProjectThresholdCreate : {}) : (iamProjectThresholdCreate || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete iam/project.threshold
+         * @summary Delete iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {string} thresholdId thresholdId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamProjectThresholdDelete: async (projectId: string, thresholdId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectThresholdDelete.');
+            }
+            // verify required parameter 'thresholdId' is not null or undefined
+            if (thresholdId === null || thresholdId === undefined) {
+                throw new RequiredError('thresholdId','Required parameter thresholdId was null or undefined when calling iamProjectThresholdDelete.');
+            }
+            const localVarPath = `/iam/project/{projectId}/threshold/{thresholdId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"thresholdId"}}`, encodeURIComponent(String(thresholdId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get iam/project.threshold
+         * @summary Get iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {string} thresholdId thresholdId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamProjectThresholdGet: async (projectId: string, thresholdId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectThresholdGet.');
+            }
+            // verify required parameter 'thresholdId' is not null or undefined
+            if (thresholdId === null || thresholdId === undefined) {
+                throw new RequiredError('thresholdId','Required parameter thresholdId was null or undefined when calling iamProjectThresholdGet.');
+            }
+            const localVarPath = `/iam/project/{projectId}/threshold/{thresholdId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"thresholdId"}}`, encodeURIComponent(String(thresholdId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List iam/project.threshold
+         * @summary List iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamProjectThresholdList: async (projectId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectThresholdList.');
+            }
+            const localVarPath = `/iam/project/{projectId}/threshold`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Returns modified project
+         * @summary Update iam/project
+         * @param {string} projectId Project Id
+         * @param {IamProjectUpdate} iamProjectUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamProjectUpdate: async (projectId: string, iamProjectUpdate: IamProjectUpdate, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectUpdate.');
+            }
+            // verify required parameter 'iamProjectUpdate' is not null or undefined
+            if (iamProjectUpdate === null || iamProjectUpdate === undefined) {
+                throw new RequiredError('iamProjectUpdate','Required parameter iamProjectUpdate was null or undefined when calling iamProjectUpdate.');
             }
             const localVarPath = `/iam/project/{projectId}`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
@@ -30067,8 +30505,8 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof projectUpdate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(projectUpdate !== undefined ? projectUpdate : {}) : (projectUpdate || "");
+            const needsSerialization = (typeof iamProjectUpdate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamProjectUpdate !== undefined ? iamProjectUpdate : {}) : (iamProjectUpdate || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -30094,8 +30532,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectBillingList(projectId: string, start?: string, end?: string, resourceType?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Billing>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectBillingList(projectId, start, end, resourceType, options);
+        async iamProjectBillingList(projectId: string, start?: string, end?: string, resourceType?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Billing>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectBillingList(projectId, start, end, resourceType, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30104,13 +30542,13 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
         /**
          * Create project
          * @summary Create iam/project
-         * @param {ProjectCreate} projectCreate 
+         * @param {IamProjectCreate} iamProjectCreate 
          * @param {string} [xIdempotencyKey] Idempotency key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectCreate(projectCreate: ProjectCreate, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectCreate(projectCreate, xIdempotencyKey, options);
+        async iamProjectCreate(iamProjectCreate: IamProjectCreate, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectCreate(iamProjectCreate, xIdempotencyKey, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30124,8 +30562,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectCredentialStoreCreate(projectId: string, projectCredential: ProjectCredential, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProjectCredential>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectCredentialStoreCreate(projectId, projectCredential, options);
+        async iamProjectCredentialStoreCreate(projectId: string, projectCredential: ProjectCredential, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProjectCredential>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectCredentialStoreCreate(projectId, projectCredential, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30135,12 +30573,12 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * Delete iam/project.credentialStore
          * @summary Delete iam/project.credentialStore
          * @param {string} projectId Project Id
-         * @param {string} credentialId credentialId
+         * @param {string} credentialStoreId credentialStoreId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectCredentialStoreDelete(projectId: string, credentialId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectCredentialStoreDelete(projectId, credentialId, options);
+        async iamProjectCredentialStoreDelete(projectId: string, credentialStoreId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectCredentialStoreDelete(projectId, credentialStoreId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30150,12 +30588,12 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * Get iam/project.credentialStore
          * @summary Get iam/project.credentialStore
          * @param {string} projectId Project Id
-         * @param {string} credentialId credentialId
+         * @param {string} credentialStoreId credentialStoreId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectCredentialStoreGet(projectId: string, credentialId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProjectCredential>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectCredentialStoreGet(projectId, credentialId, options);
+        async iamProjectCredentialStoreGet(projectId: string, credentialStoreId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProjectCredential>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectCredentialStoreGet(projectId, credentialStoreId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30168,8 +30606,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectCredentialStoreList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ProjectCredential>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectCredentialStoreList(projectId, options);
+        async iamProjectCredentialStoreList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ProjectCredential>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectCredentialStoreList(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30179,13 +30617,13 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * Update iam/project.credentialStore
          * @summary Update iam/project.credentialStore
          * @param {string} projectId Project Id
-         * @param {string} credentialId credentialId
-         * @param {ProjectCredentialStorePatch} projectCredentialStorePatch 
+         * @param {string} credentialStoreId credentialStoreId
+         * @param {IamProjectCredentialStorePatch} iamProjectCredentialStorePatch 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectCredentialStorePatch(projectId: string, credentialId: string, projectCredentialStorePatch: ProjectCredentialStorePatch, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProjectCredential>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectCredentialStorePatch(projectId, credentialId, projectCredentialStorePatch, options);
+        async iamProjectCredentialStorePatch(projectId: string, credentialStoreId: string, iamProjectCredentialStorePatch: IamProjectCredentialStorePatch, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProjectCredential>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectCredentialStorePatch(projectId, credentialStoreId, iamProjectCredentialStorePatch, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30198,8 +30636,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectDelete(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectDelete(projectId, options);
+        async iamProjectDelete(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectDelete(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30213,8 +30651,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectEventGet(projectId: string, eventId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Event>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectEventGet(projectId, eventId, options);
+        async iamProjectEventGet(projectId: string, eventId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Event>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectEventGet(projectId, eventId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30229,8 +30667,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectEventList(projectId: string, $limit?: number, $skip?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Event>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectEventList(projectId, $limit, $skip, options);
+        async iamProjectEventList(projectId: string, $limit?: number, $skip?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Event>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectEventList(projectId, $limit, $skip, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30243,24 +30681,24 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectGet(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectGet(projectId, options);
+        async iamProjectGet(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectGet(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
         /**
-         * Create iam/project.actions
-         * @summary Create iam/project.actions
+         * action accept
+         * @summary Accept iam/project.invitation
          * @param {string} projectId Project Id
          * @param {string} invitationId invitationId
-         * @param {ProjectInvitationAccept} projectInvitationAccept 
+         * @param {IamProjectInvitationAccept} iamProjectInvitationAccept 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectInvitationAccept(projectId: string, invitationId: string, projectInvitationAccept: ProjectInvitationAccept, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Invitation>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectInvitationAccept(projectId, invitationId, projectInvitationAccept, options);
+        async iamProjectInvitationAccept(projectId: string, invitationId: string, iamProjectInvitationAccept: IamProjectInvitationAccept, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Invitation>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectInvitationAccept(projectId, invitationId, iamProjectInvitationAccept, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30274,8 +30712,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectInvitationDelete(projectId: string, invitationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectInvitationDelete(projectId, invitationId, options);
+        async iamProjectInvitationDelete(projectId: string, invitationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectInvitationDelete(projectId, invitationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30289,8 +30727,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectInvitationGet(projectId: string, invitationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Invitation>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectInvitationGet(projectId, invitationId, options);
+        async iamProjectInvitationGet(projectId: string, invitationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Invitation>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectInvitationGet(projectId, invitationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30304,8 +30742,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectInvitationList(projectId: string, resource?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Invitation>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectInvitationList(projectId, resource, options);
+        async iamProjectInvitationList(projectId: string, resource?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Invitation>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectInvitationList(projectId, resource, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30318,8 +30756,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectInvoiceList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Invoice>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectInvoiceList(projectId, options);
+        async iamProjectInvoiceList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Invoice>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectInvoiceList(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30338,8 +30776,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectList(name?: string, $limit?: number, active?: boolean, organisation?: string, $lean?: boolean, tagValue?: string, tagKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Project>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectList(name, $limit, active, organisation, $lean, tagValue, tagKey, options);
+        async iamProjectList(name?: string, $limit?: number, active?: boolean, organisation?: string, $lean?: boolean, tagValue?: string, tagKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Project>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectList(name, $limit, active, organisation, $lean, tagValue, tagKey, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30349,12 +30787,12 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * Create iam/project.ownership
          * @summary Create iam/project.ownership
          * @param {string} projectId Project Id
-         * @param {ProjectOwnershipCreate} projectOwnershipCreate 
+         * @param {IamProjectOwnershipCreate} iamProjectOwnershipCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectOwnershipCreate(projectId: string, projectOwnershipCreate: ProjectOwnershipCreate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectOwnershipCreate(projectId, projectOwnershipCreate, options);
+        async iamProjectOwnershipCreate(projectId: string, iamProjectOwnershipCreate: IamProjectOwnershipCreate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectOwnershipCreate(projectId, iamProjectOwnershipCreate, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30368,8 +30806,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectOwnershipDelete(projectId: string, ownershipId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectOwnershipDelete(projectId, ownershipId, options);
+        async iamProjectOwnershipDelete(projectId: string, ownershipId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectOwnershipDelete(projectId, ownershipId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30383,8 +30821,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectOwnershipGet(projectId: string, ownershipId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Ownership>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectOwnershipGet(projectId, ownershipId, options);
+        async iamProjectOwnershipGet(projectId: string, ownershipId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Ownership>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectOwnershipGet(projectId, ownershipId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30397,8 +30835,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectOwnershipList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Ownership>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectOwnershipList(projectId, options);
+        async iamProjectOwnershipList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Ownership>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectOwnershipList(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30411,8 +30849,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectPaymentList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Payment>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectPaymentList(projectId, options);
+        async iamProjectPaymentList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Payment>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectPaymentList(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30425,8 +30863,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectProformaList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Proforma>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectProformaList(projectId, options);
+        async iamProjectProformaList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Proforma>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectProformaList(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30440,8 +30878,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectQuotaGet(projectId: string, quotaId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Quota>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectQuotaGet(projectId, quotaId, options);
+        async iamProjectQuotaGet(projectId: string, quotaId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Quota>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectQuotaGet(projectId, quotaId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30452,12 +30890,12 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @summary Update iam/project.limit
          * @param {string} projectId Project Id
          * @param {string} quotaId quotaId
-         * @param {ProjectQuotaLimitPatch} projectQuotaLimitPatch 
+         * @param {IamProjectQuotaLimitPatch} iamProjectQuotaLimitPatch 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectQuotaLimitPatch(projectId: string, quotaId: string, projectQuotaLimitPatch: ProjectQuotaLimitPatch, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<QuotaLimit>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectQuotaLimitPatch(projectId, quotaId, projectQuotaLimitPatch, options);
+        async iamProjectQuotaLimitPatch(projectId: string, quotaId: string, iamProjectQuotaLimitPatch: IamProjectQuotaLimitPatch, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<QuotaLimit>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectQuotaLimitPatch(projectId, quotaId, iamProjectQuotaLimitPatch, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30470,8 +30908,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectQuotaList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Quota>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectQuotaList(projectId, options);
+        async iamProjectQuotaList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Quota>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectQuotaList(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30485,8 +30923,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectServiceGet(projectId: string, serviceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResourceService>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectServiceGet(projectId, serviceId, options);
+        async iamProjectServiceGet(projectId: string, serviceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResourceService>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectServiceGet(projectId, serviceId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30499,8 +30937,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectServiceList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ResourceService>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectServiceList(projectId, options);
+        async iamProjectServiceList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ResourceService>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectServiceList(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30514,8 +30952,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectTagCreate(projectId: string, tag: Tag, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Tag>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectTagCreate(projectId, tag, options);
+        async iamProjectTagCreate(projectId: string, tag: Tag, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Tag>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectTagCreate(projectId, tag, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30529,8 +30967,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectTagDelete(projectId: string, tagId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectTagDelete(projectId, tagId, options);
+        async iamProjectTagDelete(projectId: string, tagId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectTagDelete(projectId, tagId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30544,8 +30982,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectTagGet(projectId: string, tagId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Tag>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectTagGet(projectId, tagId, options);
+        async iamProjectTagGet(projectId: string, tagId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Tag>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectTagGet(projectId, tagId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30558,8 +30996,8 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectTagList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Tag>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectTagList(projectId, options);
+        async iamProjectTagList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Tag>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectTagList(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30573,8 +31011,67 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectTagPut(projectId: string, tag: Array<Tag>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Tag>>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectTagPut(projectId, tag, options);
+        async iamProjectTagPut(projectId: string, tag: Array<Tag>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Tag>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectTagPut(projectId, tag, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Create iam/project.threshold
+         * @summary Create iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {IamProjectThresholdCreate} iamProjectThresholdCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async iamProjectThresholdCreate(projectId: string, iamProjectThresholdCreate: IamProjectThresholdCreate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProjectThreshold>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectThresholdCreate(projectId, iamProjectThresholdCreate, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Delete iam/project.threshold
+         * @summary Delete iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {string} thresholdId thresholdId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async iamProjectThresholdDelete(projectId: string, thresholdId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectThresholdDelete(projectId, thresholdId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Get iam/project.threshold
+         * @summary Get iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {string} thresholdId thresholdId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async iamProjectThresholdGet(projectId: string, thresholdId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProjectThreshold>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectThresholdGet(projectId, thresholdId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List iam/project.threshold
+         * @summary List iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async iamProjectThresholdList(projectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ProjectThreshold>>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectThresholdList(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30584,12 +31081,12 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
          * Returns modified project
          * @summary Update iam/project
          * @param {string} projectId Project Id
-         * @param {ProjectUpdate} projectUpdate 
+         * @param {IamProjectUpdate} iamProjectUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async projectUpdate(projectId: string, projectUpdate: ProjectUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
-            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).projectUpdate(projectId, projectUpdate, options);
+        async iamProjectUpdate(projectId: string, iamProjectUpdate: IamProjectUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectUpdate(projectId, iamProjectUpdate, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30614,19 +31111,19 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectBillingList(projectId: string, start?: string, end?: string, resourceType?: string, options?: any): AxiosPromise<Array<Billing>> {
-            return IamProjectApiFp(configuration).projectBillingList(projectId, start, end, resourceType, options).then((request) => request(axios, basePath));
+        iamProjectBillingList(projectId: string, start?: string, end?: string, resourceType?: string, options?: any): AxiosPromise<Array<Billing>> {
+            return IamProjectApiFp(configuration).iamProjectBillingList(projectId, start, end, resourceType, options).then((request) => request(axios, basePath));
         },
         /**
          * Create project
          * @summary Create iam/project
-         * @param {ProjectCreate} projectCreate 
+         * @param {IamProjectCreate} iamProjectCreate 
          * @param {string} [xIdempotencyKey] Idempotency key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCreate(projectCreate: ProjectCreate, xIdempotencyKey?: string, options?: any): AxiosPromise<Project> {
-            return IamProjectApiFp(configuration).projectCreate(projectCreate, xIdempotencyKey, options).then((request) => request(axios, basePath));
+        iamProjectCreate(iamProjectCreate: IamProjectCreate, xIdempotencyKey?: string, options?: any): AxiosPromise<Project> {
+            return IamProjectApiFp(configuration).iamProjectCreate(iamProjectCreate, xIdempotencyKey, options).then((request) => request(axios, basePath));
         },
         /**
          * Create iam/project.credentialStore
@@ -30636,30 +31133,30 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCredentialStoreCreate(projectId: string, projectCredential: ProjectCredential, options?: any): AxiosPromise<ProjectCredential> {
-            return IamProjectApiFp(configuration).projectCredentialStoreCreate(projectId, projectCredential, options).then((request) => request(axios, basePath));
+        iamProjectCredentialStoreCreate(projectId: string, projectCredential: ProjectCredential, options?: any): AxiosPromise<ProjectCredential> {
+            return IamProjectApiFp(configuration).iamProjectCredentialStoreCreate(projectId, projectCredential, options).then((request) => request(axios, basePath));
         },
         /**
          * Delete iam/project.credentialStore
          * @summary Delete iam/project.credentialStore
          * @param {string} projectId Project Id
-         * @param {string} credentialId credentialId
+         * @param {string} credentialStoreId credentialStoreId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCredentialStoreDelete(projectId: string, credentialId: string, options?: any): AxiosPromise<Project> {
-            return IamProjectApiFp(configuration).projectCredentialStoreDelete(projectId, credentialId, options).then((request) => request(axios, basePath));
+        iamProjectCredentialStoreDelete(projectId: string, credentialStoreId: string, options?: any): AxiosPromise<Project> {
+            return IamProjectApiFp(configuration).iamProjectCredentialStoreDelete(projectId, credentialStoreId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/project.credentialStore
          * @summary Get iam/project.credentialStore
          * @param {string} projectId Project Id
-         * @param {string} credentialId credentialId
+         * @param {string} credentialStoreId credentialStoreId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCredentialStoreGet(projectId: string, credentialId: string, options?: any): AxiosPromise<ProjectCredential> {
-            return IamProjectApiFp(configuration).projectCredentialStoreGet(projectId, credentialId, options).then((request) => request(axios, basePath));
+        iamProjectCredentialStoreGet(projectId: string, credentialStoreId: string, options?: any): AxiosPromise<ProjectCredential> {
+            return IamProjectApiFp(configuration).iamProjectCredentialStoreGet(projectId, credentialStoreId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/project.credentialStore
@@ -30668,20 +31165,20 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCredentialStoreList(projectId: string, options?: any): AxiosPromise<Array<ProjectCredential>> {
-            return IamProjectApiFp(configuration).projectCredentialStoreList(projectId, options).then((request) => request(axios, basePath));
+        iamProjectCredentialStoreList(projectId: string, options?: any): AxiosPromise<Array<ProjectCredential>> {
+            return IamProjectApiFp(configuration).iamProjectCredentialStoreList(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * Update iam/project.credentialStore
          * @summary Update iam/project.credentialStore
          * @param {string} projectId Project Id
-         * @param {string} credentialId credentialId
-         * @param {ProjectCredentialStorePatch} projectCredentialStorePatch 
+         * @param {string} credentialStoreId credentialStoreId
+         * @param {IamProjectCredentialStorePatch} iamProjectCredentialStorePatch 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectCredentialStorePatch(projectId: string, credentialId: string, projectCredentialStorePatch: ProjectCredentialStorePatch, options?: any): AxiosPromise<ProjectCredential> {
-            return IamProjectApiFp(configuration).projectCredentialStorePatch(projectId, credentialId, projectCredentialStorePatch, options).then((request) => request(axios, basePath));
+        iamProjectCredentialStorePatch(projectId: string, credentialStoreId: string, iamProjectCredentialStorePatch: IamProjectCredentialStorePatch, options?: any): AxiosPromise<ProjectCredential> {
+            return IamProjectApiFp(configuration).iamProjectCredentialStorePatch(projectId, credentialStoreId, iamProjectCredentialStorePatch, options).then((request) => request(axios, basePath));
         },
         /**
          * Delete project
@@ -30690,8 +31187,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectDelete(projectId: string, options?: any): AxiosPromise<void> {
-            return IamProjectApiFp(configuration).projectDelete(projectId, options).then((request) => request(axios, basePath));
+        iamProjectDelete(projectId: string, options?: any): AxiosPromise<void> {
+            return IamProjectApiFp(configuration).iamProjectDelete(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/project.event
@@ -30701,8 +31198,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectEventGet(projectId: string, eventId: string, options?: any): AxiosPromise<Event> {
-            return IamProjectApiFp(configuration).projectEventGet(projectId, eventId, options).then((request) => request(axios, basePath));
+        iamProjectEventGet(projectId: string, eventId: string, options?: any): AxiosPromise<Event> {
+            return IamProjectApiFp(configuration).iamProjectEventGet(projectId, eventId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/project.event
@@ -30713,8 +31210,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectEventList(projectId: string, $limit?: number, $skip?: number, options?: any): AxiosPromise<Array<Event>> {
-            return IamProjectApiFp(configuration).projectEventList(projectId, $limit, $skip, options).then((request) => request(axios, basePath));
+        iamProjectEventList(projectId: string, $limit?: number, $skip?: number, options?: any): AxiosPromise<Array<Event>> {
+            return IamProjectApiFp(configuration).iamProjectEventList(projectId, $limit, $skip, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a single project
@@ -30723,20 +31220,20 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectGet(projectId: string, options?: any): AxiosPromise<Project> {
-            return IamProjectApiFp(configuration).projectGet(projectId, options).then((request) => request(axios, basePath));
+        iamProjectGet(projectId: string, options?: any): AxiosPromise<Project> {
+            return IamProjectApiFp(configuration).iamProjectGet(projectId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Create iam/project.actions
-         * @summary Create iam/project.actions
+         * action accept
+         * @summary Accept iam/project.invitation
          * @param {string} projectId Project Id
          * @param {string} invitationId invitationId
-         * @param {ProjectInvitationAccept} projectInvitationAccept 
+         * @param {IamProjectInvitationAccept} iamProjectInvitationAccept 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectInvitationAccept(projectId: string, invitationId: string, projectInvitationAccept: ProjectInvitationAccept, options?: any): AxiosPromise<Invitation> {
-            return IamProjectApiFp(configuration).projectInvitationAccept(projectId, invitationId, projectInvitationAccept, options).then((request) => request(axios, basePath));
+        iamProjectInvitationAccept(projectId: string, invitationId: string, iamProjectInvitationAccept: IamProjectInvitationAccept, options?: any): AxiosPromise<Invitation> {
+            return IamProjectApiFp(configuration).iamProjectInvitationAccept(projectId, invitationId, iamProjectInvitationAccept, options).then((request) => request(axios, basePath));
         },
         /**
          * Delete iam/project.invitation
@@ -30746,8 +31243,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectInvitationDelete(projectId: string, invitationId: string, options?: any): AxiosPromise<void> {
-            return IamProjectApiFp(configuration).projectInvitationDelete(projectId, invitationId, options).then((request) => request(axios, basePath));
+        iamProjectInvitationDelete(projectId: string, invitationId: string, options?: any): AxiosPromise<void> {
+            return IamProjectApiFp(configuration).iamProjectInvitationDelete(projectId, invitationId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/project.invitation
@@ -30757,8 +31254,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectInvitationGet(projectId: string, invitationId: string, options?: any): AxiosPromise<Invitation> {
-            return IamProjectApiFp(configuration).projectInvitationGet(projectId, invitationId, options).then((request) => request(axios, basePath));
+        iamProjectInvitationGet(projectId: string, invitationId: string, options?: any): AxiosPromise<Invitation> {
+            return IamProjectApiFp(configuration).iamProjectInvitationGet(projectId, invitationId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/project.invitation
@@ -30768,8 +31265,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectInvitationList(projectId: string, resource?: string, options?: any): AxiosPromise<Array<Invitation>> {
-            return IamProjectApiFp(configuration).projectInvitationList(projectId, resource, options).then((request) => request(axios, basePath));
+        iamProjectInvitationList(projectId: string, resource?: string, options?: any): AxiosPromise<Array<Invitation>> {
+            return IamProjectApiFp(configuration).iamProjectInvitationList(projectId, resource, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/project.invoice
@@ -30778,8 +31275,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectInvoiceList(projectId: string, options?: any): AxiosPromise<Array<Invoice>> {
-            return IamProjectApiFp(configuration).projectInvoiceList(projectId, options).then((request) => request(axios, basePath));
+        iamProjectInvoiceList(projectId: string, options?: any): AxiosPromise<Array<Invoice>> {
+            return IamProjectApiFp(configuration).iamProjectInvoiceList(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * List project
@@ -30794,19 +31291,19 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectList(name?: string, $limit?: number, active?: boolean, organisation?: string, $lean?: boolean, tagValue?: string, tagKey?: string, options?: any): AxiosPromise<Array<Project>> {
-            return IamProjectApiFp(configuration).projectList(name, $limit, active, organisation, $lean, tagValue, tagKey, options).then((request) => request(axios, basePath));
+        iamProjectList(name?: string, $limit?: number, active?: boolean, organisation?: string, $lean?: boolean, tagValue?: string, tagKey?: string, options?: any): AxiosPromise<Array<Project>> {
+            return IamProjectApiFp(configuration).iamProjectList(name, $limit, active, organisation, $lean, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
          * Create iam/project.ownership
          * @summary Create iam/project.ownership
          * @param {string} projectId Project Id
-         * @param {ProjectOwnershipCreate} projectOwnershipCreate 
+         * @param {IamProjectOwnershipCreate} iamProjectOwnershipCreate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectOwnershipCreate(projectId: string, projectOwnershipCreate: ProjectOwnershipCreate, options?: any): AxiosPromise<Project> {
-            return IamProjectApiFp(configuration).projectOwnershipCreate(projectId, projectOwnershipCreate, options).then((request) => request(axios, basePath));
+        iamProjectOwnershipCreate(projectId: string, iamProjectOwnershipCreate: IamProjectOwnershipCreate, options?: any): AxiosPromise<Project> {
+            return IamProjectApiFp(configuration).iamProjectOwnershipCreate(projectId, iamProjectOwnershipCreate, options).then((request) => request(axios, basePath));
         },
         /**
          * Delete iam/project.ownership
@@ -30816,8 +31313,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectOwnershipDelete(projectId: string, ownershipId: string, options?: any): AxiosPromise<void> {
-            return IamProjectApiFp(configuration).projectOwnershipDelete(projectId, ownershipId, options).then((request) => request(axios, basePath));
+        iamProjectOwnershipDelete(projectId: string, ownershipId: string, options?: any): AxiosPromise<void> {
+            return IamProjectApiFp(configuration).iamProjectOwnershipDelete(projectId, ownershipId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/project.ownership
@@ -30827,8 +31324,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectOwnershipGet(projectId: string, ownershipId: string, options?: any): AxiosPromise<Ownership> {
-            return IamProjectApiFp(configuration).projectOwnershipGet(projectId, ownershipId, options).then((request) => request(axios, basePath));
+        iamProjectOwnershipGet(projectId: string, ownershipId: string, options?: any): AxiosPromise<Ownership> {
+            return IamProjectApiFp(configuration).iamProjectOwnershipGet(projectId, ownershipId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/project.ownership
@@ -30837,8 +31334,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectOwnershipList(projectId: string, options?: any): AxiosPromise<Array<Ownership>> {
-            return IamProjectApiFp(configuration).projectOwnershipList(projectId, options).then((request) => request(axios, basePath));
+        iamProjectOwnershipList(projectId: string, options?: any): AxiosPromise<Array<Ownership>> {
+            return IamProjectApiFp(configuration).iamProjectOwnershipList(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/project.payment
@@ -30847,8 +31344,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectPaymentList(projectId: string, options?: any): AxiosPromise<Array<Payment>> {
-            return IamProjectApiFp(configuration).projectPaymentList(projectId, options).then((request) => request(axios, basePath));
+        iamProjectPaymentList(projectId: string, options?: any): AxiosPromise<Array<Payment>> {
+            return IamProjectApiFp(configuration).iamProjectPaymentList(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/project.proforma
@@ -30857,8 +31354,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectProformaList(projectId: string, options?: any): AxiosPromise<Array<Proforma>> {
-            return IamProjectApiFp(configuration).projectProformaList(projectId, options).then((request) => request(axios, basePath));
+        iamProjectProformaList(projectId: string, options?: any): AxiosPromise<Array<Proforma>> {
+            return IamProjectApiFp(configuration).iamProjectProformaList(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/project.quota
@@ -30868,20 +31365,20 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectQuotaGet(projectId: string, quotaId: string, options?: any): AxiosPromise<Quota> {
-            return IamProjectApiFp(configuration).projectQuotaGet(projectId, quotaId, options).then((request) => request(axios, basePath));
+        iamProjectQuotaGet(projectId: string, quotaId: string, options?: any): AxiosPromise<Quota> {
+            return IamProjectApiFp(configuration).iamProjectQuotaGet(projectId, quotaId, options).then((request) => request(axios, basePath));
         },
         /**
          * Update iam/project.limit
          * @summary Update iam/project.limit
          * @param {string} projectId Project Id
          * @param {string} quotaId quotaId
-         * @param {ProjectQuotaLimitPatch} projectQuotaLimitPatch 
+         * @param {IamProjectQuotaLimitPatch} iamProjectQuotaLimitPatch 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectQuotaLimitPatch(projectId: string, quotaId: string, projectQuotaLimitPatch: ProjectQuotaLimitPatch, options?: any): AxiosPromise<QuotaLimit> {
-            return IamProjectApiFp(configuration).projectQuotaLimitPatch(projectId, quotaId, projectQuotaLimitPatch, options).then((request) => request(axios, basePath));
+        iamProjectQuotaLimitPatch(projectId: string, quotaId: string, iamProjectQuotaLimitPatch: IamProjectQuotaLimitPatch, options?: any): AxiosPromise<QuotaLimit> {
+            return IamProjectApiFp(configuration).iamProjectQuotaLimitPatch(projectId, quotaId, iamProjectQuotaLimitPatch, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/project.quota
@@ -30890,8 +31387,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectQuotaList(projectId: string, options?: any): AxiosPromise<Array<Quota>> {
-            return IamProjectApiFp(configuration).projectQuotaList(projectId, options).then((request) => request(axios, basePath));
+        iamProjectQuotaList(projectId: string, options?: any): AxiosPromise<Array<Quota>> {
+            return IamProjectApiFp(configuration).iamProjectQuotaList(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/project.service
@@ -30901,8 +31398,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectServiceGet(projectId: string, serviceId: string, options?: any): AxiosPromise<ResourceService> {
-            return IamProjectApiFp(configuration).projectServiceGet(projectId, serviceId, options).then((request) => request(axios, basePath));
+        iamProjectServiceGet(projectId: string, serviceId: string, options?: any): AxiosPromise<ResourceService> {
+            return IamProjectApiFp(configuration).iamProjectServiceGet(projectId, serviceId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/project.service
@@ -30911,8 +31408,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectServiceList(projectId: string, options?: any): AxiosPromise<Array<ResourceService>> {
-            return IamProjectApiFp(configuration).projectServiceList(projectId, options).then((request) => request(axios, basePath));
+        iamProjectServiceList(projectId: string, options?: any): AxiosPromise<Array<ResourceService>> {
+            return IamProjectApiFp(configuration).iamProjectServiceList(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * Create iam/project.tag
@@ -30922,8 +31419,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectTagCreate(projectId: string, tag: Tag, options?: any): AxiosPromise<Tag> {
-            return IamProjectApiFp(configuration).projectTagCreate(projectId, tag, options).then((request) => request(axios, basePath));
+        iamProjectTagCreate(projectId: string, tag: Tag, options?: any): AxiosPromise<Tag> {
+            return IamProjectApiFp(configuration).iamProjectTagCreate(projectId, tag, options).then((request) => request(axios, basePath));
         },
         /**
          * Delete iam/project.tag
@@ -30933,8 +31430,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectTagDelete(projectId: string, tagId: string, options?: any): AxiosPromise<void> {
-            return IamProjectApiFp(configuration).projectTagDelete(projectId, tagId, options).then((request) => request(axios, basePath));
+        iamProjectTagDelete(projectId: string, tagId: string, options?: any): AxiosPromise<void> {
+            return IamProjectApiFp(configuration).iamProjectTagDelete(projectId, tagId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/project.tag
@@ -30944,8 +31441,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectTagGet(projectId: string, tagId: string, options?: any): AxiosPromise<Tag> {
-            return IamProjectApiFp(configuration).projectTagGet(projectId, tagId, options).then((request) => request(axios, basePath));
+        iamProjectTagGet(projectId: string, tagId: string, options?: any): AxiosPromise<Tag> {
+            return IamProjectApiFp(configuration).iamProjectTagGet(projectId, tagId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/project.tag
@@ -30954,8 +31451,8 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectTagList(projectId: string, options?: any): AxiosPromise<Array<Tag>> {
-            return IamProjectApiFp(configuration).projectTagList(projectId, options).then((request) => request(axios, basePath));
+        iamProjectTagList(projectId: string, options?: any): AxiosPromise<Array<Tag>> {
+            return IamProjectApiFp(configuration).iamProjectTagList(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * Replace iam/project.tag
@@ -30965,19 +31462,62 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectTagPut(projectId: string, tag: Array<Tag>, options?: any): AxiosPromise<Array<Tag>> {
-            return IamProjectApiFp(configuration).projectTagPut(projectId, tag, options).then((request) => request(axios, basePath));
+        iamProjectTagPut(projectId: string, tag: Array<Tag>, options?: any): AxiosPromise<Array<Tag>> {
+            return IamProjectApiFp(configuration).iamProjectTagPut(projectId, tag, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create iam/project.threshold
+         * @summary Create iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {IamProjectThresholdCreate} iamProjectThresholdCreate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamProjectThresholdCreate(projectId: string, iamProjectThresholdCreate: IamProjectThresholdCreate, options?: any): AxiosPromise<ProjectThreshold> {
+            return IamProjectApiFp(configuration).iamProjectThresholdCreate(projectId, iamProjectThresholdCreate, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete iam/project.threshold
+         * @summary Delete iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {string} thresholdId thresholdId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamProjectThresholdDelete(projectId: string, thresholdId: string, options?: any): AxiosPromise<void> {
+            return IamProjectApiFp(configuration).iamProjectThresholdDelete(projectId, thresholdId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get iam/project.threshold
+         * @summary Get iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {string} thresholdId thresholdId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamProjectThresholdGet(projectId: string, thresholdId: string, options?: any): AxiosPromise<ProjectThreshold> {
+            return IamProjectApiFp(configuration).iamProjectThresholdGet(projectId, thresholdId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List iam/project.threshold
+         * @summary List iam/project.threshold
+         * @param {string} projectId Project Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamProjectThresholdList(projectId: string, options?: any): AxiosPromise<Array<ProjectThreshold>> {
+            return IamProjectApiFp(configuration).iamProjectThresholdList(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns modified project
          * @summary Update iam/project
          * @param {string} projectId Project Id
-         * @param {ProjectUpdate} projectUpdate 
+         * @param {IamProjectUpdate} iamProjectUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        projectUpdate(projectId: string, projectUpdate: ProjectUpdate, options?: any): AxiosPromise<Project> {
-            return IamProjectApiFp(configuration).projectUpdate(projectId, projectUpdate, options).then((request) => request(axios, basePath));
+        iamProjectUpdate(projectId: string, iamProjectUpdate: IamProjectUpdate, options?: any): AxiosPromise<Project> {
+            return IamProjectApiFp(configuration).iamProjectUpdate(projectId, iamProjectUpdate, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -31000,21 +31540,21 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectBillingList(projectId: string, start?: string, end?: string, resourceType?: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectBillingList(projectId, start, end, resourceType, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectBillingList(projectId: string, start?: string, end?: string, resourceType?: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectBillingList(projectId, start, end, resourceType, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Create project
      * @summary Create iam/project
-     * @param {ProjectCreate} projectCreate 
+     * @param {IamProjectCreate} iamProjectCreate 
      * @param {string} [xIdempotencyKey] Idempotency key
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectCreate(projectCreate: ProjectCreate, xIdempotencyKey?: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectCreate(projectCreate, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectCreate(iamProjectCreate: IamProjectCreate, xIdempotencyKey?: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectCreate(iamProjectCreate, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31026,34 +31566,34 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectCredentialStoreCreate(projectId: string, projectCredential: ProjectCredential, options?: any) {
-        return IamProjectApiFp(this.configuration).projectCredentialStoreCreate(projectId, projectCredential, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectCredentialStoreCreate(projectId: string, projectCredential: ProjectCredential, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectCredentialStoreCreate(projectId, projectCredential, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Delete iam/project.credentialStore
      * @summary Delete iam/project.credentialStore
      * @param {string} projectId Project Id
-     * @param {string} credentialId credentialId
+     * @param {string} credentialStoreId credentialStoreId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectCredentialStoreDelete(projectId: string, credentialId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectCredentialStoreDelete(projectId, credentialId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectCredentialStoreDelete(projectId: string, credentialStoreId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectCredentialStoreDelete(projectId, credentialStoreId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Get iam/project.credentialStore
      * @summary Get iam/project.credentialStore
      * @param {string} projectId Project Id
-     * @param {string} credentialId credentialId
+     * @param {string} credentialStoreId credentialStoreId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectCredentialStoreGet(projectId: string, credentialId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectCredentialStoreGet(projectId, credentialId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectCredentialStoreGet(projectId: string, credentialStoreId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectCredentialStoreGet(projectId, credentialStoreId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31064,22 +31604,22 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectCredentialStoreList(projectId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectCredentialStoreList(projectId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectCredentialStoreList(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectCredentialStoreList(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Update iam/project.credentialStore
      * @summary Update iam/project.credentialStore
      * @param {string} projectId Project Id
-     * @param {string} credentialId credentialId
-     * @param {ProjectCredentialStorePatch} projectCredentialStorePatch 
+     * @param {string} credentialStoreId credentialStoreId
+     * @param {IamProjectCredentialStorePatch} iamProjectCredentialStorePatch 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectCredentialStorePatch(projectId: string, credentialId: string, projectCredentialStorePatch: ProjectCredentialStorePatch, options?: any) {
-        return IamProjectApiFp(this.configuration).projectCredentialStorePatch(projectId, credentialId, projectCredentialStorePatch, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectCredentialStorePatch(projectId: string, credentialStoreId: string, iamProjectCredentialStorePatch: IamProjectCredentialStorePatch, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectCredentialStorePatch(projectId, credentialStoreId, iamProjectCredentialStorePatch, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31090,8 +31630,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectDelete(projectId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectDelete(projectId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectDelete(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectDelete(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31103,8 +31643,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectEventGet(projectId: string, eventId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectEventGet(projectId, eventId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectEventGet(projectId: string, eventId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectEventGet(projectId, eventId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31117,8 +31657,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectEventList(projectId: string, $limit?: number, $skip?: number, options?: any) {
-        return IamProjectApiFp(this.configuration).projectEventList(projectId, $limit, $skip, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectEventList(projectId: string, $limit?: number, $skip?: number, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectEventList(projectId, $limit, $skip, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31129,22 +31669,22 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectGet(projectId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectGet(projectId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectGet(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectGet(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
-     * Create iam/project.actions
-     * @summary Create iam/project.actions
+     * action accept
+     * @summary Accept iam/project.invitation
      * @param {string} projectId Project Id
      * @param {string} invitationId invitationId
-     * @param {ProjectInvitationAccept} projectInvitationAccept 
+     * @param {IamProjectInvitationAccept} iamProjectInvitationAccept 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectInvitationAccept(projectId: string, invitationId: string, projectInvitationAccept: ProjectInvitationAccept, options?: any) {
-        return IamProjectApiFp(this.configuration).projectInvitationAccept(projectId, invitationId, projectInvitationAccept, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectInvitationAccept(projectId: string, invitationId: string, iamProjectInvitationAccept: IamProjectInvitationAccept, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectInvitationAccept(projectId, invitationId, iamProjectInvitationAccept, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31156,8 +31696,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectInvitationDelete(projectId: string, invitationId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectInvitationDelete(projectId, invitationId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectInvitationDelete(projectId: string, invitationId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectInvitationDelete(projectId, invitationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31169,8 +31709,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectInvitationGet(projectId: string, invitationId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectInvitationGet(projectId, invitationId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectInvitationGet(projectId: string, invitationId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectInvitationGet(projectId, invitationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31182,8 +31722,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectInvitationList(projectId: string, resource?: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectInvitationList(projectId, resource, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectInvitationList(projectId: string, resource?: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectInvitationList(projectId, resource, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31194,8 +31734,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectInvoiceList(projectId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectInvoiceList(projectId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectInvoiceList(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectInvoiceList(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31212,21 +31752,21 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectList(name?: string, $limit?: number, active?: boolean, organisation?: string, $lean?: boolean, tagValue?: string, tagKey?: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectList(name, $limit, active, organisation, $lean, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectList(name?: string, $limit?: number, active?: boolean, organisation?: string, $lean?: boolean, tagValue?: string, tagKey?: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectList(name, $limit, active, organisation, $lean, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Create iam/project.ownership
      * @summary Create iam/project.ownership
      * @param {string} projectId Project Id
-     * @param {ProjectOwnershipCreate} projectOwnershipCreate 
+     * @param {IamProjectOwnershipCreate} iamProjectOwnershipCreate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectOwnershipCreate(projectId: string, projectOwnershipCreate: ProjectOwnershipCreate, options?: any) {
-        return IamProjectApiFp(this.configuration).projectOwnershipCreate(projectId, projectOwnershipCreate, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectOwnershipCreate(projectId: string, iamProjectOwnershipCreate: IamProjectOwnershipCreate, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectOwnershipCreate(projectId, iamProjectOwnershipCreate, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31238,8 +31778,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectOwnershipDelete(projectId: string, ownershipId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectOwnershipDelete(projectId, ownershipId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectOwnershipDelete(projectId: string, ownershipId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectOwnershipDelete(projectId, ownershipId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31251,8 +31791,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectOwnershipGet(projectId: string, ownershipId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectOwnershipGet(projectId, ownershipId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectOwnershipGet(projectId: string, ownershipId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectOwnershipGet(projectId, ownershipId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31263,8 +31803,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectOwnershipList(projectId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectOwnershipList(projectId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectOwnershipList(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectOwnershipList(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31275,8 +31815,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectPaymentList(projectId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectPaymentList(projectId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectPaymentList(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectPaymentList(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31287,8 +31827,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectProformaList(projectId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectProformaList(projectId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectProformaList(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectProformaList(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31300,8 +31840,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectQuotaGet(projectId: string, quotaId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectQuotaGet(projectId, quotaId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectQuotaGet(projectId: string, quotaId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectQuotaGet(projectId, quotaId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31309,13 +31849,13 @@ export class IamProjectApi extends BaseAPI {
      * @summary Update iam/project.limit
      * @param {string} projectId Project Id
      * @param {string} quotaId quotaId
-     * @param {ProjectQuotaLimitPatch} projectQuotaLimitPatch 
+     * @param {IamProjectQuotaLimitPatch} iamProjectQuotaLimitPatch 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectQuotaLimitPatch(projectId: string, quotaId: string, projectQuotaLimitPatch: ProjectQuotaLimitPatch, options?: any) {
-        return IamProjectApiFp(this.configuration).projectQuotaLimitPatch(projectId, quotaId, projectQuotaLimitPatch, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectQuotaLimitPatch(projectId: string, quotaId: string, iamProjectQuotaLimitPatch: IamProjectQuotaLimitPatch, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectQuotaLimitPatch(projectId, quotaId, iamProjectQuotaLimitPatch, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31326,8 +31866,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectQuotaList(projectId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectQuotaList(projectId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectQuotaList(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectQuotaList(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31339,8 +31879,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectServiceGet(projectId: string, serviceId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectServiceGet(projectId, serviceId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectServiceGet(projectId: string, serviceId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectServiceGet(projectId, serviceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31351,8 +31891,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectServiceList(projectId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectServiceList(projectId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectServiceList(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectServiceList(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31364,8 +31904,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectTagCreate(projectId: string, tag: Tag, options?: any) {
-        return IamProjectApiFp(this.configuration).projectTagCreate(projectId, tag, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectTagCreate(projectId: string, tag: Tag, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectTagCreate(projectId, tag, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31377,8 +31917,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectTagDelete(projectId: string, tagId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectTagDelete(projectId, tagId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectTagDelete(projectId: string, tagId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectTagDelete(projectId, tagId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31390,8 +31930,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectTagGet(projectId: string, tagId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectTagGet(projectId, tagId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectTagGet(projectId: string, tagId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectTagGet(projectId, tagId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31402,8 +31942,8 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectTagList(projectId: string, options?: any) {
-        return IamProjectApiFp(this.configuration).projectTagList(projectId, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectTagList(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectTagList(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31415,21 +31955,72 @@ export class IamProjectApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectTagPut(projectId: string, tag: Array<Tag>, options?: any) {
-        return IamProjectApiFp(this.configuration).projectTagPut(projectId, tag, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectTagPut(projectId: string, tag: Array<Tag>, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectTagPut(projectId, tag, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create iam/project.threshold
+     * @summary Create iam/project.threshold
+     * @param {string} projectId Project Id
+     * @param {IamProjectThresholdCreate} iamProjectThresholdCreate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof IamProjectApi
+     */
+    public iamProjectThresholdCreate(projectId: string, iamProjectThresholdCreate: IamProjectThresholdCreate, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectThresholdCreate(projectId, iamProjectThresholdCreate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete iam/project.threshold
+     * @summary Delete iam/project.threshold
+     * @param {string} projectId Project Id
+     * @param {string} thresholdId thresholdId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof IamProjectApi
+     */
+    public iamProjectThresholdDelete(projectId: string, thresholdId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectThresholdDelete(projectId, thresholdId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get iam/project.threshold
+     * @summary Get iam/project.threshold
+     * @param {string} projectId Project Id
+     * @param {string} thresholdId thresholdId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof IamProjectApi
+     */
+    public iamProjectThresholdGet(projectId: string, thresholdId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectThresholdGet(projectId, thresholdId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List iam/project.threshold
+     * @summary List iam/project.threshold
+     * @param {string} projectId Project Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof IamProjectApi
+     */
+    public iamProjectThresholdList(projectId: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectThresholdList(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns modified project
      * @summary Update iam/project
      * @param {string} projectId Project Id
-     * @param {ProjectUpdate} projectUpdate 
+     * @param {IamProjectUpdate} iamProjectUpdate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamProjectApi
      */
-    public projectUpdate(projectId: string, projectUpdate: ProjectUpdate, options?: any) {
-        return IamProjectApiFp(this.configuration).projectUpdate(projectId, projectUpdate, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectUpdate(projectId: string, iamProjectUpdate: IamProjectUpdate, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectUpdate(projectId, iamProjectUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 
 }
@@ -37065,14 +37656,14 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialAuthtokenDelete: async (userId: string, authtokenId: string, options: any = {}): Promise<RequestArgs> => {
+        iamUserCredentialAuthtokenDelete: async (userId: string, authtokenId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userCredentialAuthtokenDelete.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserCredentialAuthtokenDelete.');
             }
             // verify required parameter 'authtokenId' is not null or undefined
             if (authtokenId === null || authtokenId === undefined) {
-                throw new RequiredError('authtokenId','Required parameter authtokenId was null or undefined when calling userCredentialAuthtokenDelete.');
+                throw new RequiredError('authtokenId','Required parameter authtokenId was null or undefined when calling iamUserCredentialAuthtokenDelete.');
             }
             const localVarPath = `/iam/user/{userId}/credential/authtoken/{authtokenId}`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)))
@@ -37116,14 +37707,14 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialAuthtokenGet: async (userId: string, authtokenId: string, options: any = {}): Promise<RequestArgs> => {
+        iamUserCredentialAuthtokenGet: async (userId: string, authtokenId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userCredentialAuthtokenGet.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserCredentialAuthtokenGet.');
             }
             // verify required parameter 'authtokenId' is not null or undefined
             if (authtokenId === null || authtokenId === undefined) {
-                throw new RequiredError('authtokenId','Required parameter authtokenId was null or undefined when calling userCredentialAuthtokenGet.');
+                throw new RequiredError('authtokenId','Required parameter authtokenId was null or undefined when calling iamUserCredentialAuthtokenGet.');
             }
             const localVarPath = `/iam/user/{userId}/credential/authtoken/{authtokenId}`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)))
@@ -37166,10 +37757,10 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialAuthtokenList: async (userId: string, options: any = {}): Promise<RequestArgs> => {
+        iamUserCredentialAuthtokenList: async (userId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userCredentialAuthtokenList.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserCredentialAuthtokenList.');
             }
             const localVarPath = `/iam/user/{userId}/credential/authtoken`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
@@ -37212,14 +37803,14 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialCreate: async (userId: string, userCredential: UserCredential, options: any = {}): Promise<RequestArgs> => {
+        iamUserCredentialCreate: async (userId: string, userCredential: UserCredential, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userCredentialCreate.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserCredentialCreate.');
             }
             // verify required parameter 'userCredential' is not null or undefined
             if (userCredential === null || userCredential === undefined) {
-                throw new RequiredError('userCredential','Required parameter userCredential was null or undefined when calling userCredentialCreate.');
+                throw new RequiredError('userCredential','Required parameter userCredential was null or undefined when calling iamUserCredentialCreate.');
             }
             const localVarPath = `/iam/user/{userId}/credential`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
@@ -37266,14 +37857,14 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialDelete: async (userId: string, credentialId: string, options: any = {}): Promise<RequestArgs> => {
+        iamUserCredentialDelete: async (userId: string, credentialId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userCredentialDelete.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserCredentialDelete.');
             }
             // verify required parameter 'credentialId' is not null or undefined
             if (credentialId === null || credentialId === undefined) {
-                throw new RequiredError('credentialId','Required parameter credentialId was null or undefined when calling userCredentialDelete.');
+                throw new RequiredError('credentialId','Required parameter credentialId was null or undefined when calling iamUserCredentialDelete.');
             }
             const localVarPath = `/iam/user/{userId}/credential/{credentialId}`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)))
@@ -37317,14 +37908,14 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialGet: async (userId: string, credentialId: string, options: any = {}): Promise<RequestArgs> => {
+        iamUserCredentialGet: async (userId: string, credentialId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userCredentialGet.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserCredentialGet.');
             }
             // verify required parameter 'credentialId' is not null or undefined
             if (credentialId === null || credentialId === undefined) {
-                throw new RequiredError('credentialId','Required parameter credentialId was null or undefined when calling userCredentialGet.');
+                throw new RequiredError('credentialId','Required parameter credentialId was null or undefined when calling iamUserCredentialGet.');
             }
             const localVarPath = `/iam/user/{userId}/credential/{credentialId}`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)))
@@ -37367,10 +37958,10 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialList: async (userId: string, options: any = {}): Promise<RequestArgs> => {
+        iamUserCredentialList: async (userId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userCredentialList.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserCredentialList.');
             }
             const localVarPath = `/iam/user/{userId}/credential`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
@@ -37410,22 +38001,22 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @summary Update iam/user.credential
          * @param {string} userId User Id
          * @param {string} credentialId credentialId
-         * @param {UserCredentialPatch} userCredentialPatch 
+         * @param {IamUserCredentialPatch} iamUserCredentialPatch 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialPatch: async (userId: string, credentialId: string, userCredentialPatch: UserCredentialPatch, options: any = {}): Promise<RequestArgs> => {
+        iamUserCredentialPatch: async (userId: string, credentialId: string, iamUserCredentialPatch: IamUserCredentialPatch, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userCredentialPatch.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserCredentialPatch.');
             }
             // verify required parameter 'credentialId' is not null or undefined
             if (credentialId === null || credentialId === undefined) {
-                throw new RequiredError('credentialId','Required parameter credentialId was null or undefined when calling userCredentialPatch.');
+                throw new RequiredError('credentialId','Required parameter credentialId was null or undefined when calling iamUserCredentialPatch.');
             }
-            // verify required parameter 'userCredentialPatch' is not null or undefined
-            if (userCredentialPatch === null || userCredentialPatch === undefined) {
-                throw new RequiredError('userCredentialPatch','Required parameter userCredentialPatch was null or undefined when calling userCredentialPatch.');
+            // verify required parameter 'iamUserCredentialPatch' is not null or undefined
+            if (iamUserCredentialPatch === null || iamUserCredentialPatch === undefined) {
+                throw new RequiredError('iamUserCredentialPatch','Required parameter iamUserCredentialPatch was null or undefined when calling iamUserCredentialPatch.');
             }
             const localVarPath = `/iam/user/{userId}/credential/{credentialId}`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)))
@@ -37457,8 +38048,8 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof userCredentialPatch !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(userCredentialPatch !== undefined ? userCredentialPatch : {}) : (userCredentialPatch || "");
+            const needsSerialization = (typeof iamUserCredentialPatch !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamUserCredentialPatch !== undefined ? iamUserCredentialPatch : {}) : (iamUserCredentialPatch || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -37472,10 +38063,10 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGet: async (userId: string, options: any = {}): Promise<RequestArgs> => {
+        iamUserGet: async (userId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userGet.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserGet.');
             }
             const localVarPath = `/iam/user/{userId}`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
@@ -37518,14 +38109,14 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userServiceGet: async (userId: string, serviceId: string, options: any = {}): Promise<RequestArgs> => {
+        iamUserServiceGet: async (userId: string, serviceId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userServiceGet.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserServiceGet.');
             }
             // verify required parameter 'serviceId' is not null or undefined
             if (serviceId === null || serviceId === undefined) {
-                throw new RequiredError('serviceId','Required parameter serviceId was null or undefined when calling userServiceGet.');
+                throw new RequiredError('serviceId','Required parameter serviceId was null or undefined when calling iamUserServiceGet.');
             }
             const localVarPath = `/iam/user/{userId}/service/{serviceId}`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)))
@@ -37568,10 +38159,10 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userServiceList: async (userId: string, options: any = {}): Promise<RequestArgs> => {
+        iamUserServiceList: async (userId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userServiceList.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserServiceList.');
             }
             const localVarPath = `/iam/user/{userId}/service`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
@@ -37610,18 +38201,18 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
          * Returns modified user
          * @summary Update iam/user
          * @param {string} userId User Id
-         * @param {UserUpdate} userUpdate 
+         * @param {IamUserUpdate} iamUserUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userUpdate: async (userId: string, userUpdate: UserUpdate, options: any = {}): Promise<RequestArgs> => {
+        iamUserUpdate: async (userId: string, iamUserUpdate: IamUserUpdate, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'userId' is not null or undefined
             if (userId === null || userId === undefined) {
-                throw new RequiredError('userId','Required parameter userId was null or undefined when calling userUpdate.');
+                throw new RequiredError('userId','Required parameter userId was null or undefined when calling iamUserUpdate.');
             }
-            // verify required parameter 'userUpdate' is not null or undefined
-            if (userUpdate === null || userUpdate === undefined) {
-                throw new RequiredError('userUpdate','Required parameter userUpdate was null or undefined when calling userUpdate.');
+            // verify required parameter 'iamUserUpdate' is not null or undefined
+            if (iamUserUpdate === null || iamUserUpdate === undefined) {
+                throw new RequiredError('iamUserUpdate','Required parameter iamUserUpdate was null or undefined when calling iamUserUpdate.');
             }
             const localVarPath = `/iam/user/{userId}`
                 .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
@@ -37652,8 +38243,8 @@ export const IamUserApiAxiosParamCreator = function (configuration?: Configurati
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof userUpdate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(userUpdate !== undefined ? userUpdate : {}) : (userUpdate || "");
+            const needsSerialization = (typeof iamUserUpdate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamUserUpdate !== undefined ? iamUserUpdate : {}) : (iamUserUpdate || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -37677,8 +38268,8 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userCredentialAuthtokenDelete(userId: string, authtokenId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userCredentialAuthtokenDelete(userId, authtokenId, options);
+        async iamUserCredentialAuthtokenDelete(userId: string, authtokenId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserCredentialAuthtokenDelete(userId, authtokenId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37692,8 +38283,8 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userCredentialAuthtokenGet(userId: string, authtokenId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthToken>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userCredentialAuthtokenGet(userId, authtokenId, options);
+        async iamUserCredentialAuthtokenGet(userId: string, authtokenId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthToken>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserCredentialAuthtokenGet(userId, authtokenId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37706,8 +38297,8 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userCredentialAuthtokenList(userId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<AuthToken>>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userCredentialAuthtokenList(userId, options);
+        async iamUserCredentialAuthtokenList(userId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<AuthToken>>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserCredentialAuthtokenList(userId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37721,8 +38312,8 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userCredentialCreate(userId: string, userCredential: UserCredential, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCredential>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userCredentialCreate(userId, userCredential, options);
+        async iamUserCredentialCreate(userId: string, userCredential: UserCredential, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCredential>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserCredentialCreate(userId, userCredential, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37736,8 +38327,8 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userCredentialDelete(userId: string, credentialId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userCredentialDelete(userId, credentialId, options);
+        async iamUserCredentialDelete(userId: string, credentialId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserCredentialDelete(userId, credentialId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37751,8 +38342,8 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userCredentialGet(userId: string, credentialId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCredential>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userCredentialGet(userId, credentialId, options);
+        async iamUserCredentialGet(userId: string, credentialId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCredential>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserCredentialGet(userId, credentialId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37765,8 +38356,8 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userCredentialList(userId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<UserCredential>>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userCredentialList(userId, options);
+        async iamUserCredentialList(userId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<UserCredential>>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserCredentialList(userId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37777,12 +38368,12 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @summary Update iam/user.credential
          * @param {string} userId User Id
          * @param {string} credentialId credentialId
-         * @param {UserCredentialPatch} userCredentialPatch 
+         * @param {IamUserCredentialPatch} iamUserCredentialPatch 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userCredentialPatch(userId: string, credentialId: string, userCredentialPatch: UserCredentialPatch, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCredential>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userCredentialPatch(userId, credentialId, userCredentialPatch, options);
+        async iamUserCredentialPatch(userId: string, credentialId: string, iamUserCredentialPatch: IamUserCredentialPatch, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCredential>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserCredentialPatch(userId, credentialId, iamUserCredentialPatch, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37795,8 +38386,8 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userGet(userId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userGet(userId, options);
+        async iamUserGet(userId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserGet(userId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37810,8 +38401,8 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userServiceGet(userId: string, serviceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResourceService>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userServiceGet(userId, serviceId, options);
+        async iamUserServiceGet(userId: string, serviceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResourceService>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserServiceGet(userId, serviceId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37824,8 +38415,8 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userServiceList(userId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ResourceService>>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userServiceList(userId, options);
+        async iamUserServiceList(userId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ResourceService>>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserServiceList(userId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37835,12 +38426,12 @@ export const IamUserApiFp = function(configuration?: Configuration) {
          * Returns modified user
          * @summary Update iam/user
          * @param {string} userId User Id
-         * @param {UserUpdate} userUpdate 
+         * @param {IamUserUpdate} iamUserUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userUpdate(userId: string, userUpdate: UserUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
-            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).userUpdate(userId, userUpdate, options);
+        async iamUserUpdate(userId: string, iamUserUpdate: IamUserUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<User>> {
+            const localVarAxiosArgs = await IamUserApiAxiosParamCreator(configuration).iamUserUpdate(userId, iamUserUpdate, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -37863,8 +38454,8 @@ export const IamUserApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialAuthtokenDelete(userId: string, authtokenId: string, options?: any): AxiosPromise<void> {
-            return IamUserApiFp(configuration).userCredentialAuthtokenDelete(userId, authtokenId, options).then((request) => request(axios, basePath));
+        iamUserCredentialAuthtokenDelete(userId: string, authtokenId: string, options?: any): AxiosPromise<void> {
+            return IamUserApiFp(configuration).iamUserCredentialAuthtokenDelete(userId, authtokenId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/user.credential
@@ -37874,8 +38465,8 @@ export const IamUserApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialAuthtokenGet(userId: string, authtokenId: string, options?: any): AxiosPromise<AuthToken> {
-            return IamUserApiFp(configuration).userCredentialAuthtokenGet(userId, authtokenId, options).then((request) => request(axios, basePath));
+        iamUserCredentialAuthtokenGet(userId: string, authtokenId: string, options?: any): AxiosPromise<AuthToken> {
+            return IamUserApiFp(configuration).iamUserCredentialAuthtokenGet(userId, authtokenId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/user.credential
@@ -37884,8 +38475,8 @@ export const IamUserApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialAuthtokenList(userId: string, options?: any): AxiosPromise<Array<AuthToken>> {
-            return IamUserApiFp(configuration).userCredentialAuthtokenList(userId, options).then((request) => request(axios, basePath));
+        iamUserCredentialAuthtokenList(userId: string, options?: any): AxiosPromise<Array<AuthToken>> {
+            return IamUserApiFp(configuration).iamUserCredentialAuthtokenList(userId, options).then((request) => request(axios, basePath));
         },
         /**
          * Create iam/user.credential
@@ -37895,8 +38486,8 @@ export const IamUserApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialCreate(userId: string, userCredential: UserCredential, options?: any): AxiosPromise<UserCredential> {
-            return IamUserApiFp(configuration).userCredentialCreate(userId, userCredential, options).then((request) => request(axios, basePath));
+        iamUserCredentialCreate(userId: string, userCredential: UserCredential, options?: any): AxiosPromise<UserCredential> {
+            return IamUserApiFp(configuration).iamUserCredentialCreate(userId, userCredential, options).then((request) => request(axios, basePath));
         },
         /**
          * Delete iam/user.credential
@@ -37906,8 +38497,8 @@ export const IamUserApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialDelete(userId: string, credentialId: string, options?: any): AxiosPromise<User> {
-            return IamUserApiFp(configuration).userCredentialDelete(userId, credentialId, options).then((request) => request(axios, basePath));
+        iamUserCredentialDelete(userId: string, credentialId: string, options?: any): AxiosPromise<User> {
+            return IamUserApiFp(configuration).iamUserCredentialDelete(userId, credentialId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/user.credential
@@ -37917,8 +38508,8 @@ export const IamUserApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialGet(userId: string, credentialId: string, options?: any): AxiosPromise<UserCredential> {
-            return IamUserApiFp(configuration).userCredentialGet(userId, credentialId, options).then((request) => request(axios, basePath));
+        iamUserCredentialGet(userId: string, credentialId: string, options?: any): AxiosPromise<UserCredential> {
+            return IamUserApiFp(configuration).iamUserCredentialGet(userId, credentialId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/user.credential
@@ -37927,20 +38518,20 @@ export const IamUserApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialList(userId: string, options?: any): AxiosPromise<Array<UserCredential>> {
-            return IamUserApiFp(configuration).userCredentialList(userId, options).then((request) => request(axios, basePath));
+        iamUserCredentialList(userId: string, options?: any): AxiosPromise<Array<UserCredential>> {
+            return IamUserApiFp(configuration).iamUserCredentialList(userId, options).then((request) => request(axios, basePath));
         },
         /**
          * Update iam/user.credential
          * @summary Update iam/user.credential
          * @param {string} userId User Id
          * @param {string} credentialId credentialId
-         * @param {UserCredentialPatch} userCredentialPatch 
+         * @param {IamUserCredentialPatch} iamUserCredentialPatch 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCredentialPatch(userId: string, credentialId: string, userCredentialPatch: UserCredentialPatch, options?: any): AxiosPromise<UserCredential> {
-            return IamUserApiFp(configuration).userCredentialPatch(userId, credentialId, userCredentialPatch, options).then((request) => request(axios, basePath));
+        iamUserCredentialPatch(userId: string, credentialId: string, iamUserCredentialPatch: IamUserCredentialPatch, options?: any): AxiosPromise<UserCredential> {
+            return IamUserApiFp(configuration).iamUserCredentialPatch(userId, credentialId, iamUserCredentialPatch, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns a single user
@@ -37949,8 +38540,8 @@ export const IamUserApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGet(userId: string, options?: any): AxiosPromise<User> {
-            return IamUserApiFp(configuration).userGet(userId, options).then((request) => request(axios, basePath));
+        iamUserGet(userId: string, options?: any): AxiosPromise<User> {
+            return IamUserApiFp(configuration).iamUserGet(userId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/user.service
@@ -37960,8 +38551,8 @@ export const IamUserApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userServiceGet(userId: string, serviceId: string, options?: any): AxiosPromise<ResourceService> {
-            return IamUserApiFp(configuration).userServiceGet(userId, serviceId, options).then((request) => request(axios, basePath));
+        iamUserServiceGet(userId: string, serviceId: string, options?: any): AxiosPromise<ResourceService> {
+            return IamUserApiFp(configuration).iamUserServiceGet(userId, serviceId, options).then((request) => request(axios, basePath));
         },
         /**
          * List iam/user.service
@@ -37970,19 +38561,19 @@ export const IamUserApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userServiceList(userId: string, options?: any): AxiosPromise<Array<ResourceService>> {
-            return IamUserApiFp(configuration).userServiceList(userId, options).then((request) => request(axios, basePath));
+        iamUserServiceList(userId: string, options?: any): AxiosPromise<Array<ResourceService>> {
+            return IamUserApiFp(configuration).iamUserServiceList(userId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns modified user
          * @summary Update iam/user
          * @param {string} userId User Id
-         * @param {UserUpdate} userUpdate 
+         * @param {IamUserUpdate} iamUserUpdate 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userUpdate(userId: string, userUpdate: UserUpdate, options?: any): AxiosPromise<User> {
-            return IamUserApiFp(configuration).userUpdate(userId, userUpdate, options).then((request) => request(axios, basePath));
+        iamUserUpdate(userId: string, iamUserUpdate: IamUserUpdate, options?: any): AxiosPromise<User> {
+            return IamUserApiFp(configuration).iamUserUpdate(userId, iamUserUpdate, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -38003,8 +38594,8 @@ export class IamUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userCredentialAuthtokenDelete(userId: string, authtokenId: string, options?: any) {
-        return IamUserApiFp(this.configuration).userCredentialAuthtokenDelete(userId, authtokenId, options).then((request) => request(this.axios, this.basePath));
+    public iamUserCredentialAuthtokenDelete(userId: string, authtokenId: string, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserCredentialAuthtokenDelete(userId, authtokenId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -38016,8 +38607,8 @@ export class IamUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userCredentialAuthtokenGet(userId: string, authtokenId: string, options?: any) {
-        return IamUserApiFp(this.configuration).userCredentialAuthtokenGet(userId, authtokenId, options).then((request) => request(this.axios, this.basePath));
+    public iamUserCredentialAuthtokenGet(userId: string, authtokenId: string, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserCredentialAuthtokenGet(userId, authtokenId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -38028,8 +38619,8 @@ export class IamUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userCredentialAuthtokenList(userId: string, options?: any) {
-        return IamUserApiFp(this.configuration).userCredentialAuthtokenList(userId, options).then((request) => request(this.axios, this.basePath));
+    public iamUserCredentialAuthtokenList(userId: string, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserCredentialAuthtokenList(userId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -38041,8 +38632,8 @@ export class IamUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userCredentialCreate(userId: string, userCredential: UserCredential, options?: any) {
-        return IamUserApiFp(this.configuration).userCredentialCreate(userId, userCredential, options).then((request) => request(this.axios, this.basePath));
+    public iamUserCredentialCreate(userId: string, userCredential: UserCredential, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserCredentialCreate(userId, userCredential, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -38054,8 +38645,8 @@ export class IamUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userCredentialDelete(userId: string, credentialId: string, options?: any) {
-        return IamUserApiFp(this.configuration).userCredentialDelete(userId, credentialId, options).then((request) => request(this.axios, this.basePath));
+    public iamUserCredentialDelete(userId: string, credentialId: string, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserCredentialDelete(userId, credentialId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -38067,8 +38658,8 @@ export class IamUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userCredentialGet(userId: string, credentialId: string, options?: any) {
-        return IamUserApiFp(this.configuration).userCredentialGet(userId, credentialId, options).then((request) => request(this.axios, this.basePath));
+    public iamUserCredentialGet(userId: string, credentialId: string, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserCredentialGet(userId, credentialId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -38079,8 +38670,8 @@ export class IamUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userCredentialList(userId: string, options?: any) {
-        return IamUserApiFp(this.configuration).userCredentialList(userId, options).then((request) => request(this.axios, this.basePath));
+    public iamUserCredentialList(userId: string, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserCredentialList(userId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -38088,13 +38679,13 @@ export class IamUserApi extends BaseAPI {
      * @summary Update iam/user.credential
      * @param {string} userId User Id
      * @param {string} credentialId credentialId
-     * @param {UserCredentialPatch} userCredentialPatch 
+     * @param {IamUserCredentialPatch} iamUserCredentialPatch 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userCredentialPatch(userId: string, credentialId: string, userCredentialPatch: UserCredentialPatch, options?: any) {
-        return IamUserApiFp(this.configuration).userCredentialPatch(userId, credentialId, userCredentialPatch, options).then((request) => request(this.axios, this.basePath));
+    public iamUserCredentialPatch(userId: string, credentialId: string, iamUserCredentialPatch: IamUserCredentialPatch, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserCredentialPatch(userId, credentialId, iamUserCredentialPatch, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -38105,8 +38696,8 @@ export class IamUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userGet(userId: string, options?: any) {
-        return IamUserApiFp(this.configuration).userGet(userId, options).then((request) => request(this.axios, this.basePath));
+    public iamUserGet(userId: string, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserGet(userId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -38118,8 +38709,8 @@ export class IamUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userServiceGet(userId: string, serviceId: string, options?: any) {
-        return IamUserApiFp(this.configuration).userServiceGet(userId, serviceId, options).then((request) => request(this.axios, this.basePath));
+    public iamUserServiceGet(userId: string, serviceId: string, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserServiceGet(userId, serviceId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -38130,21 +38721,21 @@ export class IamUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userServiceList(userId: string, options?: any) {
-        return IamUserApiFp(this.configuration).userServiceList(userId, options).then((request) => request(this.axios, this.basePath));
+    public iamUserServiceList(userId: string, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserServiceList(userId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * Returns modified user
      * @summary Update iam/user
      * @param {string} userId User Id
-     * @param {UserUpdate} userUpdate 
+     * @param {IamUserUpdate} iamUserUpdate 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamUserApi
      */
-    public userUpdate(userId: string, userUpdate: UserUpdate, options?: any) {
-        return IamUserApiFp(this.configuration).userUpdate(userId, userUpdate, options).then((request) => request(this.axios, this.basePath));
+    public iamUserUpdate(userId: string, iamUserUpdate: IamUserUpdate, options?: any) {
+        return IamUserApiFp(this.configuration).iamUserUpdate(userId, iamUserUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 
 }
@@ -51162,8 +51753,8 @@ export const ProviderProjectAgentApiAxiosParamCreator = function (configuration?
             };
         },
         /**
-         * Create provider/agent.actions
-         * @summary Create provider/agent.actions
+         * action inspect
+         * @summary Inspect provider/agent.resource
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} agentId Agent Id
@@ -51282,8 +51873,8 @@ export const ProviderProjectAgentApiAxiosParamCreator = function (configuration?
             };
         },
         /**
-         * Create provider/agent.actions
-         * @summary Create provider/agent.actions
+         * action recreate
+         * @summary Recreate provider/agent.resource
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} agentId Agent Id
@@ -52340,8 +52931,8 @@ export const ProviderProjectAgentApiFp = function(configuration?: Configuration)
             };
         },
         /**
-         * Create provider/agent.actions
-         * @summary Create provider/agent.actions
+         * action inspect
+         * @summary Inspect provider/agent.resource
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} agentId Agent Id
@@ -52373,8 +52964,8 @@ export const ProviderProjectAgentApiFp = function(configuration?: Configuration)
             };
         },
         /**
-         * Create provider/agent.actions
-         * @summary Create provider/agent.actions
+         * action recreate
+         * @summary Recreate provider/agent.resource
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} agentId Agent Id
@@ -52807,8 +53398,8 @@ export const ProviderProjectAgentApiFactory = function (configuration?: Configur
             return ProviderProjectAgentApiFp(configuration).providerProjectAgentResourceEventList(projectId, locationId, agentId, resourceId, $limit, $skip, options).then((request) => request(axios, basePath));
         },
         /**
-         * Create provider/agent.actions
-         * @summary Create provider/agent.actions
+         * action inspect
+         * @summary Inspect provider/agent.resource
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} agentId Agent Id
@@ -52832,8 +53423,8 @@ export const ProviderProjectAgentApiFactory = function (configuration?: Configur
             return ProviderProjectAgentApiFp(configuration).providerProjectAgentResourceList(projectId, locationId, agentId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Create provider/agent.actions
-         * @summary Create provider/agent.actions
+         * action recreate
+         * @summary Recreate provider/agent.resource
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} agentId Agent Id
@@ -53253,8 +53844,8 @@ export class ProviderProjectAgentApi extends BaseAPI {
     }
 
     /**
-     * Create provider/agent.actions
-     * @summary Create provider/agent.actions
+     * action inspect
+     * @summary Inspect provider/agent.resource
      * @param {string} projectId Project Id
      * @param {string} locationId Location Id
      * @param {string} agentId Agent Id
@@ -53282,8 +53873,8 @@ export class ProviderProjectAgentApi extends BaseAPI {
     }
 
     /**
-     * Create provider/agent.actions
-     * @summary Create provider/agent.actions
+     * action recreate
+     * @summary Recreate provider/agent.resource
      * @param {string} projectId Project Id
      * @param {string} locationId Location Id
      * @param {string} agentId Agent Id
@@ -65880,8 +66471,8 @@ export const WebsiteProjectInstanceApiAxiosParamCreator = function (configuratio
             };
         },
         /**
-         * Create website/instance.actions
-         * @summary Create website/instance.actions
+         * action download
+         * @summary Download website/instance.snapshot
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} instanceId Instance Id
@@ -67196,8 +67787,8 @@ export const WebsiteProjectInstanceApiFp = function(configuration?: Configuratio
             };
         },
         /**
-         * Create website/instance.actions
-         * @summary Create website/instance.actions
+         * action download
+         * @summary Download website/instance.snapshot
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} instanceId Instance Id
@@ -67820,8 +68411,8 @@ export const WebsiteProjectInstanceApiFactory = function (configuration?: Config
             return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceSnapshotDelete(projectId, locationId, instanceId, snapshotId, options).then((request) => request(axios, basePath));
         },
         /**
-         * Create website/instance.actions
-         * @summary Create website/instance.actions
+         * action download
+         * @summary Download website/instance.snapshot
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} instanceId Instance Id
@@ -68461,8 +69052,8 @@ export class WebsiteProjectInstanceApi extends BaseAPI {
     }
 
     /**
-     * Create website/instance.actions
-     * @summary Create website/instance.actions
+     * action download
+     * @summary Download website/instance.snapshot
      * @param {string} projectId Project Id
      * @param {string} locationId Location Id
      * @param {string} instanceId Instance Id

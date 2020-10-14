@@ -24,6 +24,6 @@
 
 •  **disk**: string
 
-*Defined in api.ts:883*
+*Defined in api.ts:884*
 
 **`memberof`** ComputeProjectVmDiskCreate

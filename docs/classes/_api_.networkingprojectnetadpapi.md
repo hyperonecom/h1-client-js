@@ -99,7 +99,7 @@ ___
 
 ▸ **networkingProjectNetadpCreate**(`projectId`: string, `locationId`: string, `networkingProjectNetadpCreate`: [NetworkingProjectNetadpCreate](../interfaces/_api_.networkingprojectnetadpcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Netadp](../interfaces/_api_.netadp.md)>>
 
-*Defined in api.ts:46576*
+*Defined in api.ts:47167*
 
 Create netadp
 
@@ -127,7 +127,7 @@ ___
 
 ▸ **networkingProjectNetadpDelete**(`projectId`: string, `locationId`: string, `netadpId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:46590*
+*Defined in api.ts:47181*
 
 Delete netadp
 
@@ -154,7 +154,7 @@ ___
 
 ▸ **networkingProjectNetadpEventGet**(`projectId`: string, `locationId`: string, `netadpId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:46605*
+*Defined in api.ts:47196*
 
 Get networking/netadp.event
 
@@ -182,7 +182,7 @@ ___
 
 ▸ **networkingProjectNetadpEventList**(`projectId`: string, `locationId`: string, `netadpId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:46621*
+*Defined in api.ts:47212*
 
 List networking/netadp.event
 
@@ -211,7 +211,7 @@ ___
 
 ▸ **networkingProjectNetadpGet**(`projectId`: string, `locationId`: string, `netadpId`: string, `options?`: any): Promise\<AxiosResponse\<[Netadp](../interfaces/_api_.netadp.md)>>
 
-*Defined in api.ts:46635*
+*Defined in api.ts:47226*
 
 Returns a single netadp
 
@@ -238,7 +238,7 @@ ___
 
 ▸ **networkingProjectNetadpList**(`projectId`: string, `locationId`: string, `assignedResource?`: string, `assignedId?`: string, `network?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Netadp](../interfaces/_api_.netadp.md)[]>>
 
-*Defined in api.ts:46653*
+*Defined in api.ts:47244*
 
 List netadp
 
@@ -269,7 +269,7 @@ ___
 
 ▸ **networkingProjectNetadpServiceGet**(`projectId`: string, `locationId`: string, `netadpId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:46668*
+*Defined in api.ts:47259*
 
 Get networking/netadp.service
 
@@ -297,7 +297,7 @@ ___
 
 ▸ **networkingProjectNetadpServiceList**(`projectId`: string, `locationId`: string, `netadpId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:46682*
+*Defined in api.ts:47273*
 
 List networking/netadp.service
 
@@ -324,7 +324,7 @@ ___
 
 ▸ **networkingProjectNetadpTagCreate**(`projectId`: string, `locationId`: string, `netadpId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:46697*
+*Defined in api.ts:47288*
 
 Create networking/netadp.tag
 
@@ -352,7 +352,7 @@ ___
 
 ▸ **networkingProjectNetadpTagDelete**(`projectId`: string, `locationId`: string, `netadpId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:46712*
+*Defined in api.ts:47303*
 
 Delete networking/netadp.tag
 
@@ -380,7 +380,7 @@ ___
 
 ▸ **networkingProjectNetadpTagGet**(`projectId`: string, `locationId`: string, `netadpId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:46727*
+*Defined in api.ts:47318*
 
 Get networking/netadp.tag
 
@@ -408,7 +408,7 @@ ___
 
 ▸ **networkingProjectNetadpTagList**(`projectId`: string, `locationId`: string, `netadpId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:46741*
+*Defined in api.ts:47332*
 
 List networking/netadp.tag
 
@@ -435,7 +435,7 @@ ___
 
 ▸ **networkingProjectNetadpTagPut**(`projectId`: string, `locationId`: string, `netadpId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:46756*
+*Defined in api.ts:47347*
 
 Replace networking/netadp.tag
 
@@ -463,7 +463,7 @@ ___
 
 ▸ **networkingProjectNetadpUpdate**(`projectId`: string, `locationId`: string, `netadpId`: string, `networkingProjectNetadpUpdate`: [NetworkingProjectNetadpUpdate](../interfaces/_api_.networkingprojectnetadpupdate.md), `options?`: any): Promise\<AxiosResponse\<[Netadp](../interfaces/_api_.netadp.md)>>
 
-*Defined in api.ts:46771*
+*Defined in api.ts:47362*
 
 Returns modified netadp
 

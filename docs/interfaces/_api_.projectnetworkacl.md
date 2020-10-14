@@ -27,7 +27,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4687*
+*Defined in api.ts:4911*
 
 **`memberof`** ProjectNetworkAcl
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4681*
+*Defined in api.ts:4905*
 
 **`memberof`** ProjectNetworkAcl
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **type**: [ProjectNetworkAclTypeEnum](../enums/_api_.projectnetworkacltypeenum.md)
 
-*Defined in api.ts:4669*
+*Defined in api.ts:4893*
 
 **`memberof`** ProjectNetworkAcl
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **value**: string
 
-*Defined in api.ts:4675*
+*Defined in api.ts:4899*
 
 **`memberof`** ProjectNetworkAcl

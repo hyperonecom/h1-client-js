@@ -25,7 +25,7 @@
 
 • `Optional` **description**: string
 
-*Defined in api.ts:5934*
+*Defined in api.ts:6118*
 
 **`memberof`** StorageProjectImageUpdate
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5928*
+*Defined in api.ts:6112*
 
 **`memberof`** StorageProjectImageUpdate

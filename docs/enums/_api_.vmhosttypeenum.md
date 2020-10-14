@@ -21,7 +21,7 @@
 
 •  **Compute**: {} = "compute"
 
-*Defined in api.ts:6983*
+*Defined in api.ts:7113*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **Container**: {} = "container"
 
-*Defined in api.ts:6986*
+*Defined in api.ts:7116*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **Network**: {} = "network"
 
-*Defined in api.ts:6984*
+*Defined in api.ts:7114*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **Vault**: {} = "vault"
 
-*Defined in api.ts:6985*
+*Defined in api.ts:7115*

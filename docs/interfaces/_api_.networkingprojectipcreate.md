@@ -27,7 +27,7 @@
 
 • `Optional` **address**: string
 
-*Defined in api.ts:3456*
+*Defined in api.ts:3858*
 
 **`memberof`** NetworkingProjectIpCreate
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **network**: string
 
-*Defined in api.ts:3444*
+*Defined in api.ts:3846*
 
 **`memberof`** NetworkingProjectIpCreate
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **ptrRecord**: string
 
-*Defined in api.ts:3450*
+*Defined in api.ts:3852*
 
 **`memberof`** NetworkingProjectIpCreate
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:3462*
+*Defined in api.ts:3864*
 
 **`memberof`** NetworkingProjectIpCreate

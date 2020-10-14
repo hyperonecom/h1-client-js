@@ -37,7 +37,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:2793*
+*Defined in api.ts:3146*
 
 **`memberof`** Journal
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:2787*
+*Defined in api.ts:3140*
 
 **`memberof`** Journal
 
@@ -57,7 +57,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:2769*
+*Defined in api.ts:3122*
 
 **`memberof`** Journal
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:2829*
+*Defined in api.ts:3182*
 
 **`memberof`** Journal
 
@@ -77,7 +77,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:2757*
+*Defined in api.ts:3110*
 
 **`memberof`** Journal
 
@@ -87,7 +87,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:2781*
+*Defined in api.ts:3134*
 
 **`memberof`** Journal
 
@@ -97,7 +97,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:2775*
+*Defined in api.ts:3128*
 
 **`memberof`** Journal
 
@@ -107,7 +107,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:2763*
+*Defined in api.ts:3116*
 
 **`memberof`** Journal
 
@@ -117,7 +117,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:2805*
+*Defined in api.ts:3158*
 
 **`memberof`** Journal
 
@@ -127,7 +127,7 @@ ___
 
 • `Optional` **retention**: number
 
-*Defined in api.ts:2823*
+*Defined in api.ts:3176*
 
 **`memberof`** Journal
 
@@ -137,7 +137,7 @@ ___
 
 • `Optional` **sizeUsed**: number
 
-*Defined in api.ts:2817*
+*Defined in api.ts:3170*
 
 **`memberof`** Journal
 
@@ -147,7 +147,7 @@ ___
 
 • `Optional` **state**: [JournalStateEnum](../enums/_api_.journalstateenum.md)
 
-*Defined in api.ts:2799*
+*Defined in api.ts:3152*
 
 **`memberof`** Journal
 
@@ -157,7 +157,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2835*
+*Defined in api.ts:3188*
 
 **`memberof`** Journal
 
@@ -167,6 +167,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:2811*
+*Defined in api.ts:3164*
 
 **`memberof`** Journal

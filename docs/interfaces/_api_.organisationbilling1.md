@@ -26,7 +26,7 @@
 
 • `Optional` **address**: [BillingAddress1](_api_.billingaddress1.md)
 
-*Defined in api.ts:3862*
+*Defined in api.ts:4264*
 
 **`memberof`** OrganisationBilling1
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **company**: string
 
-*Defined in api.ts:3856*
+*Defined in api.ts:4258*
 
 **`memberof`** OrganisationBilling1
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **email**: string
 
-*Defined in api.ts:3850*
+*Defined in api.ts:4252*
 
 **`memberof`** OrganisationBilling1

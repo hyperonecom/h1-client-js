@@ -28,7 +28,7 @@
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:206*
+*Defined in api.ts:207*
 
 **`memberof`** AgentResource
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:188*
+*Defined in api.ts:189*
 
 **`memberof`** AgentResource
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:194*
+*Defined in api.ts:195*
 
 **`memberof`** AgentResource
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:212*
+*Defined in api.ts:213*
 
 **`memberof`** AgentResource
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **state**: string
 
-*Defined in api.ts:200*
+*Defined in api.ts:201*
 
 **`memberof`** AgentResource

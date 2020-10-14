@@ -24,6 +24,6 @@
 
 • `Optional` **removeAllSnapshots**: boolean
 
-*Defined in api.ts:6073*
+*Defined in api.ts:6245*
 
 **`memberof`** StorageProjectVaultDelete

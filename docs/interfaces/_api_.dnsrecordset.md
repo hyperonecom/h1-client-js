@@ -28,7 +28,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1488*
+*Defined in api.ts:1545*
 
 **`memberof`** DnsRecordset
 
@@ -38,7 +38,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:1494*
+*Defined in api.ts:1551*
 
 **`memberof`** DnsRecordset
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **record**: Array\<[DnsRecord](_api_.dnsrecord.md)>
 
-*Defined in api.ts:1512*
+*Defined in api.ts:1569*
 
 **`memberof`** DnsRecordset
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **ttl**: number
 
-*Defined in api.ts:1506*
+*Defined in api.ts:1563*
 
 **`memberof`** DnsRecordset
 
@@ -68,6 +68,6 @@ ___
 
 •  **type**: [DnsRecordsetTypeEnum](../enums/_api_.dnsrecordsettypeenum.md)
 
-*Defined in api.ts:1500*
+*Defined in api.ts:1557*
 
 **`memberof`** DnsRecordset

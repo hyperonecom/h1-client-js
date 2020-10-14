@@ -26,7 +26,7 @@
 
 •  **exponent**: string
 
-*Defined in api.ts:934*
+*Defined in api.ts:935*
 
 **`memberof`** ComputeProjectVmPasswordReset
 
@@ -36,7 +36,7 @@ ___
 
 •  **modulus**: string
 
-*Defined in api.ts:928*
+*Defined in api.ts:929*
 
 **`memberof`** ComputeProjectVmPasswordReset
 
@@ -46,6 +46,6 @@ ___
 
 •  **userName**: string
 
-*Defined in api.ts:922*
+*Defined in api.ts:923*
 
 **`memberof`** ComputeProjectVmPasswordReset

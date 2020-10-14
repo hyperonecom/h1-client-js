@@ -26,7 +26,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:833*
+*Defined in api.ts:834*
 
 **`memberof`** ComputeProjectVmCreateDisk
 
@@ -36,7 +36,7 @@ ___
 
 •  **service**: string
 
-*Defined in api.ts:839*
+*Defined in api.ts:840*
 
 **`memberof`** ComputeProjectVmCreateDisk
 
@@ -46,6 +46,6 @@ ___
 
 •  **size**: number
 
-*Defined in api.ts:845*
+*Defined in api.ts:846*
 
 **`memberof`** ComputeProjectVmCreateDisk

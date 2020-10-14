@@ -24,6 +24,6 @@
 
 •  **service**: string
 
-*Defined in api.ts:896*
+*Defined in api.ts:897*
 
 **`memberof`** ComputeProjectVmFlavour

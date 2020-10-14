@@ -28,7 +28,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:6023*
+*Defined in api.ts:6195*
 
 **`memberof`** StorageProjectVaultCreate
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **service**: string
 
-*Defined in api.ts:6029*
+*Defined in api.ts:6201*
 
 **`memberof`** StorageProjectVaultCreate
 
@@ -48,7 +48,7 @@ ___
 
 •  **size**: number
 
-*Defined in api.ts:6035*
+*Defined in api.ts:6207*
 
 **`memberof`** StorageProjectVaultCreate
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **source**: string
 
-*Defined in api.ts:6041*
+*Defined in api.ts:6213*
 
 **`memberof`** StorageProjectVaultCreate
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:6047*
+*Defined in api.ts:6219*
 
 **`memberof`** StorageProjectVaultCreate

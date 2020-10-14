@@ -129,7 +129,7 @@ ___
 
 ▸ **websiteProjectInstanceCreate**(`projectId`: string, `locationId`: string, `websiteProjectInstanceCreate`: [WebsiteProjectInstanceCreate](../interfaces/_api_.websiteprojectinstancecreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Website](../interfaces/_api_.website.md)>>
 
-*Defined in api.ts:67999*
+*Defined in api.ts:68590*
 
 Create instance
 
@@ -157,7 +157,7 @@ ___
 
 ▸ **websiteProjectInstanceCredentialCreate**(`projectId`: string, `locationId`: string, `instanceId`: string, `websiteCredential`: [WebsiteCredential](../interfaces/_api_.websitecredential.md), `options?`: any): Promise\<AxiosResponse\<[WebsiteCredential](../interfaces/_api_.websitecredential.md)>>
 
-*Defined in api.ts:68014*
+*Defined in api.ts:68605*
 
 Create website/instance.credential
 
@@ -185,7 +185,7 @@ ___
 
 ▸ **websiteProjectInstanceCredentialDelete**(`projectId`: string, `locationId`: string, `instanceId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[Website](../interfaces/_api_.website.md)>>
 
-*Defined in api.ts:68029*
+*Defined in api.ts:68620*
 
 Delete website/instance.credential
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **websiteProjectInstanceCredentialGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[WebsiteCredential](../interfaces/_api_.websitecredential.md)>>
 
-*Defined in api.ts:68044*
+*Defined in api.ts:68635*
 
 Get website/instance.credential
 
@@ -241,7 +241,7 @@ ___
 
 ▸ **websiteProjectInstanceCredentialList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[WebsiteCredential](../interfaces/_api_.websitecredential.md)[]>>
 
-*Defined in api.ts:68058*
+*Defined in api.ts:68649*
 
 List website/instance.credential
 
@@ -268,7 +268,7 @@ ___
 
 ▸ **websiteProjectInstanceCredentialPatch**(`projectId`: string, `locationId`: string, `instanceId`: string, `credentialId`: string, `websiteProjectInstanceCredentialPatch`: [WebsiteProjectInstanceCredentialPatch](../interfaces/_api_.websiteprojectinstancecredentialpatch.md), `options?`: any): Promise\<AxiosResponse\<[WebsiteCredential](../interfaces/_api_.websitecredential.md)>>
 
-*Defined in api.ts:68074*
+*Defined in api.ts:68665*
 
 Update website/instance.credential
 
@@ -297,7 +297,7 @@ ___
 
 ▸ **websiteProjectInstanceDelete**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:68088*
+*Defined in api.ts:68679*
 
 Delete instance
 
@@ -324,7 +324,7 @@ ___
 
 ▸ **websiteProjectInstanceDomainCreate**(`projectId`: string, `locationId`: string, `instanceId`: string, `domain`: [Domain](../interfaces/_api_.domain.md), `options?`: any): Promise\<AxiosResponse\<[Domain](../interfaces/_api_.domain.md)>>
 
-*Defined in api.ts:68103*
+*Defined in api.ts:68694*
 
 Create website/instance.domain
 
@@ -352,7 +352,7 @@ ___
 
 ▸ **websiteProjectInstanceDomainDelete**(`projectId`: string, `locationId`: string, `instanceId`: string, `domainId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:68118*
+*Defined in api.ts:68709*
 
 Delete website/instance.domain
 
@@ -380,7 +380,7 @@ ___
 
 ▸ **websiteProjectInstanceDomainGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `domainId`: string, `options?`: any): Promise\<AxiosResponse\<[Domain](../interfaces/_api_.domain.md)>>
 
-*Defined in api.ts:68133*
+*Defined in api.ts:68724*
 
 Get website/instance.domain
 
@@ -408,7 +408,7 @@ ___
 
 ▸ **websiteProjectInstanceDomainList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[Domain](../interfaces/_api_.domain.md)[]>>
 
-*Defined in api.ts:68147*
+*Defined in api.ts:68738*
 
 List website/instance.domain
 
@@ -435,7 +435,7 @@ ___
 
 ▸ **websiteProjectInstanceEnvCreate**(`projectId`: string, `locationId`: string, `instanceId`: string, `websiteEnv`: [WebsiteEnv](../interfaces/_api_.websiteenv.md), `options?`: any): Promise\<AxiosResponse\<[WebsiteEnv](../interfaces/_api_.websiteenv.md)>>
 
-*Defined in api.ts:68162*
+*Defined in api.ts:68753*
 
 Create website/instance.env
 
@@ -463,7 +463,7 @@ ___
 
 ▸ **websiteProjectInstanceEnvDelete**(`projectId`: string, `locationId`: string, `instanceId`: string, `envId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:68177*
+*Defined in api.ts:68768*
 
 Delete website/instance.env
 
@@ -491,7 +491,7 @@ ___
 
 ▸ **websiteProjectInstanceEnvGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `envId`: string, `options?`: any): Promise\<AxiosResponse\<[WebsiteEnv](../interfaces/_api_.websiteenv.md)>>
 
-*Defined in api.ts:68192*
+*Defined in api.ts:68783*
 
 Get website/instance.env
 
@@ -519,7 +519,7 @@ ___
 
 ▸ **websiteProjectInstanceEnvList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[WebsiteEnv](../interfaces/_api_.websiteenv.md)[]>>
 
-*Defined in api.ts:68206*
+*Defined in api.ts:68797*
 
 List website/instance.env
 
@@ -546,7 +546,7 @@ ___
 
 ▸ **websiteProjectInstanceEventGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:68221*
+*Defined in api.ts:68812*
 
 Get website/instance.event
 
@@ -574,7 +574,7 @@ ___
 
 ▸ **websiteProjectInstanceEventList**(`projectId`: string, `locationId`: string, `instanceId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:68237*
+*Defined in api.ts:68828*
 
 List website/instance.event
 
@@ -603,7 +603,7 @@ ___
 
 ▸ **websiteProjectInstanceGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[Website](../interfaces/_api_.website.md)>>
 
-*Defined in api.ts:68251*
+*Defined in api.ts:68842*
 
 Returns a single instance
 
@@ -630,7 +630,7 @@ ___
 
 ▸ **websiteProjectInstanceLinkCreate**(`projectId`: string, `locationId`: string, `instanceId`: string, `websiteLink`: [WebsiteLink](../interfaces/_api_.websitelink.md), `options?`: any): Promise\<AxiosResponse\<[WebsiteLink](../interfaces/_api_.websitelink.md)>>
 
-*Defined in api.ts:68266*
+*Defined in api.ts:68857*
 
 Create website/instance.link
 
@@ -658,7 +658,7 @@ ___
 
 ▸ **websiteProjectInstanceLinkDelete**(`projectId`: string, `locationId`: string, `instanceId`: string, `linkId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:68281*
+*Defined in api.ts:68872*
 
 Delete website/instance.link
 
@@ -686,7 +686,7 @@ ___
 
 ▸ **websiteProjectInstanceLinkGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `linkId`: string, `options?`: any): Promise\<AxiosResponse\<[WebsiteLink](../interfaces/_api_.websitelink.md)>>
 
-*Defined in api.ts:68296*
+*Defined in api.ts:68887*
 
 Get website/instance.link
 
@@ -714,7 +714,7 @@ ___
 
 ▸ **websiteProjectInstanceLinkList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[WebsiteLink](../interfaces/_api_.websitelink.md)[]>>
 
-*Defined in api.ts:68310*
+*Defined in api.ts:68901*
 
 List website/instance.link
 
@@ -741,7 +741,7 @@ ___
 
 ▸ **websiteProjectInstanceList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Website](../interfaces/_api_.website.md)[]>>
 
-*Defined in api.ts:68326*
+*Defined in api.ts:68917*
 
 List instance
 
@@ -770,7 +770,7 @@ ___
 
 ▸ **websiteProjectInstanceRestart**(`projectId`: string, `locationId`: string, `instanceId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Website](../interfaces/_api_.website.md)>>
 
-*Defined in api.ts:68341*
+*Defined in api.ts:68932*
 
 action restart
 
@@ -798,7 +798,7 @@ ___
 
 ▸ **websiteProjectInstanceServiceGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:68356*
+*Defined in api.ts:68947*
 
 Get website/instance.service
 
@@ -826,7 +826,7 @@ ___
 
 ▸ **websiteProjectInstanceServiceList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:68370*
+*Defined in api.ts:68961*
 
 List website/instance.service
 
@@ -853,7 +853,7 @@ ___
 
 ▸ **websiteProjectInstanceSideappCreate**(`projectId`: string, `locationId`: string, `instanceId`: string, `websiteSideapp`: [WebsiteSideapp](../interfaces/_api_.websitesideapp.md), `options?`: any): Promise\<AxiosResponse\<[WebsiteSideapp](../interfaces/_api_.websitesideapp.md)>>
 
-*Defined in api.ts:68385*
+*Defined in api.ts:68976*
 
 Create website/instance.sideapp
 
@@ -881,7 +881,7 @@ ___
 
 ▸ **websiteProjectInstanceSideappDelete**(`projectId`: string, `locationId`: string, `instanceId`: string, `sideappId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:68400*
+*Defined in api.ts:68991*
 
 Delete website/instance.sideapp
 
@@ -909,7 +909,7 @@ ___
 
 ▸ **websiteProjectInstanceSideappGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `sideappId`: string, `options?`: any): Promise\<AxiosResponse\<[WebsiteSideapp](../interfaces/_api_.websitesideapp.md)>>
 
-*Defined in api.ts:68415*
+*Defined in api.ts:69006*
 
 Get website/instance.sideapp
 
@@ -937,7 +937,7 @@ ___
 
 ▸ **websiteProjectInstanceSideappList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[WebsiteSideapp](../interfaces/_api_.websitesideapp.md)[]>>
 
-*Defined in api.ts:68429*
+*Defined in api.ts:69020*
 
 List website/instance.sideapp
 
@@ -964,7 +964,7 @@ ___
 
 ▸ **websiteProjectInstanceSnapshotCreate**(`projectId`: string, `locationId`: string, `instanceId`: string, `websiteSnapshot`: [WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md), `options?`: any): Promise\<AxiosResponse\<[WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md)>>
 
-*Defined in api.ts:68444*
+*Defined in api.ts:69035*
 
 Create website/instance.snapshot
 
@@ -992,7 +992,7 @@ ___
 
 ▸ **websiteProjectInstanceSnapshotDelete**(`projectId`: string, `locationId`: string, `instanceId`: string, `snapshotId`: string, `options?`: any): Promise\<AxiosResponse\<[Website](../interfaces/_api_.website.md)>>
 
-*Defined in api.ts:68459*
+*Defined in api.ts:69050*
 
 Delete website/instance.snapshot
 
@@ -1020,11 +1020,11 @@ ___
 
 ▸ **websiteProjectInstanceSnapshotDownload**(`projectId`: string, `locationId`: string, `instanceId`: string, `snapshotId`: string, `websiteProjectInstanceSnapshotDownload`: [WebsiteProjectInstanceSnapshotDownload](../interfaces/_api_.websiteprojectinstancesnapshotdownload.md), `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:68475*
+*Defined in api.ts:69066*
 
-Create website/instance.actions
+action download
 
-**`summary`** Create website/instance.actions
+**`summary`** Download website/instance.snapshot
 
 **`throws`** {RequiredError}
 
@@ -1049,7 +1049,7 @@ ___
 
 ▸ **websiteProjectInstanceSnapshotGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `snapshotId`: string, `options?`: any): Promise\<AxiosResponse\<[WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md)>>
 
-*Defined in api.ts:68490*
+*Defined in api.ts:69081*
 
 Get website/instance.snapshot
 
@@ -1077,7 +1077,7 @@ ___
 
 ▸ **websiteProjectInstanceSnapshotList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md)[]>>
 
-*Defined in api.ts:68504*
+*Defined in api.ts:69095*
 
 List website/instance.snapshot
 
@@ -1104,7 +1104,7 @@ ___
 
 ▸ **websiteProjectInstanceStart**(`projectId`: string, `locationId`: string, `instanceId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Website](../interfaces/_api_.website.md)>>
 
-*Defined in api.ts:68519*
+*Defined in api.ts:69110*
 
 action start
 
@@ -1132,7 +1132,7 @@ ___
 
 ▸ **websiteProjectInstanceStop**(`projectId`: string, `locationId`: string, `instanceId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Website](../interfaces/_api_.website.md)>>
 
-*Defined in api.ts:68534*
+*Defined in api.ts:69125*
 
 action stop
 
@@ -1160,7 +1160,7 @@ ___
 
 ▸ **websiteProjectInstanceTagCreate**(`projectId`: string, `locationId`: string, `instanceId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:68549*
+*Defined in api.ts:69140*
 
 Create website/instance.tag
 
@@ -1188,7 +1188,7 @@ ___
 
 ▸ **websiteProjectInstanceTagDelete**(`projectId`: string, `locationId`: string, `instanceId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:68564*
+*Defined in api.ts:69155*
 
 Delete website/instance.tag
 
@@ -1216,7 +1216,7 @@ ___
 
 ▸ **websiteProjectInstanceTagGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:68579*
+*Defined in api.ts:69170*
 
 Get website/instance.tag
 
@@ -1244,7 +1244,7 @@ ___
 
 ▸ **websiteProjectInstanceTagList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:68593*
+*Defined in api.ts:69184*
 
 List website/instance.tag
 
@@ -1271,7 +1271,7 @@ ___
 
 ▸ **websiteProjectInstanceTagPut**(`projectId`: string, `locationId`: string, `instanceId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:68608*
+*Defined in api.ts:69199*
 
 Replace website/instance.tag
 
@@ -1299,7 +1299,7 @@ ___
 
 ▸ **websiteProjectInstanceTransfer**(`projectId`: string, `locationId`: string, `instanceId`: string, `websiteProjectInstanceTransfer`: [WebsiteProjectInstanceTransfer](../interfaces/_api_.websiteprojectinstancetransfer.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Website](../interfaces/_api_.website.md)>>
 
-*Defined in api.ts:68624*
+*Defined in api.ts:69215*
 
 action transfer
 
@@ -1328,7 +1328,7 @@ ___
 
 ▸ **websiteProjectInstanceUpdate**(`projectId`: string, `locationId`: string, `instanceId`: string, `websiteProjectInstanceUpdate`: [WebsiteProjectInstanceUpdate](../interfaces/_api_.websiteprojectinstanceupdate.md), `options?`: any): Promise\<AxiosResponse\<[Website](../interfaces/_api_.website.md)>>
 
-*Defined in api.ts:68639*
+*Defined in api.ts:69230*
 
 Returns modified instance
 

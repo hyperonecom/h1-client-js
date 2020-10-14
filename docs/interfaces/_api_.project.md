@@ -16,7 +16,6 @@
 
 ### Properties
 
-* [active](_api_.project.md#active)
 * [bankAccount](_api_.project.md#bankaccount)
 * [billing](_api_.project.md#billing)
 * [compliance](_api_.project.md#compliance)
@@ -31,27 +30,16 @@
 * [organisation](_api_.project.md#organisation)
 * [state](_api_.project.md#state)
 * [tag](_api_.project.md#tag)
-* [threshold](_api_.project.md#threshold)
 * [transfer](_api_.project.md#transfer)
 * [uri](_api_.project.md#uri)
 
 ## Properties
 
-### active
-
-• `Optional` **active**: boolean
-
-*Defined in api.ts:4449*
-
-**`memberof`** Project
-
-___
-
 ### bankAccount
 
 • `Optional` **bankAccount**: string
 
-*Defined in api.ts:4437*
+*Defined in api.ts:4724*
 
 **`memberof`** Project
 
@@ -61,7 +49,7 @@ ___
 
 • `Optional` **billing**: [ProjectBilling](_api_.projectbilling.md)
 
-*Defined in api.ts:4443*
+*Defined in api.ts:4730*
 
 **`memberof`** Project
 
@@ -71,7 +59,7 @@ ___
 
 • `Optional` **compliance**: [ProjectCompliance](_api_.projectcompliance.md)
 
-*Defined in api.ts:4467*
+*Defined in api.ts:4742*
 
 **`memberof`** Project
 
@@ -81,7 +69,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4413*
+*Defined in api.ts:4700*
 
 **`memberof`** Project
 
@@ -91,7 +79,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:4407*
+*Defined in api.ts:4694*
 
 **`memberof`** Project
 
@@ -101,7 +89,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:4389*
+*Defined in api.ts:4676*
 
 **`memberof`** Project
 
@@ -111,7 +99,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4377*
+*Defined in api.ts:4664*
 
 **`memberof`** Project
 
@@ -121,7 +109,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:4401*
+*Defined in api.ts:4688*
 
 **`memberof`** Project
 
@@ -131,7 +119,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:4395*
+*Defined in api.ts:4682*
 
 **`memberof`** Project
 
@@ -141,7 +129,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4383*
+*Defined in api.ts:4670*
 
 **`memberof`** Project
 
@@ -151,7 +139,7 @@ ___
 
 • `Optional` **networkAcl**: Array\<[ProjectNetworkAcl](_api_.projectnetworkacl.md)>
 
-*Defined in api.ts:4461*
+*Defined in api.ts:4736*
 
 **`memberof`** Project
 
@@ -161,7 +149,7 @@ ___
 
 • `Optional` **organisation**: string
 
-*Defined in api.ts:4425*
+*Defined in api.ts:4712*
 
 **`memberof`** Project
 
@@ -171,7 +159,7 @@ ___
 
 • `Optional` **state**: [ProjectStateEnum](../enums/_api_.projectstateenum.md)
 
-*Defined in api.ts:4419*
+*Defined in api.ts:4706*
 
 **`memberof`** Project
 
@@ -181,17 +169,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4479*
-
-**`memberof`** Project
-
-___
-
-### threshold
-
-• `Optional` **threshold**: [ProjectThreshold](_api_.projectthreshold.md)
-
-*Defined in api.ts:4455*
+*Defined in api.ts:4754*
 
 **`memberof`** Project
 
@@ -201,7 +179,7 @@ ___
 
 • `Optional` **transfer**: [ProjectTransfer](_api_.projecttransfer.md)
 
-*Defined in api.ts:4473*
+*Defined in api.ts:4748*
 
 **`memberof`** Project
 
@@ -211,6 +189,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4431*
+*Defined in api.ts:4718*
 
 **`memberof`** Project

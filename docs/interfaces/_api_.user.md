@@ -32,7 +32,7 @@
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:6401*
+*Defined in api.ts:6573*
 
 **`memberof`** User
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6389*
+*Defined in api.ts:6561*
 
 **`memberof`** User
 
@@ -52,7 +52,7 @@ ___
 
 • `Optional` **lang**: [UserLangEnum](../enums/_api_.userlangenum.md)
 
-*Defined in api.ts:6413*
+*Defined in api.ts:6585*
 
 **`memberof`** User
 
@@ -62,7 +62,7 @@ ___
 
 • `Optional` **limit**: [UserLimit](_api_.userlimit.md)
 
-*Defined in api.ts:6425*
+*Defined in api.ts:6597*
 
 **`memberof`** User
 
@@ -72,7 +72,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:6407*
+*Defined in api.ts:6579*
 
 **`memberof`** User
 
@@ -82,7 +82,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:6395*
+*Defined in api.ts:6567*
 
 **`memberof`** User
 
@@ -92,7 +92,7 @@ ___
 
 • `Optional` **phone**: string
 
-*Defined in api.ts:6419*
+*Defined in api.ts:6591*
 
 **`memberof`** User
 
@@ -102,7 +102,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:6437*
+*Defined in api.ts:6609*
 
 **`memberof`** User
 
@@ -112,6 +112,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:6431*
+*Defined in api.ts:6603*
 
 **`memberof`** User

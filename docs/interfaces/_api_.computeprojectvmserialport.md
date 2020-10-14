@@ -24,6 +24,6 @@
 
 • `Optional` **number**: [ComputeProjectVmSerialportNumberEnum](../enums/_api_.computeprojectvmserialportnumberenum.md)
 
-*Defined in api.ts:947*
+*Defined in api.ts:948*
 
 **`memberof`** ComputeProjectVmSerialport

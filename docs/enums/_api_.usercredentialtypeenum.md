@@ -22,7 +22,7 @@
 
 •  **Otac**: {} = "otac"
 
-*Defined in api.ts:6513*
+*Defined in api.ts:6685*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **Plain**: {} = "plain"
 
-*Defined in api.ts:6514*
+*Defined in api.ts:6686*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **Sha512**: {} = "sha512"
 
-*Defined in api.ts:6511*
+*Defined in api.ts:6683*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Ssh**: {} = "ssh"
 
-*Defined in api.ts:6510*
+*Defined in api.ts:6682*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Totp**: {} = "totp"
 
-*Defined in api.ts:6512*
+*Defined in api.ts:6684*

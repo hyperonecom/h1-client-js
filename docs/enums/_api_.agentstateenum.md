@@ -13,6 +13,7 @@
 * [NotCreated](_api_.agentstateenum.md#notcreated)
 * [Online](_api_.agentstateenum.md#online)
 * [Processing](_api_.agentstateenum.md#processing)
+* [Suspended](_api_.agentstateenum.md#suspended)
 * [Unknown](_api_.agentstateenum.md#unknown)
 
 ## Enumeration members
@@ -21,7 +22,7 @@
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:110*
+*Defined in api.ts:111*
 
 ___
 
@@ -37,7 +38,15 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:109*
+*Defined in api.ts:110*
+
+___
+
+### Suspended
+
+•  **Suspended**: {} = "Suspended"
+
+*Defined in api.ts:108*
 
 ___
 
@@ -45,4 +54,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:108*
+*Defined in api.ts:109*

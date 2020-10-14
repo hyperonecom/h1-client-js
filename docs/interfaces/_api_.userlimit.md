@@ -24,6 +24,6 @@
 
 • `Optional` **organisation**: [UserLimitOrganisation](_api_.userlimitorganisation.md)
 
-*Defined in api.ts:6541*
+*Defined in api.ts:6700*
 
 **`memberof`** UserLimit

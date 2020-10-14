@@ -32,7 +32,7 @@
 
 • `Optional` **availableServices**: Array\<string>
 
-*Defined in api.ts:5621*
+*Defined in api.ts:5811*
 
 **`memberof`** Service
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **billing**: [ServiceBilling](_api_.servicebilling.md)
 
-*Defined in api.ts:5597*
+*Defined in api.ts:5787*
 
 **`memberof`** Service
 
@@ -52,7 +52,7 @@ ___
 
 • `Optional` **data**: { [key:string]: string;  }
 
-*Defined in api.ts:5609*
+*Defined in api.ts:5799*
 
 **`memberof`** Service
 
@@ -62,7 +62,7 @@ ___
 
 • `Optional` **display**: [ServiceDisplay](_api_.servicedisplay.md)
 
-*Defined in api.ts:5603*
+*Defined in api.ts:5793*
 
 **`memberof`** Service
 
@@ -72,7 +72,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5579*
+*Defined in api.ts:5769*
 
 **`memberof`** Service
 
@@ -82,7 +82,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5615*
+*Defined in api.ts:5805*
 
 **`memberof`** Service
 
@@ -92,7 +92,7 @@ ___
 
 • `Optional` **resource**: string
 
-*Defined in api.ts:5585*
+*Defined in api.ts:5775*
 
 **`memberof`** Service
 
@@ -102,7 +102,7 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:5591*
+*Defined in api.ts:5781*
 
 **`memberof`** Service
 
@@ -112,6 +112,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:5627*
+*Defined in api.ts:5817*
 
 **`memberof`** Service

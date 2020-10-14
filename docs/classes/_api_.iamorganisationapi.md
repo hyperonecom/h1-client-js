@@ -28,33 +28,33 @@ IamOrganisationApi - object-oriented interface
 
 ### Methods
 
-* [organisationBillingList](_api_.iamorganisationapi.md#organisationbillinglist)
-* [organisationCreate](_api_.iamorganisationapi.md#organisationcreate)
-* [organisationDelete](_api_.iamorganisationapi.md#organisationdelete)
-* [organisationEventGet](_api_.iamorganisationapi.md#organisationeventget)
-* [organisationEventList](_api_.iamorganisationapi.md#organisationeventlist)
-* [organisationGet](_api_.iamorganisationapi.md#organisationget)
-* [organisationInvitationAccept](_api_.iamorganisationapi.md#organisationinvitationaccept)
-* [organisationInvitationDelete](_api_.iamorganisationapi.md#organisationinvitationdelete)
-* [organisationInvitationGet](_api_.iamorganisationapi.md#organisationinvitationget)
-* [organisationInvitationList](_api_.iamorganisationapi.md#organisationinvitationlist)
-* [organisationInvoiceDownload](_api_.iamorganisationapi.md#organisationinvoicedownload)
-* [organisationInvoiceGet](_api_.iamorganisationapi.md#organisationinvoiceget)
-* [organisationInvoiceList](_api_.iamorganisationapi.md#organisationinvoicelist)
-* [organisationList](_api_.iamorganisationapi.md#organisationlist)
-* [organisationOwnershipCreate](_api_.iamorganisationapi.md#organisationownershipcreate)
-* [organisationOwnershipDelete](_api_.iamorganisationapi.md#organisationownershipdelete)
-* [organisationOwnershipGet](_api_.iamorganisationapi.md#organisationownershipget)
-* [organisationOwnershipList](_api_.iamorganisationapi.md#organisationownershiplist)
-* [organisationPaymentAllocate](_api_.iamorganisationapi.md#organisationpaymentallocate)
-* [organisationPaymentGet](_api_.iamorganisationapi.md#organisationpaymentget)
-* [organisationPaymentList](_api_.iamorganisationapi.md#organisationpaymentlist)
-* [organisationProformaCreate](_api_.iamorganisationapi.md#organisationproformacreate)
-* [organisationProformaDownload](_api_.iamorganisationapi.md#organisationproformadownload)
-* [organisationProformaGet](_api_.iamorganisationapi.md#organisationproformaget)
-* [organisationProformaList](_api_.iamorganisationapi.md#organisationproformalist)
-* [organisationTransferAccept](_api_.iamorganisationapi.md#organisationtransferaccept)
-* [organisationUpdate](_api_.iamorganisationapi.md#organisationupdate)
+* [iamOrganisationBillingList](_api_.iamorganisationapi.md#iamorganisationbillinglist)
+* [iamOrganisationCreate](_api_.iamorganisationapi.md#iamorganisationcreate)
+* [iamOrganisationDelete](_api_.iamorganisationapi.md#iamorganisationdelete)
+* [iamOrganisationEventGet](_api_.iamorganisationapi.md#iamorganisationeventget)
+* [iamOrganisationEventList](_api_.iamorganisationapi.md#iamorganisationeventlist)
+* [iamOrganisationGet](_api_.iamorganisationapi.md#iamorganisationget)
+* [iamOrganisationInvitationAccept](_api_.iamorganisationapi.md#iamorganisationinvitationaccept)
+* [iamOrganisationInvitationDelete](_api_.iamorganisationapi.md#iamorganisationinvitationdelete)
+* [iamOrganisationInvitationGet](_api_.iamorganisationapi.md#iamorganisationinvitationget)
+* [iamOrganisationInvitationList](_api_.iamorganisationapi.md#iamorganisationinvitationlist)
+* [iamOrganisationInvoiceDownload](_api_.iamorganisationapi.md#iamorganisationinvoicedownload)
+* [iamOrganisationInvoiceGet](_api_.iamorganisationapi.md#iamorganisationinvoiceget)
+* [iamOrganisationInvoiceList](_api_.iamorganisationapi.md#iamorganisationinvoicelist)
+* [iamOrganisationList](_api_.iamorganisationapi.md#iamorganisationlist)
+* [iamOrganisationOwnershipCreate](_api_.iamorganisationapi.md#iamorganisationownershipcreate)
+* [iamOrganisationOwnershipDelete](_api_.iamorganisationapi.md#iamorganisationownershipdelete)
+* [iamOrganisationOwnershipGet](_api_.iamorganisationapi.md#iamorganisationownershipget)
+* [iamOrganisationOwnershipList](_api_.iamorganisationapi.md#iamorganisationownershiplist)
+* [iamOrganisationPaymentAllocate](_api_.iamorganisationapi.md#iamorganisationpaymentallocate)
+* [iamOrganisationPaymentGet](_api_.iamorganisationapi.md#iamorganisationpaymentget)
+* [iamOrganisationPaymentList](_api_.iamorganisationapi.md#iamorganisationpaymentlist)
+* [iamOrganisationProformaCreate](_api_.iamorganisationapi.md#iamorganisationproformacreate)
+* [iamOrganisationProformaDownload](_api_.iamorganisationapi.md#iamorganisationproformadownload)
+* [iamOrganisationProformaGet](_api_.iamorganisationapi.md#iamorganisationproformaget)
+* [iamOrganisationProformaList](_api_.iamorganisationapi.md#iamorganisationproformalist)
+* [iamOrganisationTransferAccept](_api_.iamorganisationapi.md#iamorganisationtransferaccept)
+* [iamOrganisationUpdate](_api_.iamorganisationapi.md#iamorganisationupdate)
 
 ## Constructors
 
@@ -108,11 +108,11 @@ ___
 
 ## Methods
 
-### organisationBillingList
+### iamOrganisationBillingList
 
-▸ **organisationBillingList**(`organisationId`: string, `start?`: string, `end?`: string, `resourceType?`: string, `options?`: any): Promise\<AxiosResponse\<[Billing](../interfaces/_api_.billing.md)[]>>
+▸ **iamOrganisationBillingList**(`organisationId`: string, `start?`: string, `end?`: string, `resourceType?`: string, `options?`: any): Promise\<AxiosResponse\<[Billing](../interfaces/_api_.billing.md)[]>>
 
-*Defined in api.ts:24266*
+*Defined in api.ts:24503*
 
 List iam/organisation.billing
 
@@ -136,11 +136,11 @@ Name | Type | Description |
 
 ___
 
-### organisationCreate
+### iamOrganisationCreate
 
-▸ **organisationCreate**(`organisationCreate`: [OrganisationCreate](../interfaces/_api_.organisationcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
+▸ **iamOrganisationCreate**(`iamOrganisationCreate`: [IamOrganisationCreate](../interfaces/_api_.iamorganisationcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
 
-*Defined in api.ts:24279*
+*Defined in api.ts:24516*
 
 Create organisation
 
@@ -154,7 +154,7 @@ Create organisation
 
 Name | Type |
 ------ | ------ |
-`organisationCreate` | [OrganisationCreate](../interfaces/_api_.organisationcreate.md) |
+`iamOrganisationCreate` | [IamOrganisationCreate](../interfaces/_api_.iamorganisationcreate.md) |
 `xIdempotencyKey?` | string |
 `options?` | any |
 
@@ -162,11 +162,11 @@ Name | Type |
 
 ___
 
-### organisationDelete
+### iamOrganisationDelete
 
-▸ **organisationDelete**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
+▸ **iamOrganisationDelete**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:24291*
+*Defined in api.ts:24528*
 
 Delete organisation
 
@@ -187,11 +187,11 @@ Name | Type | Description |
 
 ___
 
-### organisationEventGet
+### iamOrganisationEventGet
 
-▸ **organisationEventGet**(`organisationId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
+▸ **iamOrganisationEventGet**(`organisationId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:24304*
+*Defined in api.ts:24541*
 
 Get iam/organisation.event
 
@@ -213,11 +213,11 @@ Name | Type | Description |
 
 ___
 
-### organisationEventList
+### iamOrganisationEventList
 
-▸ **organisationEventList**(`organisationId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
+▸ **iamOrganisationEventList**(`organisationId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:24318*
+*Defined in api.ts:24555*
 
 List iam/organisation.event
 
@@ -240,11 +240,11 @@ Name | Type | Description |
 
 ___
 
-### organisationGet
+### iamOrganisationGet
 
-▸ **organisationGet**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
+▸ **iamOrganisationGet**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
 
-*Defined in api.ts:24330*
+*Defined in api.ts:24567*
 
 Returns a single organisation
 
@@ -265,15 +265,15 @@ Name | Type | Description |
 
 ___
 
-### organisationInvitationAccept
+### iamOrganisationInvitationAccept
 
-▸ **organisationInvitationAccept**(`organisationId`: string, `invitationId`: string, `organisationInvitationAccept`: [OrganisationInvitationAccept](../interfaces/_api_.organisationinvitationaccept.md), `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)>>
+▸ **iamOrganisationInvitationAccept**(`organisationId`: string, `invitationId`: string, `iamOrganisationInvitationAccept`: [IamOrganisationInvitationAccept](../interfaces/_api_.iamorganisationinvitationaccept.md), `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)>>
 
-*Defined in api.ts:24344*
+*Defined in api.ts:24581*
 
-Create iam/organisation.actions
+action accept
 
-**`summary`** Create iam/organisation.actions
+**`summary`** Accept iam/organisation.invitation
 
 **`throws`** {RequiredError}
 
@@ -285,18 +285,18 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `organisationId` | string | Organisation Id |
 `invitationId` | string | invitationId |
-`organisationInvitationAccept` | [OrganisationInvitationAccept](../interfaces/_api_.organisationinvitationaccept.md) |  |
+`iamOrganisationInvitationAccept` | [IamOrganisationInvitationAccept](../interfaces/_api_.iamorganisationinvitationaccept.md) |  |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)>>
 
 ___
 
-### organisationInvitationDelete
+### iamOrganisationInvitationDelete
 
-▸ **organisationInvitationDelete**(`organisationId`: string, `invitationId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
+▸ **iamOrganisationInvitationDelete**(`organisationId`: string, `invitationId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:24357*
+*Defined in api.ts:24594*
 
 Delete iam/organisation.invitation
 
@@ -318,11 +318,11 @@ Name | Type | Description |
 
 ___
 
-### organisationInvitationGet
+### iamOrganisationInvitationGet
 
-▸ **organisationInvitationGet**(`organisationId`: string, `invitationId`: string, `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)>>
+▸ **iamOrganisationInvitationGet**(`organisationId`: string, `invitationId`: string, `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)>>
 
-*Defined in api.ts:24370*
+*Defined in api.ts:24607*
 
 Get iam/organisation.invitation
 
@@ -344,11 +344,11 @@ Name | Type | Description |
 
 ___
 
-### organisationInvitationList
+### iamOrganisationInvitationList
 
-▸ **organisationInvitationList**(`organisationId`: string, `resource?`: string, `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)[]>>
+▸ **iamOrganisationInvitationList**(`organisationId`: string, `resource?`: string, `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)[]>>
 
-*Defined in api.ts:24383*
+*Defined in api.ts:24620*
 
 List iam/organisation.invitation
 
@@ -370,15 +370,15 @@ Name | Type | Description |
 
 ___
 
-### organisationInvoiceDownload
+### iamOrganisationInvoiceDownload
 
-▸ **organisationInvoiceDownload**(`organisationId`: string, `invoiceId`: string, `options?`: any): Promise\<AxiosResponse\<any>>
+▸ **iamOrganisationInvoiceDownload**(`organisationId`: string, `invoiceId`: string, `options?`: any): Promise\<AxiosResponse\<any>>
 
-*Defined in api.ts:24396*
+*Defined in api.ts:24633*
 
-Create iam/organisation.actions
+action download
 
-**`summary`** Create iam/organisation.actions
+**`summary`** Download iam/organisation.invoice
 
 **`throws`** {RequiredError}
 
@@ -396,11 +396,11 @@ Name | Type | Description |
 
 ___
 
-### organisationInvoiceGet
+### iamOrganisationInvoiceGet
 
-▸ **organisationInvoiceGet**(`organisationId`: string, `invoiceId`: string, `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
+▸ **iamOrganisationInvoiceGet**(`organisationId`: string, `invoiceId`: string, `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
 
-*Defined in api.ts:24409*
+*Defined in api.ts:24646*
 
 Get iam/organisation.invoice
 
@@ -422,11 +422,11 @@ Name | Type | Description |
 
 ___
 
-### organisationInvoiceList
+### iamOrganisationInvoiceList
 
-▸ **organisationInvoiceList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Invoice](../interfaces/_api_.invoice.md)[]>>
+▸ **iamOrganisationInvoiceList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Invoice](../interfaces/_api_.invoice.md)[]>>
 
-*Defined in api.ts:24421*
+*Defined in api.ts:24658*
 
 List iam/organisation.invoice
 
@@ -447,11 +447,11 @@ Name | Type | Description |
 
 ___
 
-### organisationList
+### iamOrganisationList
 
-▸ **organisationList**(`name?`: string, `billingCompany?`: string, `$limit?`: number, `active?`: boolean, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)[]>>
+▸ **iamOrganisationList**(`name?`: string, `billingCompany?`: string, `$limit?`: number, `active?`: boolean, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)[]>>
 
-*Defined in api.ts:24436*
+*Defined in api.ts:24673*
 
 List organisation
 
@@ -475,11 +475,11 @@ Name | Type |
 
 ___
 
-### organisationOwnershipCreate
+### iamOrganisationOwnershipCreate
 
-▸ **organisationOwnershipCreate**(`organisationId`: string, `organisationOwnershipCreate`: [OrganisationOwnershipCreate](../interfaces/_api_.organisationownershipcreate.md), `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
+▸ **iamOrganisationOwnershipCreate**(`organisationId`: string, `iamOrganisationOwnershipCreate`: [IamOrganisationOwnershipCreate](../interfaces/_api_.iamorganisationownershipcreate.md), `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
 
-*Defined in api.ts:24449*
+*Defined in api.ts:24686*
 
 Create iam/organisation.ownership
 
@@ -494,18 +494,18 @@ Create iam/organisation.ownership
 Name | Type | Description |
 ------ | ------ | ------ |
 `organisationId` | string | Organisation Id |
-`organisationOwnershipCreate` | [OrganisationOwnershipCreate](../interfaces/_api_.organisationownershipcreate.md) |  |
+`iamOrganisationOwnershipCreate` | [IamOrganisationOwnershipCreate](../interfaces/_api_.iamorganisationownershipcreate.md) |  |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
 
 ___
 
-### organisationOwnershipDelete
+### iamOrganisationOwnershipDelete
 
-▸ **organisationOwnershipDelete**(`organisationId`: string, `ownershipId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
+▸ **iamOrganisationOwnershipDelete**(`organisationId`: string, `ownershipId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:24462*
+*Defined in api.ts:24699*
 
 Delete iam/organisation.ownership
 
@@ -527,11 +527,11 @@ Name | Type | Description |
 
 ___
 
-### organisationOwnershipGet
+### iamOrganisationOwnershipGet
 
-▸ **organisationOwnershipGet**(`organisationId`: string, `ownershipId`: string, `options?`: any): Promise\<AxiosResponse\<[Ownership](../interfaces/_api_.ownership.md)>>
+▸ **iamOrganisationOwnershipGet**(`organisationId`: string, `ownershipId`: string, `options?`: any): Promise\<AxiosResponse\<[Ownership](../interfaces/_api_.ownership.md)>>
 
-*Defined in api.ts:24475*
+*Defined in api.ts:24712*
 
 Get iam/organisation.ownership
 
@@ -553,11 +553,11 @@ Name | Type | Description |
 
 ___
 
-### organisationOwnershipList
+### iamOrganisationOwnershipList
 
-▸ **organisationOwnershipList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Ownership](../interfaces/_api_.ownership.md)[]>>
+▸ **iamOrganisationOwnershipList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Ownership](../interfaces/_api_.ownership.md)[]>>
 
-*Defined in api.ts:24487*
+*Defined in api.ts:24724*
 
 List iam/organisation.ownership
 
@@ -578,15 +578,15 @@ Name | Type | Description |
 
 ___
 
-### organisationPaymentAllocate
+### iamOrganisationPaymentAllocate
 
-▸ **organisationPaymentAllocate**(`organisationId`: string, `paymentId`: string, `organisationPaymentAllocate`: [OrganisationPaymentAllocate](../interfaces/_api_.organisationpaymentallocate.md), `options?`: any): Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)>>
+▸ **iamOrganisationPaymentAllocate**(`organisationId`: string, `paymentId`: string, `iamOrganisationPaymentAllocate`: [IamOrganisationPaymentAllocate](../interfaces/_api_.iamorganisationpaymentallocate.md), `options?`: any): Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)>>
 
-*Defined in api.ts:24501*
+*Defined in api.ts:24738*
 
-Create iam/organisation.actions
+action allocate
 
-**`summary`** Create iam/organisation.actions
+**`summary`** Allocate iam/organisation.payment
 
 **`throws`** {RequiredError}
 
@@ -598,18 +598,18 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `organisationId` | string | Organisation Id |
 `paymentId` | string | paymentId |
-`organisationPaymentAllocate` | [OrganisationPaymentAllocate](../interfaces/_api_.organisationpaymentallocate.md) |  |
+`iamOrganisationPaymentAllocate` | [IamOrganisationPaymentAllocate](../interfaces/_api_.iamorganisationpaymentallocate.md) |  |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)>>
 
 ___
 
-### organisationPaymentGet
+### iamOrganisationPaymentGet
 
-▸ **organisationPaymentGet**(`organisationId`: string, `paymentId`: string, `options?`: any): Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)>>
+▸ **iamOrganisationPaymentGet**(`organisationId`: string, `paymentId`: string, `options?`: any): Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)>>
 
-*Defined in api.ts:24514*
+*Defined in api.ts:24751*
 
 Get iam/organisation.payment
 
@@ -631,11 +631,11 @@ Name | Type | Description |
 
 ___
 
-### organisationPaymentList
+### iamOrganisationPaymentList
 
-▸ **organisationPaymentList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)[]>>
+▸ **iamOrganisationPaymentList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)[]>>
 
-*Defined in api.ts:24526*
+*Defined in api.ts:24763*
 
 List iam/organisation.payment
 
@@ -656,11 +656,11 @@ Name | Type | Description |
 
 ___
 
-### organisationProformaCreate
+### iamOrganisationProformaCreate
 
-▸ **organisationProformaCreate**(`organisationId`: string, `organisationProformaCreate`: [OrganisationProformaCreate](../interfaces/_api_.organisationproformacreate.md), `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
+▸ **iamOrganisationProformaCreate**(`organisationId`: string, `iamOrganisationProformaCreate`: [IamOrganisationProformaCreate](../interfaces/_api_.iamorganisationproformacreate.md), `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
 
-*Defined in api.ts:24539*
+*Defined in api.ts:24776*
 
 Create iam/organisation.proforma
 
@@ -675,22 +675,22 @@ Create iam/organisation.proforma
 Name | Type | Description |
 ------ | ------ | ------ |
 `organisationId` | string | Organisation Id |
-`organisationProformaCreate` | [OrganisationProformaCreate](../interfaces/_api_.organisationproformacreate.md) |  |
+`iamOrganisationProformaCreate` | [IamOrganisationProformaCreate](../interfaces/_api_.iamorganisationproformacreate.md) |  |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
 
 ___
 
-### organisationProformaDownload
+### iamOrganisationProformaDownload
 
-▸ **organisationProformaDownload**(`organisationId`: string, `proformaId`: string, `options?`: any): Promise\<AxiosResponse\<any>>
+▸ **iamOrganisationProformaDownload**(`organisationId`: string, `proformaId`: string, `options?`: any): Promise\<AxiosResponse\<any>>
 
-*Defined in api.ts:24552*
+*Defined in api.ts:24789*
 
-Create iam/organisation.actions
+action download
 
-**`summary`** Create iam/organisation.actions
+**`summary`** Download iam/organisation.proforma
 
 **`throws`** {RequiredError}
 
@@ -708,11 +708,11 @@ Name | Type | Description |
 
 ___
 
-### organisationProformaGet
+### iamOrganisationProformaGet
 
-▸ **organisationProformaGet**(`organisationId`: string, `proformaId`: string, `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
+▸ **iamOrganisationProformaGet**(`organisationId`: string, `proformaId`: string, `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
 
-*Defined in api.ts:24565*
+*Defined in api.ts:24802*
 
 Get iam/organisation.proforma
 
@@ -734,11 +734,11 @@ Name | Type | Description |
 
 ___
 
-### organisationProformaList
+### iamOrganisationProformaList
 
-▸ **organisationProformaList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)[]>>
+▸ **iamOrganisationProformaList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)[]>>
 
-*Defined in api.ts:24577*
+*Defined in api.ts:24814*
 
 List iam/organisation.proforma
 
@@ -759,11 +759,11 @@ Name | Type | Description |
 
 ___
 
-### organisationTransferAccept
+### iamOrganisationTransferAccept
 
-▸ **organisationTransferAccept**(`organisationId`: string, `organisationTransferAccept`: [OrganisationTransferAccept](../interfaces/_api_.organisationtransferaccept.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
+▸ **iamOrganisationTransferAccept**(`organisationId`: string, `iamOrganisationTransferAccept`: [IamOrganisationTransferAccept](../interfaces/_api_.iamorganisationtransferaccept.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
 
-*Defined in api.ts:24591*
+*Defined in api.ts:24828*
 
 action transfer_accept
 
@@ -778,7 +778,7 @@ action transfer_accept
 Name | Type | Description |
 ------ | ------ | ------ |
 `organisationId` | string | Organisation Id |
-`organisationTransferAccept` | [OrganisationTransferAccept](../interfaces/_api_.organisationtransferaccept.md) |  |
+`iamOrganisationTransferAccept` | [IamOrganisationTransferAccept](../interfaces/_api_.iamorganisationtransferaccept.md) |  |
 `xIdempotencyKey?` | string | - |
 `options?` | any | - |
 
@@ -786,11 +786,11 @@ Name | Type | Description |
 
 ___
 
-### organisationUpdate
+### iamOrganisationUpdate
 
-▸ **organisationUpdate**(`organisationId`: string, `organisationUpdate`: [OrganisationUpdate](../interfaces/_api_.organisationupdate.md), `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
+▸ **iamOrganisationUpdate**(`organisationId`: string, `iamOrganisationUpdate`: [IamOrganisationUpdate](../interfaces/_api_.iamorganisationupdate.md), `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
 
-*Defined in api.ts:24604*
+*Defined in api.ts:24841*
 
 Returns modified organisation
 
@@ -805,7 +805,7 @@ Returns modified organisation
 Name | Type | Description |
 ------ | ------ | ------ |
 `organisationId` | string | Organisation Id |
-`organisationUpdate` | [OrganisationUpdate](../interfaces/_api_.organisationupdate.md) |  |
+`iamOrganisationUpdate` | [IamOrganisationUpdate](../interfaces/_api_.iamorganisationupdate.md) |  |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>

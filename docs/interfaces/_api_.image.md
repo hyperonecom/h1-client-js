@@ -19,6 +19,7 @@
 * [createdBy](_api_.image.md#createdby)
 * [createdOn](_api_.image.md#createdon)
 * [description](_api_.image.md#description)
+* [disks](_api_.image.md#disks)
 * [fileSize](_api_.image.md#filesize)
 * [flavour](_api_.image.md#flavour)
 * [id](_api_.image.md#id)
@@ -37,7 +38,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:2002*
+*Defined in api.ts:2349*
 
 **`memberof`** Image
 
@@ -47,7 +48,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:1996*
+*Defined in api.ts:2343*
 
 **`memberof`** Image
 
@@ -57,7 +58,17 @@ ___
 
 • `Optional` **description**: string
 
-*Defined in api.ts:2026*
+*Defined in api.ts:2373*
+
+**`memberof`** Image
+
+___
+
+### disks
+
+• `Optional` **disks**: number
+
+*Defined in api.ts:2379*
 
 **`memberof`** Image
 
@@ -67,7 +78,7 @@ ___
 
 • `Optional` **fileSize**: number
 
-*Defined in api.ts:2032*
+*Defined in api.ts:2385*
 
 **`memberof`** Image
 
@@ -77,7 +88,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:1978*
+*Defined in api.ts:2325*
 
 **`memberof`** Image
 
@@ -87,7 +98,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1966*
+*Defined in api.ts:2313*
 
 **`memberof`** Image
 
@@ -97,7 +108,7 @@ ___
 
 • `Optional` **license**: Array\<string>
 
-*Defined in api.ts:2038*
+*Defined in api.ts:2391*
 
 **`memberof`** Image
 
@@ -107,7 +118,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:1990*
+*Defined in api.ts:2337*
 
 **`memberof`** Image
 
@@ -117,7 +128,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:1984*
+*Defined in api.ts:2331*
 
 **`memberof`** Image
 
@@ -127,7 +138,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:1972*
+*Defined in api.ts:2319*
 
 **`memberof`** Image
 
@@ -137,7 +148,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:2014*
+*Defined in api.ts:2361*
 
 **`memberof`** Image
 
@@ -147,7 +158,7 @@ ___
 
 • `Optional` **state**: [ImageStateEnum](../enums/_api_.imagestateenum.md)
 
-*Defined in api.ts:2008*
+*Defined in api.ts:2355*
 
 **`memberof`** Image
 
@@ -157,7 +168,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2044*
+*Defined in api.ts:2397*
 
 **`memberof`** Image
 
@@ -167,6 +178,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:2020*
+*Defined in api.ts:2367*
 
 **`memberof`** Image

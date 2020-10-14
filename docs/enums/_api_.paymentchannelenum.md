@@ -23,7 +23,7 @@
 
 •  **Bank**: {} = "bank"
 
-*Defined in api.ts:4117*
+*Defined in api.ts:4404*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 •  **Dotpay**: {} = "dotpay"
 
-*Defined in api.ts:4118*
+*Defined in api.ts:4405*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 •  **Ecard**: {} = "ecard"
 
-*Defined in api.ts:4121*
+*Defined in api.ts:4408*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 •  **Paypal**: {} = "paypal"
 
-*Defined in api.ts:4120*
+*Defined in api.ts:4407*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 •  **Promo**: {} = "promo"
 
-*Defined in api.ts:4119*
+*Defined in api.ts:4406*
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 •  **Przelewy24**: {} = "przelewy24"
 
-*Defined in api.ts:4122*
+*Defined in api.ts:4409*

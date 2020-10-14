@@ -36,7 +36,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:7036*
+*Defined in api.ts:7166*
 
 **`memberof`** Website
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:7030*
+*Defined in api.ts:7160*
 
 **`memberof`** Website
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:7012*
+*Defined in api.ts:7142*
 
 **`memberof`** Website
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:7066*
+*Defined in api.ts:7196*
 
 **`memberof`** Website
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7000*
+*Defined in api.ts:7130*
 
 **`memberof`** Website
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **image**: string
 
-*Defined in api.ts:7060*
+*Defined in api.ts:7190*
 
 **`memberof`** Website
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:7024*
+*Defined in api.ts:7154*
 
 **`memberof`** Website
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:7018*
+*Defined in api.ts:7148*
 
 **`memberof`** Website
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:7006*
+*Defined in api.ts:7136*
 
 **`memberof`** Website
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:7048*
+*Defined in api.ts:7178*
 
 **`memberof`** Website
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **state**: [WebsiteStateEnum](../enums/_api_.websitestateenum.md)
 
-*Defined in api.ts:7042*
+*Defined in api.ts:7172*
 
 **`memberof`** Website
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:7072*
+*Defined in api.ts:7202*
 
 **`memberof`** Website
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:7054*
+*Defined in api.ts:7184*
 
 **`memberof`** Website

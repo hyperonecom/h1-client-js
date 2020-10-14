@@ -31,7 +31,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:2872*
+*Defined in api.ts:3225*
 
 **`memberof`** JournalCredential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:2878*
+*Defined in api.ts:3231*
 
 **`memberof`** JournalCredential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **fingerprint**: string
 
-*Defined in api.ts:2896*
+*Defined in api.ts:3249*
 
 **`memberof`** JournalCredential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:2860*
+*Defined in api.ts:3213*
 
 **`memberof`** JournalCredential
 
@@ -71,7 +71,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:2866*
+*Defined in api.ts:3219*
 
 **`memberof`** JournalCredential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **token**: string
 
-*Defined in api.ts:2902*
+*Defined in api.ts:3255*
 
 **`memberof`** JournalCredential
 
@@ -91,7 +91,7 @@ ___
 
 •  **type**: [JournalCredentialTypeEnum](../enums/_api_.journalcredentialtypeenum.md)
 
-*Defined in api.ts:2884*
+*Defined in api.ts:3237*
 
 **`memberof`** JournalCredential
 
@@ -101,6 +101,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:2890*
+*Defined in api.ts:3243*
 
 **`memberof`** JournalCredential

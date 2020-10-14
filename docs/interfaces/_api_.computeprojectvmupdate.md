@@ -25,7 +25,7 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:976*
+*Defined in api.ts:977*
 
 **`memberof`** ComputeProjectVmUpdate
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **userMetadata**: string
 
-*Defined in api.ts:970*
+*Defined in api.ts:971*
 
 **`memberof`** ComputeProjectVmUpdate

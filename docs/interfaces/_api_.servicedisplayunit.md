@@ -25,7 +25,7 @@
 
 • `Optional` **billing**: string
 
-*Defined in api.ts:5758*
+*Defined in api.ts:5948*
 
 **`memberof`** ServiceDisplayUnit
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **usage**: string
 
-*Defined in api.ts:5752*
+*Defined in api.ts:5942*
 
 **`memberof`** ServiceDisplayUnit

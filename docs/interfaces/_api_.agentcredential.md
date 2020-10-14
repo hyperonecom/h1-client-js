@@ -31,7 +31,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:136*
+*Defined in api.ts:137*
 
 **`memberof`** AgentCredential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:142*
+*Defined in api.ts:143*
 
 **`memberof`** AgentCredential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **fingerprint**: string
 
-*Defined in api.ts:160*
+*Defined in api.ts:161*
 
 **`memberof`** AgentCredential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:124*
+*Defined in api.ts:125*
 
 **`memberof`** AgentCredential
 
@@ -71,7 +71,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:130*
+*Defined in api.ts:131*
 
 **`memberof`** AgentCredential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **token**: string
 
-*Defined in api.ts:166*
+*Defined in api.ts:167*
 
 **`memberof`** AgentCredential
 
@@ -91,7 +91,7 @@ ___
 
 •  **type**: [AgentCredentialTypeEnum](../enums/_api_.agentcredentialtypeenum.md)
 
-*Defined in api.ts:148*
+*Defined in api.ts:149*
 
 **`memberof`** AgentCredential
 
@@ -101,6 +101,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:154*
+*Defined in api.ts:155*
 
 **`memberof`** AgentCredential

@@ -101,7 +101,7 @@ ___
 
 ▸ **storageProjectImageCreate**(`projectId`: string, `locationId`: string, `storageProjectImageCreate`: [StorageProjectImageCreate](../interfaces/_api_.storageprojectimagecreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Image](../interfaces/_api_.image.md)>>
 
-*Defined in api.ts:57107*
+*Defined in api.ts:57698*
 
 Create image
 
@@ -129,7 +129,7 @@ ___
 
 ▸ **storageProjectImageDelete**(`projectId`: string, `locationId`: string, `imageId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:57121*
+*Defined in api.ts:57712*
 
 Delete image
 
@@ -156,7 +156,7 @@ ___
 
 ▸ **storageProjectImageDiskList**(`projectId`: string, `locationId`: string, `imageId`: string, `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)[]>>
 
-*Defined in api.ts:57135*
+*Defined in api.ts:57726*
 
 List storage/image.disk
 
@@ -183,7 +183,7 @@ ___
 
 ▸ **storageProjectImageEventGet**(`projectId`: string, `locationId`: string, `imageId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:57150*
+*Defined in api.ts:57741*
 
 Get storage/image.event
 
@@ -211,7 +211,7 @@ ___
 
 ▸ **storageProjectImageEventList**(`projectId`: string, `locationId`: string, `imageId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:57166*
+*Defined in api.ts:57757*
 
 List storage/image.event
 
@@ -240,7 +240,7 @@ ___
 
 ▸ **storageProjectImageGet**(`projectId`: string, `locationId`: string, `imageId`: string, `options?`: any): Promise\<AxiosResponse\<[Image](../interfaces/_api_.image.md)>>
 
-*Defined in api.ts:57180*
+*Defined in api.ts:57771*
 
 Returns a single image
 
@@ -267,7 +267,7 @@ ___
 
 ▸ **storageProjectImageList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Image](../interfaces/_api_.image.md)[]>>
 
-*Defined in api.ts:57196*
+*Defined in api.ts:57787*
 
 List image
 
@@ -296,7 +296,7 @@ ___
 
 ▸ **storageProjectImageServiceGet**(`projectId`: string, `locationId`: string, `imageId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:57211*
+*Defined in api.ts:57802*
 
 Get storage/image.service
 
@@ -324,7 +324,7 @@ ___
 
 ▸ **storageProjectImageServiceList**(`projectId`: string, `locationId`: string, `imageId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:57225*
+*Defined in api.ts:57816*
 
 List storage/image.service
 
@@ -351,7 +351,7 @@ ___
 
 ▸ **storageProjectImageTagCreate**(`projectId`: string, `locationId`: string, `imageId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:57240*
+*Defined in api.ts:57831*
 
 Create storage/image.tag
 
@@ -379,7 +379,7 @@ ___
 
 ▸ **storageProjectImageTagDelete**(`projectId`: string, `locationId`: string, `imageId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:57255*
+*Defined in api.ts:57846*
 
 Delete storage/image.tag
 
@@ -407,7 +407,7 @@ ___
 
 ▸ **storageProjectImageTagGet**(`projectId`: string, `locationId`: string, `imageId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:57270*
+*Defined in api.ts:57861*
 
 Get storage/image.tag
 
@@ -435,7 +435,7 @@ ___
 
 ▸ **storageProjectImageTagList**(`projectId`: string, `locationId`: string, `imageId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:57284*
+*Defined in api.ts:57875*
 
 List storage/image.tag
 
@@ -462,7 +462,7 @@ ___
 
 ▸ **storageProjectImageTagPut**(`projectId`: string, `locationId`: string, `imageId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:57299*
+*Defined in api.ts:57890*
 
 Replace storage/image.tag
 
@@ -490,7 +490,7 @@ ___
 
 ▸ **storageProjectImageTransfer**(`projectId`: string, `locationId`: string, `imageId`: string, `storageProjectImageTransfer`: [StorageProjectImageTransfer](../interfaces/_api_.storageprojectimagetransfer.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Image](../interfaces/_api_.image.md)>>
 
-*Defined in api.ts:57315*
+*Defined in api.ts:57906*
 
 action transfer
 
@@ -519,7 +519,7 @@ ___
 
 ▸ **storageProjectImageUpdate**(`projectId`: string, `locationId`: string, `imageId`: string, `storageProjectImageUpdate`: [StorageProjectImageUpdate](../interfaces/_api_.storageprojectimageupdate.md), `options?`: any): Promise\<AxiosResponse\<[Image](../interfaces/_api_.image.md)>>
 
-*Defined in api.ts:57330*
+*Defined in api.ts:57921*
 
 Returns modified image
 
