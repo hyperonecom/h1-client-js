@@ -36,7 +36,7 @@
 
 • `Optional` **bankAccount**: string
 
-*Defined in api.ts:4185*
+*Defined in api.ts:4167*
 
 **`memberof`** Organisation
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **billing**: [OrganisationBilling](_api_.organisationbilling.md)
 
-*Defined in api.ts:4173*
+*Defined in api.ts:4155*
 
 **`memberof`** Organisation
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4155*
+*Defined in api.ts:4137*
 
 **`memberof`** Organisation
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:4149*
+*Defined in api.ts:4131*
 
 **`memberof`** Organisation
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:4131*
+*Defined in api.ts:4113*
 
 **`memberof`** Organisation
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4119*
+*Defined in api.ts:4101*
 
 **`memberof`** Organisation
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:4143*
+*Defined in api.ts:4125*
 
 **`memberof`** Organisation
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:4137*
+*Defined in api.ts:4119*
 
 **`memberof`** Organisation
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4125*
+*Defined in api.ts:4107*
 
 **`memberof`** Organisation
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **state**: [OrganisationStateEnum](../enums/_api_.organisationstateenum.md)
 
-*Defined in api.ts:4161*
+*Defined in api.ts:4143*
 
 **`memberof`** Organisation
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4191*
+*Defined in api.ts:4173*
 
 **`memberof`** Organisation
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **transfer**: [OrganisationTransfer](_api_.organisationtransfer.md)
 
-*Defined in api.ts:4179*
+*Defined in api.ts:4161*
 
 **`memberof`** Organisation
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4167*
+*Defined in api.ts:4149*
 
 **`memberof`** Organisation

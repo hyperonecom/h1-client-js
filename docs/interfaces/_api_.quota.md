@@ -28,7 +28,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5048*
+*Defined in api.ts:5030*
 
 **`memberof`** Quota
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **limit**: [QuotaLimit](_api_.quotalimit.md)
 
-*Defined in api.ts:5072*
+*Defined in api.ts:5054*
 
 **`memberof`** Quota
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **metric**: [QuotaMetric](_api_.quotametric.md)
 
-*Defined in api.ts:5060*
+*Defined in api.ts:5042*
 
 **`memberof`** Quota
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5054*
+*Defined in api.ts:5036*
 
 **`memberof`** Quota
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **usage**: number
 
-*Defined in api.ts:5066*
+*Defined in api.ts:5048*
 
 **`memberof`** Quota

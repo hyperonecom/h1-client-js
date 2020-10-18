@@ -35,7 +35,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:7065*
+*Defined in api.ts:7066*
 
 **`memberof`** Vmhost
 
@@ -45,7 +45,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:7059*
+*Defined in api.ts:7060*
 
 **`memberof`** Vmhost
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:7041*
+*Defined in api.ts:7042*
 
 **`memberof`** Vmhost
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7029*
+*Defined in api.ts:7030*
 
 **`memberof`** Vmhost
 
@@ -75,7 +75,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:7053*
+*Defined in api.ts:7054*
 
 **`memberof`** Vmhost
 
@@ -85,7 +85,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:7047*
+*Defined in api.ts:7048*
 
 **`memberof`** Vmhost
 
@@ -95,7 +95,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:7035*
+*Defined in api.ts:7036*
 
 **`memberof`** Vmhost
 
@@ -105,7 +105,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:7077*
+*Defined in api.ts:7078*
 
 **`memberof`** Vmhost
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **state**: [VmhostStateEnum](../enums/_api_.vmhoststateenum.md)
 
-*Defined in api.ts:7071*
+*Defined in api.ts:7072*
 
 **`memberof`** Vmhost
 
@@ -125,7 +125,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:7095*
+*Defined in api.ts:7096*
 
 **`memberof`** Vmhost
 
@@ -135,7 +135,7 @@ ___
 
 • `Optional` **type**: [VmhostTypeEnum](../enums/_api_.vmhosttypeenum.md)
 
-*Defined in api.ts:7089*
+*Defined in api.ts:7090*
 
 **`memberof`** Vmhost
 
@@ -145,6 +145,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:7083*
+*Defined in api.ts:7084*
 
 **`memberof`** Vmhost

@@ -31,7 +31,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:6644*
+*Defined in api.ts:6645*
 
 **`memberof`** UserCredential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:6650*
+*Defined in api.ts:6651*
 
 **`memberof`** UserCredential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **fingerprint**: string
 
-*Defined in api.ts:6668*
+*Defined in api.ts:6669*
 
 **`memberof`** UserCredential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6632*
+*Defined in api.ts:6633*
 
 **`memberof`** UserCredential
 
@@ -71,7 +71,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:6638*
+*Defined in api.ts:6639*
 
 **`memberof`** UserCredential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **token**: string
 
-*Defined in api.ts:6674*
+*Defined in api.ts:6675*
 
 **`memberof`** UserCredential
 
@@ -91,7 +91,7 @@ ___
 
 •  **type**: [UserCredentialTypeEnum](../enums/_api_.usercredentialtypeenum.md)
 
-*Defined in api.ts:6656*
+*Defined in api.ts:6657*
 
 **`memberof`** UserCredential
 
@@ -101,6 +101,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:6662*
+*Defined in api.ts:6663*
 
 **`memberof`** UserCredential

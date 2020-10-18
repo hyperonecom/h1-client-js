@@ -101,7 +101,7 @@ ___
 
 ▸ **storageProjectIsoCreate**(`projectId`: string, `locationId`: string, `storageProjectIsoCreate`: [StorageProjectIsoCreate](../interfaces/_api_.storageprojectisocreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Iso](../interfaces/_api_.iso.md)>>
 
-*Defined in api.ts:59471*
+*Defined in api.ts:60358*
 
 Create iso
 
@@ -129,7 +129,7 @@ ___
 
 ▸ **storageProjectIsoDelete**(`projectId`: string, `locationId`: string, `isoId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:59485*
+*Defined in api.ts:60372*
 
 Delete iso
 
@@ -156,7 +156,7 @@ ___
 
 ▸ **storageProjectIsoDetach**(`projectId`: string, `locationId`: string, `isoId`: string, `storageProjectIsoDetach`: [StorageProjectIsoDetach](../interfaces/_api_.storageprojectisodetach.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Iso](../interfaces/_api_.iso.md)>>
 
-*Defined in api.ts:59501*
+*Defined in api.ts:60388*
 
 action detach
 
@@ -185,7 +185,7 @@ ___
 
 ▸ **storageProjectIsoEventGet**(`projectId`: string, `locationId`: string, `isoId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:59516*
+*Defined in api.ts:60403*
 
 Get storage/iso.event
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **storageProjectIsoEventList**(`projectId`: string, `locationId`: string, `isoId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:59532*
+*Defined in api.ts:60419*
 
 List storage/iso.event
 
@@ -242,7 +242,7 @@ ___
 
 ▸ **storageProjectIsoGet**(`projectId`: string, `locationId`: string, `isoId`: string, `options?`: any): Promise\<AxiosResponse\<[Iso](../interfaces/_api_.iso.md)>>
 
-*Defined in api.ts:59546*
+*Defined in api.ts:60433*
 
 Returns a single iso
 
@@ -269,7 +269,7 @@ ___
 
 ▸ **storageProjectIsoList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Iso](../interfaces/_api_.iso.md)[]>>
 
-*Defined in api.ts:59562*
+*Defined in api.ts:60449*
 
 List iso
 
@@ -298,7 +298,7 @@ ___
 
 ▸ **storageProjectIsoServiceGet**(`projectId`: string, `locationId`: string, `isoId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:59577*
+*Defined in api.ts:60464*
 
 Get storage/iso.service
 
@@ -326,7 +326,7 @@ ___
 
 ▸ **storageProjectIsoServiceList**(`projectId`: string, `locationId`: string, `isoId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:59591*
+*Defined in api.ts:60478*
 
 List storage/iso.service
 
@@ -353,7 +353,7 @@ ___
 
 ▸ **storageProjectIsoTagCreate**(`projectId`: string, `locationId`: string, `isoId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:59606*
+*Defined in api.ts:60493*
 
 Create storage/iso.tag
 
@@ -381,7 +381,7 @@ ___
 
 ▸ **storageProjectIsoTagDelete**(`projectId`: string, `locationId`: string, `isoId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:59621*
+*Defined in api.ts:60508*
 
 Delete storage/iso.tag
 
@@ -409,7 +409,7 @@ ___
 
 ▸ **storageProjectIsoTagGet**(`projectId`: string, `locationId`: string, `isoId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:59636*
+*Defined in api.ts:60523*
 
 Get storage/iso.tag
 
@@ -437,7 +437,7 @@ ___
 
 ▸ **storageProjectIsoTagList**(`projectId`: string, `locationId`: string, `isoId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:59650*
+*Defined in api.ts:60537*
 
 List storage/iso.tag
 
@@ -464,7 +464,7 @@ ___
 
 ▸ **storageProjectIsoTagPut**(`projectId`: string, `locationId`: string, `isoId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:59665*
+*Defined in api.ts:60552*
 
 Replace storage/iso.tag
 
@@ -492,7 +492,7 @@ ___
 
 ▸ **storageProjectIsoTransfer**(`projectId`: string, `locationId`: string, `isoId`: string, `storageProjectIsoTransfer`: [StorageProjectIsoTransfer](../interfaces/_api_.storageprojectisotransfer.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Iso](../interfaces/_api_.iso.md)>>
 
-*Defined in api.ts:59681*
+*Defined in api.ts:60568*
 
 action transfer
 
@@ -521,7 +521,7 @@ ___
 
 ▸ **storageProjectIsoUpdate**(`projectId`: string, `locationId`: string, `isoId`: string, `storageProjectIsoUpdate`: [StorageProjectIsoUpdate](../interfaces/_api_.storageprojectisoupdate.md), `options?`: any): Promise\<AxiosResponse\<[Iso](../interfaces/_api_.iso.md)>>
 
-*Defined in api.ts:59696*
+*Defined in api.ts:60583*
 
 Returns modified iso
 

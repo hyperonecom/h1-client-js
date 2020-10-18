@@ -26,7 +26,7 @@
 
 • `Optional` **creditLimit**: number
 
-*Defined in api.ts:4790*
+*Defined in api.ts:4772*
 
 **`memberof`** ProjectBilling
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **credits**: number
 
-*Defined in api.ts:4778*
+*Defined in api.ts:4760*
 
 **`memberof`** ProjectBilling
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **creditsBonus**: number
 
-*Defined in api.ts:4784*
+*Defined in api.ts:4766*
 
 **`memberof`** ProjectBilling

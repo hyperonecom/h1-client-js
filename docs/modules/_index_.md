@@ -193,7 +193,7 @@
 * [MessageData](_index_.md#messagedata)
 * [MessageDataMimeEnum](_index_.md#messagedatamimeenum)
 * [Metric](_index_.md#metric)
-* [MetricScale](_index_.md#metricscale)
+* [MetricDimension](_index_.md#metricdimension)
 * [Netadp](_index_.md#netadp)
 * [NetadpStateEnum](_index_.md#netadpstateenum)
 * [Netgw](_index_.md#netgw)
@@ -291,6 +291,7 @@
 * [SaCredential](_index_.md#sacredential)
 * [SaCredentialTypeEnum](_index_.md#sacredentialtypeenum)
 * [SaStateEnum](_index_.md#sastateenum)
+* [Serie](_index_.md#serie)
 * [Service](_index_.md#service)
 * [ServiceBilling](_index_.md#servicebilling)
 * [ServiceBillingPrice](_index_.md#servicebillingprice)
@@ -1497,9 +1498,9 @@ Re-exports: [Metric](../interfaces/_api_.metric.md)
 
 ___
 
-### MetricScale
+### MetricDimension
 
-Re-exports: [MetricScale](../interfaces/_api_.metricscale.md)
+Re-exports: [MetricDimension](../interfaces/_api_.metricdimension.md)
 
 ___
 
@@ -2082,6 +2083,12 @@ ___
 ### SaStateEnum
 
 Re-exports: [SaStateEnum](../enums/_api_.sastateenum.md)
+
+___
+
+### Serie
+
+Re-exports: [Serie](../interfaces/_api_.serie.md)
 
 ___
 

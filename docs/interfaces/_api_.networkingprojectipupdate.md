@@ -24,6 +24,6 @@
 
 • `Optional` **ptrRecord**: string
 
-*Defined in api.ts:3890*
+*Defined in api.ts:3872*
 
 **`memberof`** NetworkingProjectIpUpdate

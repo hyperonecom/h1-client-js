@@ -3326,47 +3326,29 @@ export interface Metric {
     unit: string;
     /**
      * 
-     * @type {string}
+     * @type {Array<MetricDimension>}
      * @memberof Metric
      */
-    resource: string;
-    /**
-     * 
-     * @type {MetricScale}
-     * @memberof Metric
-     */
-    scale?: MetricScale;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof Metric
-     */
-    columns?: Array<string>;
-    /**
-     * 
-     * @type {Array<Array<number>>}
-     * @memberof Metric
-     */
-    values?: Array<Array<number>>;
+    dimension?: Array<MetricDimension>;
 }
 /**
  * 
  * @export
- * @interface MetricScale
+ * @interface MetricDimension
  */
-export interface MetricScale {
+export interface MetricDimension {
     /**
      * 
-     * @type {number}
-     * @memberof MetricScale
+     * @type {string}
+     * @memberof MetricDimension
      */
-    min?: number;
+    name: string;
     /**
      * 
-     * @type {number}
-     * @memberof MetricScale
+     * @type {string}
+     * @memberof MetricDimension
      */
-    max?: number;
+    description: string;
 }
 /**
  * 
@@ -5755,6 +5737,25 @@ export enum SaCredentialTypeEnum {
     Ssh = 'ssh'
 }
 
+/**
+ * 
+ * @export
+ * @interface Serie
+ */
+export interface Serie {
+    /**
+     * 
+     * @type {string}
+     * @memberof Serie
+     */
+    time: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Serie
+     */
+    value: number;
+}
 /**
  * 
  * @export
@@ -11680,16 +11681,78 @@ export const ComputeProjectVmApiAxiosParamCreator = function (configuration?: Co
             };
         },
         /**
+         * Get compute/vm.metric
+         * @summary Get compute/vm.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        computeProjectVmMetricGet: async (projectId: string, locationId: string, vmId: string, metricId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling computeProjectVmMetricGet.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling computeProjectVmMetricGet.');
+            }
+            // verify required parameter 'vmId' is not null or undefined
+            if (vmId === null || vmId === undefined) {
+                throw new RequiredError('vmId','Required parameter vmId was null or undefined when calling computeProjectVmMetricGet.');
+            }
+            // verify required parameter 'metricId' is not null or undefined
+            if (metricId === null || metricId === undefined) {
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling computeProjectVmMetricGet.');
+            }
+            const localVarPath = `/compute/{locationId}/project/{projectId}/vm/{vmId}/metric/{metricId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"vmId"}}`, encodeURIComponent(String(vmId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List compute/vm.metric
          * @summary List compute/vm.metric
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} vmId Vm Id
-         * @param {'1d' | '12h' | '6h' | '1h'} [period] period
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        computeProjectVmMetricList: async (projectId: string, locationId: string, vmId: string, period?: '1d' | '12h' | '6h' | '1h', options: any = {}): Promise<RequestArgs> => {
+        computeProjectVmMetricList: async (projectId: string, locationId: string, vmId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
                 throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling computeProjectVmMetricList.');
@@ -11724,8 +11787,77 @@ export const ComputeProjectVmApiAxiosParamCreator = function (configuration?: Co
                 localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
             }
 
-            if (period !== undefined) {
-                localVarQueryParameter['period'] = period;
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List compute/vm.point
+         * @summary List compute/vm.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        computeProjectVmMetricPointList: async (projectId: string, locationId: string, vmId: string, metricId: string, interval?: string, timespan?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling computeProjectVmMetricPointList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling computeProjectVmMetricPointList.');
+            }
+            // verify required parameter 'vmId' is not null or undefined
+            if (vmId === null || vmId === undefined) {
+                throw new RequiredError('vmId','Required parameter vmId was null or undefined when calling computeProjectVmMetricPointList.');
+            }
+            // verify required parameter 'metricId' is not null or undefined
+            if (metricId === null || metricId === undefined) {
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling computeProjectVmMetricPointList.');
+            }
+            const localVarPath = `/compute/{locationId}/project/{projectId}/vm/{vmId}/metric/{metricId}/point`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"vmId"}}`, encodeURIComponent(String(vmId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if (interval !== undefined) {
+                localVarQueryParameter['interval'] = interval;
+            }
+
+            if (timespan !== undefined) {
+                localVarQueryParameter['timespan'] = timespan;
             }
 
 
@@ -12845,17 +12977,52 @@ export const ComputeProjectVmApiFp = function(configuration?: Configuration) {
             };
         },
         /**
+         * Get compute/vm.metric
+         * @summary Get compute/vm.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async computeProjectVmMetricGet(projectId: string, locationId: string, vmId: string, metricId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Metric>> {
+            const localVarAxiosArgs = await ComputeProjectVmApiAxiosParamCreator(configuration).computeProjectVmMetricGet(projectId, locationId, vmId, metricId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * List compute/vm.metric
          * @summary List compute/vm.metric
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} vmId Vm Id
-         * @param {'1d' | '12h' | '6h' | '1h'} [period] period
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async computeProjectVmMetricList(projectId: string, locationId: string, vmId: string, period?: '1d' | '12h' | '6h' | '1h', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Metric>>> {
-            const localVarAxiosArgs = await ComputeProjectVmApiAxiosParamCreator(configuration).computeProjectVmMetricList(projectId, locationId, vmId, period, options);
+        async computeProjectVmMetricList(projectId: string, locationId: string, vmId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Metric>>> {
+            const localVarAxiosArgs = await ComputeProjectVmApiAxiosParamCreator(configuration).computeProjectVmMetricList(projectId, locationId, vmId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List compute/vm.point
+         * @summary List compute/vm.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async computeProjectVmMetricPointList(projectId: string, locationId: string, vmId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Serie>>> {
+            const localVarAxiosArgs = await ComputeProjectVmApiAxiosParamCreator(configuration).computeProjectVmMetricPointList(projectId, locationId, vmId, metricId, interval, timespan, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -13264,17 +13431,44 @@ export const ComputeProjectVmApiFactory = function (configuration?: Configuratio
             return ComputeProjectVmApiFp(configuration).computeProjectVmList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get compute/vm.metric
+         * @summary Get compute/vm.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        computeProjectVmMetricGet(projectId: string, locationId: string, vmId: string, metricId: string, options?: any): AxiosPromise<Metric> {
+            return ComputeProjectVmApiFp(configuration).computeProjectVmMetricGet(projectId, locationId, vmId, metricId, options).then((request) => request(axios, basePath));
+        },
+        /**
          * List compute/vm.metric
          * @summary List compute/vm.metric
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} vmId Vm Id
-         * @param {'1d' | '12h' | '6h' | '1h'} [period] period
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        computeProjectVmMetricList(projectId: string, locationId: string, vmId: string, period?: '1d' | '12h' | '6h' | '1h', options?: any): AxiosPromise<Array<Metric>> {
-            return ComputeProjectVmApiFp(configuration).computeProjectVmMetricList(projectId, locationId, vmId, period, options).then((request) => request(axios, basePath));
+        computeProjectVmMetricList(projectId: string, locationId: string, vmId: string, options?: any): AxiosPromise<Array<Metric>> {
+            return ComputeProjectVmApiFp(configuration).computeProjectVmMetricList(projectId, locationId, vmId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List compute/vm.point
+         * @summary List compute/vm.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        computeProjectVmMetricPointList(projectId: string, locationId: string, vmId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Serie>> {
+            return ComputeProjectVmApiFp(configuration).computeProjectVmMetricPointList(projectId, locationId, vmId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
         },
         /**
          * action password_reset
@@ -13648,18 +13842,49 @@ export class ComputeProjectVmApi extends BaseAPI {
     }
 
     /**
+     * Get compute/vm.metric
+     * @summary Get compute/vm.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} vmId Vm Id
+     * @param {string} metricId metricId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ComputeProjectVmApi
+     */
+    public computeProjectVmMetricGet(projectId: string, locationId: string, vmId: string, metricId: string, options?: any) {
+        return ComputeProjectVmApiFp(this.configuration).computeProjectVmMetricGet(projectId, locationId, vmId, metricId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * List compute/vm.metric
      * @summary List compute/vm.metric
      * @param {string} projectId Project Id
      * @param {string} locationId Location Id
      * @param {string} vmId Vm Id
-     * @param {'1d' | '12h' | '6h' | '1h'} [period] period
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ComputeProjectVmApi
      */
-    public computeProjectVmMetricList(projectId: string, locationId: string, vmId: string, period?: '1d' | '12h' | '6h' | '1h', options?: any) {
-        return ComputeProjectVmApiFp(this.configuration).computeProjectVmMetricList(projectId, locationId, vmId, period, options).then((request) => request(this.axios, this.basePath));
+    public computeProjectVmMetricList(projectId: string, locationId: string, vmId: string, options?: any) {
+        return ComputeProjectVmApiFp(this.configuration).computeProjectVmMetricList(projectId, locationId, vmId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List compute/vm.point
+     * @summary List compute/vm.point
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} vmId Vm Id
+     * @param {string} metricId metricId
+     * @param {string} [interval] interval
+     * @param {string} [timespan] timespan
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ComputeProjectVmApi
+     */
+    public computeProjectVmMetricPointList(projectId: string, locationId: string, vmId: string, metricId: string, interval?: string, timespan?: string, options?: any) {
+        return ComputeProjectVmApiFp(this.configuration).computeProjectVmMetricPointList(projectId, locationId, vmId, metricId, interval, timespan, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -46205,6 +46430,199 @@ export const NetworkingProjectNetadpApiAxiosParamCreator = function (configurati
             };
         },
         /**
+         * Get networking/netadp.metric
+         * @summary Get networking/netadp.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} netadpId Netadp Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        networkingProjectNetadpMetricGet: async (projectId: string, locationId: string, netadpId: string, metricId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling networkingProjectNetadpMetricGet.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling networkingProjectNetadpMetricGet.');
+            }
+            // verify required parameter 'netadpId' is not null or undefined
+            if (netadpId === null || netadpId === undefined) {
+                throw new RequiredError('netadpId','Required parameter netadpId was null or undefined when calling networkingProjectNetadpMetricGet.');
+            }
+            // verify required parameter 'metricId' is not null or undefined
+            if (metricId === null || metricId === undefined) {
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling networkingProjectNetadpMetricGet.');
+            }
+            const localVarPath = `/networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric/{metricId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"netadpId"}}`, encodeURIComponent(String(netadpId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List networking/netadp.metric
+         * @summary List networking/netadp.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} netadpId Netadp Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        networkingProjectNetadpMetricList: async (projectId: string, locationId: string, netadpId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling networkingProjectNetadpMetricList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling networkingProjectNetadpMetricList.');
+            }
+            // verify required parameter 'netadpId' is not null or undefined
+            if (netadpId === null || netadpId === undefined) {
+                throw new RequiredError('netadpId','Required parameter netadpId was null or undefined when calling networkingProjectNetadpMetricList.');
+            }
+            const localVarPath = `/networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"netadpId"}}`, encodeURIComponent(String(netadpId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List networking/netadp.point
+         * @summary List networking/netadp.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} netadpId Netadp Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        networkingProjectNetadpMetricPointList: async (projectId: string, locationId: string, netadpId: string, metricId: string, interval?: string, timespan?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling networkingProjectNetadpMetricPointList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling networkingProjectNetadpMetricPointList.');
+            }
+            // verify required parameter 'netadpId' is not null or undefined
+            if (netadpId === null || netadpId === undefined) {
+                throw new RequiredError('netadpId','Required parameter netadpId was null or undefined when calling networkingProjectNetadpMetricPointList.');
+            }
+            // verify required parameter 'metricId' is not null or undefined
+            if (metricId === null || metricId === undefined) {
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling networkingProjectNetadpMetricPointList.');
+            }
+            const localVarPath = `/networking/{locationId}/project/{projectId}/netadp/{netadpId}/metric/{metricId}/point`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"netadpId"}}`, encodeURIComponent(String(netadpId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if (interval !== undefined) {
+                localVarQueryParameter['interval'] = interval;
+            }
+
+            if (timespan !== undefined) {
+                localVarQueryParameter['timespan'] = timespan;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get networking/netadp.service
          * @summary Get networking/netadp.service
          * @param {string} projectId Project Id
@@ -46819,6 +47237,58 @@ export const NetworkingProjectNetadpApiFp = function(configuration?: Configurati
             };
         },
         /**
+         * Get networking/netadp.metric
+         * @summary Get networking/netadp.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} netadpId Netadp Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async networkingProjectNetadpMetricGet(projectId: string, locationId: string, netadpId: string, metricId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Metric>> {
+            const localVarAxiosArgs = await NetworkingProjectNetadpApiAxiosParamCreator(configuration).networkingProjectNetadpMetricGet(projectId, locationId, netadpId, metricId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List networking/netadp.metric
+         * @summary List networking/netadp.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} netadpId Netadp Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async networkingProjectNetadpMetricList(projectId: string, locationId: string, netadpId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Metric>>> {
+            const localVarAxiosArgs = await NetworkingProjectNetadpApiAxiosParamCreator(configuration).networkingProjectNetadpMetricList(projectId, locationId, netadpId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List networking/netadp.point
+         * @summary List networking/netadp.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} netadpId Netadp Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async networkingProjectNetadpMetricPointList(projectId: string, locationId: string, netadpId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Serie>>> {
+            const localVarAxiosArgs = await NetworkingProjectNetadpApiAxiosParamCreator(configuration).networkingProjectNetadpMetricPointList(projectId, locationId, netadpId, metricId, interval, timespan, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * Get networking/netadp.service
          * @summary Get networking/netadp.service
          * @param {string} projectId Project Id
@@ -47042,6 +47512,46 @@ export const NetworkingProjectNetadpApiFactory = function (configuration?: Confi
             return NetworkingProjectNetadpApiFp(configuration).networkingProjectNetadpList(projectId, locationId, assignedResource, assignedId, network, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get networking/netadp.metric
+         * @summary Get networking/netadp.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} netadpId Netadp Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        networkingProjectNetadpMetricGet(projectId: string, locationId: string, netadpId: string, metricId: string, options?: any): AxiosPromise<Metric> {
+            return NetworkingProjectNetadpApiFp(configuration).networkingProjectNetadpMetricGet(projectId, locationId, netadpId, metricId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List networking/netadp.metric
+         * @summary List networking/netadp.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} netadpId Netadp Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        networkingProjectNetadpMetricList(projectId: string, locationId: string, netadpId: string, options?: any): AxiosPromise<Array<Metric>> {
+            return NetworkingProjectNetadpApiFp(configuration).networkingProjectNetadpMetricList(projectId, locationId, netadpId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List networking/netadp.point
+         * @summary List networking/netadp.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} netadpId Netadp Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        networkingProjectNetadpMetricPointList(projectId: string, locationId: string, netadpId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Serie>> {
+            return NetworkingProjectNetadpApiFp(configuration).networkingProjectNetadpMetricPointList(projectId, locationId, netadpId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get networking/netadp.service
          * @summary Get networking/netadp.service
          * @param {string} projectId Project Id
@@ -47243,6 +47753,52 @@ export class NetworkingProjectNetadpApi extends BaseAPI {
      */
     public networkingProjectNetadpList(projectId: string, locationId: string, assignedResource?: string, assignedId?: string, network?: string, tagValue?: string, tagKey?: string, options?: any) {
         return NetworkingProjectNetadpApiFp(this.configuration).networkingProjectNetadpList(projectId, locationId, assignedResource, assignedId, network, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get networking/netadp.metric
+     * @summary Get networking/netadp.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} netadpId Netadp Id
+     * @param {string} metricId metricId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof NetworkingProjectNetadpApi
+     */
+    public networkingProjectNetadpMetricGet(projectId: string, locationId: string, netadpId: string, metricId: string, options?: any) {
+        return NetworkingProjectNetadpApiFp(this.configuration).networkingProjectNetadpMetricGet(projectId, locationId, netadpId, metricId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List networking/netadp.metric
+     * @summary List networking/netadp.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} netadpId Netadp Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof NetworkingProjectNetadpApi
+     */
+    public networkingProjectNetadpMetricList(projectId: string, locationId: string, netadpId: string, options?: any) {
+        return NetworkingProjectNetadpApiFp(this.configuration).networkingProjectNetadpMetricList(projectId, locationId, netadpId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List networking/netadp.point
+     * @summary List networking/netadp.point
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} netadpId Netadp Id
+     * @param {string} metricId metricId
+     * @param {string} [interval] interval
+     * @param {string} [timespan] timespan
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof NetworkingProjectNetadpApi
+     */
+    public networkingProjectNetadpMetricPointList(projectId: string, locationId: string, netadpId: string, metricId: string, interval?: string, timespan?: string, options?: any) {
+        return NetworkingProjectNetadpApiFp(this.configuration).networkingProjectNetadpMetricPointList(projectId, locationId, netadpId, metricId, interval, timespan, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -54636,6 +55192,199 @@ export const StorageProjectDiskApiAxiosParamCreator = function (configuration?: 
             };
         },
         /**
+         * Get storage/disk.metric
+         * @summary Get storage/disk.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} diskId Disk Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        storageProjectDiskMetricGet: async (projectId: string, locationId: string, diskId: string, metricId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling storageProjectDiskMetricGet.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling storageProjectDiskMetricGet.');
+            }
+            // verify required parameter 'diskId' is not null or undefined
+            if (diskId === null || diskId === undefined) {
+                throw new RequiredError('diskId','Required parameter diskId was null or undefined when calling storageProjectDiskMetricGet.');
+            }
+            // verify required parameter 'metricId' is not null or undefined
+            if (metricId === null || metricId === undefined) {
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling storageProjectDiskMetricGet.');
+            }
+            const localVarPath = `/storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"diskId"}}`, encodeURIComponent(String(diskId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List storage/disk.metric
+         * @summary List storage/disk.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} diskId Disk Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        storageProjectDiskMetricList: async (projectId: string, locationId: string, diskId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling storageProjectDiskMetricList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling storageProjectDiskMetricList.');
+            }
+            // verify required parameter 'diskId' is not null or undefined
+            if (diskId === null || diskId === undefined) {
+                throw new RequiredError('diskId','Required parameter diskId was null or undefined when calling storageProjectDiskMetricList.');
+            }
+            const localVarPath = `/storage/{locationId}/project/{projectId}/disk/{diskId}/metric`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"diskId"}}`, encodeURIComponent(String(diskId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List storage/disk.point
+         * @summary List storage/disk.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} diskId Disk Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        storageProjectDiskMetricPointList: async (projectId: string, locationId: string, diskId: string, metricId: string, interval?: string, timespan?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling storageProjectDiskMetricPointList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling storageProjectDiskMetricPointList.');
+            }
+            // verify required parameter 'diskId' is not null or undefined
+            if (diskId === null || diskId === undefined) {
+                throw new RequiredError('diskId','Required parameter diskId was null or undefined when calling storageProjectDiskMetricPointList.');
+            }
+            // verify required parameter 'metricId' is not null or undefined
+            if (metricId === null || metricId === undefined) {
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling storageProjectDiskMetricPointList.');
+            }
+            const localVarPath = `/storage/{locationId}/project/{projectId}/disk/{diskId}/metric/{metricId}/point`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"diskId"}}`, encodeURIComponent(String(diskId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if (interval !== undefined) {
+                localVarQueryParameter['interval'] = interval;
+            }
+
+            if (timespan !== undefined) {
+                localVarQueryParameter['timespan'] = timespan;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * action resize
          * @summary Resize storage/disk
          * @param {string} projectId Project Id
@@ -55443,6 +56192,58 @@ export const StorageProjectDiskApiFp = function(configuration?: Configuration) {
             };
         },
         /**
+         * Get storage/disk.metric
+         * @summary Get storage/disk.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} diskId Disk Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async storageProjectDiskMetricGet(projectId: string, locationId: string, diskId: string, metricId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Metric>> {
+            const localVarAxiosArgs = await StorageProjectDiskApiAxiosParamCreator(configuration).storageProjectDiskMetricGet(projectId, locationId, diskId, metricId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List storage/disk.metric
+         * @summary List storage/disk.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} diskId Disk Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async storageProjectDiskMetricList(projectId: string, locationId: string, diskId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Metric>>> {
+            const localVarAxiosArgs = await StorageProjectDiskApiAxiosParamCreator(configuration).storageProjectDiskMetricList(projectId, locationId, diskId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List storage/disk.point
+         * @summary List storage/disk.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} diskId Disk Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async storageProjectDiskMetricPointList(projectId: string, locationId: string, diskId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Serie>>> {
+            const localVarAxiosArgs = await StorageProjectDiskApiAxiosParamCreator(configuration).storageProjectDiskMetricPointList(projectId, locationId, diskId, metricId, interval, timespan, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * action resize
          * @summary Resize storage/disk
          * @param {string} projectId Project Id
@@ -55741,6 +56542,46 @@ export const StorageProjectDiskApiFactory = function (configuration?: Configurat
             return StorageProjectDiskApiFp(configuration).storageProjectDiskList(projectId, locationId, name, vm, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get storage/disk.metric
+         * @summary Get storage/disk.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} diskId Disk Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        storageProjectDiskMetricGet(projectId: string, locationId: string, diskId: string, metricId: string, options?: any): AxiosPromise<Metric> {
+            return StorageProjectDiskApiFp(configuration).storageProjectDiskMetricGet(projectId, locationId, diskId, metricId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List storage/disk.metric
+         * @summary List storage/disk.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} diskId Disk Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        storageProjectDiskMetricList(projectId: string, locationId: string, diskId: string, options?: any): AxiosPromise<Array<Metric>> {
+            return StorageProjectDiskApiFp(configuration).storageProjectDiskMetricList(projectId, locationId, diskId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List storage/disk.point
+         * @summary List storage/disk.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} diskId Disk Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        storageProjectDiskMetricPointList(projectId: string, locationId: string, diskId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Serie>> {
+            return StorageProjectDiskApiFp(configuration).storageProjectDiskMetricPointList(projectId, locationId, diskId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
+        },
+        /**
          * action resize
          * @summary Resize storage/disk
          * @param {string} projectId Project Id
@@ -56015,6 +56856,52 @@ export class StorageProjectDiskApi extends BaseAPI {
      */
     public storageProjectDiskList(projectId: string, locationId: string, name?: string, vm?: string, tagValue?: string, tagKey?: string, options?: any) {
         return StorageProjectDiskApiFp(this.configuration).storageProjectDiskList(projectId, locationId, name, vm, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get storage/disk.metric
+     * @summary Get storage/disk.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} diskId Disk Id
+     * @param {string} metricId metricId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StorageProjectDiskApi
+     */
+    public storageProjectDiskMetricGet(projectId: string, locationId: string, diskId: string, metricId: string, options?: any) {
+        return StorageProjectDiskApiFp(this.configuration).storageProjectDiskMetricGet(projectId, locationId, diskId, metricId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List storage/disk.metric
+     * @summary List storage/disk.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} diskId Disk Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StorageProjectDiskApi
+     */
+    public storageProjectDiskMetricList(projectId: string, locationId: string, diskId: string, options?: any) {
+        return StorageProjectDiskApiFp(this.configuration).storageProjectDiskMetricList(projectId, locationId, diskId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List storage/disk.point
+     * @summary List storage/disk.point
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} diskId Disk Id
+     * @param {string} metricId metricId
+     * @param {string} [interval] interval
+     * @param {string} [timespan] timespan
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof StorageProjectDiskApi
+     */
+    public storageProjectDiskMetricPointList(projectId: string, locationId: string, diskId: string, metricId: string, interval?: string, timespan?: string, options?: any) {
+        return StorageProjectDiskApiFp(this.configuration).storageProjectDiskMetricPointList(projectId, locationId, diskId, metricId, interval, timespan, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -65911,6 +66798,199 @@ export const WebsiteProjectInstanceApiAxiosParamCreator = function (configuratio
             };
         },
         /**
+         * Get website/instance.metric
+         * @summary Get website/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceMetricGet: async (projectId: string, locationId: string, instanceId: string, metricId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling websiteProjectInstanceMetricGet.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling websiteProjectInstanceMetricGet.');
+            }
+            // verify required parameter 'instanceId' is not null or undefined
+            if (instanceId === null || instanceId === undefined) {
+                throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling websiteProjectInstanceMetricGet.');
+            }
+            // verify required parameter 'metricId' is not null or undefined
+            if (metricId === null || metricId === undefined) {
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling websiteProjectInstanceMetricGet.');
+            }
+            const localVarPath = `/website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"instanceId"}}`, encodeURIComponent(String(instanceId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List website/instance.metric
+         * @summary List website/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceMetricList: async (projectId: string, locationId: string, instanceId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling websiteProjectInstanceMetricList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling websiteProjectInstanceMetricList.');
+            }
+            // verify required parameter 'instanceId' is not null or undefined
+            if (instanceId === null || instanceId === undefined) {
+                throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling websiteProjectInstanceMetricList.');
+            }
+            const localVarPath = `/website/{locationId}/project/{projectId}/instance/{instanceId}/metric`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"instanceId"}}`, encodeURIComponent(String(instanceId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List website/instance.point
+         * @summary List website/instance.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceMetricPointList: async (projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling websiteProjectInstanceMetricPointList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling websiteProjectInstanceMetricPointList.');
+            }
+            // verify required parameter 'instanceId' is not null or undefined
+            if (instanceId === null || instanceId === undefined) {
+                throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling websiteProjectInstanceMetricPointList.');
+            }
+            // verify required parameter 'metricId' is not null or undefined
+            if (metricId === null || metricId === undefined) {
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling websiteProjectInstanceMetricPointList.');
+            }
+            const localVarPath = `/website/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"instanceId"}}`, encodeURIComponent(String(instanceId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if (interval !== undefined) {
+                localVarQueryParameter['interval'] = interval;
+            }
+
+            if (timespan !== undefined) {
+                localVarQueryParameter['timespan'] = timespan;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * action restart
          * @summary Restart website/instance
          * @param {string} projectId Project Id
@@ -67636,6 +68716,58 @@ export const WebsiteProjectInstanceApiFp = function(configuration?: Configuratio
             };
         },
         /**
+         * Get website/instance.metric
+         * @summary Get website/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async websiteProjectInstanceMetricGet(projectId: string, locationId: string, instanceId: string, metricId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Metric>> {
+            const localVarAxiosArgs = await WebsiteProjectInstanceApiAxiosParamCreator(configuration).websiteProjectInstanceMetricGet(projectId, locationId, instanceId, metricId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List website/instance.metric
+         * @summary List website/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async websiteProjectInstanceMetricList(projectId: string, locationId: string, instanceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Metric>>> {
+            const localVarAxiosArgs = await WebsiteProjectInstanceApiAxiosParamCreator(configuration).websiteProjectInstanceMetricList(projectId, locationId, instanceId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List website/instance.point
+         * @summary List website/instance.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async websiteProjectInstanceMetricPointList(projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Serie>>> {
+            const localVarAxiosArgs = await WebsiteProjectInstanceApiAxiosParamCreator(configuration).websiteProjectInstanceMetricPointList(projectId, locationId, instanceId, metricId, interval, timespan, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * action restart
          * @summary Restart website/instance
          * @param {string} projectId Project Id
@@ -68296,6 +69428,46 @@ export const WebsiteProjectInstanceApiFactory = function (configuration?: Config
             return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get website/instance.metric
+         * @summary Get website/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceMetricGet(projectId: string, locationId: string, instanceId: string, metricId: string, options?: any): AxiosPromise<Metric> {
+            return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceMetricGet(projectId, locationId, instanceId, metricId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List website/instance.metric
+         * @summary List website/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceMetricList(projectId: string, locationId: string, instanceId: string, options?: any): AxiosPromise<Array<Metric>> {
+            return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceMetricList(projectId, locationId, instanceId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List website/instance.point
+         * @summary List website/instance.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceMetricPointList(projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Serie>> {
+            return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceMetricPointList(projectId, locationId, instanceId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
+        },
+        /**
          * action restart
          * @summary Restart website/instance
          * @param {string} projectId Project Id
@@ -68916,6 +70088,52 @@ export class WebsiteProjectInstanceApi extends BaseAPI {
      */
     public websiteProjectInstanceList(projectId: string, locationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any) {
         return WebsiteProjectInstanceApiFp(this.configuration).websiteProjectInstanceList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get website/instance.metric
+     * @summary Get website/instance.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} instanceId Instance Id
+     * @param {string} metricId metricId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebsiteProjectInstanceApi
+     */
+    public websiteProjectInstanceMetricGet(projectId: string, locationId: string, instanceId: string, metricId: string, options?: any) {
+        return WebsiteProjectInstanceApiFp(this.configuration).websiteProjectInstanceMetricGet(projectId, locationId, instanceId, metricId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List website/instance.metric
+     * @summary List website/instance.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} instanceId Instance Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebsiteProjectInstanceApi
+     */
+    public websiteProjectInstanceMetricList(projectId: string, locationId: string, instanceId: string, options?: any) {
+        return WebsiteProjectInstanceApiFp(this.configuration).websiteProjectInstanceMetricList(projectId, locationId, instanceId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List website/instance.point
+     * @summary List website/instance.point
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} instanceId Instance Id
+     * @param {string} metricId metricId
+     * @param {string} [interval] interval
+     * @param {string} [timespan] timespan
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebsiteProjectInstanceApi
+     */
+    public websiteProjectInstanceMetricPointList(projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options?: any) {
+        return WebsiteProjectInstanceApiFp(this.configuration).websiteProjectInstanceMetricPointList(projectId, locationId, instanceId, metricId, interval, timespan, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

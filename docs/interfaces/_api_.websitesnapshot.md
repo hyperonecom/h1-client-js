@@ -27,7 +27,7 @@
 
 • `Optional` **creation**: string
 
-*Defined in api.ts:7498*
+*Defined in api.ts:7499*
 
 **`memberof`** WebsiteSnapshot
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7486*
+*Defined in api.ts:7487*
 
 **`memberof`** WebsiteSnapshot
 
@@ -47,7 +47,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:7492*
+*Defined in api.ts:7493*
 
 **`memberof`** WebsiteSnapshot
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **used**: number
 
-*Defined in api.ts:7504*
+*Defined in api.ts:7505*
 
 **`memberof`** WebsiteSnapshot

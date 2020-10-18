@@ -38,7 +38,7 @@
 
 • `Optional` **cpu**: number
 
-*Defined in api.ts:6962*
+*Defined in api.ts:6963*
 
 **`memberof`** Vm
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:6932*
+*Defined in api.ts:6933*
 
 **`memberof`** Vm
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:6926*
+*Defined in api.ts:6927*
 
 **`memberof`** Vm
 
@@ -68,7 +68,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:6908*
+*Defined in api.ts:6909*
 
 **`memberof`** Vm
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:6974*
+*Defined in api.ts:6975*
 
 **`memberof`** Vm
 
@@ -88,7 +88,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6896*
+*Defined in api.ts:6897*
 
 **`memberof`** Vm
 
@@ -98,7 +98,7 @@ ___
 
 • `Optional` **memory**: number
 
-*Defined in api.ts:6968*
+*Defined in api.ts:6969*
 
 **`memberof`** Vm
 
@@ -108,7 +108,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:6920*
+*Defined in api.ts:6921*
 
 **`memberof`** Vm
 
@@ -118,7 +118,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:6914*
+*Defined in api.ts:6915*
 
 **`memberof`** Vm
 
@@ -128,7 +128,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:6902*
+*Defined in api.ts:6903*
 
 **`memberof`** Vm
 
@@ -138,7 +138,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:6944*
+*Defined in api.ts:6945*
 
 **`memberof`** Vm
 
@@ -148,7 +148,7 @@ ___
 
 • `Optional` **state**: [VmStateEnum](../enums/_api_.vmstateenum.md)
 
-*Defined in api.ts:6938*
+*Defined in api.ts:6939*
 
 **`memberof`** Vm
 
@@ -158,7 +158,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:6980*
+*Defined in api.ts:6981*
 
 **`memberof`** Vm
 
@@ -168,7 +168,7 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:6950*
+*Defined in api.ts:6951*
 
 **`memberof`** Vm
 
@@ -178,6 +178,6 @@ ___
 
 • `Optional` **userMetadata**: string
 
-*Defined in api.ts:6956*
+*Defined in api.ts:6957*
 
 **`memberof`** Vm

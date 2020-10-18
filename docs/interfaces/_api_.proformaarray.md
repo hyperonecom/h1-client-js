@@ -29,7 +29,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4590*
+*Defined in api.ts:4572*
 
 **`memberof`** ProformaArray
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **invoiceNo**: string
 
-*Defined in api.ts:4596*
+*Defined in api.ts:4578*
 
 **`memberof`** ProformaArray
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **issueDate**: string
 
-*Defined in api.ts:4602*
+*Defined in api.ts:4584*
 
 **`memberof`** ProformaArray
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:4614*
+*Defined in api.ts:4596*
 
 **`memberof`** ProformaArray
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **summary**: string
 
-*Defined in api.ts:4608*
+*Defined in api.ts:4590*
 
 **`memberof`** ProformaArray
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4620*
+*Defined in api.ts:4602*
 
 **`memberof`** ProformaArray

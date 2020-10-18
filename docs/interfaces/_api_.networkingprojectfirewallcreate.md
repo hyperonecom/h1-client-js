@@ -28,7 +28,7 @@
 
 • `Optional` **egress**: Array\<[NetworkingRule](_api_.networkingrule.md)>
 
-*Defined in api.ts:3788*
+*Defined in api.ts:3770*
 
 **`memberof`** NetworkingProjectFirewallCreate
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **ingress**: Array\<[NetworkingRule](_api_.networkingrule.md)>
 
-*Defined in api.ts:3782*
+*Defined in api.ts:3764*
 
 **`memberof`** NetworkingProjectFirewallCreate
 
@@ -48,7 +48,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:3770*
+*Defined in api.ts:3752*
 
 **`memberof`** NetworkingProjectFirewallCreate
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **service**: string
 
-*Defined in api.ts:3776*
+*Defined in api.ts:3758*
 
 **`memberof`** NetworkingProjectFirewallCreate
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:3794*
+*Defined in api.ts:3776*
 
 **`memberof`** NetworkingProjectFirewallCreate

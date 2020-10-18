@@ -34,7 +34,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:5659*
+*Defined in api.ts:5641*
 
 **`memberof`** Sa
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5653*
+*Defined in api.ts:5635*
 
 **`memberof`** Sa
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:5635*
+*Defined in api.ts:5617*
 
 **`memberof`** Sa
 
@@ -64,7 +64,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5623*
+*Defined in api.ts:5605*
 
 **`memberof`** Sa
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:5647*
+*Defined in api.ts:5629*
 
 **`memberof`** Sa
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:5641*
+*Defined in api.ts:5623*
 
 **`memberof`** Sa
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5629*
+*Defined in api.ts:5611*
 
 **`memberof`** Sa
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:5671*
+*Defined in api.ts:5653*
 
 **`memberof`** Sa
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **state**: [SaStateEnum](../enums/_api_.sastateenum.md)
 
-*Defined in api.ts:5665*
+*Defined in api.ts:5647*
 
 **`memberof`** Sa
 
@@ -124,7 +124,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5683*
+*Defined in api.ts:5665*
 
 **`memberof`** Sa
 
@@ -134,6 +134,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:5677*
+*Defined in api.ts:5659*
 
 **`memberof`** Sa

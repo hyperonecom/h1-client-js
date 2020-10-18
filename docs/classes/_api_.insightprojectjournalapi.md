@@ -106,7 +106,7 @@ ___
 
 ▸ **insightProjectJournalCreate**(`projectId`: string, `locationId`: string, `insightProjectJournalCreate`: [InsightProjectJournalCreate](../interfaces/_api_.insightprojectjournalcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Journal](../interfaces/_api_.journal.md)>>
 
-*Defined in api.ts:40779*
+*Defined in api.ts:41004*
 
 Create journal
 
@@ -134,7 +134,7 @@ ___
 
 ▸ **insightProjectJournalCredentialCreate**(`projectId`: string, `locationId`: string, `journalId`: string, `journalCredential`: [JournalCredential](../interfaces/_api_.journalcredential.md), `options?`: any): Promise\<AxiosResponse\<[JournalCredential](../interfaces/_api_.journalcredential.md)>>
 
-*Defined in api.ts:40794*
+*Defined in api.ts:41019*
 
 Create insight/journal.credential
 
@@ -162,7 +162,7 @@ ___
 
 ▸ **insightProjectJournalCredentialDelete**(`projectId`: string, `locationId`: string, `journalId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[Journal](../interfaces/_api_.journal.md)>>
 
-*Defined in api.ts:40809*
+*Defined in api.ts:41034*
 
 Delete insight/journal.credential
 
@@ -190,7 +190,7 @@ ___
 
 ▸ **insightProjectJournalCredentialGet**(`projectId`: string, `locationId`: string, `journalId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[JournalCredential](../interfaces/_api_.journalcredential.md)>>
 
-*Defined in api.ts:40824*
+*Defined in api.ts:41049*
 
 Get insight/journal.credential
 
@@ -218,7 +218,7 @@ ___
 
 ▸ **insightProjectJournalCredentialList**(`projectId`: string, `locationId`: string, `journalId`: string, `options?`: any): Promise\<AxiosResponse\<[JournalCredential](../interfaces/_api_.journalcredential.md)[]>>
 
-*Defined in api.ts:40838*
+*Defined in api.ts:41063*
 
 List insight/journal.credential
 
@@ -245,7 +245,7 @@ ___
 
 ▸ **insightProjectJournalCredentialPatch**(`projectId`: string, `locationId`: string, `journalId`: string, `credentialId`: string, `insightProjectJournalCredentialPatch`: [InsightProjectJournalCredentialPatch](../interfaces/_api_.insightprojectjournalcredentialpatch.md), `options?`: any): Promise\<AxiosResponse\<[JournalCredential](../interfaces/_api_.journalcredential.md)>>
 
-*Defined in api.ts:40854*
+*Defined in api.ts:41079*
 
 Update insight/journal.credential
 
@@ -274,7 +274,7 @@ ___
 
 ▸ **insightProjectJournalDelete**(`projectId`: string, `locationId`: string, `journalId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:40868*
+*Defined in api.ts:41093*
 
 Delete journal
 
@@ -301,7 +301,7 @@ ___
 
 ▸ **insightProjectJournalEventGet**(`projectId`: string, `locationId`: string, `journalId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:40883*
+*Defined in api.ts:41108*
 
 Get insight/journal.event
 
@@ -329,7 +329,7 @@ ___
 
 ▸ **insightProjectJournalEventList**(`projectId`: string, `locationId`: string, `journalId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:40899*
+*Defined in api.ts:41124*
 
 List insight/journal.event
 
@@ -358,7 +358,7 @@ ___
 
 ▸ **insightProjectJournalGet**(`projectId`: string, `locationId`: string, `journalId`: string, `options?`: any): Promise\<AxiosResponse\<[Journal](../interfaces/_api_.journal.md)>>
 
-*Defined in api.ts:40913*
+*Defined in api.ts:41138*
 
 Returns a single journal
 
@@ -385,7 +385,7 @@ ___
 
 ▸ **insightProjectJournalList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Journal](../interfaces/_api_.journal.md)[]>>
 
-*Defined in api.ts:40929*
+*Defined in api.ts:41154*
 
 List journal
 
@@ -414,7 +414,7 @@ ___
 
 ▸ **insightProjectJournalLogGet**(`projectId`: string, `locationId`: string, `journalId`: string, `since?`: string, `until?`: string, `follow?`: boolean, `tail?`: number, `tag?`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:40948*
+*Defined in api.ts:41173*
 
 websocket is also supported
 
@@ -446,7 +446,7 @@ ___
 
 ▸ **insightProjectJournalServiceGet**(`projectId`: string, `locationId`: string, `journalId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:40963*
+*Defined in api.ts:41188*
 
 Get insight/journal.service
 
@@ -474,7 +474,7 @@ ___
 
 ▸ **insightProjectJournalServiceList**(`projectId`: string, `locationId`: string, `journalId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:40977*
+*Defined in api.ts:41202*
 
 List insight/journal.service
 
@@ -501,7 +501,7 @@ ___
 
 ▸ **insightProjectJournalTagCreate**(`projectId`: string, `locationId`: string, `journalId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:40992*
+*Defined in api.ts:41217*
 
 Create insight/journal.tag
 
@@ -529,7 +529,7 @@ ___
 
 ▸ **insightProjectJournalTagDelete**(`projectId`: string, `locationId`: string, `journalId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:41007*
+*Defined in api.ts:41232*
 
 Delete insight/journal.tag
 
@@ -557,7 +557,7 @@ ___
 
 ▸ **insightProjectJournalTagGet**(`projectId`: string, `locationId`: string, `journalId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:41022*
+*Defined in api.ts:41247*
 
 Get insight/journal.tag
 
@@ -585,7 +585,7 @@ ___
 
 ▸ **insightProjectJournalTagList**(`projectId`: string, `locationId`: string, `journalId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:41036*
+*Defined in api.ts:41261*
 
 List insight/journal.tag
 
@@ -612,7 +612,7 @@ ___
 
 ▸ **insightProjectJournalTagPut**(`projectId`: string, `locationId`: string, `journalId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:41051*
+*Defined in api.ts:41276*
 
 Replace insight/journal.tag
 
@@ -640,7 +640,7 @@ ___
 
 ▸ **insightProjectJournalTransfer**(`projectId`: string, `locationId`: string, `journalId`: string, `insightProjectJournalTransfer`: [InsightProjectJournalTransfer](../interfaces/_api_.insightprojectjournaltransfer.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Journal](../interfaces/_api_.journal.md)>>
 
-*Defined in api.ts:41067*
+*Defined in api.ts:41292*
 
 action transfer
 
@@ -669,7 +669,7 @@ ___
 
 ▸ **insightProjectJournalUpdate**(`projectId`: string, `locationId`: string, `journalId`: string, `insightProjectJournalUpdate`: [InsightProjectJournalUpdate](../interfaces/_api_.insightprojectjournalupdate.md), `options?`: any): Promise\<AxiosResponse\<[Journal](../interfaces/_api_.journal.md)>>
 
-*Defined in api.ts:41082*
+*Defined in api.ts:41307*
 
 Returns modified journal
 
