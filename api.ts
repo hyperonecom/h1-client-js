@@ -7406,6 +7406,29 @@ export interface WebsiteProjectInstanceCredentialPatch {
 /**
  * 
  * @export
+ * @interface WebsiteProjectInstanceLog
+ */
+export interface WebsiteProjectInstanceLog {
+    /**
+     * 
+     * @type {string}
+     * @memberof WebsiteProjectInstanceLog
+     */
+    type?: WebsiteProjectInstanceLogTypeEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum WebsiteProjectInstanceLogTypeEnum {
+    Runtime = 'runtime',
+    Access = 'access'
+}
+
+/**
+ * 
+ * @export
  * @interface WebsiteProjectInstanceSnapshotDownload
  */
 export interface WebsiteProjectInstanceSnapshotDownload {
@@ -66798,6 +66821,77 @@ export const WebsiteProjectInstanceApiAxiosParamCreator = function (configuratio
             };
         },
         /**
+         * action log
+         * @summary Log website/instance
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {WebsiteProjectInstanceLog} websiteProjectInstanceLog 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceLog: async (projectId: string, locationId: string, instanceId: string, websiteProjectInstanceLog: WebsiteProjectInstanceLog, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling websiteProjectInstanceLog.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling websiteProjectInstanceLog.');
+            }
+            // verify required parameter 'instanceId' is not null or undefined
+            if (instanceId === null || instanceId === undefined) {
+                throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling websiteProjectInstanceLog.');
+            }
+            // verify required parameter 'websiteProjectInstanceLog' is not null or undefined
+            if (websiteProjectInstanceLog === null || websiteProjectInstanceLog === undefined) {
+                throw new RequiredError('websiteProjectInstanceLog','Required parameter websiteProjectInstanceLog was null or undefined when calling websiteProjectInstanceLog.');
+            }
+            const localVarPath = `/website/{locationId}/project/{projectId}/instance/{instanceId}/actions/log`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"instanceId"}}`, encodeURIComponent(String(instanceId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
+                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof websiteProjectInstanceLog !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(websiteProjectInstanceLog !== undefined ? websiteProjectInstanceLog : {}) : (websiteProjectInstanceLog || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get website/instance.metric
          * @summary Get website/instance.metric
          * @param {string} projectId Project Id
@@ -68716,6 +68810,24 @@ export const WebsiteProjectInstanceApiFp = function(configuration?: Configuratio
             };
         },
         /**
+         * action log
+         * @summary Log website/instance
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {WebsiteProjectInstanceLog} websiteProjectInstanceLog 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async websiteProjectInstanceLog(projectId: string, locationId: string, instanceId: string, websiteProjectInstanceLog: WebsiteProjectInstanceLog, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await WebsiteProjectInstanceApiAxiosParamCreator(configuration).websiteProjectInstanceLog(projectId, locationId, instanceId, websiteProjectInstanceLog, xIdempotencyKey, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * Get website/instance.metric
          * @summary Get website/instance.metric
          * @param {string} projectId Project Id
@@ -69428,6 +69540,20 @@ export const WebsiteProjectInstanceApiFactory = function (configuration?: Config
             return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
+         * action log
+         * @summary Log website/instance
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {WebsiteProjectInstanceLog} websiteProjectInstanceLog 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceLog(projectId: string, locationId: string, instanceId: string, websiteProjectInstanceLog: WebsiteProjectInstanceLog, xIdempotencyKey?: string, options?: any): AxiosPromise<void> {
+            return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceLog(projectId, locationId, instanceId, websiteProjectInstanceLog, xIdempotencyKey, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get website/instance.metric
          * @summary Get website/instance.metric
          * @param {string} projectId Project Id
@@ -70088,6 +70214,22 @@ export class WebsiteProjectInstanceApi extends BaseAPI {
      */
     public websiteProjectInstanceList(projectId: string, locationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any) {
         return WebsiteProjectInstanceApiFp(this.configuration).websiteProjectInstanceList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action log
+     * @summary Log website/instance
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} instanceId Instance Id
+     * @param {WebsiteProjectInstanceLog} websiteProjectInstanceLog 
+     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebsiteProjectInstanceApi
+     */
+    public websiteProjectInstanceLog(projectId: string, locationId: string, instanceId: string, websiteProjectInstanceLog: WebsiteProjectInstanceLog, xIdempotencyKey?: string, options?: any) {
+        return WebsiteProjectInstanceApiFp(this.configuration).websiteProjectInstanceLog(projectId, locationId, instanceId, websiteProjectInstanceLog, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

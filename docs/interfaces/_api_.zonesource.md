@@ -24,6 +24,6 @@
 
 • `Optional` **dnsProbing**: boolean
 
-*Defined in api.ts:7659*
+*Defined in api.ts:7682*
 
 **`memberof`** ZoneSource

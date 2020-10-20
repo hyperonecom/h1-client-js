@@ -101,7 +101,7 @@ ___
 
 ▸ **networkingProjectNetgwAttach**(`projectId`: string, `locationId`: string, `netgwId`: string, `networkingProjectNetgwAttach`: [NetworkingProjectNetgwAttach](../interfaces/_api_.networkingprojectnetgwattach.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Netgw](../interfaces/_api_.netgw.md)>>
 
-*Defined in api.ts:49458*
+*Defined in api.ts:49481*
 
 action attach
 
@@ -130,7 +130,7 @@ ___
 
 ▸ **networkingProjectNetgwCreate**(`projectId`: string, `locationId`: string, `networkingProjectNetgwCreate`: [NetworkingProjectNetgwCreate](../interfaces/_api_.networkingprojectnetgwcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Netgw](../interfaces/_api_.netgw.md)>>
 
-*Defined in api.ts:49473*
+*Defined in api.ts:49496*
 
 Create netgw
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **networkingProjectNetgwDelete**(`projectId`: string, `locationId`: string, `netgwId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:49487*
+*Defined in api.ts:49510*
 
 Delete netgw
 
@@ -185,7 +185,7 @@ ___
 
 ▸ **networkingProjectNetgwDetach**(`projectId`: string, `locationId`: string, `netgwId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Netgw](../interfaces/_api_.netgw.md)>>
 
-*Defined in api.ts:49502*
+*Defined in api.ts:49525*
 
 action detach
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **networkingProjectNetgwEventGet**(`projectId`: string, `locationId`: string, `netgwId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:49517*
+*Defined in api.ts:49540*
 
 Get networking/netgw.event
 
@@ -241,7 +241,7 @@ ___
 
 ▸ **networkingProjectNetgwEventList**(`projectId`: string, `locationId`: string, `netgwId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:49533*
+*Defined in api.ts:49556*
 
 List networking/netgw.event
 
@@ -270,7 +270,7 @@ ___
 
 ▸ **networkingProjectNetgwGet**(`projectId`: string, `locationId`: string, `netgwId`: string, `options?`: any): Promise\<AxiosResponse\<[Netgw](../interfaces/_api_.netgw.md)>>
 
-*Defined in api.ts:49547*
+*Defined in api.ts:49570*
 
 Returns a single netgw
 
@@ -297,7 +297,7 @@ ___
 
 ▸ **networkingProjectNetgwList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Netgw](../interfaces/_api_.netgw.md)[]>>
 
-*Defined in api.ts:49563*
+*Defined in api.ts:49586*
 
 List netgw
 
@@ -326,7 +326,7 @@ ___
 
 ▸ **networkingProjectNetgwServiceGet**(`projectId`: string, `locationId`: string, `netgwId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:49578*
+*Defined in api.ts:49601*
 
 Get networking/netgw.service
 
@@ -354,7 +354,7 @@ ___
 
 ▸ **networkingProjectNetgwServiceList**(`projectId`: string, `locationId`: string, `netgwId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:49592*
+*Defined in api.ts:49615*
 
 List networking/netgw.service
 
@@ -381,7 +381,7 @@ ___
 
 ▸ **networkingProjectNetgwTagCreate**(`projectId`: string, `locationId`: string, `netgwId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:49607*
+*Defined in api.ts:49630*
 
 Create networking/netgw.tag
 
@@ -409,7 +409,7 @@ ___
 
 ▸ **networkingProjectNetgwTagDelete**(`projectId`: string, `locationId`: string, `netgwId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:49622*
+*Defined in api.ts:49645*
 
 Delete networking/netgw.tag
 
@@ -437,7 +437,7 @@ ___
 
 ▸ **networkingProjectNetgwTagGet**(`projectId`: string, `locationId`: string, `netgwId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:49637*
+*Defined in api.ts:49660*
 
 Get networking/netgw.tag
 
@@ -465,7 +465,7 @@ ___
 
 ▸ **networkingProjectNetgwTagList**(`projectId`: string, `locationId`: string, `netgwId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:49651*
+*Defined in api.ts:49674*
 
 List networking/netgw.tag
 
@@ -492,7 +492,7 @@ ___
 
 ▸ **networkingProjectNetgwTagPut**(`projectId`: string, `locationId`: string, `netgwId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:49666*
+*Defined in api.ts:49689*
 
 Replace networking/netgw.tag
 
@@ -520,7 +520,7 @@ ___
 
 ▸ **networkingProjectNetgwUpdate**(`projectId`: string, `locationId`: string, `netgwId`: string, `networkingProjectNetgwUpdate`: [NetworkingProjectNetgwUpdate](../interfaces/_api_.networkingprojectnetgwupdate.md), `options?`: any): Promise\<AxiosResponse\<[Netgw](../interfaces/_api_.netgw.md)>>
 
-*Defined in api.ts:49681*
+*Defined in api.ts:49704*
 
 Returns modified netgw
 

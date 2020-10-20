@@ -375,6 +375,8 @@
 * [WebsiteProjectInstanceApiFp](_index_.md#websiteprojectinstanceapifp)
 * [WebsiteProjectInstanceCreate](_index_.md#websiteprojectinstancecreate)
 * [WebsiteProjectInstanceCredentialPatch](_index_.md#websiteprojectinstancecredentialpatch)
+* [WebsiteProjectInstanceLog](_index_.md#websiteprojectinstancelog)
+* [WebsiteProjectInstanceLogTypeEnum](_index_.md#websiteprojectinstancelogtypeenum)
 * [WebsiteProjectInstanceSnapshotDownload](_index_.md#websiteprojectinstancesnapshotdownload)
 * [WebsiteProjectInstanceTransfer](_index_.md#websiteprojectinstancetransfer)
 * [WebsiteProjectInstanceUpdate](_index_.md#websiteprojectinstanceupdate)
@@ -2587,6 +2589,18 @@ ___
 ### WebsiteProjectInstanceCredentialPatch
 
 Re-exports: [WebsiteProjectInstanceCredentialPatch](../interfaces/_api_.websiteprojectinstancecredentialpatch.md)
+
+___
+
+### WebsiteProjectInstanceLog
+
+Re-exports: [WebsiteProjectInstanceLog](../interfaces/_api_.websiteprojectinstancelog.md)
+
+___
+
+### WebsiteProjectInstanceLogTypeEnum
+
+Re-exports: [WebsiteProjectInstanceLogTypeEnum](../enums/_api_.websiteprojectinstancelogtypeenum.md)
 
 ___
 
