@@ -25,7 +25,7 @@
 
 • `Optional` **lang**: [IamUserUpdateLangEnum](../enums/_api_.iamuserupdatelangenum.md)
 
-*Defined in api.ts:2290*
+*Defined in api.ts:2347*
 
 **`memberof`** IamUserUpdate
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **phone**: string
 
-*Defined in api.ts:2284*
+*Defined in api.ts:2341*
 
 **`memberof`** IamUserUpdate

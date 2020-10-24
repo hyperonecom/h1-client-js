@@ -31,7 +31,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:1214*
+*Defined in api.ts:1271*
 
 **`memberof`** DatabaseCredential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:1220*
+*Defined in api.ts:1277*
 
 **`memberof`** DatabaseCredential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **fingerprint**: string
 
-*Defined in api.ts:1238*
+*Defined in api.ts:1295*
 
 **`memberof`** DatabaseCredential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1202*
+*Defined in api.ts:1259*
 
 **`memberof`** DatabaseCredential
 
@@ -71,7 +71,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:1208*
+*Defined in api.ts:1265*
 
 **`memberof`** DatabaseCredential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **token**: string
 
-*Defined in api.ts:1244*
+*Defined in api.ts:1301*
 
 **`memberof`** DatabaseCredential
 
@@ -91,7 +91,7 @@ ___
 
 •  **type**: [DatabaseCredentialTypeEnum](../enums/_api_.databasecredentialtypeenum.md)
 
-*Defined in api.ts:1226*
+*Defined in api.ts:1283*
 
 **`memberof`** DatabaseCredential
 
@@ -101,6 +101,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:1232*
+*Defined in api.ts:1289*
 
 **`memberof`** DatabaseCredential

@@ -96,7 +96,7 @@ ___
 
 ▸ **vmhostProjectInstanceEventGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:65220*
+*Defined in api.ts:65503*
 
 Get vmhost/instance.event
 
@@ -124,7 +124,7 @@ ___
 
 ▸ **vmhostProjectInstanceEventList**(`projectId`: string, `locationId`: string, `instanceId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:65236*
+*Defined in api.ts:65519*
 
 List vmhost/instance.event
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **vmhostProjectInstanceGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[Vmhost](../interfaces/_api_.vmhost.md)>>
 
-*Defined in api.ts:65250*
+*Defined in api.ts:65533*
 
 Returns a single instance
 
@@ -180,7 +180,7 @@ ___
 
 ▸ **vmhostProjectInstanceList**(`projectId`: string, `locationId`: string, `enabledServices?`: string, `options?`: any): Promise\<AxiosResponse\<[Vmhost](../interfaces/_api_.vmhost.md)[]>>
 
-*Defined in api.ts:65264*
+*Defined in api.ts:65547*
 
 List instance
 
@@ -207,7 +207,7 @@ ___
 
 ▸ **vmhostProjectInstanceServiceGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:65279*
+*Defined in api.ts:65562*
 
 Get vmhost/instance.service
 
@@ -235,7 +235,7 @@ ___
 
 ▸ **vmhostProjectInstanceServiceList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:65293*
+*Defined in api.ts:65576*
 
 List vmhost/instance.service
 
@@ -262,7 +262,7 @@ ___
 
 ▸ **vmhostProjectInstanceTagCreate**(`projectId`: string, `locationId`: string, `instanceId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:65308*
+*Defined in api.ts:65591*
 
 Create vmhost/instance.tag
 
@@ -290,7 +290,7 @@ ___
 
 ▸ **vmhostProjectInstanceTagDelete**(`projectId`: string, `locationId`: string, `instanceId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:65323*
+*Defined in api.ts:65606*
 
 Delete vmhost/instance.tag
 
@@ -318,7 +318,7 @@ ___
 
 ▸ **vmhostProjectInstanceTagGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:65338*
+*Defined in api.ts:65621*
 
 Get vmhost/instance.tag
 
@@ -346,7 +346,7 @@ ___
 
 ▸ **vmhostProjectInstanceTagList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:65352*
+*Defined in api.ts:65635*
 
 List vmhost/instance.tag
 
@@ -373,7 +373,7 @@ ___
 
 ▸ **vmhostProjectInstanceTagPut**(`projectId`: string, `locationId`: string, `instanceId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:65367*
+*Defined in api.ts:65650*
 
 Replace vmhost/instance.tag
 

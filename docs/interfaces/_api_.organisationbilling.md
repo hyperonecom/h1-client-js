@@ -28,7 +28,7 @@
 
 • `Optional` **address**: [InvoiceSellerAddress](_api_.invoiceselleraddress.md)
 
-*Defined in api.ts:4215*
+*Defined in api.ts:4278*
 
 **`memberof`** OrganisationBilling
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **company**: string
 
-*Defined in api.ts:4203*
+*Defined in api.ts:4266*
 
 **`memberof`** OrganisationBilling
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **currency**: string
 
-*Defined in api.ts:4197*
+*Defined in api.ts:4260*
 
 **`memberof`** OrganisationBilling
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **email**: string
 
-*Defined in api.ts:4209*
+*Defined in api.ts:4272*
 
 **`memberof`** OrganisationBilling
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **nip**: string
 
-*Defined in api.ts:4221*
+*Defined in api.ts:4284*
 
 **`memberof`** OrganisationBilling

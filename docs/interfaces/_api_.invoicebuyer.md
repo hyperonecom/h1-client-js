@@ -27,7 +27,7 @@
 
 • `Optional` **address**: [InvoiceBuyerAddress](_api_.invoicebuyeraddress.md)
 
-*Defined in api.ts:2655*
+*Defined in api.ts:2712*
 
 **`memberof`** InvoiceBuyer
 
@@ -37,7 +37,7 @@ ___
 
 •  **company**: string
 
-*Defined in api.ts:2649*
+*Defined in api.ts:2706*
 
 **`memberof`** InvoiceBuyer
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **email**: string
 
-*Defined in api.ts:2667*
+*Defined in api.ts:2724*
 
 **`memberof`** InvoiceBuyer
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **nip**: string
 
-*Defined in api.ts:2661*
+*Defined in api.ts:2718*
 
 **`memberof`** InvoiceBuyer

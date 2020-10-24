@@ -28,7 +28,7 @@
 
 •  **createdOn**: string
 
-*Defined in api.ts:1008*
+*Defined in api.ts:1065*
 
 **`memberof`** ContainerImage
 
@@ -38,7 +38,7 @@ ___
 
 •  **digest**: string
 
-*Defined in api.ts:1002*
+*Defined in api.ts:1059*
 
 **`memberof`** ContainerImage
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:990*
+*Defined in api.ts:1047*
 
 **`memberof`** ContainerImage
 
@@ -58,7 +58,7 @@ ___
 
 •  **modifiedOn**: string
 
-*Defined in api.ts:1014*
+*Defined in api.ts:1071*
 
 **`memberof`** ContainerImage
 
@@ -68,6 +68,6 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:996*
+*Defined in api.ts:1053*
 
 **`memberof`** ContainerImage

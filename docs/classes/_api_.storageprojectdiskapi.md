@@ -107,7 +107,7 @@ ___
 
 ▸ **storageProjectDiskAttach**(`projectId`: string, `locationId`: string, `diskId`: string, `storageProjectDiskAttach`: [StorageProjectDiskAttach](../interfaces/_api_.storageprojectdiskattach.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)>>
 
-*Defined in api.ts:56759*
+*Defined in api.ts:57042*
 
 action attach
 
@@ -136,7 +136,7 @@ ___
 
 ▸ **storageProjectDiskCreate**(`projectId`: string, `locationId`: string, `storageProjectDiskCreate`: [StorageProjectDiskCreate](../interfaces/_api_.storageprojectdiskcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)>>
 
-*Defined in api.ts:56774*
+*Defined in api.ts:57057*
 
 Create disk
 
@@ -164,7 +164,7 @@ ___
 
 ▸ **storageProjectDiskDelete**(`projectId`: string, `locationId`: string, `diskId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:56788*
+*Defined in api.ts:57071*
 
 Delete disk
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **storageProjectDiskDetach**(`projectId`: string, `locationId`: string, `diskId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)>>
 
-*Defined in api.ts:56803*
+*Defined in api.ts:57086*
 
 action detach
 
@@ -219,7 +219,7 @@ ___
 
 ▸ **storageProjectDiskDownload**(`projectId`: string, `locationId`: string, `diskId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:56818*
+*Defined in api.ts:57101*
 
 action download
 
@@ -247,7 +247,7 @@ ___
 
 ▸ **storageProjectDiskEventGet**(`projectId`: string, `locationId`: string, `diskId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:56833*
+*Defined in api.ts:57116*
 
 Get storage/disk.event
 
@@ -275,7 +275,7 @@ ___
 
 ▸ **storageProjectDiskEventList**(`projectId`: string, `locationId`: string, `diskId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:56849*
+*Defined in api.ts:57132*
 
 List storage/disk.event
 
@@ -304,7 +304,7 @@ ___
 
 ▸ **storageProjectDiskGet**(`projectId`: string, `locationId`: string, `diskId`: string, `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)>>
 
-*Defined in api.ts:56863*
+*Defined in api.ts:57146*
 
 Returns a single disk
 
@@ -331,7 +331,7 @@ ___
 
 ▸ **storageProjectDiskList**(`projectId`: string, `locationId`: string, `name?`: string, `vm?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)[]>>
 
-*Defined in api.ts:56880*
+*Defined in api.ts:57163*
 
 List disk
 
@@ -361,7 +361,7 @@ ___
 
 ▸ **storageProjectDiskMetricGet**(`projectId`: string, `locationId`: string, `diskId`: string, `metricId`: string, `options?`: any): Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)>>
 
-*Defined in api.ts:56895*
+*Defined in api.ts:57178*
 
 Get storage/disk.metric
 
@@ -389,7 +389,7 @@ ___
 
 ▸ **storageProjectDiskMetricList**(`projectId`: string, `locationId`: string, `diskId`: string, `options?`: any): Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)[]>>
 
-*Defined in api.ts:56909*
+*Defined in api.ts:57192*
 
 List storage/disk.metric
 
@@ -414,9 +414,9 @@ ___
 
 ### storageProjectDiskMetricPointList
 
-▸ **storageProjectDiskMetricPointList**(`projectId`: string, `locationId`: string, `diskId`: string, `metricId`: string, `interval?`: string, `timespan?`: string, `options?`: any): Promise\<AxiosResponse\<[Serie](../interfaces/_api_.serie.md)[]>>
+▸ **storageProjectDiskMetricPointList**(`projectId`: string, `locationId`: string, `diskId`: string, `metricId`: string, `interval?`: string, `timespan?`: string, `options?`: any): Promise\<AxiosResponse\<[Point](../interfaces/_api_.point.md)[]>>
 
-*Defined in api.ts:56926*
+*Defined in api.ts:57209*
 
 List storage/disk.point
 
@@ -438,7 +438,7 @@ Name | Type | Description |
 `timespan?` | string | - |
 `options?` | any | - |
 
-**Returns:** Promise\<AxiosResponse\<[Serie](../interfaces/_api_.serie.md)[]>>
+**Returns:** Promise\<AxiosResponse\<[Point](../interfaces/_api_.point.md)[]>>
 
 ___
 
@@ -446,7 +446,7 @@ ___
 
 ▸ **storageProjectDiskResize**(`projectId`: string, `locationId`: string, `diskId`: string, `storageProjectDiskResize`: [StorageProjectDiskResize](../interfaces/_api_.storageprojectdiskresize.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)>>
 
-*Defined in api.ts:56942*
+*Defined in api.ts:57225*
 
 action resize
 
@@ -475,7 +475,7 @@ ___
 
 ▸ **storageProjectDiskServiceGet**(`projectId`: string, `locationId`: string, `diskId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:56957*
+*Defined in api.ts:57240*
 
 Get storage/disk.service
 
@@ -503,7 +503,7 @@ ___
 
 ▸ **storageProjectDiskServiceList**(`projectId`: string, `locationId`: string, `diskId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:56971*
+*Defined in api.ts:57254*
 
 List storage/disk.service
 
@@ -530,7 +530,7 @@ ___
 
 ▸ **storageProjectDiskTagCreate**(`projectId`: string, `locationId`: string, `diskId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:56986*
+*Defined in api.ts:57269*
 
 Create storage/disk.tag
 
@@ -558,7 +558,7 @@ ___
 
 ▸ **storageProjectDiskTagDelete**(`projectId`: string, `locationId`: string, `diskId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:57001*
+*Defined in api.ts:57284*
 
 Delete storage/disk.tag
 
@@ -586,7 +586,7 @@ ___
 
 ▸ **storageProjectDiskTagGet**(`projectId`: string, `locationId`: string, `diskId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:57016*
+*Defined in api.ts:57299*
 
 Get storage/disk.tag
 
@@ -614,7 +614,7 @@ ___
 
 ▸ **storageProjectDiskTagList**(`projectId`: string, `locationId`: string, `diskId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:57030*
+*Defined in api.ts:57313*
 
 List storage/disk.tag
 
@@ -641,7 +641,7 @@ ___
 
 ▸ **storageProjectDiskTagPut**(`projectId`: string, `locationId`: string, `diskId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:57045*
+*Defined in api.ts:57328*
 
 Replace storage/disk.tag
 
@@ -669,7 +669,7 @@ ___
 
 ▸ **storageProjectDiskTransfer**(`projectId`: string, `locationId`: string, `diskId`: string, `storageProjectDiskTransfer`: [StorageProjectDiskTransfer](../interfaces/_api_.storageprojectdisktransfer.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)>>
 
-*Defined in api.ts:57061*
+*Defined in api.ts:57344*
 
 action transfer
 
@@ -698,7 +698,7 @@ ___
 
 ▸ **storageProjectDiskUpdate**(`projectId`: string, `locationId`: string, `diskId`: string, `storageProjectDiskUpdate`: [StorageProjectDiskUpdate](../interfaces/_api_.storageprojectdiskupdate.md), `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)>>
 
-*Defined in api.ts:57076*
+*Defined in api.ts:57359*
 
 Returns modified disk
 

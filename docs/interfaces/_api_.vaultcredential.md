@@ -31,7 +31,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:6843*
+*Defined in api.ts:6906*
 
 **`memberof`** VaultCredential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:6849*
+*Defined in api.ts:6912*
 
 **`memberof`** VaultCredential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **fingerprint**: string
 
-*Defined in api.ts:6867*
+*Defined in api.ts:6930*
 
 **`memberof`** VaultCredential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6831*
+*Defined in api.ts:6894*
 
 **`memberof`** VaultCredential
 
@@ -71,7 +71,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:6837*
+*Defined in api.ts:6900*
 
 **`memberof`** VaultCredential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **token**: string
 
-*Defined in api.ts:6873*
+*Defined in api.ts:6936*
 
 **`memberof`** VaultCredential
 
@@ -91,7 +91,7 @@ ___
 
 •  **type**: [VaultCredentialTypeEnum](../enums/_api_.vaultcredentialtypeenum.md)
 
-*Defined in api.ts:6855*
+*Defined in api.ts:6918*
 
 **`memberof`** VaultCredential
 
@@ -101,6 +101,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:6861*
+*Defined in api.ts:6924*
 
 **`memberof`** VaultCredential

@@ -26,7 +26,7 @@
 
 •  **id**: string
 
-*Defined in api.ts:1619*
+*Defined in api.ts:1676*
 
 **`memberof`** EnabledService
 
@@ -36,7 +36,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:1625*
+*Defined in api.ts:1682*
 
 **`memberof`** EnabledService
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **service**: string
 
-*Defined in api.ts:1631*
+*Defined in api.ts:1688*
 
 **`memberof`** EnabledService

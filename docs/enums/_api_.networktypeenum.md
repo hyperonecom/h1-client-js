@@ -19,7 +19,7 @@
 
 •  **Private**: {} = "private"
 
-*Defined in api.ts:3725*
+*Defined in api.ts:3782*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Public**: {} = "public"
 
-*Defined in api.ts:3724*
+*Defined in api.ts:3781*

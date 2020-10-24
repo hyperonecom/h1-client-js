@@ -24,6 +24,6 @@
 
 • `Optional` **unit**: [ServiceDisplayUnit](_api_.servicedisplayunit.md)
 
-*Defined in api.ts:5930*
+*Defined in api.ts:5993*
 
 **`memberof`** ServiceDisplay

@@ -35,7 +35,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:5553*
+*Defined in api.ts:5635*
 
 **`memberof`** Role
 
@@ -45,7 +45,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5547*
+*Defined in api.ts:5629*
 
 **`memberof`** Role
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:5529*
+*Defined in api.ts:5611*
 
 **`memberof`** Role
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5517*
+*Defined in api.ts:5599*
 
 **`memberof`** Role
 
@@ -75,7 +75,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:5541*
+*Defined in api.ts:5623*
 
 **`memberof`** Role
 
@@ -85,7 +85,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:5535*
+*Defined in api.ts:5617*
 
 **`memberof`** Role
 
@@ -95,7 +95,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5523*
+*Defined in api.ts:5605*
 
 **`memberof`** Role
 
@@ -105,7 +105,7 @@ ___
 
 • `Optional` **organisation**: string
 
-*Defined in api.ts:5571*
+*Defined in api.ts:5653*
 
 **`memberof`** Role
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:5565*
+*Defined in api.ts:5647*
 
 **`memberof`** Role
 
@@ -125,7 +125,7 @@ ___
 
 • `Optional` **state**: [RoleStateEnum](../enums/_api_.rolestateenum.md)
 
-*Defined in api.ts:5559*
+*Defined in api.ts:5641*
 
 **`memberof`** Role
 
@@ -135,7 +135,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5583*
+*Defined in api.ts:5665*
 
 **`memberof`** Role
 
@@ -145,6 +145,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:5577*
+*Defined in api.ts:5659*
 
 **`memberof`** Role

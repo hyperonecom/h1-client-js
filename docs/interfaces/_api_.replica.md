@@ -34,7 +34,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:5310*
+*Defined in api.ts:5392*
 
 **`memberof`** Replica
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5304*
+*Defined in api.ts:5386*
 
 **`memberof`** Replica
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:5286*
+*Defined in api.ts:5368*
 
 **`memberof`** Replica
 
@@ -64,7 +64,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5274*
+*Defined in api.ts:5356*
 
 **`memberof`** Replica
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:5298*
+*Defined in api.ts:5380*
 
 **`memberof`** Replica
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:5292*
+*Defined in api.ts:5374*
 
 **`memberof`** Replica
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5280*
+*Defined in api.ts:5362*
 
 **`memberof`** Replica
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:5322*
+*Defined in api.ts:5404*
 
 **`memberof`** Replica
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **state**: [ReplicaStateEnum](../enums/_api_.replicastateenum.md)
 
-*Defined in api.ts:5316*
+*Defined in api.ts:5398*
 
 **`memberof`** Replica
 
@@ -124,7 +124,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5334*
+*Defined in api.ts:5416*
 
 **`memberof`** Replica
 
@@ -134,6 +134,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:5328*
+*Defined in api.ts:5410*
 
 **`memberof`** Replica

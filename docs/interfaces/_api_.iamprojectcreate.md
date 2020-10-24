@@ -26,7 +26,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:1987*
+*Defined in api.ts:2044*
 
 **`memberof`** IamProjectCreate
 
@@ -36,7 +36,7 @@ ___
 
 •  **organisation**: string
 
-*Defined in api.ts:1993*
+*Defined in api.ts:2050*
 
 **`memberof`** IamProjectCreate
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:1999*
+*Defined in api.ts:2056*
 
 **`memberof`** IamProjectCreate

@@ -24,6 +24,6 @@
 
 •  **token**: string
 
-*Defined in api.ts:1872*
+*Defined in api.ts:1929*
 
 **`memberof`** IamOrganisationInvitationAccept

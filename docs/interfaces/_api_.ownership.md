@@ -25,7 +25,7 @@
 
 •  **id**: string
 
-*Defined in api.ts:4278*
+*Defined in api.ts:4341*
 
 **`memberof`** Ownership
 
@@ -35,6 +35,6 @@ ___
 
 •  **user**: string
 
-*Defined in api.ts:4284*
+*Defined in api.ts:4347*
 
 **`memberof`** Ownership

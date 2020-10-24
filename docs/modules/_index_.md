@@ -45,6 +45,8 @@
 * [ComputeProjectVmApiAxiosParamCreator](_index_.md#computeprojectvmapiaxiosparamcreator)
 * [ComputeProjectVmApiFactory](_index_.md#computeprojectvmapifactory)
 * [ComputeProjectVmApiFp](_index_.md#computeprojectvmapifp)
+* [ComputeProjectVmConnectOpen](_index_.md#computeprojectvmconnectopen)
+* [ComputeProjectVmConnectOpenProtocolEnum](_index_.md#computeprojectvmconnectopenprotocolenum)
 * [ComputeProjectVmCreate](_index_.md#computeprojectvmcreate)
 * [ComputeProjectVmCreateCredential](_index_.md#computeprojectvmcreatecredential)
 * [ComputeProjectVmCreateCredentialTypeEnum](_index_.md#computeprojectvmcreatecredentialtypeenum)
@@ -59,6 +61,8 @@
 * [ComputeProjectVmUpdate](_index_.md#computeprojectvmupdate)
 * [Configuration](_index_.md#configuration)
 * [ConfigurationParameters](_index_.md#configurationparameters)
+* [Connect](_index_.md#connect)
+* [ConnectTypeEnum](_index_.md#connecttypeenum)
 * [ContainerImage](_index_.md#containerimage)
 * [ContainerProjectRegistryApi](_index_.md#containerprojectregistryapi)
 * [ContainerProjectRegistryApiAxiosParamCreator](_index_.md#containerprojectregistryapiaxiosparamcreator)
@@ -249,6 +253,7 @@
 * [Payment](_index_.md#payment)
 * [PaymentChannelEnum](_index_.md#paymentchannelenum)
 * [PaymentStateEnum](_index_.md#paymentstateenum)
+* [Point](_index_.md#point)
 * [Policy](_index_.md#policy)
 * [PolicyStateEnum](_index_.md#policystateenum)
 * [Proforma](_index_.md#proforma)
@@ -291,7 +296,6 @@
 * [SaCredential](_index_.md#sacredential)
 * [SaCredentialTypeEnum](_index_.md#sacredentialtypeenum)
 * [SaStateEnum](_index_.md#sastateenum)
-* [Serie](_index_.md#serie)
 * [Service](_index_.md#service)
 * [ServiceBilling](_index_.md#servicebilling)
 * [ServiceBillingPrice](_index_.md#servicebillingprice)
@@ -612,6 +616,18 @@ Re-exports: [ComputeProjectVmApiFp](_api_.md#computeprojectvmapifp)
 
 ___
 
+### ComputeProjectVmConnectOpen
+
+Re-exports: [ComputeProjectVmConnectOpen](../interfaces/_api_.computeprojectvmconnectopen.md)
+
+___
+
+### ComputeProjectVmConnectOpenProtocolEnum
+
+Re-exports: [ComputeProjectVmConnectOpenProtocolEnum](../enums/_api_.computeprojectvmconnectopenprotocolenum.md)
+
+___
+
 ### ComputeProjectVmCreate
 
 Re-exports: [ComputeProjectVmCreate](../interfaces/_api_.computeprojectvmcreate.md)
@@ -693,6 +709,18 @@ ___
 ### ConfigurationParameters
 
 Re-exports: [ConfigurationParameters](../interfaces/_configuration_.configurationparameters.md)
+
+___
+
+### Connect
+
+Re-exports: [Connect](../interfaces/_api_.connect.md)
+
+___
+
+### ConnectTypeEnum
+
+Re-exports: [ConnectTypeEnum](../enums/_api_.connecttypeenum.md)
 
 ___
 
@@ -1836,6 +1864,12 @@ Re-exports: [PaymentStateEnum](../enums/_api_.paymentstateenum.md)
 
 ___
 
+### Point
+
+Re-exports: [Point](../interfaces/_api_.point.md)
+
+___
+
 ### Policy
 
 Re-exports: [Policy](../interfaces/_api_.policy.md)
@@ -2085,12 +2119,6 @@ ___
 ### SaStateEnum
 
 Re-exports: [SaStateEnum](../enums/_api_.sastateenum.md)
-
-___
-
-### Serie
-
-Re-exports: [Serie](../interfaces/_api_.serie.md)
 
 ___
 

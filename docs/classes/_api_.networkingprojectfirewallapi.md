@@ -110,7 +110,7 @@ ___
 
 ▸ **networkingProjectFirewallCreate**(`projectId`: string, `locationId`: string, `networkingProjectFirewallCreate`: [NetworkingProjectFirewallCreate](../interfaces/_api_.networkingprojectfirewallcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Firewall](../interfaces/_api_.firewall.md)>>
 
-*Defined in api.ts:43703*
+*Defined in api.ts:43986*
 
 Create firewall
 
@@ -138,7 +138,7 @@ ___
 
 ▸ **networkingProjectFirewallDelete**(`projectId`: string, `locationId`: string, `firewallId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:43717*
+*Defined in api.ts:44000*
 
 Delete firewall
 
@@ -165,7 +165,7 @@ ___
 
 ▸ **networkingProjectFirewallEgressCreate**(`projectId`: string, `locationId`: string, `firewallId`: string, `networkingRule`: [NetworkingRule](../interfaces/_api_.networkingrule.md), `options?`: any): Promise\<AxiosResponse\<[NetworkingRule](../interfaces/_api_.networkingrule.md)>>
 
-*Defined in api.ts:43732*
+*Defined in api.ts:44015*
 
 Create networking/firewall.egress
 
@@ -193,7 +193,7 @@ ___
 
 ▸ **networkingProjectFirewallEgressDelete**(`projectId`: string, `locationId`: string, `firewallId`: string, `egressId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:43747*
+*Defined in api.ts:44030*
 
 Delete networking/firewall.egress
 
@@ -221,7 +221,7 @@ ___
 
 ▸ **networkingProjectFirewallEgressGet**(`projectId`: string, `locationId`: string, `firewallId`: string, `egressId`: string, `options?`: any): Promise\<AxiosResponse\<[NetworkingRule](../interfaces/_api_.networkingrule.md)>>
 
-*Defined in api.ts:43762*
+*Defined in api.ts:44045*
 
 Get networking/firewall.egress
 
@@ -249,7 +249,7 @@ ___
 
 ▸ **networkingProjectFirewallEgressList**(`projectId`: string, `locationId`: string, `firewallId`: string, `options?`: any): Promise\<AxiosResponse\<[NetworkingRule](../interfaces/_api_.networkingrule.md)[]>>
 
-*Defined in api.ts:43776*
+*Defined in api.ts:44059*
 
 List networking/firewall.egress
 
@@ -276,7 +276,7 @@ ___
 
 ▸ **networkingProjectFirewallEgressPut**(`projectId`: string, `locationId`: string, `firewallId`: string, `networkingRule`: Array\<[NetworkingRule](../interfaces/_api_.networkingrule.md)>, `options?`: any): Promise\<AxiosResponse\<[NetworkingRule](../interfaces/_api_.networkingrule.md)[]>>
 
-*Defined in api.ts:43791*
+*Defined in api.ts:44074*
 
 Replace networking/firewall.egress
 
@@ -304,7 +304,7 @@ ___
 
 ▸ **networkingProjectFirewallEventGet**(`projectId`: string, `locationId`: string, `firewallId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:43806*
+*Defined in api.ts:44089*
 
 Get networking/firewall.event
 
@@ -332,7 +332,7 @@ ___
 
 ▸ **networkingProjectFirewallEventList**(`projectId`: string, `locationId`: string, `firewallId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:43822*
+*Defined in api.ts:44105*
 
 List networking/firewall.event
 
@@ -361,7 +361,7 @@ ___
 
 ▸ **networkingProjectFirewallGet**(`projectId`: string, `locationId`: string, `firewallId`: string, `options?`: any): Promise\<AxiosResponse\<[Firewall](../interfaces/_api_.firewall.md)>>
 
-*Defined in api.ts:43836*
+*Defined in api.ts:44119*
 
 Returns a single firewall
 
@@ -388,7 +388,7 @@ ___
 
 ▸ **networkingProjectFirewallIngressCreate**(`projectId`: string, `locationId`: string, `firewallId`: string, `networkingRule`: [NetworkingRule](../interfaces/_api_.networkingrule.md), `options?`: any): Promise\<AxiosResponse\<[NetworkingRule](../interfaces/_api_.networkingrule.md)>>
 
-*Defined in api.ts:43851*
+*Defined in api.ts:44134*
 
 Create networking/firewall.ingress
 
@@ -416,7 +416,7 @@ ___
 
 ▸ **networkingProjectFirewallIngressDelete**(`projectId`: string, `locationId`: string, `firewallId`: string, `ingressId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:43866*
+*Defined in api.ts:44149*
 
 Delete networking/firewall.ingress
 
@@ -444,7 +444,7 @@ ___
 
 ▸ **networkingProjectFirewallIngressGet**(`projectId`: string, `locationId`: string, `firewallId`: string, `ingressId`: string, `options?`: any): Promise\<AxiosResponse\<[NetworkingRule](../interfaces/_api_.networkingrule.md)>>
 
-*Defined in api.ts:43881*
+*Defined in api.ts:44164*
 
 Get networking/firewall.ingress
 
@@ -472,7 +472,7 @@ ___
 
 ▸ **networkingProjectFirewallIngressList**(`projectId`: string, `locationId`: string, `firewallId`: string, `options?`: any): Promise\<AxiosResponse\<[NetworkingRule](../interfaces/_api_.networkingrule.md)[]>>
 
-*Defined in api.ts:43895*
+*Defined in api.ts:44178*
 
 List networking/firewall.ingress
 
@@ -499,7 +499,7 @@ ___
 
 ▸ **networkingProjectFirewallIngressPut**(`projectId`: string, `locationId`: string, `firewallId`: string, `networkingRule`: Array\<[NetworkingRule](../interfaces/_api_.networkingrule.md)>, `options?`: any): Promise\<AxiosResponse\<[NetworkingRule](../interfaces/_api_.networkingrule.md)[]>>
 
-*Defined in api.ts:43910*
+*Defined in api.ts:44193*
 
 Replace networking/firewall.ingress
 
@@ -527,7 +527,7 @@ ___
 
 ▸ **networkingProjectFirewallList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Firewall](../interfaces/_api_.firewall.md)[]>>
 
-*Defined in api.ts:43926*
+*Defined in api.ts:44209*
 
 List firewall
 
@@ -556,7 +556,7 @@ ___
 
 ▸ **networkingProjectFirewallServiceGet**(`projectId`: string, `locationId`: string, `firewallId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:43941*
+*Defined in api.ts:44224*
 
 Get networking/firewall.service
 
@@ -584,7 +584,7 @@ ___
 
 ▸ **networkingProjectFirewallServiceList**(`projectId`: string, `locationId`: string, `firewallId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:43955*
+*Defined in api.ts:44238*
 
 List networking/firewall.service
 
@@ -611,7 +611,7 @@ ___
 
 ▸ **networkingProjectFirewallTagCreate**(`projectId`: string, `locationId`: string, `firewallId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:43970*
+*Defined in api.ts:44253*
 
 Create networking/firewall.tag
 
@@ -639,7 +639,7 @@ ___
 
 ▸ **networkingProjectFirewallTagDelete**(`projectId`: string, `locationId`: string, `firewallId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:43985*
+*Defined in api.ts:44268*
 
 Delete networking/firewall.tag
 
@@ -667,7 +667,7 @@ ___
 
 ▸ **networkingProjectFirewallTagGet**(`projectId`: string, `locationId`: string, `firewallId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:44000*
+*Defined in api.ts:44283*
 
 Get networking/firewall.tag
 
@@ -695,7 +695,7 @@ ___
 
 ▸ **networkingProjectFirewallTagList**(`projectId`: string, `locationId`: string, `firewallId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:44014*
+*Defined in api.ts:44297*
 
 List networking/firewall.tag
 
@@ -722,7 +722,7 @@ ___
 
 ▸ **networkingProjectFirewallTagPut**(`projectId`: string, `locationId`: string, `firewallId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:44029*
+*Defined in api.ts:44312*
 
 Replace networking/firewall.tag
 
@@ -750,7 +750,7 @@ ___
 
 ▸ **networkingProjectFirewallTransfer**(`projectId`: string, `locationId`: string, `firewallId`: string, `networkingProjectFirewallTransfer`: [NetworkingProjectFirewallTransfer](../interfaces/_api_.networkingprojectfirewalltransfer.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Firewall](../interfaces/_api_.firewall.md)>>
 
-*Defined in api.ts:44045*
+*Defined in api.ts:44328*
 
 action transfer
 
@@ -779,7 +779,7 @@ ___
 
 ▸ **networkingProjectFirewallUpdate**(`projectId`: string, `locationId`: string, `firewallId`: string, `networkingProjectFirewallUpdate`: [NetworkingProjectFirewallUpdate](../interfaces/_api_.networkingprojectfirewallupdate.md), `options?`: any): Promise\<AxiosResponse\<[Firewall](../interfaces/_api_.firewall.md)>>
 
-*Defined in api.ts:44060*
+*Defined in api.ts:44343*
 
 Returns modified firewall
 

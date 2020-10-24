@@ -720,6 +720,29 @@ export interface ComputeProjectReplicaCreate {
 /**
  * 
  * @export
+ * @interface ComputeProjectVmConnectOpen
+ */
+export interface ComputeProjectVmConnectOpen {
+    /**
+     * 
+     * @type {string}
+     * @memberof ComputeProjectVmConnectOpen
+     */
+    protocol?: ComputeProjectVmConnectOpenProtocolEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ComputeProjectVmConnectOpenProtocolEnum {
+    Http = 'http',
+    Ws = 'ws'
+}
+
+/**
+ * 
+ * @export
  * @interface ComputeProjectVmCreate
  */
 export interface ComputeProjectVmCreate {
@@ -976,6 +999,40 @@ export interface ComputeProjectVmUpdate {
      */
     name?: string;
 }
+/**
+ * 
+ * @export
+ * @interface Connect
+ */
+export interface Connect {
+    /**
+     * 
+     * @type {string}
+     * @memberof Connect
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Connect
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Connect
+     */
+    type: ConnectTypeEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ConnectTypeEnum {
+    Console = 'console'
+}
+
 /**
  * 
  * @export
@@ -4146,6 +4203,12 @@ export interface Organisation {
      * @type {string}
      * @memberof Organisation
      */
+    organisation?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Organisation
+     */
     uri?: string;
     /**
      * 
@@ -4391,6 +4454,25 @@ export enum PaymentChannelEnum {
     Przelewy24 = 'przelewy24'
 }
 
+/**
+ * 
+ * @export
+ * @interface Point
+ */
+export interface Point {
+    /**
+     * 
+     * @type {string}
+     * @memberof Point
+     */
+    time: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Point
+     */
+    value: number;
+}
 /**
  * 
  * @export
@@ -5737,25 +5819,6 @@ export enum SaCredentialTypeEnum {
     Ssh = 'ssh'
 }
 
-/**
- * 
- * @export
- * @interface Serie
- */
-export interface Serie {
-    /**
-     * 
-     * @type {string}
-     * @memberof Serie
-     */
-    time: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof Serie
-     */
-    value: number;
-}
 /**
  * 
  * @export
@@ -10950,32 +11013,162 @@ export class ComputeProjectReplicaApi extends BaseAPI {
 export const ComputeProjectVmApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * action console
-         * @summary Console compute/vm
+         * Get compute/vm.connect
+         * @summary Get compute/vm.connect
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} vmId Vm Id
-         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} connectId connectId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        computeProjectVmConsole: async (projectId: string, locationId: string, vmId: string, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
+        computeProjectVmConnectGet: async (projectId: string, locationId: string, vmId: string, connectId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling computeProjectVmConsole.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling computeProjectVmConnectGet.');
             }
             // verify required parameter 'locationId' is not null or undefined
             if (locationId === null || locationId === undefined) {
-                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling computeProjectVmConsole.');
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling computeProjectVmConnectGet.');
             }
             // verify required parameter 'vmId' is not null or undefined
             if (vmId === null || vmId === undefined) {
-                throw new RequiredError('vmId','Required parameter vmId was null or undefined when calling computeProjectVmConsole.');
+                throw new RequiredError('vmId','Required parameter vmId was null or undefined when calling computeProjectVmConnectGet.');
             }
-            const localVarPath = `/compute/{locationId}/project/{projectId}/vm/{vmId}/actions/console`
+            // verify required parameter 'connectId' is not null or undefined
+            if (connectId === null || connectId === undefined) {
+                throw new RequiredError('connectId','Required parameter connectId was null or undefined when calling computeProjectVmConnectGet.');
+            }
+            const localVarPath = `/compute/{locationId}/project/{projectId}/vm/{vmId}/connect/{connectId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"vmId"}}`, encodeURIComponent(String(vmId)))
+                .replace(`{${"connectId"}}`, encodeURIComponent(String(connectId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List compute/vm.connect
+         * @summary List compute/vm.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        computeProjectVmConnectList: async (projectId: string, locationId: string, vmId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling computeProjectVmConnectList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling computeProjectVmConnectList.');
+            }
+            // verify required parameter 'vmId' is not null or undefined
+            if (vmId === null || vmId === undefined) {
+                throw new RequiredError('vmId','Required parameter vmId was null or undefined when calling computeProjectVmConnectList.');
+            }
+            const localVarPath = `/compute/{locationId}/project/{projectId}/vm/{vmId}/connect`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
                 .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
                 .replace(`{${"vmId"}}`, encodeURIComponent(String(vmId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * action open
+         * @summary Open compute/vm.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {string} connectId connectId
+         * @param {ComputeProjectVmConnectOpen} computeProjectVmConnectOpen 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        computeProjectVmConnectOpen: async (projectId: string, locationId: string, vmId: string, connectId: string, computeProjectVmConnectOpen: ComputeProjectVmConnectOpen, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling computeProjectVmConnectOpen.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling computeProjectVmConnectOpen.');
+            }
+            // verify required parameter 'vmId' is not null or undefined
+            if (vmId === null || vmId === undefined) {
+                throw new RequiredError('vmId','Required parameter vmId was null or undefined when calling computeProjectVmConnectOpen.');
+            }
+            // verify required parameter 'connectId' is not null or undefined
+            if (connectId === null || connectId === undefined) {
+                throw new RequiredError('connectId','Required parameter connectId was null or undefined when calling computeProjectVmConnectOpen.');
+            }
+            // verify required parameter 'computeProjectVmConnectOpen' is not null or undefined
+            if (computeProjectVmConnectOpen === null || computeProjectVmConnectOpen === undefined) {
+                throw new RequiredError('computeProjectVmConnectOpen','Required parameter computeProjectVmConnectOpen was null or undefined when calling computeProjectVmConnectOpen.');
+            }
+            const localVarPath = `/compute/{locationId}/project/{projectId}/vm/{vmId}/connect/{connectId}/actions/open`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"vmId"}}`, encodeURIComponent(String(vmId)))
+                .replace(`{${"connectId"}}`, encodeURIComponent(String(connectId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
@@ -10994,17 +11187,17 @@ export const ComputeProjectVmApiAxiosParamCreator = function (configuration?: Co
                 localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
             }
 
-            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
-                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
-            }
-
 
     
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof computeProjectVmConnectOpen !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(computeProjectVmConnectOpen !== undefined ? computeProjectVmConnectOpen : {}) : (computeProjectVmConnectOpen || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -12797,17 +12990,51 @@ export const ComputeProjectVmApiAxiosParamCreator = function (configuration?: Co
 export const ComputeProjectVmApiFp = function(configuration?: Configuration) {
     return {
         /**
-         * action console
-         * @summary Console compute/vm
+         * Get compute/vm.connect
+         * @summary Get compute/vm.connect
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} vmId Vm Id
-         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} connectId connectId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async computeProjectVmConsole(projectId: string, locationId: string, vmId: string, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await ComputeProjectVmApiAxiosParamCreator(configuration).computeProjectVmConsole(projectId, locationId, vmId, xIdempotencyKey, options);
+        async computeProjectVmConnectGet(projectId: string, locationId: string, vmId: string, connectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Connect>> {
+            const localVarAxiosArgs = await ComputeProjectVmApiAxiosParamCreator(configuration).computeProjectVmConnectGet(projectId, locationId, vmId, connectId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List compute/vm.connect
+         * @summary List compute/vm.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async computeProjectVmConnectList(projectId: string, locationId: string, vmId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Connect>>> {
+            const localVarAxiosArgs = await ComputeProjectVmApiAxiosParamCreator(configuration).computeProjectVmConnectList(projectId, locationId, vmId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * action open
+         * @summary Open compute/vm.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {string} connectId connectId
+         * @param {ComputeProjectVmConnectOpen} computeProjectVmConnectOpen 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async computeProjectVmConnectOpen(projectId: string, locationId: string, vmId: string, connectId: string, computeProjectVmConnectOpen: ComputeProjectVmConnectOpen, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await ComputeProjectVmApiAxiosParamCreator(configuration).computeProjectVmConnectOpen(projectId, locationId, vmId, connectId, computeProjectVmConnectOpen, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -13044,7 +13271,7 @@ export const ComputeProjectVmApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async computeProjectVmMetricPointList(projectId: string, locationId: string, vmId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Serie>>> {
+        async computeProjectVmMetricPointList(projectId: string, locationId: string, vmId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Point>>> {
             const localVarAxiosArgs = await ComputeProjectVmApiAxiosParamCreator(configuration).computeProjectVmMetricPointList(projectId, locationId, vmId, metricId, interval, timespan, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -13299,17 +13526,43 @@ export const ComputeProjectVmApiFp = function(configuration?: Configuration) {
 export const ComputeProjectVmApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     return {
         /**
-         * action console
-         * @summary Console compute/vm
+         * Get compute/vm.connect
+         * @summary Get compute/vm.connect
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} vmId Vm Id
-         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} connectId connectId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        computeProjectVmConsole(projectId: string, locationId: string, vmId: string, xIdempotencyKey?: string, options?: any): AxiosPromise<void> {
-            return ComputeProjectVmApiFp(configuration).computeProjectVmConsole(projectId, locationId, vmId, xIdempotencyKey, options).then((request) => request(axios, basePath));
+        computeProjectVmConnectGet(projectId: string, locationId: string, vmId: string, connectId: string, options?: any): AxiosPromise<Connect> {
+            return ComputeProjectVmApiFp(configuration).computeProjectVmConnectGet(projectId, locationId, vmId, connectId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List compute/vm.connect
+         * @summary List compute/vm.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        computeProjectVmConnectList(projectId: string, locationId: string, vmId: string, options?: any): AxiosPromise<Array<Connect>> {
+            return ComputeProjectVmApiFp(configuration).computeProjectVmConnectList(projectId, locationId, vmId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action open
+         * @summary Open compute/vm.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} vmId Vm Id
+         * @param {string} connectId connectId
+         * @param {ComputeProjectVmConnectOpen} computeProjectVmConnectOpen 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        computeProjectVmConnectOpen(projectId: string, locationId: string, vmId: string, connectId: string, computeProjectVmConnectOpen: ComputeProjectVmConnectOpen, options?: any): AxiosPromise<void> {
+            return ComputeProjectVmApiFp(configuration).computeProjectVmConnectOpen(projectId, locationId, vmId, connectId, computeProjectVmConnectOpen, options).then((request) => request(axios, basePath));
         },
         /**
          * Create vm
@@ -13490,7 +13743,7 @@ export const ComputeProjectVmApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        computeProjectVmMetricPointList(projectId: string, locationId: string, vmId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Serie>> {
+        computeProjectVmMetricPointList(projectId: string, locationId: string, vmId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Point>> {
             return ComputeProjectVmApiFp(configuration).computeProjectVmMetricPointList(projectId, locationId, vmId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
         },
         /**
@@ -13686,18 +13939,48 @@ export const ComputeProjectVmApiFactory = function (configuration?: Configuratio
  */
 export class ComputeProjectVmApi extends BaseAPI {
     /**
-     * action console
-     * @summary Console compute/vm
+     * Get compute/vm.connect
+     * @summary Get compute/vm.connect
      * @param {string} projectId Project Id
      * @param {string} locationId Location Id
      * @param {string} vmId Vm Id
-     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {string} connectId connectId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ComputeProjectVmApi
      */
-    public computeProjectVmConsole(projectId: string, locationId: string, vmId: string, xIdempotencyKey?: string, options?: any) {
-        return ComputeProjectVmApiFp(this.configuration).computeProjectVmConsole(projectId, locationId, vmId, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
+    public computeProjectVmConnectGet(projectId: string, locationId: string, vmId: string, connectId: string, options?: any) {
+        return ComputeProjectVmApiFp(this.configuration).computeProjectVmConnectGet(projectId, locationId, vmId, connectId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List compute/vm.connect
+     * @summary List compute/vm.connect
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} vmId Vm Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ComputeProjectVmApi
+     */
+    public computeProjectVmConnectList(projectId: string, locationId: string, vmId: string, options?: any) {
+        return ComputeProjectVmApiFp(this.configuration).computeProjectVmConnectList(projectId, locationId, vmId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action open
+     * @summary Open compute/vm.connect
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} vmId Vm Id
+     * @param {string} connectId connectId
+     * @param {ComputeProjectVmConnectOpen} computeProjectVmConnectOpen 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ComputeProjectVmApi
+     */
+    public computeProjectVmConnectOpen(projectId: string, locationId: string, vmId: string, connectId: string, computeProjectVmConnectOpen: ComputeProjectVmConnectOpen, options?: any) {
+        return ComputeProjectVmApiFp(this.configuration).computeProjectVmConnectOpen(projectId, locationId, vmId, connectId, computeProjectVmConnectOpen, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -47304,7 +47587,7 @@ export const NetworkingProjectNetadpApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async networkingProjectNetadpMetricPointList(projectId: string, locationId: string, netadpId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Serie>>> {
+        async networkingProjectNetadpMetricPointList(projectId: string, locationId: string, netadpId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Point>>> {
             const localVarAxiosArgs = await NetworkingProjectNetadpApiAxiosParamCreator(configuration).networkingProjectNetadpMetricPointList(projectId, locationId, netadpId, metricId, interval, timespan, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -47571,7 +47854,7 @@ export const NetworkingProjectNetadpApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        networkingProjectNetadpMetricPointList(projectId: string, locationId: string, netadpId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Serie>> {
+        networkingProjectNetadpMetricPointList(projectId: string, locationId: string, netadpId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Point>> {
             return NetworkingProjectNetadpApiFp(configuration).networkingProjectNetadpMetricPointList(projectId, locationId, netadpId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
         },
         /**
@@ -56259,7 +56542,7 @@ export const StorageProjectDiskApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storageProjectDiskMetricPointList(projectId: string, locationId: string, diskId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Serie>>> {
+        async storageProjectDiskMetricPointList(projectId: string, locationId: string, diskId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Point>>> {
             const localVarAxiosArgs = await StorageProjectDiskApiAxiosParamCreator(configuration).storageProjectDiskMetricPointList(projectId, locationId, diskId, metricId, interval, timespan, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -56601,7 +56884,7 @@ export const StorageProjectDiskApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storageProjectDiskMetricPointList(projectId: string, locationId: string, diskId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Serie>> {
+        storageProjectDiskMetricPointList(projectId: string, locationId: string, diskId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Point>> {
             return StorageProjectDiskApiFp(configuration).storageProjectDiskMetricPointList(projectId, locationId, diskId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
         },
         /**
@@ -68872,7 +69155,7 @@ export const WebsiteProjectInstanceApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async websiteProjectInstanceMetricPointList(projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Serie>>> {
+        async websiteProjectInstanceMetricPointList(projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Point>>> {
             const localVarAxiosArgs = await WebsiteProjectInstanceApiAxiosParamCreator(configuration).websiteProjectInstanceMetricPointList(projectId, locationId, instanceId, metricId, interval, timespan, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -69590,7 +69873,7 @@ export const WebsiteProjectInstanceApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        websiteProjectInstanceMetricPointList(projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Serie>> {
+        websiteProjectInstanceMetricPointList(projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Point>> {
             return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceMetricPointList(projectId, locationId, instanceId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
         },
         /**

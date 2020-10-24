@@ -19,7 +19,7 @@
 
 •  **\_1**: {} = "1"
 
-*Defined in api.ts:956*
+*Defined in api.ts:979*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **\_2**: {} = "2"
 
-*Defined in api.ts:957*
+*Defined in api.ts:980*

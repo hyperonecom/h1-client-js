@@ -26,7 +26,7 @@
 
 •  **flavour**: string
 
-*Defined in api.ts:7491*
+*Defined in api.ts:7554*
 
 **`memberof`** WebsiteSideapp
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7485*
+*Defined in api.ts:7548*
 
 **`memberof`** WebsiteSideapp
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **url**: string
 
-*Defined in api.ts:7497*
+*Defined in api.ts:7560*
 
 Only available on the creation response
 

@@ -19,7 +19,7 @@
 
 •  **En**: {} = "en"
 
-*Defined in api.ts:6618*
+*Defined in api.ts:6681*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Pl**: {} = "pl"
 
-*Defined in api.ts:6619*
+*Defined in api.ts:6682*

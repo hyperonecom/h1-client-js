@@ -27,7 +27,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:2051*
+*Defined in api.ts:2108*
 
 **`memberof`** IamProjectPolicyCreate
 
@@ -37,7 +37,7 @@ ___
 
 •  **resource**: string
 
-*Defined in api.ts:2063*
+*Defined in api.ts:2120*
 
 **`memberof`** IamProjectPolicyCreate
 
@@ -47,7 +47,7 @@ ___
 
 •  **role**: string
 
-*Defined in api.ts:2057*
+*Defined in api.ts:2114*
 
 **`memberof`** IamProjectPolicyCreate
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2069*
+*Defined in api.ts:2126*
 
 **`memberof`** IamProjectPolicyCreate

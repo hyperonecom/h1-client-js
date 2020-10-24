@@ -25,7 +25,7 @@
 
 • `Optional` **billing**: [OrganisationBilling](_api_.organisationbilling.md)
 
-*Defined in api.ts:1859*
+*Defined in api.ts:1916*
 
 **`memberof`** IamOrganisationCreate
 
@@ -35,6 +35,6 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:1853*
+*Defined in api.ts:1910*
 
 **`memberof`** IamOrganisationCreate

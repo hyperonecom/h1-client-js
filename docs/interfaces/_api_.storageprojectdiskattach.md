@@ -24,6 +24,6 @@
 
 •  **vm**: string
 
-*Defined in api.ts:5962*
+*Defined in api.ts:6025*
 
 **`memberof`** StorageProjectDiskAttach

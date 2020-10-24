@@ -24,6 +24,6 @@
 
 • `Optional` **type**: [WebsiteProjectInstanceLogTypeEnum](../enums/_api_.websiteprojectinstancelogtypeenum.md)
 
-*Defined in api.ts:7417*
+*Defined in api.ts:7480*
 
 **`memberof`** WebsiteProjectInstanceLog

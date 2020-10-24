@@ -30,7 +30,7 @@
 
 •  **action**: [NetworkingRuleActionEnum](../enums/_api_.networkingruleactionenum.md)
 
-*Defined in api.ts:4054*
+*Defined in api.ts:4111*
 
 **`memberof`** NetworkingRule
 
@@ -40,7 +40,7 @@ ___
 
 •  **external**: Array\<string>
 
-*Defined in api.ts:4072*
+*Defined in api.ts:4129*
 
 **`memberof`** NetworkingRule
 
@@ -50,7 +50,7 @@ ___
 
 •  **filter**: Array\<string>
 
-*Defined in api.ts:4066*
+*Defined in api.ts:4123*
 
 **`memberof`** NetworkingRule
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4042*
+*Defined in api.ts:4099*
 
 **`memberof`** NetworkingRule
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **internal**: Array\<string>
 
-*Defined in api.ts:4078*
+*Defined in api.ts:4135*
 
 **`memberof`** NetworkingRule
 
@@ -80,7 +80,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:4048*
+*Defined in api.ts:4105*
 
 **`memberof`** NetworkingRule
 
@@ -90,6 +90,6 @@ ___
 
 •  **priority**: number
 
-*Defined in api.ts:4060*
+*Defined in api.ts:4117*
 
 **`memberof`** NetworkingRule
