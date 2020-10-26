@@ -49,7 +49,7 @@ import { Credentials } from "h1-client-ts";
 
 const helper = getPassportCredentialsHelper();
 const config = new Configuration({
-  accessToken: helper.getToken("https://api.hyperone.com/v2"), // token audience
+  accessToken: () => helper.getToken("https://api.hyperone.com/v2"), // token audience
 });
 ```
 
@@ -65,7 +65,7 @@ import { Configuration, IamProjectApi } from "hyperone";
 
 const helper = getPassportCredentialsHelper();
 const config = new Configuration({
-  accessToken: helper.getToken("https://api.hyperone.com/v2"), // token audience
+  accessToken: () => helper.getToken("https://api.hyperone.com/v2"), // token audience
 });
 
 const getProjects = async () => {
