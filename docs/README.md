@@ -70,7 +70,7 @@ const config = new Configuration({
 
 const getProjects = async () => {
   const projectApiClient = new IamProjectApi(config);
-  const response = await projectApiClient.projectList();
+  const response = await projectApiClient.iamProjectList();
   console.log(response);
 };
 
