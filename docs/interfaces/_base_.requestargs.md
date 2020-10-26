@@ -1,4 +1,4 @@
-**hyperone**
+**h1-client-ts**
 
 > [README](../README.md) / [Globals](../globals.md) / ["base"](../modules/_base_.md) / RequestArgs
 

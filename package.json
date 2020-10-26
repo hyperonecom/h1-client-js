@@ -1,14 +1,14 @@
 {
-  "name": "hyperone",
+  "name": "h1-client-ts",
   "version": "0.1.0",
-  "description": "OpenAPI client for hyperone",
+  "description": "OpenAPI client for h1-client-ts",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
     "axios",
     "typescript",
     "openapi-client",
     "openapi-generator",
-    "hyperone"
+    "h1-client-ts"
   ],
   "license": "Unlicense",
   "main": "./dist/index.js",
