@@ -27,7 +27,7 @@
 
 •  **city**: string
 
-*Defined in api.ts:2749*
+*Defined in api.ts:2761*
 
 **`memberof`** InvoiceBuyerAddress
 
@@ -37,7 +37,7 @@ ___
 
 •  **country**: string
 
-*Defined in api.ts:2755*
+*Defined in api.ts:2767*
 
 **`memberof`** InvoiceBuyerAddress
 
@@ -47,7 +47,7 @@ ___
 
 •  **street**: string
 
-*Defined in api.ts:2737*
+*Defined in api.ts:2749*
 
 **`memberof`** InvoiceBuyerAddress
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **zipcode**: string
 
-*Defined in api.ts:2743*
+*Defined in api.ts:2755*
 
 **`memberof`** InvoiceBuyerAddress

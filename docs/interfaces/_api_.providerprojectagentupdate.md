@@ -24,6 +24,6 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5099*
+*Defined in api.ts:5111*
 
 **`memberof`** ProviderProjectAgentUpdate

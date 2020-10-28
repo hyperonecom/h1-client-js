@@ -101,7 +101,7 @@ ___
 
 ▸ **billingProjectReservationAssign**(`projectId`: string, `reservationId`: string, `billingProjectReservationAssign`: [BillingProjectReservationAssign](../interfaces/_api_.billingprojectreservationassign.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)>>
 
-*Defined in api.ts:9152*
+*Defined in api.ts:9176*
 
 action assign
 
@@ -129,7 +129,7 @@ ___
 
 ▸ **billingProjectReservationCreate**(`projectId`: string, `billingProjectReservationCreate`: [BillingProjectReservationCreate](../interfaces/_api_.billingprojectreservationcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)>>
 
-*Defined in api.ts:9166*
+*Defined in api.ts:9190*
 
 Create reservation
 
@@ -156,7 +156,7 @@ ___
 
 ▸ **billingProjectReservationDelete**(`projectId`: string, `reservationId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:9179*
+*Defined in api.ts:9203*
 
 Delete reservation
 
@@ -182,7 +182,7 @@ ___
 
 ▸ **billingProjectReservationEventGet**(`projectId`: string, `reservationId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:9193*
+*Defined in api.ts:9217*
 
 Get billing/reservation.event
 
@@ -209,7 +209,7 @@ ___
 
 ▸ **billingProjectReservationEventList**(`projectId`: string, `reservationId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:9208*
+*Defined in api.ts:9232*
 
 List billing/reservation.event
 
@@ -237,7 +237,7 @@ ___
 
 ▸ **billingProjectReservationExtend**(`projectId`: string, `reservationId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)>>
 
-*Defined in api.ts:9222*
+*Defined in api.ts:9246*
 
 action extend
 
@@ -264,7 +264,7 @@ ___
 
 ▸ **billingProjectReservationGet**(`projectId`: string, `reservationId`: string, `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)>>
 
-*Defined in api.ts:9235*
+*Defined in api.ts:9259*
 
 Returns a single reservation
 
@@ -290,7 +290,7 @@ ___
 
 ▸ **billingProjectReservationList**(`projectId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)[]>>
 
-*Defined in api.ts:9250*
+*Defined in api.ts:9274*
 
 List reservation
 
@@ -318,7 +318,7 @@ ___
 
 ▸ **billingProjectReservationServiceGet**(`projectId`: string, `reservationId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:9264*
+*Defined in api.ts:9288*
 
 Get billing/reservation.service
 
@@ -345,7 +345,7 @@ ___
 
 ▸ **billingProjectReservationServiceList**(`projectId`: string, `reservationId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:9277*
+*Defined in api.ts:9301*
 
 List billing/reservation.service
 
@@ -371,7 +371,7 @@ ___
 
 ▸ **billingProjectReservationTagCreate**(`projectId`: string, `reservationId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:9291*
+*Defined in api.ts:9315*
 
 Create billing/reservation.tag
 
@@ -398,7 +398,7 @@ ___
 
 ▸ **billingProjectReservationTagDelete**(`projectId`: string, `reservationId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:9305*
+*Defined in api.ts:9329*
 
 Delete billing/reservation.tag
 
@@ -425,7 +425,7 @@ ___
 
 ▸ **billingProjectReservationTagGet**(`projectId`: string, `reservationId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:9319*
+*Defined in api.ts:9343*
 
 Get billing/reservation.tag
 
@@ -452,7 +452,7 @@ ___
 
 ▸ **billingProjectReservationTagList**(`projectId`: string, `reservationId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:9332*
+*Defined in api.ts:9356*
 
 List billing/reservation.tag
 
@@ -478,7 +478,7 @@ ___
 
 ▸ **billingProjectReservationTagPut**(`projectId`: string, `reservationId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:9346*
+*Defined in api.ts:9370*
 
 Replace billing/reservation.tag
 
@@ -505,7 +505,7 @@ ___
 
 ▸ **billingProjectReservationUpdate**(`projectId`: string, `reservationId`: string, `billingProjectReservationUpdate`: [BillingProjectReservationUpdate](../interfaces/_api_.billingprojectreservationupdate.md), `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)>>
 
-*Defined in api.ts:9360*
+*Defined in api.ts:9384*
 
 Returns modified reservation
 

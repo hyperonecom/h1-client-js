@@ -36,7 +36,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:3579*
+*Defined in api.ts:3591*
 
 **`memberof`** Netgw
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:3573*
+*Defined in api.ts:3585*
 
 **`memberof`** Netgw
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:3555*
+*Defined in api.ts:3567*
 
 **`memberof`** Netgw
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:3543*
+*Defined in api.ts:3555*
 
 **`memberof`** Netgw
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:3567*
+*Defined in api.ts:3579*
 
 **`memberof`** Netgw
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:3561*
+*Defined in api.ts:3573*
 
 **`memberof`** Netgw
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:3549*
+*Defined in api.ts:3561*
 
 **`memberof`** Netgw
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **network**: string
 
-*Defined in api.ts:3609*
+*Defined in api.ts:3621*
 
 **`memberof`** Netgw
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **primaryIP**: string
 
-*Defined in api.ts:3603*
+*Defined in api.ts:3615*
 
 **`memberof`** Netgw
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:3591*
+*Defined in api.ts:3603*
 
 **`memberof`** Netgw
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **state**: [NetgwStateEnum](../enums/_api_.netgwstateenum.md)
 
-*Defined in api.ts:3585*
+*Defined in api.ts:3597*
 
 **`memberof`** Netgw
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:3615*
+*Defined in api.ts:3627*
 
 **`memberof`** Netgw
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:3597*
+*Defined in api.ts:3609*
 
 **`memberof`** Netgw

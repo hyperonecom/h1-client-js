@@ -37,7 +37,7 @@
 
 • `Optional` **assigned**: string
 
-*Defined in api.ts:5518*
+*Defined in api.ts:5530*
 
 **`memberof`** Reservation
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:5488*
+*Defined in api.ts:5500*
 
 **`memberof`** Reservation
 
@@ -57,7 +57,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5482*
+*Defined in api.ts:5494*
 
 **`memberof`** Reservation
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:5464*
+*Defined in api.ts:5476*
 
 **`memberof`** Reservation
 
@@ -77,7 +77,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5452*
+*Defined in api.ts:5464*
 
 **`memberof`** Reservation
 
@@ -87,7 +87,7 @@ ___
 
 • `Optional` **kind**: string
 
-*Defined in api.ts:5512*
+*Defined in api.ts:5524*
 
 **`memberof`** Reservation
 
@@ -97,7 +97,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:5476*
+*Defined in api.ts:5488*
 
 **`memberof`** Reservation
 
@@ -107,7 +107,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:5470*
+*Defined in api.ts:5482*
 
 **`memberof`** Reservation
 
@@ -117,7 +117,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5458*
+*Defined in api.ts:5470*
 
 **`memberof`** Reservation
 
@@ -127,7 +127,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:5500*
+*Defined in api.ts:5512*
 
 **`memberof`** Reservation
 
@@ -137,7 +137,7 @@ ___
 
 • `Optional` **sourceService**: string
 
-*Defined in api.ts:5524*
+*Defined in api.ts:5536*
 
 **`memberof`** Reservation
 
@@ -147,7 +147,7 @@ ___
 
 • `Optional` **state**: [ReservationStateEnum](../enums/_api_.reservationstateenum.md)
 
-*Defined in api.ts:5494*
+*Defined in api.ts:5506*
 
 **`memberof`** Reservation
 
@@ -157,7 +157,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5530*
+*Defined in api.ts:5542*
 
 **`memberof`** Reservation
 
@@ -167,6 +167,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:5506*
+*Defined in api.ts:5518*
 
 **`memberof`** Reservation

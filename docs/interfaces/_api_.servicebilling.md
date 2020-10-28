@@ -28,7 +28,7 @@
 
 • `Optional` **oneTime**: boolean
 
-*Defined in api.ts:5912*
+*Defined in api.ts:5924*
 
 **`memberof`** ServiceBilling
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **period**: string
 
-*Defined in api.ts:5900*
+*Defined in api.ts:5912*
 
 **`memberof`** ServiceBilling
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **price**: [ServiceBillingPrice](_api_.servicebillingprice.md)
 
-*Defined in api.ts:5894*
+*Defined in api.ts:5906*
 
 **`memberof`** ServiceBilling
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **quantity**: number
 
-*Defined in api.ts:5906*
+*Defined in api.ts:5918*
 
 **`memberof`** ServiceBilling
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **reservations**: [ServiceBillingReservations](_api_.servicebillingreservations.md)
 
-*Defined in api.ts:5918*
+*Defined in api.ts:5930*
 
 **`memberof`** ServiceBilling

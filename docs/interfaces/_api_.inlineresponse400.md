@@ -24,7 +24,7 @@
 
 • `Optional` **message**: string
 
-*Defined in api.ts:2479*
+*Defined in api.ts:2491*
 
 error description
 

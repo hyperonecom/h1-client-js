@@ -37,7 +37,7 @@
 
 • `Optional` **bankAccount**: string
 
-*Defined in api.ts:4230*
+*Defined in api.ts:4242*
 
 **`memberof`** Organisation
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **billing**: [OrganisationBilling](_api_.organisationbilling.md)
 
-*Defined in api.ts:4218*
+*Defined in api.ts:4230*
 
 **`memberof`** Organisation
 
@@ -57,7 +57,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4194*
+*Defined in api.ts:4206*
 
 **`memberof`** Organisation
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:4188*
+*Defined in api.ts:4200*
 
 **`memberof`** Organisation
 
@@ -77,7 +77,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:4170*
+*Defined in api.ts:4182*
 
 **`memberof`** Organisation
 
@@ -87,7 +87,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4158*
+*Defined in api.ts:4170*
 
 **`memberof`** Organisation
 
@@ -97,7 +97,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:4182*
+*Defined in api.ts:4194*
 
 **`memberof`** Organisation
 
@@ -107,7 +107,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:4176*
+*Defined in api.ts:4188*
 
 **`memberof`** Organisation
 
@@ -117,7 +117,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4164*
+*Defined in api.ts:4176*
 
 **`memberof`** Organisation
 
@@ -127,7 +127,7 @@ ___
 
 • `Optional` **organisation**: string
 
-*Defined in api.ts:4206*
+*Defined in api.ts:4218*
 
 **`memberof`** Organisation
 
@@ -137,7 +137,7 @@ ___
 
 • `Optional` **state**: [OrganisationStateEnum](../enums/_api_.organisationstateenum.md)
 
-*Defined in api.ts:4200*
+*Defined in api.ts:4212*
 
 **`memberof`** Organisation
 
@@ -147,7 +147,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4236*
+*Defined in api.ts:4248*
 
 **`memberof`** Organisation
 
@@ -157,7 +157,7 @@ ___
 
 • `Optional` **transfer**: [OrganisationTransfer](_api_.organisationtransfer.md)
 
-*Defined in api.ts:4224*
+*Defined in api.ts:4236*
 
 **`memberof`** Organisation
 
@@ -167,6 +167,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4212*
+*Defined in api.ts:4224*
 
 **`memberof`** Organisation

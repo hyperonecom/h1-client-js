@@ -26,7 +26,7 @@
 
 •  **message**: string
 
-*Defined in api.ts:6505*
+*Defined in api.ts:6517*
 
 **`memberof`** SupportProjectTicketCreate
 
@@ -36,7 +36,7 @@ ___
 
 •  **subject**: string
 
-*Defined in api.ts:6499*
+*Defined in api.ts:6511*
 
 **`memberof`** SupportProjectTicketCreate
 
@@ -46,6 +46,6 @@ ___
 
 •  **type**: [SupportProjectTicketCreateTypeEnum](../enums/_api_.supportprojectticketcreatetypeenum.md)
 
-*Defined in api.ts:6493*
+*Defined in api.ts:6505*
 
 **`memberof`** SupportProjectTicketCreate

@@ -19,7 +19,7 @@
 
 •  **Correction**: {} = "correction"
 
-*Defined in api.ts:2692*
+*Defined in api.ts:2704*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Vat**: {} = "vat"
 
-*Defined in api.ts:2691*
+*Defined in api.ts:2703*

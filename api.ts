@@ -2344,6 +2344,18 @@ export interface IamUserUpdate {
      * @type {string}
      * @memberof IamUserUpdate
      */
+    firstName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IamUserUpdate
+     */
+    familyName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof IamUserUpdate
+     */
     lang?: IamUserUpdateLangEnum;
 }
 
@@ -6623,6 +6635,18 @@ export interface User {
      * @memberof User
      */
     id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof User
+     */
+    firstName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof User
+     */
+    familyName?: string;
     /**
      * 
      * @type {string}

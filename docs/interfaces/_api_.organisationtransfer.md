@@ -25,7 +25,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4328*
+*Defined in api.ts:4340*
 
 **`memberof`** OrganisationTransfer
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4322*
+*Defined in api.ts:4334*
 
 **`memberof`** OrganisationTransfer

@@ -116,7 +116,7 @@ ___
 
 ▸ **containerProjectRegistryCreate**(`projectId`: string, `locationId`: string, `containerProjectRegistryCreate`: [ContainerProjectRegistryCreate](../interfaces/_api_.containerprojectregistrycreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Registry](../interfaces/_api_.registry.md)>>
 
-*Defined in api.ts:17344*
+*Defined in api.ts:17368*
 
 Create registry
 
@@ -144,7 +144,7 @@ ___
 
 ▸ **containerProjectRegistryCredentialCreate**(`projectId`: string, `locationId`: string, `registryId`: string, `registryCredential`: [RegistryCredential](../interfaces/_api_.registrycredential.md), `options?`: any): Promise\<AxiosResponse\<[RegistryCredential](../interfaces/_api_.registrycredential.md)>>
 
-*Defined in api.ts:17359*
+*Defined in api.ts:17383*
 
 Create container/registry.credential
 
@@ -172,7 +172,7 @@ ___
 
 ▸ **containerProjectRegistryCredentialDelete**(`projectId`: string, `locationId`: string, `registryId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[Registry](../interfaces/_api_.registry.md)>>
 
-*Defined in api.ts:17374*
+*Defined in api.ts:17398*
 
 Delete container/registry.credential
 
@@ -200,7 +200,7 @@ ___
 
 ▸ **containerProjectRegistryCredentialGet**(`projectId`: string, `locationId`: string, `registryId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[RegistryCredential](../interfaces/_api_.registrycredential.md)>>
 
-*Defined in api.ts:17389*
+*Defined in api.ts:17413*
 
 Get container/registry.credential
 
@@ -228,7 +228,7 @@ ___
 
 ▸ **containerProjectRegistryCredentialList**(`projectId`: string, `locationId`: string, `registryId`: string, `options?`: any): Promise\<AxiosResponse\<[RegistryCredential](../interfaces/_api_.registrycredential.md)[]>>
 
-*Defined in api.ts:17403*
+*Defined in api.ts:17427*
 
 List container/registry.credential
 
@@ -255,7 +255,7 @@ ___
 
 ▸ **containerProjectRegistryCredentialPatch**(`projectId`: string, `locationId`: string, `registryId`: string, `credentialId`: string, `containerProjectRegistryCredentialPatch`: [ContainerProjectRegistryCredentialPatch](../interfaces/_api_.containerprojectregistrycredentialpatch.md), `options?`: any): Promise\<AxiosResponse\<[RegistryCredential](../interfaces/_api_.registrycredential.md)>>
 
-*Defined in api.ts:17419*
+*Defined in api.ts:17443*
 
 Update container/registry.credential
 
@@ -284,7 +284,7 @@ ___
 
 ▸ **containerProjectRegistryDelete**(`projectId`: string, `locationId`: string, `registryId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:17433*
+*Defined in api.ts:17457*
 
 Delete registry
 
@@ -311,7 +311,7 @@ ___
 
 ▸ **containerProjectRegistryDomainCreate**(`projectId`: string, `locationId`: string, `registryId`: string, `domain`: [Domain](../interfaces/_api_.domain.md), `options?`: any): Promise\<AxiosResponse\<[Domain](../interfaces/_api_.domain.md)>>
 
-*Defined in api.ts:17448*
+*Defined in api.ts:17472*
 
 Create container/registry.domain
 
@@ -339,7 +339,7 @@ ___
 
 ▸ **containerProjectRegistryDomainDelete**(`projectId`: string, `locationId`: string, `registryId`: string, `domainId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:17463*
+*Defined in api.ts:17487*
 
 Delete container/registry.domain
 
@@ -367,7 +367,7 @@ ___
 
 ▸ **containerProjectRegistryDomainGet**(`projectId`: string, `locationId`: string, `registryId`: string, `domainId`: string, `options?`: any): Promise\<AxiosResponse\<[Domain](../interfaces/_api_.domain.md)>>
 
-*Defined in api.ts:17478*
+*Defined in api.ts:17502*
 
 Get container/registry.domain
 
@@ -395,7 +395,7 @@ ___
 
 ▸ **containerProjectRegistryDomainList**(`projectId`: string, `locationId`: string, `registryId`: string, `options?`: any): Promise\<AxiosResponse\<[Domain](../interfaces/_api_.domain.md)[]>>
 
-*Defined in api.ts:17492*
+*Defined in api.ts:17516*
 
 List container/registry.domain
 
@@ -422,7 +422,7 @@ ___
 
 ▸ **containerProjectRegistryEventGet**(`projectId`: string, `locationId`: string, `registryId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:17507*
+*Defined in api.ts:17531*
 
 Get container/registry.event
 
@@ -450,7 +450,7 @@ ___
 
 ▸ **containerProjectRegistryEventList**(`projectId`: string, `locationId`: string, `registryId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:17523*
+*Defined in api.ts:17547*
 
 List container/registry.event
 
@@ -479,7 +479,7 @@ ___
 
 ▸ **containerProjectRegistryGet**(`projectId`: string, `locationId`: string, `registryId`: string, `options?`: any): Promise\<AxiosResponse\<[Registry](../interfaces/_api_.registry.md)>>
 
-*Defined in api.ts:17537*
+*Defined in api.ts:17561*
 
 Returns a single registry
 
@@ -506,7 +506,7 @@ ___
 
 ▸ **containerProjectRegistryList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Registry](../interfaces/_api_.registry.md)[]>>
 
-*Defined in api.ts:17553*
+*Defined in api.ts:17577*
 
 List registry
 
@@ -535,7 +535,7 @@ ___
 
 ▸ **containerProjectRegistryRepositoryGet**(`projectId`: string, `locationId`: string, `registryId`: string, `repositoryId`: string, `options?`: any): Promise\<AxiosResponse\<[ContainerRepository](../interfaces/_api_.containerrepository.md)>>
 
-*Defined in api.ts:17568*
+*Defined in api.ts:17592*
 
 Get container/registry.repository
 
@@ -563,7 +563,7 @@ ___
 
 ▸ **containerProjectRegistryRepositoryImageDelete**(`projectId`: string, `locationId`: string, `registryId`: string, `repositoryId`: string, `imageId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:17584*
+*Defined in api.ts:17608*
 
 Delete container/registry.image
 
@@ -592,7 +592,7 @@ ___
 
 ▸ **containerProjectRegistryRepositoryImageGet**(`projectId`: string, `locationId`: string, `registryId`: string, `repositoryId`: string, `imageId`: string, `options?`: any): Promise\<AxiosResponse\<[ContainerImage](../interfaces/_api_.containerimage.md)>>
 
-*Defined in api.ts:17600*
+*Defined in api.ts:17624*
 
 Get container/registry.image
 
@@ -621,7 +621,7 @@ ___
 
 ▸ **containerProjectRegistryRepositoryImageList**(`projectId`: string, `locationId`: string, `registryId`: string, `repositoryId`: string, `options?`: any): Promise\<AxiosResponse\<[ContainerImage](../interfaces/_api_.containerimage.md)[]>>
 
-*Defined in api.ts:17615*
+*Defined in api.ts:17639*
 
 List container/registry.image
 
@@ -649,7 +649,7 @@ ___
 
 ▸ **containerProjectRegistryRepositoryList**(`projectId`: string, `locationId`: string, `registryId`: string, `options?`: any): Promise\<AxiosResponse\<[ContainerRepository](../interfaces/_api_.containerrepository.md)[]>>
 
-*Defined in api.ts:17629*
+*Defined in api.ts:17653*
 
 List container/registry.repository
 
@@ -676,7 +676,7 @@ ___
 
 ▸ **containerProjectRegistryServiceGet**(`projectId`: string, `locationId`: string, `registryId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:17644*
+*Defined in api.ts:17668*
 
 Get container/registry.service
 
@@ -704,7 +704,7 @@ ___
 
 ▸ **containerProjectRegistryServiceList**(`projectId`: string, `locationId`: string, `registryId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:17658*
+*Defined in api.ts:17682*
 
 List container/registry.service
 
@@ -731,7 +731,7 @@ ___
 
 ▸ **containerProjectRegistryStart**(`projectId`: string, `locationId`: string, `registryId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Registry](../interfaces/_api_.registry.md)>>
 
-*Defined in api.ts:17673*
+*Defined in api.ts:17697*
 
 action start
 
@@ -759,7 +759,7 @@ ___
 
 ▸ **containerProjectRegistryStop**(`projectId`: string, `locationId`: string, `registryId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Registry](../interfaces/_api_.registry.md)>>
 
-*Defined in api.ts:17688*
+*Defined in api.ts:17712*
 
 action stop
 
@@ -787,7 +787,7 @@ ___
 
 ▸ **containerProjectRegistryTagCreate**(`projectId`: string, `locationId`: string, `registryId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:17703*
+*Defined in api.ts:17727*
 
 Create container/registry.tag
 
@@ -815,7 +815,7 @@ ___
 
 ▸ **containerProjectRegistryTagDelete**(`projectId`: string, `locationId`: string, `registryId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:17718*
+*Defined in api.ts:17742*
 
 Delete container/registry.tag
 
@@ -843,7 +843,7 @@ ___
 
 ▸ **containerProjectRegistryTagGet**(`projectId`: string, `locationId`: string, `registryId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:17733*
+*Defined in api.ts:17757*
 
 Get container/registry.tag
 
@@ -871,7 +871,7 @@ ___
 
 ▸ **containerProjectRegistryTagList**(`projectId`: string, `locationId`: string, `registryId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:17747*
+*Defined in api.ts:17771*
 
 List container/registry.tag
 
@@ -898,7 +898,7 @@ ___
 
 ▸ **containerProjectRegistryTagPut**(`projectId`: string, `locationId`: string, `registryId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:17762*
+*Defined in api.ts:17786*
 
 Replace container/registry.tag
 
@@ -926,7 +926,7 @@ ___
 
 ▸ **containerProjectRegistryTransfer**(`projectId`: string, `locationId`: string, `registryId`: string, `containerProjectRegistryTransfer`: [ContainerProjectRegistryTransfer](../interfaces/_api_.containerprojectregistrytransfer.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Registry](../interfaces/_api_.registry.md)>>
 
-*Defined in api.ts:17778*
+*Defined in api.ts:17802*
 
 action transfer
 
@@ -955,7 +955,7 @@ ___
 
 ▸ **containerProjectRegistryUpdate**(`projectId`: string, `locationId`: string, `registryId`: string, `containerProjectRegistryUpdate`: [ContainerProjectRegistryUpdate](../interfaces/_api_.containerprojectregistryupdate.md), `options?`: any): Promise\<AxiosResponse\<[Registry](../interfaces/_api_.registry.md)>>
 
-*Defined in api.ts:17793*
+*Defined in api.ts:17817*
 
 Returns modified registry
 

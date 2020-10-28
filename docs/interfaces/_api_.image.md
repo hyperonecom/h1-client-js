@@ -38,7 +38,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:2406*
+*Defined in api.ts:2418*
 
 **`memberof`** Image
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:2400*
+*Defined in api.ts:2412*
 
 **`memberof`** Image
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **description**: string
 
-*Defined in api.ts:2430*
+*Defined in api.ts:2442*
 
 **`memberof`** Image
 
@@ -68,7 +68,7 @@ ___
 
 • `Optional` **disks**: number
 
-*Defined in api.ts:2436*
+*Defined in api.ts:2448*
 
 **`memberof`** Image
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **fileSize**: number
 
-*Defined in api.ts:2442*
+*Defined in api.ts:2454*
 
 **`memberof`** Image
 
@@ -88,7 +88,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:2382*
+*Defined in api.ts:2394*
 
 **`memberof`** Image
 
@@ -98,7 +98,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:2370*
+*Defined in api.ts:2382*
 
 **`memberof`** Image
 
@@ -108,7 +108,7 @@ ___
 
 • `Optional` **license**: Array\<string>
 
-*Defined in api.ts:2448*
+*Defined in api.ts:2460*
 
 **`memberof`** Image
 
@@ -118,7 +118,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:2394*
+*Defined in api.ts:2406*
 
 **`memberof`** Image
 
@@ -128,7 +128,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:2388*
+*Defined in api.ts:2400*
 
 **`memberof`** Image
 
@@ -138,7 +138,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:2376*
+*Defined in api.ts:2388*
 
 **`memberof`** Image
 
@@ -148,7 +148,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:2418*
+*Defined in api.ts:2430*
 
 **`memberof`** Image
 
@@ -158,7 +158,7 @@ ___
 
 • `Optional` **state**: [ImageStateEnum](../enums/_api_.imagestateenum.md)
 
-*Defined in api.ts:2412*
+*Defined in api.ts:2424*
 
 **`memberof`** Image
 
@@ -168,7 +168,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2454*
+*Defined in api.ts:2466*
 
 **`memberof`** Image
 
@@ -178,6 +178,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:2424*
+*Defined in api.ts:2436*
 
 **`memberof`** Image

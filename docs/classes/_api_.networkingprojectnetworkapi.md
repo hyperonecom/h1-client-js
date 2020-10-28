@@ -99,7 +99,7 @@ ___
 
 ▸ **networkingProjectNetworkCreate**(`projectId`: string, `locationId`: string, `networkingProjectNetworkCreate`: [NetworkingProjectNetworkCreate](../interfaces/_api_.networkingprojectnetworkcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Network](../interfaces/_api_.network.md)>>
 
-*Defined in api.ts:51331*
+*Defined in api.ts:51355*
 
 Create network
 
@@ -127,7 +127,7 @@ ___
 
 ▸ **networkingProjectNetworkDelete**(`projectId`: string, `locationId`: string, `networkId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:51345*
+*Defined in api.ts:51369*
 
 Delete network
 
@@ -154,7 +154,7 @@ ___
 
 ▸ **networkingProjectNetworkEventGet**(`projectId`: string, `locationId`: string, `networkId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:51360*
+*Defined in api.ts:51384*
 
 Get networking/network.event
 
@@ -182,7 +182,7 @@ ___
 
 ▸ **networkingProjectNetworkEventList**(`projectId`: string, `locationId`: string, `networkId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:51376*
+*Defined in api.ts:51400*
 
 List networking/network.event
 
@@ -211,7 +211,7 @@ ___
 
 ▸ **networkingProjectNetworkGet**(`projectId`: string, `locationId`: string, `networkId`: string, `options?`: any): Promise\<AxiosResponse\<[Network](../interfaces/_api_.network.md)>>
 
-*Defined in api.ts:51390*
+*Defined in api.ts:51414*
 
 Returns a single network
 
@@ -238,7 +238,7 @@ ___
 
 ▸ **networkingProjectNetworkList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Network](../interfaces/_api_.network.md)[]>>
 
-*Defined in api.ts:51406*
+*Defined in api.ts:51430*
 
 List network
 
@@ -267,7 +267,7 @@ ___
 
 ▸ **networkingProjectNetworkServiceGet**(`projectId`: string, `locationId`: string, `networkId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:51421*
+*Defined in api.ts:51445*
 
 Get networking/network.service
 
@@ -295,7 +295,7 @@ ___
 
 ▸ **networkingProjectNetworkServiceList**(`projectId`: string, `locationId`: string, `networkId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:51435*
+*Defined in api.ts:51459*
 
 List networking/network.service
 
@@ -322,7 +322,7 @@ ___
 
 ▸ **networkingProjectNetworkTagCreate**(`projectId`: string, `locationId`: string, `networkId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:51450*
+*Defined in api.ts:51474*
 
 Create networking/network.tag
 
@@ -350,7 +350,7 @@ ___
 
 ▸ **networkingProjectNetworkTagDelete**(`projectId`: string, `locationId`: string, `networkId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:51465*
+*Defined in api.ts:51489*
 
 Delete networking/network.tag
 
@@ -378,7 +378,7 @@ ___
 
 ▸ **networkingProjectNetworkTagGet**(`projectId`: string, `locationId`: string, `networkId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:51480*
+*Defined in api.ts:51504*
 
 Get networking/network.tag
 
@@ -406,7 +406,7 @@ ___
 
 ▸ **networkingProjectNetworkTagList**(`projectId`: string, `locationId`: string, `networkId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:51494*
+*Defined in api.ts:51518*
 
 List networking/network.tag
 
@@ -433,7 +433,7 @@ ___
 
 ▸ **networkingProjectNetworkTagPut**(`projectId`: string, `locationId`: string, `networkId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:51509*
+*Defined in api.ts:51533*
 
 Replace networking/network.tag
 
@@ -461,7 +461,7 @@ ___
 
 ▸ **networkingProjectNetworkUpdate**(`projectId`: string, `locationId`: string, `networkId`: string, `networkingProjectNetworkUpdate`: [NetworkingProjectNetworkUpdate](../interfaces/_api_.networkingprojectnetworkupdate.md), `options?`: any): Promise\<AxiosResponse\<[Network](../interfaces/_api_.network.md)>>
 
-*Defined in api.ts:51524*
+*Defined in api.ts:51548*
 
 Returns modified network
 
