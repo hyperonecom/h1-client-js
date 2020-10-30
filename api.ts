@@ -469,13 +469,13 @@ export interface BillingAddress {
      * @type {string}
      * @memberof BillingAddress
      */
-    zipcode: string;
+    street: string;
     /**
      * 
      * @type {string}
      * @memberof BillingAddress
      */
-    street: string;
+    zipcode: string;
 }
 
 /**
@@ -1601,11 +1601,11 @@ export interface DnsRecordset {
      */
     id?: string;
     /**
-     * 
+     * use \'@\' to reference the zone origin
      * @type {string}
      * @memberof DnsRecordset
      */
-    name: string;
+    name?: string;
     /**
      * 
      * @type {string}
@@ -24494,7 +24494,7 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async iamOrganisationInvoiceGet(organisationId: string, invoiceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Proforma>> {
+        async iamOrganisationInvoiceGet(organisationId: string, invoiceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Invoice>> {
             const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationInvoiceGet(organisationId, invoiceId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -24866,7 +24866,7 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        iamOrganisationInvoiceGet(organisationId: string, invoiceId: string, options?: any): AxiosPromise<Proforma> {
+        iamOrganisationInvoiceGet(organisationId: string, invoiceId: string, options?: any): AxiosPromise<Invoice> {
             return IamOrganisationApiFp(configuration).iamOrganisationInvoiceGet(organisationId, invoiceId, options).then((request) => request(axios, basePath));
         },
         /**

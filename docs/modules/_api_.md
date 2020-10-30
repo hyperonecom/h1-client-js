@@ -1398,7 +1398,7 @@ Name | Type |
 `iamOrganisationInvitationGet` | (organisationId: string,invitationId: string,options?: any) => AxiosPromise\<[Invitation](../interfaces/_api_.invitation.md)> |
 `iamOrganisationInvitationList` | (organisationId: string,resource?: string,options?: any) => AxiosPromise\<Array\<[Invitation](../interfaces/_api_.invitation.md)>> |
 `iamOrganisationInvoiceDownload` | (organisationId: string,invoiceId: string,options?: any) => AxiosPromise\<any> |
-`iamOrganisationInvoiceGet` | (organisationId: string,invoiceId: string,options?: any) => AxiosPromise\<[Proforma](../interfaces/_api_.proforma.md)> |
+`iamOrganisationInvoiceGet` | (organisationId: string,invoiceId: string,options?: any) => AxiosPromise\<[Invoice](../interfaces/_api_.invoice.md)> |
 `iamOrganisationInvoiceList` | (organisationId: string,options?: any) => AxiosPromise\<Array\<[Invoice](../interfaces/_api_.invoice.md)>> |
 `iamOrganisationList` | (name?: string,billingCompany?: string,$limit?: number,active?: boolean,options?: any) => AxiosPromise\<Array\<[Organisation](../interfaces/_api_.organisation.md)>> |
 `iamOrganisationOwnershipCreate` | (organisationId: string,iamOrganisationOwnershipCreate: [IamOrganisationOwnershipCreate](../interfaces/_api_.iamorganisationownershipcreate.md),options?: any) => AxiosPromise\<[Organisation](../interfaces/_api_.organisation.md)> |
@@ -1448,7 +1448,7 @@ Name | Type |
 `iamOrganisationInvitationGet` | (organisationId: string,invitationId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Invitation](../interfaces/_api_.invitation.md)>> |
 `iamOrganisationInvitationList` | (organisationId: string,resource?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Invitation](../interfaces/_api_.invitation.md)>>> |
 `iamOrganisationInvoiceDownload` | (organisationId: string,invoiceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<any>> |
-`iamOrganisationInvoiceGet` | (organisationId: string,invoiceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Proforma](../interfaces/_api_.proforma.md)>> |
+`iamOrganisationInvoiceGet` | (organisationId: string,invoiceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Invoice](../interfaces/_api_.invoice.md)>> |
 `iamOrganisationInvoiceList` | (organisationId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Invoice](../interfaces/_api_.invoice.md)>>> |
 `iamOrganisationList` | (name?: string,billingCompany?: string,$limit?: number,active?: boolean,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Organisation](../interfaces/_api_.organisation.md)>>> |
 `iamOrganisationOwnershipCreate` | (organisationId: string,iamOrganisationOwnershipCreate: [IamOrganisationOwnershipCreate](../interfaces/_api_.iamorganisationownershipcreate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Organisation](../interfaces/_api_.organisation.md)>> |

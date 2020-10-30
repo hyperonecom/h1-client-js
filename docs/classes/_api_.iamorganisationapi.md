@@ -398,7 +398,7 @@ ___
 
 ### iamOrganisationInvoiceGet
 
-▸ **iamOrganisationInvoiceGet**(`organisationId`: string, `invoiceId`: string, `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
+▸ **iamOrganisationInvoiceGet**(`organisationId`: string, `invoiceId`: string, `options?`: any): Promise\<AxiosResponse\<[Invoice](../interfaces/_api_.invoice.md)>>
 
 *Defined in api.ts:25201*
 
@@ -418,7 +418,7 @@ Name | Type | Description |
 `invoiceId` | string | invoiceId |
 `options?` | any | - |
 
-**Returns:** Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
+**Returns:** Promise\<AxiosResponse\<[Invoice](../interfaces/_api_.invoice.md)>>
 
 ___
 

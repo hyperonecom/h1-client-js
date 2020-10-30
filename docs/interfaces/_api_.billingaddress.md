@@ -47,7 +47,7 @@ ___
 
 •  **street**: string
 
-*Defined in api.ts:478*
+*Defined in api.ts:472*
 
 **`memberof`** BillingAddress
 
@@ -57,6 +57,6 @@ ___
 
 •  **zipcode**: string
 
-*Defined in api.ts:472*
+*Defined in api.ts:478*
 
 **`memberof`** BillingAddress
