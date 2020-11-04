@@ -38,7 +38,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:7664*
+*Defined in api.ts:7645*
 
 **`memberof`** Zone
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:7658*
+*Defined in api.ts:7639*
 
 **`memberof`** Zone
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **dnsName**: string
 
-*Defined in api.ts:7694*
+*Defined in api.ts:7675*
 
 **`memberof`** Zone
 
@@ -68,7 +68,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:7640*
+*Defined in api.ts:7621*
 
 **`memberof`** Zone
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:7706*
+*Defined in api.ts:7687*
 
 **`memberof`** Zone
 
@@ -88,7 +88,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7628*
+*Defined in api.ts:7609*
 
 **`memberof`** Zone
 
@@ -98,7 +98,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:7652*
+*Defined in api.ts:7633*
 
 **`memberof`** Zone
 
@@ -108,7 +108,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:7646*
+*Defined in api.ts:7627*
 
 **`memberof`** Zone
 
@@ -118,7 +118,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:7634*
+*Defined in api.ts:7615*
 
 **`memberof`** Zone
 
@@ -128,7 +128,7 @@ ___
 
 • `Optional` **nameserver**: Array\<string>
 
-*Defined in api.ts:7700*
+*Defined in api.ts:7681*
 
 **`memberof`** Zone
 
@@ -138,7 +138,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:7676*
+*Defined in api.ts:7657*
 
 **`memberof`** Zone
 
@@ -148,7 +148,7 @@ ___
 
 • `Optional` **rrsets**: Array\<[ZoneRrsets](_api_.zonerrsets.md)>
 
-*Defined in api.ts:7688*
+*Defined in api.ts:7669*
 
 **`memberof`** Zone
 
@@ -158,7 +158,7 @@ ___
 
 • `Optional` **state**: [ZoneStateEnum](../enums/_api_.zonestateenum.md)
 
-*Defined in api.ts:7670*
+*Defined in api.ts:7651*
 
 **`memberof`** Zone
 
@@ -168,7 +168,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:7712*
+*Defined in api.ts:7693*
 
 **`memberof`** Zone
 
@@ -178,6 +178,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:7682*
+*Defined in api.ts:7663*
 
 **`memberof`** Zone

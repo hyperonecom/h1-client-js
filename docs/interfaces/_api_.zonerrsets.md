@@ -27,7 +27,7 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:7744*
+*Defined in api.ts:7725*
 
 **`memberof`** ZoneRrsets
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **records**: string
 
-*Defined in api.ts:7738*
+*Defined in api.ts:7719*
 
 **`memberof`** ZoneRrsets
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **ttl**: number
 
-*Defined in api.ts:7756*
+*Defined in api.ts:7737*
 
 **`memberof`** ZoneRrsets
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:7750*
+*Defined in api.ts:7731*
 
 **`memberof`** ZoneRrsets

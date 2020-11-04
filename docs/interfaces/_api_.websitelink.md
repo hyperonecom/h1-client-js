@@ -27,7 +27,7 @@
 
 •  **actor**: string
 
-*Defined in api.ts:7414*
+*Defined in api.ts:7395*
 
 **`memberof`** WebsiteLink
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7408*
+*Defined in api.ts:7389*
 
 **`memberof`** WebsiteLink
 
@@ -47,7 +47,7 @@ ___
 
 •  **purpose**: [WebsiteLinkPurposeEnum](../enums/_api_.websitelinkpurposeenum.md)
 
-*Defined in api.ts:7420*
+*Defined in api.ts:7401*
 
 **`memberof`** WebsiteLink
 
@@ -57,6 +57,6 @@ ___
 
 •  **resource**: string
 
-*Defined in api.ts:7426*
+*Defined in api.ts:7407*
 
 **`memberof`** WebsiteLink

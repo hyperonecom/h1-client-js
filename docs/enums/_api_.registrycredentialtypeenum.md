@@ -19,7 +19,7 @@
 
 •  **Plain**: {} = "plain"
 
-*Defined in api.ts:5354*
+*Defined in api.ts:5348*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Sha512**: {} = "sha512"
 
-*Defined in api.ts:5353*
+*Defined in api.ts:5347*

@@ -306,7 +306,6 @@
 * [StorageProjectDiskApiAxiosParamCreator](_index_.md#storageprojectdiskapiaxiosparamcreator)
 * [StorageProjectDiskApiFactory](_index_.md#storageprojectdiskapifactory)
 * [StorageProjectDiskApiFp](_index_.md#storageprojectdiskapifp)
-* [StorageProjectDiskAttach](_index_.md#storageprojectdiskattach)
 * [StorageProjectDiskCreate](_index_.md#storageprojectdiskcreate)
 * [StorageProjectDiskResize](_index_.md#storageprojectdiskresize)
 * [StorageProjectDiskTransfer](_index_.md#storageprojectdisktransfer)
@@ -2179,12 +2178,6 @@ ___
 ### StorageProjectDiskApiFp
 
 Re-exports: [StorageProjectDiskApiFp](_api_.md#storageprojectdiskapifp)
-
-___
-
-### StorageProjectDiskAttach
-
-Re-exports: [StorageProjectDiskAttach](../interfaces/_api_.storageprojectdiskattach.md)
 
 ___
 

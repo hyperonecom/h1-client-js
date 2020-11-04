@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:5085*
+*Defined in api.ts:5079*
 
 **`memberof`** ProviderProjectAgentCredentialPatch

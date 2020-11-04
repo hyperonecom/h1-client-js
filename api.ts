@@ -4215,12 +4215,6 @@ export interface Organisation {
      * @type {string}
      * @memberof Organisation
      */
-    organisation?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Organisation
-     */
     uri?: string;
     /**
      * 
@@ -6022,19 +6016,6 @@ export interface ServiceDisplayUnit {
      * @memberof ServiceDisplayUnit
      */
     billing?: string;
-}
-/**
- * 
- * @export
- * @interface StorageProjectDiskAttach
- */
-export interface StorageProjectDiskAttach {
-    /**
-     * 
-     * @type {string}
-     * @memberof StorageProjectDiskAttach
-     */
-    vm: string;
 }
 /**
  * 
@@ -25915,12 +25896,13 @@ export const IamOrganisationPolicyApiAxiosParamCreator = function (configuration
          * @summary List iam/policy
          * @param {string} organisationId Organisation Id
          * @param {string} [name] Filter by name
+         * @param {string} [resource] Filter by resource
          * @param {string} [tagValue] Filter by tag.value
          * @param {string} [tagKey] Filter by tag.key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        iamOrganisationPolicyList: async (organisationId: string, name?: string, tagValue?: string, tagKey?: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationPolicyList: async (organisationId: string, name?: string, resource?: string, tagValue?: string, tagKey?: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
                 throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationPolicyList.');
@@ -25947,6 +25929,10 @@ export const IamOrganisationPolicyApiAxiosParamCreator = function (configuration
 
             if (name !== undefined) {
                 localVarQueryParameter['name'] = name;
+            }
+
+            if (resource !== undefined) {
+                localVarQueryParameter['resource'] = resource;
             }
 
             if (tagValue !== undefined) {
@@ -26579,13 +26565,14 @@ export const IamOrganisationPolicyApiFp = function(configuration?: Configuration
          * @summary List iam/policy
          * @param {string} organisationId Organisation Id
          * @param {string} [name] Filter by name
+         * @param {string} [resource] Filter by resource
          * @param {string} [tagValue] Filter by tag.value
          * @param {string} [tagKey] Filter by tag.key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async iamOrganisationPolicyList(organisationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Policy>>> {
-            const localVarAxiosArgs = await IamOrganisationPolicyApiAxiosParamCreator(configuration).iamOrganisationPolicyList(organisationId, name, tagValue, tagKey, options);
+        async iamOrganisationPolicyList(organisationId: string, name?: string, resource?: string, tagValue?: string, tagKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Policy>>> {
+            const localVarAxiosArgs = await IamOrganisationPolicyApiAxiosParamCreator(configuration).iamOrganisationPolicyList(organisationId, name, resource, tagValue, tagKey, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -26837,13 +26824,14 @@ export const IamOrganisationPolicyApiFactory = function (configuration?: Configu
          * @summary List iam/policy
          * @param {string} organisationId Organisation Id
          * @param {string} [name] Filter by name
+         * @param {string} [resource] Filter by resource
          * @param {string} [tagValue] Filter by tag.value
          * @param {string} [tagKey] Filter by tag.key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        iamOrganisationPolicyList(organisationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any): AxiosPromise<Array<Policy>> {
-            return IamOrganisationPolicyApiFp(configuration).iamOrganisationPolicyList(organisationId, name, tagValue, tagKey, options).then((request) => request(axios, basePath));
+        iamOrganisationPolicyList(organisationId: string, name?: string, resource?: string, tagValue?: string, tagKey?: string, options?: any): AxiosPromise<Array<Policy>> {
+            return IamOrganisationPolicyApiFp(configuration).iamOrganisationPolicyList(organisationId, name, resource, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/policy.service
@@ -27078,14 +27066,15 @@ export class IamOrganisationPolicyApi extends BaseAPI {
      * @summary List iam/policy
      * @param {string} organisationId Organisation Id
      * @param {string} [name] Filter by name
+     * @param {string} [resource] Filter by resource
      * @param {string} [tagValue] Filter by tag.value
      * @param {string} [tagKey] Filter by tag.key
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationPolicyApi
      */
-    public iamOrganisationPolicyList(organisationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any) {
-        return IamOrganisationPolicyApiFp(this.configuration).iamOrganisationPolicyList(organisationId, name, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationPolicyList(organisationId: string, name?: string, resource?: string, tagValue?: string, tagKey?: string, options?: any) {
+        return IamOrganisationPolicyApiFp(this.configuration).iamOrganisationPolicyList(organisationId, name, resource, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -33096,12 +33085,13 @@ export const IamProjectPolicyApiAxiosParamCreator = function (configuration?: Co
          * @summary List iam/policy
          * @param {string} projectId Project Id
          * @param {string} [name] Filter by name
+         * @param {string} [resource] Filter by resource
          * @param {string} [tagValue] Filter by tag.value
          * @param {string} [tagKey] Filter by tag.key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        iamProjectPolicyList: async (projectId: string, name?: string, tagValue?: string, tagKey?: string, options: any = {}): Promise<RequestArgs> => {
+        iamProjectPolicyList: async (projectId: string, name?: string, resource?: string, tagValue?: string, tagKey?: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
                 throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectPolicyList.');
@@ -33128,6 +33118,10 @@ export const IamProjectPolicyApiAxiosParamCreator = function (configuration?: Co
 
             if (name !== undefined) {
                 localVarQueryParameter['name'] = name;
+            }
+
+            if (resource !== undefined) {
+                localVarQueryParameter['resource'] = resource;
             }
 
             if (tagValue !== undefined) {
@@ -33760,13 +33754,14 @@ export const IamProjectPolicyApiFp = function(configuration?: Configuration) {
          * @summary List iam/policy
          * @param {string} projectId Project Id
          * @param {string} [name] Filter by name
+         * @param {string} [resource] Filter by resource
          * @param {string} [tagValue] Filter by tag.value
          * @param {string} [tagKey] Filter by tag.key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async iamProjectPolicyList(projectId: string, name?: string, tagValue?: string, tagKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Policy>>> {
-            const localVarAxiosArgs = await IamProjectPolicyApiAxiosParamCreator(configuration).iamProjectPolicyList(projectId, name, tagValue, tagKey, options);
+        async iamProjectPolicyList(projectId: string, name?: string, resource?: string, tagValue?: string, tagKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Policy>>> {
+            const localVarAxiosArgs = await IamProjectPolicyApiAxiosParamCreator(configuration).iamProjectPolicyList(projectId, name, resource, tagValue, tagKey, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -34018,13 +34013,14 @@ export const IamProjectPolicyApiFactory = function (configuration?: Configuratio
          * @summary List iam/policy
          * @param {string} projectId Project Id
          * @param {string} [name] Filter by name
+         * @param {string} [resource] Filter by resource
          * @param {string} [tagValue] Filter by tag.value
          * @param {string} [tagKey] Filter by tag.key
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        iamProjectPolicyList(projectId: string, name?: string, tagValue?: string, tagKey?: string, options?: any): AxiosPromise<Array<Policy>> {
-            return IamProjectPolicyApiFp(configuration).iamProjectPolicyList(projectId, name, tagValue, tagKey, options).then((request) => request(axios, basePath));
+        iamProjectPolicyList(projectId: string, name?: string, resource?: string, tagValue?: string, tagKey?: string, options?: any): AxiosPromise<Array<Policy>> {
+            return IamProjectPolicyApiFp(configuration).iamProjectPolicyList(projectId, name, resource, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
          * Get iam/policy.service
@@ -34259,14 +34255,15 @@ export class IamProjectPolicyApi extends BaseAPI {
      * @summary List iam/policy
      * @param {string} projectId Project Id
      * @param {string} [name] Filter by name
+     * @param {string} [resource] Filter by resource
      * @param {string} [tagValue] Filter by tag.value
      * @param {string} [tagKey] Filter by tag.key
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamProjectPolicyApi
      */
-    public iamProjectPolicyList(projectId: string, name?: string, tagValue?: string, tagKey?: string, options?: any) {
-        return IamProjectPolicyApiFp(this.configuration).iamProjectPolicyList(projectId, name, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    public iamProjectPolicyList(projectId: string, name?: string, resource?: string, tagValue?: string, tagKey?: string, options?: any) {
+        return IamProjectPolicyApiFp(this.configuration).iamProjectPolicyList(projectId, name, resource, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -55278,77 +55275,6 @@ export class ProviderProjectAgentApi extends BaseAPI {
 export const StorageProjectDiskApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * action attach
-         * @summary Attach storage/disk
-         * @param {string} projectId Project Id
-         * @param {string} locationId Location Id
-         * @param {string} diskId Disk Id
-         * @param {StorageProjectDiskAttach} storageProjectDiskAttach 
-         * @param {string} [xIdempotencyKey] Idempotency key
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        storageProjectDiskAttach: async (projectId: string, locationId: string, diskId: string, storageProjectDiskAttach: StorageProjectDiskAttach, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'projectId' is not null or undefined
-            if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling storageProjectDiskAttach.');
-            }
-            // verify required parameter 'locationId' is not null or undefined
-            if (locationId === null || locationId === undefined) {
-                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling storageProjectDiskAttach.');
-            }
-            // verify required parameter 'diskId' is not null or undefined
-            if (diskId === null || diskId === undefined) {
-                throw new RequiredError('diskId','Required parameter diskId was null or undefined when calling storageProjectDiskAttach.');
-            }
-            // verify required parameter 'storageProjectDiskAttach' is not null or undefined
-            if (storageProjectDiskAttach === null || storageProjectDiskAttach === undefined) {
-                throw new RequiredError('storageProjectDiskAttach','Required parameter storageProjectDiskAttach was null or undefined when calling storageProjectDiskAttach.');
-            }
-            const localVarPath = `/storage/{locationId}/project/{projectId}/disk/{diskId}/actions/attach`
-                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
-                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
-                .replace(`{${"diskId"}}`, encodeURIComponent(String(diskId)));
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication BearerAuth required
-            // http bearer authentication required
-            if (configuration && configuration.accessToken) {
-                const accessToken = typeof configuration.accessToken === 'function'
-                    ? configuration.accessToken()
-                    : configuration.accessToken;
-                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
-            }
-
-            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
-                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
-            }
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof storageProjectDiskAttach !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(storageProjectDiskAttach !== undefined ? storageProjectDiskAttach : {}) : (storageProjectDiskAttach || "");
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * Create disk
          * @summary Create storage/disk
          * @param {string} projectId Project Id
@@ -56698,24 +56624,6 @@ export const StorageProjectDiskApiAxiosParamCreator = function (configuration?: 
 export const StorageProjectDiskApiFp = function(configuration?: Configuration) {
     return {
         /**
-         * action attach
-         * @summary Attach storage/disk
-         * @param {string} projectId Project Id
-         * @param {string} locationId Location Id
-         * @param {string} diskId Disk Id
-         * @param {StorageProjectDiskAttach} storageProjectDiskAttach 
-         * @param {string} [xIdempotencyKey] Idempotency key
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async storageProjectDiskAttach(projectId: string, locationId: string, diskId: string, storageProjectDiskAttach: StorageProjectDiskAttach, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Disk>> {
-            const localVarAxiosArgs = await StorageProjectDiskApiAxiosParamCreator(configuration).storageProjectDiskAttach(projectId, locationId, diskId, storageProjectDiskAttach, xIdempotencyKey, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
          * Create disk
          * @summary Create storage/disk
          * @param {string} projectId Project Id
@@ -57084,20 +56992,6 @@ export const StorageProjectDiskApiFp = function(configuration?: Configuration) {
 export const StorageProjectDiskApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     return {
         /**
-         * action attach
-         * @summary Attach storage/disk
-         * @param {string} projectId Project Id
-         * @param {string} locationId Location Id
-         * @param {string} diskId Disk Id
-         * @param {StorageProjectDiskAttach} storageProjectDiskAttach 
-         * @param {string} [xIdempotencyKey] Idempotency key
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        storageProjectDiskAttach(projectId: string, locationId: string, diskId: string, storageProjectDiskAttach: StorageProjectDiskAttach, xIdempotencyKey?: string, options?: any): AxiosPromise<Disk> {
-            return StorageProjectDiskApiFp(configuration).storageProjectDiskAttach(projectId, locationId, diskId, storageProjectDiskAttach, xIdempotencyKey, options).then((request) => request(axios, basePath));
-        },
-        /**
          * Create disk
          * @summary Create storage/disk
          * @param {string} projectId Project Id
@@ -57382,22 +57276,6 @@ export const StorageProjectDiskApiFactory = function (configuration?: Configurat
  * @extends {BaseAPI}
  */
 export class StorageProjectDiskApi extends BaseAPI {
-    /**
-     * action attach
-     * @summary Attach storage/disk
-     * @param {string} projectId Project Id
-     * @param {string} locationId Location Id
-     * @param {string} diskId Disk Id
-     * @param {StorageProjectDiskAttach} storageProjectDiskAttach 
-     * @param {string} [xIdempotencyKey] Idempotency key
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof StorageProjectDiskApi
-     */
-    public storageProjectDiskAttach(projectId: string, locationId: string, diskId: string, storageProjectDiskAttach: StorageProjectDiskAttach, xIdempotencyKey?: string, options?: any) {
-        return StorageProjectDiskApiFp(this.configuration).storageProjectDiskAttach(projectId, locationId, diskId, storageProjectDiskAttach, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
-    }
-
     /**
      * Create disk
      * @summary Create storage/disk

@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:7491*
+*Defined in api.ts:7472*
 
 **`memberof`** WebsiteProjectInstanceCredentialPatch

@@ -25,7 +25,6 @@
 * [modifiedBy](_api_.organisation.md#modifiedby)
 * [modifiedOn](_api_.organisation.md#modifiedon)
 * [name](_api_.organisation.md#name)
-* [organisation](_api_.organisation.md#organisation)
 * [state](_api_.organisation.md#state)
 * [tag](_api_.organisation.md#tag)
 * [transfer](_api_.organisation.md#transfer)
@@ -37,7 +36,7 @@
 
 • `Optional` **bankAccount**: string
 
-*Defined in api.ts:4242*
+*Defined in api.ts:4236*
 
 **`memberof`** Organisation
 
@@ -47,7 +46,7 @@ ___
 
 • `Optional` **billing**: [OrganisationBilling](_api_.organisationbilling.md)
 
-*Defined in api.ts:4230*
+*Defined in api.ts:4224*
 
 **`memberof`** Organisation
 
@@ -123,16 +122,6 @@ ___
 
 ___
 
-### organisation
-
-• `Optional` **organisation**: string
-
-*Defined in api.ts:4218*
-
-**`memberof`** Organisation
-
-___
-
 ### state
 
 • `Optional` **state**: [OrganisationStateEnum](../enums/_api_.organisationstateenum.md)
@@ -147,7 +136,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4248*
+*Defined in api.ts:4242*
 
 **`memberof`** Organisation
 
@@ -157,7 +146,7 @@ ___
 
 • `Optional` **transfer**: [OrganisationTransfer](_api_.organisationtransfer.md)
 
-*Defined in api.ts:4236*
+*Defined in api.ts:4230*
 
 **`memberof`** Organisation
 
@@ -167,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4224*
+*Defined in api.ts:4218*
 
 **`memberof`** Organisation

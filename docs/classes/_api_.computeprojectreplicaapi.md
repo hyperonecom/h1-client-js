@@ -98,7 +98,7 @@ ___
 
 ▸ **computeProjectReplicaCreate**(`projectId`: string, `locationId`: string, `computeProjectReplicaCreate`: [ComputeProjectReplicaCreate](../interfaces/_api_.computeprojectreplicacreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Replica](../interfaces/_api_.replica.md)>>
 
-*Defined in api.ts:10850*
+*Defined in api.ts:10831*
 
 Create replica
 
@@ -126,7 +126,7 @@ ___
 
 ▸ **computeProjectReplicaDelete**(`projectId`: string, `locationId`: string, `replicaId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:10864*
+*Defined in api.ts:10845*
 
 Delete replica
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **computeProjectReplicaEventGet**(`projectId`: string, `locationId`: string, `replicaId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:10879*
+*Defined in api.ts:10860*
 
 Get compute/replica.event
 
@@ -181,7 +181,7 @@ ___
 
 ▸ **computeProjectReplicaEventList**(`projectId`: string, `locationId`: string, `replicaId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:10895*
+*Defined in api.ts:10876*
 
 List compute/replica.event
 
@@ -210,7 +210,7 @@ ___
 
 ▸ **computeProjectReplicaGet**(`projectId`: string, `locationId`: string, `replicaId`: string, `options?`: any): Promise\<AxiosResponse\<[Replica](../interfaces/_api_.replica.md)>>
 
-*Defined in api.ts:10909*
+*Defined in api.ts:10890*
 
 Returns a single replica
 
@@ -237,7 +237,7 @@ ___
 
 ▸ **computeProjectReplicaList**(`projectId`: string, `locationId`: string, `name?`: string, `options?`: any): Promise\<AxiosResponse\<[Replica](../interfaces/_api_.replica.md)[]>>
 
-*Defined in api.ts:10923*
+*Defined in api.ts:10904*
 
 List replica
 
@@ -264,7 +264,7 @@ ___
 
 ▸ **computeProjectReplicaServiceGet**(`projectId`: string, `locationId`: string, `replicaId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:10938*
+*Defined in api.ts:10919*
 
 Get compute/replica.service
 
@@ -292,7 +292,7 @@ ___
 
 ▸ **computeProjectReplicaServiceList**(`projectId`: string, `locationId`: string, `replicaId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:10952*
+*Defined in api.ts:10933*
 
 List compute/replica.service
 
@@ -319,7 +319,7 @@ ___
 
 ▸ **computeProjectReplicaTagCreate**(`projectId`: string, `locationId`: string, `replicaId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:10967*
+*Defined in api.ts:10948*
 
 Create compute/replica.tag
 
@@ -347,7 +347,7 @@ ___
 
 ▸ **computeProjectReplicaTagDelete**(`projectId`: string, `locationId`: string, `replicaId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:10982*
+*Defined in api.ts:10963*
 
 Delete compute/replica.tag
 
@@ -375,7 +375,7 @@ ___
 
 ▸ **computeProjectReplicaTagGet**(`projectId`: string, `locationId`: string, `replicaId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:10997*
+*Defined in api.ts:10978*
 
 Get compute/replica.tag
 
@@ -403,7 +403,7 @@ ___
 
 ▸ **computeProjectReplicaTagList**(`projectId`: string, `locationId`: string, `replicaId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:11011*
+*Defined in api.ts:10992*
 
 List compute/replica.tag
 
@@ -430,7 +430,7 @@ ___
 
 ▸ **computeProjectReplicaTagPut**(`projectId`: string, `locationId`: string, `replicaId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:11026*
+*Defined in api.ts:11007*
 
 Replace compute/replica.tag
 
