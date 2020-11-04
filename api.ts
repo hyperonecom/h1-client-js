@@ -52566,6 +52566,199 @@ export const ProviderProjectAgentApiAxiosParamCreator = function (configuration?
             };
         },
         /**
+         * Get provider/agent.metric
+         * @summary Get provider/agent.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} agentId Agent Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectAgentMetricGet: async (projectId: string, locationId: string, agentId: string, metricId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling providerProjectAgentMetricGet.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling providerProjectAgentMetricGet.');
+            }
+            // verify required parameter 'agentId' is not null or undefined
+            if (agentId === null || agentId === undefined) {
+                throw new RequiredError('agentId','Required parameter agentId was null or undefined when calling providerProjectAgentMetricGet.');
+            }
+            // verify required parameter 'metricId' is not null or undefined
+            if (metricId === null || metricId === undefined) {
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling providerProjectAgentMetricGet.');
+            }
+            const localVarPath = `/provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"agentId"}}`, encodeURIComponent(String(agentId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/agent.metric
+         * @summary List provider/agent.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} agentId Agent Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectAgentMetricList: async (projectId: string, locationId: string, agentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling providerProjectAgentMetricList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling providerProjectAgentMetricList.');
+            }
+            // verify required parameter 'agentId' is not null or undefined
+            if (agentId === null || agentId === undefined) {
+                throw new RequiredError('agentId','Required parameter agentId was null or undefined when calling providerProjectAgentMetricList.');
+            }
+            const localVarPath = `/provider/{locationId}/project/{projectId}/agent/{agentId}/metric`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"agentId"}}`, encodeURIComponent(String(agentId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/agent.point
+         * @summary List provider/agent.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} agentId Agent Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectAgentMetricPointList: async (projectId: string, locationId: string, agentId: string, metricId: string, interval?: string, timespan?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling providerProjectAgentMetricPointList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling providerProjectAgentMetricPointList.');
+            }
+            // verify required parameter 'agentId' is not null or undefined
+            if (agentId === null || agentId === undefined) {
+                throw new RequiredError('agentId','Required parameter agentId was null or undefined when calling providerProjectAgentMetricPointList.');
+            }
+            // verify required parameter 'metricId' is not null or undefined
+            if (metricId === null || metricId === undefined) {
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling providerProjectAgentMetricPointList.');
+            }
+            const localVarPath = `/provider/{locationId}/project/{projectId}/agent/{agentId}/metric/{metricId}/point`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"agentId"}}`, encodeURIComponent(String(agentId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if (interval !== undefined) {
+                localVarQueryParameter['interval'] = interval;
+            }
+
+            if (timespan !== undefined) {
+                localVarQueryParameter['timespan'] = timespan;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * List provider/agent.event
          * @summary List provider/agent.event
          * @param {string} projectId Project Id
@@ -53798,6 +53991,58 @@ export const ProviderProjectAgentApiFp = function(configuration?: Configuration)
             };
         },
         /**
+         * Get provider/agent.metric
+         * @summary Get provider/agent.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} agentId Agent Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectAgentMetricGet(projectId: string, locationId: string, agentId: string, metricId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Metric>> {
+            const localVarAxiosArgs = await ProviderProjectAgentApiAxiosParamCreator(configuration).providerProjectAgentMetricGet(projectId, locationId, agentId, metricId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List provider/agent.metric
+         * @summary List provider/agent.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} agentId Agent Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectAgentMetricList(projectId: string, locationId: string, agentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Metric>>> {
+            const localVarAxiosArgs = await ProviderProjectAgentApiAxiosParamCreator(configuration).providerProjectAgentMetricList(projectId, locationId, agentId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List provider/agent.point
+         * @summary List provider/agent.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} agentId Agent Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectAgentMetricPointList(projectId: string, locationId: string, agentId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Point>>> {
+            const localVarAxiosArgs = await ProviderProjectAgentApiAxiosParamCreator(configuration).providerProjectAgentMetricPointList(projectId, locationId, agentId, metricId, interval, timespan, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * List provider/agent.event
          * @summary List provider/agent.event
          * @param {string} projectId Project Id
@@ -54269,6 +54514,46 @@ export const ProviderProjectAgentApiFactory = function (configuration?: Configur
             return ProviderProjectAgentApiFp(configuration).providerProjectAgentList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get provider/agent.metric
+         * @summary Get provider/agent.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} agentId Agent Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectAgentMetricGet(projectId: string, locationId: string, agentId: string, metricId: string, options?: any): AxiosPromise<Metric> {
+            return ProviderProjectAgentApiFp(configuration).providerProjectAgentMetricGet(projectId, locationId, agentId, metricId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/agent.metric
+         * @summary List provider/agent.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} agentId Agent Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectAgentMetricList(projectId: string, locationId: string, agentId: string, options?: any): AxiosPromise<Array<Metric>> {
+            return ProviderProjectAgentApiFp(configuration).providerProjectAgentMetricList(projectId, locationId, agentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/agent.point
+         * @summary List provider/agent.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} agentId Agent Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectAgentMetricPointList(projectId: string, locationId: string, agentId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Point>> {
+            return ProviderProjectAgentApiFp(configuration).providerProjectAgentMetricPointList(projectId, locationId, agentId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
+        },
+        /**
          * List provider/agent.event
          * @summary List provider/agent.event
          * @param {string} projectId Project Id
@@ -54710,6 +54995,52 @@ export class ProviderProjectAgentApi extends BaseAPI {
      */
     public providerProjectAgentList(projectId: string, locationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any) {
         return ProviderProjectAgentApiFp(this.configuration).providerProjectAgentList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/agent.metric
+     * @summary Get provider/agent.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} agentId Agent Id
+     * @param {string} metricId metricId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectAgentApi
+     */
+    public providerProjectAgentMetricGet(projectId: string, locationId: string, agentId: string, metricId: string, options?: any) {
+        return ProviderProjectAgentApiFp(this.configuration).providerProjectAgentMetricGet(projectId, locationId, agentId, metricId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/agent.metric
+     * @summary List provider/agent.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} agentId Agent Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectAgentApi
+     */
+    public providerProjectAgentMetricList(projectId: string, locationId: string, agentId: string, options?: any) {
+        return ProviderProjectAgentApiFp(this.configuration).providerProjectAgentMetricList(projectId, locationId, agentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/agent.point
+     * @summary List provider/agent.point
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} agentId Agent Id
+     * @param {string} metricId metricId
+     * @param {string} [interval] interval
+     * @param {string} [timespan] timespan
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectAgentApi
+     */
+    public providerProjectAgentMetricPointList(projectId: string, locationId: string, agentId: string, metricId: string, interval?: string, timespan?: string, options?: any) {
+        return ProviderProjectAgentApiFp(this.configuration).providerProjectAgentMetricPointList(projectId, locationId, agentId, metricId, interval, timespan, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
