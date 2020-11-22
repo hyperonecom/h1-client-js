@@ -26,7 +26,7 @@
 
 • `Optional` **firewall**: string
 
-*Defined in api.ts:888*
+*Defined in api.ts:985*
 
 **`memberof`** ComputeProjectVmCreateNetadp
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **ip**: Array\<string>
 
-*Defined in api.ts:894*
+*Defined in api.ts:991*
 
 **`memberof`** ComputeProjectVmCreateNetadp
 
@@ -46,6 +46,6 @@ ___
 
 •  **network**: string
 
-*Defined in api.ts:882*
+*Defined in api.ts:979*
 
 **`memberof`** ComputeProjectVmCreateNetadp

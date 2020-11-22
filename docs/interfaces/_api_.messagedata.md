@@ -26,7 +26,7 @@
 
 • `Optional` **body**: string
 
-*Defined in api.ts:3359*
+*Defined in api.ts:3497*
 
 **`memberof`** MessageData
 
@@ -36,7 +36,7 @@ ___
 
 •  **mime**: [MessageDataMimeEnum](../enums/_api_.messagedatamimeenum.md)
 
-*Defined in api.ts:3347*
+*Defined in api.ts:3485*
 
 **`memberof`** MessageData
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **url**: string
 
-*Defined in api.ts:3353*
+*Defined in api.ts:3491*
 
 **`memberof`** MessageData

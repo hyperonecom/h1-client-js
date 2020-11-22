@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:1109*
+*Defined in api.ts:1206*
 
 **`memberof`** ContainerProjectRegistryCredentialPatch

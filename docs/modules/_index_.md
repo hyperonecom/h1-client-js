@@ -18,6 +18,8 @@
 * [AuthToken](_index_.md#authtoken)
 * [AuthTokenAccess](_index_.md#authtokenaccess)
 * [AuthTokenAccessMethodEnum](_index_.md#authtokenaccessmethodenum)
+* [Backup](_index_.md#backup)
+* [BackupStateEnum](_index_.md#backupstateenum)
 * [Billing](_index_.md#billing)
 * [BillingAddress](_index_.md#billingaddress)
 * [BillingAddress1](_index_.md#billingaddress1)
@@ -155,6 +157,7 @@
 * [IamProjectSaCredentialPatch](_index_.md#iamprojectsacredentialpatch)
 * [IamProjectSaUpdate](_index_.md#iamprojectsaupdate)
 * [IamProjectThresholdCreate](_index_.md#iamprojectthresholdcreate)
+* [IamProjectTransfer](_index_.md#iamprojecttransfer)
 * [IamProjectUpdate](_index_.md#iamprojectupdate)
 * [IamUserApi](_index_.md#iamuserapi)
 * [IamUserApiAxiosParamCreator](_index_.md#iamuserapiaxiosparamcreator)
@@ -194,6 +197,8 @@
 * [JournalCredential](_index_.md#journalcredential)
 * [JournalCredentialTypeEnum](_index_.md#journalcredentialtypeenum)
 * [JournalStateEnum](_index_.md#journalstateenum)
+* [Log](_index_.md#log)
+* [LogTypeEnum](_index_.md#logtypeenum)
 * [MessageData](_index_.md#messagedata)
 * [MessageDataMimeEnum](_index_.md#messagedatamimeenum)
 * [Metric](_index_.md#metric)
@@ -281,6 +286,12 @@
 * [Quota](_index_.md#quota)
 * [QuotaLimit](_index_.md#quotalimit)
 * [QuotaMetric](_index_.md#quotametric)
+* [RecoveryProjectBackupApi](_index_.md#recoveryprojectbackupapi)
+* [RecoveryProjectBackupApiAxiosParamCreator](_index_.md#recoveryprojectbackupapiaxiosparamcreator)
+* [RecoveryProjectBackupApiFactory](_index_.md#recoveryprojectbackupapifactory)
+* [RecoveryProjectBackupApiFp](_index_.md#recoveryprojectbackupapifp)
+* [RecoveryProjectBackupCreate](_index_.md#recoveryprojectbackupcreate)
+* [RecoveryProjectBackupUpdate](_index_.md#recoveryprojectbackupupdate)
 * [Registry](_index_.md#registry)
 * [RegistryCredential](_index_.md#registrycredential)
 * [RegistryCredentialTypeEnum](_index_.md#registrycredentialtypeenum)
@@ -347,6 +358,7 @@
 * [Tag](_index_.md#tag)
 * [Ticket](_index_.md#ticket)
 * [TicketStateEnum](_index_.md#ticketstateenum)
+* [Transfer](_index_.md#transfer)
 * [User](_index_.md#user)
 * [UserCredential](_index_.md#usercredential)
 * [UserCredentialTypeEnum](_index_.md#usercredentialtypeenum)
@@ -378,8 +390,6 @@
 * [WebsiteProjectInstanceApiFp](_index_.md#websiteprojectinstanceapifp)
 * [WebsiteProjectInstanceCreate](_index_.md#websiteprojectinstancecreate)
 * [WebsiteProjectInstanceCredentialPatch](_index_.md#websiteprojectinstancecredentialpatch)
-* [WebsiteProjectInstanceLog](_index_.md#websiteprojectinstancelog)
-* [WebsiteProjectInstanceLogTypeEnum](_index_.md#websiteprojectinstancelogtypeenum)
 * [WebsiteProjectInstanceSnapshotDownload](_index_.md#websiteprojectinstancesnapshotdownload)
 * [WebsiteProjectInstanceTransfer](_index_.md#websiteprojectinstancetransfer)
 * [WebsiteProjectInstanceUpdate](_index_.md#websiteprojectinstanceupdate)
@@ -450,6 +460,18 @@ ___
 ### AuthTokenAccessMethodEnum
 
 Re-exports: [AuthTokenAccessMethodEnum](../enums/_api_.authtokenaccessmethodenum.md)
+
+___
+
+### Backup
+
+Re-exports: [Backup](../interfaces/_api_.backup.md)
+
+___
+
+### BackupStateEnum
+
+Re-exports: [BackupStateEnum](../enums/_api_.backupstateenum.md)
 
 ___
 
@@ -1275,6 +1297,12 @@ Re-exports: [IamProjectThresholdCreate](../interfaces/_api_.iamprojectthresholdc
 
 ___
 
+### IamProjectTransfer
+
+Re-exports: [IamProjectTransfer](../interfaces/_api_.iamprojecttransfer.md)
+
+___
+
 ### IamProjectUpdate
 
 Re-exports: [IamProjectUpdate](../interfaces/_api_.iamprojectupdate.md)
@@ -1506,6 +1534,18 @@ ___
 ### JournalStateEnum
 
 Re-exports: [JournalStateEnum](../enums/_api_.journalstateenum.md)
+
+___
+
+### Log
+
+Re-exports: [Log](../interfaces/_api_.log.md)
+
+___
+
+### LogTypeEnum
+
+Re-exports: [LogTypeEnum](../enums/_api_.logtypeenum.md)
 
 ___
 
@@ -2031,6 +2071,42 @@ Re-exports: [QuotaMetric](../interfaces/_api_.quotametric.md)
 
 ___
 
+### RecoveryProjectBackupApi
+
+Re-exports: [RecoveryProjectBackupApi](../classes/_api_.recoveryprojectbackupapi.md)
+
+___
+
+### RecoveryProjectBackupApiAxiosParamCreator
+
+Re-exports: [RecoveryProjectBackupApiAxiosParamCreator](_api_.md#recoveryprojectbackupapiaxiosparamcreator)
+
+___
+
+### RecoveryProjectBackupApiFactory
+
+Re-exports: [RecoveryProjectBackupApiFactory](_api_.md#recoveryprojectbackupapifactory)
+
+___
+
+### RecoveryProjectBackupApiFp
+
+Re-exports: [RecoveryProjectBackupApiFp](_api_.md#recoveryprojectbackupapifp)
+
+___
+
+### RecoveryProjectBackupCreate
+
+Re-exports: [RecoveryProjectBackupCreate](../interfaces/_api_.recoveryprojectbackupcreate.md)
+
+___
+
+### RecoveryProjectBackupUpdate
+
+Re-exports: [RecoveryProjectBackupUpdate](../interfaces/_api_.recoveryprojectbackupupdate.md)
+
+___
+
 ### Registry
 
 Re-exports: [Registry](../interfaces/_api_.registry.md)
@@ -2427,6 +2503,12 @@ Re-exports: [TicketStateEnum](../enums/_api_.ticketstateenum.md)
 
 ___
 
+### Transfer
+
+Re-exports: [Transfer](../interfaces/_api_.transfer.md)
+
+___
+
 ### User
 
 Re-exports: [User](../interfaces/_api_.user.md)
@@ -2610,18 +2692,6 @@ ___
 ### WebsiteProjectInstanceCredentialPatch
 
 Re-exports: [WebsiteProjectInstanceCredentialPatch](../interfaces/_api_.websiteprojectinstancecredentialpatch.md)
-
-___
-
-### WebsiteProjectInstanceLog
-
-Re-exports: [WebsiteProjectInstanceLog](../interfaces/_api_.websiteprojectinstancelog.md)
-
-___
-
-### WebsiteProjectInstanceLogTypeEnum
-
-Re-exports: [WebsiteProjectInstanceLogTypeEnum](../enums/_api_.websiteprojectinstancelogtypeenum.md)
 
 ___
 

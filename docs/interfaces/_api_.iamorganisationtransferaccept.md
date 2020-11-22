@@ -17,7 +17,6 @@
 ### Properties
 
 * [payment](_api_.iamorganisationtransferaccept.md#payment)
-* [project](_api_.iamorganisationtransferaccept.md#project)
 
 ## Properties
 
@@ -25,16 +24,6 @@
 
 •  **payment**: string
 
-*Defined in api.ts:1987*
-
-**`memberof`** IamOrganisationTransferAccept
-
-___
-
-### project
-
-•  **project**: string
-
-*Defined in api.ts:1993*
+*Defined in api.ts:2084*
 
 **`memberof`** IamOrganisationTransferAccept

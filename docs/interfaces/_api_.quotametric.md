@@ -25,7 +25,7 @@
 
 • `Optional` **key**: string
 
-*Defined in api.ts:5180*
+*Defined in api.ts:5323*
 
 **`memberof`** QuotaMetric
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **unit**: string
 
-*Defined in api.ts:5186*
+*Defined in api.ts:5329*
 
 **`memberof`** QuotaMetric

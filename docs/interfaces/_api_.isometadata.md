@@ -24,6 +24,6 @@
 
 • `Optional` **source**: [IsoMetadataSource](_api_.isometadatasource.md)
 
-*Defined in api.ts:3147*
+*Defined in api.ts:3251*
 
 **`memberof`** IsoMetadata

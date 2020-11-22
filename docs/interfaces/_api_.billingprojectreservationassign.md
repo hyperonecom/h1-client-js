@@ -24,6 +24,6 @@
 
 • `Optional` **resource**: string
 
-*Defined in api.ts:605*
+*Defined in api.ts:702*
 
 **`memberof`** BillingProjectReservationAssign

@@ -26,7 +26,7 @@
 
 •  **email**: string
 
-*Defined in api.ts:2586*
+*Defined in api.ts:2690*
 
 **`memberof`** Invitation
 
@@ -36,7 +36,7 @@ ___
 
 •  **id**: string
 
-*Defined in api.ts:2580*
+*Defined in api.ts:2684*
 
 **`memberof`** Invitation
 
@@ -46,6 +46,6 @@ ___
 
 •  **resource**: string
 
-*Defined in api.ts:2592*
+*Defined in api.ts:2696*
 
 **`memberof`** Invitation

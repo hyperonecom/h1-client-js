@@ -388,6 +388,103 @@ export enum AuthTokenAccessMethodEnum {
 /**
  * 
  * @export
+ * @interface Backup
+ */
+export interface Backup {
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    flavour?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    modifiedOn?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    modifiedBy?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    createdOn?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    createdBy?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    state?: BackupStateEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    project?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    uri?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Backup
+     */
+    size?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Backup
+     */
+    source?: string;
+    /**
+     * 
+     * @type {Array<Tag>}
+     * @memberof Backup
+     */
+    tag?: Array<Tag>;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum BackupStateEnum {
+    Online = 'Online',
+    Unknown = 'Unknown',
+    Processing = 'Processing',
+    NotCreated = 'NotCreated'
+}
+
+/**
+ * 
+ * @export
  * @interface Billing
  */
 export interface Billing {
@@ -1890,7 +1987,7 @@ export interface IamActor {
      */
     id?: string;
     /**
-     * Email, User URI or ServiceAccount URI
+     * one of: * E-mail * User URI * Service Account URI * \'me\' -§ requestor
      * @type {string}
      * @memberof IamActor
      */
@@ -1985,12 +2082,6 @@ export interface IamOrganisationTransferAccept {
      * @memberof IamOrganisationTransferAccept
      */
     payment: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof IamOrganisationTransferAccept
-     */
-    project: string;
 }
 /**
  * 
@@ -2300,6 +2391,19 @@ export interface IamProjectThresholdCreate {
      * @memberof IamProjectThresholdCreate
      */
     uri?: string;
+}
+/**
+ * 
+ * @export
+ * @interface IamProjectTransfer
+ */
+export interface IamProjectTransfer {
+    /**
+     * 
+     * @type {string}
+     * @memberof IamProjectTransfer
+     */
+    organisation: string;
 }
 /**
  * 
@@ -3336,6 +3440,40 @@ export enum JournalCredentialTypeEnum {
 /**
  * 
  * @export
+ * @interface Log
+ */
+export interface Log {
+    /**
+     * 
+     * @type {string}
+     * @memberof Log
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Log
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Log
+     */
+    type: LogTypeEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum LogTypeEnum {
+    Console = 'console'
+}
+
+/**
+ * 
+ * @export
  * @interface MessageData
  */
 export interface MessageData {
@@ -4138,7 +4276,7 @@ export interface NetworkingRule {
      * @type {Array<string>}
      * @memberof NetworkingRule
      */
-    external: Array<string>;
+    external?: Array<string>;
     /**
      * 
      * @type {Array<string>}
@@ -4249,7 +4387,8 @@ export interface Organisation {
 export enum OrganisationStateEnum {
     Active = 'Active',
     Inactive = 'Inactive',
-    Limited = 'Limited'
+    Processing = 'Processing',
+    NotCreated = 'NotCreated'
 }
 
 /**
@@ -4576,7 +4715,9 @@ export interface Policy {
     * @enum {string}
     */
 export enum PolicyStateEnum {
-    Online = 'Online'
+    Online = 'Online',
+    Processing = 'Processing',
+    NotCreated = 'NotCreated'
 }
 
 /**
@@ -4831,7 +4972,9 @@ export interface Project {
 export enum ProjectStateEnum {
     Active = 'Active',
     Inactive = 'Inactive',
-    Limited = 'Limited'
+    Limited = 'Limited',
+    Processing = 'Processing',
+    NotCreated = 'NotCreated'
 }
 
 /**
@@ -5184,6 +5327,50 @@ export interface QuotaMetric {
      * @memberof QuotaMetric
      */
     unit?: string;
+}
+/**
+ * 
+ * @export
+ * @interface RecoveryProjectBackupCreate
+ */
+export interface RecoveryProjectBackupCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof RecoveryProjectBackupCreate
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecoveryProjectBackupCreate
+     */
+    service: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecoveryProjectBackupCreate
+     */
+    source?: string;
+    /**
+     * 
+     * @type {Array<Tag>}
+     * @memberof RecoveryProjectBackupCreate
+     */
+    tag?: Array<Tag>;
+}
+/**
+ * 
+ * @export
+ * @interface RecoveryProjectBackupUpdate
+ */
+export interface RecoveryProjectBackupUpdate {
+    /**
+     * 
+     * @type {string}
+     * @memberof RecoveryProjectBackupUpdate
+     */
+    name?: string;
 }
 /**
  * 
@@ -5676,7 +5863,9 @@ export interface Role {
     * @enum {string}
     */
 export enum RoleStateEnum {
-    Online = 'Online'
+    Online = 'Online',
+    Processing = 'Processing',
+    NotCreated = 'NotCreated'
 }
 
 /**
@@ -5758,7 +5947,9 @@ export interface Sa {
     * @enum {string}
     */
 export enum SaStateEnum {
-    Online = 'Online'
+    Online = 'Online',
+    Processing = 'Processing',
+    NotCreated = 'NotCreated'
 }
 
 /**
@@ -6607,6 +6798,31 @@ export enum TicketStateEnum {
 /**
  * 
  * @export
+ * @interface Transfer
+ */
+export interface Transfer {
+    /**
+     * 
+     * @type {string}
+     * @memberof Transfer
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Transfer
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Transfer
+     */
+    state?: string;
+}
+/**
+ * 
+ * @export
  * @interface User
  */
 export interface User {
@@ -7441,10 +7657,10 @@ export interface WebsiteProjectInstanceCreate {
     image: string;
     /**
      * 
-     * @type {string}
+     * @type {any}
      * @memberof WebsiteProjectInstanceCreate
      */
-    source?: string;
+    source?: any;
     /**
      * 
      * @type {Array<WebsiteEnv>}
@@ -7471,29 +7687,6 @@ export interface WebsiteProjectInstanceCredentialPatch {
      */
     name: string;
 }
-/**
- * 
- * @export
- * @interface WebsiteProjectInstanceLog
- */
-export interface WebsiteProjectInstanceLog {
-    /**
-     * 
-     * @type {string}
-     * @memberof WebsiteProjectInstanceLog
-     */
-    type?: WebsiteProjectInstanceLogTypeEnum;
-}
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum WebsiteProjectInstanceLogTypeEnum {
-    Runtime = 'runtime',
-    Access = 'access'
-}
-
 /**
  * 
  * @export
@@ -24179,25 +24372,126 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             };
         },
         /**
-         * action transfer_accept
-         * @summary Transfer accept iam/organisation
+         * Get iam/organisation.service
+         * @summary Get iam/organisation.service
          * @param {string} organisationId Organisation Id
-         * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
-         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} serviceId serviceId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        iamOrganisationTransferAccept: async (organisationId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
+        iamOrganisationServiceGet: async (organisationId: string, serviceId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'organisationId' is not null or undefined
+            if (organisationId === null || organisationId === undefined) {
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationServiceGet.');
+            }
+            // verify required parameter 'serviceId' is not null or undefined
+            if (serviceId === null || serviceId === undefined) {
+                throw new RequiredError('serviceId','Required parameter serviceId was null or undefined when calling iamOrganisationServiceGet.');
+            }
+            const localVarPath = `/iam/organisation/{organisationId}/service/{serviceId}`
+                .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
+                .replace(`{${"serviceId"}}`, encodeURIComponent(String(serviceId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List iam/organisation.service
+         * @summary List iam/organisation.service
+         * @param {string} organisationId Organisation Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamOrganisationServiceList: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'organisationId' is not null or undefined
+            if (organisationId === null || organisationId === undefined) {
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationServiceList.');
+            }
+            const localVarPath = `/iam/organisation/{organisationId}/service`
+                .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * action accept
+         * @summary Accept iam/organisation.transfer
+         * @param {string} organisationId Organisation Id
+         * @param {string} transferId transferId
+         * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamOrganisationTransferAccept: async (organisationId: string, transferId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'organisationId' is not null or undefined
             if (organisationId === null || organisationId === undefined) {
                 throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationTransferAccept.');
+            }
+            // verify required parameter 'transferId' is not null or undefined
+            if (transferId === null || transferId === undefined) {
+                throw new RequiredError('transferId','Required parameter transferId was null or undefined when calling iamOrganisationTransferAccept.');
             }
             // verify required parameter 'iamOrganisationTransferAccept' is not null or undefined
             if (iamOrganisationTransferAccept === null || iamOrganisationTransferAccept === undefined) {
                 throw new RequiredError('iamOrganisationTransferAccept','Required parameter iamOrganisationTransferAccept was null or undefined when calling iamOrganisationTransferAccept.');
             }
-            const localVarPath = `/iam/organisation/{organisationId}/actions/transfer_accept`
-                .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
+            const localVarPath = `/iam/organisation/{organisationId}/transfer/{transferId}/actions/accept`
+                .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
+                .replace(`{${"transferId"}}`, encodeURIComponent(String(transferId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
@@ -24216,10 +24510,6 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
                 localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
             }
 
-            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
-                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
-            }
-
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -24231,6 +24521,102 @@ export const IamOrganisationApiAxiosParamCreator = function (configuration?: Con
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof iamOrganisationTransferAccept !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamOrganisationTransferAccept !== undefined ? iamOrganisationTransferAccept : {}) : (iamOrganisationTransferAccept || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get iam/organisation.transfer
+         * @summary Get iam/organisation.transfer
+         * @param {string} organisationId Organisation Id
+         * @param {string} transferId transferId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamOrganisationTransferGet: async (organisationId: string, transferId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'organisationId' is not null or undefined
+            if (organisationId === null || organisationId === undefined) {
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationTransferGet.');
+            }
+            // verify required parameter 'transferId' is not null or undefined
+            if (transferId === null || transferId === undefined) {
+                throw new RequiredError('transferId','Required parameter transferId was null or undefined when calling iamOrganisationTransferGet.');
+            }
+            const localVarPath = `/iam/organisation/{organisationId}/transfer/{transferId}`
+                .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)))
+                .replace(`{${"transferId"}}`, encodeURIComponent(String(transferId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List iam/organisation.transfer
+         * @summary List iam/organisation.transfer
+         * @param {string} organisationId Organisation Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamOrganisationTransferList: async (organisationId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'organisationId' is not null or undefined
+            if (organisationId === null || organisationId === undefined) {
+                throw new RequiredError('organisationId','Required parameter organisationId was null or undefined when calling iamOrganisationTransferList.');
+            }
+            const localVarPath = `/iam/organisation/{organisationId}/transfer`
+                .replace(`{${"organisationId"}}`, encodeURIComponent(String(organisationId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -24677,16 +25063,74 @@ export const IamOrganisationApiFp = function(configuration?: Configuration) {
             };
         },
         /**
-         * action transfer_accept
-         * @summary Transfer accept iam/organisation
+         * Get iam/organisation.service
+         * @summary Get iam/organisation.service
          * @param {string} organisationId Organisation Id
-         * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
-         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} serviceId serviceId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async iamOrganisationTransferAccept(organisationId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Organisation>> {
-            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationTransferAccept(organisationId, iamOrganisationTransferAccept, xIdempotencyKey, options);
+        async iamOrganisationServiceGet(organisationId: string, serviceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResourceService>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationServiceGet(organisationId, serviceId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List iam/organisation.service
+         * @summary List iam/organisation.service
+         * @param {string} organisationId Organisation Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async iamOrganisationServiceList(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ResourceService>>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationServiceList(organisationId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * action accept
+         * @summary Accept iam/organisation.transfer
+         * @param {string} organisationId Organisation Id
+         * @param {string} transferId transferId
+         * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async iamOrganisationTransferAccept(organisationId: string, transferId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Transfer>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationTransferAccept(organisationId, transferId, iamOrganisationTransferAccept, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Get iam/organisation.transfer
+         * @summary Get iam/organisation.transfer
+         * @param {string} organisationId Organisation Id
+         * @param {string} transferId transferId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async iamOrganisationTransferGet(organisationId: string, transferId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Transfer>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationTransferGet(organisationId, transferId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List iam/organisation.transfer
+         * @summary List iam/organisation.transfer
+         * @param {string} organisationId Organisation Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async iamOrganisationTransferList(organisationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Transfer>>> {
+            const localVarAxiosArgs = await IamOrganisationApiAxiosParamCreator(configuration).iamOrganisationTransferList(organisationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -24993,16 +25437,58 @@ export const IamOrganisationApiFactory = function (configuration?: Configuration
             return IamOrganisationApiFp(configuration).iamOrganisationProformaList(organisationId, options).then((request) => request(axios, basePath));
         },
         /**
-         * action transfer_accept
-         * @summary Transfer accept iam/organisation
+         * Get iam/organisation.service
+         * @summary Get iam/organisation.service
          * @param {string} organisationId Organisation Id
-         * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
-         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} serviceId serviceId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        iamOrganisationTransferAccept(organisationId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, xIdempotencyKey?: string, options?: any): AxiosPromise<Organisation> {
-            return IamOrganisationApiFp(configuration).iamOrganisationTransferAccept(organisationId, iamOrganisationTransferAccept, xIdempotencyKey, options).then((request) => request(axios, basePath));
+        iamOrganisationServiceGet(organisationId: string, serviceId: string, options?: any): AxiosPromise<ResourceService> {
+            return IamOrganisationApiFp(configuration).iamOrganisationServiceGet(organisationId, serviceId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List iam/organisation.service
+         * @summary List iam/organisation.service
+         * @param {string} organisationId Organisation Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamOrganisationServiceList(organisationId: string, options?: any): AxiosPromise<Array<ResourceService>> {
+            return IamOrganisationApiFp(configuration).iamOrganisationServiceList(organisationId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action accept
+         * @summary Accept iam/organisation.transfer
+         * @param {string} organisationId Organisation Id
+         * @param {string} transferId transferId
+         * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamOrganisationTransferAccept(organisationId: string, transferId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, options?: any): AxiosPromise<Transfer> {
+            return IamOrganisationApiFp(configuration).iamOrganisationTransferAccept(organisationId, transferId, iamOrganisationTransferAccept, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get iam/organisation.transfer
+         * @summary Get iam/organisation.transfer
+         * @param {string} organisationId Organisation Id
+         * @param {string} transferId transferId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamOrganisationTransferGet(organisationId: string, transferId: string, options?: any): AxiosPromise<Transfer> {
+            return IamOrganisationApiFp(configuration).iamOrganisationTransferGet(organisationId, transferId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List iam/organisation.transfer
+         * @summary List iam/organisation.transfer
+         * @param {string} organisationId Organisation Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamOrganisationTransferList(organisationId: string, options?: any): AxiosPromise<Array<Transfer>> {
+            return IamOrganisationApiFp(configuration).iamOrganisationTransferList(organisationId, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns modified organisation
@@ -25352,17 +25838,67 @@ export class IamOrganisationApi extends BaseAPI {
     }
 
     /**
-     * action transfer_accept
-     * @summary Transfer accept iam/organisation
+     * Get iam/organisation.service
+     * @summary Get iam/organisation.service
      * @param {string} organisationId Organisation Id
-     * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
-     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {string} serviceId serviceId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof IamOrganisationApi
      */
-    public iamOrganisationTransferAccept(organisationId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, xIdempotencyKey?: string, options?: any) {
-        return IamOrganisationApiFp(this.configuration).iamOrganisationTransferAccept(organisationId, iamOrganisationTransferAccept, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
+    public iamOrganisationServiceGet(organisationId: string, serviceId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationServiceGet(organisationId, serviceId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List iam/organisation.service
+     * @summary List iam/organisation.service
+     * @param {string} organisationId Organisation Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof IamOrganisationApi
+     */
+    public iamOrganisationServiceList(organisationId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationServiceList(organisationId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action accept
+     * @summary Accept iam/organisation.transfer
+     * @param {string} organisationId Organisation Id
+     * @param {string} transferId transferId
+     * @param {IamOrganisationTransferAccept} iamOrganisationTransferAccept 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof IamOrganisationApi
+     */
+    public iamOrganisationTransferAccept(organisationId: string, transferId: string, iamOrganisationTransferAccept: IamOrganisationTransferAccept, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationTransferAccept(organisationId, transferId, iamOrganisationTransferAccept, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get iam/organisation.transfer
+     * @summary Get iam/organisation.transfer
+     * @param {string} organisationId Organisation Id
+     * @param {string} transferId transferId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof IamOrganisationApi
+     */
+    public iamOrganisationTransferGet(organisationId: string, transferId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationTransferGet(organisationId, transferId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List iam/organisation.transfer
+     * @summary List iam/organisation.transfer
+     * @param {string} organisationId Organisation Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof IamOrganisationApi
+     */
+    public iamOrganisationTransferList(organisationId: string, options?: any) {
+        return IamOrganisationApiFp(this.configuration).iamOrganisationTransferList(organisationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -31004,6 +31540,65 @@ export const IamProjectApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
+         * action transfer
+         * @summary Transfer iam/project
+         * @param {string} projectId Project Id
+         * @param {IamProjectTransfer} iamProjectTransfer 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamProjectTransfer: async (projectId: string, iamProjectTransfer: IamProjectTransfer, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling iamProjectTransfer.');
+            }
+            // verify required parameter 'iamProjectTransfer' is not null or undefined
+            if (iamProjectTransfer === null || iamProjectTransfer === undefined) {
+                throw new RequiredError('iamProjectTransfer','Required parameter iamProjectTransfer was null or undefined when calling iamProjectTransfer.');
+            }
+            const localVarPath = `/iam/project/{projectId}/actions/transfer`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
+                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof iamProjectTransfer !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(iamProjectTransfer !== undefined ? iamProjectTransfer : {}) : (iamProjectTransfer || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Returns modified project
          * @summary Update iam/project
          * @param {string} projectId Project Id
@@ -31622,6 +32217,22 @@ export const IamProjectApiFp = function(configuration?: Configuration) {
             };
         },
         /**
+         * action transfer
+         * @summary Transfer iam/project
+         * @param {string} projectId Project Id
+         * @param {IamProjectTransfer} iamProjectTransfer 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async iamProjectTransfer(projectId: string, iamProjectTransfer: IamProjectTransfer, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Project>> {
+            const localVarAxiosArgs = await IamProjectApiAxiosParamCreator(configuration).iamProjectTransfer(projectId, iamProjectTransfer, xIdempotencyKey, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * Returns modified project
          * @summary Update iam/project
          * @param {string} projectId Project Id
@@ -32051,6 +32662,18 @@ export const IamProjectApiFactory = function (configuration?: Configuration, bas
          */
         iamProjectThresholdList(projectId: string, options?: any): AxiosPromise<Array<ProjectThreshold>> {
             return IamProjectApiFp(configuration).iamProjectThresholdList(projectId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action transfer
+         * @summary Transfer iam/project
+         * @param {string} projectId Project Id
+         * @param {IamProjectTransfer} iamProjectTransfer 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        iamProjectTransfer(projectId: string, iamProjectTransfer: IamProjectTransfer, xIdempotencyKey?: string, options?: any): AxiosPromise<Project> {
+            return IamProjectApiFp(configuration).iamProjectTransfer(projectId, iamProjectTransfer, xIdempotencyKey, options).then((request) => request(axios, basePath));
         },
         /**
          * Returns modified project
@@ -32552,6 +33175,20 @@ export class IamProjectApi extends BaseAPI {
      */
     public iamProjectThresholdList(projectId: string, options?: any) {
         return IamProjectApiFp(this.configuration).iamProjectThresholdList(projectId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action transfer
+     * @summary Transfer iam/project
+     * @param {string} projectId Project Id
+     * @param {IamProjectTransfer} iamProjectTransfer 
+     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof IamProjectApi
+     */
+    public iamProjectTransfer(projectId: string, iamProjectTransfer: IamProjectTransfer, xIdempotencyKey?: string, options?: any) {
+        return IamProjectApiFp(this.configuration).iamProjectTransfer(projectId, iamProjectTransfer, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -55269,6 +55906,1551 @@ export class ProviderProjectAgentApi extends BaseAPI {
 
 
 /**
+ * RecoveryProjectBackupApi - axios parameter creator
+ * @export
+ */
+export const RecoveryProjectBackupApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Create backup
+         * @summary Create recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {RecoveryProjectBackupCreate} recoveryProjectBackupCreate 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupCreate: async (projectId: string, locationId: string, recoveryProjectBackupCreate: RecoveryProjectBackupCreate, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupCreate.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupCreate.');
+            }
+            // verify required parameter 'recoveryProjectBackupCreate' is not null or undefined
+            if (recoveryProjectBackupCreate === null || recoveryProjectBackupCreate === undefined) {
+                throw new RequiredError('recoveryProjectBackupCreate','Required parameter recoveryProjectBackupCreate was null or undefined when calling recoveryProjectBackupCreate.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
+                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof recoveryProjectBackupCreate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(recoveryProjectBackupCreate !== undefined ? recoveryProjectBackupCreate : {}) : (recoveryProjectBackupCreate || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete backup
+         * @summary Delete recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupDelete: async (projectId: string, locationId: string, backupId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupDelete.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupDelete.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupDelete.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get recovery/backup.event
+         * @summary Get recovery/backup.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} eventId eventId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupEventGet: async (projectId: string, locationId: string, backupId: string, eventId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupEventGet.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupEventGet.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupEventGet.');
+            }
+            // verify required parameter 'eventId' is not null or undefined
+            if (eventId === null || eventId === undefined) {
+                throw new RequiredError('eventId','Required parameter eventId was null or undefined when calling recoveryProjectBackupEventGet.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}/event/{eventId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)))
+                .replace(`{${"eventId"}}`, encodeURIComponent(String(eventId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List recovery/backup.event
+         * @summary List recovery/backup.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {number} [$limit] $limit
+         * @param {number} [$skip] $skip
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupEventList: async (projectId: string, locationId: string, backupId: string, $limit?: number, $skip?: number, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupEventList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupEventList.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupEventList.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}/event`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if ($limit !== undefined) {
+                localVarQueryParameter['$limit'] = $limit;
+            }
+
+            if ($skip !== undefined) {
+                localVarQueryParameter['$skip'] = $skip;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Returns a single backup
+         * @summary Get recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupGet: async (projectId: string, locationId: string, backupId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupGet.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupGet.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupGet.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List backup
+         * @summary List recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} [name] Filter by name
+         * @param {string} [source] Filter by source
+         * @param {string} [tagValue] Filter by tag.value
+         * @param {string} [tagKey] Filter by tag.key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupList: async (projectId: string, locationId: string, name?: string, source?: string, tagValue?: string, tagKey?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupList.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+            if (name !== undefined) {
+                localVarQueryParameter['name'] = name;
+            }
+
+            if (source !== undefined) {
+                localVarQueryParameter['source'] = source;
+            }
+
+            if (tagValue !== undefined) {
+                localVarQueryParameter['tag.value'] = tagValue;
+            }
+
+            if (tagKey !== undefined) {
+                localVarQueryParameter['tag.key'] = tagKey;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get recovery/backup.service
+         * @summary Get recovery/backup.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} serviceId serviceId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupServiceGet: async (projectId: string, locationId: string, backupId: string, serviceId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupServiceGet.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupServiceGet.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupServiceGet.');
+            }
+            // verify required parameter 'serviceId' is not null or undefined
+            if (serviceId === null || serviceId === undefined) {
+                throw new RequiredError('serviceId','Required parameter serviceId was null or undefined when calling recoveryProjectBackupServiceGet.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}/service/{serviceId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)))
+                .replace(`{${"serviceId"}}`, encodeURIComponent(String(serviceId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List recovery/backup.service
+         * @summary List recovery/backup.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupServiceList: async (projectId: string, locationId: string, backupId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupServiceList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupServiceList.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupServiceList.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}/service`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create recovery/backup.tag
+         * @summary Create recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {Tag} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupTagCreate: async (projectId: string, locationId: string, backupId: string, tag: Tag, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupTagCreate.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupTagCreate.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupTagCreate.');
+            }
+            // verify required parameter 'tag' is not null or undefined
+            if (tag === null || tag === undefined) {
+                throw new RequiredError('tag','Required parameter tag was null or undefined when calling recoveryProjectBackupTagCreate.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}/tag`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof tag !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(tag !== undefined ? tag : {}) : (tag || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete recovery/backup.tag
+         * @summary Delete recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupTagDelete: async (projectId: string, locationId: string, backupId: string, tagId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupTagDelete.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupTagDelete.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupTagDelete.');
+            }
+            // verify required parameter 'tagId' is not null or undefined
+            if (tagId === null || tagId === undefined) {
+                throw new RequiredError('tagId','Required parameter tagId was null or undefined when calling recoveryProjectBackupTagDelete.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}/tag/{tagId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)))
+                .replace(`{${"tagId"}}`, encodeURIComponent(String(tagId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get recovery/backup.tag
+         * @summary Get recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupTagGet: async (projectId: string, locationId: string, backupId: string, tagId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupTagGet.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupTagGet.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupTagGet.');
+            }
+            // verify required parameter 'tagId' is not null or undefined
+            if (tagId === null || tagId === undefined) {
+                throw new RequiredError('tagId','Required parameter tagId was null or undefined when calling recoveryProjectBackupTagGet.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}/tag/{tagId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)))
+                .replace(`{${"tagId"}}`, encodeURIComponent(String(tagId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List recovery/backup.tag
+         * @summary List recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupTagList: async (projectId: string, locationId: string, backupId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupTagList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupTagList.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupTagList.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}/tag`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Replace recovery/backup.tag
+         * @summary Replace recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {Array<Tag>} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupTagPut: async (projectId: string, locationId: string, backupId: string, tag: Array<Tag>, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupTagPut.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupTagPut.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupTagPut.');
+            }
+            // verify required parameter 'tag' is not null or undefined
+            if (tag === null || tag === undefined) {
+                throw new RequiredError('tag','Required parameter tag was null or undefined when calling recoveryProjectBackupTagPut.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}/tag`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof tag !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(tag !== undefined ? tag : {}) : (tag || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Returns modified backup
+         * @summary Update recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {RecoveryProjectBackupUpdate} recoveryProjectBackupUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupUpdate: async (projectId: string, locationId: string, backupId: string, recoveryProjectBackupUpdate: RecoveryProjectBackupUpdate, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling recoveryProjectBackupUpdate.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling recoveryProjectBackupUpdate.');
+            }
+            // verify required parameter 'backupId' is not null or undefined
+            if (backupId === null || backupId === undefined) {
+                throw new RequiredError('backupId','Required parameter backupId was null or undefined when calling recoveryProjectBackupUpdate.');
+            }
+            // verify required parameter 'recoveryProjectBackupUpdate' is not null or undefined
+            if (recoveryProjectBackupUpdate === null || recoveryProjectBackupUpdate === undefined) {
+                throw new RequiredError('recoveryProjectBackupUpdate','Required parameter recoveryProjectBackupUpdate was null or undefined when calling recoveryProjectBackupUpdate.');
+            }
+            const localVarPath = `/recovery/{locationId}/project/{projectId}/backup/{backupId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"backupId"}}`, encodeURIComponent(String(backupId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof recoveryProjectBackupUpdate !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(recoveryProjectBackupUpdate !== undefined ? recoveryProjectBackupUpdate : {}) : (recoveryProjectBackupUpdate || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * RecoveryProjectBackupApi - functional programming interface
+ * @export
+ */
+export const RecoveryProjectBackupApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * Create backup
+         * @summary Create recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {RecoveryProjectBackupCreate} recoveryProjectBackupCreate 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupCreate(projectId: string, locationId: string, recoveryProjectBackupCreate: RecoveryProjectBackupCreate, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Backup>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupCreate(projectId, locationId, recoveryProjectBackupCreate, xIdempotencyKey, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Delete backup
+         * @summary Delete recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupDelete(projectId: string, locationId: string, backupId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupDelete(projectId, locationId, backupId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Get recovery/backup.event
+         * @summary Get recovery/backup.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} eventId eventId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupEventGet(projectId: string, locationId: string, backupId: string, eventId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Event>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupEventGet(projectId, locationId, backupId, eventId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List recovery/backup.event
+         * @summary List recovery/backup.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {number} [$limit] $limit
+         * @param {number} [$skip] $skip
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupEventList(projectId: string, locationId: string, backupId: string, $limit?: number, $skip?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Event>>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupEventList(projectId, locationId, backupId, $limit, $skip, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Returns a single backup
+         * @summary Get recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupGet(projectId: string, locationId: string, backupId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Backup>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupGet(projectId, locationId, backupId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List backup
+         * @summary List recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} [name] Filter by name
+         * @param {string} [source] Filter by source
+         * @param {string} [tagValue] Filter by tag.value
+         * @param {string} [tagKey] Filter by tag.key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupList(projectId: string, locationId: string, name?: string, source?: string, tagValue?: string, tagKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Backup>>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupList(projectId, locationId, name, source, tagValue, tagKey, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Get recovery/backup.service
+         * @summary Get recovery/backup.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} serviceId serviceId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupServiceGet(projectId: string, locationId: string, backupId: string, serviceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResourceService>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupServiceGet(projectId, locationId, backupId, serviceId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List recovery/backup.service
+         * @summary List recovery/backup.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupServiceList(projectId: string, locationId: string, backupId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ResourceService>>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupServiceList(projectId, locationId, backupId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Create recovery/backup.tag
+         * @summary Create recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {Tag} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupTagCreate(projectId: string, locationId: string, backupId: string, tag: Tag, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Tag>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupTagCreate(projectId, locationId, backupId, tag, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Delete recovery/backup.tag
+         * @summary Delete recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupTagDelete(projectId: string, locationId: string, backupId: string, tagId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupTagDelete(projectId, locationId, backupId, tagId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Get recovery/backup.tag
+         * @summary Get recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupTagGet(projectId: string, locationId: string, backupId: string, tagId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Tag>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupTagGet(projectId, locationId, backupId, tagId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List recovery/backup.tag
+         * @summary List recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupTagList(projectId: string, locationId: string, backupId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Tag>>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupTagList(projectId, locationId, backupId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Replace recovery/backup.tag
+         * @summary Replace recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {Array<Tag>} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupTagPut(projectId: string, locationId: string, backupId: string, tag: Array<Tag>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Tag>>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupTagPut(projectId, locationId, backupId, tag, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Returns modified backup
+         * @summary Update recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {RecoveryProjectBackupUpdate} recoveryProjectBackupUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async recoveryProjectBackupUpdate(projectId: string, locationId: string, backupId: string, recoveryProjectBackupUpdate: RecoveryProjectBackupUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Backup>> {
+            const localVarAxiosArgs = await RecoveryProjectBackupApiAxiosParamCreator(configuration).recoveryProjectBackupUpdate(projectId, locationId, backupId, recoveryProjectBackupUpdate, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * RecoveryProjectBackupApi - factory interface
+ * @export
+ */
+export const RecoveryProjectBackupApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * Create backup
+         * @summary Create recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {RecoveryProjectBackupCreate} recoveryProjectBackupCreate 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupCreate(projectId: string, locationId: string, recoveryProjectBackupCreate: RecoveryProjectBackupCreate, xIdempotencyKey?: string, options?: any): AxiosPromise<Backup> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupCreate(projectId, locationId, recoveryProjectBackupCreate, xIdempotencyKey, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete backup
+         * @summary Delete recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupDelete(projectId: string, locationId: string, backupId: string, options?: any): AxiosPromise<void> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupDelete(projectId, locationId, backupId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get recovery/backup.event
+         * @summary Get recovery/backup.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} eventId eventId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupEventGet(projectId: string, locationId: string, backupId: string, eventId: string, options?: any): AxiosPromise<Event> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupEventGet(projectId, locationId, backupId, eventId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List recovery/backup.event
+         * @summary List recovery/backup.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {number} [$limit] $limit
+         * @param {number} [$skip] $skip
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupEventList(projectId: string, locationId: string, backupId: string, $limit?: number, $skip?: number, options?: any): AxiosPromise<Array<Event>> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupEventList(projectId, locationId, backupId, $limit, $skip, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns a single backup
+         * @summary Get recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupGet(projectId: string, locationId: string, backupId: string, options?: any): AxiosPromise<Backup> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupGet(projectId, locationId, backupId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List backup
+         * @summary List recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} [name] Filter by name
+         * @param {string} [source] Filter by source
+         * @param {string} [tagValue] Filter by tag.value
+         * @param {string} [tagKey] Filter by tag.key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupList(projectId: string, locationId: string, name?: string, source?: string, tagValue?: string, tagKey?: string, options?: any): AxiosPromise<Array<Backup>> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupList(projectId, locationId, name, source, tagValue, tagKey, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get recovery/backup.service
+         * @summary Get recovery/backup.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} serviceId serviceId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupServiceGet(projectId: string, locationId: string, backupId: string, serviceId: string, options?: any): AxiosPromise<ResourceService> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupServiceGet(projectId, locationId, backupId, serviceId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List recovery/backup.service
+         * @summary List recovery/backup.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupServiceList(projectId: string, locationId: string, backupId: string, options?: any): AxiosPromise<Array<ResourceService>> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupServiceList(projectId, locationId, backupId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create recovery/backup.tag
+         * @summary Create recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {Tag} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupTagCreate(projectId: string, locationId: string, backupId: string, tag: Tag, options?: any): AxiosPromise<Tag> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupTagCreate(projectId, locationId, backupId, tag, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete recovery/backup.tag
+         * @summary Delete recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupTagDelete(projectId: string, locationId: string, backupId: string, tagId: string, options?: any): AxiosPromise<void> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupTagDelete(projectId, locationId, backupId, tagId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get recovery/backup.tag
+         * @summary Get recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupTagGet(projectId: string, locationId: string, backupId: string, tagId: string, options?: any): AxiosPromise<Tag> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupTagGet(projectId, locationId, backupId, tagId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List recovery/backup.tag
+         * @summary List recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupTagList(projectId: string, locationId: string, backupId: string, options?: any): AxiosPromise<Array<Tag>> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupTagList(projectId, locationId, backupId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Replace recovery/backup.tag
+         * @summary Replace recovery/backup.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {Array<Tag>} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupTagPut(projectId: string, locationId: string, backupId: string, tag: Array<Tag>, options?: any): AxiosPromise<Array<Tag>> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupTagPut(projectId, locationId, backupId, tag, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns modified backup
+         * @summary Update recovery/backup
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} backupId Backup Id
+         * @param {RecoveryProjectBackupUpdate} recoveryProjectBackupUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        recoveryProjectBackupUpdate(projectId: string, locationId: string, backupId: string, recoveryProjectBackupUpdate: RecoveryProjectBackupUpdate, options?: any): AxiosPromise<Backup> {
+            return RecoveryProjectBackupApiFp(configuration).recoveryProjectBackupUpdate(projectId, locationId, backupId, recoveryProjectBackupUpdate, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * RecoveryProjectBackupApi - object-oriented interface
+ * @export
+ * @class RecoveryProjectBackupApi
+ * @extends {BaseAPI}
+ */
+export class RecoveryProjectBackupApi extends BaseAPI {
+    /**
+     * Create backup
+     * @summary Create recovery/backup
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {RecoveryProjectBackupCreate} recoveryProjectBackupCreate 
+     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupCreate(projectId: string, locationId: string, recoveryProjectBackupCreate: RecoveryProjectBackupCreate, xIdempotencyKey?: string, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupCreate(projectId, locationId, recoveryProjectBackupCreate, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete backup
+     * @summary Delete recovery/backup
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupDelete(projectId: string, locationId: string, backupId: string, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupDelete(projectId, locationId, backupId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get recovery/backup.event
+     * @summary Get recovery/backup.event
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {string} eventId eventId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupEventGet(projectId: string, locationId: string, backupId: string, eventId: string, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupEventGet(projectId, locationId, backupId, eventId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List recovery/backup.event
+     * @summary List recovery/backup.event
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {number} [$limit] $limit
+     * @param {number} [$skip] $skip
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupEventList(projectId: string, locationId: string, backupId: string, $limit?: number, $skip?: number, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupEventList(projectId, locationId, backupId, $limit, $skip, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns a single backup
+     * @summary Get recovery/backup
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupGet(projectId: string, locationId: string, backupId: string, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupGet(projectId, locationId, backupId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List backup
+     * @summary List recovery/backup
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} [name] Filter by name
+     * @param {string} [source] Filter by source
+     * @param {string} [tagValue] Filter by tag.value
+     * @param {string} [tagKey] Filter by tag.key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupList(projectId: string, locationId: string, name?: string, source?: string, tagValue?: string, tagKey?: string, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupList(projectId, locationId, name, source, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get recovery/backup.service
+     * @summary Get recovery/backup.service
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {string} serviceId serviceId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupServiceGet(projectId: string, locationId: string, backupId: string, serviceId: string, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupServiceGet(projectId, locationId, backupId, serviceId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List recovery/backup.service
+     * @summary List recovery/backup.service
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupServiceList(projectId: string, locationId: string, backupId: string, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupServiceList(projectId, locationId, backupId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create recovery/backup.tag
+     * @summary Create recovery/backup.tag
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {Tag} tag 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupTagCreate(projectId: string, locationId: string, backupId: string, tag: Tag, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupTagCreate(projectId, locationId, backupId, tag, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete recovery/backup.tag
+     * @summary Delete recovery/backup.tag
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {string} tagId tagId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupTagDelete(projectId: string, locationId: string, backupId: string, tagId: string, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupTagDelete(projectId, locationId, backupId, tagId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get recovery/backup.tag
+     * @summary Get recovery/backup.tag
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {string} tagId tagId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupTagGet(projectId: string, locationId: string, backupId: string, tagId: string, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupTagGet(projectId, locationId, backupId, tagId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List recovery/backup.tag
+     * @summary List recovery/backup.tag
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupTagList(projectId: string, locationId: string, backupId: string, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupTagList(projectId, locationId, backupId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Replace recovery/backup.tag
+     * @summary Replace recovery/backup.tag
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {Array<Tag>} tag 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupTagPut(projectId: string, locationId: string, backupId: string, tag: Array<Tag>, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupTagPut(projectId, locationId, backupId, tag, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns modified backup
+     * @summary Update recovery/backup
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} backupId Backup Id
+     * @param {RecoveryProjectBackupUpdate} recoveryProjectBackupUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof RecoveryProjectBackupApi
+     */
+    public recoveryProjectBackupUpdate(projectId: string, locationId: string, backupId: string, recoveryProjectBackupUpdate: RecoveryProjectBackupUpdate, options?: any) {
+        return RecoveryProjectBackupApiFp(this.configuration).recoveryProjectBackupUpdate(projectId, locationId, backupId, recoveryProjectBackupUpdate, options).then((request) => request(this.axios, this.basePath));
+    }
+
+}
+
+
+/**
  * StorageProjectDiskApi - axios parameter creator
  * @export
  */
@@ -67337,37 +69519,157 @@ export const WebsiteProjectInstanceApiAxiosParamCreator = function (configuratio
             };
         },
         /**
-         * action log
-         * @summary Log website/instance
+         * Get website/instance.log
+         * @summary Get website/instance.log
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} instanceId Instance Id
-         * @param {WebsiteProjectInstanceLog} websiteProjectInstanceLog 
-         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} logId logId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        websiteProjectInstanceLog: async (projectId: string, locationId: string, instanceId: string, websiteProjectInstanceLog: WebsiteProjectInstanceLog, xIdempotencyKey?: string, options: any = {}): Promise<RequestArgs> => {
+        websiteProjectInstanceLogGet: async (projectId: string, locationId: string, instanceId: string, logId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'projectId' is not null or undefined
             if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling websiteProjectInstanceLog.');
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling websiteProjectInstanceLogGet.');
             }
             // verify required parameter 'locationId' is not null or undefined
             if (locationId === null || locationId === undefined) {
-                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling websiteProjectInstanceLog.');
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling websiteProjectInstanceLogGet.');
             }
             // verify required parameter 'instanceId' is not null or undefined
             if (instanceId === null || instanceId === undefined) {
-                throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling websiteProjectInstanceLog.');
+                throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling websiteProjectInstanceLogGet.');
             }
-            // verify required parameter 'websiteProjectInstanceLog' is not null or undefined
-            if (websiteProjectInstanceLog === null || websiteProjectInstanceLog === undefined) {
-                throw new RequiredError('websiteProjectInstanceLog','Required parameter websiteProjectInstanceLog was null or undefined when calling websiteProjectInstanceLog.');
+            // verify required parameter 'logId' is not null or undefined
+            if (logId === null || logId === undefined) {
+                throw new RequiredError('logId','Required parameter logId was null or undefined when calling websiteProjectInstanceLogGet.');
             }
-            const localVarPath = `/website/{locationId}/project/{projectId}/instance/{instanceId}/actions/log`
+            const localVarPath = `/website/{locationId}/project/{projectId}/instance/{instanceId}/log/{logId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"instanceId"}}`, encodeURIComponent(String(instanceId)))
+                .replace(`{${"logId"}}`, encodeURIComponent(String(logId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List website/instance.log
+         * @summary List website/instance.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceLogList: async (projectId: string, locationId: string, instanceId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling websiteProjectInstanceLogList.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling websiteProjectInstanceLogList.');
+            }
+            // verify required parameter 'instanceId' is not null or undefined
+            if (instanceId === null || instanceId === undefined) {
+                throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling websiteProjectInstanceLogList.');
+            }
+            const localVarPath = `/website/{locationId}/project/{projectId}/instance/{instanceId}/log`
                 .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
                 .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
                 .replace(`{${"instanceId"}}`, encodeURIComponent(String(instanceId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            if (configuration && configuration.accessToken) {
+                const accessToken = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken()
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * action read
+         * @summary Read website/instance.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} logId logId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceLogRead: async (projectId: string, locationId: string, instanceId: string, logId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling websiteProjectInstanceLogRead.');
+            }
+            // verify required parameter 'locationId' is not null or undefined
+            if (locationId === null || locationId === undefined) {
+                throw new RequiredError('locationId','Required parameter locationId was null or undefined when calling websiteProjectInstanceLogRead.');
+            }
+            // verify required parameter 'instanceId' is not null or undefined
+            if (instanceId === null || instanceId === undefined) {
+                throw new RequiredError('instanceId','Required parameter instanceId was null or undefined when calling websiteProjectInstanceLogRead.');
+            }
+            // verify required parameter 'logId' is not null or undefined
+            if (logId === null || logId === undefined) {
+                throw new RequiredError('logId','Required parameter logId was null or undefined when calling websiteProjectInstanceLogRead.');
+            }
+            const localVarPath = `/website/{locationId}/project/{projectId}/instance/{instanceId}/log/{logId}/actions/read`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"instanceId"}}`, encodeURIComponent(String(instanceId)))
+                .replace(`{${"logId"}}`, encodeURIComponent(String(logId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
@@ -67386,21 +69688,13 @@ export const WebsiteProjectInstanceApiAxiosParamCreator = function (configuratio
                 localVarHeaderParameter["Authorization"] = "Bearer " + accessToken;
             }
 
-            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
-                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
-            }
-
 
     
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            const needsSerialization = (typeof websiteProjectInstanceLog !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(websiteProjectInstanceLog !== undefined ? websiteProjectInstanceLog : {}) : (websiteProjectInstanceLog || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -69326,18 +71620,50 @@ export const WebsiteProjectInstanceApiFp = function(configuration?: Configuratio
             };
         },
         /**
-         * action log
-         * @summary Log website/instance
+         * Get website/instance.log
+         * @summary Get website/instance.log
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} instanceId Instance Id
-         * @param {WebsiteProjectInstanceLog} websiteProjectInstanceLog 
-         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} logId logId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async websiteProjectInstanceLog(projectId: string, locationId: string, instanceId: string, websiteProjectInstanceLog: WebsiteProjectInstanceLog, xIdempotencyKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await WebsiteProjectInstanceApiAxiosParamCreator(configuration).websiteProjectInstanceLog(projectId, locationId, instanceId, websiteProjectInstanceLog, xIdempotencyKey, options);
+        async websiteProjectInstanceLogGet(projectId: string, locationId: string, instanceId: string, logId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Log>> {
+            const localVarAxiosArgs = await WebsiteProjectInstanceApiAxiosParamCreator(configuration).websiteProjectInstanceLogGet(projectId, locationId, instanceId, logId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * List website/instance.log
+         * @summary List website/instance.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async websiteProjectInstanceLogList(projectId: string, locationId: string, instanceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Log>>> {
+            const localVarAxiosArgs = await WebsiteProjectInstanceApiAxiosParamCreator(configuration).websiteProjectInstanceLogList(projectId, locationId, instanceId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * action read
+         * @summary Read website/instance.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} logId logId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async websiteProjectInstanceLogRead(projectId: string, locationId: string, instanceId: string, logId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await WebsiteProjectInstanceApiAxiosParamCreator(configuration).websiteProjectInstanceLogRead(projectId, locationId, instanceId, logId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -70056,18 +72382,42 @@ export const WebsiteProjectInstanceApiFactory = function (configuration?: Config
             return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(axios, basePath));
         },
         /**
-         * action log
-         * @summary Log website/instance
+         * Get website/instance.log
+         * @summary Get website/instance.log
          * @param {string} projectId Project Id
          * @param {string} locationId Location Id
          * @param {string} instanceId Instance Id
-         * @param {WebsiteProjectInstanceLog} websiteProjectInstanceLog 
-         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} logId logId
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        websiteProjectInstanceLog(projectId: string, locationId: string, instanceId: string, websiteProjectInstanceLog: WebsiteProjectInstanceLog, xIdempotencyKey?: string, options?: any): AxiosPromise<void> {
-            return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceLog(projectId, locationId, instanceId, websiteProjectInstanceLog, xIdempotencyKey, options).then((request) => request(axios, basePath));
+        websiteProjectInstanceLogGet(projectId: string, locationId: string, instanceId: string, logId: string, options?: any): AxiosPromise<Log> {
+            return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceLogGet(projectId, locationId, instanceId, logId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List website/instance.log
+         * @summary List website/instance.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceLogList(projectId: string, locationId: string, instanceId: string, options?: any): AxiosPromise<Array<Log>> {
+            return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceLogList(projectId, locationId, instanceId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action read
+         * @summary Read website/instance.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} logId logId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        websiteProjectInstanceLogRead(projectId: string, locationId: string, instanceId: string, logId: string, options?: any): AxiosPromise<void> {
+            return WebsiteProjectInstanceApiFp(configuration).websiteProjectInstanceLogRead(projectId, locationId, instanceId, logId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get website/instance.metric
@@ -70733,19 +73083,47 @@ export class WebsiteProjectInstanceApi extends BaseAPI {
     }
 
     /**
-     * action log
-     * @summary Log website/instance
+     * Get website/instance.log
+     * @summary Get website/instance.log
      * @param {string} projectId Project Id
      * @param {string} locationId Location Id
      * @param {string} instanceId Instance Id
-     * @param {WebsiteProjectInstanceLog} websiteProjectInstanceLog 
-     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {string} logId logId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebsiteProjectInstanceApi
      */
-    public websiteProjectInstanceLog(projectId: string, locationId: string, instanceId: string, websiteProjectInstanceLog: WebsiteProjectInstanceLog, xIdempotencyKey?: string, options?: any) {
-        return WebsiteProjectInstanceApiFp(this.configuration).websiteProjectInstanceLog(projectId, locationId, instanceId, websiteProjectInstanceLog, xIdempotencyKey, options).then((request) => request(this.axios, this.basePath));
+    public websiteProjectInstanceLogGet(projectId: string, locationId: string, instanceId: string, logId: string, options?: any) {
+        return WebsiteProjectInstanceApiFp(this.configuration).websiteProjectInstanceLogGet(projectId, locationId, instanceId, logId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List website/instance.log
+     * @summary List website/instance.log
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} instanceId Instance Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebsiteProjectInstanceApi
+     */
+    public websiteProjectInstanceLogList(projectId: string, locationId: string, instanceId: string, options?: any) {
+        return WebsiteProjectInstanceApiFp(this.configuration).websiteProjectInstanceLogList(projectId, locationId, instanceId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action read
+     * @summary Read website/instance.log
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} instanceId Instance Id
+     * @param {string} logId logId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof WebsiteProjectInstanceApi
+     */
+    public websiteProjectInstanceLogRead(projectId: string, locationId: string, instanceId: string, logId: string, options?: any) {
+        return WebsiteProjectInstanceApiFp(this.configuration).websiteProjectInstanceLogRead(projectId, locationId, instanceId, logId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

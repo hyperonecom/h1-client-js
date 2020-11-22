@@ -34,7 +34,7 @@
 
 • `Optional` **credential**: Array\<[ComputeProjectVmCreateCredential](_api_.computeprojectvmcreatecredential.md)>
 
-*Defined in api.ts:796*
+*Defined in api.ts:893*
 
 **`memberof`** ComputeProjectVmCreate
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **disk**: Array\<[ComputeProjectVmCreateDisk](_api_.computeprojectvmcreatedisk.md)>
 
-*Defined in api.ts:802*
+*Defined in api.ts:899*
 
 **`memberof`** ComputeProjectVmCreate
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **image**: string
 
-*Defined in api.ts:766*
+*Defined in api.ts:863*
 
 **`memberof`** ComputeProjectVmCreate
 
@@ -64,7 +64,7 @@ ___
 
 • `Optional` **iso**: string
 
-*Defined in api.ts:772*
+*Defined in api.ts:869*
 
 **`memberof`** ComputeProjectVmCreate
 
@@ -74,7 +74,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:754*
+*Defined in api.ts:851*
 
 **`memberof`** ComputeProjectVmCreate
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **netadp**: Array\<[ComputeProjectVmCreateNetadp](_api_.computeprojectvmcreatenetadp.md)>
 
-*Defined in api.ts:808*
+*Defined in api.ts:905*
 
 **`memberof`** ComputeProjectVmCreate
 
@@ -94,7 +94,7 @@ ___
 
 •  **service**: string
 
-*Defined in api.ts:760*
+*Defined in api.ts:857*
 
 **`memberof`** ComputeProjectVmCreate
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **start**: boolean
 
-*Defined in api.ts:790*
+*Defined in api.ts:887*
 
 **`memberof`** ComputeProjectVmCreate
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:814*
+*Defined in api.ts:911*
 
 **`memberof`** ComputeProjectVmCreate
 
@@ -124,7 +124,7 @@ ___
 
 • `Optional` **userMetadata**: string
 
-*Defined in api.ts:784*
+*Defined in api.ts:881*
 
 **`memberof`** ComputeProjectVmCreate
 
@@ -134,6 +134,6 @@ ___
 
 • `Optional` **username**: string
 
-*Defined in api.ts:778*
+*Defined in api.ts:875*
 
 **`memberof`** ComputeProjectVmCreate

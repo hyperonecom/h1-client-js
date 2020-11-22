@@ -26,7 +26,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:687*
+*Defined in api.ts:784*
 
 **`memberof`** BillingService
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:699*
+*Defined in api.ts:796*
 
 **`memberof`** BillingService
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:693*
+*Defined in api.ts:790*
 
 **`memberof`** BillingService

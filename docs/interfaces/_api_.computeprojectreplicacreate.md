@@ -25,7 +25,7 @@
 
 •  **hostname**: string
 
-*Defined in api.ts:712*
+*Defined in api.ts:809*
 
 **`memberof`** ComputeProjectReplicaCreate
 
@@ -35,6 +35,6 @@ ___
 
 •  **secret**: string
 
-*Defined in api.ts:718*
+*Defined in api.ts:815*
 
 **`memberof`** ComputeProjectReplicaCreate

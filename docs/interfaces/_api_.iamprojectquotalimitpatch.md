@@ -25,7 +25,7 @@
 
 • `Optional` **effective**: number
 
-*Defined in api.ts:2158*
+*Defined in api.ts:2249*
 
 **`memberof`** IamProjectQuotaLimitPatch
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **user**: number
 
-*Defined in api.ts:2152*
+*Defined in api.ts:2243*
 
 **`memberof`** IamProjectQuotaLimitPatch

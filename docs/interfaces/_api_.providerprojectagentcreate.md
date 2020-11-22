@@ -26,7 +26,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:5054*
+*Defined in api.ts:5197*
 
 **`memberof`** ProviderProjectAgentCreate
 
@@ -36,7 +36,7 @@ ___
 
 •  **service**: string
 
-*Defined in api.ts:5060*
+*Defined in api.ts:5203*
 
 **`memberof`** ProviderProjectAgentCreate
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5066*
+*Defined in api.ts:5209*
 
 **`memberof`** ProviderProjectAgentCreate

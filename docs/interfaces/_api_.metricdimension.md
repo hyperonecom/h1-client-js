@@ -25,7 +25,7 @@
 
 •  **description**: string
 
-*Defined in api.ts:3420*
+*Defined in api.ts:3558*
 
 **`memberof`** MetricDimension
 
@@ -35,6 +35,6 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:3414*
+*Defined in api.ts:3552*
 
 **`memberof`** MetricDimension

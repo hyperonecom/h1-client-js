@@ -37,7 +37,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:6831*
+*Defined in api.ts:7047*
 
 **`memberof`** Vault
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:6825*
+*Defined in api.ts:7041*
 
 **`memberof`** Vault
 
@@ -57,7 +57,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:6807*
+*Defined in api.ts:7023*
 
 **`memberof`** Vault
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:6867*
+*Defined in api.ts:7083*
 
 **`memberof`** Vault
 
@@ -77,7 +77,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6795*
+*Defined in api.ts:7011*
 
 **`memberof`** Vault
 
@@ -87,7 +87,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:6819*
+*Defined in api.ts:7035*
 
 **`memberof`** Vault
 
@@ -97,7 +97,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:6813*
+*Defined in api.ts:7029*
 
 **`memberof`** Vault
 
@@ -107,7 +107,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:6801*
+*Defined in api.ts:7017*
 
 **`memberof`** Vault
 
@@ -117,7 +117,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:6843*
+*Defined in api.ts:7059*
 
 **`memberof`** Vault
 
@@ -127,7 +127,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in api.ts:6861*
+*Defined in api.ts:7077*
 
 **`memberof`** Vault
 
@@ -137,7 +137,7 @@ ___
 
 • `Optional` **sizeUsed**: number
 
-*Defined in api.ts:6855*
+*Defined in api.ts:7071*
 
 **`memberof`** Vault
 
@@ -147,7 +147,7 @@ ___
 
 • `Optional` **state**: [VaultStateEnum](../enums/_api_.vaultstateenum.md)
 
-*Defined in api.ts:6837*
+*Defined in api.ts:7053*
 
 **`memberof`** Vault
 
@@ -157,7 +157,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:6873*
+*Defined in api.ts:7089*
 
 **`memberof`** Vault
 
@@ -167,6 +167,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:6849*
+*Defined in api.ts:7065*
 
 **`memberof`** Vault

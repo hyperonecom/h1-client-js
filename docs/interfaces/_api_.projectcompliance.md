@@ -24,6 +24,6 @@
 
 • `Optional` **journal**: string
 
-*Defined in api.ts:4873*
+*Defined in api.ts:5016*
 
 **`memberof`** ProjectCompliance

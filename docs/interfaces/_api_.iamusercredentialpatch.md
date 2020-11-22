@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:2328*
+*Defined in api.ts:2432*
 
 **`memberof`** IamUserCredentialPatch

@@ -12,7 +12,8 @@
 
 * [Active](_api_.organisationstateenum.md#active)
 * [Inactive](_api_.organisationstateenum.md#inactive)
-* [Limited](_api_.organisationstateenum.md#limited)
+* [NotCreated](_api_.organisationstateenum.md#notcreated)
+* [Processing](_api_.organisationstateenum.md#processing)
 
 ## Enumeration members
 
@@ -20,7 +21,7 @@
 
 •  **Active**: {} = "Active"
 
-*Defined in api.ts:4250*
+*Defined in api.ts:4388*
 
 ___
 
@@ -28,12 +29,20 @@ ___
 
 •  **Inactive**: {} = "Inactive"
 
-*Defined in api.ts:4251*
+*Defined in api.ts:4389*
 
 ___
 
-### Limited
+### NotCreated
 
-•  **Limited**: {} = "Limited"
+•  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:4252*
+*Defined in api.ts:4391*
+
+___
+
+### Processing
+
+•  **Processing**: {} = "Processing"
+
+*Defined in api.ts:4390*

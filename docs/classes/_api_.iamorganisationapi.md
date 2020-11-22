@@ -53,7 +53,11 @@ IamOrganisationApi - object-oriented interface
 * [iamOrganisationProformaDownload](_api_.iamorganisationapi.md#iamorganisationproformadownload)
 * [iamOrganisationProformaGet](_api_.iamorganisationapi.md#iamorganisationproformaget)
 * [iamOrganisationProformaList](_api_.iamorganisationapi.md#iamorganisationproformalist)
+* [iamOrganisationServiceGet](_api_.iamorganisationapi.md#iamorganisationserviceget)
+* [iamOrganisationServiceList](_api_.iamorganisationapi.md#iamorganisationservicelist)
 * [iamOrganisationTransferAccept](_api_.iamorganisationapi.md#iamorganisationtransferaccept)
+* [iamOrganisationTransferGet](_api_.iamorganisationapi.md#iamorganisationtransferget)
+* [iamOrganisationTransferList](_api_.iamorganisationapi.md#iamorganisationtransferlist)
 * [iamOrganisationUpdate](_api_.iamorganisationapi.md#iamorganisationupdate)
 
 ## Constructors
@@ -112,7 +116,7 @@ ___
 
 ▸ **iamOrganisationBillingList**(`organisationId`: string, `start?`: string, `end?`: string, `resourceType?`: string, `options?`: any): Promise\<AxiosResponse\<[Billing](../interfaces/_api_.billing.md)[]>>
 
-*Defined in api.ts:25039*
+*Defined in api.ts:25525*
 
 List iam/organisation.billing
 
@@ -140,7 +144,7 @@ ___
 
 ▸ **iamOrganisationCreate**(`iamOrganisationCreate`: [IamOrganisationCreate](../interfaces/_api_.iamorganisationcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
 
-*Defined in api.ts:25052*
+*Defined in api.ts:25538*
 
 Create organisation
 
@@ -166,7 +170,7 @@ ___
 
 ▸ **iamOrganisationDelete**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:25064*
+*Defined in api.ts:25550*
 
 Delete organisation
 
@@ -191,7 +195,7 @@ ___
 
 ▸ **iamOrganisationEventGet**(`organisationId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:25077*
+*Defined in api.ts:25563*
 
 Get iam/organisation.event
 
@@ -217,7 +221,7 @@ ___
 
 ▸ **iamOrganisationEventList**(`organisationId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:25091*
+*Defined in api.ts:25577*
 
 List iam/organisation.event
 
@@ -244,7 +248,7 @@ ___
 
 ▸ **iamOrganisationGet**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
 
-*Defined in api.ts:25103*
+*Defined in api.ts:25589*
 
 Returns a single organisation
 
@@ -269,7 +273,7 @@ ___
 
 ▸ **iamOrganisationInvitationAccept**(`organisationId`: string, `invitationId`: string, `iamOrganisationInvitationAccept`: [IamOrganisationInvitationAccept](../interfaces/_api_.iamorganisationinvitationaccept.md), `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)>>
 
-*Defined in api.ts:25117*
+*Defined in api.ts:25603*
 
 action accept
 
@@ -296,7 +300,7 @@ ___
 
 ▸ **iamOrganisationInvitationDelete**(`organisationId`: string, `invitationId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:25130*
+*Defined in api.ts:25616*
 
 Delete iam/organisation.invitation
 
@@ -322,7 +326,7 @@ ___
 
 ▸ **iamOrganisationInvitationGet**(`organisationId`: string, `invitationId`: string, `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)>>
 
-*Defined in api.ts:25143*
+*Defined in api.ts:25629*
 
 Get iam/organisation.invitation
 
@@ -348,7 +352,7 @@ ___
 
 ▸ **iamOrganisationInvitationList**(`organisationId`: string, `resource?`: string, `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)[]>>
 
-*Defined in api.ts:25156*
+*Defined in api.ts:25642*
 
 List iam/organisation.invitation
 
@@ -374,7 +378,7 @@ ___
 
 ▸ **iamOrganisationInvoiceDownload**(`organisationId`: string, `invoiceId`: string, `options?`: any): Promise\<AxiosResponse\<any>>
 
-*Defined in api.ts:25169*
+*Defined in api.ts:25655*
 
 action download
 
@@ -400,7 +404,7 @@ ___
 
 ▸ **iamOrganisationInvoiceGet**(`organisationId`: string, `invoiceId`: string, `options?`: any): Promise\<AxiosResponse\<[Invoice](../interfaces/_api_.invoice.md)>>
 
-*Defined in api.ts:25182*
+*Defined in api.ts:25668*
 
 Get iam/organisation.invoice
 
@@ -426,7 +430,7 @@ ___
 
 ▸ **iamOrganisationInvoiceList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Invoice](../interfaces/_api_.invoice.md)[]>>
 
-*Defined in api.ts:25194*
+*Defined in api.ts:25680*
 
 List iam/organisation.invoice
 
@@ -451,7 +455,7 @@ ___
 
 ▸ **iamOrganisationList**(`name?`: string, `billingCompany?`: string, `$limit?`: number, `active?`: boolean, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)[]>>
 
-*Defined in api.ts:25209*
+*Defined in api.ts:25695*
 
 List organisation
 
@@ -479,7 +483,7 @@ ___
 
 ▸ **iamOrganisationOwnershipCreate**(`organisationId`: string, `iamOrganisationOwnershipCreate`: [IamOrganisationOwnershipCreate](../interfaces/_api_.iamorganisationownershipcreate.md), `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
 
-*Defined in api.ts:25222*
+*Defined in api.ts:25708*
 
 Create iam/organisation.ownership
 
@@ -505,7 +509,7 @@ ___
 
 ▸ **iamOrganisationOwnershipDelete**(`organisationId`: string, `ownershipId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:25235*
+*Defined in api.ts:25721*
 
 Delete iam/organisation.ownership
 
@@ -531,7 +535,7 @@ ___
 
 ▸ **iamOrganisationOwnershipGet**(`organisationId`: string, `ownershipId`: string, `options?`: any): Promise\<AxiosResponse\<[Ownership](../interfaces/_api_.ownership.md)>>
 
-*Defined in api.ts:25248*
+*Defined in api.ts:25734*
 
 Get iam/organisation.ownership
 
@@ -557,7 +561,7 @@ ___
 
 ▸ **iamOrganisationOwnershipList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Ownership](../interfaces/_api_.ownership.md)[]>>
 
-*Defined in api.ts:25260*
+*Defined in api.ts:25746*
 
 List iam/organisation.ownership
 
@@ -582,7 +586,7 @@ ___
 
 ▸ **iamOrganisationPaymentAllocate**(`organisationId`: string, `paymentId`: string, `iamOrganisationPaymentAllocate`: [IamOrganisationPaymentAllocate](../interfaces/_api_.iamorganisationpaymentallocate.md), `options?`: any): Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)>>
 
-*Defined in api.ts:25274*
+*Defined in api.ts:25760*
 
 action allocate
 
@@ -609,7 +613,7 @@ ___
 
 ▸ **iamOrganisationPaymentGet**(`organisationId`: string, `paymentId`: string, `options?`: any): Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)>>
 
-*Defined in api.ts:25287*
+*Defined in api.ts:25773*
 
 Get iam/organisation.payment
 
@@ -635,7 +639,7 @@ ___
 
 ▸ **iamOrganisationPaymentList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)[]>>
 
-*Defined in api.ts:25299*
+*Defined in api.ts:25785*
 
 List iam/organisation.payment
 
@@ -660,7 +664,7 @@ ___
 
 ▸ **iamOrganisationProformaCreate**(`organisationId`: string, `iamOrganisationProformaCreate`: [IamOrganisationProformaCreate](../interfaces/_api_.iamorganisationproformacreate.md), `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
 
-*Defined in api.ts:25312*
+*Defined in api.ts:25798*
 
 Create iam/organisation.proforma
 
@@ -686,7 +690,7 @@ ___
 
 ▸ **iamOrganisationProformaDownload**(`organisationId`: string, `proformaId`: string, `options?`: any): Promise\<AxiosResponse\<any>>
 
-*Defined in api.ts:25325*
+*Defined in api.ts:25811*
 
 action download
 
@@ -712,7 +716,7 @@ ___
 
 ▸ **iamOrganisationProformaGet**(`organisationId`: string, `proformaId`: string, `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)>>
 
-*Defined in api.ts:25338*
+*Defined in api.ts:25824*
 
 Get iam/organisation.proforma
 
@@ -738,7 +742,7 @@ ___
 
 ▸ **iamOrganisationProformaList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)[]>>
 
-*Defined in api.ts:25350*
+*Defined in api.ts:25836*
 
 List iam/organisation.proforma
 
@@ -759,15 +763,15 @@ Name | Type | Description |
 
 ___
 
-### iamOrganisationTransferAccept
+### iamOrganisationServiceGet
 
-▸ **iamOrganisationTransferAccept**(`organisationId`: string, `iamOrganisationTransferAccept`: [IamOrganisationTransferAccept](../interfaces/_api_.iamorganisationtransferaccept.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
+▸ **iamOrganisationServiceGet**(`organisationId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:25364*
+*Defined in api.ts:25849*
 
-action transfer_accept
+Get iam/organisation.service
 
-**`summary`** Transfer accept iam/organisation
+**`summary`** Get iam/organisation.service
 
 **`throws`** {RequiredError}
 
@@ -778,11 +782,113 @@ action transfer_accept
 Name | Type | Description |
 ------ | ------ | ------ |
 `organisationId` | string | Organisation Id |
-`iamOrganisationTransferAccept` | [IamOrganisationTransferAccept](../interfaces/_api_.iamorganisationtransferaccept.md) |  |
-`xIdempotencyKey?` | string | - |
+`serviceId` | string | serviceId |
 `options?` | any | - |
 
-**Returns:** Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
+**Returns:** Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
+
+___
+
+### iamOrganisationServiceList
+
+▸ **iamOrganisationServiceList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
+
+*Defined in api.ts:25861*
+
+List iam/organisation.service
+
+**`summary`** List iam/organisation.service
+
+**`throws`** {RequiredError}
+
+**`memberof`** IamOrganisationApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`organisationId` | string | Organisation Id |
+`options?` | any | - |
+
+**Returns:** Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
+
+___
+
+### iamOrganisationTransferAccept
+
+▸ **iamOrganisationTransferAccept**(`organisationId`: string, `transferId`: string, `iamOrganisationTransferAccept`: [IamOrganisationTransferAccept](../interfaces/_api_.iamorganisationtransferaccept.md), `options?`: any): Promise\<AxiosResponse\<[Transfer](../interfaces/_api_.transfer.md)>>
+
+*Defined in api.ts:25875*
+
+action accept
+
+**`summary`** Accept iam/organisation.transfer
+
+**`throws`** {RequiredError}
+
+**`memberof`** IamOrganisationApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`organisationId` | string | Organisation Id |
+`transferId` | string | transferId |
+`iamOrganisationTransferAccept` | [IamOrganisationTransferAccept](../interfaces/_api_.iamorganisationtransferaccept.md) |  |
+`options?` | any | - |
+
+**Returns:** Promise\<AxiosResponse\<[Transfer](../interfaces/_api_.transfer.md)>>
+
+___
+
+### iamOrganisationTransferGet
+
+▸ **iamOrganisationTransferGet**(`organisationId`: string, `transferId`: string, `options?`: any): Promise\<AxiosResponse\<[Transfer](../interfaces/_api_.transfer.md)>>
+
+*Defined in api.ts:25888*
+
+Get iam/organisation.transfer
+
+**`summary`** Get iam/organisation.transfer
+
+**`throws`** {RequiredError}
+
+**`memberof`** IamOrganisationApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`organisationId` | string | Organisation Id |
+`transferId` | string | transferId |
+`options?` | any | - |
+
+**Returns:** Promise\<AxiosResponse\<[Transfer](../interfaces/_api_.transfer.md)>>
+
+___
+
+### iamOrganisationTransferList
+
+▸ **iamOrganisationTransferList**(`organisationId`: string, `options?`: any): Promise\<AxiosResponse\<[Transfer](../interfaces/_api_.transfer.md)[]>>
+
+*Defined in api.ts:25900*
+
+List iam/organisation.transfer
+
+**`summary`** List iam/organisation.transfer
+
+**`throws`** {RequiredError}
+
+**`memberof`** IamOrganisationApi
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`organisationId` | string | Organisation Id |
+`options?` | any | - |
+
+**Returns:** Promise\<AxiosResponse\<[Transfer](../interfaces/_api_.transfer.md)[]>>
 
 ___
 
@@ -790,7 +896,7 @@ ___
 
 ▸ **iamOrganisationUpdate**(`organisationId`: string, `iamOrganisationUpdate`: [IamOrganisationUpdate](../interfaces/_api_.iamorganisationupdate.md), `options?`: any): Promise\<AxiosResponse\<[Organisation](../interfaces/_api_.organisation.md)>>
 
-*Defined in api.ts:25377*
+*Defined in api.ts:25913*
 
 Returns modified organisation
 

@@ -24,6 +24,6 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:1135*
+*Defined in api.ts:1232*
 
 **`memberof`** ContainerProjectRegistryUpdate

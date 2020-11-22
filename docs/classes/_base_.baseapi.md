@@ -54,6 +54,8 @@
 
   ↳ [ProviderProjectAgentApi](_api_.providerprojectagentapi.md)
 
+  ↳ [RecoveryProjectBackupApi](_api_.recoveryprojectbackupapi.md)
+
   ↳ [StorageProjectDiskApi](_api_.storageprojectdiskapi.md)
 
   ↳ [StorageProjectImageApi](_api_.storageprojectimageapi.md)

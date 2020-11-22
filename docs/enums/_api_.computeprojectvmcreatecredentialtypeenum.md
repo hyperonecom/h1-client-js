@@ -20,7 +20,7 @@
 
 •  **Plain**: {} = "plain"
 
-*Defined in api.ts:842*
+*Defined in api.ts:939*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 •  **Ssh**: {} = "ssh"
 
-*Defined in api.ts:841*
+*Defined in api.ts:938*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 •  **Unix**: {} = "unix"
 
-*Defined in api.ts:843*
+*Defined in api.ts:940*

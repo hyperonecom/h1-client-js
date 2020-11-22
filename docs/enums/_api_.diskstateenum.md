@@ -24,7 +24,7 @@
 
 •  **Attached**: {} = "Attached"
 
-*Defined in api.ts:1483*
+*Defined in api.ts:1580*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 •  **Detached**: {} = "Detached"
 
-*Defined in api.ts:1484*
+*Defined in api.ts:1581*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:1487*
+*Defined in api.ts:1584*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 •  **Online**: {} = "Online"
 
-*Defined in api.ts:1482*
+*Defined in api.ts:1579*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:1486*
+*Defined in api.ts:1583*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:1485*
+*Defined in api.ts:1582*
 
 ___
 
@@ -72,4 +72,4 @@ ___
 
 •  **Uploading**: {} = "Uploading"
 
-*Defined in api.ts:1481*
+*Defined in api.ts:1578*
