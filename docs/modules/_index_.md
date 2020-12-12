@@ -11,8 +11,6 @@
 * [Agent](_index_.md#agent)
 * [AgentCredential](_index_.md#agentcredential)
 * [AgentCredentialTypeEnum](_index_.md#agentcredentialtypeenum)
-* [AgentResource](_index_.md#agentresource)
-* [AgentResourceEvent](_index_.md#agentresourceevent)
 * [AgentStateEnum](_index_.md#agentstateenum)
 * [Attempt](_index_.md#attempt)
 * [AuthToken](_index_.md#authtoken)
@@ -38,6 +36,7 @@
 * [BillingProjectServiceApiFp](_index_.md#billingprojectserviceapifp)
 * [BillingResource](_index_.md#billingresource)
 * [BillingService](_index_.md#billingservice)
+* [Bucket](_index_.md#bucket)
 * [ComputeProjectReplicaApi](_index_.md#computeprojectreplicaapi)
 * [ComputeProjectReplicaApiAxiosParamCreator](_index_.md#computeprojectreplicaapiaxiosparamcreator)
 * [ComputeProjectReplicaApiFactory](_index_.md#computeprojectreplicaapifactory)
@@ -141,6 +140,7 @@
 * [IamProjectPolicyApiFactory](_index_.md#iamprojectpolicyapifactory)
 * [IamProjectPolicyApiFp](_index_.md#iamprojectpolicyapifp)
 * [IamProjectPolicyCreate](_index_.md#iamprojectpolicycreate)
+* [IamProjectPolicyCreateActor](_index_.md#iamprojectpolicycreateactor)
 * [IamProjectPolicyUpdate](_index_.md#iamprojectpolicyupdate)
 * [IamProjectQuotaLimitPatch](_index_.md#iamprojectquotalimitpatch)
 * [IamProjectRoleApi](_index_.md#iamprojectroleapi)
@@ -253,7 +253,6 @@
 * [OrganisationBilling](_index_.md#organisationbilling)
 * [OrganisationBilling1](_index_.md#organisationbilling1)
 * [OrganisationStateEnum](_index_.md#organisationstateenum)
-* [OrganisationTransfer](_index_.md#organisationtransfer)
 * [Ownership](_index_.md#ownership)
 * [Payment](_index_.md#payment)
 * [PaymentChannelEnum](_index_.md#paymentchannelenum)
@@ -266,15 +265,14 @@
 * [ProformaSeller](_index_.md#proformaseller)
 * [Project](_index_.md#project)
 * [ProjectBilling](_index_.md#projectbilling)
-* [ProjectCompliance](_index_.md#projectcompliance)
 * [ProjectCredential](_index_.md#projectcredential)
 * [ProjectCredentialTypeEnum](_index_.md#projectcredentialtypeenum)
 * [ProjectFeature](_index_.md#projectfeature)
-* [ProjectNetworkAcl](_index_.md#projectnetworkacl)
-* [ProjectNetworkAclTypeEnum](_index_.md#projectnetworkacltypeenum)
 * [ProjectStateEnum](_index_.md#projectstateenum)
 * [ProjectThreshold](_index_.md#projectthreshold)
-* [ProjectTransfer](_index_.md#projecttransfer)
+* [ProviderAgentResource](_index_.md#provideragentresource)
+* [ProviderAgentResourceEvent](_index_.md#provideragentresourceevent)
+* [ProviderAgentResourceEventStateEnum](_index_.md#provideragentresourceeventstateenum)
 * [ProviderProjectAgentApi](_index_.md#providerprojectagentapi)
 * [ProviderProjectAgentApiAxiosParamCreator](_index_.md#providerprojectagentapiaxiosparamcreator)
 * [ProviderProjectAgentApiFactory](_index_.md#providerprojectagentapifactory)
@@ -291,6 +289,7 @@
 * [RecoveryProjectBackupApiFactory](_index_.md#recoveryprojectbackupapifactory)
 * [RecoveryProjectBackupApiFp](_index_.md#recoveryprojectbackupapifp)
 * [RecoveryProjectBackupCreate](_index_.md#recoveryprojectbackupcreate)
+* [RecoveryProjectBackupExport](_index_.md#recoveryprojectbackupexport)
 * [RecoveryProjectBackupUpdate](_index_.md#recoveryprojectbackupupdate)
 * [Registry](_index_.md#registry)
 * [RegistryCredential](_index_.md#registrycredential)
@@ -300,6 +299,7 @@
 * [ReplicaStateEnum](_index_.md#replicastateenum)
 * [Reservation](_index_.md#reservation)
 * [ReservationStateEnum](_index_.md#reservationstateenum)
+* [ResourceConnect](_index_.md#resourceconnect)
 * [ResourceService](_index_.md#resourceservice)
 * [Role](_index_.md#role)
 * [RoleStateEnum](_index_.md#rolestateenum)
@@ -313,6 +313,12 @@
 * [ServiceBillingReservations](_index_.md#servicebillingreservations)
 * [ServiceDisplay](_index_.md#servicedisplay)
 * [ServiceDisplayUnit](_index_.md#servicedisplayunit)
+* [StorageObject](_index_.md#storageobject)
+* [StorageProjectBucketApi](_index_.md#storageprojectbucketapi)
+* [StorageProjectBucketApiAxiosParamCreator](_index_.md#storageprojectbucketapiaxiosparamcreator)
+* [StorageProjectBucketApiFactory](_index_.md#storageprojectbucketapifactory)
+* [StorageProjectBucketApiFp](_index_.md#storageprojectbucketapifp)
+* [StorageProjectBucketUpload](_index_.md#storageprojectbucketupload)
 * [StorageProjectDiskApi](_index_.md#storageprojectdiskapi)
 * [StorageProjectDiskApiAxiosParamCreator](_index_.md#storageprojectdiskapiaxiosparamcreator)
 * [StorageProjectDiskApiFactory](_index_.md#storageprojectdiskapifactory)
@@ -346,6 +352,7 @@
 * [StorageProjectVaultResize](_index_.md#storageprojectvaultresize)
 * [StorageProjectVaultSnapshotCreate](_index_.md#storageprojectvaultsnapshotcreate)
 * [StorageProjectVaultUpdate](_index_.md#storageprojectvaultupdate)
+* [StorageS3credential](_index_.md#storages3credential)
 * [StorageSnapshot](_index_.md#storagesnapshot)
 * [SupportMessage](_index_.md#supportmessage)
 * [SupportMessageTypeEnum](_index_.md#supportmessagetypeenum)
@@ -418,18 +425,6 @@ ___
 ### AgentCredentialTypeEnum
 
 Re-exports: [AgentCredentialTypeEnum](../enums/_api_.agentcredentialtypeenum.md)
-
-___
-
-### AgentResource
-
-Re-exports: [AgentResource](../interfaces/_api_.agentresource.md)
-
-___
-
-### AgentResourceEvent
-
-Re-exports: [AgentResourceEvent](../interfaces/_api_.agentresourceevent.md)
 
 ___
 
@@ -580,6 +575,12 @@ ___
 ### BillingService
 
 Re-exports: [BillingService](../interfaces/_api_.billingservice.md)
+
+___
+
+### Bucket
+
+Re-exports: [Bucket](../interfaces/_api_.bucket.md)
 
 ___
 
@@ -1198,6 +1199,12 @@ ___
 ### IamProjectPolicyCreate
 
 Re-exports: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md)
+
+___
+
+### IamProjectPolicyCreateActor
+
+Re-exports: [IamProjectPolicyCreateActor](../interfaces/_api_.iamprojectpolicycreateactor.md)
 
 ___
 
@@ -1873,12 +1880,6 @@ Re-exports: [OrganisationStateEnum](../enums/_api_.organisationstateenum.md)
 
 ___
 
-### OrganisationTransfer
-
-Re-exports: [OrganisationTransfer](../interfaces/_api_.organisationtransfer.md)
-
-___
-
 ### Ownership
 
 Re-exports: [Ownership](../interfaces/_api_.ownership.md)
@@ -1951,12 +1952,6 @@ Re-exports: [ProjectBilling](../interfaces/_api_.projectbilling.md)
 
 ___
 
-### ProjectCompliance
-
-Re-exports: [ProjectCompliance](../interfaces/_api_.projectcompliance.md)
-
-___
-
 ### ProjectCredential
 
 Re-exports: [ProjectCredential](../interfaces/_api_.projectcredential.md)
@@ -1975,18 +1970,6 @@ Re-exports: [ProjectFeature](../interfaces/_api_.projectfeature.md)
 
 ___
 
-### ProjectNetworkAcl
-
-Re-exports: [ProjectNetworkAcl](../interfaces/_api_.projectnetworkacl.md)
-
-___
-
-### ProjectNetworkAclTypeEnum
-
-Re-exports: [ProjectNetworkAclTypeEnum](../enums/_api_.projectnetworkacltypeenum.md)
-
-___
-
 ### ProjectStateEnum
 
 Re-exports: [ProjectStateEnum](../enums/_api_.projectstateenum.md)
@@ -1999,9 +1982,21 @@ Re-exports: [ProjectThreshold](../interfaces/_api_.projectthreshold.md)
 
 ___
 
-### ProjectTransfer
+### ProviderAgentResource
 
-Re-exports: [ProjectTransfer](../interfaces/_api_.projecttransfer.md)
+Re-exports: [ProviderAgentResource](../interfaces/_api_.provideragentresource.md)
+
+___
+
+### ProviderAgentResourceEvent
+
+Re-exports: [ProviderAgentResourceEvent](../interfaces/_api_.provideragentresourceevent.md)
+
+___
+
+### ProviderAgentResourceEventStateEnum
+
+Re-exports: [ProviderAgentResourceEventStateEnum](../enums/_api_.provideragentresourceeventstateenum.md)
 
 ___
 
@@ -2101,6 +2096,12 @@ Re-exports: [RecoveryProjectBackupCreate](../interfaces/_api_.recoveryprojectbac
 
 ___
 
+### RecoveryProjectBackupExport
+
+Re-exports: [RecoveryProjectBackupExport](../interfaces/_api_.recoveryprojectbackupexport.md)
+
+___
+
 ### RecoveryProjectBackupUpdate
 
 Re-exports: [RecoveryProjectBackupUpdate](../interfaces/_api_.recoveryprojectbackupupdate.md)
@@ -2152,6 +2153,12 @@ ___
 ### ReservationStateEnum
 
 Re-exports: [ReservationStateEnum](../enums/_api_.reservationstateenum.md)
+
+___
+
+### ResourceConnect
+
+Re-exports: [ResourceConnect](../interfaces/_api_.resourceconnect.md)
 
 ___
 
@@ -2230,6 +2237,42 @@ ___
 ### ServiceDisplayUnit
 
 Re-exports: [ServiceDisplayUnit](../interfaces/_api_.servicedisplayunit.md)
+
+___
+
+### StorageObject
+
+Re-exports: [StorageObject](../interfaces/_api_.storageobject.md)
+
+___
+
+### StorageProjectBucketApi
+
+Re-exports: [StorageProjectBucketApi](../classes/_api_.storageprojectbucketapi.md)
+
+___
+
+### StorageProjectBucketApiAxiosParamCreator
+
+Re-exports: [StorageProjectBucketApiAxiosParamCreator](_api_.md#storageprojectbucketapiaxiosparamcreator)
+
+___
+
+### StorageProjectBucketApiFactory
+
+Re-exports: [StorageProjectBucketApiFactory](_api_.md#storageprojectbucketapifactory)
+
+___
+
+### StorageProjectBucketApiFp
+
+Re-exports: [StorageProjectBucketApiFp](_api_.md#storageprojectbucketapifp)
+
+___
+
+### StorageProjectBucketUpload
+
+Re-exports: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md)
 
 ___
 
@@ -2428,6 +2471,12 @@ ___
 ### StorageProjectVaultUpdate
 
 Re-exports: [StorageProjectVaultUpdate](../interfaces/_api_.storageprojectvaultupdate.md)
+
+___
+
+### StorageS3credential
+
+Re-exports: [StorageS3credential](../interfaces/_api_.storages3credential.md)
 
 ___
 

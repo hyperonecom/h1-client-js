@@ -25,7 +25,7 @@
 
 •  **method**: [AuthTokenAccessMethodEnum](../enums/_api_.authtokenaccessmethodenum.md)
 
-*Defined in api.ts:367*
+*Defined in api.ts:293*
 
 **`memberof`** AuthTokenAccess
 
@@ -35,6 +35,6 @@ ___
 
 •  **path**: string
 
-*Defined in api.ts:373*
+*Defined in api.ts:299*
 
 **`memberof`** AuthTokenAccess

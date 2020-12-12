@@ -25,7 +25,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1988*
+*Defined in api.ts:1999*
 
 **`memberof`** IamActor
 
@@ -35,7 +35,7 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:1994*
+*Defined in api.ts:2005*
 
 one of: * E-mail * User URI * Service Account URI * \'me\' -§ requestor
 

@@ -18,7 +18,6 @@
 
 * [bankAccount](_api_.project.md#bankaccount)
 * [billing](_api_.project.md#billing)
-* [compliance](_api_.project.md#compliance)
 * [createdBy](_api_.project.md#createdby)
 * [createdOn](_api_.project.md#createdon)
 * [flavour](_api_.project.md#flavour)
@@ -26,11 +25,9 @@
 * [modifiedBy](_api_.project.md#modifiedby)
 * [modifiedOn](_api_.project.md#modifiedon)
 * [name](_api_.project.md#name)
-* [networkAcl](_api_.project.md#networkacl)
 * [organisation](_api_.project.md#organisation)
 * [state](_api_.project.md#state)
 * [tag](_api_.project.md#tag)
-* [transfer](_api_.project.md#transfer)
 * [uri](_api_.project.md#uri)
 
 ## Properties
@@ -39,7 +36,7 @@
 
 • `Optional` **bankAccount**: string
 
-*Defined in api.ts:4935*
+*Defined in api.ts:4928*
 
 **`memberof`** Project
 
@@ -49,17 +46,7 @@ ___
 
 • `Optional` **billing**: [ProjectBilling](_api_.projectbilling.md)
 
-*Defined in api.ts:4941*
-
-**`memberof`** Project
-
-___
-
-### compliance
-
-• `Optional` **compliance**: [ProjectCompliance](_api_.projectcompliance.md)
-
-*Defined in api.ts:4953*
+*Defined in api.ts:4934*
 
 **`memberof`** Project
 
@@ -69,7 +56,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4911*
+*Defined in api.ts:4904*
 
 **`memberof`** Project
 
@@ -79,7 +66,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:4905*
+*Defined in api.ts:4898*
 
 **`memberof`** Project
 
@@ -89,7 +76,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:4887*
+*Defined in api.ts:4880*
 
 **`memberof`** Project
 
@@ -99,7 +86,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4875*
+*Defined in api.ts:4868*
 
 **`memberof`** Project
 
@@ -109,7 +96,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:4899*
+*Defined in api.ts:4892*
 
 **`memberof`** Project
 
@@ -119,7 +106,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:4893*
+*Defined in api.ts:4886*
 
 **`memberof`** Project
 
@@ -129,17 +116,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4881*
-
-**`memberof`** Project
-
-___
-
-### networkAcl
-
-• `Optional` **networkAcl**: Array\<[ProjectNetworkAcl](_api_.projectnetworkacl.md)>
-
-*Defined in api.ts:4947*
+*Defined in api.ts:4874*
 
 **`memberof`** Project
 
@@ -149,7 +126,7 @@ ___
 
 • `Optional` **organisation**: string
 
-*Defined in api.ts:4923*
+*Defined in api.ts:4916*
 
 **`memberof`** Project
 
@@ -159,7 +136,7 @@ ___
 
 • `Optional` **state**: [ProjectStateEnum](../enums/_api_.projectstateenum.md)
 
-*Defined in api.ts:4917*
+*Defined in api.ts:4910*
 
 **`memberof`** Project
 
@@ -169,17 +146,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4965*
-
-**`memberof`** Project
-
-___
-
-### transfer
-
-• `Optional` **transfer**: [ProjectTransfer](_api_.projecttransfer.md)
-
-*Defined in api.ts:4959*
+*Defined in api.ts:4940*
 
 **`memberof`** Project
 
@@ -189,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4929*
+*Defined in api.ts:4922*
 
 **`memberof`** Project

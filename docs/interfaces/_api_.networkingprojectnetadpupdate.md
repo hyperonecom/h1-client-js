@@ -24,6 +24,6 @@
 
 • `Optional` **firewall**: string
 
-*Defined in api.ts:4129*
+*Defined in api.ts:4153*
 
 **`memberof`** NetworkingProjectNetadpUpdate

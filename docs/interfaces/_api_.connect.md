@@ -26,7 +26,7 @@
 
 •  **id**: string
 
-*Defined in api.ts:1110*
+*Defined in api.ts:1115*
 
 **`memberof`** Connect
 
@@ -36,7 +36,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:1116*
+*Defined in api.ts:1121*
 
 **`memberof`** Connect
 
@@ -46,6 +46,6 @@ ___
 
 •  **type**: [ConnectTypeEnum](../enums/_api_.connecttypeenum.md)
 
-*Defined in api.ts:1122*
+*Defined in api.ts:1127*
 
 **`memberof`** Connect

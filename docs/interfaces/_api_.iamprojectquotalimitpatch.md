@@ -16,25 +16,14 @@
 
 ### Properties
 
-* [effective](_api_.iamprojectquotalimitpatch.md#effective)
 * [user](_api_.iamprojectquotalimitpatch.md#user)
 
 ## Properties
-
-### effective
-
-• `Optional` **effective**: number
-
-*Defined in api.ts:2249*
-
-**`memberof`** IamProjectQuotaLimitPatch
-
-___
 
 ### user
 
 • `Optional` **user**: number
 
-*Defined in api.ts:2243*
+*Defined in api.ts:2273*
 
 **`memberof`** IamProjectQuotaLimitPatch

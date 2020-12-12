@@ -26,7 +26,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:715*
+*Defined in api.ts:641*
 
 **`memberof`** BillingProjectReservationCreate
 
@@ -36,7 +36,7 @@ ___
 
 •  **service**: string
 
-*Defined in api.ts:721*
+*Defined in api.ts:647*
 
 **`memberof`** BillingProjectReservationCreate
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:727*
+*Defined in api.ts:653*
 
 **`memberof`** BillingProjectReservationCreate

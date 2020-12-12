@@ -24,6 +24,6 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:740*
+*Defined in api.ts:666*
 
 **`memberof`** BillingProjectReservationUpdate

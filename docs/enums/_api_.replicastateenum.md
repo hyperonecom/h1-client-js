@@ -32,7 +32,7 @@
 
 •  **Error**: {} = "Error"
 
-*Defined in api.ts:5617*
+*Defined in api.ts:5619*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 •  **FailOverWaitingCompletion**: {} = "FailOverWaitingCompletion"
 
-*Defined in api.ts:5618*
+*Defined in api.ts:5620*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 •  **FailedOver**: {} = "FailedOver"
 
-*Defined in api.ts:5619*
+*Defined in api.ts:5621*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 •  **NotApplicable**: {} = "NotApplicable"
 
-*Defined in api.ts:5620*
+*Defined in api.ts:5622*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:5631*
+*Defined in api.ts:5633*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:5630*
+*Defined in api.ts:5632*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 •  **ReadyForInitialReplication**: {} = "ReadyForInitialReplication"
 
-*Defined in api.ts:5621*
+*Defined in api.ts:5623*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 •  **Replicating**: {} = "Replicating"
 
-*Defined in api.ts:5622*
+*Defined in api.ts:5624*
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 •  **ResynchronizeSuspended**: {} = "ResynchronizeSuspended"
 
-*Defined in api.ts:5624*
+*Defined in api.ts:5626*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 •  **Resynchronizing**: {} = "Resynchronizing"
 
-*Defined in api.ts:5623*
+*Defined in api.ts:5625*
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 •  **Suspended**: {} = "Suspended"
 
-*Defined in api.ts:5625*
+*Defined in api.ts:5627*
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 •  **SyncedReplicationComplete**: {} = "SyncedReplicationComplete"
 
-*Defined in api.ts:5626*
+*Defined in api.ts:5628*
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:5629*
+*Defined in api.ts:5631*
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 •  **WaitingForInitialReplication**: {} = "WaitingForInitialReplication"
 
-*Defined in api.ts:5627*
+*Defined in api.ts:5629*
 
 ___
 
@@ -144,4 +144,4 @@ ___
 
 •  **WaitingForStartResynchronize**: {} = "WaitingForStartResynchronize"
 
-*Defined in api.ts:5628*
+*Defined in api.ts:5630*

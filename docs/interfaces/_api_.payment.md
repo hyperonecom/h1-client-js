@@ -36,7 +36,7 @@
 
 • `Optional` **amount**: number
 
-*Defined in api.ts:4577*
+*Defined in api.ts:4570*
 
 **`memberof`** Payment
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **channel**: [PaymentChannelEnum](../enums/_api_.paymentchannelenum.md)
 
-*Defined in api.ts:4571*
+*Defined in api.ts:4564*
 
 **`memberof`** Payment
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4535*
+*Defined in api.ts:4528*
 
 **`memberof`** Payment
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:4529*
+*Defined in api.ts:4522*
 
 **`memberof`** Payment
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **credits**: number
 
-*Defined in api.ts:4565*
+*Defined in api.ts:4558*
 
 **`memberof`** Payment
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **creditsFree**: number
 
-*Defined in api.ts:4559*
+*Defined in api.ts:4552*
 
 **`memberof`** Payment
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4505*
+*Defined in api.ts:4498*
 
 **`memberof`** Payment
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:4523*
+*Defined in api.ts:4516*
 
 **`memberof`** Payment
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:4517*
+*Defined in api.ts:4510*
 
 **`memberof`** Payment
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4511*
+*Defined in api.ts:4504*
 
 **`memberof`** Payment
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:4547*
+*Defined in api.ts:4540*
 
 **`memberof`** Payment
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **state**: [PaymentStateEnum](../enums/_api_.paymentstateenum.md)
 
-*Defined in api.ts:4541*
+*Defined in api.ts:4534*
 
 **`memberof`** Payment
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4553*
+*Defined in api.ts:4546*
 
 **`memberof`** Payment

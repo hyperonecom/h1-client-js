@@ -19,7 +19,7 @@
 
 •  **Http**: {} = "http"
 
-*Defined in api.ts:836*
+*Defined in api.ts:841*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Ws**: {} = "ws"
 
-*Defined in api.ts:837*
+*Defined in api.ts:842*

@@ -36,7 +36,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:435*
+*Defined in api.ts:361*
 
 **`memberof`** Backup
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:429*
+*Defined in api.ts:355*
 
 **`memberof`** Backup
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:411*
+*Defined in api.ts:337*
 
 **`memberof`** Backup
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:399*
+*Defined in api.ts:325*
 
 **`memberof`** Backup
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:423*
+*Defined in api.ts:349*
 
 **`memberof`** Backup
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:417*
+*Defined in api.ts:343*
 
 **`memberof`** Backup
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:405*
+*Defined in api.ts:331*
 
 **`memberof`** Backup
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:447*
+*Defined in api.ts:373*
 
 **`memberof`** Backup
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in api.ts:459*
+*Defined in api.ts:385*
 
 **`memberof`** Backup
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **source**: string
 
-*Defined in api.ts:465*
+*Defined in api.ts:391*
 
 **`memberof`** Backup
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **state**: [BackupStateEnum](../enums/_api_.backupstateenum.md)
 
-*Defined in api.ts:441*
+*Defined in api.ts:367*
 
 **`memberof`** Backup
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:471*
+*Defined in api.ts:397*
 
 **`memberof`** Backup
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:453*
+*Defined in api.ts:379*
 
 **`memberof`** Backup

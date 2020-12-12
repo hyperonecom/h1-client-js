@@ -24,6 +24,6 @@
 
 • `Optional` **\_private**: [NetgwPrivate](_api_.netgwprivate.md)
 
-*Defined in api.ts:4142*
+*Defined in api.ts:4166*
 
 **`memberof`** NetworkingProjectNetgwAttach

@@ -27,7 +27,7 @@
 
 •  **A**: {} = "A"
 
-*Defined in api.ts:1731*
+*Defined in api.ts:1742*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 •  **AAAA**: {} = "AAAA"
 
-*Defined in api.ts:1732*
+*Defined in api.ts:1743*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 •  **CAA**: {} = "CAA"
 
-*Defined in api.ts:1733*
+*Defined in api.ts:1744*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 •  **CNAME**: {} = "CNAME"
 
-*Defined in api.ts:1734*
+*Defined in api.ts:1745*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 •  **MX**: {} = "MX"
 
-*Defined in api.ts:1735*
+*Defined in api.ts:1746*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 •  **NS**: {} = "NS"
 
-*Defined in api.ts:1736*
+*Defined in api.ts:1747*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 •  **PTR**: {} = "PTR"
 
-*Defined in api.ts:1737*
+*Defined in api.ts:1748*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 •  **SOA**: {} = "SOA"
 
-*Defined in api.ts:1738*
+*Defined in api.ts:1749*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 •  **SRV**: {} = "SRV"
 
-*Defined in api.ts:1739*
+*Defined in api.ts:1750*
 
 ___
 
@@ -99,4 +99,4 @@ ___
 
 •  **TXT**: {} = "TXT"
 
-*Defined in api.ts:1740*
+*Defined in api.ts:1751*

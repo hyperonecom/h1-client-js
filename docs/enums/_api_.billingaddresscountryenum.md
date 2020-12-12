@@ -43,7 +43,7 @@
 
 •  **AD**: {} = "AD"
 
-*Defined in api.ts:583*
+*Defined in api.ts:509*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 •  **BE**: {} = "BE"
 
-*Defined in api.ts:584*
+*Defined in api.ts:510*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 •  **CY**: {} = "CY"
 
-*Defined in api.ts:586*
+*Defined in api.ts:512*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 •  **CZ**: {} = "CZ"
 
-*Defined in api.ts:587*
+*Defined in api.ts:513*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 •  **DE**: {} = "DE"
 
-*Defined in api.ts:592*
+*Defined in api.ts:518*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 •  **DK**: {} = "DK"
 
-*Defined in api.ts:588*
+*Defined in api.ts:514*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 •  **EE**: {} = "EE"
 
-*Defined in api.ts:589*
+*Defined in api.ts:515*
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 •  **ES**: {} = "ES"
 
-*Defined in api.ts:607*
+*Defined in api.ts:533*
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 •  **FI**: {} = "FI"
 
-*Defined in api.ts:590*
+*Defined in api.ts:516*
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 •  **FR**: {} = "FR"
 
-*Defined in api.ts:591*
+*Defined in api.ts:517*
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 •  **GB**: {} = "GB"
 
-*Defined in api.ts:608*
+*Defined in api.ts:534*
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 •  **GR**: {} = "GR"
 
-*Defined in api.ts:593*
+*Defined in api.ts:519*
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 •  **HR**: {} = "HR"
 
-*Defined in api.ts:585*
+*Defined in api.ts:511*
 
 ___
 
@@ -147,7 +147,7 @@ ___
 
 •  **HU**: {} = "HU"
 
-*Defined in api.ts:594*
+*Defined in api.ts:520*
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 •  **IE**: {} = "IE"
 
-*Defined in api.ts:595*
+*Defined in api.ts:521*
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 •  **IT**: {} = "IT"
 
-*Defined in api.ts:596*
+*Defined in api.ts:522*
 
 ___
 
@@ -171,7 +171,7 @@ ___
 
 •  **LT**: {} = "LT"
 
-*Defined in api.ts:598*
+*Defined in api.ts:524*
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 •  **LU**: {} = "LU"
 
-*Defined in api.ts:599*
+*Defined in api.ts:525*
 
 ___
 
@@ -187,7 +187,7 @@ ___
 
 •  **LV**: {} = "LV"
 
-*Defined in api.ts:597*
+*Defined in api.ts:523*
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 •  **MT**: {} = "MT"
 
-*Defined in api.ts:600*
+*Defined in api.ts:526*
 
 ___
 
@@ -203,7 +203,7 @@ ___
 
 •  **NL**: {} = "NL"
 
-*Defined in api.ts:601*
+*Defined in api.ts:527*
 
 ___
 
@@ -211,7 +211,7 @@ ___
 
 •  **PL**: {} = "PL"
 
-*Defined in api.ts:602*
+*Defined in api.ts:528*
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 •  **PT**: {} = "PT"
 
-*Defined in api.ts:603*
+*Defined in api.ts:529*
 
 ___
 
@@ -227,7 +227,7 @@ ___
 
 •  **RO**: {} = "RO"
 
-*Defined in api.ts:604*
+*Defined in api.ts:530*
 
 ___
 
@@ -235,7 +235,7 @@ ___
 
 •  **SI**: {} = "SI"
 
-*Defined in api.ts:606*
+*Defined in api.ts:532*
 
 ___
 
@@ -243,4 +243,4 @@ ___
 
 •  **SK**: {} = "SK"
 
-*Defined in api.ts:605*
+*Defined in api.ts:531*

@@ -31,7 +31,7 @@
 
 • `Optional` **end**: string
 
-*Defined in api.ts:665*
+*Defined in api.ts:591*
 
 **`memberof`** BillingCharges
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:647*
+*Defined in api.ts:573*
 
 **`memberof`** BillingCharges
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **paidFrom**: string
 
-*Defined in api.ts:683*
+*Defined in api.ts:609*
 
 **`memberof`** BillingCharges
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **paidOn**: string
 
-*Defined in api.ts:689*
+*Defined in api.ts:615*
 
 **`memberof`** BillingCharges
 
@@ -71,7 +71,7 @@ ___
 
 • `Optional` **price**: number
 
-*Defined in api.ts:671*
+*Defined in api.ts:597*
 
 **`memberof`** BillingCharges
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **quantity**: number
 
-*Defined in api.ts:677*
+*Defined in api.ts:603*
 
 **`memberof`** BillingCharges
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **start**: string
 
-*Defined in api.ts:659*
+*Defined in api.ts:585*
 
 **`memberof`** BillingCharges
 
@@ -101,6 +101,6 @@ ___
 
 • `Optional` **value**: number
 
-*Defined in api.ts:653*
+*Defined in api.ts:579*
 
 **`memberof`** BillingCharges

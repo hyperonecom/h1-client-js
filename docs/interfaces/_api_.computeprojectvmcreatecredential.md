@@ -25,7 +25,7 @@
 
 •  **type**: [ComputeProjectVmCreateCredentialTypeEnum](../enums/_api_.computeprojectvmcreatecredentialtypeenum.md)
 
-*Defined in api.ts:924*
+*Defined in api.ts:929*
 
 **`memberof`** ComputeProjectVmCreateCredential
 
@@ -35,7 +35,7 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:930*
+*Defined in api.ts:935*
 
 - user credential (by id or name) - project credential (by id or name) - raw openssh public key (starting with `ssh-rsa/ssh-ed25519`) - defaults to user keys
 

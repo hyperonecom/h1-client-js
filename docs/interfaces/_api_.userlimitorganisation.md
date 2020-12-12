@@ -24,6 +24,6 @@
 
 •  **count**: number
 
-*Defined in api.ts:6998*
+*Defined in api.ts:7136*
 
 **`memberof`** UserLimitOrganisation
