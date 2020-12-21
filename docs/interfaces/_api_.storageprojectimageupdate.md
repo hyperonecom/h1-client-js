@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / StorageProjectImageUpdate
 
@@ -25,7 +25,7 @@
 
 • `Optional` **description**: string
 
-*Defined in api.ts:6455*
+*Defined in api.ts:6449*
 
 **`memberof`** StorageProjectImageUpdate
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:6449*
+*Defined in api.ts:6443*
 
 **`memberof`** StorageProjectImageUpdate

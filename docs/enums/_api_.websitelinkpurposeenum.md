@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / WebsiteLinkPurposeEnum
 
@@ -18,4 +18,4 @@
 
 •  **Logs**: {} = "logs"
 
-*Defined in api.ts:7769*
+*Defined in api.ts:7763*

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectQuotaLimitPatch
 
@@ -24,6 +24,6 @@
 
 • `Optional` **user**: number
 
-*Defined in api.ts:2273*
+*Defined in api.ts:2267*
 
 **`memberof`** IamProjectQuotaLimitPatch

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / NetworkingProjectNetgwAttach
 
@@ -24,6 +24,6 @@
 
 • `Optional` **\_private**: [NetgwPrivate](_api_.netgwprivate.md)
 
-*Defined in api.ts:4166*
+*Defined in api.ts:4160*
 
 **`memberof`** NetworkingProjectNetgwAttach

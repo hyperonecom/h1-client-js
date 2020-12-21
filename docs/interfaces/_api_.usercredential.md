@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / UserCredential
 
@@ -31,7 +31,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:7067*
+*Defined in api.ts:7061*
 
 **`memberof`** UserCredential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:7073*
+*Defined in api.ts:7067*
 
 **`memberof`** UserCredential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **fingerprint**: string
 
-*Defined in api.ts:7091*
+*Defined in api.ts:7085*
 
 **`memberof`** UserCredential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7055*
+*Defined in api.ts:7049*
 
 **`memberof`** UserCredential
 
@@ -71,7 +71,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:7061*
+*Defined in api.ts:7055*
 
 **`memberof`** UserCredential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **token**: string
 
-*Defined in api.ts:7097*
+*Defined in api.ts:7091*
 
 **`memberof`** UserCredential
 
@@ -91,7 +91,7 @@ ___
 
 •  **type**: [UserCredentialTypeEnum](../enums/_api_.usercredentialtypeenum.md)
 
-*Defined in api.ts:7079*
+*Defined in api.ts:7073*
 
 **`memberof`** UserCredential
 
@@ -101,6 +101,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:7085*
+*Defined in api.ts:7079*
 
 **`memberof`** UserCredential

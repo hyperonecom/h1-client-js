@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / UserLimitOrganisation
 
@@ -24,6 +24,6 @@
 
 •  **count**: number
 
-*Defined in api.ts:7136*
+*Defined in api.ts:7130*
 
 **`memberof`** UserLimitOrganisation

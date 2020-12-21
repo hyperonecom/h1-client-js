@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectThresholdCreate
 
@@ -28,7 +28,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:2393*
+*Defined in api.ts:2387*
 
 **`memberof`** IamProjectThresholdCreate
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:2399*
+*Defined in api.ts:2393*
 
 **`memberof`** IamProjectThresholdCreate
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:2405*
+*Defined in api.ts:2399*
 
 **`memberof`** IamProjectThresholdCreate
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:2417*
+*Defined in api.ts:2411*
 
 **`memberof`** IamProjectThresholdCreate
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **value**: number
 
-*Defined in api.ts:2411*
+*Defined in api.ts:2405*
 
 **`memberof`** IamProjectThresholdCreate

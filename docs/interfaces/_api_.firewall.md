@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Firewall
 
@@ -34,7 +34,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:1906*
+*Defined in api.ts:1900*
 
 **`memberof`** Firewall
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:1900*
+*Defined in api.ts:1894*
 
 **`memberof`** Firewall
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:1882*
+*Defined in api.ts:1876*
 
 **`memberof`** Firewall
 
@@ -64,7 +64,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1870*
+*Defined in api.ts:1864*
 
 **`memberof`** Firewall
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:1894*
+*Defined in api.ts:1888*
 
 **`memberof`** Firewall
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:1888*
+*Defined in api.ts:1882*
 
 **`memberof`** Firewall
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:1876*
+*Defined in api.ts:1870*
 
 **`memberof`** Firewall
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:1918*
+*Defined in api.ts:1912*
 
 **`memberof`** Firewall
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **state**: [FirewallStateEnum](../enums/_api_.firewallstateenum.md)
 
-*Defined in api.ts:1912*
+*Defined in api.ts:1906*
 
 **`memberof`** Firewall
 
@@ -124,7 +124,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:1930*
+*Defined in api.ts:1924*
 
 **`memberof`** Firewall
 
@@ -134,6 +134,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:1924*
+*Defined in api.ts:1918*
 
 **`memberof`** Firewall

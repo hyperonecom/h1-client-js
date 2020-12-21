@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Sa
 
@@ -34,7 +34,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:5963*
+*Defined in api.ts:5957*
 
 **`memberof`** Sa
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5957*
+*Defined in api.ts:5951*
 
 **`memberof`** Sa
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:5939*
+*Defined in api.ts:5933*
 
 **`memberof`** Sa
 
@@ -64,7 +64,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5927*
+*Defined in api.ts:5921*
 
 **`memberof`** Sa
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:5951*
+*Defined in api.ts:5945*
 
 **`memberof`** Sa
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:5945*
+*Defined in api.ts:5939*
 
 **`memberof`** Sa
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5933*
+*Defined in api.ts:5927*
 
 **`memberof`** Sa
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:5975*
+*Defined in api.ts:5969*
 
 **`memberof`** Sa
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **state**: [SaStateEnum](../enums/_api_.sastateenum.md)
 
-*Defined in api.ts:5969*
+*Defined in api.ts:5963*
 
 **`memberof`** Sa
 
@@ -124,7 +124,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5987*
+*Defined in api.ts:5981*
 
 **`memberof`** Sa
 
@@ -134,6 +134,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:5981*
+*Defined in api.ts:5975*
 
 **`memberof`** Sa

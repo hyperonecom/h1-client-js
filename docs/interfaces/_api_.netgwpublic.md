@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / NetgwPublic
 
@@ -24,6 +24,6 @@
 
 •  **ip**: string
 
-*Defined in api.ts:3828*
+*Defined in api.ts:3822*
 
 **`memberof`** NetgwPublic

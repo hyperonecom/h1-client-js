@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IpAssociated
 
@@ -26,7 +26,7 @@
 
 • `Optional` **fip**: string
 
-*Defined in api.ts:3158*
+*Defined in api.ts:3152*
 
 **`memberof`** IpAssociated
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **ip**: string
 
-*Defined in api.ts:3152*
+*Defined in api.ts:3146*
 
 **`memberof`** IpAssociated
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **netadp**: string
 
-*Defined in api.ts:3164*
+*Defined in api.ts:3158*
 
 **`memberof`** IpAssociated

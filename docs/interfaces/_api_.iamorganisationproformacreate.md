@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamOrganisationProformaCreate
 
@@ -25,7 +25,7 @@
 
 •  **amount**: number
 
-*Defined in api.ts:2076*
+*Defined in api.ts:2070*
 
 **`memberof`** IamOrganisationProformaCreate
 
@@ -35,6 +35,6 @@ ___
 
 •  **project**: string
 
-*Defined in api.ts:2082*
+*Defined in api.ts:2076*
 
 **`memberof`** IamOrganisationProformaCreate

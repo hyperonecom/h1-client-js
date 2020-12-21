@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Website
 
@@ -36,7 +36,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:7589*
+*Defined in api.ts:7583*
 
 **`memberof`** Website
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:7583*
+*Defined in api.ts:7577*
 
 **`memberof`** Website
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:7565*
+*Defined in api.ts:7559*
 
 **`memberof`** Website
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:7619*
+*Defined in api.ts:7613*
 
 **`memberof`** Website
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7553*
+*Defined in api.ts:7547*
 
 **`memberof`** Website
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **image**: string
 
-*Defined in api.ts:7613*
+*Defined in api.ts:7607*
 
 **`memberof`** Website
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:7577*
+*Defined in api.ts:7571*
 
 **`memberof`** Website
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:7571*
+*Defined in api.ts:7565*
 
 **`memberof`** Website
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:7559*
+*Defined in api.ts:7553*
 
 **`memberof`** Website
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:7601*
+*Defined in api.ts:7595*
 
 **`memberof`** Website
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **state**: [WebsiteStateEnum](../enums/_api_.websitestateenum.md)
 
-*Defined in api.ts:7595*
+*Defined in api.ts:7589*
 
 **`memberof`** Website
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:7625*
+*Defined in api.ts:7619*
 
 **`memberof`** Website
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:7607*
+*Defined in api.ts:7601*
 
 **`memberof`** Website

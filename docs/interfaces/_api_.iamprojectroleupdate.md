@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectRoleUpdate
 
@@ -25,7 +25,7 @@
 
 • `Optional` **description**: string
 
-*Defined in api.ts:2329*
+*Defined in api.ts:2323*
 
 **`memberof`** IamProjectRoleUpdate
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:2323*
+*Defined in api.ts:2317*
 
 **`memberof`** IamProjectRoleUpdate

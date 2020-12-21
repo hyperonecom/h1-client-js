@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectPolicyCreateActor
 
@@ -24,6 +24,6 @@
 
 • `Optional` **value**: string
 
-*Defined in api.ts:2247*
+*Defined in api.ts:2241*
 
 **`memberof`** IamProjectPolicyCreateActor

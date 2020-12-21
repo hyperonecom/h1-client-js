@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Tag
 
@@ -26,7 +26,7 @@
 
 •  **id**: string
 
-*Defined in api.ts:6857*
+*Defined in api.ts:6851*
 
 **`memberof`** Tag
 
@@ -36,7 +36,7 @@ ___
 
 •  **key**: string
 
-*Defined in api.ts:6863*
+*Defined in api.ts:6857*
 
 **`memberof`** Tag
 
@@ -46,6 +46,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:6869*
+*Defined in api.ts:6863*
 
 **`memberof`** Tag

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / VaultStateEnum
 
@@ -22,7 +22,7 @@
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:7239*
+*Defined in api.ts:7233*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **Off**: {} = "Off"
 
-*Defined in api.ts:7236*
+*Defined in api.ts:7230*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **Online**: {} = "Online"
 
-*Defined in api.ts:7235*
+*Defined in api.ts:7229*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:7238*
+*Defined in api.ts:7232*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:7237*
+*Defined in api.ts:7231*

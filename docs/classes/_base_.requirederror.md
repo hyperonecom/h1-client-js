@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["base"](../modules/_base_.md) / RequiredError
 
@@ -32,7 +32,7 @@
 
 \+ **new RequiredError**(`field`: string, `msg?`: string): [RequiredError](_base_.requirederror.md)
 
-*Defined in base.ts:66*
+*Defined in base.ts:67*
 
 #### Parameters:
 
@@ -49,7 +49,7 @@ Name | Type |
 
 •  **field**: string
 
-*Defined in base.ts:67*
+*Defined in base.ts:68*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 *Overrides void*
 
-*Defined in base.ts:66*
+*Defined in base.ts:67*
 
 ___
 

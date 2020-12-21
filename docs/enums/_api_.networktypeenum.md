@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / NetworkTypeEnum
 
@@ -19,7 +19,7 @@
 
 •  **Private**: {} = "private"
 
-*Defined in api.ts:3956*
+*Defined in api.ts:3950*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Public**: {} = "public"
 
-*Defined in api.ts:3955*
+*Defined in api.ts:3949*

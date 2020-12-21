@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / AuthTokenAccessMethodEnum
 
@@ -10,48 +10,48 @@
 
 ### Enumeration members
 
-* [ALL](_api_.authtokenaccessmethodenum.md#all)
-* [DELETE](_api_.authtokenaccessmethodenum.md#delete)
-* [GET](_api_.authtokenaccessmethodenum.md#get)
-* [PATCH](_api_.authtokenaccessmethodenum.md#patch)
-* [POST](_api_.authtokenaccessmethodenum.md#post)
+* [All](_api_.authtokenaccessmethodenum.md#all)
+* [Delete](_api_.authtokenaccessmethodenum.md#delete)
+* [Get](_api_.authtokenaccessmethodenum.md#get)
+* [Patch](_api_.authtokenaccessmethodenum.md#patch)
+* [Post](_api_.authtokenaccessmethodenum.md#post)
 
 ## Enumeration members
 
-### ALL
+### All
 
-•  **ALL**: {} = "ALL"
+•  **All**: {} = "ALL"
 
 *Defined in api.ts:307*
 
 ___
 
-### DELETE
+### Delete
 
-•  **DELETE**: {} = "DELETE"
+•  **Delete**: {} = "DELETE"
 
 *Defined in api.ts:311*
 
 ___
 
-### GET
+### Get
 
-•  **GET**: {} = "GET"
+•  **Get**: {} = "GET"
 
 *Defined in api.ts:308*
 
 ___
 
-### PATCH
+### Patch
 
-•  **PATCH**: {} = "PATCH"
+•  **Patch**: {} = "PATCH"
 
 *Defined in api.ts:310*
 
 ___
 
-### POST
+### Post
 
-•  **POST**: {} = "POST"
+•  **Post**: {} = "POST"
 
 *Defined in api.ts:309*

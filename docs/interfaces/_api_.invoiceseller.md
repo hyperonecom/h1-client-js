@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / InvoiceSeller
 
@@ -26,7 +26,7 @@
 
 • `Optional` **address**: [InvoiceSellerAddress](_api_.invoiceselleraddress.md)
 
-*Defined in api.ts:2982*
+*Defined in api.ts:2976*
 
 **`memberof`** InvoiceSeller
 
@@ -36,7 +36,7 @@ ___
 
 •  **company**: string
 
-*Defined in api.ts:2976*
+*Defined in api.ts:2970*
 
 **`memberof`** InvoiceSeller
 
@@ -46,6 +46,6 @@ ___
 
 •  **nip**: string
 
-*Defined in api.ts:2988*
+*Defined in api.ts:2982*
 
 **`memberof`** InvoiceSeller

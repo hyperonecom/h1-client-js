@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamActor
 
@@ -25,7 +25,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1999*
+*Defined in api.ts:1993*
 
 **`memberof`** IamActor
 
@@ -35,7 +35,7 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:2005*
+*Defined in api.ts:1999*
 
 one of: * E-mail * User URI * Service Account URI * \'me\' -§ requestor
 

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / BillingAddressCountryEnum
 
@@ -10,237 +10,237 @@
 
 ### Enumeration members
 
-* [AD](_api_.billingaddresscountryenum.md#ad)
-* [BE](_api_.billingaddresscountryenum.md#be)
-* [CY](_api_.billingaddresscountryenum.md#cy)
-* [CZ](_api_.billingaddresscountryenum.md#cz)
-* [DE](_api_.billingaddresscountryenum.md#de)
-* [DK](_api_.billingaddresscountryenum.md#dk)
-* [EE](_api_.billingaddresscountryenum.md#ee)
-* [ES](_api_.billingaddresscountryenum.md#es)
-* [FI](_api_.billingaddresscountryenum.md#fi)
-* [FR](_api_.billingaddresscountryenum.md#fr)
-* [GB](_api_.billingaddresscountryenum.md#gb)
-* [GR](_api_.billingaddresscountryenum.md#gr)
-* [HR](_api_.billingaddresscountryenum.md#hr)
-* [HU](_api_.billingaddresscountryenum.md#hu)
-* [IE](_api_.billingaddresscountryenum.md#ie)
-* [IT](_api_.billingaddresscountryenum.md#it)
-* [LT](_api_.billingaddresscountryenum.md#lt)
-* [LU](_api_.billingaddresscountryenum.md#lu)
-* [LV](_api_.billingaddresscountryenum.md#lv)
-* [MT](_api_.billingaddresscountryenum.md#mt)
-* [NL](_api_.billingaddresscountryenum.md#nl)
-* [PL](_api_.billingaddresscountryenum.md#pl)
-* [PT](_api_.billingaddresscountryenum.md#pt)
-* [RO](_api_.billingaddresscountryenum.md#ro)
-* [SI](_api_.billingaddresscountryenum.md#si)
-* [SK](_api_.billingaddresscountryenum.md#sk)
+* [Ad](_api_.billingaddresscountryenum.md#ad)
+* [Be](_api_.billingaddresscountryenum.md#be)
+* [Cy](_api_.billingaddresscountryenum.md#cy)
+* [Cz](_api_.billingaddresscountryenum.md#cz)
+* [De](_api_.billingaddresscountryenum.md#de)
+* [Dk](_api_.billingaddresscountryenum.md#dk)
+* [Ee](_api_.billingaddresscountryenum.md#ee)
+* [Es](_api_.billingaddresscountryenum.md#es)
+* [Fi](_api_.billingaddresscountryenum.md#fi)
+* [Fr](_api_.billingaddresscountryenum.md#fr)
+* [Gb](_api_.billingaddresscountryenum.md#gb)
+* [Gr](_api_.billingaddresscountryenum.md#gr)
+* [Hr](_api_.billingaddresscountryenum.md#hr)
+* [Hu](_api_.billingaddresscountryenum.md#hu)
+* [Ie](_api_.billingaddresscountryenum.md#ie)
+* [It](_api_.billingaddresscountryenum.md#it)
+* [Lt](_api_.billingaddresscountryenum.md#lt)
+* [Lu](_api_.billingaddresscountryenum.md#lu)
+* [Lv](_api_.billingaddresscountryenum.md#lv)
+* [Mt](_api_.billingaddresscountryenum.md#mt)
+* [Nl](_api_.billingaddresscountryenum.md#nl)
+* [Pl](_api_.billingaddresscountryenum.md#pl)
+* [Pt](_api_.billingaddresscountryenum.md#pt)
+* [Ro](_api_.billingaddresscountryenum.md#ro)
+* [Si](_api_.billingaddresscountryenum.md#si)
+* [Sk](_api_.billingaddresscountryenum.md#sk)
 
 ## Enumeration members
 
-### AD
+### Ad
 
-•  **AD**: {} = "AD"
+•  **Ad**: {} = "AD"
 
 *Defined in api.ts:509*
 
 ___
 
-### BE
+### Be
 
-•  **BE**: {} = "BE"
+•  **Be**: {} = "BE"
 
 *Defined in api.ts:510*
 
 ___
 
-### CY
+### Cy
 
-•  **CY**: {} = "CY"
+•  **Cy**: {} = "CY"
 
 *Defined in api.ts:512*
 
 ___
 
-### CZ
+### Cz
 
-•  **CZ**: {} = "CZ"
+•  **Cz**: {} = "CZ"
 
 *Defined in api.ts:513*
 
 ___
 
-### DE
+### De
 
-•  **DE**: {} = "DE"
+•  **De**: {} = "DE"
 
 *Defined in api.ts:518*
 
 ___
 
-### DK
+### Dk
 
-•  **DK**: {} = "DK"
+•  **Dk**: {} = "DK"
 
 *Defined in api.ts:514*
 
 ___
 
-### EE
+### Ee
 
-•  **EE**: {} = "EE"
+•  **Ee**: {} = "EE"
 
 *Defined in api.ts:515*
 
 ___
 
-### ES
+### Es
 
-•  **ES**: {} = "ES"
+•  **Es**: {} = "ES"
 
 *Defined in api.ts:533*
 
 ___
 
-### FI
+### Fi
 
-•  **FI**: {} = "FI"
+•  **Fi**: {} = "FI"
 
 *Defined in api.ts:516*
 
 ___
 
-### FR
+### Fr
 
-•  **FR**: {} = "FR"
+•  **Fr**: {} = "FR"
 
 *Defined in api.ts:517*
 
 ___
 
-### GB
+### Gb
 
-•  **GB**: {} = "GB"
+•  **Gb**: {} = "GB"
 
 *Defined in api.ts:534*
 
 ___
 
-### GR
+### Gr
 
-•  **GR**: {} = "GR"
+•  **Gr**: {} = "GR"
 
 *Defined in api.ts:519*
 
 ___
 
-### HR
+### Hr
 
-•  **HR**: {} = "HR"
+•  **Hr**: {} = "HR"
 
 *Defined in api.ts:511*
 
 ___
 
-### HU
+### Hu
 
-•  **HU**: {} = "HU"
+•  **Hu**: {} = "HU"
 
 *Defined in api.ts:520*
 
 ___
 
-### IE
+### Ie
 
-•  **IE**: {} = "IE"
+•  **Ie**: {} = "IE"
 
 *Defined in api.ts:521*
 
 ___
 
-### IT
+### It
 
-•  **IT**: {} = "IT"
+•  **It**: {} = "IT"
 
 *Defined in api.ts:522*
 
 ___
 
-### LT
+### Lt
 
-•  **LT**: {} = "LT"
+•  **Lt**: {} = "LT"
 
 *Defined in api.ts:524*
 
 ___
 
-### LU
+### Lu
 
-•  **LU**: {} = "LU"
+•  **Lu**: {} = "LU"
 
 *Defined in api.ts:525*
 
 ___
 
-### LV
+### Lv
 
-•  **LV**: {} = "LV"
+•  **Lv**: {} = "LV"
 
 *Defined in api.ts:523*
 
 ___
 
-### MT
+### Mt
 
-•  **MT**: {} = "MT"
+•  **Mt**: {} = "MT"
 
 *Defined in api.ts:526*
 
 ___
 
-### NL
+### Nl
 
-•  **NL**: {} = "NL"
+•  **Nl**: {} = "NL"
 
 *Defined in api.ts:527*
 
 ___
 
-### PL
+### Pl
 
-•  **PL**: {} = "PL"
+•  **Pl**: {} = "PL"
 
 *Defined in api.ts:528*
 
 ___
 
-### PT
+### Pt
 
-•  **PT**: {} = "PT"
+•  **Pt**: {} = "PT"
 
 *Defined in api.ts:529*
 
 ___
 
-### RO
+### Ro
 
-•  **RO**: {} = "RO"
+•  **Ro**: {} = "RO"
 
 *Defined in api.ts:530*
 
 ___
 
-### SI
+### Si
 
-•  **SI**: {} = "SI"
+•  **Si**: {} = "SI"
 
 *Defined in api.ts:532*
 
 ___
 
-### SK
+### Sk
 
-•  **SK**: {} = "SK"
+•  **Sk**: {} = "SK"
 
 *Defined in api.ts:531*

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / VmhostProjectInstanceApi
 
@@ -48,7 +48,7 @@ VmhostProjectInstanceApi - object-oriented interface
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[constructor](_base_.baseapi.md#constructor)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 #### Parameters:
 
@@ -68,7 +68,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[axios](_base_.baseapi.md#axios)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[basePath](_base_.baseapi.md#basepath)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[configuration](_base_.baseapi.md#configuration)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 ## Methods
 
@@ -96,7 +96,7 @@ ___
 
 ▸ **vmhostProjectInstanceEventGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:69804*
+*Defined in api.ts:74716*
 
 Get vmhost/instance.event
 
@@ -124,7 +124,7 @@ ___
 
 ▸ **vmhostProjectInstanceEventList**(`projectId`: string, `locationId`: string, `instanceId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:69820*
+*Defined in api.ts:74732*
 
 List vmhost/instance.event
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **vmhostProjectInstanceGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[Vmhost](../interfaces/_api_.vmhost.md)>>
 
-*Defined in api.ts:69834*
+*Defined in api.ts:74746*
 
 Returns a single instance
 
@@ -180,7 +180,7 @@ ___
 
 ▸ **vmhostProjectInstanceList**(`projectId`: string, `locationId`: string, `enabledServices?`: string, `options?`: any): Promise\<AxiosResponse\<[Vmhost](../interfaces/_api_.vmhost.md)[]>>
 
-*Defined in api.ts:69848*
+*Defined in api.ts:74760*
 
 List instance
 
@@ -207,7 +207,7 @@ ___
 
 ▸ **vmhostProjectInstanceServiceGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:69863*
+*Defined in api.ts:74775*
 
 Get vmhost/instance.service
 
@@ -235,7 +235,7 @@ ___
 
 ▸ **vmhostProjectInstanceServiceList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:69877*
+*Defined in api.ts:74789*
 
 List vmhost/instance.service
 
@@ -262,7 +262,7 @@ ___
 
 ▸ **vmhostProjectInstanceTagCreate**(`projectId`: string, `locationId`: string, `instanceId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:69892*
+*Defined in api.ts:74804*
 
 Create vmhost/instance.tag
 
@@ -290,7 +290,7 @@ ___
 
 ▸ **vmhostProjectInstanceTagDelete**(`projectId`: string, `locationId`: string, `instanceId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:69907*
+*Defined in api.ts:74819*
 
 Delete vmhost/instance.tag
 
@@ -318,7 +318,7 @@ ___
 
 ▸ **vmhostProjectInstanceTagGet**(`projectId`: string, `locationId`: string, `instanceId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:69922*
+*Defined in api.ts:74834*
 
 Get vmhost/instance.tag
 
@@ -346,7 +346,7 @@ ___
 
 ▸ **vmhostProjectInstanceTagList**(`projectId`: string, `locationId`: string, `instanceId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:69936*
+*Defined in api.ts:74848*
 
 List vmhost/instance.tag
 
@@ -373,7 +373,7 @@ ___
 
 ▸ **vmhostProjectInstanceTagPut**(`projectId`: string, `locationId`: string, `instanceId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:69951*
+*Defined in api.ts:74863*
 
 Replace vmhost/instance.tag
 

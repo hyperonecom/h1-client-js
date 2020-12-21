@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ReservationStateEnum
 
@@ -22,7 +22,7 @@
 
 •  **Attached**: {} = "Attached"
 
-*Defined in api.ts:5734*
+*Defined in api.ts:5728*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **Billing**: {} = "Billing"
 
-*Defined in api.ts:5736*
+*Defined in api.ts:5730*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **Detached**: {} = "Detached"
 
-*Defined in api.ts:5733*
+*Defined in api.ts:5727*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Expired**: {} = "Expired"
 
-*Defined in api.ts:5735*
+*Defined in api.ts:5729*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:5737*
+*Defined in api.ts:5731*

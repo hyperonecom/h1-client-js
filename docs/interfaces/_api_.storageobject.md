@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / StorageObject
 
@@ -27,7 +27,7 @@
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:6285*
+*Defined in api.ts:6279*
 
 **`memberof`** StorageObject
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6267*
+*Defined in api.ts:6261*
 
 **`memberof`** StorageObject
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:6273*
+*Defined in api.ts:6267*
 
 **`memberof`** StorageObject
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in api.ts:6279*
+*Defined in api.ts:6273*
 
 **`memberof`** StorageObject

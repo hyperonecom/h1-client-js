@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / SupportProjectTicketCreateTypeEnum
 
@@ -20,7 +20,7 @@
 
 •  **Billing**: {} = "billing"
 
-*Defined in api.ts:6842*
+*Defined in api.ts:6836*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 •  **Sales**: {} = "sales"
 
-*Defined in api.ts:6841*
+*Defined in api.ts:6835*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 •  **ServiceSupport**: {} = "service support"
 
-*Defined in api.ts:6843*
+*Defined in api.ts:6837*

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / QuotaMetric
 
@@ -25,7 +25,7 @@
 
 • `Optional` **key**: string
 
-*Defined in api.ts:5318*
+*Defined in api.ts:5312*
 
 **`memberof`** QuotaMetric
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **unit**: string
 
-*Defined in api.ts:5324*
+*Defined in api.ts:5318*
 
 **`memberof`** QuotaMetric

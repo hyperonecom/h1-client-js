@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ResourceConnect
 
@@ -29,7 +29,7 @@
 
 • `Optional` **example**: string
 
-*Defined in api.ts:5781*
+*Defined in api.ts:5775*
 
 **`memberof`** ResourceConnect
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **host**: string
 
-*Defined in api.ts:5775*
+*Defined in api.ts:5769*
 
 **`memberof`** ResourceConnect
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5751*
+*Defined in api.ts:5745*
 
 **`memberof`** ResourceConnect
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5757*
+*Defined in api.ts:5751*
 
 **`memberof`** ResourceConnect
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:5763*
+*Defined in api.ts:5757*
 
 **`memberof`** ResourceConnect
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **username**: string
 
-*Defined in api.ts:5769*
+*Defined in api.ts:5763*
 
 **`memberof`** ResourceConnect

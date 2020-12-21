@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ZoneSource
 
@@ -24,6 +24,6 @@
 
 • `Optional` **dnsProbing**: boolean
 
-*Defined in api.ts:8081*
+*Defined in api.ts:8075*
 
 **`memberof`** ZoneSource

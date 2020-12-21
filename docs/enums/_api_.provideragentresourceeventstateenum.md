@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ProviderAgentResourceEventStateEnum
 
@@ -21,7 +21,7 @@
 
 •  **Error**: {} = "error"
 
-*Defined in api.ts:5178*
+*Defined in api.ts:5172*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **Finished**: {} = "finished"
 
-*Defined in api.ts:5177*
+*Defined in api.ts:5171*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **Pending**: {} = "pending"
 
-*Defined in api.ts:5175*
+*Defined in api.ts:5169*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **Processing**: {} = "processing"
 
-*Defined in api.ts:5176*
+*Defined in api.ts:5170*

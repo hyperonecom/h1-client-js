@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / NetworkingProjectNetworkCreate
 
@@ -27,7 +27,7 @@
 
 • `Optional` **address**: string
 
-*Defined in api.ts:4223*
+*Defined in api.ts:4217*
 
 **`memberof`** NetworkingProjectNetworkCreate
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **gateway**: string
 
-*Defined in api.ts:4229*
+*Defined in api.ts:4223*
 
 **`memberof`** NetworkingProjectNetworkCreate
 
@@ -47,7 +47,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:4217*
+*Defined in api.ts:4211*
 
 **`memberof`** NetworkingProjectNetworkCreate
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4235*
+*Defined in api.ts:4229*
 
 **`memberof`** NetworkingProjectNetworkCreate

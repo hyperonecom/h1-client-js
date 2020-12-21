@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["base"](../modules/_base_.md) / RequestArgs
 
@@ -25,7 +25,7 @@
 
 •  **options**: any
 
-*Defined in base.ts:40*
+*Defined in base.ts:41*
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 •  **url**: string
 
-*Defined in base.ts:39*
+*Defined in base.ts:40*

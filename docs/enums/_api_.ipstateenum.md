@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IpStateEnum
 
@@ -20,7 +20,7 @@
 
 •  **Allocated**: {} = "Allocated"
 
-*Defined in api.ts:3137*
+*Defined in api.ts:3131*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 •  **Associated**: {} = "Associated"
 
-*Defined in api.ts:3136*
+*Defined in api.ts:3130*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 •  **Unallocated**: {} = "Unallocated"
 
-*Defined in api.ts:3138*
+*Defined in api.ts:3132*

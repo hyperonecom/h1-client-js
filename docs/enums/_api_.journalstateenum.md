@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / JournalStateEnum
 
@@ -21,7 +21,7 @@
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:3396*
+*Defined in api.ts:3390*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **Online**: {} = "Online"
 
-*Defined in api.ts:3393*
+*Defined in api.ts:3387*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:3395*
+*Defined in api.ts:3389*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:3394*
+*Defined in api.ts:3388*

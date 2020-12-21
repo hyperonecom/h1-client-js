@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / WebsiteStateEnum
 
@@ -23,7 +23,7 @@
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:7638*
+*Defined in api.ts:7632*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 •  **Off**: {} = "Off"
 
-*Defined in api.ts:7635*
+*Defined in api.ts:7629*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:7637*
+*Defined in api.ts:7631*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 •  **Restarting**: {} = "Restarting"
 
-*Defined in api.ts:7634*
+*Defined in api.ts:7628*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 •  **Running**: {} = "Running"
 
-*Defined in api.ts:7633*
+*Defined in api.ts:7627*
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:7636*
+*Defined in api.ts:7630*

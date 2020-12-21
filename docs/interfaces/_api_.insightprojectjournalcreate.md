@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / InsightProjectJournalCreate
 
@@ -27,7 +27,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:2632*
+*Defined in api.ts:2626*
 
 **`memberof`** InsightProjectJournalCreate
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **retention**: number
 
-*Defined in api.ts:2644*
+*Defined in api.ts:2638*
 
 **`memberof`** InsightProjectJournalCreate
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **service**: string
 
-*Defined in api.ts:2638*
+*Defined in api.ts:2632*
 
 **`memberof`** InsightProjectJournalCreate
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2650*
+*Defined in api.ts:2644*
 
 **`memberof`** InsightProjectJournalCreate

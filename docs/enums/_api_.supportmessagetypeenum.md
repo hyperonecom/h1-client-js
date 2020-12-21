@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / SupportMessageTypeEnum
 
@@ -19,7 +19,7 @@
 
 •  **Attachment**: {} = "attachment"
 
-*Defined in api.ts:6807*
+*Defined in api.ts:6801*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Text**: {} = "text"
 
-*Defined in api.ts:6806*
+*Defined in api.ts:6800*

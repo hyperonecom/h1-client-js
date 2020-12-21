@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / StorageProjectBucketApi
 
@@ -44,7 +44,7 @@ StorageProjectBucketApi - object-oriented interface
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[constructor](_base_.baseapi.md#constructor)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 #### Parameters:
 
@@ -64,7 +64,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[axios](_base_.baseapi.md#axios)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[basePath](_base_.baseapi.md#basepath)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[configuration](_base_.baseapi.md#configuration)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 ## Methods
 
@@ -92,7 +92,7 @@ ___
 
 ▸ **storageProjectBucketGet**(`projectId`: string, `locationId`: string, `bucketId`: string, `options?`: any): Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)>>
 
-*Defined in api.ts:59037*
+*Defined in api.ts:63112*
 
 Returns a single bucket
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **storageProjectBucketList**(`projectId`: string, `locationId`: string, `options?`: any): Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)[]>>
 
-*Defined in api.ts:59050*
+*Defined in api.ts:63125*
 
 List bucket
 
@@ -145,7 +145,7 @@ ___
 
 ▸ **storageProjectBucketObjectDelete**(`projectId`: string, `locationId`: string, `bucketId`: string, `objectId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:59065*
+*Defined in api.ts:63140*
 
 Delete storage/bucket.object
 
@@ -173,7 +173,7 @@ ___
 
 ▸ **storageProjectBucketObjectDownload**(`projectId`: string, `locationId`: string, `bucketId`: string, `objectId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:59080*
+*Defined in api.ts:63155*
 
 action download
 
@@ -201,7 +201,7 @@ ___
 
 ▸ **storageProjectBucketObjectGet**(`projectId`: string, `locationId`: string, `bucketId`: string, `objectId`: string, `options?`: any): Promise\<AxiosResponse\<[StorageObject](../interfaces/_api_.storageobject.md)>>
 
-*Defined in api.ts:59095*
+*Defined in api.ts:63170*
 
 Get storage/bucket.object
 
@@ -229,7 +229,7 @@ ___
 
 ▸ **storageProjectBucketObjectList**(`projectId`: string, `locationId`: string, `bucketId`: string, `options?`: any): Promise\<AxiosResponse\<[StorageObject](../interfaces/_api_.storageobject.md)[]>>
 
-*Defined in api.ts:59109*
+*Defined in api.ts:63184*
 
 List storage/bucket.object
 
@@ -256,7 +256,7 @@ ___
 
 ▸ **storageProjectBucketUpload**(`projectId`: string, `locationId`: string, `bucketId`: string, `storageProjectBucketUpload`: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)>>
 
-*Defined in api.ts:59125*
+*Defined in api.ts:63200*
 
 action upload
 

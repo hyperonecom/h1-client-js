@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / WebsiteSideapp
 
@@ -26,7 +26,7 @@
 
 •  **flavour**: string
 
-*Defined in api.ts:7890*
+*Defined in api.ts:7884*
 
 **`memberof`** WebsiteSideapp
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7884*
+*Defined in api.ts:7878*
 
 **`memberof`** WebsiteSideapp
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **url**: string
 
-*Defined in api.ts:7896*
+*Defined in api.ts:7890*
 
 Only available on the creation response
 

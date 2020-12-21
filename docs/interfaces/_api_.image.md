@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Image
 
@@ -38,7 +38,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:2546*
+*Defined in api.ts:2540*
 
 **`memberof`** Image
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:2540*
+*Defined in api.ts:2534*
 
 **`memberof`** Image
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **description**: string
 
-*Defined in api.ts:2570*
+*Defined in api.ts:2564*
 
 **`memberof`** Image
 
@@ -68,7 +68,7 @@ ___
 
 • `Optional` **disks**: number
 
-*Defined in api.ts:2576*
+*Defined in api.ts:2570*
 
 **`memberof`** Image
 
@@ -78,7 +78,7 @@ ___
 
 • `Optional` **fileSize**: number
 
-*Defined in api.ts:2582*
+*Defined in api.ts:2576*
 
 **`memberof`** Image
 
@@ -88,7 +88,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:2522*
+*Defined in api.ts:2516*
 
 **`memberof`** Image
 
@@ -98,7 +98,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:2510*
+*Defined in api.ts:2504*
 
 **`memberof`** Image
 
@@ -108,7 +108,7 @@ ___
 
 • `Optional` **license**: Array\<string>
 
-*Defined in api.ts:2588*
+*Defined in api.ts:2582*
 
 **`memberof`** Image
 
@@ -118,7 +118,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:2534*
+*Defined in api.ts:2528*
 
 **`memberof`** Image
 
@@ -128,7 +128,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:2528*
+*Defined in api.ts:2522*
 
 **`memberof`** Image
 
@@ -138,7 +138,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:2516*
+*Defined in api.ts:2510*
 
 **`memberof`** Image
 
@@ -148,7 +148,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:2558*
+*Defined in api.ts:2552*
 
 **`memberof`** Image
 
@@ -158,7 +158,7 @@ ___
 
 • `Optional` **state**: [ImageStateEnum](../enums/_api_.imagestateenum.md)
 
-*Defined in api.ts:2552*
+*Defined in api.ts:2546*
 
 **`memberof`** Image
 
@@ -168,7 +168,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2594*
+*Defined in api.ts:2588*
 
 **`memberof`** Image
 
@@ -178,6 +178,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:2564*
+*Defined in api.ts:2558*
 
 **`memberof`** Image

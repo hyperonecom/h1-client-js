@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / EventStateEnum
 
@@ -21,7 +21,7 @@
 
 •  **Error**: {} = "error"
 
-*Defined in api.ts:1856*
+*Defined in api.ts:1850*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **Finished**: {} = "finished"
 
-*Defined in api.ts:1855*
+*Defined in api.ts:1849*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **Pending**: {} = "pending"
 
-*Defined in api.ts:1853*
+*Defined in api.ts:1847*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **Processing**: {} = "processing"
 
-*Defined in api.ts:1854*
+*Defined in api.ts:1848*

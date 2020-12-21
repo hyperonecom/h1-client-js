@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / SupportProjectTicketCreate
 
@@ -26,7 +26,7 @@
 
 •  **message**: string
 
-*Defined in api.ts:6833*
+*Defined in api.ts:6827*
 
 **`memberof`** SupportProjectTicketCreate
 
@@ -36,7 +36,7 @@ ___
 
 •  **subject**: string
 
-*Defined in api.ts:6827*
+*Defined in api.ts:6821*
 
 **`memberof`** SupportProjectTicketCreate
 
@@ -46,6 +46,6 @@ ___
 
 •  **type**: [SupportProjectTicketCreateTypeEnum](../enums/_api_.supportprojectticketcreatetypeenum.md)
 
-*Defined in api.ts:6821*
+*Defined in api.ts:6815*
 
 **`memberof`** SupportProjectTicketCreate

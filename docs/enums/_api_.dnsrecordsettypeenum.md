@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / DnsRecordsetTypeEnum
 
@@ -11,15 +11,15 @@
 ### Enumeration members
 
 * [A](_api_.dnsrecordsettypeenum.md#a)
-* [AAAA](_api_.dnsrecordsettypeenum.md#aaaa)
-* [CAA](_api_.dnsrecordsettypeenum.md#caa)
-* [CNAME](_api_.dnsrecordsettypeenum.md#cname)
-* [MX](_api_.dnsrecordsettypeenum.md#mx)
-* [NS](_api_.dnsrecordsettypeenum.md#ns)
-* [PTR](_api_.dnsrecordsettypeenum.md#ptr)
-* [SOA](_api_.dnsrecordsettypeenum.md#soa)
-* [SRV](_api_.dnsrecordsettypeenum.md#srv)
-* [TXT](_api_.dnsrecordsettypeenum.md#txt)
+* [Aaaa](_api_.dnsrecordsettypeenum.md#aaaa)
+* [Caa](_api_.dnsrecordsettypeenum.md#caa)
+* [Cname](_api_.dnsrecordsettypeenum.md#cname)
+* [Mx](_api_.dnsrecordsettypeenum.md#mx)
+* [Ns](_api_.dnsrecordsettypeenum.md#ns)
+* [Ptr](_api_.dnsrecordsettypeenum.md#ptr)
+* [Soa](_api_.dnsrecordsettypeenum.md#soa)
+* [Srv](_api_.dnsrecordsettypeenum.md#srv)
+* [Txt](_api_.dnsrecordsettypeenum.md#txt)
 
 ## Enumeration members
 
@@ -27,76 +27,76 @@
 
 •  **A**: {} = "A"
 
+*Defined in api.ts:1736*
+
+___
+
+### Aaaa
+
+•  **Aaaa**: {} = "AAAA"
+
+*Defined in api.ts:1737*
+
+___
+
+### Caa
+
+•  **Caa**: {} = "CAA"
+
+*Defined in api.ts:1738*
+
+___
+
+### Cname
+
+•  **Cname**: {} = "CNAME"
+
+*Defined in api.ts:1739*
+
+___
+
+### Mx
+
+•  **Mx**: {} = "MX"
+
+*Defined in api.ts:1740*
+
+___
+
+### Ns
+
+•  **Ns**: {} = "NS"
+
+*Defined in api.ts:1741*
+
+___
+
+### Ptr
+
+•  **Ptr**: {} = "PTR"
+
 *Defined in api.ts:1742*
 
 ___
 
-### AAAA
+### Soa
 
-•  **AAAA**: {} = "AAAA"
+•  **Soa**: {} = "SOA"
 
 *Defined in api.ts:1743*
 
 ___
 
-### CAA
+### Srv
 
-•  **CAA**: {} = "CAA"
+•  **Srv**: {} = "SRV"
 
 *Defined in api.ts:1744*
 
 ___
 
-### CNAME
+### Txt
 
-•  **CNAME**: {} = "CNAME"
+•  **Txt**: {} = "TXT"
 
 *Defined in api.ts:1745*
-
-___
-
-### MX
-
-•  **MX**: {} = "MX"
-
-*Defined in api.ts:1746*
-
-___
-
-### NS
-
-•  **NS**: {} = "NS"
-
-*Defined in api.ts:1747*
-
-___
-
-### PTR
-
-•  **PTR**: {} = "PTR"
-
-*Defined in api.ts:1748*
-
-___
-
-### SOA
-
-•  **SOA**: {} = "SOA"
-
-*Defined in api.ts:1749*
-
-___
-
-### SRV
-
-•  **SRV**: {} = "SRV"
-
-*Defined in api.ts:1750*
-
-___
-
-### TXT
-
-•  **TXT**: {} = "TXT"
-
-*Defined in api.ts:1751*

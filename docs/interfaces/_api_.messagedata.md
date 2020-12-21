@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / MessageData
 
@@ -26,7 +26,7 @@
 
 • `Optional` **body**: string
 
-*Defined in api.ts:3521*
+*Defined in api.ts:3515*
 
 **`memberof`** MessageData
 
@@ -36,7 +36,7 @@ ___
 
 •  **mime**: [MessageDataMimeEnum](../enums/_api_.messagedatamimeenum.md)
 
-*Defined in api.ts:3509*
+*Defined in api.ts:3503*
 
 **`memberof`** MessageData
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **url**: string
 
-*Defined in api.ts:3515*
+*Defined in api.ts:3509*
 
 **`memberof`** MessageData

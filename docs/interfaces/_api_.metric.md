@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Metric
 
@@ -27,7 +27,7 @@
 
 • `Optional` **dimension**: Array\<[MetricDimension](_api_.metricdimension.md)>
 
-*Defined in api.ts:3563*
+*Defined in api.ts:3557*
 
 **`memberof`** Metric
 
@@ -37,7 +37,7 @@ ___
 
 •  **id**: string
 
-*Defined in api.ts:3545*
+*Defined in api.ts:3539*
 
 **`memberof`** Metric
 
@@ -47,7 +47,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:3551*
+*Defined in api.ts:3545*
 
 **`memberof`** Metric
 
@@ -57,6 +57,6 @@ ___
 
 •  **unit**: string
 
-*Defined in api.ts:3557*
+*Defined in api.ts:3551*
 
 **`memberof`** Metric

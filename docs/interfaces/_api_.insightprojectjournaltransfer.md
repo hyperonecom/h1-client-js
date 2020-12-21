@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / InsightProjectJournalTransfer
 
@@ -24,6 +24,6 @@
 
 •  **project**: string
 
-*Defined in api.ts:2676*
+*Defined in api.ts:2670*
 
 **`memberof`** InsightProjectJournalTransfer

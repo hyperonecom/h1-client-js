@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamOrganisationTransferAccept
 
@@ -24,6 +24,6 @@
 
 •  **payment**: string
 
-*Defined in api.ts:2095*
+*Defined in api.ts:2089*
 
 **`memberof`** IamOrganisationTransferAccept

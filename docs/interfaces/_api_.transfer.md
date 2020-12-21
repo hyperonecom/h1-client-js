@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Transfer
 
@@ -26,7 +26,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6953*
+*Defined in api.ts:6947*
 
 **`memberof`** Transfer
 
@@ -36,7 +36,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:6959*
+*Defined in api.ts:6953*
 
 **`memberof`** Transfer
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **state**: string
 
-*Defined in api.ts:6965*
+*Defined in api.ts:6959*
 
 **`memberof`** Transfer

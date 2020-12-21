@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / SaStateEnum
 
@@ -20,7 +20,7 @@
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:5997*
+*Defined in api.ts:5991*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 •  **Online**: {} = "Online"
 
-*Defined in api.ts:5995*
+*Defined in api.ts:5989*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:5996*
+*Defined in api.ts:5990*

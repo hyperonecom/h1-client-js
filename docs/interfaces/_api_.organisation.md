@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Organisation
 
@@ -34,7 +34,7 @@
 
 • `Optional` **bankAccount**: string
 
-*Defined in api.ts:4392*
+*Defined in api.ts:4386*
 
 **`memberof`** Organisation
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **billing**: [OrganisationBilling](_api_.organisationbilling.md)
 
-*Defined in api.ts:4386*
+*Defined in api.ts:4380*
 
 **`memberof`** Organisation
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4368*
+*Defined in api.ts:4362*
 
 **`memberof`** Organisation
 
@@ -64,7 +64,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:4362*
+*Defined in api.ts:4356*
 
 **`memberof`** Organisation
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:4344*
+*Defined in api.ts:4338*
 
 **`memberof`** Organisation
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4332*
+*Defined in api.ts:4326*
 
 **`memberof`** Organisation
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:4356*
+*Defined in api.ts:4350*
 
 **`memberof`** Organisation
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:4350*
+*Defined in api.ts:4344*
 
 **`memberof`** Organisation
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4338*
+*Defined in api.ts:4332*
 
 **`memberof`** Organisation
 
@@ -124,7 +124,7 @@ ___
 
 • `Optional` **state**: [OrganisationStateEnum](../enums/_api_.organisationstateenum.md)
 
-*Defined in api.ts:4374*
+*Defined in api.ts:4368*
 
 **`memberof`** Organisation
 
@@ -134,6 +134,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4380*
+*Defined in api.ts:4374*
 
 **`memberof`** Organisation

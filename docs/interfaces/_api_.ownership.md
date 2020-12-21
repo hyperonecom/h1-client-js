@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Ownership
 
@@ -25,7 +25,7 @@
 
 •  **id**: string
 
-*Defined in api.ts:4479*
+*Defined in api.ts:4473*
 
 **`memberof`** Ownership
 
@@ -35,6 +35,6 @@ ___
 
 •  **user**: string
 
-*Defined in api.ts:4485*
+*Defined in api.ts:4479*
 
 **`memberof`** Ownership

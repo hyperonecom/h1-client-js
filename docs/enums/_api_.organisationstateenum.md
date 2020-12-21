@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / OrganisationStateEnum
 
@@ -21,7 +21,7 @@
 
 •  **Active**: {} = "Active"
 
-*Defined in api.ts:4400*
+*Defined in api.ts:4394*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **Inactive**: {} = "Inactive"
 
-*Defined in api.ts:4401*
+*Defined in api.ts:4395*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:4403*
+*Defined in api.ts:4397*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:4402*
+*Defined in api.ts:4396*

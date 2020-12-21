@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / BillingProjectServiceApi
 
@@ -39,7 +39,7 @@ BillingProjectServiceApi - object-oriented interface
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[constructor](_base_.baseapi.md#constructor)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 #### Parameters:
 
@@ -59,7 +59,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[axios](_base_.baseapi.md#axios)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[basePath](_base_.baseapi.md#basepath)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[configuration](_base_.baseapi.md#configuration)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 ## Methods
 
@@ -87,7 +87,7 @@ ___
 
 ▸ **billingProjectServiceGet**(`projectId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[Service](../interfaces/_api_.service.md)>>
 
-*Defined in api.ts:9913*
+*Defined in api.ts:10057*
 
 Returns a single service
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **billingProjectServiceList**(`projectId`: string, `kind?`: string, `name?`: string, `type?`: string, `options?`: any): Promise\<AxiosResponse\<[Service](../interfaces/_api_.service.md)[]>>
 
-*Defined in api.ts:9928*
+*Defined in api.ts:10072*
 
 List service
 

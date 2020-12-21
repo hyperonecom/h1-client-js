@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / BillingProjectReservationApi
 
@@ -53,7 +53,7 @@ BillingProjectReservationApi - object-oriented interface
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[constructor](_base_.baseapi.md#constructor)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 #### Parameters:
 
@@ -73,7 +73,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[axios](_base_.baseapi.md#axios)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[basePath](_base_.baseapi.md#basepath)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[configuration](_base_.baseapi.md#configuration)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 ## Methods
 
@@ -101,7 +101,7 @@ ___
 
 ▸ **billingProjectReservationAssign**(`projectId`: string, `reservationId`: string, `billingProjectReservationAssign`: [BillingProjectReservationAssign](../interfaces/_api_.billingprojectreservationassign.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)>>
 
-*Defined in api.ts:9488*
+*Defined in api.ts:9619*
 
 action assign
 
@@ -129,7 +129,7 @@ ___
 
 ▸ **billingProjectReservationCreate**(`projectId`: string, `billingProjectReservationCreate`: [BillingProjectReservationCreate](../interfaces/_api_.billingprojectreservationcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)>>
 
-*Defined in api.ts:9502*
+*Defined in api.ts:9633*
 
 Create reservation
 
@@ -156,7 +156,7 @@ ___
 
 ▸ **billingProjectReservationDelete**(`projectId`: string, `reservationId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:9515*
+*Defined in api.ts:9646*
 
 Delete reservation
 
@@ -182,7 +182,7 @@ ___
 
 ▸ **billingProjectReservationEventGet**(`projectId`: string, `reservationId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:9529*
+*Defined in api.ts:9660*
 
 Get billing/reservation.event
 
@@ -209,7 +209,7 @@ ___
 
 ▸ **billingProjectReservationEventList**(`projectId`: string, `reservationId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:9544*
+*Defined in api.ts:9675*
 
 List billing/reservation.event
 
@@ -237,7 +237,7 @@ ___
 
 ▸ **billingProjectReservationExtend**(`projectId`: string, `reservationId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)>>
 
-*Defined in api.ts:9558*
+*Defined in api.ts:9689*
 
 action extend
 
@@ -264,7 +264,7 @@ ___
 
 ▸ **billingProjectReservationGet**(`projectId`: string, `reservationId`: string, `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)>>
 
-*Defined in api.ts:9571*
+*Defined in api.ts:9702*
 
 Returns a single reservation
 
@@ -290,7 +290,7 @@ ___
 
 ▸ **billingProjectReservationList**(`projectId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)[]>>
 
-*Defined in api.ts:9586*
+*Defined in api.ts:9717*
 
 List reservation
 
@@ -318,7 +318,7 @@ ___
 
 ▸ **billingProjectReservationServiceGet**(`projectId`: string, `reservationId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:9600*
+*Defined in api.ts:9731*
 
 Get billing/reservation.service
 
@@ -345,7 +345,7 @@ ___
 
 ▸ **billingProjectReservationServiceList**(`projectId`: string, `reservationId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:9613*
+*Defined in api.ts:9744*
 
 List billing/reservation.service
 
@@ -371,7 +371,7 @@ ___
 
 ▸ **billingProjectReservationTagCreate**(`projectId`: string, `reservationId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:9627*
+*Defined in api.ts:9758*
 
 Create billing/reservation.tag
 
@@ -398,7 +398,7 @@ ___
 
 ▸ **billingProjectReservationTagDelete**(`projectId`: string, `reservationId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:9641*
+*Defined in api.ts:9772*
 
 Delete billing/reservation.tag
 
@@ -425,7 +425,7 @@ ___
 
 ▸ **billingProjectReservationTagGet**(`projectId`: string, `reservationId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:9655*
+*Defined in api.ts:9786*
 
 Get billing/reservation.tag
 
@@ -452,7 +452,7 @@ ___
 
 ▸ **billingProjectReservationTagList**(`projectId`: string, `reservationId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:9668*
+*Defined in api.ts:9799*
 
 List billing/reservation.tag
 
@@ -478,7 +478,7 @@ ___
 
 ▸ **billingProjectReservationTagPut**(`projectId`: string, `reservationId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:9682*
+*Defined in api.ts:9813*
 
 Replace billing/reservation.tag
 
@@ -505,7 +505,7 @@ ___
 
 ▸ **billingProjectReservationUpdate**(`projectId`: string, `reservationId`: string, `billingProjectReservationUpdate`: [BillingProjectReservationUpdate](../interfaces/_api_.billingprojectreservationupdate.md), `options?`: any): Promise\<AxiosResponse\<[Reservation](../interfaces/_api_.reservation.md)>>
 
-*Defined in api.ts:9696*
+*Defined in api.ts:9827*
 
 Returns modified reservation
 

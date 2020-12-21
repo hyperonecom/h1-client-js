@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ImageStateEnum
 
@@ -21,7 +21,7 @@
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:2605*
+*Defined in api.ts:2599*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **Online**: {} = "Online"
 
-*Defined in api.ts:2602*
+*Defined in api.ts:2596*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:2604*
+*Defined in api.ts:2598*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:2603*
+*Defined in api.ts:2597*

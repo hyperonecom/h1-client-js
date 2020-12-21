@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamOrganisationCreate
 
@@ -25,7 +25,7 @@
 
 • `Optional` **billing**: [OrganisationBilling](_api_.organisationbilling.md)
 
-*Defined in api.ts:2024*
+*Defined in api.ts:2018*
 
 **`memberof`** IamOrganisationCreate
 
@@ -35,6 +35,6 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:2018*
+*Defined in api.ts:2012*
 
 **`memberof`** IamOrganisationCreate

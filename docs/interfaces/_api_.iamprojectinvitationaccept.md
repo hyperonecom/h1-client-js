@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectInvitationAccept
 
@@ -24,6 +24,6 @@
 
 •  **token**: string
 
-*Defined in api.ts:2184*
+*Defined in api.ts:2178*
 
 **`memberof`** IamProjectInvitationAccept

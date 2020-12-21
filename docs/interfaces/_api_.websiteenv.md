@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / WebsiteEnv
 
@@ -26,7 +26,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7718*
+*Defined in api.ts:7712*
 
 **`memberof`** WebsiteEnv
 
@@ -36,7 +36,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:7724*
+*Defined in api.ts:7718*
 
 **`memberof`** WebsiteEnv
 
@@ -46,6 +46,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:7730*
+*Defined in api.ts:7724*
 
 **`memberof`** WebsiteEnv

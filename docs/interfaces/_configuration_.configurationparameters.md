@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["configuration"](../modules/_configuration_.md) / ConfigurationParameters
 
@@ -25,6 +25,7 @@ Do not edit the class manually.
 * [apiKey](_configuration_.configurationparameters.md#apikey)
 * [baseOptions](_configuration_.configurationparameters.md#baseoptions)
 * [basePath](_configuration_.configurationparameters.md#basepath)
+* [formDataCtor](_configuration_.configurationparameters.md#formdatactor)
 * [password](_configuration_.configurationparameters.md#password)
 * [username](_configuration_.configurationparameters.md#username)
 
@@ -32,9 +33,9 @@ Do not edit the class manually.
 
 ### accessToken
 
-• `Optional` **accessToken**: string \| (name?: string,scopes?: string[]) => string
+• `Optional` **accessToken**: string \| Promise\<string> \| (name?: string,scopes?: string[]) => string \| (name?: string,scopes?: string[]) => Promise\<string>
 
-*Defined in configuration.ts:19*
+*Defined in configuration.ts:20*
 
 ___
 
@@ -42,7 +43,7 @@ ___
 
 • `Optional` **apiKey**: string \| Promise\<string> \| (name: string) => string \| (name: string) => Promise\<string>
 
-*Defined in configuration.ts:16*
+*Defined in configuration.ts:17*
 
 ___
 
@@ -50,7 +51,7 @@ ___
 
 • `Optional` **baseOptions**: any
 
-*Defined in configuration.ts:21*
+*Defined in configuration.ts:22*
 
 ___
 
@@ -58,7 +59,15 @@ ___
 
 • `Optional` **basePath**: string
 
-*Defined in configuration.ts:20*
+*Defined in configuration.ts:21*
+
+___
+
+### formDataCtor
+
+• `Optional` **formDataCtor**: {}
+
+*Defined in configuration.ts:23*
 
 ___
 
@@ -66,7 +75,7 @@ ___
 
 • `Optional` **password**: string
 
-*Defined in configuration.ts:18*
+*Defined in configuration.ts:19*
 
 ___
 
@@ -74,4 +83,4 @@ ___
 
 • `Optional` **username**: string
 
-*Defined in configuration.ts:17*
+*Defined in configuration.ts:18*

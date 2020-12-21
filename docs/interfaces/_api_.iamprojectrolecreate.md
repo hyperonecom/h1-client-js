@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectRoleCreate
 
@@ -28,7 +28,7 @@
 
 • `Optional` **description**: string
 
-*Defined in api.ts:2298*
+*Defined in api.ts:2292*
 
 **`memberof`** IamProjectRoleCreate
 
@@ -38,7 +38,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:2286*
+*Defined in api.ts:2280*
 
 **`memberof`** IamProjectRoleCreate
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **permission**: Array\<[IamPermission](_api_.iampermission.md)>
 
-*Defined in api.ts:2304*
+*Defined in api.ts:2298*
 
 **`memberof`** IamProjectRoleCreate
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **service**: string
 
-*Defined in api.ts:2292*
+*Defined in api.ts:2286*
 
 **`memberof`** IamProjectRoleCreate
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2310*
+*Defined in api.ts:2304*
 
 **`memberof`** IamProjectRoleCreate

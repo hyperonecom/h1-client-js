@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectCredentialStorePatch
 
@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:2171*
+*Defined in api.ts:2165*
 
 **`memberof`** IamProjectCredentialStorePatch

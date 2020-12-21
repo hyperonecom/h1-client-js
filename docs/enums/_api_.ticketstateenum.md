@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / TicketStateEnum
 
@@ -19,7 +19,7 @@
 
 •  **Closed**: {} = "closed"
 
-*Defined in api.ts:6939*
+*Defined in api.ts:6933*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Open**: {} = "open"
 
-*Defined in api.ts:6938*
+*Defined in api.ts:6932*

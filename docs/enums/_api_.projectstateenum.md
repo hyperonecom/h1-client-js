@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ProjectStateEnum
 
@@ -23,7 +23,7 @@
 
 •  **Active**: {} = "Active"
 
-*Defined in api.ts:4948*
+*Defined in api.ts:4942*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 •  **Inactive**: {} = "Inactive"
 
-*Defined in api.ts:4949*
+*Defined in api.ts:4943*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 •  **Limited**: {} = "Limited"
 
-*Defined in api.ts:4950*
+*Defined in api.ts:4944*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:4953*
+*Defined in api.ts:4947*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:4952*
+*Defined in api.ts:4946*
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 •  **Transferring**: {} = "Transferring"
 
-*Defined in api.ts:4951*
+*Defined in api.ts:4945*

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectTransfer
 
@@ -24,6 +24,6 @@
 
 •  **organisation**: string
 
-*Defined in api.ts:2430*
+*Defined in api.ts:2424*
 
 **`memberof`** IamProjectTransfer

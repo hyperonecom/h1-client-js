@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / NetworkingProjectNetadpCreate
 
@@ -28,7 +28,7 @@
 
 • `Optional` **firewall**: string
 
-*Defined in api.ts:4128*
+*Defined in api.ts:4122*
 
 **`memberof`** NetworkingProjectNetadpCreate
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **ip**: Array\<string>
 
-*Defined in api.ts:4134*
+*Defined in api.ts:4128*
 
 **`memberof`** NetworkingProjectNetadpCreate
 
@@ -48,7 +48,7 @@ ___
 
 •  **network**: string
 
-*Defined in api.ts:4122*
+*Defined in api.ts:4116*
 
 **`memberof`** NetworkingProjectNetadpCreate
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4140*
+*Defined in api.ts:4134*
 
 **`memberof`** NetworkingProjectNetadpCreate
 
@@ -68,6 +68,6 @@ ___
 
 •  **vm**: string
 
-*Defined in api.ts:4116*
+*Defined in api.ts:4110*
 
 **`memberof`** NetworkingProjectNetadpCreate

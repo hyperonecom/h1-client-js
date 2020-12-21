@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / NetadpStateEnum
 
@@ -22,7 +22,7 @@
 
 •  **Deallocated**: {} = "Deallocated"
 
-*Defined in api.ts:3700*
+*Defined in api.ts:3694*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:3703*
+*Defined in api.ts:3697*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **Online**: {} = "Online"
 
-*Defined in api.ts:3699*
+*Defined in api.ts:3693*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:3702*
+*Defined in api.ts:3696*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:3701*
+*Defined in api.ts:3695*

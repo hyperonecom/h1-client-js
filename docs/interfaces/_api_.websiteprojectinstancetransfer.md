@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / WebsiteProjectInstanceTransfer
 
@@ -24,6 +24,6 @@
 
 •  **project**: string
 
-*Defined in api.ts:7852*
+*Defined in api.ts:7846*
 
 **`memberof`** WebsiteProjectInstanceTransfer

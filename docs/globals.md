@@ -1,8 +1,8 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](README.md) / Globals
 
-# h1-client-ts
+# @hyperone/client
 
 ## Index
 

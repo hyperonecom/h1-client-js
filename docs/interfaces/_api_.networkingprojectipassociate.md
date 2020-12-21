@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / NetworkingProjectIpAssociate
 
@@ -24,6 +24,6 @@
 
 •  **ip**: string
 
-*Defined in api.ts:4046*
+*Defined in api.ts:4040*
 
 **`memberof`** NetworkingProjectIpAssociate

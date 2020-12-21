@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ProjectCredentialTypeEnum
 
@@ -18,4 +18,4 @@
 
 •  **Ssh**: {} = "ssh"
 
-*Defined in api.ts:5042*
+*Defined in api.ts:5036*

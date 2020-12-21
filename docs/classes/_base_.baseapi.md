@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["base"](../modules/_base_.md) / BaseAPI
 
@@ -90,7 +90,7 @@
 
 \+ **new BaseAPI**(`configuration?`: [Configuration](_configuration_.configuration.md), `basePath`: string, `axios`: AxiosInstance): [BaseAPI](_base_.baseapi.md)
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 #### Parameters:
 
@@ -108,7 +108,7 @@ Name | Type | Default value |
 
 • `Protected` **axios**: AxiosInstance
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 • `Protected` **basePath**: string
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -124,4 +124,4 @@ ___
 
 • `Protected` **configuration**: [Configuration](_configuration_.configuration.md) \| undefined
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*

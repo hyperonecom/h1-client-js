@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / VmStateEnum
 
@@ -45,7 +45,7 @@
 
 •  **FastSaved**: {} = "FastSaved"
 
-*Defined in api.ts:7422*
+*Defined in api.ts:7416*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 •  **FastSavedCritical**: {} = "FastSavedCritical"
 
-*Defined in api.ts:7434*
+*Defined in api.ts:7428*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 •  **FastSaving**: {} = "FastSaving"
 
-*Defined in api.ts:7423*
+*Defined in api.ts:7417*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 •  **FastSavingCritical**: {} = "FastSavingCritical"
 
-*Defined in api.ts:7435*
+*Defined in api.ts:7429*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:7438*
+*Defined in api.ts:7432*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 •  **Off**: {} = "Off"
 
-*Defined in api.ts:7413*
+*Defined in api.ts:7407*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 •  **OffCritical**: {} = "OffCritical"
 
-*Defined in api.ts:7425*
+*Defined in api.ts:7419*
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 •  **Other**: {} = "Other"
 
-*Defined in api.ts:7411*
+*Defined in api.ts:7405*
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 •  **Paused**: {} = "Paused"
 
-*Defined in api.ts:7416*
+*Defined in api.ts:7410*
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 •  **PausedCritical**: {} = "PausedCritical"
 
-*Defined in api.ts:7428*
+*Defined in api.ts:7422*
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 •  **Pausing**: {} = "Pausing"
 
-*Defined in api.ts:7420*
+*Defined in api.ts:7414*
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 •  **PausingCritical**: {} = "PausingCritical"
 
-*Defined in api.ts:7432*
+*Defined in api.ts:7426*
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:7437*
+*Defined in api.ts:7431*
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 •  **Reset**: {} = "Reset"
 
-*Defined in api.ts:7418*
+*Defined in api.ts:7412*
 
 ___
 
@@ -157,7 +157,7 @@ ___
 
 •  **ResetCritical**: {} = "ResetCritical"
 
-*Defined in api.ts:7430*
+*Defined in api.ts:7424*
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 •  **Resuming**: {} = "Resuming"
 
-*Defined in api.ts:7421*
+*Defined in api.ts:7415*
 
 ___
 
@@ -173,7 +173,7 @@ ___
 
 •  **ResumingCritical**: {} = "ResumingCritical"
 
-*Defined in api.ts:7433*
+*Defined in api.ts:7427*
 
 ___
 
@@ -181,7 +181,7 @@ ___
 
 •  **Running**: {} = "Running"
 
-*Defined in api.ts:7412*
+*Defined in api.ts:7406*
 
 ___
 
@@ -189,7 +189,7 @@ ___
 
 •  **RunningCritical**: {} = "RunningCritical"
 
-*Defined in api.ts:7424*
+*Defined in api.ts:7418*
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 •  **Saved**: {} = "Saved"
 
-*Defined in api.ts:7415*
+*Defined in api.ts:7409*
 
 ___
 
@@ -205,7 +205,7 @@ ___
 
 •  **SavedCritical**: {} = "SavedCritical"
 
-*Defined in api.ts:7427*
+*Defined in api.ts:7421*
 
 ___
 
@@ -213,7 +213,7 @@ ___
 
 •  **Saving**: {} = "Saving"
 
-*Defined in api.ts:7419*
+*Defined in api.ts:7413*
 
 ___
 
@@ -221,7 +221,7 @@ ___
 
 •  **SavingCritical**: {} = "SavingCritical"
 
-*Defined in api.ts:7431*
+*Defined in api.ts:7425*
 
 ___
 
@@ -229,7 +229,7 @@ ___
 
 •  **Starting**: {} = "Starting"
 
-*Defined in api.ts:7417*
+*Defined in api.ts:7411*
 
 ___
 
@@ -237,7 +237,7 @@ ___
 
 •  **StartingCritical**: {} = "StartingCritical"
 
-*Defined in api.ts:7429*
+*Defined in api.ts:7423*
 
 ___
 
@@ -245,7 +245,7 @@ ___
 
 •  **Stopping**: {} = "Stopping"
 
-*Defined in api.ts:7414*
+*Defined in api.ts:7408*
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 •  **StoppingCritical**: {} = "StoppingCritical"
 
-*Defined in api.ts:7426*
+*Defined in api.ts:7420*
 
 ___
 
@@ -261,4 +261,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:7436*
+*Defined in api.ts:7430*

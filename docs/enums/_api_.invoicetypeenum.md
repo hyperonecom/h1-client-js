@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / InvoiceTypeEnum
 
@@ -19,7 +19,7 @@
 
 •  **Correction**: {} = "correction"
 
-*Defined in api.ts:2832*
+*Defined in api.ts:2826*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Vat**: {} = "vat"
 
-*Defined in api.ts:2831*
+*Defined in api.ts:2825*

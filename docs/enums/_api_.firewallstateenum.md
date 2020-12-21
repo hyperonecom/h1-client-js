@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / FirewallStateEnum
 
@@ -22,7 +22,7 @@
 
 •  **Attached**: {} = "Attached"
 
-*Defined in api.ts:1938*
+*Defined in api.ts:1932*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **Detached**: {} = "Detached"
 
-*Defined in api.ts:1939*
+*Defined in api.ts:1933*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:1942*
+*Defined in api.ts:1936*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:1941*
+*Defined in api.ts:1935*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:1940*
+*Defined in api.ts:1934*

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / OrganisationBilling1
 
@@ -26,7 +26,7 @@
 
 • `Optional` **address**: [BillingAddress1](_api_.billingaddress1.md)
 
-*Defined in api.ts:4466*
+*Defined in api.ts:4460*
 
 **`memberof`** OrganisationBilling1
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **company**: string
 
-*Defined in api.ts:4460*
+*Defined in api.ts:4454*
 
 **`memberof`** OrganisationBilling1
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **email**: string
 
-*Defined in api.ts:4454*
+*Defined in api.ts:4448*
 
 **`memberof`** OrganisationBilling1

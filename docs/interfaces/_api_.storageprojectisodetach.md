@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / StorageProjectIsoDetach
 
@@ -24,6 +24,6 @@
 
 •  **vm**: string
 
-*Defined in api.ts:6493*
+*Defined in api.ts:6487*
 
 **`memberof`** StorageProjectIsoDetach

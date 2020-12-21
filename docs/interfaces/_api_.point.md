@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Point
 
@@ -25,7 +25,7 @@
 
 •  **time**: string
 
-*Defined in api.ts:4606*
+*Defined in api.ts:4600*
 
 **`memberof`** Point
 
@@ -35,6 +35,6 @@ ___
 
 •  **value**: number
 
-*Defined in api.ts:4612*
+*Defined in api.ts:4606*
 
 **`memberof`** Point

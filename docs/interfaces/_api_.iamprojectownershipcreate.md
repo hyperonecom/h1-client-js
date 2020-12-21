@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectOwnershipCreate
 
@@ -24,6 +24,6 @@
 
 •  **email**: string
 
-*Defined in api.ts:2197*
+*Defined in api.ts:2191*
 
 **`memberof`** IamProjectOwnershipCreate

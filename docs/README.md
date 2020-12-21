@@ -1,10 +1,10 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > README / [Globals](globals.md)
 
-# h1-client-ts
+# @hyperone/client
 
-h1-client-ts is an automatically generated library used to interact with
+@hyperone/client is an automatically generated library used to interact with
 [HyperOne API](https://www.hyperone.com/tools/api/).
 
 ## Installation
@@ -15,13 +15,13 @@ or [yarn](https://classic.yarnpkg.com/en/docs/install/).
 ### Installation using yarn
 
 ```shell
-yarn add h1-client-ts
+yarn add @hyperone/client
 ```
 
 ### Installation using npm
 
 ```shell
-npm i h1-client-ts
+npm i @hyperone/client
 ```
 
 ## Usage
@@ -45,7 +45,7 @@ Then import use it as a token provider in your code:
 
 ```typescript
 import { getPassportCredentialsHelper } from "@hyperone/credentials";
-import { Credentials } from "h1-client-ts";
+import { Credentials } from "@hyperone/client";
 
 const helper = getPassportCredentialsHelper();
 const config = new Configuration({
@@ -62,7 +62,7 @@ Example:
 
 ```typescript
 import { getPassportCredentialsHelper } from "@hyperone/credentials";
-import { Configuration, IamProjectApi } from "h1-client-ts";
+import { Configuration, IamProjectApi } from "@hyperone/client";
 
 const helper = getPassportCredentialsHelper();
 const config = new Configuration({

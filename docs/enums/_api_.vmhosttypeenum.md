@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / VmhostTypeEnum
 
@@ -21,7 +21,7 @@
 
 •  **Compute**: {} = "compute"
 
-*Defined in api.ts:7536*
+*Defined in api.ts:7530*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **Container**: {} = "container"
 
-*Defined in api.ts:7539*
+*Defined in api.ts:7533*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **Network**: {} = "network"
 
-*Defined in api.ts:7537*
+*Defined in api.ts:7531*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **Vault**: {} = "vault"
 
-*Defined in api.ts:7538*
+*Defined in api.ts:7532*

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Domain
 
@@ -25,7 +25,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1765*
+*Defined in api.ts:1759*
 
 **`memberof`** Domain
 
@@ -35,6 +35,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:1771*
+*Defined in api.ts:1765*
 
 **`memberof`** Domain

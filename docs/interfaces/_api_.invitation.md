@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Invitation
 
@@ -26,7 +26,7 @@
 
 •  **email**: string
 
-*Defined in api.ts:2714*
+*Defined in api.ts:2708*
 
 **`memberof`** Invitation
 
@@ -36,7 +36,7 @@ ___
 
 •  **id**: string
 
-*Defined in api.ts:2708*
+*Defined in api.ts:2702*
 
 **`memberof`** Invitation
 
@@ -46,6 +46,6 @@ ___
 
 •  **resource**: string
 
-*Defined in api.ts:2720*
+*Defined in api.ts:2714*
 
 **`memberof`** Invitation

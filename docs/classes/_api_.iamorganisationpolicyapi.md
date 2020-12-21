@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamOrganisationPolicyApi
 
@@ -55,7 +55,7 @@ IamOrganisationPolicyApi - object-oriented interface
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[constructor](_base_.baseapi.md#constructor)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 #### Parameters:
 
@@ -75,7 +75,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[axios](_base_.baseapi.md#axios)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[basePath](_base_.baseapi.md#basepath)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[configuration](_base_.baseapi.md#configuration)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 ## Methods
 
@@ -103,7 +103,7 @@ ___
 
 ▸ **iamOrganisationPolicyActorCreate**(`organisationId`: string, `policyId`: string, `iamActor`: [IamActor](../interfaces/_api_.iamactor.md), `options?`: any): Promise\<AxiosResponse\<[IamActor](../interfaces/_api_.iamactor.md)>>
 
-*Defined in api.ts:27831*
+*Defined in api.ts:29412*
 
 Create iam/policy.actor
 
@@ -130,7 +130,7 @@ ___
 
 ▸ **iamOrganisationPolicyActorDelete**(`organisationId`: string, `policyId`: string, `actorId`: string, `options?`: any): Promise\<AxiosResponse\<[IamActor](../interfaces/_api_.iamactor.md)>>
 
-*Defined in api.ts:27845*
+*Defined in api.ts:29426*
 
 Delete iam/policy.actor
 
@@ -157,7 +157,7 @@ ___
 
 ▸ **iamOrganisationPolicyActorGet**(`organisationId`: string, `policyId`: string, `actorId`: string, `options?`: any): Promise\<AxiosResponse\<[IamActor](../interfaces/_api_.iamactor.md)>>
 
-*Defined in api.ts:27859*
+*Defined in api.ts:29440*
 
 Get iam/policy.actor
 
@@ -184,7 +184,7 @@ ___
 
 ▸ **iamOrganisationPolicyActorList**(`organisationId`: string, `policyId`: string, `options?`: any): Promise\<AxiosResponse\<[IamActor](../interfaces/_api_.iamactor.md)[]>>
 
-*Defined in api.ts:27872*
+*Defined in api.ts:29453*
 
 List iam/policy.actor
 
@@ -210,7 +210,7 @@ ___
 
 ▸ **iamOrganisationPolicyCreate**(`organisationId`: string, `iamProjectPolicyCreate`: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Policy](../interfaces/_api_.policy.md)>>
 
-*Defined in api.ts:27886*
+*Defined in api.ts:29467*
 
 Create policy
 
@@ -237,7 +237,7 @@ ___
 
 ▸ **iamOrganisationPolicyDelete**(`organisationId`: string, `policyId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:27899*
+*Defined in api.ts:29480*
 
 Delete policy
 
@@ -263,7 +263,7 @@ ___
 
 ▸ **iamOrganisationPolicyEventGet**(`organisationId`: string, `policyId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:27913*
+*Defined in api.ts:29494*
 
 Get iam/policy.event
 
@@ -290,7 +290,7 @@ ___
 
 ▸ **iamOrganisationPolicyEventList**(`organisationId`: string, `policyId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:27928*
+*Defined in api.ts:29509*
 
 List iam/policy.event
 
@@ -318,7 +318,7 @@ ___
 
 ▸ **iamOrganisationPolicyGet**(`organisationId`: string, `policyId`: string, `options?`: any): Promise\<AxiosResponse\<[Policy](../interfaces/_api_.policy.md)>>
 
-*Defined in api.ts:27941*
+*Defined in api.ts:29522*
 
 Returns a single policy
 
@@ -344,7 +344,7 @@ ___
 
 ▸ **iamOrganisationPolicyList**(`organisationId`: string, `name?`: string, `resource?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Policy](../interfaces/_api_.policy.md)[]>>
 
-*Defined in api.ts:27957*
+*Defined in api.ts:29538*
 
 List policy
 
@@ -373,7 +373,7 @@ ___
 
 ▸ **iamOrganisationPolicyServiceGet**(`organisationId`: string, `policyId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:27971*
+*Defined in api.ts:29552*
 
 Get iam/policy.service
 
@@ -400,7 +400,7 @@ ___
 
 ▸ **iamOrganisationPolicyServiceList**(`organisationId`: string, `policyId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:27984*
+*Defined in api.ts:29565*
 
 List iam/policy.service
 
@@ -426,7 +426,7 @@ ___
 
 ▸ **iamOrganisationPolicyTagCreate**(`organisationId`: string, `policyId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:27998*
+*Defined in api.ts:29579*
 
 Create iam/policy.tag
 
@@ -453,7 +453,7 @@ ___
 
 ▸ **iamOrganisationPolicyTagDelete**(`organisationId`: string, `policyId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:28012*
+*Defined in api.ts:29593*
 
 Delete iam/policy.tag
 
@@ -480,7 +480,7 @@ ___
 
 ▸ **iamOrganisationPolicyTagGet**(`organisationId`: string, `policyId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:28026*
+*Defined in api.ts:29607*
 
 Get iam/policy.tag
 
@@ -507,7 +507,7 @@ ___
 
 ▸ **iamOrganisationPolicyTagList**(`organisationId`: string, `policyId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:28039*
+*Defined in api.ts:29620*
 
 List iam/policy.tag
 
@@ -533,7 +533,7 @@ ___
 
 ▸ **iamOrganisationPolicyTagPut**(`organisationId`: string, `policyId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:28053*
+*Defined in api.ts:29634*
 
 Replace iam/policy.tag
 
@@ -560,7 +560,7 @@ ___
 
 ▸ **iamOrganisationPolicyUpdate**(`organisationId`: string, `policyId`: string, `iamProjectPolicyUpdate`: [IamProjectPolicyUpdate](../interfaces/_api_.iamprojectpolicyupdate.md), `options?`: any): Promise\<AxiosResponse\<[Policy](../interfaces/_api_.policy.md)>>
 
-*Defined in api.ts:28067*
+*Defined in api.ts:29648*
 
 Returns modified policy
 

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Role
 
@@ -35,7 +35,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:5873*
+*Defined in api.ts:5867*
 
 **`memberof`** Role
 
@@ -45,7 +45,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5867*
+*Defined in api.ts:5861*
 
 **`memberof`** Role
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:5849*
+*Defined in api.ts:5843*
 
 **`memberof`** Role
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5837*
+*Defined in api.ts:5831*
 
 **`memberof`** Role
 
@@ -75,7 +75,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:5861*
+*Defined in api.ts:5855*
 
 **`memberof`** Role
 
@@ -85,7 +85,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:5855*
+*Defined in api.ts:5849*
 
 **`memberof`** Role
 
@@ -95,7 +95,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5843*
+*Defined in api.ts:5837*
 
 **`memberof`** Role
 
@@ -105,7 +105,7 @@ ___
 
 • `Optional` **organisation**: string
 
-*Defined in api.ts:5891*
+*Defined in api.ts:5885*
 
 **`memberof`** Role
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:5885*
+*Defined in api.ts:5879*
 
 **`memberof`** Role
 
@@ -125,7 +125,7 @@ ___
 
 • `Optional` **state**: [RoleStateEnum](../enums/_api_.rolestateenum.md)
 
-*Defined in api.ts:5879*
+*Defined in api.ts:5873*
 
 **`memberof`** Role
 
@@ -135,7 +135,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5903*
+*Defined in api.ts:5897*
 
 **`memberof`** Role
 
@@ -145,6 +145,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:5897*
+*Defined in api.ts:5891*
 
 **`memberof`** Role

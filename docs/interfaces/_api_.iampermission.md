@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamPermission
 
@@ -25,7 +25,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:2127*
+*Defined in api.ts:2121*
 
 **`memberof`** IamPermission
 
@@ -35,6 +35,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:2133*
+*Defined in api.ts:2127*
 
 **`memberof`** IamPermission

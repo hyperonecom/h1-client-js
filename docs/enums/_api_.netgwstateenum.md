@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / NetgwStateEnum
 
@@ -22,7 +22,7 @@
 
 •  **Attached**: {} = "Attached"
 
-*Defined in api.ts:3797*
+*Defined in api.ts:3791*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **Detached**: {} = "Detached"
 
-*Defined in api.ts:3798*
+*Defined in api.ts:3792*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:3801*
+*Defined in api.ts:3795*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:3800*
+*Defined in api.ts:3794*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:3799*
+*Defined in api.ts:3793*

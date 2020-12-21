@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / Project
 
@@ -36,7 +36,7 @@
 
 • `Optional` **bankAccount**: string
 
-*Defined in api.ts:4928*
+*Defined in api.ts:4922*
 
 **`memberof`** Project
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **billing**: [ProjectBilling](_api_.projectbilling.md)
 
-*Defined in api.ts:4934*
+*Defined in api.ts:4928*
 
 **`memberof`** Project
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4904*
+*Defined in api.ts:4898*
 
 **`memberof`** Project
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:4898*
+*Defined in api.ts:4892*
 
 **`memberof`** Project
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:4880*
+*Defined in api.ts:4874*
 
 **`memberof`** Project
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4868*
+*Defined in api.ts:4862*
 
 **`memberof`** Project
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:4892*
+*Defined in api.ts:4886*
 
 **`memberof`** Project
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:4886*
+*Defined in api.ts:4880*
 
 **`memberof`** Project
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4874*
+*Defined in api.ts:4868*
 
 **`memberof`** Project
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **organisation**: string
 
-*Defined in api.ts:4916*
+*Defined in api.ts:4910*
 
 **`memberof`** Project
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **state**: [ProjectStateEnum](../enums/_api_.projectstateenum.md)
 
-*Defined in api.ts:4910*
+*Defined in api.ts:4904*
 
 **`memberof`** Project
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4940*
+*Defined in api.ts:4934*
 
 **`memberof`** Project
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4922*
+*Defined in api.ts:4916*
 
 **`memberof`** Project

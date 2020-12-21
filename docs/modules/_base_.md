@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / "base"
 
@@ -29,7 +29,7 @@
 
 • `Const` **BASE\_PATH**: string = "https://api.hyperone.com/v2".replace(/\/+$/, "")
 
-*Defined in base.ts:20*
+*Defined in base.ts:21*
 
 ## Object literals
 
@@ -37,7 +37,7 @@
 
 ▪ `Const` **COLLECTION\_FORMATS**: object
 
-*Defined in base.ts:26*
+*Defined in base.ts:27*
 
 **`export`** 
 

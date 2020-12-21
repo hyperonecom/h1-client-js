@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectCreate
 
@@ -26,7 +26,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:2146*
+*Defined in api.ts:2140*
 
 **`memberof`** IamProjectCreate
 
@@ -36,7 +36,7 @@ ___
 
 •  **organisation**: string
 
-*Defined in api.ts:2152*
+*Defined in api.ts:2146*
 
 **`memberof`** IamProjectCreate
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2158*
+*Defined in api.ts:2152*
 
 **`memberof`** IamProjectCreate

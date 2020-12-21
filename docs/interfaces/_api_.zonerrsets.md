@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ZoneRrsets
 
@@ -27,7 +27,7 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:8056*
+*Defined in api.ts:8050*
 
 **`memberof`** ZoneRrsets
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **records**: string
 
-*Defined in api.ts:8050*
+*Defined in api.ts:8044*
 
 **`memberof`** ZoneRrsets
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **ttl**: number
 
-*Defined in api.ts:8068*
+*Defined in api.ts:8062*
 
 **`memberof`** ZoneRrsets
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:8062*
+*Defined in api.ts:8056*
 
 **`memberof`** ZoneRrsets

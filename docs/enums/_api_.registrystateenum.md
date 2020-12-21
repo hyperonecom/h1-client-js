@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / RegistryStateEnum
 
@@ -22,7 +22,7 @@
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:5472*
+*Defined in api.ts:5466*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **Off**: {} = "Off"
 
-*Defined in api.ts:5469*
+*Defined in api.ts:5463*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:5471*
+*Defined in api.ts:5465*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Running**: {} = "Running"
 
-*Defined in api.ts:5468*
+*Defined in api.ts:5462*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:5470*
+*Defined in api.ts:5464*

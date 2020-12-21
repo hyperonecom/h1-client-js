@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / StorageProjectDiskResize
 
@@ -24,6 +24,6 @@
 
 •  **size**: number
 
-*Defined in api.ts:6354*
+*Defined in api.ts:6348*
 
 **`memberof`** StorageProjectDiskResize

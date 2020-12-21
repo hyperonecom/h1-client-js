@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ProviderProjectAgentCreate
 
@@ -26,7 +26,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:5192*
+*Defined in api.ts:5186*
 
 **`memberof`** ProviderProjectAgentCreate
 
@@ -36,7 +36,7 @@ ___
 
 •  **service**: string
 
-*Defined in api.ts:5198*
+*Defined in api.ts:5192*
 
 **`memberof`** ProviderProjectAgentCreate
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5204*
+*Defined in api.ts:5198*
 
 **`memberof`** ProviderProjectAgentCreate

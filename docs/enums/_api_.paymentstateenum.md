@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / PaymentStateEnum
 
@@ -20,7 +20,7 @@
 
 •  **Allocated**: {} = "Allocated"
 
-*Defined in api.ts:4579*
+*Defined in api.ts:4573*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 •  **Expired**: {} = "Expired"
 
-*Defined in api.ts:4580*
+*Defined in api.ts:4574*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 •  **Unallocated**: {} = "Unallocated"
 
-*Defined in api.ts:4578*
+*Defined in api.ts:4572*

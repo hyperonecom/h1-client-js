@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ProviderAgentResourceEvent
 
@@ -27,7 +27,7 @@
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5167*
+*Defined in api.ts:5161*
 
 **`memberof`** ProviderAgentResourceEvent
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5149*
+*Defined in api.ts:5143*
 
 **`memberof`** ProviderAgentResourceEvent
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5155*
+*Defined in api.ts:5149*
 
 **`memberof`** ProviderAgentResourceEvent
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **state**: [ProviderAgentResourceEventStateEnum](../enums/_api_.provideragentresourceeventstateenum.md)
 
-*Defined in api.ts:5161*
+*Defined in api.ts:5155*
 
 **`memberof`** ProviderAgentResourceEvent

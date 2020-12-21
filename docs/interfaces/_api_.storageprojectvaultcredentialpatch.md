@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / StorageProjectVaultCredentialPatch
 
@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:6569*
+*Defined in api.ts:6563*
 
 **`memberof`** StorageProjectVaultCredentialPatch

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / StorageProjectIsoUpdate
 
@@ -24,6 +24,6 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:6519*
+*Defined in api.ts:6513*
 
 **`memberof`** StorageProjectIsoUpdate

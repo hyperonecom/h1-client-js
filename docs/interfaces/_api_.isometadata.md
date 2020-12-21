@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IsoMetadata
 
@@ -24,6 +24,6 @@
 
 • `Optional` **source**: [IsoMetadataSource](_api_.isometadatasource.md)
 
-*Defined in api.ts:3275*
+*Defined in api.ts:3269*
 
 **`memberof`** IsoMetadata

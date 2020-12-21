@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / LogTypeEnum
 
@@ -18,4 +18,4 @@
 
 •  **Console**: {} = "console"
 
-*Defined in api.ts:3495*
+*Defined in api.ts:3489*

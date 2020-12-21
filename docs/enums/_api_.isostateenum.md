@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IsoStateEnum
 
@@ -22,7 +22,7 @@
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:3261*
+*Defined in api.ts:3255*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **Online**: {} = "Online"
 
-*Defined in api.ts:3258*
+*Defined in api.ts:3252*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:3260*
+*Defined in api.ts:3254*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:3259*
+*Defined in api.ts:3253*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Uploading**: {} = "Uploading"
 
-*Defined in api.ts:3257*
+*Defined in api.ts:3251*

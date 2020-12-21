@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamUserUpdate
 
@@ -27,7 +27,7 @@
 
 • `Optional` **familyName**: string
 
-*Defined in api.ts:2481*
+*Defined in api.ts:2475*
 
 **`memberof`** IamUserUpdate
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **firstName**: string
 
-*Defined in api.ts:2475*
+*Defined in api.ts:2469*
 
 **`memberof`** IamUserUpdate
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **lang**: [IamUserUpdateLangEnum](../enums/_api_.iamuserupdatelangenum.md)
 
-*Defined in api.ts:2487*
+*Defined in api.ts:2481*
 
 **`memberof`** IamUserUpdate
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **phone**: string
 
-*Defined in api.ts:2469*
+*Defined in api.ts:2463*
 
 **`memberof`** IamUserUpdate

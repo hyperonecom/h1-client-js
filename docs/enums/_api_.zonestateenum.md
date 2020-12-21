@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / ZoneStateEnum
 
@@ -22,7 +22,7 @@
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:8036*
+*Defined in api.ts:8030*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **Offline**: {} = "Offline"
 
-*Defined in api.ts:8033*
+*Defined in api.ts:8027*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **Online**: {} = "Online"
 
-*Defined in api.ts:8032*
+*Defined in api.ts:8026*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:8035*
+*Defined in api.ts:8029*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:8034*
+*Defined in api.ts:8028*

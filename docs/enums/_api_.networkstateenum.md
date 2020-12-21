@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / NetworkStateEnum
 
@@ -21,7 +21,7 @@
 
 •  **NotCreated**: {} = "NotCreated"
 
-*Defined in api.ts:3948*
+*Defined in api.ts:3942*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 •  **Online**: {} = "Online"
 
-*Defined in api.ts:3945*
+*Defined in api.ts:3939*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 •  **Processing**: {} = "Processing"
 
-*Defined in api.ts:3947*
+*Defined in api.ts:3941*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:3946*
+*Defined in api.ts:3940*

@@ -1,4 +1,4 @@
-**h1-client-ts**
+**@hyperone/client**
 
 > [README](../README.md) / [Globals](../globals.md) / ["api"](../modules/_api_.md) / IamProjectApi
 
@@ -76,7 +76,7 @@ IamProjectApi - object-oriented interface
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[constructor](_base_.baseapi.md#constructor)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 #### Parameters:
 
@@ -96,7 +96,7 @@ Name | Type | Default value |
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[axios](_base_.baseapi.md#axios)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[basePath](_base_.baseapi.md#basepath)*
 
-*Defined in base.ts:51*
+*Defined in base.ts:52*
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 *Inherited from [BaseAPI](_base_.baseapi.md).[configuration](_base_.baseapi.md#configuration)*
 
-*Defined in base.ts:49*
+*Defined in base.ts:50*
 
 ## Methods
 
@@ -124,7 +124,7 @@ ___
 
 ▸ **iamProjectBillingList**(`projectId`: string, `start?`: string, `end?`: string, `resourceType?`: string, `options?`: any): Promise\<AxiosResponse\<[Billing](../interfaces/_api_.billing.md)[]>>
 
-*Defined in api.ts:33055*
+*Defined in api.ts:35125*
 
 List iam/project.billing
 
@@ -152,7 +152,7 @@ ___
 
 ▸ **iamProjectCreate**(`iamProjectCreate`: [IamProjectCreate](../interfaces/_api_.iamprojectcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Project](../interfaces/_api_.project.md)>>
 
-*Defined in api.ts:33068*
+*Defined in api.ts:35138*
 
 Create project
 
@@ -178,7 +178,7 @@ ___
 
 ▸ **iamProjectCredentialStoreCreate**(`projectId`: string, `projectCredential`: [ProjectCredential](../interfaces/_api_.projectcredential.md), `options?`: any): Promise\<AxiosResponse\<[ProjectCredential](../interfaces/_api_.projectcredential.md)>>
 
-*Defined in api.ts:33081*
+*Defined in api.ts:35151*
 
 Create iam/project.credentialStore
 
@@ -204,7 +204,7 @@ ___
 
 ▸ **iamProjectCredentialStoreDelete**(`projectId`: string, `credentialStoreId`: string, `options?`: any): Promise\<AxiosResponse\<[Project](../interfaces/_api_.project.md)>>
 
-*Defined in api.ts:33094*
+*Defined in api.ts:35164*
 
 Delete iam/project.credentialStore
 
@@ -230,7 +230,7 @@ ___
 
 ▸ **iamProjectCredentialStoreGet**(`projectId`: string, `credentialStoreId`: string, `options?`: any): Promise\<AxiosResponse\<[ProjectCredential](../interfaces/_api_.projectcredential.md)>>
 
-*Defined in api.ts:33107*
+*Defined in api.ts:35177*
 
 Get iam/project.credentialStore
 
@@ -256,7 +256,7 @@ ___
 
 ▸ **iamProjectCredentialStoreList**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<[ProjectCredential](../interfaces/_api_.projectcredential.md)[]>>
 
-*Defined in api.ts:33119*
+*Defined in api.ts:35189*
 
 List iam/project.credentialStore
 
@@ -281,7 +281,7 @@ ___
 
 ▸ **iamProjectCredentialStorePatch**(`projectId`: string, `credentialStoreId`: string, `iamProjectCredentialStorePatch`: [IamProjectCredentialStorePatch](../interfaces/_api_.iamprojectcredentialstorepatch.md), `options?`: any): Promise\<AxiosResponse\<[ProjectCredential](../interfaces/_api_.projectcredential.md)>>
 
-*Defined in api.ts:33133*
+*Defined in api.ts:35203*
 
 Update iam/project.credentialStore
 
@@ -308,7 +308,7 @@ ___
 
 ▸ **iamProjectDelete**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:33145*
+*Defined in api.ts:35215*
 
 Delete project
 
@@ -333,7 +333,7 @@ ___
 
 ▸ **iamProjectEventGet**(`projectId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:33158*
+*Defined in api.ts:35228*
 
 Get iam/project.event
 
@@ -359,7 +359,7 @@ ___
 
 ▸ **iamProjectEventList**(`projectId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:33172*
+*Defined in api.ts:35242*
 
 List iam/project.event
 
@@ -386,7 +386,7 @@ ___
 
 ▸ **iamProjectGet**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<[Project](../interfaces/_api_.project.md)>>
 
-*Defined in api.ts:33184*
+*Defined in api.ts:35254*
 
 Returns a single project
 
@@ -411,7 +411,7 @@ ___
 
 ▸ **iamProjectInvitationAccept**(`projectId`: string, `invitationId`: string, `iamProjectInvitationAccept`: [IamProjectInvitationAccept](../interfaces/_api_.iamprojectinvitationaccept.md), `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)>>
 
-*Defined in api.ts:33198*
+*Defined in api.ts:35268*
 
 action accept
 
@@ -438,7 +438,7 @@ ___
 
 ▸ **iamProjectInvitationDelete**(`projectId`: string, `invitationId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:33211*
+*Defined in api.ts:35281*
 
 Delete iam/project.invitation
 
@@ -464,7 +464,7 @@ ___
 
 ▸ **iamProjectInvitationGet**(`projectId`: string, `invitationId`: string, `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)>>
 
-*Defined in api.ts:33224*
+*Defined in api.ts:35294*
 
 Get iam/project.invitation
 
@@ -490,7 +490,7 @@ ___
 
 ▸ **iamProjectInvitationList**(`projectId`: string, `resource?`: string, `options?`: any): Promise\<AxiosResponse\<[Invitation](../interfaces/_api_.invitation.md)[]>>
 
-*Defined in api.ts:33237*
+*Defined in api.ts:35307*
 
 List iam/project.invitation
 
@@ -516,7 +516,7 @@ ___
 
 ▸ **iamProjectInvoiceList**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<[Invoice](../interfaces/_api_.invoice.md)[]>>
 
-*Defined in api.ts:33249*
+*Defined in api.ts:35319*
 
 List iam/project.invoice
 
@@ -541,7 +541,7 @@ ___
 
 ▸ **iamProjectList**(`name?`: string, `$limit?`: number, `active?`: boolean, `organisation?`: string, `$lean?`: boolean, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Project](../interfaces/_api_.project.md)[]>>
 
-*Defined in api.ts:33267*
+*Defined in api.ts:35337*
 
 List project
 
@@ -572,7 +572,7 @@ ___
 
 ▸ **iamProjectOwnershipCreate**(`projectId`: string, `iamProjectOwnershipCreate`: [IamProjectOwnershipCreate](../interfaces/_api_.iamprojectownershipcreate.md), `options?`: any): Promise\<AxiosResponse\<[Project](../interfaces/_api_.project.md)>>
 
-*Defined in api.ts:33280*
+*Defined in api.ts:35350*
 
 Create iam/project.ownership
 
@@ -598,7 +598,7 @@ ___
 
 ▸ **iamProjectOwnershipDelete**(`projectId`: string, `ownershipId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:33293*
+*Defined in api.ts:35363*
 
 Delete iam/project.ownership
 
@@ -624,7 +624,7 @@ ___
 
 ▸ **iamProjectOwnershipGet**(`projectId`: string, `ownershipId`: string, `options?`: any): Promise\<AxiosResponse\<[Ownership](../interfaces/_api_.ownership.md)>>
 
-*Defined in api.ts:33306*
+*Defined in api.ts:35376*
 
 Get iam/project.ownership
 
@@ -650,7 +650,7 @@ ___
 
 ▸ **iamProjectOwnershipList**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<[Ownership](../interfaces/_api_.ownership.md)[]>>
 
-*Defined in api.ts:33318*
+*Defined in api.ts:35388*
 
 List iam/project.ownership
 
@@ -675,7 +675,7 @@ ___
 
 ▸ **iamProjectPaymentList**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<[Payment](../interfaces/_api_.payment.md)[]>>
 
-*Defined in api.ts:33330*
+*Defined in api.ts:35400*
 
 List iam/project.payment
 
@@ -700,7 +700,7 @@ ___
 
 ▸ **iamProjectProformaList**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<[Proforma](../interfaces/_api_.proforma.md)[]>>
 
-*Defined in api.ts:33342*
+*Defined in api.ts:35412*
 
 List iam/project.proforma
 
@@ -725,7 +725,7 @@ ___
 
 ▸ **iamProjectQuotaGet**(`projectId`: string, `quotaId`: string, `options?`: any): Promise\<AxiosResponse\<[Quota](../interfaces/_api_.quota.md)>>
 
-*Defined in api.ts:33355*
+*Defined in api.ts:35425*
 
 Get iam/project.quota
 
@@ -751,7 +751,7 @@ ___
 
 ▸ **iamProjectQuotaLimitPatch**(`projectId`: string, `quotaId`: string, `iamProjectQuotaLimitPatch`: [IamProjectQuotaLimitPatch](../interfaces/_api_.iamprojectquotalimitpatch.md), `options?`: any): Promise\<AxiosResponse\<[QuotaLimit](../interfaces/_api_.quotalimit.md)>>
 
-*Defined in api.ts:33369*
+*Defined in api.ts:35439*
 
 Update iam/project.limit
 
@@ -778,7 +778,7 @@ ___
 
 ▸ **iamProjectQuotaList**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<[Quota](../interfaces/_api_.quota.md)[]>>
 
-*Defined in api.ts:33381*
+*Defined in api.ts:35451*
 
 List iam/project.quota
 
@@ -803,7 +803,7 @@ ___
 
 ▸ **iamProjectServiceGet**(`projectId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:33394*
+*Defined in api.ts:35464*
 
 Get iam/project.service
 
@@ -829,7 +829,7 @@ ___
 
 ▸ **iamProjectServiceList**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:33406*
+*Defined in api.ts:35476*
 
 List iam/project.service
 
@@ -854,7 +854,7 @@ ___
 
 ▸ **iamProjectTagCreate**(`projectId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:33419*
+*Defined in api.ts:35489*
 
 Create iam/project.tag
 
@@ -880,7 +880,7 @@ ___
 
 ▸ **iamProjectTagDelete**(`projectId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:33432*
+*Defined in api.ts:35502*
 
 Delete iam/project.tag
 
@@ -906,7 +906,7 @@ ___
 
 ▸ **iamProjectTagGet**(`projectId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:33445*
+*Defined in api.ts:35515*
 
 Get iam/project.tag
 
@@ -932,7 +932,7 @@ ___
 
 ▸ **iamProjectTagList**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:33457*
+*Defined in api.ts:35527*
 
 List iam/project.tag
 
@@ -957,7 +957,7 @@ ___
 
 ▸ **iamProjectTagPut**(`projectId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:33470*
+*Defined in api.ts:35540*
 
 Replace iam/project.tag
 
@@ -983,7 +983,7 @@ ___
 
 ▸ **iamProjectThresholdCreate**(`projectId`: string, `iamProjectThresholdCreate`: [IamProjectThresholdCreate](../interfaces/_api_.iamprojectthresholdcreate.md), `options?`: any): Promise\<AxiosResponse\<[ProjectThreshold](../interfaces/_api_.projectthreshold.md)>>
 
-*Defined in api.ts:33483*
+*Defined in api.ts:35553*
 
 Create iam/project.threshold
 
@@ -1009,7 +1009,7 @@ ___
 
 ▸ **iamProjectThresholdDelete**(`projectId`: string, `thresholdId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:33496*
+*Defined in api.ts:35566*
 
 Delete iam/project.threshold
 
@@ -1035,7 +1035,7 @@ ___
 
 ▸ **iamProjectThresholdGet**(`projectId`: string, `thresholdId`: string, `options?`: any): Promise\<AxiosResponse\<[ProjectThreshold](../interfaces/_api_.projectthreshold.md)>>
 
-*Defined in api.ts:33509*
+*Defined in api.ts:35579*
 
 Get iam/project.threshold
 
@@ -1061,7 +1061,7 @@ ___
 
 ▸ **iamProjectThresholdList**(`projectId`: string, `options?`: any): Promise\<AxiosResponse\<[ProjectThreshold](../interfaces/_api_.projectthreshold.md)[]>>
 
-*Defined in api.ts:33521*
+*Defined in api.ts:35591*
 
 List iam/project.threshold
 
@@ -1086,7 +1086,7 @@ ___
 
 ▸ **iamProjectTransfer**(`projectId`: string, `iamProjectTransfer`: [IamProjectTransfer](../interfaces/_api_.iamprojecttransfer.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Project](../interfaces/_api_.project.md)>>
 
-*Defined in api.ts:33535*
+*Defined in api.ts:35605*
 
 action transfer
 
@@ -1113,7 +1113,7 @@ ___
 
 ▸ **iamProjectUpdate**(`projectId`: string, `iamProjectUpdate`: [IamProjectUpdate](../interfaces/_api_.iamprojectupdate.md), `options?`: any): Promise\<AxiosResponse\<[Project](../interfaces/_api_.project.md)>>
 
-*Defined in api.ts:33548*
+*Defined in api.ts:35618*
 
 Returns modified project
 
