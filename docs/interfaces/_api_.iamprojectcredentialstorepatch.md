@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:2165*
+*Defined in api.ts:2177*
 
 **`memberof`** IamProjectCredentialStorePatch

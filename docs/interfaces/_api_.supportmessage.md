@@ -29,7 +29,7 @@
 
 • `Optional` **data**: [MessageData](_api_.messagedata.md)
 
-*Defined in api.ts:6780*
+*Defined in api.ts:7052*
 
 **`memberof`** SupportMessage
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **date**: string
 
-*Defined in api.ts:6792*
+*Defined in api.ts:7064*
 
 **`memberof`** SupportMessage
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6762*
+*Defined in api.ts:7034*
 
 **`memberof`** SupportMessage
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **origin**: string
 
-*Defined in api.ts:6786*
+*Defined in api.ts:7058*
 
 **`memberof`** SupportMessage
 
@@ -69,7 +69,7 @@ ___
 
 •  **type**: [SupportMessageTypeEnum](../enums/_api_.supportmessagetypeenum.md)
 
-*Defined in api.ts:6768*
+*Defined in api.ts:7040*
 
 **`memberof`** SupportMessage
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **user**: string
 
-*Defined in api.ts:6774*
+*Defined in api.ts:7046*
 
 **`memberof`** SupportMessage

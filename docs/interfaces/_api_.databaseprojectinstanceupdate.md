@@ -17,6 +17,7 @@
 ### Properties
 
 * [name](_api_.databaseprojectinstanceupdate.md#name)
+* [plan](_api_.databaseprojectinstanceupdate.md#plan)
 
 ## Properties
 
@@ -24,6 +25,16 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:1484*
+*Defined in api.ts:1490*
+
+**`memberof`** DatabaseProjectInstanceUpdate
+
+___
+
+### plan
+
+• `Optional` **plan**: string
+
+*Defined in api.ts:1496*
 
 **`memberof`** DatabaseProjectInstanceUpdate

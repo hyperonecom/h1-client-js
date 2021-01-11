@@ -25,6 +25,7 @@
 * [modifiedBy](_api_.website.md#modifiedby)
 * [modifiedOn](_api_.website.md#modifiedon)
 * [name](_api_.website.md#name)
+* [plan](_api_.website.md#plan)
 * [project](_api_.website.md#project)
 * [state](_api_.website.md#state)
 * [tag](_api_.website.md#tag)
@@ -36,7 +37,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:7583*
+*Defined in api.ts:7855*
 
 **`memberof`** Website
 
@@ -46,7 +47,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:7577*
+*Defined in api.ts:7849*
 
 **`memberof`** Website
 
@@ -56,7 +57,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:7559*
+*Defined in api.ts:7831*
 
 **`memberof`** Website
 
@@ -66,7 +67,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:7613*
+*Defined in api.ts:7891*
 
 **`memberof`** Website
 
@@ -76,7 +77,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7547*
+*Defined in api.ts:7819*
 
 **`memberof`** Website
 
@@ -86,7 +87,7 @@ ___
 
 • `Optional` **image**: string
 
-*Defined in api.ts:7607*
+*Defined in api.ts:7879*
 
 **`memberof`** Website
 
@@ -96,7 +97,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:7571*
+*Defined in api.ts:7843*
 
 **`memberof`** Website
 
@@ -106,7 +107,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:7565*
+*Defined in api.ts:7837*
 
 **`memberof`** Website
 
@@ -116,7 +117,17 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:7553*
+*Defined in api.ts:7825*
+
+**`memberof`** Website
+
+___
+
+### plan
+
+• `Optional` **plan**: string
+
+*Defined in api.ts:7885*
 
 **`memberof`** Website
 
@@ -126,7 +137,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:7595*
+*Defined in api.ts:7867*
 
 **`memberof`** Website
 
@@ -136,7 +147,7 @@ ___
 
 • `Optional` **state**: [WebsiteStateEnum](../enums/_api_.websitestateenum.md)
 
-*Defined in api.ts:7589*
+*Defined in api.ts:7861*
 
 **`memberof`** Website
 
@@ -146,7 +157,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:7619*
+*Defined in api.ts:7897*
 
 **`memberof`** Website
 
@@ -156,6 +167,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:7601*
+*Defined in api.ts:7873*
 
 **`memberof`** Website

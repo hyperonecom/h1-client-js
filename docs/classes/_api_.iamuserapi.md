@@ -97,7 +97,7 @@ ___
 
 ▸ **iamUserCredentialAuthtokenDelete**(`userId`: string, `authtokenId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:42773*
+*Defined in api.ts:43057*
 
 Delete iam/user.credential
 
@@ -123,7 +123,7 @@ ___
 
 ▸ **iamUserCredentialAuthtokenGet**(`userId`: string, `authtokenId`: string, `options?`: any): Promise\<AxiosResponse\<[AuthToken](../interfaces/_api_.authtoken.md)>>
 
-*Defined in api.ts:42786*
+*Defined in api.ts:43070*
 
 Get iam/user.credential
 
@@ -149,7 +149,7 @@ ___
 
 ▸ **iamUserCredentialAuthtokenList**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[AuthToken](../interfaces/_api_.authtoken.md)[]>>
 
-*Defined in api.ts:42798*
+*Defined in api.ts:43082*
 
 List iam/user.credential
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **iamUserCredentialCreate**(`userId`: string, `userCredential`: [UserCredential](../interfaces/_api_.usercredential.md), `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)>>
 
-*Defined in api.ts:42811*
+*Defined in api.ts:43095*
 
 Create iam/user.credential
 
@@ -200,7 +200,7 @@ ___
 
 ▸ **iamUserCredentialDelete**(`userId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[User](../interfaces/_api_.user.md)>>
 
-*Defined in api.ts:42824*
+*Defined in api.ts:43108*
 
 Delete iam/user.credential
 
@@ -226,7 +226,7 @@ ___
 
 ▸ **iamUserCredentialGet**(`userId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)>>
 
-*Defined in api.ts:42837*
+*Defined in api.ts:43121*
 
 Get iam/user.credential
 
@@ -252,7 +252,7 @@ ___
 
 ▸ **iamUserCredentialList**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)[]>>
 
-*Defined in api.ts:42849*
+*Defined in api.ts:43133*
 
 List iam/user.credential
 
@@ -277,7 +277,7 @@ ___
 
 ▸ **iamUserCredentialPatch**(`userId`: string, `credentialId`: string, `iamUserCredentialPatch`: [IamUserCredentialPatch](../interfaces/_api_.iamusercredentialpatch.md), `options?`: any): Promise\<AxiosResponse\<[UserCredential](../interfaces/_api_.usercredential.md)>>
 
-*Defined in api.ts:42863*
+*Defined in api.ts:43147*
 
 Update iam/user.credential
 
@@ -304,7 +304,7 @@ ___
 
 ▸ **iamUserGet**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[User](../interfaces/_api_.user.md)>>
 
-*Defined in api.ts:42875*
+*Defined in api.ts:43159*
 
 Returns a single user
 
@@ -329,7 +329,7 @@ ___
 
 ▸ **iamUserServiceGet**(`userId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:42888*
+*Defined in api.ts:43172*
 
 Get iam/user.service
 
@@ -355,7 +355,7 @@ ___
 
 ▸ **iamUserServiceList**(`userId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:42900*
+*Defined in api.ts:43184*
 
 List iam/user.service
 
@@ -380,7 +380,7 @@ ___
 
 ▸ **iamUserUpdate**(`userId`: string, `iamUserUpdate`: [IamUserUpdate](../interfaces/_api_.iamuserupdate.md), `options?`: any): Promise\<AxiosResponse\<[User](../interfaces/_api_.user.md)>>
 
-*Defined in api.ts:42913*
+*Defined in api.ts:43197*
 
 Returns modified user
 

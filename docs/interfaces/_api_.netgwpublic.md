@@ -24,6 +24,6 @@
 
 •  **ip**: string
 
-*Defined in api.ts:3822*
+*Defined in api.ts:3834*
 
 **`memberof`** NetgwPublic

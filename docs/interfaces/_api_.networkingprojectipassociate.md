@@ -24,6 +24,6 @@
 
 •  **ip**: string
 
-*Defined in api.ts:4040*
+*Defined in api.ts:4052*
 
 **`memberof`** NetworkingProjectIpAssociate

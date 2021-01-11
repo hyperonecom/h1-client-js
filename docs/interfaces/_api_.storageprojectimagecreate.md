@@ -29,7 +29,7 @@
 
 • `Optional` **description**: string
 
-*Defined in api.ts:6411*
+*Defined in api.ts:6683*
 
 **`memberof`** StorageProjectImageCreate
 
@@ -39,7 +39,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:6387*
+*Defined in api.ts:6659*
 
 **`memberof`** StorageProjectImageCreate
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **replica**: string
 
-*Defined in api.ts:6405*
+*Defined in api.ts:6677*
 
 **`memberof`** StorageProjectImageCreate
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **service**: string
 
-*Defined in api.ts:6393*
+*Defined in api.ts:6665*
 
 **`memberof`** StorageProjectImageCreate
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:6417*
+*Defined in api.ts:6689*
 
 **`memberof`** StorageProjectImageCreate
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **vm**: string
 
-*Defined in api.ts:6399*
+*Defined in api.ts:6671*
 
 **`memberof`** StorageProjectImageCreate

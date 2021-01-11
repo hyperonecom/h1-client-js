@@ -26,7 +26,7 @@
 
 • `Optional` **firewall**: string
 
-*Defined in api.ts:4254*
+*Defined in api.ts:4266*
 
 **`memberof`** NetworkingProjectNetworkUpdate
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **gateway**: string
 
-*Defined in api.ts:4248*
+*Defined in api.ts:4260*
 
 **`memberof`** NetworkingProjectNetworkUpdate
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4242*
+*Defined in api.ts:4254*
 
 **`memberof`** NetworkingProjectNetworkUpdate

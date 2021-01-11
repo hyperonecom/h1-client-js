@@ -25,7 +25,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:2121*
+*Defined in api.ts:2133*
 
 **`memberof`** IamPermission
 
@@ -35,6 +35,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:2127*
+*Defined in api.ts:2139*
 
 **`memberof`** IamPermission

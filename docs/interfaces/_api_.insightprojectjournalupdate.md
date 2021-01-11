@@ -25,7 +25,7 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:2683*
+*Defined in api.ts:2695*
 
 **`memberof`** InsightProjectJournalUpdate
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **retention**: number
 
-*Defined in api.ts:2689*
+*Defined in api.ts:2701*
 
 **`memberof`** InsightProjectJournalUpdate

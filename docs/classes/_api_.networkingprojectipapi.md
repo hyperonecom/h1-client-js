@@ -103,7 +103,7 @@ ___
 
 ▸ **networkingProjectIpAssociate**(`projectId`: string, `locationId`: string, `ipId`: string, `networkingProjectIpAssociate`: [NetworkingProjectIpAssociate](../interfaces/_api_.networkingprojectipassociate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Ip](../interfaces/_api_.ip.md)>>
 
-*Defined in api.ts:50285*
+*Defined in api.ts:50569*
 
 action associate
 
@@ -132,7 +132,7 @@ ___
 
 ▸ **networkingProjectIpCreate**(`projectId`: string, `locationId`: string, `networkingProjectIpCreate`: [NetworkingProjectIpCreate](../interfaces/_api_.networkingprojectipcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Ip](../interfaces/_api_.ip.md)>>
 
-*Defined in api.ts:50300*
+*Defined in api.ts:50584*
 
 Create ip
 
@@ -160,7 +160,7 @@ ___
 
 ▸ **networkingProjectIpDelete**(`projectId`: string, `locationId`: string, `ipId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:50314*
+*Defined in api.ts:50598*
 
 Delete ip
 
@@ -187,7 +187,7 @@ ___
 
 ▸ **networkingProjectIpDisassociate**(`projectId`: string, `locationId`: string, `ipId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Ip](../interfaces/_api_.ip.md)>>
 
-*Defined in api.ts:50329*
+*Defined in api.ts:50613*
 
 action disassociate
 
@@ -215,7 +215,7 @@ ___
 
 ▸ **networkingProjectIpEventGet**(`projectId`: string, `locationId`: string, `ipId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:50344*
+*Defined in api.ts:50628*
 
 Get networking/ip.event
 
@@ -243,7 +243,7 @@ ___
 
 ▸ **networkingProjectIpEventList**(`projectId`: string, `locationId`: string, `ipId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:50360*
+*Defined in api.ts:50644*
 
 List networking/ip.event
 
@@ -272,7 +272,7 @@ ___
 
 ▸ **networkingProjectIpGet**(`projectId`: string, `locationId`: string, `ipId`: string, `options?`: any): Promise\<AxiosResponse\<[Ip](../interfaces/_api_.ip.md)>>
 
-*Defined in api.ts:50374*
+*Defined in api.ts:50658*
 
 Returns a single ip
 
@@ -299,7 +299,7 @@ ___
 
 ▸ **networkingProjectIpList**(`projectId`: string, `locationId`: string, `network?`: string, `associatedNetadp?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Ip](../interfaces/_api_.ip.md)[]>>
 
-*Defined in api.ts:50391*
+*Defined in api.ts:50675*
 
 List ip
 
@@ -329,7 +329,7 @@ ___
 
 ▸ **networkingProjectIpPersist**(`projectId`: string, `locationId`: string, `ipId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Ip](../interfaces/_api_.ip.md)>>
 
-*Defined in api.ts:50406*
+*Defined in api.ts:50690*
 
 action persist
 
@@ -357,7 +357,7 @@ ___
 
 ▸ **networkingProjectIpServiceGet**(`projectId`: string, `locationId`: string, `ipId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:50421*
+*Defined in api.ts:50705*
 
 Get networking/ip.service
 
@@ -385,7 +385,7 @@ ___
 
 ▸ **networkingProjectIpServiceList**(`projectId`: string, `locationId`: string, `ipId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:50435*
+*Defined in api.ts:50719*
 
 List networking/ip.service
 
@@ -412,7 +412,7 @@ ___
 
 ▸ **networkingProjectIpTagCreate**(`projectId`: string, `locationId`: string, `ipId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:50450*
+*Defined in api.ts:50734*
 
 Create networking/ip.tag
 
@@ -440,7 +440,7 @@ ___
 
 ▸ **networkingProjectIpTagDelete**(`projectId`: string, `locationId`: string, `ipId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:50465*
+*Defined in api.ts:50749*
 
 Delete networking/ip.tag
 
@@ -468,7 +468,7 @@ ___
 
 ▸ **networkingProjectIpTagGet**(`projectId`: string, `locationId`: string, `ipId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:50480*
+*Defined in api.ts:50764*
 
 Get networking/ip.tag
 
@@ -496,7 +496,7 @@ ___
 
 ▸ **networkingProjectIpTagList**(`projectId`: string, `locationId`: string, `ipId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:50494*
+*Defined in api.ts:50778*
 
 List networking/ip.tag
 
@@ -523,7 +523,7 @@ ___
 
 ▸ **networkingProjectIpTagPut**(`projectId`: string, `locationId`: string, `ipId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:50509*
+*Defined in api.ts:50793*
 
 Replace networking/ip.tag
 
@@ -551,7 +551,7 @@ ___
 
 ▸ **networkingProjectIpTransfer**(`projectId`: string, `locationId`: string, `ipId`: string, `networkingProjectIpTransfer`: [NetworkingProjectIpTransfer](../interfaces/_api_.networkingprojectiptransfer.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Ip](../interfaces/_api_.ip.md)>>
 
-*Defined in api.ts:50525*
+*Defined in api.ts:50809*
 
 action transfer
 
@@ -580,7 +580,7 @@ ___
 
 ▸ **networkingProjectIpUpdate**(`projectId`: string, `locationId`: string, `ipId`: string, `networkingProjectIpUpdate`: [NetworkingProjectIpUpdate](../interfaces/_api_.networkingprojectipupdate.md), `options?`: any): Promise\<AxiosResponse\<[Ip](../interfaces/_api_.ip.md)>>
 
-*Defined in api.ts:50540*
+*Defined in api.ts:50824*
 
 Returns modified ip
 

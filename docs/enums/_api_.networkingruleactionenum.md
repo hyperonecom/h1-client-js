@@ -19,7 +19,7 @@
 
 •  **Allow**: {} = "allow"
 
-*Defined in api.ts:4311*
+*Defined in api.ts:4323*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Deny**: {} = "deny"
 
-*Defined in api.ts:4312*
+*Defined in api.ts:4324*

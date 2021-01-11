@@ -24,6 +24,6 @@
 
 •  **email**: string
 
-*Defined in api.ts:2044*
+*Defined in api.ts:2056*
 
 **`memberof`** IamOrganisationOwnershipCreate

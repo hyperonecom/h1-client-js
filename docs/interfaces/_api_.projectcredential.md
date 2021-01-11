@@ -31,7 +31,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4998*
+*Defined in api.ts:5151*
 
 **`memberof`** ProjectCredential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5004*
+*Defined in api.ts:5157*
 
 **`memberof`** ProjectCredential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **fingerprint**: string
 
-*Defined in api.ts:5022*
+*Defined in api.ts:5175*
 
 **`memberof`** ProjectCredential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4986*
+*Defined in api.ts:5139*
 
 **`memberof`** ProjectCredential
 
@@ -71,7 +71,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:4992*
+*Defined in api.ts:5145*
 
 **`memberof`** ProjectCredential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **token**: string
 
-*Defined in api.ts:5028*
+*Defined in api.ts:5181*
 
 **`memberof`** ProjectCredential
 
@@ -91,7 +91,7 @@ ___
 
 •  **type**: [ProjectCredentialTypeEnum](../enums/_api_.projectcredentialtypeenum.md)
 
-*Defined in api.ts:5010*
+*Defined in api.ts:5163*
 
 **`memberof`** ProjectCredential
 
@@ -101,6 +101,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:5016*
+*Defined in api.ts:5169*
 
 **`memberof`** ProjectCredential

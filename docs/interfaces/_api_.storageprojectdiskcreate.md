@@ -29,7 +29,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:6305*
+*Defined in api.ts:6577*
 
 **`memberof`** StorageProjectDiskCreate
 
@@ -39,7 +39,7 @@ ___
 
 •  **service**: string
 
-*Defined in api.ts:6311*
+*Defined in api.ts:6583*
 
 **`memberof`** StorageProjectDiskCreate
 
@@ -49,7 +49,7 @@ ___
 
 •  **size**: number
 
-*Defined in api.ts:6317*
+*Defined in api.ts:6589*
 
 **`memberof`** StorageProjectDiskCreate
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **source**: any
 
-*Defined in api.ts:6323*
+*Defined in api.ts:6595*
 
 **`memberof`** StorageProjectDiskCreate
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:6335*
+*Defined in api.ts:6607*
 
 **`memberof`** StorageProjectDiskCreate
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **vm**: string
 
-*Defined in api.ts:6329*
+*Defined in api.ts:6601*
 
 **`memberof`** StorageProjectDiskCreate

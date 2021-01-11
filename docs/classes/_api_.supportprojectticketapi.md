@@ -92,7 +92,7 @@ ___
 
 ▸ **supportProjectTicketClose**(`projectId`: string, `ticketId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
 
-*Defined in api.ts:73495*
+*Defined in api.ts:75785*
 
 action close
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **supportProjectTicketCreate**(`projectId`: string, `supportProjectTicketCreate`: [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
 
-*Defined in api.ts:73509*
+*Defined in api.ts:75799*
 
 Create ticket
 
@@ -146,7 +146,7 @@ ___
 
 ▸ **supportProjectTicketGet**(`projectId`: string, `ticketId`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
 
-*Defined in api.ts:73522*
+*Defined in api.ts:75812*
 
 Returns a single ticket
 
@@ -172,7 +172,7 @@ ___
 
 ▸ **supportProjectTicketList**(`projectId`: string, `state?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)[]>>
 
-*Defined in api.ts:73535*
+*Defined in api.ts:75825*
 
 List ticket
 
@@ -198,7 +198,7 @@ ___
 
 ▸ **supportProjectTicketMessageCreate**(`projectId`: string, `ticketId`: string, `supportMessage`: [SupportMessage](../interfaces/_api_.supportmessage.md), `options?`: any): Promise\<AxiosResponse\<[SupportMessage](../interfaces/_api_.supportmessage.md)>>
 
-*Defined in api.ts:73549*
+*Defined in api.ts:75839*
 
 Create support/ticket.message
 
@@ -225,7 +225,7 @@ ___
 
 ▸ **supportProjectTicketMessageGet**(`projectId`: string, `ticketId`: string, `messageId`: string, `options?`: any): Promise\<AxiosResponse\<[SupportMessage](../interfaces/_api_.supportmessage.md)>>
 
-*Defined in api.ts:73563*
+*Defined in api.ts:75853*
 
 Get support/ticket.message
 
@@ -252,7 +252,7 @@ ___
 
 ▸ **supportProjectTicketMessageList**(`projectId`: string, `ticketId`: string, `options?`: any): Promise\<AxiosResponse\<[SupportMessage](../interfaces/_api_.supportmessage.md)[]>>
 
-*Defined in api.ts:73576*
+*Defined in api.ts:75866*
 
 List support/ticket.message
 

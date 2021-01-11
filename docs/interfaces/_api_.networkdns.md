@@ -24,6 +24,6 @@
 
 • `Optional` **nameservers**: Array\<string>
 
-*Defined in api.ts:3964*
+*Defined in api.ts:3976*
 
 **`memberof`** NetworkDns

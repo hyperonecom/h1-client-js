@@ -24,6 +24,6 @@
 
 •  **project**: string
 
-*Defined in api.ts:2670*
+*Defined in api.ts:2682*
 
 **`memberof`** InsightProjectJournalTransfer

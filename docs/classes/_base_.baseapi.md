@@ -56,6 +56,8 @@
 
   ↳ [RecoveryProjectBackupApi](_api_.recoveryprojectbackupapi.md)
 
+  ↳ [RecoveryProjectPlanApi](_api_.recoveryprojectplanapi.md)
+
   ↳ [StorageProjectBucketApi](_api_.storageprojectbucketapi.md)
 
   ↳ [StorageProjectDiskApi](_api_.storageprojectdiskapi.md)

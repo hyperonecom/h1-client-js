@@ -92,7 +92,7 @@ ___
 
 ▸ **storageProjectBucketGet**(`projectId`: string, `locationId`: string, `bucketId`: string, `options?`: any): Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)>>
 
-*Defined in api.ts:63112*
+*Defined in api.ts:65402*
 
 Returns a single bucket
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **storageProjectBucketList**(`projectId`: string, `locationId`: string, `options?`: any): Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)[]>>
 
-*Defined in api.ts:63125*
+*Defined in api.ts:65415*
 
 List bucket
 
@@ -145,7 +145,7 @@ ___
 
 ▸ **storageProjectBucketObjectDelete**(`projectId`: string, `locationId`: string, `bucketId`: string, `objectId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:63140*
+*Defined in api.ts:65430*
 
 Delete storage/bucket.object
 
@@ -173,7 +173,7 @@ ___
 
 ▸ **storageProjectBucketObjectDownload**(`projectId`: string, `locationId`: string, `bucketId`: string, `objectId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:63155*
+*Defined in api.ts:65445*
 
 action download
 
@@ -201,7 +201,7 @@ ___
 
 ▸ **storageProjectBucketObjectGet**(`projectId`: string, `locationId`: string, `bucketId`: string, `objectId`: string, `options?`: any): Promise\<AxiosResponse\<[StorageObject](../interfaces/_api_.storageobject.md)>>
 
-*Defined in api.ts:63170*
+*Defined in api.ts:65460*
 
 Get storage/bucket.object
 
@@ -229,7 +229,7 @@ ___
 
 ▸ **storageProjectBucketObjectList**(`projectId`: string, `locationId`: string, `bucketId`: string, `options?`: any): Promise\<AxiosResponse\<[StorageObject](../interfaces/_api_.storageobject.md)[]>>
 
-*Defined in api.ts:63184*
+*Defined in api.ts:65474*
 
 List storage/bucket.object
 
@@ -256,7 +256,7 @@ ___
 
 ▸ **storageProjectBucketUpload**(`projectId`: string, `locationId`: string, `bucketId`: string, `storageProjectBucketUpload`: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)>>
 
-*Defined in api.ts:63200*
+*Defined in api.ts:65490*
 
 action upload
 

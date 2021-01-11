@@ -25,7 +25,7 @@
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:2902*
+*Defined in api.ts:2914*
 
 **`memberof`** InvoiceDuplicate
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:2908*
+*Defined in api.ts:2920*
 
 **`memberof`** InvoiceDuplicate

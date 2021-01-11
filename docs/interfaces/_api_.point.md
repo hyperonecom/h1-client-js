@@ -25,7 +25,7 @@
 
 •  **time**: string
 
-*Defined in api.ts:4600*
+*Defined in api.ts:4753*
 
 **`memberof`** Point
 
@@ -35,6 +35,6 @@ ___
 
 •  **value**: number
 
-*Defined in api.ts:4606*
+*Defined in api.ts:4759*
 
 **`memberof`** Point

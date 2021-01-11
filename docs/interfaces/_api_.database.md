@@ -24,6 +24,7 @@
 * [modifiedBy](_api_.database.md#modifiedby)
 * [modifiedOn](_api_.database.md#modifiedon)
 * [name](_api_.database.md#name)
+* [plan](_api_.database.md#plan)
 * [project](_api_.database.md#project)
 * [state](_api_.database.md#state)
 * [tag](_api_.database.md#tag)
@@ -65,7 +66,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:1329*
+*Defined in api.ts:1335*
 
 **`memberof`** Database
 
@@ -111,6 +112,16 @@ ___
 
 ___
 
+### plan
+
+• `Optional` **plan**: string
+
+*Defined in api.ts:1329*
+
+**`memberof`** Database
+
+___
+
 ### project
 
 • `Optional` **project**: string
@@ -135,7 +146,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:1335*
+*Defined in api.ts:1341*
 
 **`memberof`** Database
 

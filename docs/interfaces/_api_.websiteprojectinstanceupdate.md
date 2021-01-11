@@ -18,6 +18,7 @@
 
 * [image](_api_.websiteprojectinstanceupdate.md#image)
 * [name](_api_.websiteprojectinstanceupdate.md#name)
+* [plan](_api_.websiteprojectinstanceupdate.md#plan)
 
 ## Properties
 
@@ -25,7 +26,7 @@
 
 • `Optional` **image**: string
 
-*Defined in api.ts:7865*
+*Defined in api.ts:8143*
 
 **`memberof`** WebsiteProjectInstanceUpdate
 
@@ -35,6 +36,16 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:7859*
+*Defined in api.ts:8137*
+
+**`memberof`** WebsiteProjectInstanceUpdate
+
+___
+
+### plan
+
+• `Optional` **plan**: string
+
+*Defined in api.ts:8149*
 
 **`memberof`** WebsiteProjectInstanceUpdate

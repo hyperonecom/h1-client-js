@@ -113,7 +113,7 @@ ___
 
 ▸ **storageProjectVaultConnectGet**(`projectId`: string, `locationId`: string, `vaultId`: string, `connectId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)>>
 
-*Defined in api.ts:72409*
+*Defined in api.ts:74699*
 
 Get storage/vault.connect
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **storageProjectVaultConnectList**(`projectId`: string, `locationId`: string, `vaultId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)[]>>
 
-*Defined in api.ts:72423*
+*Defined in api.ts:74713*
 
 List storage/vault.connect
 
@@ -168,7 +168,7 @@ ___
 
 ▸ **storageProjectVaultCreate**(`projectId`: string, `locationId`: string, `storageProjectVaultCreate`: [StorageProjectVaultCreate](../interfaces/_api_.storageprojectvaultcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Vault](../interfaces/_api_.vault.md)>>
 
-*Defined in api.ts:72438*
+*Defined in api.ts:74728*
 
 Create vault
 
@@ -196,7 +196,7 @@ ___
 
 ▸ **storageProjectVaultCredentialCreate**(`projectId`: string, `locationId`: string, `vaultId`: string, `vaultCredential`: [VaultCredential](../interfaces/_api_.vaultcredential.md), `options?`: any): Promise\<AxiosResponse\<[VaultCredential](../interfaces/_api_.vaultcredential.md)>>
 
-*Defined in api.ts:72453*
+*Defined in api.ts:74743*
 
 Create storage/vault.credential
 
@@ -224,7 +224,7 @@ ___
 
 ▸ **storageProjectVaultCredentialDelete**(`projectId`: string, `locationId`: string, `vaultId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[Vault](../interfaces/_api_.vault.md)>>
 
-*Defined in api.ts:72468*
+*Defined in api.ts:74758*
 
 Delete storage/vault.credential
 
@@ -252,7 +252,7 @@ ___
 
 ▸ **storageProjectVaultCredentialGet**(`projectId`: string, `locationId`: string, `vaultId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[VaultCredential](../interfaces/_api_.vaultcredential.md)>>
 
-*Defined in api.ts:72483*
+*Defined in api.ts:74773*
 
 Get storage/vault.credential
 
@@ -280,7 +280,7 @@ ___
 
 ▸ **storageProjectVaultCredentialList**(`projectId`: string, `locationId`: string, `vaultId`: string, `options?`: any): Promise\<AxiosResponse\<[VaultCredential](../interfaces/_api_.vaultcredential.md)[]>>
 
-*Defined in api.ts:72497*
+*Defined in api.ts:74787*
 
 List storage/vault.credential
 
@@ -307,7 +307,7 @@ ___
 
 ▸ **storageProjectVaultCredentialPatch**(`projectId`: string, `locationId`: string, `vaultId`: string, `credentialId`: string, `storageProjectVaultCredentialPatch`: [StorageProjectVaultCredentialPatch](../interfaces/_api_.storageprojectvaultcredentialpatch.md), `options?`: any): Promise\<AxiosResponse\<[VaultCredential](../interfaces/_api_.vaultcredential.md)>>
 
-*Defined in api.ts:72513*
+*Defined in api.ts:74803*
 
 Update storage/vault.credential
 
@@ -336,7 +336,7 @@ ___
 
 ▸ **storageProjectVaultDelete**(`projectId`: string, `locationId`: string, `vaultId`: string, `storageProjectVaultDelete`: [StorageProjectVaultDelete](../interfaces/_api_.storageprojectvaultdelete.md), `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:72528*
+*Defined in api.ts:74818*
 
 Delete vault
 
@@ -364,7 +364,7 @@ ___
 
 ▸ **storageProjectVaultEventGet**(`projectId`: string, `locationId`: string, `vaultId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:72543*
+*Defined in api.ts:74833*
 
 Get storage/vault.event
 
@@ -392,7 +392,7 @@ ___
 
 ▸ **storageProjectVaultEventList**(`projectId`: string, `locationId`: string, `vaultId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:72559*
+*Defined in api.ts:74849*
 
 List storage/vault.event
 
@@ -421,7 +421,7 @@ ___
 
 ▸ **storageProjectVaultGet**(`projectId`: string, `locationId`: string, `vaultId`: string, `options?`: any): Promise\<AxiosResponse\<[Vault](../interfaces/_api_.vault.md)>>
 
-*Defined in api.ts:72573*
+*Defined in api.ts:74863*
 
 Returns a single vault
 
@@ -448,7 +448,7 @@ ___
 
 ▸ **storageProjectVaultList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Vault](../interfaces/_api_.vault.md)[]>>
 
-*Defined in api.ts:72589*
+*Defined in api.ts:74879*
 
 List vault
 
@@ -477,7 +477,7 @@ ___
 
 ▸ **storageProjectVaultResize**(`projectId`: string, `locationId`: string, `vaultId`: string, `storageProjectVaultResize`: [StorageProjectVaultResize](../interfaces/_api_.storageprojectvaultresize.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Vault](../interfaces/_api_.vault.md)>>
 
-*Defined in api.ts:72605*
+*Defined in api.ts:74895*
 
 action resize
 
@@ -506,7 +506,7 @@ ___
 
 ▸ **storageProjectVaultServiceGet**(`projectId`: string, `locationId`: string, `vaultId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:72620*
+*Defined in api.ts:74910*
 
 Get storage/vault.service
 
@@ -534,7 +534,7 @@ ___
 
 ▸ **storageProjectVaultServiceList**(`projectId`: string, `locationId`: string, `vaultId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:72634*
+*Defined in api.ts:74924*
 
 List storage/vault.service
 
@@ -561,7 +561,7 @@ ___
 
 ▸ **storageProjectVaultSnapshotCreate**(`projectId`: string, `locationId`: string, `vaultId`: string, `storageProjectVaultSnapshotCreate`: [StorageProjectVaultSnapshotCreate](../interfaces/_api_.storageprojectvaultsnapshotcreate.md), `options?`: any): Promise\<AxiosResponse\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)>>
 
-*Defined in api.ts:72649*
+*Defined in api.ts:74939*
 
 Create storage/vault.snapshot
 
@@ -589,7 +589,7 @@ ___
 
 ▸ **storageProjectVaultSnapshotDelete**(`projectId`: string, `locationId`: string, `vaultId`: string, `snapshotId`: string, `options?`: any): Promise\<AxiosResponse\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)>>
 
-*Defined in api.ts:72664*
+*Defined in api.ts:74954*
 
 Delete storage/vault.snapshot
 
@@ -617,7 +617,7 @@ ___
 
 ▸ **storageProjectVaultSnapshotGet**(`projectId`: string, `locationId`: string, `vaultId`: string, `snapshotId`: string, `options?`: any): Promise\<AxiosResponse\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)>>
 
-*Defined in api.ts:72679*
+*Defined in api.ts:74969*
 
 Get storage/vault.snapshot
 
@@ -645,7 +645,7 @@ ___
 
 ▸ **storageProjectVaultSnapshotList**(`projectId`: string, `locationId`: string, `vaultId`: string, `options?`: any): Promise\<AxiosResponse\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)[]>>
 
-*Defined in api.ts:72693*
+*Defined in api.ts:74983*
 
 List storage/vault.snapshot
 
@@ -672,7 +672,7 @@ ___
 
 ▸ **storageProjectVaultStart**(`projectId`: string, `locationId`: string, `vaultId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Vault](../interfaces/_api_.vault.md)>>
 
-*Defined in api.ts:72708*
+*Defined in api.ts:74998*
 
 action start
 
@@ -700,7 +700,7 @@ ___
 
 ▸ **storageProjectVaultStop**(`projectId`: string, `locationId`: string, `vaultId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Vault](../interfaces/_api_.vault.md)>>
 
-*Defined in api.ts:72723*
+*Defined in api.ts:75013*
 
 action stop
 
@@ -728,7 +728,7 @@ ___
 
 ▸ **storageProjectVaultTagCreate**(`projectId`: string, `locationId`: string, `vaultId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:72738*
+*Defined in api.ts:75028*
 
 Create storage/vault.tag
 
@@ -756,7 +756,7 @@ ___
 
 ▸ **storageProjectVaultTagDelete**(`projectId`: string, `locationId`: string, `vaultId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:72753*
+*Defined in api.ts:75043*
 
 Delete storage/vault.tag
 
@@ -784,7 +784,7 @@ ___
 
 ▸ **storageProjectVaultTagGet**(`projectId`: string, `locationId`: string, `vaultId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:72768*
+*Defined in api.ts:75058*
 
 Get storage/vault.tag
 
@@ -812,7 +812,7 @@ ___
 
 ▸ **storageProjectVaultTagList**(`projectId`: string, `locationId`: string, `vaultId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:72782*
+*Defined in api.ts:75072*
 
 List storage/vault.tag
 
@@ -839,7 +839,7 @@ ___
 
 ▸ **storageProjectVaultTagPut**(`projectId`: string, `locationId`: string, `vaultId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:72797*
+*Defined in api.ts:75087*
 
 Replace storage/vault.tag
 
@@ -867,7 +867,7 @@ ___
 
 ▸ **storageProjectVaultUpdate**(`projectId`: string, `locationId`: string, `vaultId`: string, `storageProjectVaultUpdate`: [StorageProjectVaultUpdate](../interfaces/_api_.storageprojectvaultupdate.md), `options?`: any): Promise\<AxiosResponse\<[Vault](../interfaces/_api_.vault.md)>>
 
-*Defined in api.ts:72812*
+*Defined in api.ts:75102*
 
 Returns modified vault
 

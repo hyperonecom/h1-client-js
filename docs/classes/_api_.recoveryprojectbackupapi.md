@@ -103,7 +103,7 @@ ___
 
 ▸ **recoveryProjectBackupCreate**(`projectId`: string, `locationId`: string, `recoveryProjectBackupCreate`: [RecoveryProjectBackupCreate](../interfaces/_api_.recoveryprojectbackupcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Backup](../interfaces/_api_.backup.md)>>
 
-*Defined in api.ts:62123*
+*Defined in api.ts:62407*
 
 Create backup
 
@@ -131,7 +131,7 @@ ___
 
 ▸ **recoveryProjectBackupDelete**(`projectId`: string, `locationId`: string, `backupId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:62137*
+*Defined in api.ts:62421*
 
 Delete backup
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **recoveryProjectBackupEventGet**(`projectId`: string, `locationId`: string, `backupId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:62152*
+*Defined in api.ts:62436*
 
 Get recovery/backup.event
 
@@ -186,7 +186,7 @@ ___
 
 ▸ **recoveryProjectBackupEventList**(`projectId`: string, `locationId`: string, `backupId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:62168*
+*Defined in api.ts:62452*
 
 List recovery/backup.event
 
@@ -215,7 +215,7 @@ ___
 
 ▸ **recoveryProjectBackupExport**(`projectId`: string, `locationId`: string, `backupId`: string, `recoveryProjectBackupExport`: [RecoveryProjectBackupExport](../interfaces/_api_.recoveryprojectbackupexport.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Backup](../interfaces/_api_.backup.md)>>
 
-*Defined in api.ts:62184*
+*Defined in api.ts:62468*
 
 action export
 
@@ -244,7 +244,7 @@ ___
 
 ▸ **recoveryProjectBackupGet**(`projectId`: string, `locationId`: string, `backupId`: string, `options?`: any): Promise\<AxiosResponse\<[Backup](../interfaces/_api_.backup.md)>>
 
-*Defined in api.ts:62198*
+*Defined in api.ts:62482*
 
 Returns a single backup
 
@@ -271,7 +271,7 @@ ___
 
 ▸ **recoveryProjectBackupList**(`projectId`: string, `locationId`: string, `name?`: string, `source?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Backup](../interfaces/_api_.backup.md)[]>>
 
-*Defined in api.ts:62215*
+*Defined in api.ts:62499*
 
 List backup
 
@@ -301,7 +301,7 @@ ___
 
 ▸ **recoveryProjectBackupMetricGet**(`projectId`: string, `locationId`: string, `backupId`: string, `metricId`: string, `options?`: any): Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)>>
 
-*Defined in api.ts:62230*
+*Defined in api.ts:62514*
 
 Get recovery/backup.metric
 
@@ -329,7 +329,7 @@ ___
 
 ▸ **recoveryProjectBackupMetricList**(`projectId`: string, `locationId`: string, `backupId`: string, `options?`: any): Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)[]>>
 
-*Defined in api.ts:62244*
+*Defined in api.ts:62528*
 
 List recovery/backup.metric
 
@@ -356,7 +356,7 @@ ___
 
 ▸ **recoveryProjectBackupMetricPointList**(`projectId`: string, `locationId`: string, `backupId`: string, `metricId`: string, `interval?`: string, `timespan?`: string, `options?`: any): Promise\<AxiosResponse\<[Point](../interfaces/_api_.point.md)[]>>
 
-*Defined in api.ts:62261*
+*Defined in api.ts:62545*
 
 List recovery/backup.point
 
@@ -386,7 +386,7 @@ ___
 
 ▸ **recoveryProjectBackupServiceGet**(`projectId`: string, `locationId`: string, `backupId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:62276*
+*Defined in api.ts:62560*
 
 Get recovery/backup.service
 
@@ -414,7 +414,7 @@ ___
 
 ▸ **recoveryProjectBackupServiceList**(`projectId`: string, `locationId`: string, `backupId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:62290*
+*Defined in api.ts:62574*
 
 List recovery/backup.service
 
@@ -441,7 +441,7 @@ ___
 
 ▸ **recoveryProjectBackupTagCreate**(`projectId`: string, `locationId`: string, `backupId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:62305*
+*Defined in api.ts:62589*
 
 Create recovery/backup.tag
 
@@ -469,7 +469,7 @@ ___
 
 ▸ **recoveryProjectBackupTagDelete**(`projectId`: string, `locationId`: string, `backupId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:62320*
+*Defined in api.ts:62604*
 
 Delete recovery/backup.tag
 
@@ -497,7 +497,7 @@ ___
 
 ▸ **recoveryProjectBackupTagGet**(`projectId`: string, `locationId`: string, `backupId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:62335*
+*Defined in api.ts:62619*
 
 Get recovery/backup.tag
 
@@ -525,7 +525,7 @@ ___
 
 ▸ **recoveryProjectBackupTagList**(`projectId`: string, `locationId`: string, `backupId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:62349*
+*Defined in api.ts:62633*
 
 List recovery/backup.tag
 
@@ -552,7 +552,7 @@ ___
 
 ▸ **recoveryProjectBackupTagPut**(`projectId`: string, `locationId`: string, `backupId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:62364*
+*Defined in api.ts:62648*
 
 Replace recovery/backup.tag
 
@@ -580,7 +580,7 @@ ___
 
 ▸ **recoveryProjectBackupUpdate**(`projectId`: string, `locationId`: string, `backupId`: string, `recoveryProjectBackupUpdate`: [RecoveryProjectBackupUpdate](../interfaces/_api_.recoveryprojectbackupupdate.md), `options?`: any): Promise\<AxiosResponse\<[Backup](../interfaces/_api_.backup.md)>>
 
-*Defined in api.ts:62379*
+*Defined in api.ts:62663*
 
 Returns modified backup
 

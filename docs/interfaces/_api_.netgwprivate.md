@@ -24,6 +24,6 @@
 
 •  **network**: string
 
-*Defined in api.ts:3809*
+*Defined in api.ts:3821*
 
 **`memberof`** NetgwPrivate

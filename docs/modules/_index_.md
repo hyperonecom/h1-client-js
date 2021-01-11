@@ -257,6 +257,10 @@
 * [Payment](_index_.md#payment)
 * [PaymentChannelEnum](_index_.md#paymentchannelenum)
 * [PaymentStateEnum](_index_.md#paymentstateenum)
+* [Plan](_index_.md#plan)
+* [PlanRetention](_index_.md#planretention)
+* [PlanStateEnum](_index_.md#planstateenum)
+* [PlanWindow](_index_.md#planwindow)
 * [Point](_index_.md#point)
 * [Policy](_index_.md#policy)
 * [PolicyStateEnum](_index_.md#policystateenum)
@@ -291,6 +295,17 @@
 * [RecoveryProjectBackupCreate](_index_.md#recoveryprojectbackupcreate)
 * [RecoveryProjectBackupExport](_index_.md#recoveryprojectbackupexport)
 * [RecoveryProjectBackupUpdate](_index_.md#recoveryprojectbackupupdate)
+* [RecoveryProjectPlanApi](_index_.md#recoveryprojectplanapi)
+* [RecoveryProjectPlanApiAxiosParamCreator](_index_.md#recoveryprojectplanapiaxiosparamcreator)
+* [RecoveryProjectPlanApiFactory](_index_.md#recoveryprojectplanapifactory)
+* [RecoveryProjectPlanApiFp](_index_.md#recoveryprojectplanapifp)
+* [RecoveryProjectPlanCreate](_index_.md#recoveryprojectplancreate)
+* [RecoveryProjectPlanCreateRetention](_index_.md#recoveryprojectplancreateretention)
+* [RecoveryProjectPlanCreateRetentionCountEnum](_index_.md#recoveryprojectplancreateretentioncountenum)
+* [RecoveryProjectPlanCreateRetentionIntervalEnum](_index_.md#recoveryprojectplancreateretentionintervalenum)
+* [RecoveryProjectPlanCreateWindow](_index_.md#recoveryprojectplancreatewindow)
+* [RecoveryProjectPlanCreateWindowIntervalEnum](_index_.md#recoveryprojectplancreatewindowintervalenum)
+* [RecoveryProjectPlanUpdate](_index_.md#recoveryprojectplanupdate)
 * [Registry](_index_.md#registry)
 * [RegistryCredential](_index_.md#registrycredential)
 * [RegistryCredentialTypeEnum](_index_.md#registrycredentialtypeenum)
@@ -1904,6 +1919,30 @@ Re-exports: [PaymentStateEnum](../enums/_api_.paymentstateenum.md)
 
 ___
 
+### Plan
+
+Re-exports: [Plan](../interfaces/_api_.plan.md)
+
+___
+
+### PlanRetention
+
+Re-exports: [PlanRetention](../interfaces/_api_.planretention.md)
+
+___
+
+### PlanStateEnum
+
+Re-exports: [PlanStateEnum](../enums/_api_.planstateenum.md)
+
+___
+
+### PlanWindow
+
+Re-exports: [PlanWindow](../interfaces/_api_.planwindow.md)
+
+___
+
 ### Point
 
 Re-exports: [Point](../interfaces/_api_.point.md)
@@ -2105,6 +2144,72 @@ ___
 ### RecoveryProjectBackupUpdate
 
 Re-exports: [RecoveryProjectBackupUpdate](../interfaces/_api_.recoveryprojectbackupupdate.md)
+
+___
+
+### RecoveryProjectPlanApi
+
+Re-exports: [RecoveryProjectPlanApi](../classes/_api_.recoveryprojectplanapi.md)
+
+___
+
+### RecoveryProjectPlanApiAxiosParamCreator
+
+Re-exports: [RecoveryProjectPlanApiAxiosParamCreator](_api_.md#recoveryprojectplanapiaxiosparamcreator)
+
+___
+
+### RecoveryProjectPlanApiFactory
+
+Re-exports: [RecoveryProjectPlanApiFactory](_api_.md#recoveryprojectplanapifactory)
+
+___
+
+### RecoveryProjectPlanApiFp
+
+Re-exports: [RecoveryProjectPlanApiFp](_api_.md#recoveryprojectplanapifp)
+
+___
+
+### RecoveryProjectPlanCreate
+
+Re-exports: [RecoveryProjectPlanCreate](../interfaces/_api_.recoveryprojectplancreate.md)
+
+___
+
+### RecoveryProjectPlanCreateRetention
+
+Re-exports: [RecoveryProjectPlanCreateRetention](../interfaces/_api_.recoveryprojectplancreateretention.md)
+
+___
+
+### RecoveryProjectPlanCreateRetentionCountEnum
+
+Re-exports: [RecoveryProjectPlanCreateRetentionCountEnum](../enums/_api_.recoveryprojectplancreateretentioncountenum.md)
+
+___
+
+### RecoveryProjectPlanCreateRetentionIntervalEnum
+
+Re-exports: [RecoveryProjectPlanCreateRetentionIntervalEnum](../enums/_api_.recoveryprojectplancreateretentionintervalenum.md)
+
+___
+
+### RecoveryProjectPlanCreateWindow
+
+Re-exports: [RecoveryProjectPlanCreateWindow](../interfaces/_api_.recoveryprojectplancreatewindow.md)
+
+___
+
+### RecoveryProjectPlanCreateWindowIntervalEnum
+
+Re-exports: [RecoveryProjectPlanCreateWindowIntervalEnum](../enums/_api_.recoveryprojectplancreatewindowintervalenum.md)
+
+___
+
+### RecoveryProjectPlanUpdate
+
+Re-exports: [RecoveryProjectPlanUpdate](../interfaces/_api_.recoveryprojectplanupdate.md)
 
 ___
 

@@ -30,7 +30,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:1815*
+*Defined in api.ts:1827*
 
 **`memberof`** Event
 
@@ -40,7 +40,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:1821*
+*Defined in api.ts:1833*
 
 **`memberof`** Event
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1803*
+*Defined in api.ts:1815*
 
 **`memberof`** Event
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:1809*
+*Defined in api.ts:1821*
 
 **`memberof`** Event
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **resource**: string
 
-*Defined in api.ts:1839*
+*Defined in api.ts:1851*
 
 **`memberof`** Event
 
@@ -80,7 +80,7 @@ ___
 
 • `Optional` **stage**: string
 
-*Defined in api.ts:1833*
+*Defined in api.ts:1845*
 
 **`memberof`** Event
 
@@ -90,6 +90,6 @@ ___
 
 • `Optional` **state**: [EventStateEnum](../enums/_api_.eventstateenum.md)
 
-*Defined in api.ts:1827*
+*Defined in api.ts:1839*
 
 **`memberof`** Event

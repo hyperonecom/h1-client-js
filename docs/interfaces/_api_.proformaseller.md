@@ -27,7 +27,7 @@
 
 • `Optional` **address**: [InvoiceSellerAddress](_api_.invoiceselleraddress.md)
 
-*Defined in api.ts:4837*
+*Defined in api.ts:4990*
 
 **`memberof`** ProformaSeller
 
@@ -37,7 +37,7 @@ ___
 
 •  **company**: string
 
-*Defined in api.ts:4831*
+*Defined in api.ts:4984*
 
 **`memberof`** ProformaSeller
 
@@ -47,7 +47,7 @@ ___
 
 •  **iban**: string
 
-*Defined in api.ts:4849*
+*Defined in api.ts:5002*
 
 **`memberof`** ProformaSeller
 
@@ -57,6 +57,6 @@ ___
 
 •  **nip**: string
 
-*Defined in api.ts:4843*
+*Defined in api.ts:4996*
 
 **`memberof`** ProformaSeller
