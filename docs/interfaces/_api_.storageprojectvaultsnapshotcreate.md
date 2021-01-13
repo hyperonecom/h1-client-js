@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:6874*
+*Defined in api.ts:6860*
 
 **`memberof`** StorageProjectVaultSnapshotCreate

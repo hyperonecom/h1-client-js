@@ -92,7 +92,7 @@ ___
 
 ▸ **storageProjectBucketGet**(`projectId`: string, `locationId`: string, `bucketId`: string, `options?`: any): Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)>>
 
-*Defined in api.ts:65402*
+*Defined in api.ts:65445*
 
 Returns a single bucket
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **storageProjectBucketList**(`projectId`: string, `locationId`: string, `options?`: any): Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)[]>>
 
-*Defined in api.ts:65415*
+*Defined in api.ts:65458*
 
 List bucket
 
@@ -145,7 +145,7 @@ ___
 
 ▸ **storageProjectBucketObjectDelete**(`projectId`: string, `locationId`: string, `bucketId`: string, `objectId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:65430*
+*Defined in api.ts:65473*
 
 Delete storage/bucket.object
 
@@ -173,7 +173,7 @@ ___
 
 ▸ **storageProjectBucketObjectDownload**(`projectId`: string, `locationId`: string, `bucketId`: string, `objectId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:65445*
+*Defined in api.ts:65488*
 
 action download
 
@@ -201,7 +201,7 @@ ___
 
 ▸ **storageProjectBucketObjectGet**(`projectId`: string, `locationId`: string, `bucketId`: string, `objectId`: string, `options?`: any): Promise\<AxiosResponse\<[StorageObject](../interfaces/_api_.storageobject.md)>>
 
-*Defined in api.ts:65460*
+*Defined in api.ts:65503*
 
 Get storage/bucket.object
 
@@ -229,7 +229,7 @@ ___
 
 ▸ **storageProjectBucketObjectList**(`projectId`: string, `locationId`: string, `bucketId`: string, `options?`: any): Promise\<AxiosResponse\<[StorageObject](../interfaces/_api_.storageobject.md)[]>>
 
-*Defined in api.ts:65474*
+*Defined in api.ts:65517*
 
 List storage/bucket.object
 
@@ -254,9 +254,9 @@ ___
 
 ### storageProjectBucketUpload
 
-▸ **storageProjectBucketUpload**(`projectId`: string, `locationId`: string, `bucketId`: string, `storageProjectBucketUpload`: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)>>
+▸ **storageProjectBucketUpload**(`projectId`: string, `locationId`: string, `bucketId`: string, `storageProjectBucketUpload`: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)>>
 
-*Defined in api.ts:65490*
+*Defined in api.ts:65534*
 
 action upload
 
@@ -275,6 +275,7 @@ Name | Type | Description |
 `bucketId` | string | Bucket Id |
 `storageProjectBucketUpload` | [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md) |  |
 `xIdempotencyKey?` | string | - |
+`xDryRun?` | string | - |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Bucket](../interfaces/_api_.bucket.md)>>

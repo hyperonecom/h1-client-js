@@ -16,38 +16,25 @@
 
 ### Properties
 
-* [flavour](_api_.websitesideapp.md#flavour)
 * [id](_api_.websitesideapp.md#id)
-* [url](_api_.websitesideapp.md#url)
+* [name](_api_.websitesideapp.md#name)
 
 ## Properties
-
-### flavour
-
-•  **flavour**: string
-
-*Defined in api.ts:8168*
-
-**`memberof`** WebsiteSideapp
-
-___
 
 ### id
 
 • `Optional` **id**: string
 
-*Defined in api.ts:8162*
+*Defined in api.ts:8148*
 
 **`memberof`** WebsiteSideapp
 
 ___
 
-### url
+### name
 
-• `Optional` **url**: string
+•  **name**: string
 
-*Defined in api.ts:8174*
-
-Only available on the creation response
+*Defined in api.ts:8154*
 
 **`memberof`** WebsiteSideapp

@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:6835*
+*Defined in api.ts:6821*
 
 **`memberof`** StorageProjectVaultCredentialPatch

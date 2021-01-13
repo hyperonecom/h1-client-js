@@ -34,9 +34,6 @@ RecoveryProjectPlanApi - object-oriented interface
 * [recoveryProjectPlanEventList](_api_.recoveryprojectplanapi.md#recoveryprojectplaneventlist)
 * [recoveryProjectPlanGet](_api_.recoveryprojectplanapi.md#recoveryprojectplanget)
 * [recoveryProjectPlanList](_api_.recoveryprojectplanapi.md#recoveryprojectplanlist)
-* [recoveryProjectPlanMetricGet](_api_.recoveryprojectplanapi.md#recoveryprojectplanmetricget)
-* [recoveryProjectPlanMetricList](_api_.recoveryprojectplanapi.md#recoveryprojectplanmetriclist)
-* [recoveryProjectPlanMetricPointList](_api_.recoveryprojectplanapi.md#recoveryprojectplanmetricpointlist)
 * [recoveryProjectPlanServiceGet](_api_.recoveryprojectplanapi.md#recoveryprojectplanserviceget)
 * [recoveryProjectPlanServiceList](_api_.recoveryprojectplanapi.md#recoveryprojectplanservicelist)
 * [recoveryProjectPlanTagCreate](_api_.recoveryprojectplanapi.md#recoveryprojectplantagcreate)
@@ -100,9 +97,9 @@ ___
 
 ### recoveryProjectPlanCreate
 
-▸ **recoveryProjectPlanCreate**(`projectId`: string, `locationId`: string, `recoveryProjectPlanCreate`: [RecoveryProjectPlanCreate](../interfaces/_api_.recoveryprojectplancreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Plan](../interfaces/_api_.plan.md)>>
+▸ **recoveryProjectPlanCreate**(`projectId`: string, `locationId`: string, `recoveryProjectPlanCreate`: [RecoveryProjectPlanCreate](../interfaces/_api_.recoveryprojectplancreate.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Plan](../interfaces/_api_.plan.md)>>
 
-*Defined in api.ts:64430*
+*Defined in api.ts:64512*
 
 Create plan
 
@@ -120,6 +117,7 @@ Name | Type | Description |
 `locationId` | string | Location Id |
 `recoveryProjectPlanCreate` | [RecoveryProjectPlanCreate](../interfaces/_api_.recoveryprojectplancreate.md) |  |
 `xIdempotencyKey?` | string | - |
+`xDryRun?` | string | - |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Plan](../interfaces/_api_.plan.md)>>
@@ -130,7 +128,7 @@ ___
 
 ▸ **recoveryProjectPlanDelete**(`projectId`: string, `locationId`: string, `planId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:64444*
+*Defined in api.ts:64526*
 
 Delete plan
 
@@ -157,7 +155,7 @@ ___
 
 ▸ **recoveryProjectPlanEventGet**(`projectId`: string, `locationId`: string, `planId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:64459*
+*Defined in api.ts:64541*
 
 Get recovery/plan.event
 
@@ -185,7 +183,7 @@ ___
 
 ▸ **recoveryProjectPlanEventList**(`projectId`: string, `locationId`: string, `planId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:64475*
+*Defined in api.ts:64557*
 
 List recovery/plan.event
 
@@ -214,7 +212,7 @@ ___
 
 ▸ **recoveryProjectPlanGet**(`projectId`: string, `locationId`: string, `planId`: string, `options?`: any): Promise\<AxiosResponse\<[Plan](../interfaces/_api_.plan.md)>>
 
-*Defined in api.ts:64489*
+*Defined in api.ts:64571*
 
 Returns a single plan
 
@@ -241,7 +239,7 @@ ___
 
 ▸ **recoveryProjectPlanList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Plan](../interfaces/_api_.plan.md)[]>>
 
-*Defined in api.ts:64505*
+*Defined in api.ts:64587*
 
 List plan
 
@@ -266,96 +264,11 @@ Name | Type | Description |
 
 ___
 
-### recoveryProjectPlanMetricGet
-
-▸ **recoveryProjectPlanMetricGet**(`projectId`: string, `locationId`: string, `planId`: string, `metricId`: string, `options?`: any): Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)>>
-
-*Defined in api.ts:64520*
-
-Get recovery/plan.metric
-
-**`summary`** Get recovery/plan.metric
-
-**`throws`** {RequiredError}
-
-**`memberof`** RecoveryProjectPlanApi
-
-#### Parameters:
-
-Name | Type | Description |
------- | ------ | ------ |
-`projectId` | string | Project Id |
-`locationId` | string | Location Id |
-`planId` | string | Plan Id |
-`metricId` | string | metricId |
-`options?` | any | - |
-
-**Returns:** Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)>>
-
-___
-
-### recoveryProjectPlanMetricList
-
-▸ **recoveryProjectPlanMetricList**(`projectId`: string, `locationId`: string, `planId`: string, `options?`: any): Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)[]>>
-
-*Defined in api.ts:64534*
-
-List recovery/plan.metric
-
-**`summary`** List recovery/plan.metric
-
-**`throws`** {RequiredError}
-
-**`memberof`** RecoveryProjectPlanApi
-
-#### Parameters:
-
-Name | Type | Description |
------- | ------ | ------ |
-`projectId` | string | Project Id |
-`locationId` | string | Location Id |
-`planId` | string | Plan Id |
-`options?` | any | - |
-
-**Returns:** Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)[]>>
-
-___
-
-### recoveryProjectPlanMetricPointList
-
-▸ **recoveryProjectPlanMetricPointList**(`projectId`: string, `locationId`: string, `planId`: string, `metricId`: string, `interval?`: string, `timespan?`: string, `options?`: any): Promise\<AxiosResponse\<[Point](../interfaces/_api_.point.md)[]>>
-
-*Defined in api.ts:64551*
-
-List recovery/plan.point
-
-**`summary`** List recovery/plan.point
-
-**`throws`** {RequiredError}
-
-**`memberof`** RecoveryProjectPlanApi
-
-#### Parameters:
-
-Name | Type | Description |
------- | ------ | ------ |
-`projectId` | string | Project Id |
-`locationId` | string | Location Id |
-`planId` | string | Plan Id |
-`metricId` | string | metricId |
-`interval?` | string | - |
-`timespan?` | string | - |
-`options?` | any | - |
-
-**Returns:** Promise\<AxiosResponse\<[Point](../interfaces/_api_.point.md)[]>>
-
-___
-
 ### recoveryProjectPlanServiceGet
 
 ▸ **recoveryProjectPlanServiceGet**(`projectId`: string, `locationId`: string, `planId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:64566*
+*Defined in api.ts:64602*
 
 Get recovery/plan.service
 
@@ -383,7 +296,7 @@ ___
 
 ▸ **recoveryProjectPlanServiceList**(`projectId`: string, `locationId`: string, `planId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:64580*
+*Defined in api.ts:64616*
 
 List recovery/plan.service
 
@@ -410,7 +323,7 @@ ___
 
 ▸ **recoveryProjectPlanTagCreate**(`projectId`: string, `locationId`: string, `planId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:64595*
+*Defined in api.ts:64631*
 
 Create recovery/plan.tag
 
@@ -438,7 +351,7 @@ ___
 
 ▸ **recoveryProjectPlanTagDelete**(`projectId`: string, `locationId`: string, `planId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:64610*
+*Defined in api.ts:64646*
 
 Delete recovery/plan.tag
 
@@ -466,7 +379,7 @@ ___
 
 ▸ **recoveryProjectPlanTagGet**(`projectId`: string, `locationId`: string, `planId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:64625*
+*Defined in api.ts:64661*
 
 Get recovery/plan.tag
 
@@ -494,7 +407,7 @@ ___
 
 ▸ **recoveryProjectPlanTagList**(`projectId`: string, `locationId`: string, `planId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:64639*
+*Defined in api.ts:64675*
 
 List recovery/plan.tag
 
@@ -521,7 +434,7 @@ ___
 
 ▸ **recoveryProjectPlanTagPut**(`projectId`: string, `locationId`: string, `planId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:64654*
+*Defined in api.ts:64690*
 
 Replace recovery/plan.tag
 
@@ -549,7 +462,7 @@ ___
 
 ▸ **recoveryProjectPlanUpdate**(`projectId`: string, `locationId`: string, `planId`: string, `recoveryProjectPlanUpdate`: [RecoveryProjectPlanUpdate](../interfaces/_api_.recoveryprojectplanupdate.md), `options?`: any): Promise\<AxiosResponse\<[Plan](../interfaces/_api_.plan.md)>>
 
-*Defined in api.ts:64669*
+*Defined in api.ts:64705*
 
 Returns modified plan
 

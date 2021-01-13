@@ -28,7 +28,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5216*
+*Defined in api.ts:5217*
 
 **`memberof`** ProjectThreshold
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5222*
+*Defined in api.ts:5223*
 
 **`memberof`** ProjectThreshold
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:5228*
+*Defined in api.ts:5229*
 
 **`memberof`** ProjectThreshold
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:5240*
+*Defined in api.ts:5241*
 
 **`memberof`** ProjectThreshold
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **value**: number
 
-*Defined in api.ts:5234*
+*Defined in api.ts:5235*
 
 **`memberof`** ProjectThreshold

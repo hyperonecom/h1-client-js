@@ -45,7 +45,6 @@
 * [ProjectCredentialTypeEnum](../enums/_api_.projectcredentialtypeenum.md)
 * [ProjectStateEnum](../enums/_api_.projectstateenum.md)
 * [ProviderAgentResourceEventStateEnum](../enums/_api_.provideragentresourceeventstateenum.md)
-* [RecoveryProjectPlanCreateRetentionCountEnum](../enums/_api_.recoveryprojectplancreateretentioncountenum.md)
 * [RecoveryProjectPlanCreateRetentionIntervalEnum](../enums/_api_.recoveryprojectplancreateretentionintervalenum.md)
 * [RecoveryProjectPlanCreateWindowIntervalEnum](../enums/_api_.recoveryprojectplancreatewindowintervalenum.md)
 * [RegistryCredentialTypeEnum](../enums/_api_.registrycredentialtypeenum.md)
@@ -436,7 +435,7 @@
 
 ▸ `Const`**BillingProjectReservationApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:8366*
+*Defined in api.ts:8346*
 
 BillingProjectReservationApi - axios parameter creator
 
@@ -452,12 +451,12 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`billingProjectReservationAssign` | (projectId: string,reservationId: string,billingProjectReservationAssign: [BillingProjectReservationAssign](../interfaces/_api_.billingprojectreservationassign.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action assign  **`summary`** Assign billing/reservation  **`throws`** {RequiredError}  |
-`billingProjectReservationCreate` | (projectId: string,billingProjectReservationCreate: [BillingProjectReservationCreate](../interfaces/_api_.billingprojectreservationcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create reservation  **`summary`** Create billing/reservation  **`throws`** {RequiredError}  |
+`billingProjectReservationAssign` | (projectId: string,reservationId: string,billingProjectReservationAssign: [BillingProjectReservationAssign](../interfaces/_api_.billingprojectreservationassign.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action assign  **`summary`** Assign billing/reservation  **`throws`** {RequiredError}  |
+`billingProjectReservationCreate` | (projectId: string,billingProjectReservationCreate: [BillingProjectReservationCreate](../interfaces/_api_.billingprojectreservationcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create reservation  **`summary`** Create billing/reservation  **`throws`** {RequiredError}  |
 `billingProjectReservationDelete` | (projectId: string,reservationId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete reservation  **`summary`** Delete billing/reservation  **`throws`** {RequiredError}  |
 `billingProjectReservationEventGet` | (projectId: string,reservationId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get billing/reservation.event  **`summary`** Get billing/reservation.event  **`throws`** {RequiredError}  |
 `billingProjectReservationEventList` | (projectId: string,reservationId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List billing/reservation.event  **`summary`** List billing/reservation.event  **`throws`** {RequiredError}  |
-`billingProjectReservationExtend` | (projectId: string,reservationId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action extend  **`summary`** Extend billing/reservation  **`throws`** {RequiredError}  |
+`billingProjectReservationExtend` | (projectId: string,reservationId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action extend  **`summary`** Extend billing/reservation  **`throws`** {RequiredError}  |
 `billingProjectReservationGet` | (projectId: string,reservationId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single reservation  **`summary`** Get billing/reservation  **`throws`** {RequiredError}  |
 `billingProjectReservationList` | (projectId: string,name?: string,tagValue?: string,tagKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List reservation  **`summary`** List billing/reservation  **`throws`** {RequiredError}  |
 `billingProjectReservationServiceGet` | (projectId: string,reservationId: string,serviceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get billing/reservation.service  **`summary`** Get billing/reservation.service  **`throws`** {RequiredError}  |
@@ -475,7 +474,7 @@ ___
 
 ▸ `Const`**BillingProjectReservationApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:9689*
+*Defined in api.ts:9687*
 
 BillingProjectReservationApi - factory interface
 
@@ -493,12 +492,12 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`billingProjectReservationAssign` | (projectId: string,reservationId: string,billingProjectReservationAssign: [BillingProjectReservationAssign](../interfaces/_api_.billingprojectreservationassign.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)> |
-`billingProjectReservationCreate` | (projectId: string,billingProjectReservationCreate: [BillingProjectReservationCreate](../interfaces/_api_.billingprojectreservationcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)> |
+`billingProjectReservationAssign` | (projectId: string,reservationId: string,billingProjectReservationAssign: [BillingProjectReservationAssign](../interfaces/_api_.billingprojectreservationassign.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)> |
+`billingProjectReservationCreate` | (projectId: string,billingProjectReservationCreate: [BillingProjectReservationCreate](../interfaces/_api_.billingprojectreservationcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)> |
 `billingProjectReservationDelete` | (projectId: string,reservationId: string,options?: any) => AxiosPromise\<void> |
 `billingProjectReservationEventGet` | (projectId: string,reservationId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `billingProjectReservationEventList` | (projectId: string,reservationId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
-`billingProjectReservationExtend` | (projectId: string,reservationId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)> |
+`billingProjectReservationExtend` | (projectId: string,reservationId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)> |
 `billingProjectReservationGet` | (projectId: string,reservationId: string,options?: any) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)> |
 `billingProjectReservationList` | (projectId: string,name?: string,tagValue?: string,tagKey?: string,options?: any) => AxiosPromise\<Array\<[Reservation](../interfaces/_api_.reservation.md)>> |
 `billingProjectReservationServiceGet` | (projectId: string,reservationId: string,serviceId: string,options?: any) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)> |
@@ -516,7 +515,7 @@ ___
 
 ▸ `Const`**BillingProjectReservationApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:9425*
+*Defined in api.ts:9420*
 
 BillingProjectReservationApi - functional programming interface
 
@@ -532,12 +531,12 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`billingProjectReservationAssign` | (projectId: string,reservationId: string,billingProjectReservationAssign: [BillingProjectReservationAssign](../interfaces/_api_.billingprojectreservationassign.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)>> |
-`billingProjectReservationCreate` | (projectId: string,billingProjectReservationCreate: [BillingProjectReservationCreate](../interfaces/_api_.billingprojectreservationcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)>> |
+`billingProjectReservationAssign` | (projectId: string,reservationId: string,billingProjectReservationAssign: [BillingProjectReservationAssign](../interfaces/_api_.billingprojectreservationassign.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)>> |
+`billingProjectReservationCreate` | (projectId: string,billingProjectReservationCreate: [BillingProjectReservationCreate](../interfaces/_api_.billingprojectreservationcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)>> |
 `billingProjectReservationDelete` | (projectId: string,reservationId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `billingProjectReservationEventGet` | (projectId: string,reservationId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `billingProjectReservationEventList` | (projectId: string,reservationId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
-`billingProjectReservationExtend` | (projectId: string,reservationId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)>> |
+`billingProjectReservationExtend` | (projectId: string,reservationId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)>> |
 `billingProjectReservationGet` | (projectId: string,reservationId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Reservation](../interfaces/_api_.reservation.md)>> |
 `billingProjectReservationList` | (projectId: string,name?: string,tagValue?: string,tagKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Reservation](../interfaces/_api_.reservation.md)>>> |
 `billingProjectReservationServiceGet` | (projectId: string,reservationId: string,serviceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
@@ -555,7 +554,7 @@ ___
 
 ▸ `Const`**BillingProjectServiceApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:10121*
+*Defined in api.ts:10125*
 
 BillingProjectServiceApi - axios parameter creator
 
@@ -580,7 +579,7 @@ ___
 
 ▸ `Const`**BillingProjectServiceApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:10296*
+*Defined in api.ts:10300*
 
 BillingProjectServiceApi - factory interface
 
@@ -607,7 +606,7 @@ ___
 
 ▸ `Const`**BillingProjectServiceApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:10255*
+*Defined in api.ts:10259*
 
 BillingProjectServiceApi - functional programming interface
 
@@ -632,7 +631,7 @@ ___
 
 ▸ `Const`**ComputeProjectReplicaApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:10366*
+*Defined in api.ts:10370*
 
 ComputeProjectReplicaApi - axios parameter creator
 
@@ -648,7 +647,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`computeProjectReplicaCreate` | (projectId: string,locationId: string,computeProjectReplicaCreate: [ComputeProjectReplicaCreate](../interfaces/_api_.computeprojectreplicacreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create replica  **`summary`** Create compute/replica  **`throws`** {RequiredError}  |
+`computeProjectReplicaCreate` | (projectId: string,locationId: string,computeProjectReplicaCreate: [ComputeProjectReplicaCreate](../interfaces/_api_.computeprojectreplicacreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create replica  **`summary`** Create compute/replica  **`throws`** {RequiredError}  |
 `computeProjectReplicaDelete` | (projectId: string,locationId: string,replicaId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete replica  **`summary`** Delete compute/replica  **`throws`** {RequiredError}  |
 `computeProjectReplicaEventGet` | (projectId: string,locationId: string,replicaId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get compute/replica.event  **`summary`** Get compute/replica.event  **`throws`** {RequiredError}  |
 `computeProjectReplicaEventList` | (projectId: string,locationId: string,replicaId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List compute/replica.event  **`summary`** List compute/replica.event  **`throws`** {RequiredError}  |
@@ -668,7 +667,7 @@ ___
 
 ▸ `Const`**ComputeProjectReplicaApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:11507*
+*Defined in api.ts:11517*
 
 ComputeProjectReplicaApi - factory interface
 
@@ -686,7 +685,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`computeProjectReplicaCreate` | (projectId: string,locationId: string,computeProjectReplicaCreate: [ComputeProjectReplicaCreate](../interfaces/_api_.computeprojectreplicacreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Replica](../interfaces/_api_.replica.md)> |
+`computeProjectReplicaCreate` | (projectId: string,locationId: string,computeProjectReplicaCreate: [ComputeProjectReplicaCreate](../interfaces/_api_.computeprojectreplicacreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Replica](../interfaces/_api_.replica.md)> |
 `computeProjectReplicaDelete` | (projectId: string,locationId: string,replicaId: string,options?: any) => AxiosPromise\<void> |
 `computeProjectReplicaEventGet` | (projectId: string,locationId: string,replicaId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `computeProjectReplicaEventList` | (projectId: string,locationId: string,replicaId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
@@ -706,7 +705,7 @@ ___
 
 ▸ `Const`**ComputeProjectReplicaApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:11281*
+*Defined in api.ts:11290*
 
 ComputeProjectReplicaApi - functional programming interface
 
@@ -722,7 +721,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`computeProjectReplicaCreate` | (projectId: string,locationId: string,computeProjectReplicaCreate: [ComputeProjectReplicaCreate](../interfaces/_api_.computeprojectreplicacreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Replica](../interfaces/_api_.replica.md)>> |
+`computeProjectReplicaCreate` | (projectId: string,locationId: string,computeProjectReplicaCreate: [ComputeProjectReplicaCreate](../interfaces/_api_.computeprojectreplicacreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Replica](../interfaces/_api_.replica.md)>> |
 `computeProjectReplicaDelete` | (projectId: string,locationId: string,replicaId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `computeProjectReplicaEventGet` | (projectId: string,locationId: string,replicaId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `computeProjectReplicaEventList` | (projectId: string,locationId: string,replicaId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
@@ -742,7 +741,7 @@ ___
 
 ▸ `Const`**ComputeProjectVmApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:11881*
+*Defined in api.ts:11893*
 
 ComputeProjectVmApi - axios parameter creator
 
@@ -761,13 +760,13 @@ Name | Type | Description |
 `computeProjectVmConnectGet` | (projectId: string,locationId: string,vmId: string,connectId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get compute/vm.connect  **`summary`** Get compute/vm.connect  **`throws`** {RequiredError}  |
 `computeProjectVmConnectList` | (projectId: string,locationId: string,vmId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List compute/vm.connect  **`summary`** List compute/vm.connect  **`throws`** {RequiredError}  |
 `computeProjectVmConnectOpen` | (projectId: string,locationId: string,vmId: string,connectId: string,computeProjectVmConnectOpen: [ComputeProjectVmConnectOpen](../interfaces/_api_.computeprojectvmconnectopen.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action open  **`summary`** Open compute/vm.connect  **`throws`** {RequiredError}  |
-`computeProjectVmCreate` | (projectId: string,locationId: string,computeProjectVmCreate: [ComputeProjectVmCreate](../interfaces/_api_.computeprojectvmcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create vm  **`summary`** Create compute/vm  **`throws`** {RequiredError}  |
+`computeProjectVmCreate` | (projectId: string,locationId: string,computeProjectVmCreate: [ComputeProjectVmCreate](../interfaces/_api_.computeprojectvmcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create vm  **`summary`** Create compute/vm  **`throws`** {RequiredError}  |
 `computeProjectVmDelete` | (projectId: string,locationId: string,vmId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete vm  **`summary`** Delete compute/vm  **`throws`** {RequiredError}  |
 `computeProjectVmDiskCreate` | (projectId: string,locationId: string,vmId: string,computeProjectVmDiskCreate: [ComputeProjectVmDiskCreate](../interfaces/_api_.computeprojectvmdiskcreate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create compute/vm.disk  **`summary`** Create compute/vm.disk  **`throws`** {RequiredError}  |
 `computeProjectVmDiskList` | (projectId: string,locationId: string,vmId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List compute/vm.disk  **`summary`** List compute/vm.disk  **`throws`** {RequiredError}  |
 `computeProjectVmEventGet` | (projectId: string,locationId: string,vmId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get compute/vm.event  **`summary`** Get compute/vm.event  **`throws`** {RequiredError}  |
 `computeProjectVmEventList` | (projectId: string,locationId: string,vmId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List compute/vm.event  **`summary`** List compute/vm.event  **`throws`** {RequiredError}  |
-`computeProjectVmFlavour` | (projectId: string,locationId: string,vmId: string,computeProjectVmFlavour: [ComputeProjectVmFlavour](../interfaces/_api_.computeprojectvmflavour.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action flavour  **`summary`** Flavour compute/vm  **`throws`** {RequiredError}  |
+`computeProjectVmFlavour` | (projectId: string,locationId: string,vmId: string,computeProjectVmFlavour: [ComputeProjectVmFlavour](../interfaces/_api_.computeprojectvmflavour.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action flavour  **`summary`** Flavour compute/vm  **`throws`** {RequiredError}  |
 `computeProjectVmGet` | (projectId: string,locationId: string,vmId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single vm  **`summary`** Get compute/vm  **`throws`** {RequiredError}  |
 `computeProjectVmIsoCreate` | (projectId: string,locationId: string,vmId: string,computeProjectVmIsoCreate: [ComputeProjectVmIsoCreate](../interfaces/_api_.computeprojectvmisocreate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create compute/vm.iso  **`summary`** Create compute/vm.iso  **`throws`** {RequiredError}  |
 `computeProjectVmIsoList` | (projectId: string,locationId: string,vmId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List compute/vm.iso  **`summary`** List compute/vm.iso  **`throws`** {RequiredError}  |
@@ -775,19 +774,19 @@ Name | Type | Description |
 `computeProjectVmMetricGet` | (projectId: string,locationId: string,vmId: string,metricId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get compute/vm.metric  **`summary`** Get compute/vm.metric  **`throws`** {RequiredError}  |
 `computeProjectVmMetricList` | (projectId: string,locationId: string,vmId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List compute/vm.metric  **`summary`** List compute/vm.metric  **`throws`** {RequiredError}  |
 `computeProjectVmMetricPointList` | (projectId: string,locationId: string,vmId: string,metricId: string,interval?: string,timespan?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List compute/vm.point  **`summary`** List compute/vm.point  **`throws`** {RequiredError}  |
-`computeProjectVmPasswordReset` | (projectId: string,locationId: string,vmId: string,computeProjectVmPasswordReset: [ComputeProjectVmPasswordReset](../interfaces/_api_.computeprojectvmpasswordreset.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action password_reset  **`summary`** Password reset compute/vm  **`throws`** {RequiredError}  |
-`computeProjectVmRestart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action restart  **`summary`** Restart compute/vm  **`throws`** {RequiredError}  |
-`computeProjectVmSerialport` | (projectId: string,locationId: string,vmId: string,computeProjectVmSerialport: [ComputeProjectVmSerialport](../interfaces/_api_.computeprojectvmserialport.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action serialport  **`summary`** Serialport compute/vm  **`throws`** {RequiredError}  |
+`computeProjectVmPasswordReset` | (projectId: string,locationId: string,vmId: string,computeProjectVmPasswordReset: [ComputeProjectVmPasswordReset](../interfaces/_api_.computeprojectvmpasswordreset.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action password_reset  **`summary`** Password reset compute/vm  **`throws`** {RequiredError}  |
+`computeProjectVmRestart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action restart  **`summary`** Restart compute/vm  **`throws`** {RequiredError}  |
+`computeProjectVmSerialport` | (projectId: string,locationId: string,vmId: string,computeProjectVmSerialport: [ComputeProjectVmSerialport](../interfaces/_api_.computeprojectvmserialport.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action serialport  **`summary`** Serialport compute/vm  **`throws`** {RequiredError}  |
 `computeProjectVmServiceGet` | (projectId: string,locationId: string,vmId: string,serviceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get compute/vm.service  **`summary`** Get compute/vm.service  **`throws`** {RequiredError}  |
 `computeProjectVmServiceList` | (projectId: string,locationId: string,vmId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List compute/vm.service  **`summary`** List compute/vm.service  **`throws`** {RequiredError}  |
-`computeProjectVmStart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start compute/vm  **`throws`** {RequiredError}  |
-`computeProjectVmStop` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action stop  **`summary`** Stop compute/vm  **`throws`** {RequiredError}  |
+`computeProjectVmStart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start compute/vm  **`throws`** {RequiredError}  |
+`computeProjectVmStop` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action stop  **`summary`** Stop compute/vm  **`throws`** {RequiredError}  |
 `computeProjectVmTagCreate` | (projectId: string,locationId: string,vmId: string,tag: [Tag](../interfaces/_api_.tag.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create compute/vm.tag  **`summary`** Create compute/vm.tag  **`throws`** {RequiredError}  |
 `computeProjectVmTagDelete` | (projectId: string,locationId: string,vmId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete compute/vm.tag  **`summary`** Delete compute/vm.tag  **`throws`** {RequiredError}  |
 `computeProjectVmTagGet` | (projectId: string,locationId: string,vmId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get compute/vm.tag  **`summary`** Get compute/vm.tag  **`throws`** {RequiredError}  |
 `computeProjectVmTagList` | (projectId: string,locationId: string,vmId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List compute/vm.tag  **`summary`** List compute/vm.tag  **`throws`** {RequiredError}  |
 `computeProjectVmTagPut` | (projectId: string,locationId: string,vmId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace compute/vm.tag  **`summary`** Replace compute/vm.tag  **`throws`** {RequiredError}  |
-`computeProjectVmTurnoff` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action turnoff  **`summary`** Turnoff compute/vm  **`throws`** {RequiredError}  |
+`computeProjectVmTurnoff` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action turnoff  **`summary`** Turnoff compute/vm  **`throws`** {RequiredError}  |
 `computeProjectVmUpdate` | (projectId: string,locationId: string,vmId: string,computeProjectVmUpdate: [ComputeProjectVmUpdate](../interfaces/_api_.computeprojectvmupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified vm  **`summary`** Update compute/vm  **`throws`** {RequiredError}  |
 
 ___
@@ -796,7 +795,7 @@ ___
 
 ▸ `Const`**ComputeProjectVmApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:14661*
+*Defined in api.ts:14721*
 
 ComputeProjectVmApi - factory interface
 
@@ -817,13 +816,13 @@ Name | Type |
 `computeProjectVmConnectGet` | (projectId: string,locationId: string,vmId: string,connectId: string,options?: any) => AxiosPromise\<[Connect](../interfaces/_api_.connect.md)> |
 `computeProjectVmConnectList` | (projectId: string,locationId: string,vmId: string,options?: any) => AxiosPromise\<Array\<[Connect](../interfaces/_api_.connect.md)>> |
 `computeProjectVmConnectOpen` | (projectId: string,locationId: string,vmId: string,connectId: string,computeProjectVmConnectOpen: [ComputeProjectVmConnectOpen](../interfaces/_api_.computeprojectvmconnectopen.md),options?: any) => AxiosPromise\<void> |
-`computeProjectVmCreate` | (projectId: string,locationId: string,computeProjectVmCreate: [ComputeProjectVmCreate](../interfaces/_api_.computeprojectvmcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
+`computeProjectVmCreate` | (projectId: string,locationId: string,computeProjectVmCreate: [ComputeProjectVmCreate](../interfaces/_api_.computeprojectvmcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
 `computeProjectVmDelete` | (projectId: string,locationId: string,vmId: string,options?: any) => AxiosPromise\<void> |
 `computeProjectVmDiskCreate` | (projectId: string,locationId: string,vmId: string,computeProjectVmDiskCreate: [ComputeProjectVmDiskCreate](../interfaces/_api_.computeprojectvmdiskcreate.md),options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
 `computeProjectVmDiskList` | (projectId: string,locationId: string,vmId: string,options?: any) => AxiosPromise\<Array\<[Disk](../interfaces/_api_.disk.md)>> |
 `computeProjectVmEventGet` | (projectId: string,locationId: string,vmId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `computeProjectVmEventList` | (projectId: string,locationId: string,vmId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
-`computeProjectVmFlavour` | (projectId: string,locationId: string,vmId: string,computeProjectVmFlavour: [ComputeProjectVmFlavour](../interfaces/_api_.computeprojectvmflavour.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
+`computeProjectVmFlavour` | (projectId: string,locationId: string,vmId: string,computeProjectVmFlavour: [ComputeProjectVmFlavour](../interfaces/_api_.computeprojectvmflavour.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
 `computeProjectVmGet` | (projectId: string,locationId: string,vmId: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
 `computeProjectVmIsoCreate` | (projectId: string,locationId: string,vmId: string,computeProjectVmIsoCreate: [ComputeProjectVmIsoCreate](../interfaces/_api_.computeprojectvmisocreate.md),options?: any) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)> |
 `computeProjectVmIsoList` | (projectId: string,locationId: string,vmId: string,options?: any) => AxiosPromise\<Array\<[Iso](../interfaces/_api_.iso.md)>> |
@@ -831,19 +830,19 @@ Name | Type |
 `computeProjectVmMetricGet` | (projectId: string,locationId: string,vmId: string,metricId: string,options?: any) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)> |
 `computeProjectVmMetricList` | (projectId: string,locationId: string,vmId: string,options?: any) => AxiosPromise\<Array\<[Metric](../interfaces/_api_.metric.md)>> |
 `computeProjectVmMetricPointList` | (projectId: string,locationId: string,vmId: string,metricId: string,interval?: string,timespan?: string,options?: any) => AxiosPromise\<Array\<[Point](../interfaces/_api_.point.md)>> |
-`computeProjectVmPasswordReset` | (projectId: string,locationId: string,vmId: string,computeProjectVmPasswordReset: [ComputeProjectVmPasswordReset](../interfaces/_api_.computeprojectvmpasswordreset.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
-`computeProjectVmRestart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
-`computeProjectVmSerialport` | (projectId: string,locationId: string,vmId: string,computeProjectVmSerialport: [ComputeProjectVmSerialport](../interfaces/_api_.computeprojectvmserialport.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<any> |
+`computeProjectVmPasswordReset` | (projectId: string,locationId: string,vmId: string,computeProjectVmPasswordReset: [ComputeProjectVmPasswordReset](../interfaces/_api_.computeprojectvmpasswordreset.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
+`computeProjectVmRestart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
+`computeProjectVmSerialport` | (projectId: string,locationId: string,vmId: string,computeProjectVmSerialport: [ComputeProjectVmSerialport](../interfaces/_api_.computeprojectvmserialport.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<any> |
 `computeProjectVmServiceGet` | (projectId: string,locationId: string,vmId: string,serviceId: string,options?: any) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)> |
 `computeProjectVmServiceList` | (projectId: string,locationId: string,vmId: string,options?: any) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
-`computeProjectVmStart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
-`computeProjectVmStop` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
+`computeProjectVmStart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
+`computeProjectVmStop` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
 `computeProjectVmTagCreate` | (projectId: string,locationId: string,vmId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `computeProjectVmTagDelete` | (projectId: string,locationId: string,vmId: string,tagId: string,options?: any) => AxiosPromise\<void> |
 `computeProjectVmTagGet` | (projectId: string,locationId: string,vmId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `computeProjectVmTagList` | (projectId: string,locationId: string,vmId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `computeProjectVmTagPut` | (projectId: string,locationId: string,vmId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`computeProjectVmTurnoff` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
+`computeProjectVmTurnoff` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
 `computeProjectVmUpdate` | (projectId: string,locationId: string,vmId: string,computeProjectVmUpdate: [ComputeProjectVmUpdate](../interfaces/_api_.computeprojectvmupdate.md),options?: any) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)> |
 
 ___
@@ -852,7 +851,7 @@ ___
 
 ▸ `Const`**ComputeProjectVmApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:14125*
+*Defined in api.ts:14177*
 
 ComputeProjectVmApi - functional programming interface
 
@@ -871,13 +870,13 @@ Name | Type |
 `computeProjectVmConnectGet` | (projectId: string,locationId: string,vmId: string,connectId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Connect](../interfaces/_api_.connect.md)>> |
 `computeProjectVmConnectList` | (projectId: string,locationId: string,vmId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Connect](../interfaces/_api_.connect.md)>>> |
 `computeProjectVmConnectOpen` | (projectId: string,locationId: string,vmId: string,connectId: string,computeProjectVmConnectOpen: [ComputeProjectVmConnectOpen](../interfaces/_api_.computeprojectvmconnectopen.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
-`computeProjectVmCreate` | (projectId: string,locationId: string,computeProjectVmCreate: [ComputeProjectVmCreate](../interfaces/_api_.computeprojectvmcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
+`computeProjectVmCreate` | (projectId: string,locationId: string,computeProjectVmCreate: [ComputeProjectVmCreate](../interfaces/_api_.computeprojectvmcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
 `computeProjectVmDelete` | (projectId: string,locationId: string,vmId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `computeProjectVmDiskCreate` | (projectId: string,locationId: string,vmId: string,computeProjectVmDiskCreate: [ComputeProjectVmDiskCreate](../interfaces/_api_.computeprojectvmdiskcreate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
 `computeProjectVmDiskList` | (projectId: string,locationId: string,vmId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Disk](../interfaces/_api_.disk.md)>>> |
 `computeProjectVmEventGet` | (projectId: string,locationId: string,vmId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `computeProjectVmEventList` | (projectId: string,locationId: string,vmId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
-`computeProjectVmFlavour` | (projectId: string,locationId: string,vmId: string,computeProjectVmFlavour: [ComputeProjectVmFlavour](../interfaces/_api_.computeprojectvmflavour.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
+`computeProjectVmFlavour` | (projectId: string,locationId: string,vmId: string,computeProjectVmFlavour: [ComputeProjectVmFlavour](../interfaces/_api_.computeprojectvmflavour.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
 `computeProjectVmGet` | (projectId: string,locationId: string,vmId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
 `computeProjectVmIsoCreate` | (projectId: string,locationId: string,vmId: string,computeProjectVmIsoCreate: [ComputeProjectVmIsoCreate](../interfaces/_api_.computeprojectvmisocreate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)>> |
 `computeProjectVmIsoList` | (projectId: string,locationId: string,vmId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Iso](../interfaces/_api_.iso.md)>>> |
@@ -885,19 +884,19 @@ Name | Type |
 `computeProjectVmMetricGet` | (projectId: string,locationId: string,vmId: string,metricId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)>> |
 `computeProjectVmMetricList` | (projectId: string,locationId: string,vmId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Metric](../interfaces/_api_.metric.md)>>> |
 `computeProjectVmMetricPointList` | (projectId: string,locationId: string,vmId: string,metricId: string,interval?: string,timespan?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Point](../interfaces/_api_.point.md)>>> |
-`computeProjectVmPasswordReset` | (projectId: string,locationId: string,vmId: string,computeProjectVmPasswordReset: [ComputeProjectVmPasswordReset](../interfaces/_api_.computeprojectvmpasswordreset.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
-`computeProjectVmRestart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
-`computeProjectVmSerialport` | (projectId: string,locationId: string,vmId: string,computeProjectVmSerialport: [ComputeProjectVmSerialport](../interfaces/_api_.computeprojectvmserialport.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<any>> |
+`computeProjectVmPasswordReset` | (projectId: string,locationId: string,vmId: string,computeProjectVmPasswordReset: [ComputeProjectVmPasswordReset](../interfaces/_api_.computeprojectvmpasswordreset.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
+`computeProjectVmRestart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
+`computeProjectVmSerialport` | (projectId: string,locationId: string,vmId: string,computeProjectVmSerialport: [ComputeProjectVmSerialport](../interfaces/_api_.computeprojectvmserialport.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<any>> |
 `computeProjectVmServiceGet` | (projectId: string,locationId: string,vmId: string,serviceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `computeProjectVmServiceList` | (projectId: string,locationId: string,vmId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>>> |
-`computeProjectVmStart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
-`computeProjectVmStop` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
+`computeProjectVmStart` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
+`computeProjectVmStop` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
 `computeProjectVmTagCreate` | (projectId: string,locationId: string,vmId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `computeProjectVmTagDelete` | (projectId: string,locationId: string,vmId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `computeProjectVmTagGet` | (projectId: string,locationId: string,vmId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `computeProjectVmTagList` | (projectId: string,locationId: string,vmId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `computeProjectVmTagPut` | (projectId: string,locationId: string,vmId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`computeProjectVmTurnoff` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
+`computeProjectVmTurnoff` | (projectId: string,locationId: string,vmId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
 `computeProjectVmUpdate` | (projectId: string,locationId: string,vmId: string,computeProjectVmUpdate: [ComputeProjectVmUpdate](../interfaces/_api_.computeprojectvmupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vm](../interfaces/_api_.vm.md)>> |
 
 ___
@@ -906,7 +905,7 @@ ___
 
 ▸ `Const`**ContainerProjectRegistryApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:15547*
+*Defined in api.ts:15623*
 
 ContainerProjectRegistryApi - axios parameter creator
 
@@ -922,7 +921,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`containerProjectRegistryCreate` | (projectId: string,locationId: string,containerProjectRegistryCreate: [ContainerProjectRegistryCreate](../interfaces/_api_.containerprojectregistrycreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create registry  **`summary`** Create container/registry  **`throws`** {RequiredError}  |
+`containerProjectRegistryCreate` | (projectId: string,locationId: string,containerProjectRegistryCreate: [ContainerProjectRegistryCreate](../interfaces/_api_.containerprojectregistrycreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create registry  **`summary`** Create container/registry  **`throws`** {RequiredError}  |
 `containerProjectRegistryCredentialCreate` | (projectId: string,locationId: string,registryId: string,registryCredential: [RegistryCredential](../interfaces/_api_.registrycredential.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create container/registry.credential  **`summary`** Create container/registry.credential  **`throws`** {RequiredError}  |
 `containerProjectRegistryCredentialDelete` | (projectId: string,locationId: string,registryId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete container/registry.credential  **`summary`** Delete container/registry.credential  **`throws`** {RequiredError}  |
 `containerProjectRegistryCredentialGet` | (projectId: string,locationId: string,registryId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get container/registry.credential  **`summary`** Get container/registry.credential  **`throws`** {RequiredError}  |
@@ -944,14 +943,14 @@ Name | Type | Description |
 `containerProjectRegistryRepositoryList` | (projectId: string,locationId: string,registryId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List container/registry.repository  **`summary`** List container/registry.repository  **`throws`** {RequiredError}  |
 `containerProjectRegistryServiceGet` | (projectId: string,locationId: string,registryId: string,serviceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get container/registry.service  **`summary`** Get container/registry.service  **`throws`** {RequiredError}  |
 `containerProjectRegistryServiceList` | (projectId: string,locationId: string,registryId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List container/registry.service  **`summary`** List container/registry.service  **`throws`** {RequiredError}  |
-`containerProjectRegistryStart` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start container/registry  **`throws`** {RequiredError}  |
-`containerProjectRegistryStop` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action stop  **`summary`** Stop container/registry  **`throws`** {RequiredError}  |
+`containerProjectRegistryStart` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start container/registry  **`throws`** {RequiredError}  |
+`containerProjectRegistryStop` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action stop  **`summary`** Stop container/registry  **`throws`** {RequiredError}  |
 `containerProjectRegistryTagCreate` | (projectId: string,locationId: string,registryId: string,tag: [Tag](../interfaces/_api_.tag.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create container/registry.tag  **`summary`** Create container/registry.tag  **`throws`** {RequiredError}  |
 `containerProjectRegistryTagDelete` | (projectId: string,locationId: string,registryId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete container/registry.tag  **`summary`** Delete container/registry.tag  **`throws`** {RequiredError}  |
 `containerProjectRegistryTagGet` | (projectId: string,locationId: string,registryId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get container/registry.tag  **`summary`** Get container/registry.tag  **`throws`** {RequiredError}  |
 `containerProjectRegistryTagList` | (projectId: string,locationId: string,registryId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List container/registry.tag  **`summary`** List container/registry.tag  **`throws`** {RequiredError}  |
 `containerProjectRegistryTagPut` | (projectId: string,locationId: string,registryId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace container/registry.tag  **`summary`** Replace container/registry.tag  **`throws`** {RequiredError}  |
-`containerProjectRegistryTransfer` | (projectId: string,locationId: string,registryId: string,containerProjectRegistryTransfer: [ContainerProjectRegistryTransfer](../interfaces/_api_.containerprojectregistrytransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer container/registry  **`throws`** {RequiredError}  |
+`containerProjectRegistryTransfer` | (projectId: string,locationId: string,registryId: string,containerProjectRegistryTransfer: [ContainerProjectRegistryTransfer](../interfaces/_api_.containerprojectregistrytransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer container/registry  **`throws`** {RequiredError}  |
 `containerProjectRegistryUpdate` | (projectId: string,locationId: string,registryId: string,containerProjectRegistryUpdate: [ContainerProjectRegistryUpdate](../interfaces/_api_.containerprojectregistryupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified registry  **`summary`** Update container/registry  **`throws`** {RequiredError}  |
 
 ___
@@ -960,7 +959,7 @@ ___
 
 ▸ `Const`**ContainerProjectRegistryApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:18310*
+*Defined in api.ts:18410*
 
 ContainerProjectRegistryApi - factory interface
 
@@ -978,7 +977,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`containerProjectRegistryCreate` | (projectId: string,locationId: string,containerProjectRegistryCreate: [ContainerProjectRegistryCreate](../interfaces/_api_.containerprojectregistrycreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)> |
+`containerProjectRegistryCreate` | (projectId: string,locationId: string,containerProjectRegistryCreate: [ContainerProjectRegistryCreate](../interfaces/_api_.containerprojectregistrycreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)> |
 `containerProjectRegistryCredentialCreate` | (projectId: string,locationId: string,registryId: string,registryCredential: [RegistryCredential](../interfaces/_api_.registrycredential.md),options?: any) => AxiosPromise\<[RegistryCredential](../interfaces/_api_.registrycredential.md)> |
 `containerProjectRegistryCredentialDelete` | (projectId: string,locationId: string,registryId: string,credentialId: string,options?: any) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)> |
 `containerProjectRegistryCredentialGet` | (projectId: string,locationId: string,registryId: string,credentialId: string,options?: any) => AxiosPromise\<[RegistryCredential](../interfaces/_api_.registrycredential.md)> |
@@ -1000,14 +999,14 @@ Name | Type |
 `containerProjectRegistryRepositoryList` | (projectId: string,locationId: string,registryId: string,options?: any) => AxiosPromise\<Array\<[ContainerRepository](../interfaces/_api_.containerrepository.md)>> |
 `containerProjectRegistryServiceGet` | (projectId: string,locationId: string,registryId: string,serviceId: string,options?: any) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)> |
 `containerProjectRegistryServiceList` | (projectId: string,locationId: string,registryId: string,options?: any) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
-`containerProjectRegistryStart` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)> |
-`containerProjectRegistryStop` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)> |
+`containerProjectRegistryStart` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)> |
+`containerProjectRegistryStop` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)> |
 `containerProjectRegistryTagCreate` | (projectId: string,locationId: string,registryId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `containerProjectRegistryTagDelete` | (projectId: string,locationId: string,registryId: string,tagId: string,options?: any) => AxiosPromise\<void> |
 `containerProjectRegistryTagGet` | (projectId: string,locationId: string,registryId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `containerProjectRegistryTagList` | (projectId: string,locationId: string,registryId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `containerProjectRegistryTagPut` | (projectId: string,locationId: string,registryId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`containerProjectRegistryTransfer` | (projectId: string,locationId: string,registryId: string,containerProjectRegistryTransfer: [ContainerProjectRegistryTransfer](../interfaces/_api_.containerprojectregistrytransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)> |
+`containerProjectRegistryTransfer` | (projectId: string,locationId: string,registryId: string,containerProjectRegistryTransfer: [ContainerProjectRegistryTransfer](../interfaces/_api_.containerprojectregistrytransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)> |
 `containerProjectRegistryUpdate` | (projectId: string,locationId: string,registryId: string,containerProjectRegistryUpdate: [ContainerProjectRegistryUpdate](../interfaces/_api_.containerprojectregistryupdate.md),options?: any) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)> |
 
 ___
@@ -1016,7 +1015,7 @@ ___
 
 ▸ `Const`**ContainerProjectRegistryApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:17775*
+*Defined in api.ts:17871*
 
 ContainerProjectRegistryApi - functional programming interface
 
@@ -1032,7 +1031,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`containerProjectRegistryCreate` | (projectId: string,locationId: string,containerProjectRegistryCreate: [ContainerProjectRegistryCreate](../interfaces/_api_.containerprojectregistrycreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)>> |
+`containerProjectRegistryCreate` | (projectId: string,locationId: string,containerProjectRegistryCreate: [ContainerProjectRegistryCreate](../interfaces/_api_.containerprojectregistrycreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)>> |
 `containerProjectRegistryCredentialCreate` | (projectId: string,locationId: string,registryId: string,registryCredential: [RegistryCredential](../interfaces/_api_.registrycredential.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[RegistryCredential](../interfaces/_api_.registrycredential.md)>> |
 `containerProjectRegistryCredentialDelete` | (projectId: string,locationId: string,registryId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)>> |
 `containerProjectRegistryCredentialGet` | (projectId: string,locationId: string,registryId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[RegistryCredential](../interfaces/_api_.registrycredential.md)>> |
@@ -1054,14 +1053,14 @@ Name | Type |
 `containerProjectRegistryRepositoryList` | (projectId: string,locationId: string,registryId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ContainerRepository](../interfaces/_api_.containerrepository.md)>>> |
 `containerProjectRegistryServiceGet` | (projectId: string,locationId: string,registryId: string,serviceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `containerProjectRegistryServiceList` | (projectId: string,locationId: string,registryId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>>> |
-`containerProjectRegistryStart` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)>> |
-`containerProjectRegistryStop` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)>> |
+`containerProjectRegistryStart` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)>> |
+`containerProjectRegistryStop` | (projectId: string,locationId: string,registryId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)>> |
 `containerProjectRegistryTagCreate` | (projectId: string,locationId: string,registryId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `containerProjectRegistryTagDelete` | (projectId: string,locationId: string,registryId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `containerProjectRegistryTagGet` | (projectId: string,locationId: string,registryId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `containerProjectRegistryTagList` | (projectId: string,locationId: string,registryId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `containerProjectRegistryTagPut` | (projectId: string,locationId: string,registryId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`containerProjectRegistryTransfer` | (projectId: string,locationId: string,registryId: string,containerProjectRegistryTransfer: [ContainerProjectRegistryTransfer](../interfaces/_api_.containerprojectregistrytransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)>> |
+`containerProjectRegistryTransfer` | (projectId: string,locationId: string,registryId: string,containerProjectRegistryTransfer: [ContainerProjectRegistryTransfer](../interfaces/_api_.containerprojectregistrytransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)>> |
 `containerProjectRegistryUpdate` | (projectId: string,locationId: string,registryId: string,containerProjectRegistryUpdate: [ContainerProjectRegistryUpdate](../interfaces/_api_.containerprojectregistryupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Registry](../interfaces/_api_.registry.md)>> |
 
 ___
@@ -1070,7 +1069,7 @@ ___
 
 ▸ `Const`**DatabaseProjectInstanceApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:19194*
+*Defined in api.ts:19302*
 
 DatabaseProjectInstanceApi - axios parameter creator
 
@@ -1088,7 +1087,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `databaseProjectInstanceConnectGet` | (projectId: string,locationId: string,instanceId: string,connectId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get database/instance.connect  **`summary`** Get database/instance.connect  **`throws`** {RequiredError}  |
 `databaseProjectInstanceConnectList` | (projectId: string,locationId: string,instanceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List database/instance.connect  **`summary`** List database/instance.connect  **`throws`** {RequiredError}  |
-`databaseProjectInstanceCreate` | (projectId: string,locationId: string,databaseProjectInstanceCreate: [DatabaseProjectInstanceCreate](../interfaces/_api_.databaseprojectinstancecreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create instance  **`summary`** Create database/instance  **`throws`** {RequiredError}  |
+`databaseProjectInstanceCreate` | (projectId: string,locationId: string,databaseProjectInstanceCreate: [DatabaseProjectInstanceCreate](../interfaces/_api_.databaseprojectinstancecreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create instance  **`summary`** Create database/instance  **`throws`** {RequiredError}  |
 `databaseProjectInstanceCredentialCreate` | (projectId: string,locationId: string,instanceId: string,databaseCredential: [DatabaseCredential](../interfaces/_api_.databasecredential.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create database/instance.credential  **`summary`** Create database/instance.credential  **`throws`** {RequiredError}  |
 `databaseProjectInstanceCredentialDelete` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete database/instance.credential  **`summary`** Delete database/instance.credential  **`throws`** {RequiredError}  |
 `databaseProjectInstanceCredentialGet` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get database/instance.credential  **`summary`** Get database/instance.credential  **`throws`** {RequiredError}  |
@@ -1101,14 +1100,14 @@ Name | Type | Description |
 `databaseProjectInstanceList` | (projectId: string,locationId: string,name?: string,tagValue?: string,tagKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List instance  **`summary`** List database/instance  **`throws`** {RequiredError}  |
 `databaseProjectInstanceServiceGet` | (projectId: string,locationId: string,instanceId: string,serviceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get database/instance.service  **`summary`** Get database/instance.service  **`throws`** {RequiredError}  |
 `databaseProjectInstanceServiceList` | (projectId: string,locationId: string,instanceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List database/instance.service  **`summary`** List database/instance.service  **`throws`** {RequiredError}  |
-`databaseProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start database/instance  **`throws`** {RequiredError}  |
-`databaseProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action stop  **`summary`** Stop database/instance  **`throws`** {RequiredError}  |
+`databaseProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start database/instance  **`throws`** {RequiredError}  |
+`databaseProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action stop  **`summary`** Stop database/instance  **`throws`** {RequiredError}  |
 `databaseProjectInstanceTagCreate` | (projectId: string,locationId: string,instanceId: string,tag: [Tag](../interfaces/_api_.tag.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create database/instance.tag  **`summary`** Create database/instance.tag  **`throws`** {RequiredError}  |
 `databaseProjectInstanceTagDelete` | (projectId: string,locationId: string,instanceId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete database/instance.tag  **`summary`** Delete database/instance.tag  **`throws`** {RequiredError}  |
 `databaseProjectInstanceTagGet` | (projectId: string,locationId: string,instanceId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get database/instance.tag  **`summary`** Get database/instance.tag  **`throws`** {RequiredError}  |
 `databaseProjectInstanceTagList` | (projectId: string,locationId: string,instanceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List database/instance.tag  **`summary`** List database/instance.tag  **`throws`** {RequiredError}  |
 `databaseProjectInstanceTagPut` | (projectId: string,locationId: string,instanceId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace database/instance.tag  **`summary`** Replace database/instance.tag  **`throws`** {RequiredError}  |
-`databaseProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,databaseProjectInstanceTransfer: [DatabaseProjectInstanceTransfer](../interfaces/_api_.databaseprojectinstancetransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer database/instance  **`throws`** {RequiredError}  |
+`databaseProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,databaseProjectInstanceTransfer: [DatabaseProjectInstanceTransfer](../interfaces/_api_.databaseprojectinstancetransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer database/instance  **`throws`** {RequiredError}  |
 `databaseProjectInstanceUpdate` | (projectId: string,locationId: string,instanceId: string,databaseProjectInstanceUpdate: [DatabaseProjectInstanceUpdate](../interfaces/_api_.databaseprojectinstanceupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified instance  **`summary`** Update database/instance  **`throws`** {RequiredError}  |
 
 ___
@@ -1117,7 +1116,7 @@ ___
 
 ▸ `Const`**DatabaseProjectInstanceApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:21333*
+*Defined in api.ts:21465*
 
 DatabaseProjectInstanceApi - factory interface
 
@@ -1137,7 +1136,7 @@ Name | Type |
 ------ | ------ |
 `databaseProjectInstanceConnectGet` | (projectId: string,locationId: string,instanceId: string,connectId: string,options?: any) => AxiosPromise\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)> |
 `databaseProjectInstanceConnectList` | (projectId: string,locationId: string,instanceId: string,options?: any) => AxiosPromise\<Array\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)>> |
-`databaseProjectInstanceCreate` | (projectId: string,locationId: string,databaseProjectInstanceCreate: [DatabaseProjectInstanceCreate](../interfaces/_api_.databaseprojectinstancecreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Database](../interfaces/_api_.database.md)> |
+`databaseProjectInstanceCreate` | (projectId: string,locationId: string,databaseProjectInstanceCreate: [DatabaseProjectInstanceCreate](../interfaces/_api_.databaseprojectinstancecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Database](../interfaces/_api_.database.md)> |
 `databaseProjectInstanceCredentialCreate` | (projectId: string,locationId: string,instanceId: string,databaseCredential: [DatabaseCredential](../interfaces/_api_.databasecredential.md),options?: any) => AxiosPromise\<[DatabaseCredential](../interfaces/_api_.databasecredential.md)> |
 `databaseProjectInstanceCredentialDelete` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options?: any) => AxiosPromise\<[Database](../interfaces/_api_.database.md)> |
 `databaseProjectInstanceCredentialGet` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options?: any) => AxiosPromise\<[DatabaseCredential](../interfaces/_api_.databasecredential.md)> |
@@ -1150,14 +1149,14 @@ Name | Type |
 `databaseProjectInstanceList` | (projectId: string,locationId: string,name?: string,tagValue?: string,tagKey?: string,options?: any) => AxiosPromise\<Array\<[Database](../interfaces/_api_.database.md)>> |
 `databaseProjectInstanceServiceGet` | (projectId: string,locationId: string,instanceId: string,serviceId: string,options?: any) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)> |
 `databaseProjectInstanceServiceList` | (projectId: string,locationId: string,instanceId: string,options?: any) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
-`databaseProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Database](../interfaces/_api_.database.md)> |
-`databaseProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Database](../interfaces/_api_.database.md)> |
+`databaseProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Database](../interfaces/_api_.database.md)> |
+`databaseProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Database](../interfaces/_api_.database.md)> |
 `databaseProjectInstanceTagCreate` | (projectId: string,locationId: string,instanceId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `databaseProjectInstanceTagDelete` | (projectId: string,locationId: string,instanceId: string,tagId: string,options?: any) => AxiosPromise\<void> |
 `databaseProjectInstanceTagGet` | (projectId: string,locationId: string,instanceId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `databaseProjectInstanceTagList` | (projectId: string,locationId: string,instanceId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `databaseProjectInstanceTagPut` | (projectId: string,locationId: string,instanceId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`databaseProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,databaseProjectInstanceTransfer: [DatabaseProjectInstanceTransfer](../interfaces/_api_.databaseprojectinstancetransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Database](../interfaces/_api_.database.md)> |
+`databaseProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,databaseProjectInstanceTransfer: [DatabaseProjectInstanceTransfer](../interfaces/_api_.databaseprojectinstancetransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Database](../interfaces/_api_.database.md)> |
 `databaseProjectInstanceUpdate` | (projectId: string,locationId: string,instanceId: string,databaseProjectInstanceUpdate: [DatabaseProjectInstanceUpdate](../interfaces/_api_.databaseprojectinstanceupdate.md),options?: any) => AxiosPromise\<[Database](../interfaces/_api_.database.md)> |
 
 ___
@@ -1166,7 +1165,7 @@ ___
 
 ▸ `Const`**DatabaseProjectInstanceApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:20918*
+*Defined in api.ts:21046*
 
 DatabaseProjectInstanceApi - functional programming interface
 
@@ -1184,7 +1183,7 @@ Name | Type |
 ------ | ------ |
 `databaseProjectInstanceConnectGet` | (projectId: string,locationId: string,instanceId: string,connectId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)>> |
 `databaseProjectInstanceConnectList` | (projectId: string,locationId: string,instanceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)>>> |
-`databaseProjectInstanceCreate` | (projectId: string,locationId: string,databaseProjectInstanceCreate: [DatabaseProjectInstanceCreate](../interfaces/_api_.databaseprojectinstancecreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Database](../interfaces/_api_.database.md)>> |
+`databaseProjectInstanceCreate` | (projectId: string,locationId: string,databaseProjectInstanceCreate: [DatabaseProjectInstanceCreate](../interfaces/_api_.databaseprojectinstancecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Database](../interfaces/_api_.database.md)>> |
 `databaseProjectInstanceCredentialCreate` | (projectId: string,locationId: string,instanceId: string,databaseCredential: [DatabaseCredential](../interfaces/_api_.databasecredential.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[DatabaseCredential](../interfaces/_api_.databasecredential.md)>> |
 `databaseProjectInstanceCredentialDelete` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Database](../interfaces/_api_.database.md)>> |
 `databaseProjectInstanceCredentialGet` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[DatabaseCredential](../interfaces/_api_.databasecredential.md)>> |
@@ -1197,14 +1196,14 @@ Name | Type |
 `databaseProjectInstanceList` | (projectId: string,locationId: string,name?: string,tagValue?: string,tagKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Database](../interfaces/_api_.database.md)>>> |
 `databaseProjectInstanceServiceGet` | (projectId: string,locationId: string,instanceId: string,serviceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `databaseProjectInstanceServiceList` | (projectId: string,locationId: string,instanceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>>> |
-`databaseProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Database](../interfaces/_api_.database.md)>> |
-`databaseProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Database](../interfaces/_api_.database.md)>> |
+`databaseProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Database](../interfaces/_api_.database.md)>> |
+`databaseProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Database](../interfaces/_api_.database.md)>> |
 `databaseProjectInstanceTagCreate` | (projectId: string,locationId: string,instanceId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `databaseProjectInstanceTagDelete` | (projectId: string,locationId: string,instanceId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `databaseProjectInstanceTagGet` | (projectId: string,locationId: string,instanceId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `databaseProjectInstanceTagList` | (projectId: string,locationId: string,instanceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `databaseProjectInstanceTagPut` | (projectId: string,locationId: string,instanceId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`databaseProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,databaseProjectInstanceTransfer: [DatabaseProjectInstanceTransfer](../interfaces/_api_.databaseprojectinstancetransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Database](../interfaces/_api_.database.md)>> |
+`databaseProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,databaseProjectInstanceTransfer: [DatabaseProjectInstanceTransfer](../interfaces/_api_.databaseprojectinstancetransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Database](../interfaces/_api_.database.md)>> |
 `databaseProjectInstanceUpdate` | (projectId: string,locationId: string,instanceId: string,databaseProjectInstanceUpdate: [DatabaseProjectInstanceUpdate](../interfaces/_api_.databaseprojectinstanceupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Database](../interfaces/_api_.database.md)>> |
 
 ___
@@ -1213,7 +1212,7 @@ ___
 
 ▸ `Const`**DnsProjectZoneApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:22019*
+*Defined in api.ts:22159*
 
 DnsProjectZoneApi - axios parameter creator
 
@@ -1229,7 +1228,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`dnsProjectZoneCreate` | (projectId: string,locationId: string,dnsProjectZoneCreate: [DnsProjectZoneCreate](../interfaces/_api_.dnsprojectzonecreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create zone  **`summary`** Create dns/zone  **`throws`** {RequiredError}  |
+`dnsProjectZoneCreate` | (projectId: string,locationId: string,dnsProjectZoneCreate: [DnsProjectZoneCreate](../interfaces/_api_.dnsprojectzonecreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create zone  **`summary`** Create dns/zone  **`throws`** {RequiredError}  |
 `dnsProjectZoneDelete` | (projectId: string,locationId: string,zoneId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete zone  **`summary`** Delete dns/zone  **`throws`** {RequiredError}  |
 `dnsProjectZoneEventGet` | (projectId: string,locationId: string,zoneId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get dns/zone.event  **`summary`** Get dns/zone.event  **`throws`** {RequiredError}  |
 `dnsProjectZoneEventList` | (projectId: string,locationId: string,zoneId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List dns/zone.event  **`summary`** List dns/zone.event  **`throws`** {RequiredError}  |
@@ -1260,7 +1259,7 @@ ___
 
 ▸ `Const`**DnsProjectZoneApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:24197*
+*Defined in api.ts:24343*
 
 DnsProjectZoneApi - factory interface
 
@@ -1278,7 +1277,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`dnsProjectZoneCreate` | (projectId: string,locationId: string,dnsProjectZoneCreate: [DnsProjectZoneCreate](../interfaces/_api_.dnsprojectzonecreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Zone](../interfaces/_api_.zone.md)> |
+`dnsProjectZoneCreate` | (projectId: string,locationId: string,dnsProjectZoneCreate: [DnsProjectZoneCreate](../interfaces/_api_.dnsprojectzonecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Zone](../interfaces/_api_.zone.md)> |
 `dnsProjectZoneDelete` | (projectId: string,locationId: string,zoneId: string,options?: any) => AxiosPromise\<void> |
 `dnsProjectZoneEventGet` | (projectId: string,locationId: string,zoneId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `dnsProjectZoneEventList` | (projectId: string,locationId: string,zoneId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
@@ -1309,7 +1308,7 @@ ___
 
 ▸ `Const`**DnsProjectZoneApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:23778*
+*Defined in api.ts:23923*
 
 DnsProjectZoneApi - functional programming interface
 
@@ -1325,7 +1324,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`dnsProjectZoneCreate` | (projectId: string,locationId: string,dnsProjectZoneCreate: [DnsProjectZoneCreate](../interfaces/_api_.dnsprojectzonecreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Zone](../interfaces/_api_.zone.md)>> |
+`dnsProjectZoneCreate` | (projectId: string,locationId: string,dnsProjectZoneCreate: [DnsProjectZoneCreate](../interfaces/_api_.dnsprojectzonecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Zone](../interfaces/_api_.zone.md)>> |
 `dnsProjectZoneDelete` | (projectId: string,locationId: string,zoneId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `dnsProjectZoneEventGet` | (projectId: string,locationId: string,zoneId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `dnsProjectZoneEventList` | (projectId: string,locationId: string,zoneId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
@@ -1356,7 +1355,7 @@ ___
 
 ▸ `Const`**IamOrganisationApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:24891*
+*Defined in api.ts:25039*
 
 IamOrganisationApi - axios parameter creator
 
@@ -1373,7 +1372,7 @@ Name | Type |
 Name | Type | Description |
 ------ | ------ | ------ |
 `iamOrganisationBillingList` | (organisationId: string,start?: string,end?: string,resourceType?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List iam/organisation.billing  **`summary`** List iam/organisation.billing  **`throws`** {RequiredError}  |
-`iamOrganisationCreate` | (iamOrganisationCreate: [IamOrganisationCreate](../interfaces/_api_.iamorganisationcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create organisation  **`summary`** Create iam/organisation  **`throws`** {RequiredError}  |
+`iamOrganisationCreate` | (iamOrganisationCreate: [IamOrganisationCreate](../interfaces/_api_.iamorganisationcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create organisation  **`summary`** Create iam/organisation  **`throws`** {RequiredError}  |
 `iamOrganisationDelete` | (organisationId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete organisation  **`summary`** Delete iam/organisation  **`throws`** {RequiredError}  |
 `iamOrganisationEventGet` | (organisationId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get iam/organisation.event  **`summary`** Get iam/organisation.event  **`throws`** {RequiredError}  |
 `iamOrganisationEventList` | (organisationId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List iam/organisation.event  **`summary`** List iam/organisation.event  **`throws`** {RequiredError}  |
@@ -1410,7 +1409,7 @@ ___
 
 ▸ `Const`**IamOrganisationApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:27221*
+*Defined in api.ts:27375*
 
 IamOrganisationApi - factory interface
 
@@ -1429,7 +1428,7 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `iamOrganisationBillingList` | (organisationId: string,start?: string,end?: string,resourceType?: string,options?: any) => AxiosPromise\<Array\<[Billing](../interfaces/_api_.billing.md)>> |
-`iamOrganisationCreate` | (iamOrganisationCreate: [IamOrganisationCreate](../interfaces/_api_.iamorganisationcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Organisation](../interfaces/_api_.organisation.md)> |
+`iamOrganisationCreate` | (iamOrganisationCreate: [IamOrganisationCreate](../interfaces/_api_.iamorganisationcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Organisation](../interfaces/_api_.organisation.md)> |
 `iamOrganisationDelete` | (organisationId: string,options?: any) => AxiosPromise\<void> |
 `iamOrganisationEventGet` | (organisationId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `iamOrganisationEventList` | (organisationId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
@@ -1466,7 +1465,7 @@ ___
 
 ▸ `Const`**IamOrganisationApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:26747*
+*Defined in api.ts:26900*
 
 IamOrganisationApi - functional programming interface
 
@@ -1483,7 +1482,7 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `iamOrganisationBillingList` | (organisationId: string,start?: string,end?: string,resourceType?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Billing](../interfaces/_api_.billing.md)>>> |
-`iamOrganisationCreate` | (iamOrganisationCreate: [IamOrganisationCreate](../interfaces/_api_.iamorganisationcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Organisation](../interfaces/_api_.organisation.md)>> |
+`iamOrganisationCreate` | (iamOrganisationCreate: [IamOrganisationCreate](../interfaces/_api_.iamorganisationcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Organisation](../interfaces/_api_.organisation.md)>> |
 `iamOrganisationDelete` | (organisationId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `iamOrganisationEventGet` | (organisationId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `iamOrganisationEventList` | (organisationId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
@@ -1520,7 +1519,7 @@ ___
 
 ▸ `Const`**IamOrganisationPolicyApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:27983*
+*Defined in api.ts:28139*
 
 IamOrganisationPolicyApi - axios parameter creator
 
@@ -1540,7 +1539,7 @@ Name | Type | Description |
 `iamOrganisationPolicyActorDelete` | (organisationId: string,policyId: string,actorId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete iam/policy.actor  **`summary`** Delete iam/policy.actor  **`throws`** {RequiredError}  |
 `iamOrganisationPolicyActorGet` | (organisationId: string,policyId: string,actorId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get iam/policy.actor  **`summary`** Get iam/policy.actor  **`throws`** {RequiredError}  |
 `iamOrganisationPolicyActorList` | (organisationId: string,policyId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List iam/policy.actor  **`summary`** List iam/policy.actor  **`throws`** {RequiredError}  |
-`iamOrganisationPolicyCreate` | (organisationId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create policy  **`summary`** Create iam/policy  **`throws`** {RequiredError}  |
+`iamOrganisationPolicyCreate` | (organisationId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create policy  **`summary`** Create iam/policy  **`throws`** {RequiredError}  |
 `iamOrganisationPolicyDelete` | (organisationId: string,policyId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete policy  **`summary`** Delete iam/policy  **`throws`** {RequiredError}  |
 `iamOrganisationPolicyEventGet` | (organisationId: string,policyId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get iam/policy.event  **`summary`** Get iam/policy.event  **`throws`** {RequiredError}  |
 `iamOrganisationPolicyEventList` | (organisationId: string,policyId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List iam/policy.event  **`summary`** List iam/policy.event  **`throws`** {RequiredError}  |
@@ -1561,7 +1560,7 @@ ___
 
 ▸ `Const`**IamOrganisationPolicyApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:29460*
+*Defined in api.ts:29622*
 
 IamOrganisationPolicyApi - factory interface
 
@@ -1583,7 +1582,7 @@ Name | Type |
 `iamOrganisationPolicyActorDelete` | (organisationId: string,policyId: string,actorId: string,options?: any) => AxiosPromise\<[IamActor](../interfaces/_api_.iamactor.md)> |
 `iamOrganisationPolicyActorGet` | (organisationId: string,policyId: string,actorId: string,options?: any) => AxiosPromise\<[IamActor](../interfaces/_api_.iamactor.md)> |
 `iamOrganisationPolicyActorList` | (organisationId: string,policyId: string,options?: any) => AxiosPromise\<Array\<[IamActor](../interfaces/_api_.iamactor.md)>> |
-`iamOrganisationPolicyCreate` | (organisationId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Policy](../interfaces/_api_.policy.md)> |
+`iamOrganisationPolicyCreate` | (organisationId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Policy](../interfaces/_api_.policy.md)> |
 `iamOrganisationPolicyDelete` | (organisationId: string,policyId: string,options?: any) => AxiosPromise\<void> |
 `iamOrganisationPolicyEventGet` | (organisationId: string,policyId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `iamOrganisationPolicyEventList` | (organisationId: string,policyId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
@@ -1604,7 +1603,7 @@ ___
 
 ▸ `Const`**IamOrganisationPolicyApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:29165*
+*Defined in api.ts:29326*
 
 IamOrganisationPolicyApi - functional programming interface
 
@@ -1624,7 +1623,7 @@ Name | Type |
 `iamOrganisationPolicyActorDelete` | (organisationId: string,policyId: string,actorId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[IamActor](../interfaces/_api_.iamactor.md)>> |
 `iamOrganisationPolicyActorGet` | (organisationId: string,policyId: string,actorId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[IamActor](../interfaces/_api_.iamactor.md)>> |
 `iamOrganisationPolicyActorList` | (organisationId: string,policyId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[IamActor](../interfaces/_api_.iamactor.md)>>> |
-`iamOrganisationPolicyCreate` | (organisationId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Policy](../interfaces/_api_.policy.md)>> |
+`iamOrganisationPolicyCreate` | (organisationId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Policy](../interfaces/_api_.policy.md)>> |
 `iamOrganisationPolicyDelete` | (organisationId: string,policyId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `iamOrganisationPolicyEventGet` | (organisationId: string,policyId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `iamOrganisationPolicyEventList` | (organisationId: string,policyId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
@@ -1645,7 +1644,7 @@ ___
 
 ▸ `Const`**IamOrganisationRoleApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:29942*
+*Defined in api.ts:30106*
 
 IamOrganisationRoleApi - axios parameter creator
 
@@ -1661,7 +1660,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`iamOrganisationRoleCreate` | (organisationId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create role  **`summary`** Create iam/role  **`throws`** {RequiredError}  |
+`iamOrganisationRoleCreate` | (organisationId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create role  **`summary`** Create iam/role  **`throws`** {RequiredError}  |
 `iamOrganisationRoleDelete` | (organisationId: string,roleId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete role  **`summary`** Delete iam/role  **`throws`** {RequiredError}  |
 `iamOrganisationRoleEventGet` | (organisationId: string,roleId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get iam/role.event  **`summary`** Get iam/role.event  **`throws`** {RequiredError}  |
 `iamOrganisationRoleEventList` | (organisationId: string,roleId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List iam/role.event  **`summary`** List iam/role.event  **`throws`** {RequiredError}  |
@@ -1687,7 +1686,7 @@ ___
 
 ▸ `Const`**IamOrganisationRoleApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:31501*
+*Defined in api.ts:31671*
 
 IamOrganisationRoleApi - factory interface
 
@@ -1705,7 +1704,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`iamOrganisationRoleCreate` | (organisationId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Role](../interfaces/_api_.role.md)> |
+`iamOrganisationRoleCreate` | (organisationId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Role](../interfaces/_api_.role.md)> |
 `iamOrganisationRoleDelete` | (organisationId: string,roleId: string,options?: any) => AxiosPromise\<void> |
 `iamOrganisationRoleEventGet` | (organisationId: string,roleId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `iamOrganisationRoleEventList` | (organisationId: string,roleId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
@@ -1731,7 +1730,7 @@ ___
 
 ▸ `Const`**IamOrganisationRoleApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:31191*
+*Defined in api.ts:31360*
 
 IamOrganisationRoleApi - functional programming interface
 
@@ -1747,7 +1746,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`iamOrganisationRoleCreate` | (organisationId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Role](../interfaces/_api_.role.md)>> |
+`iamOrganisationRoleCreate` | (organisationId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Role](../interfaces/_api_.role.md)>> |
 `iamOrganisationRoleDelete` | (organisationId: string,roleId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `iamOrganisationRoleEventGet` | (organisationId: string,roleId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `iamOrganisationRoleEventList` | (organisationId: string,roleId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
@@ -1773,7 +1772,7 @@ ___
 
 ▸ `Const`**IamProjectApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:32007*
+*Defined in api.ts:32179*
 
 IamProjectApi - axios parameter creator
 
@@ -1790,7 +1789,7 @@ Name | Type |
 Name | Type | Description |
 ------ | ------ | ------ |
 `iamProjectBillingList` | (projectId: string,start?: string,end?: string,resourceType?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List iam/project.billing  **`summary`** List iam/project.billing  **`throws`** {RequiredError}  |
-`iamProjectCreate` | (iamProjectCreate: [IamProjectCreate](../interfaces/_api_.iamprojectcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create project  **`summary`** Create iam/project  **`throws`** {RequiredError}  |
+`iamProjectCreate` | (iamProjectCreate: [IamProjectCreate](../interfaces/_api_.iamprojectcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create project  **`summary`** Create iam/project  **`throws`** {RequiredError}  |
 `iamProjectCredentialStoreCreate` | (projectId: string,projectCredential: [ProjectCredential](../interfaces/_api_.projectcredential.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create iam/project.credentialStore  **`summary`** Create iam/project.credentialStore  **`throws`** {RequiredError}  |
 `iamProjectCredentialStoreDelete` | (projectId: string,credentialStoreId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete iam/project.credentialStore  **`summary`** Delete iam/project.credentialStore  **`throws`** {RequiredError}  |
 `iamProjectCredentialStoreGet` | (projectId: string,credentialStoreId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get iam/project.credentialStore  **`summary`** Get iam/project.credentialStore  **`throws`** {RequiredError}  |
@@ -1826,7 +1825,7 @@ Name | Type | Description |
 `iamProjectThresholdDelete` | (projectId: string,thresholdId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete iam/project.threshold  **`summary`** Delete iam/project.threshold  **`throws`** {RequiredError}  |
 `iamProjectThresholdGet` | (projectId: string,thresholdId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get iam/project.threshold  **`summary`** Get iam/project.threshold  **`throws`** {RequiredError}  |
 `iamProjectThresholdList` | (projectId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List iam/project.threshold  **`summary`** List iam/project.threshold  **`throws`** {RequiredError}  |
-`iamProjectTransfer` | (projectId: string,iamProjectTransfer: [IamProjectTransfer](../interfaces/_api_.iamprojecttransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer iam/project  **`throws`** {RequiredError}  |
+`iamProjectTransfer` | (projectId: string,iamProjectTransfer: [IamProjectTransfer](../interfaces/_api_.iamprojecttransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer iam/project  **`throws`** {RequiredError}  |
 `iamProjectUpdate` | (projectId: string,iamProjectUpdate: [IamProjectUpdate](../interfaces/_api_.iamprojectupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified project  **`summary`** Update iam/project  **`throws`** {RequiredError}  |
 
 ___
@@ -1835,7 +1834,7 @@ ___
 
 ▸ `Const`**IamProjectApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:34956*
+*Defined in api.ts:35140*
 
 IamProjectApi - factory interface
 
@@ -1854,7 +1853,7 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `iamProjectBillingList` | (projectId: string,start?: string,end?: string,resourceType?: string,options?: any) => AxiosPromise\<Array\<[Billing](../interfaces/_api_.billing.md)>> |
-`iamProjectCreate` | (iamProjectCreate: [IamProjectCreate](../interfaces/_api_.iamprojectcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Project](../interfaces/_api_.project.md)> |
+`iamProjectCreate` | (iamProjectCreate: [IamProjectCreate](../interfaces/_api_.iamprojectcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Project](../interfaces/_api_.project.md)> |
 `iamProjectCredentialStoreCreate` | (projectId: string,projectCredential: [ProjectCredential](../interfaces/_api_.projectcredential.md),options?: any) => AxiosPromise\<[ProjectCredential](../interfaces/_api_.projectcredential.md)> |
 `iamProjectCredentialStoreDelete` | (projectId: string,credentialStoreId: string,options?: any) => AxiosPromise\<[Project](../interfaces/_api_.project.md)> |
 `iamProjectCredentialStoreGet` | (projectId: string,credentialStoreId: string,options?: any) => AxiosPromise\<[ProjectCredential](../interfaces/_api_.projectcredential.md)> |
@@ -1890,7 +1889,7 @@ Name | Type |
 `iamProjectThresholdDelete` | (projectId: string,thresholdId: string,options?: any) => AxiosPromise\<void> |
 `iamProjectThresholdGet` | (projectId: string,thresholdId: string,options?: any) => AxiosPromise\<[ProjectThreshold](../interfaces/_api_.projectthreshold.md)> |
 `iamProjectThresholdList` | (projectId: string,options?: any) => AxiosPromise\<Array\<[ProjectThreshold](../interfaces/_api_.projectthreshold.md)>> |
-`iamProjectTransfer` | (projectId: string,iamProjectTransfer: [IamProjectTransfer](../interfaces/_api_.iamprojecttransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Project](../interfaces/_api_.project.md)> |
+`iamProjectTransfer` | (projectId: string,iamProjectTransfer: [IamProjectTransfer](../interfaces/_api_.iamprojecttransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Project](../interfaces/_api_.project.md)> |
 `iamProjectUpdate` | (projectId: string,iamProjectUpdate: [IamProjectUpdate](../interfaces/_api_.iamprojectupdate.md),options?: any) => AxiosPromise\<[Project](../interfaces/_api_.project.md)> |
 
 ___
@@ -1899,7 +1898,7 @@ ___
 
 ▸ `Const`**IamProjectApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:34361*
+*Defined in api.ts:34543*
 
 IamProjectApi - functional programming interface
 
@@ -1916,7 +1915,7 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `iamProjectBillingList` | (projectId: string,start?: string,end?: string,resourceType?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Billing](../interfaces/_api_.billing.md)>>> |
-`iamProjectCreate` | (iamProjectCreate: [IamProjectCreate](../interfaces/_api_.iamprojectcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Project](../interfaces/_api_.project.md)>> |
+`iamProjectCreate` | (iamProjectCreate: [IamProjectCreate](../interfaces/_api_.iamprojectcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Project](../interfaces/_api_.project.md)>> |
 `iamProjectCredentialStoreCreate` | (projectId: string,projectCredential: [ProjectCredential](../interfaces/_api_.projectcredential.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ProjectCredential](../interfaces/_api_.projectcredential.md)>> |
 `iamProjectCredentialStoreDelete` | (projectId: string,credentialStoreId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Project](../interfaces/_api_.project.md)>> |
 `iamProjectCredentialStoreGet` | (projectId: string,credentialStoreId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ProjectCredential](../interfaces/_api_.projectcredential.md)>> |
@@ -1952,7 +1951,7 @@ Name | Type |
 `iamProjectThresholdDelete` | (projectId: string,thresholdId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `iamProjectThresholdGet` | (projectId: string,thresholdId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ProjectThreshold](../interfaces/_api_.projectthreshold.md)>> |
 `iamProjectThresholdList` | (projectId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ProjectThreshold](../interfaces/_api_.projectthreshold.md)>>> |
-`iamProjectTransfer` | (projectId: string,iamProjectTransfer: [IamProjectTransfer](../interfaces/_api_.iamprojecttransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Project](../interfaces/_api_.project.md)>> |
+`iamProjectTransfer` | (projectId: string,iamProjectTransfer: [IamProjectTransfer](../interfaces/_api_.iamprojecttransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Project](../interfaces/_api_.project.md)>> |
 `iamProjectUpdate` | (projectId: string,iamProjectUpdate: [IamProjectUpdate](../interfaces/_api_.iamprojectupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Project](../interfaces/_api_.project.md)>> |
 
 ___
@@ -1961,7 +1960,7 @@ ___
 
 ▸ `Const`**IamProjectPolicyApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:35912*
+*Defined in api.ts:36100*
 
 IamProjectPolicyApi - axios parameter creator
 
@@ -1981,7 +1980,7 @@ Name | Type | Description |
 `iamProjectPolicyActorDelete` | (projectId: string,policyId: string,actorId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete iam/policy.actor  **`summary`** Delete iam/policy.actor  **`throws`** {RequiredError}  |
 `iamProjectPolicyActorGet` | (projectId: string,policyId: string,actorId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get iam/policy.actor  **`summary`** Get iam/policy.actor  **`throws`** {RequiredError}  |
 `iamProjectPolicyActorList` | (projectId: string,policyId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List iam/policy.actor  **`summary`** List iam/policy.actor  **`throws`** {RequiredError}  |
-`iamProjectPolicyCreate` | (projectId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create policy  **`summary`** Create iam/policy  **`throws`** {RequiredError}  |
+`iamProjectPolicyCreate` | (projectId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create policy  **`summary`** Create iam/policy  **`throws`** {RequiredError}  |
 `iamProjectPolicyDelete` | (projectId: string,policyId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete policy  **`summary`** Delete iam/policy  **`throws`** {RequiredError}  |
 `iamProjectPolicyEventGet` | (projectId: string,policyId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get iam/policy.event  **`summary`** Get iam/policy.event  **`throws`** {RequiredError}  |
 `iamProjectPolicyEventList` | (projectId: string,policyId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List iam/policy.event  **`summary`** List iam/policy.event  **`throws`** {RequiredError}  |
@@ -2002,7 +2001,7 @@ ___
 
 ▸ `Const`**IamProjectPolicyApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:37389*
+*Defined in api.ts:37583*
 
 IamProjectPolicyApi - factory interface
 
@@ -2024,7 +2023,7 @@ Name | Type |
 `iamProjectPolicyActorDelete` | (projectId: string,policyId: string,actorId: string,options?: any) => AxiosPromise\<[IamActor](../interfaces/_api_.iamactor.md)> |
 `iamProjectPolicyActorGet` | (projectId: string,policyId: string,actorId: string,options?: any) => AxiosPromise\<[IamActor](../interfaces/_api_.iamactor.md)> |
 `iamProjectPolicyActorList` | (projectId: string,policyId: string,options?: any) => AxiosPromise\<Array\<[IamActor](../interfaces/_api_.iamactor.md)>> |
-`iamProjectPolicyCreate` | (projectId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Policy](../interfaces/_api_.policy.md)> |
+`iamProjectPolicyCreate` | (projectId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Policy](../interfaces/_api_.policy.md)> |
 `iamProjectPolicyDelete` | (projectId: string,policyId: string,options?: any) => AxiosPromise\<void> |
 `iamProjectPolicyEventGet` | (projectId: string,policyId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `iamProjectPolicyEventList` | (projectId: string,policyId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
@@ -2045,7 +2044,7 @@ ___
 
 ▸ `Const`**IamProjectPolicyApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:37094*
+*Defined in api.ts:37287*
 
 IamProjectPolicyApi - functional programming interface
 
@@ -2065,7 +2064,7 @@ Name | Type |
 `iamProjectPolicyActorDelete` | (projectId: string,policyId: string,actorId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[IamActor](../interfaces/_api_.iamactor.md)>> |
 `iamProjectPolicyActorGet` | (projectId: string,policyId: string,actorId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[IamActor](../interfaces/_api_.iamactor.md)>> |
 `iamProjectPolicyActorList` | (projectId: string,policyId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[IamActor](../interfaces/_api_.iamactor.md)>>> |
-`iamProjectPolicyCreate` | (projectId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Policy](../interfaces/_api_.policy.md)>> |
+`iamProjectPolicyCreate` | (projectId: string,iamProjectPolicyCreate: [IamProjectPolicyCreate](../interfaces/_api_.iamprojectpolicycreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Policy](../interfaces/_api_.policy.md)>> |
 `iamProjectPolicyDelete` | (projectId: string,policyId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `iamProjectPolicyEventGet` | (projectId: string,policyId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `iamProjectPolicyEventList` | (projectId: string,policyId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
@@ -2086,7 +2085,7 @@ ___
 
 ▸ `Const`**IamProjectRoleApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:37871*
+*Defined in api.ts:38067*
 
 IamProjectRoleApi - axios parameter creator
 
@@ -2102,7 +2101,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`iamProjectRoleCreate` | (projectId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create role  **`summary`** Create iam/role  **`throws`** {RequiredError}  |
+`iamProjectRoleCreate` | (projectId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create role  **`summary`** Create iam/role  **`throws`** {RequiredError}  |
 `iamProjectRoleDelete` | (projectId: string,roleId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete role  **`summary`** Delete iam/role  **`throws`** {RequiredError}  |
 `iamProjectRoleEventGet` | (projectId: string,roleId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get iam/role.event  **`summary`** Get iam/role.event  **`throws`** {RequiredError}  |
 `iamProjectRoleEventList` | (projectId: string,roleId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List iam/role.event  **`summary`** List iam/role.event  **`throws`** {RequiredError}  |
@@ -2128,7 +2127,7 @@ ___
 
 ▸ `Const`**IamProjectRoleApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:39430*
+*Defined in api.ts:39632*
 
 IamProjectRoleApi - factory interface
 
@@ -2146,7 +2145,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`iamProjectRoleCreate` | (projectId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Role](../interfaces/_api_.role.md)> |
+`iamProjectRoleCreate` | (projectId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Role](../interfaces/_api_.role.md)> |
 `iamProjectRoleDelete` | (projectId: string,roleId: string,options?: any) => AxiosPromise\<void> |
 `iamProjectRoleEventGet` | (projectId: string,roleId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `iamProjectRoleEventList` | (projectId: string,roleId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
@@ -2172,7 +2171,7 @@ ___
 
 ▸ `Const`**IamProjectRoleApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:39120*
+*Defined in api.ts:39321*
 
 IamProjectRoleApi - functional programming interface
 
@@ -2188,7 +2187,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`iamProjectRoleCreate` | (projectId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Role](../interfaces/_api_.role.md)>> |
+`iamProjectRoleCreate` | (projectId: string,iamProjectRoleCreate: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Role](../interfaces/_api_.role.md)>> |
 `iamProjectRoleDelete` | (projectId: string,roleId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `iamProjectRoleEventGet` | (projectId: string,roleId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `iamProjectRoleEventList` | (projectId: string,roleId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
@@ -2214,7 +2213,7 @@ ___
 
 ▸ `Const`**IamProjectSaApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:39936*
+*Defined in api.ts:40140*
 
 IamProjectSaApi - axios parameter creator
 
@@ -2230,7 +2229,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`iamProjectSaCreate` | (projectId: string,iamProjectSaCreate: [IamProjectSaCreate](../interfaces/_api_.iamprojectsacreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create sa  **`summary`** Create iam/sa  **`throws`** {RequiredError}  |
+`iamProjectSaCreate` | (projectId: string,iamProjectSaCreate: [IamProjectSaCreate](../interfaces/_api_.iamprojectsacreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create sa  **`summary`** Create iam/sa  **`throws`** {RequiredError}  |
 `iamProjectSaCredentialCreate` | (projectId: string,saId: string,saCredential: [SaCredential](../interfaces/_api_.sacredential.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create iam/sa.credential  **`summary`** Create iam/sa.credential  **`throws`** {RequiredError}  |
 `iamProjectSaCredentialDelete` | (projectId: string,saId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete iam/sa.credential  **`summary`** Delete iam/sa.credential  **`throws`** {RequiredError}  |
 `iamProjectSaCredentialGet` | (projectId: string,saId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get iam/sa.credential  **`summary`** Get iam/sa.credential  **`throws`** {RequiredError}  |
@@ -2256,7 +2255,7 @@ ___
 
 ▸ `Const`**IamProjectSaApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:41502*
+*Defined in api.ts:41712*
 
 IamProjectSaApi - factory interface
 
@@ -2274,7 +2273,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`iamProjectSaCreate` | (projectId: string,iamProjectSaCreate: [IamProjectSaCreate](../interfaces/_api_.iamprojectsacreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Sa](../interfaces/_api_.sa.md)> |
+`iamProjectSaCreate` | (projectId: string,iamProjectSaCreate: [IamProjectSaCreate](../interfaces/_api_.iamprojectsacreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Sa](../interfaces/_api_.sa.md)> |
 `iamProjectSaCredentialCreate` | (projectId: string,saId: string,saCredential: [SaCredential](../interfaces/_api_.sacredential.md),options?: any) => AxiosPromise\<[SaCredential](../interfaces/_api_.sacredential.md)> |
 `iamProjectSaCredentialDelete` | (projectId: string,saId: string,credentialId: string,options?: any) => AxiosPromise\<[Sa](../interfaces/_api_.sa.md)> |
 `iamProjectSaCredentialGet` | (projectId: string,saId: string,credentialId: string,options?: any) => AxiosPromise\<[SaCredential](../interfaces/_api_.sacredential.md)> |
@@ -2300,7 +2299,7 @@ ___
 
 ▸ `Const`**IamProjectSaApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:41191*
+*Defined in api.ts:41400*
 
 IamProjectSaApi - functional programming interface
 
@@ -2316,7 +2315,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`iamProjectSaCreate` | (projectId: string,iamProjectSaCreate: [IamProjectSaCreate](../interfaces/_api_.iamprojectsacreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Sa](../interfaces/_api_.sa.md)>> |
+`iamProjectSaCreate` | (projectId: string,iamProjectSaCreate: [IamProjectSaCreate](../interfaces/_api_.iamprojectsacreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Sa](../interfaces/_api_.sa.md)>> |
 `iamProjectSaCredentialCreate` | (projectId: string,saId: string,saCredential: [SaCredential](../interfaces/_api_.sacredential.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[SaCredential](../interfaces/_api_.sacredential.md)>> |
 `iamProjectSaCredentialDelete` | (projectId: string,saId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Sa](../interfaces/_api_.sa.md)>> |
 `iamProjectSaCredentialGet` | (projectId: string,saId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[SaCredential](../interfaces/_api_.sacredential.md)>> |
@@ -2342,7 +2341,7 @@ ___
 
 ▸ `Const`**IamUserApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:42010*
+*Defined in api.ts:42222*
 
 IamUserApi - axios parameter creator
 
@@ -2377,7 +2376,7 @@ ___
 
 ▸ `Const`**IamUserApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:42907*
+*Defined in api.ts:43119*
 
 IamUserApi - factory interface
 
@@ -2414,7 +2413,7 @@ ___
 
 ▸ `Const`**IamUserApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:42721*
+*Defined in api.ts:42933*
 
 IamUserApi - functional programming interface
 
@@ -2449,7 +2448,7 @@ ___
 
 ▸ `Const`**InsightProjectJournalApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:43207*
+*Defined in api.ts:43419*
 
 InsightProjectJournalApi - axios parameter creator
 
@@ -2465,7 +2464,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`insightProjectJournalCreate` | (projectId: string,locationId: string,insightProjectJournalCreate: [InsightProjectJournalCreate](../interfaces/_api_.insightprojectjournalcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create journal  **`summary`** Create insight/journal  **`throws`** {RequiredError}  |
+`insightProjectJournalCreate` | (projectId: string,locationId: string,insightProjectJournalCreate: [InsightProjectJournalCreate](../interfaces/_api_.insightprojectjournalcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create journal  **`summary`** Create insight/journal  **`throws`** {RequiredError}  |
 `insightProjectJournalCredentialCreate` | (projectId: string,locationId: string,journalId: string,journalCredential: [JournalCredential](../interfaces/_api_.journalcredential.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create insight/journal.credential  **`summary`** Create insight/journal.credential  **`throws`** {RequiredError}  |
 `insightProjectJournalCredentialDelete` | (projectId: string,locationId: string,journalId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete insight/journal.credential  **`summary`** Delete insight/journal.credential  **`throws`** {RequiredError}  |
 `insightProjectJournalCredentialGet` | (projectId: string,locationId: string,journalId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get insight/journal.credential  **`summary`** Get insight/journal.credential  **`throws`** {RequiredError}  |
@@ -2484,7 +2483,7 @@ Name | Type | Description |
 `insightProjectJournalTagGet` | (projectId: string,locationId: string,journalId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get insight/journal.tag  **`summary`** Get insight/journal.tag  **`throws`** {RequiredError}  |
 `insightProjectJournalTagList` | (projectId: string,locationId: string,journalId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List insight/journal.tag  **`summary`** List insight/journal.tag  **`throws`** {RequiredError}  |
 `insightProjectJournalTagPut` | (projectId: string,locationId: string,journalId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace insight/journal.tag  **`summary`** Replace insight/journal.tag  **`throws`** {RequiredError}  |
-`insightProjectJournalTransfer` | (projectId: string,locationId: string,journalId: string,insightProjectJournalTransfer: [InsightProjectJournalTransfer](../interfaces/_api_.insightprojectjournaltransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer insight/journal  **`throws`** {RequiredError}  |
+`insightProjectJournalTransfer` | (projectId: string,locationId: string,journalId: string,insightProjectJournalTransfer: [InsightProjectJournalTransfer](../interfaces/_api_.insightprojectjournaltransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer insight/journal  **`throws`** {RequiredError}  |
 `insightProjectJournalUpdate` | (projectId: string,locationId: string,journalId: string,insightProjectJournalUpdate: [InsightProjectJournalUpdate](../interfaces/_api_.insightprojectjournalupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified journal  **`summary`** Update insight/journal  **`throws`** {RequiredError}  |
 
 ___
@@ -2493,7 +2492,7 @@ ___
 
 ▸ `Const`**InsightProjectJournalApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:45121*
+*Defined in api.ts:45345*
 
 InsightProjectJournalApi - factory interface
 
@@ -2511,7 +2510,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`insightProjectJournalCreate` | (projectId: string,locationId: string,insightProjectJournalCreate: [InsightProjectJournalCreate](../interfaces/_api_.insightprojectjournalcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)> |
+`insightProjectJournalCreate` | (projectId: string,locationId: string,insightProjectJournalCreate: [InsightProjectJournalCreate](../interfaces/_api_.insightprojectjournalcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)> |
 `insightProjectJournalCredentialCreate` | (projectId: string,locationId: string,journalId: string,journalCredential: [JournalCredential](../interfaces/_api_.journalcredential.md),options?: any) => AxiosPromise\<[JournalCredential](../interfaces/_api_.journalcredential.md)> |
 `insightProjectJournalCredentialDelete` | (projectId: string,locationId: string,journalId: string,credentialId: string,options?: any) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)> |
 `insightProjectJournalCredentialGet` | (projectId: string,locationId: string,journalId: string,credentialId: string,options?: any) => AxiosPromise\<[JournalCredential](../interfaces/_api_.journalcredential.md)> |
@@ -2530,7 +2529,7 @@ Name | Type |
 `insightProjectJournalTagGet` | (projectId: string,locationId: string,journalId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `insightProjectJournalTagList` | (projectId: string,locationId: string,journalId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `insightProjectJournalTagPut` | (projectId: string,locationId: string,journalId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`insightProjectJournalTransfer` | (projectId: string,locationId: string,journalId: string,insightProjectJournalTransfer: [InsightProjectJournalTransfer](../interfaces/_api_.insightprojectjournaltransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)> |
+`insightProjectJournalTransfer` | (projectId: string,locationId: string,journalId: string,insightProjectJournalTransfer: [InsightProjectJournalTransfer](../interfaces/_api_.insightprojectjournaltransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)> |
 `insightProjectJournalUpdate` | (projectId: string,locationId: string,journalId: string,insightProjectJournalUpdate: [InsightProjectJournalUpdate](../interfaces/_api_.insightprojectjournalupdate.md),options?: any) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)> |
 
 ___
@@ -2539,7 +2538,7 @@ ___
 
 ▸ `Const`**InsightProjectJournalApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:44752*
+*Defined in api.ts:44974*
 
 InsightProjectJournalApi - functional programming interface
 
@@ -2555,7 +2554,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`insightProjectJournalCreate` | (projectId: string,locationId: string,insightProjectJournalCreate: [InsightProjectJournalCreate](../interfaces/_api_.insightprojectjournalcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)>> |
+`insightProjectJournalCreate` | (projectId: string,locationId: string,insightProjectJournalCreate: [InsightProjectJournalCreate](../interfaces/_api_.insightprojectjournalcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)>> |
 `insightProjectJournalCredentialCreate` | (projectId: string,locationId: string,journalId: string,journalCredential: [JournalCredential](../interfaces/_api_.journalcredential.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[JournalCredential](../interfaces/_api_.journalcredential.md)>> |
 `insightProjectJournalCredentialDelete` | (projectId: string,locationId: string,journalId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)>> |
 `insightProjectJournalCredentialGet` | (projectId: string,locationId: string,journalId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[JournalCredential](../interfaces/_api_.journalcredential.md)>> |
@@ -2574,7 +2573,7 @@ Name | Type |
 `insightProjectJournalTagGet` | (projectId: string,locationId: string,journalId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `insightProjectJournalTagList` | (projectId: string,locationId: string,journalId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `insightProjectJournalTagPut` | (projectId: string,locationId: string,journalId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`insightProjectJournalTransfer` | (projectId: string,locationId: string,journalId: string,insightProjectJournalTransfer: [InsightProjectJournalTransfer](../interfaces/_api_.insightprojectjournaltransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)>> |
+`insightProjectJournalTransfer` | (projectId: string,locationId: string,journalId: string,insightProjectJournalTransfer: [InsightProjectJournalTransfer](../interfaces/_api_.insightprojectjournaltransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)>> |
 `insightProjectJournalUpdate` | (projectId: string,locationId: string,journalId: string,insightProjectJournalUpdate: [InsightProjectJournalUpdate](../interfaces/_api_.insightprojectjournalupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Journal](../interfaces/_api_.journal.md)>> |
 
 ___
@@ -2583,7 +2582,7 @@ ___
 
 ▸ `Const`**NetworkingProjectFirewallApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:45733*
+*Defined in api.ts:45961*
 
 NetworkingProjectFirewallApi - axios parameter creator
 
@@ -2599,7 +2598,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`networkingProjectFirewallCreate` | (projectId: string,locationId: string,networkingProjectFirewallCreate: [NetworkingProjectFirewallCreate](../interfaces/_api_.networkingprojectfirewallcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create firewall  **`summary`** Create networking/firewall  **`throws`** {RequiredError}  |
+`networkingProjectFirewallCreate` | (projectId: string,locationId: string,networkingProjectFirewallCreate: [NetworkingProjectFirewallCreate](../interfaces/_api_.networkingprojectfirewallcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create firewall  **`summary`** Create networking/firewall  **`throws`** {RequiredError}  |
 `networkingProjectFirewallDelete` | (projectId: string,locationId: string,firewallId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete firewall  **`summary`** Delete networking/firewall  **`throws`** {RequiredError}  |
 `networkingProjectFirewallEgressCreate` | (projectId: string,locationId: string,firewallId: string,networkingRule: [NetworkingRule](../interfaces/_api_.networkingrule.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create networking/firewall.egress  **`summary`** Create networking/firewall.egress  **`throws`** {RequiredError}  |
 `networkingProjectFirewallEgressDelete` | (projectId: string,locationId: string,firewallId: string,egressId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete networking/firewall.egress  **`summary`** Delete networking/firewall.egress  **`throws`** {RequiredError}  |
@@ -2622,7 +2621,7 @@ Name | Type | Description |
 `networkingProjectFirewallTagGet` | (projectId: string,locationId: string,firewallId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get networking/firewall.tag  **`summary`** Get networking/firewall.tag  **`throws`** {RequiredError}  |
 `networkingProjectFirewallTagList` | (projectId: string,locationId: string,firewallId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List networking/firewall.tag  **`summary`** List networking/firewall.tag  **`throws`** {RequiredError}  |
 `networkingProjectFirewallTagPut` | (projectId: string,locationId: string,firewallId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace networking/firewall.tag  **`summary`** Replace networking/firewall.tag  **`throws`** {RequiredError}  |
-`networkingProjectFirewallTransfer` | (projectId: string,locationId: string,firewallId: string,networkingProjectFirewallTransfer: [NetworkingProjectFirewallTransfer](../interfaces/_api_.networkingprojectfirewalltransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer networking/firewall  **`throws`** {RequiredError}  |
+`networkingProjectFirewallTransfer` | (projectId: string,locationId: string,firewallId: string,networkingProjectFirewallTransfer: [NetworkingProjectFirewallTransfer](../interfaces/_api_.networkingprojectfirewalltransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer networking/firewall  **`throws`** {RequiredError}  |
 `networkingProjectFirewallUpdate` | (projectId: string,locationId: string,firewallId: string,networkingProjectFirewallUpdate: [NetworkingProjectFirewallUpdate](../interfaces/_api_.networkingprojectfirewallupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified firewall  **`summary`** Update networking/firewall  **`throws`** {RequiredError}  |
 
 ___
@@ -2631,7 +2630,7 @@ ___
 
 ▸ `Const`**NetworkingProjectFirewallApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:47970*
+*Defined in api.ts:48210*
 
 NetworkingProjectFirewallApi - factory interface
 
@@ -2649,7 +2648,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`networkingProjectFirewallCreate` | (projectId: string,locationId: string,networkingProjectFirewallCreate: [NetworkingProjectFirewallCreate](../interfaces/_api_.networkingprojectfirewallcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Firewall](../interfaces/_api_.firewall.md)> |
+`networkingProjectFirewallCreate` | (projectId: string,locationId: string,networkingProjectFirewallCreate: [NetworkingProjectFirewallCreate](../interfaces/_api_.networkingprojectfirewallcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Firewall](../interfaces/_api_.firewall.md)> |
 `networkingProjectFirewallDelete` | (projectId: string,locationId: string,firewallId: string,options?: any) => AxiosPromise\<void> |
 `networkingProjectFirewallEgressCreate` | (projectId: string,locationId: string,firewallId: string,networkingRule: [NetworkingRule](../interfaces/_api_.networkingrule.md),options?: any) => AxiosPromise\<[NetworkingRule](../interfaces/_api_.networkingrule.md)> |
 `networkingProjectFirewallEgressDelete` | (projectId: string,locationId: string,firewallId: string,egressId: string,options?: any) => AxiosPromise\<void> |
@@ -2672,7 +2671,7 @@ Name | Type |
 `networkingProjectFirewallTagGet` | (projectId: string,locationId: string,firewallId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `networkingProjectFirewallTagList` | (projectId: string,locationId: string,firewallId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `networkingProjectFirewallTagPut` | (projectId: string,locationId: string,firewallId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`networkingProjectFirewallTransfer` | (projectId: string,locationId: string,firewallId: string,networkingProjectFirewallTransfer: [NetworkingProjectFirewallTransfer](../interfaces/_api_.networkingprojectfirewalltransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Firewall](../interfaces/_api_.firewall.md)> |
+`networkingProjectFirewallTransfer` | (projectId: string,locationId: string,firewallId: string,networkingProjectFirewallTransfer: [NetworkingProjectFirewallTransfer](../interfaces/_api_.networkingprojectfirewalltransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Firewall](../interfaces/_api_.firewall.md)> |
 `networkingProjectFirewallUpdate` | (projectId: string,locationId: string,firewallId: string,networkingProjectFirewallUpdate: [NetworkingProjectFirewallUpdate](../interfaces/_api_.networkingprojectfirewallupdate.md),options?: any) => AxiosPromise\<[Firewall](../interfaces/_api_.firewall.md)> |
 
 ___
@@ -2681,7 +2680,7 @@ ___
 
 ▸ `Const`**NetworkingProjectFirewallApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:47539*
+*Defined in api.ts:47777*
 
 NetworkingProjectFirewallApi - functional programming interface
 
@@ -2697,7 +2696,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`networkingProjectFirewallCreate` | (projectId: string,locationId: string,networkingProjectFirewallCreate: [NetworkingProjectFirewallCreate](../interfaces/_api_.networkingprojectfirewallcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Firewall](../interfaces/_api_.firewall.md)>> |
+`networkingProjectFirewallCreate` | (projectId: string,locationId: string,networkingProjectFirewallCreate: [NetworkingProjectFirewallCreate](../interfaces/_api_.networkingprojectfirewallcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Firewall](../interfaces/_api_.firewall.md)>> |
 `networkingProjectFirewallDelete` | (projectId: string,locationId: string,firewallId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `networkingProjectFirewallEgressCreate` | (projectId: string,locationId: string,firewallId: string,networkingRule: [NetworkingRule](../interfaces/_api_.networkingrule.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[NetworkingRule](../interfaces/_api_.networkingrule.md)>> |
 `networkingProjectFirewallEgressDelete` | (projectId: string,locationId: string,firewallId: string,egressId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
@@ -2720,7 +2719,7 @@ Name | Type |
 `networkingProjectFirewallTagGet` | (projectId: string,locationId: string,firewallId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `networkingProjectFirewallTagList` | (projectId: string,locationId: string,firewallId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `networkingProjectFirewallTagPut` | (projectId: string,locationId: string,firewallId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`networkingProjectFirewallTransfer` | (projectId: string,locationId: string,firewallId: string,networkingProjectFirewallTransfer: [NetworkingProjectFirewallTransfer](../interfaces/_api_.networkingprojectfirewalltransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Firewall](../interfaces/_api_.firewall.md)>> |
+`networkingProjectFirewallTransfer` | (projectId: string,locationId: string,firewallId: string,networkingProjectFirewallTransfer: [NetworkingProjectFirewallTransfer](../interfaces/_api_.networkingprojectfirewalltransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Firewall](../interfaces/_api_.firewall.md)>> |
 `networkingProjectFirewallUpdate` | (projectId: string,locationId: string,firewallId: string,networkingProjectFirewallUpdate: [NetworkingProjectFirewallUpdate](../interfaces/_api_.networkingprojectfirewallupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Firewall](../interfaces/_api_.firewall.md)>> |
 
 ___
@@ -2729,7 +2728,7 @@ ___
 
 ▸ `Const`**NetworkingProjectIpApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:48682*
+*Defined in api.ts:48926*
 
 NetworkingProjectIpApi - axios parameter creator
 
@@ -2745,15 +2744,15 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`networkingProjectIpAssociate` | (projectId: string,locationId: string,ipId: string,networkingProjectIpAssociate: [NetworkingProjectIpAssociate](../interfaces/_api_.networkingprojectipassociate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action associate  **`summary`** Associate networking/ip  **`throws`** {RequiredError}  |
-`networkingProjectIpCreate` | (projectId: string,locationId: string,networkingProjectIpCreate: [NetworkingProjectIpCreate](../interfaces/_api_.networkingprojectipcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create ip  **`summary`** Create networking/ip  **`throws`** {RequiredError}  |
+`networkingProjectIpAssociate` | (projectId: string,locationId: string,ipId: string,networkingProjectIpAssociate: [NetworkingProjectIpAssociate](../interfaces/_api_.networkingprojectipassociate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action associate  **`summary`** Associate networking/ip  **`throws`** {RequiredError}  |
+`networkingProjectIpCreate` | (projectId: string,locationId: string,networkingProjectIpCreate: [NetworkingProjectIpCreate](../interfaces/_api_.networkingprojectipcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create ip  **`summary`** Create networking/ip  **`throws`** {RequiredError}  |
 `networkingProjectIpDelete` | (projectId: string,locationId: string,ipId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete ip  **`summary`** Delete networking/ip  **`throws`** {RequiredError}  |
-`networkingProjectIpDisassociate` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action disassociate  **`summary`** Disassociate networking/ip  **`throws`** {RequiredError}  |
+`networkingProjectIpDisassociate` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action disassociate  **`summary`** Disassociate networking/ip  **`throws`** {RequiredError}  |
 `networkingProjectIpEventGet` | (projectId: string,locationId: string,ipId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get networking/ip.event  **`summary`** Get networking/ip.event  **`throws`** {RequiredError}  |
 `networkingProjectIpEventList` | (projectId: string,locationId: string,ipId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List networking/ip.event  **`summary`** List networking/ip.event  **`throws`** {RequiredError}  |
 `networkingProjectIpGet` | (projectId: string,locationId: string,ipId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single ip  **`summary`** Get networking/ip  **`throws`** {RequiredError}  |
 `networkingProjectIpList` | (projectId: string,locationId: string,network?: string,associatedNetadp?: string,tagValue?: string,tagKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List ip  **`summary`** List networking/ip  **`throws`** {RequiredError}  |
-`networkingProjectIpPersist` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action persist  **`summary`** Persist networking/ip  **`throws`** {RequiredError}  |
+`networkingProjectIpPersist` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action persist  **`summary`** Persist networking/ip  **`throws`** {RequiredError}  |
 `networkingProjectIpServiceGet` | (projectId: string,locationId: string,ipId: string,serviceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get networking/ip.service  **`summary`** Get networking/ip.service  **`throws`** {RequiredError}  |
 `networkingProjectIpServiceList` | (projectId: string,locationId: string,ipId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List networking/ip.service  **`summary`** List networking/ip.service  **`throws`** {RequiredError}  |
 `networkingProjectIpTagCreate` | (projectId: string,locationId: string,ipId: string,tag: [Tag](../interfaces/_api_.tag.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create networking/ip.tag  **`summary`** Create networking/ip.tag  **`throws`** {RequiredError}  |
@@ -2761,7 +2760,7 @@ Name | Type | Description |
 `networkingProjectIpTagGet` | (projectId: string,locationId: string,ipId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get networking/ip.tag  **`summary`** Get networking/ip.tag  **`throws`** {RequiredError}  |
 `networkingProjectIpTagList` | (projectId: string,locationId: string,ipId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List networking/ip.tag  **`summary`** List networking/ip.tag  **`throws`** {RequiredError}  |
 `networkingProjectIpTagPut` | (projectId: string,locationId: string,ipId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace networking/ip.tag  **`summary`** Replace networking/ip.tag  **`throws`** {RequiredError}  |
-`networkingProjectIpTransfer` | (projectId: string,locationId: string,ipId: string,networkingProjectIpTransfer: [NetworkingProjectIpTransfer](../interfaces/_api_.networkingprojectiptransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer networking/ip  **`throws`** {RequiredError}  |
+`networkingProjectIpTransfer` | (projectId: string,locationId: string,ipId: string,networkingProjectIpTransfer: [NetworkingProjectIpTransfer](../interfaces/_api_.networkingprojectiptransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer networking/ip  **`throws`** {RequiredError}  |
 `networkingProjectIpUpdate` | (projectId: string,locationId: string,ipId: string,networkingProjectIpUpdate: [NetworkingProjectIpUpdate](../interfaces/_api_.networkingprojectipupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified ip  **`summary`** Update networking/ip  **`throws`** {RequiredError}  |
 
 ___
@@ -2770,7 +2769,7 @@ ___
 
 ▸ `Const`**NetworkingProjectIpApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:50310*
+*Defined in api.ts:50584*
 
 NetworkingProjectIpApi - factory interface
 
@@ -2788,15 +2787,15 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`networkingProjectIpAssociate` | (projectId: string,locationId: string,ipId: string,networkingProjectIpAssociate: [NetworkingProjectIpAssociate](../interfaces/_api_.networkingprojectipassociate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
-`networkingProjectIpCreate` | (projectId: string,locationId: string,networkingProjectIpCreate: [NetworkingProjectIpCreate](../interfaces/_api_.networkingprojectipcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
+`networkingProjectIpAssociate` | (projectId: string,locationId: string,ipId: string,networkingProjectIpAssociate: [NetworkingProjectIpAssociate](../interfaces/_api_.networkingprojectipassociate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
+`networkingProjectIpCreate` | (projectId: string,locationId: string,networkingProjectIpCreate: [NetworkingProjectIpCreate](../interfaces/_api_.networkingprojectipcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
 `networkingProjectIpDelete` | (projectId: string,locationId: string,ipId: string,options?: any) => AxiosPromise\<void> |
-`networkingProjectIpDisassociate` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
+`networkingProjectIpDisassociate` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
 `networkingProjectIpEventGet` | (projectId: string,locationId: string,ipId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `networkingProjectIpEventList` | (projectId: string,locationId: string,ipId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
 `networkingProjectIpGet` | (projectId: string,locationId: string,ipId: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
 `networkingProjectIpList` | (projectId: string,locationId: string,network?: string,associatedNetadp?: string,tagValue?: string,tagKey?: string,options?: any) => AxiosPromise\<Array\<[Ip](../interfaces/_api_.ip.md)>> |
-`networkingProjectIpPersist` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
+`networkingProjectIpPersist` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
 `networkingProjectIpServiceGet` | (projectId: string,locationId: string,ipId: string,serviceId: string,options?: any) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)> |
 `networkingProjectIpServiceList` | (projectId: string,locationId: string,ipId: string,options?: any) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `networkingProjectIpTagCreate` | (projectId: string,locationId: string,ipId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
@@ -2804,7 +2803,7 @@ Name | Type |
 `networkingProjectIpTagGet` | (projectId: string,locationId: string,ipId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `networkingProjectIpTagList` | (projectId: string,locationId: string,ipId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `networkingProjectIpTagPut` | (projectId: string,locationId: string,ipId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`networkingProjectIpTransfer` | (projectId: string,locationId: string,ipId: string,networkingProjectIpTransfer: [NetworkingProjectIpTransfer](../interfaces/_api_.networkingprojectiptransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
+`networkingProjectIpTransfer` | (projectId: string,locationId: string,ipId: string,networkingProjectIpTransfer: [NetworkingProjectIpTransfer](../interfaces/_api_.networkingprojectiptransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
 `networkingProjectIpUpdate` | (projectId: string,locationId: string,ipId: string,networkingProjectIpUpdate: [NetworkingProjectIpUpdate](../interfaces/_api_.networkingprojectipupdate.md),options?: any) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)> |
 
 ___
@@ -2813,7 +2812,7 @@ ___
 
 ▸ `Const`**NetworkingProjectIpApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:49994*
+*Defined in api.ts:50263*
 
 NetworkingProjectIpApi - functional programming interface
 
@@ -2829,15 +2828,15 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`networkingProjectIpAssociate` | (projectId: string,locationId: string,ipId: string,networkingProjectIpAssociate: [NetworkingProjectIpAssociate](../interfaces/_api_.networkingprojectipassociate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
-`networkingProjectIpCreate` | (projectId: string,locationId: string,networkingProjectIpCreate: [NetworkingProjectIpCreate](../interfaces/_api_.networkingprojectipcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
+`networkingProjectIpAssociate` | (projectId: string,locationId: string,ipId: string,networkingProjectIpAssociate: [NetworkingProjectIpAssociate](../interfaces/_api_.networkingprojectipassociate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
+`networkingProjectIpCreate` | (projectId: string,locationId: string,networkingProjectIpCreate: [NetworkingProjectIpCreate](../interfaces/_api_.networkingprojectipcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
 `networkingProjectIpDelete` | (projectId: string,locationId: string,ipId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
-`networkingProjectIpDisassociate` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
+`networkingProjectIpDisassociate` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
 `networkingProjectIpEventGet` | (projectId: string,locationId: string,ipId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `networkingProjectIpEventList` | (projectId: string,locationId: string,ipId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
 `networkingProjectIpGet` | (projectId: string,locationId: string,ipId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
 `networkingProjectIpList` | (projectId: string,locationId: string,network?: string,associatedNetadp?: string,tagValue?: string,tagKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Ip](../interfaces/_api_.ip.md)>>> |
-`networkingProjectIpPersist` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
+`networkingProjectIpPersist` | (projectId: string,locationId: string,ipId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
 `networkingProjectIpServiceGet` | (projectId: string,locationId: string,ipId: string,serviceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `networkingProjectIpServiceList` | (projectId: string,locationId: string,ipId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>>> |
 `networkingProjectIpTagCreate` | (projectId: string,locationId: string,ipId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
@@ -2845,7 +2844,7 @@ Name | Type |
 `networkingProjectIpTagGet` | (projectId: string,locationId: string,ipId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `networkingProjectIpTagList` | (projectId: string,locationId: string,ipId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `networkingProjectIpTagPut` | (projectId: string,locationId: string,ipId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`networkingProjectIpTransfer` | (projectId: string,locationId: string,ipId: string,networkingProjectIpTransfer: [NetworkingProjectIpTransfer](../interfaces/_api_.networkingprojectiptransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
+`networkingProjectIpTransfer` | (projectId: string,locationId: string,ipId: string,networkingProjectIpTransfer: [NetworkingProjectIpTransfer](../interfaces/_api_.networkingprojectiptransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
 `networkingProjectIpUpdate` | (projectId: string,locationId: string,ipId: string,networkingProjectIpUpdate: [NetworkingProjectIpUpdate](../interfaces/_api_.networkingprojectipupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ip](../interfaces/_api_.ip.md)>> |
 
 ___
@@ -2854,7 +2853,7 @@ ___
 
 ▸ `Const`**NetworkingProjectNetadpApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:50834*
+*Defined in api.ts:51118*
 
 NetworkingProjectNetadpApi - axios parameter creator
 
@@ -2870,7 +2869,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`networkingProjectNetadpCreate` | (projectId: string,locationId: string,networkingProjectNetadpCreate: [NetworkingProjectNetadpCreate](../interfaces/_api_.networkingprojectnetadpcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create netadp  **`summary`** Create networking/netadp  **`throws`** {RequiredError}  |
+`networkingProjectNetadpCreate` | (projectId: string,locationId: string,networkingProjectNetadpCreate: [NetworkingProjectNetadpCreate](../interfaces/_api_.networkingprojectnetadpcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create netadp  **`summary`** Create networking/netadp  **`throws`** {RequiredError}  |
 `networkingProjectNetadpDelete` | (projectId: string,locationId: string,netadpId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete netadp  **`summary`** Delete networking/netadp  **`throws`** {RequiredError}  |
 `networkingProjectNetadpEventGet` | (projectId: string,locationId: string,netadpId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get networking/netadp.event  **`summary`** Get networking/netadp.event  **`throws`** {RequiredError}  |
 `networkingProjectNetadpEventList` | (projectId: string,locationId: string,netadpId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List networking/netadp.event  **`summary`** List networking/netadp.event  **`throws`** {RequiredError}  |
@@ -2894,7 +2893,7 @@ ___
 
 ▸ `Const`**NetworkingProjectNetadpApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:52360*
+*Defined in api.ts:52650*
 
 NetworkingProjectNetadpApi - factory interface
 
@@ -2912,7 +2911,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`networkingProjectNetadpCreate` | (projectId: string,locationId: string,networkingProjectNetadpCreate: [NetworkingProjectNetadpCreate](../interfaces/_api_.networkingprojectnetadpcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Netadp](../interfaces/_api_.netadp.md)> |
+`networkingProjectNetadpCreate` | (projectId: string,locationId: string,networkingProjectNetadpCreate: [NetworkingProjectNetadpCreate](../interfaces/_api_.networkingprojectnetadpcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Netadp](../interfaces/_api_.netadp.md)> |
 `networkingProjectNetadpDelete` | (projectId: string,locationId: string,netadpId: string,options?: any) => AxiosPromise\<void> |
 `networkingProjectNetadpEventGet` | (projectId: string,locationId: string,netadpId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `networkingProjectNetadpEventList` | (projectId: string,locationId: string,netadpId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
@@ -2936,7 +2935,7 @@ ___
 
 ▸ `Const`**NetworkingProjectNetadpApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:52061*
+*Defined in api.ts:52350*
 
 NetworkingProjectNetadpApi - functional programming interface
 
@@ -2952,7 +2951,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`networkingProjectNetadpCreate` | (projectId: string,locationId: string,networkingProjectNetadpCreate: [NetworkingProjectNetadpCreate](../interfaces/_api_.networkingprojectnetadpcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Netadp](../interfaces/_api_.netadp.md)>> |
+`networkingProjectNetadpCreate` | (projectId: string,locationId: string,networkingProjectNetadpCreate: [NetworkingProjectNetadpCreate](../interfaces/_api_.networkingprojectnetadpcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Netadp](../interfaces/_api_.netadp.md)>> |
 `networkingProjectNetadpDelete` | (projectId: string,locationId: string,netadpId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `networkingProjectNetadpEventGet` | (projectId: string,locationId: string,netadpId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `networkingProjectNetadpEventList` | (projectId: string,locationId: string,netadpId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
@@ -2976,7 +2975,7 @@ ___
 
 ▸ `Const`**NetworkingProjectNetgwApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:52856*
+*Defined in api.ts:53148*
 
 NetworkingProjectNetgwApi - axios parameter creator
 
@@ -2992,10 +2991,10 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`networkingProjectNetgwAttach` | (projectId: string,locationId: string,netgwId: string,networkingProjectNetgwAttach: [NetworkingProjectNetgwAttach](../interfaces/_api_.networkingprojectnetgwattach.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action attach  **`summary`** Attach networking/netgw  **`throws`** {RequiredError}  |
-`networkingProjectNetgwCreate` | (projectId: string,locationId: string,networkingProjectNetgwCreate: [NetworkingProjectNetgwCreate](../interfaces/_api_.networkingprojectnetgwcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create netgw  **`summary`** Create networking/netgw  **`throws`** {RequiredError}  |
+`networkingProjectNetgwAttach` | (projectId: string,locationId: string,netgwId: string,networkingProjectNetgwAttach: [NetworkingProjectNetgwAttach](../interfaces/_api_.networkingprojectnetgwattach.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action attach  **`summary`** Attach networking/netgw  **`throws`** {RequiredError}  |
+`networkingProjectNetgwCreate` | (projectId: string,locationId: string,networkingProjectNetgwCreate: [NetworkingProjectNetgwCreate](../interfaces/_api_.networkingprojectnetgwcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create netgw  **`summary`** Create networking/netgw  **`throws`** {RequiredError}  |
 `networkingProjectNetgwDelete` | (projectId: string,locationId: string,netgwId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete netgw  **`summary`** Delete networking/netgw  **`throws`** {RequiredError}  |
-`networkingProjectNetgwDetach` | (projectId: string,locationId: string,netgwId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action detach  **`summary`** Detach networking/netgw  **`throws`** {RequiredError}  |
+`networkingProjectNetgwDetach` | (projectId: string,locationId: string,netgwId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action detach  **`summary`** Detach networking/netgw  **`throws`** {RequiredError}  |
 `networkingProjectNetgwEventGet` | (projectId: string,locationId: string,netgwId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get networking/netgw.event  **`summary`** Get networking/netgw.event  **`throws`** {RequiredError}  |
 `networkingProjectNetgwEventList` | (projectId: string,locationId: string,netgwId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List networking/netgw.event  **`summary`** List networking/netgw.event  **`throws`** {RequiredError}  |
 `networkingProjectNetgwGet` | (projectId: string,locationId: string,netgwId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single netgw  **`summary`** Get networking/netgw  **`throws`** {RequiredError}  |
@@ -3015,7 +3014,7 @@ ___
 
 ▸ `Const`**NetworkingProjectNetgwApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:54291*
+*Defined in api.ts:54601*
 
 NetworkingProjectNetgwApi - factory interface
 
@@ -3033,10 +3032,10 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`networkingProjectNetgwAttach` | (projectId: string,locationId: string,netgwId: string,networkingProjectNetgwAttach: [NetworkingProjectNetgwAttach](../interfaces/_api_.networkingprojectnetgwattach.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)> |
-`networkingProjectNetgwCreate` | (projectId: string,locationId: string,networkingProjectNetgwCreate: [NetworkingProjectNetgwCreate](../interfaces/_api_.networkingprojectnetgwcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)> |
+`networkingProjectNetgwAttach` | (projectId: string,locationId: string,netgwId: string,networkingProjectNetgwAttach: [NetworkingProjectNetgwAttach](../interfaces/_api_.networkingprojectnetgwattach.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)> |
+`networkingProjectNetgwCreate` | (projectId: string,locationId: string,networkingProjectNetgwCreate: [NetworkingProjectNetgwCreate](../interfaces/_api_.networkingprojectnetgwcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)> |
 `networkingProjectNetgwDelete` | (projectId: string,locationId: string,netgwId: string,options?: any) => AxiosPromise\<void> |
-`networkingProjectNetgwDetach` | (projectId: string,locationId: string,netgwId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)> |
+`networkingProjectNetgwDetach` | (projectId: string,locationId: string,netgwId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)> |
 `networkingProjectNetgwEventGet` | (projectId: string,locationId: string,netgwId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `networkingProjectNetgwEventList` | (projectId: string,locationId: string,netgwId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
 `networkingProjectNetgwGet` | (projectId: string,locationId: string,netgwId: string,options?: any) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)> |
@@ -3056,7 +3055,7 @@ ___
 
 ▸ `Const`**NetworkingProjectNetgwApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:54011*
+*Defined in api.ts:54318*
 
 NetworkingProjectNetgwApi - functional programming interface
 
@@ -3072,10 +3071,10 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`networkingProjectNetgwAttach` | (projectId: string,locationId: string,netgwId: string,networkingProjectNetgwAttach: [NetworkingProjectNetgwAttach](../interfaces/_api_.networkingprojectnetgwattach.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)>> |
-`networkingProjectNetgwCreate` | (projectId: string,locationId: string,networkingProjectNetgwCreate: [NetworkingProjectNetgwCreate](../interfaces/_api_.networkingprojectnetgwcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)>> |
+`networkingProjectNetgwAttach` | (projectId: string,locationId: string,netgwId: string,networkingProjectNetgwAttach: [NetworkingProjectNetgwAttach](../interfaces/_api_.networkingprojectnetgwattach.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)>> |
+`networkingProjectNetgwCreate` | (projectId: string,locationId: string,networkingProjectNetgwCreate: [NetworkingProjectNetgwCreate](../interfaces/_api_.networkingprojectnetgwcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)>> |
 `networkingProjectNetgwDelete` | (projectId: string,locationId: string,netgwId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
-`networkingProjectNetgwDetach` | (projectId: string,locationId: string,netgwId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)>> |
+`networkingProjectNetgwDetach` | (projectId: string,locationId: string,netgwId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)>> |
 `networkingProjectNetgwEventGet` | (projectId: string,locationId: string,netgwId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `networkingProjectNetgwEventList` | (projectId: string,locationId: string,netgwId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
 `networkingProjectNetgwGet` | (projectId: string,locationId: string,netgwId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Netgw](../interfaces/_api_.netgw.md)>> |
@@ -3095,7 +3094,7 @@ ___
 
 ▸ `Const`**NetworkingProjectNetworkApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:54755*
+*Defined in api.ts:55071*
 
 NetworkingProjectNetworkApi - axios parameter creator
 
@@ -3111,7 +3110,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`networkingProjectNetworkCreate` | (projectId: string,locationId: string,networkingProjectNetworkCreate: [NetworkingProjectNetworkCreate](../interfaces/_api_.networkingprojectnetworkcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create network  **`summary`** Create networking/network  **`throws`** {RequiredError}  |
+`networkingProjectNetworkCreate` | (projectId: string,locationId: string,networkingProjectNetworkCreate: [NetworkingProjectNetworkCreate](../interfaces/_api_.networkingprojectnetworkcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create network  **`summary`** Create networking/network  **`throws`** {RequiredError}  |
 `networkingProjectNetworkDelete` | (projectId: string,locationId: string,networkId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete network  **`summary`** Delete networking/network  **`throws`** {RequiredError}  |
 `networkingProjectNetworkEventGet` | (projectId: string,locationId: string,networkId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get networking/network.event  **`summary`** Get networking/network.event  **`throws`** {RequiredError}  |
 `networkingProjectNetworkEventList` | (projectId: string,locationId: string,networkId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List networking/network.event  **`summary`** List networking/network.event  **`throws`** {RequiredError}  |
@@ -3132,7 +3131,7 @@ ___
 
 ▸ `Const`**NetworkingProjectNetworkApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:56003*
+*Defined in api.ts:56325*
 
 NetworkingProjectNetworkApi - factory interface
 
@@ -3150,7 +3149,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`networkingProjectNetworkCreate` | (projectId: string,locationId: string,networkingProjectNetworkCreate: [NetworkingProjectNetworkCreate](../interfaces/_api_.networkingprojectnetworkcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Network](../interfaces/_api_.network.md)> |
+`networkingProjectNetworkCreate` | (projectId: string,locationId: string,networkingProjectNetworkCreate: [NetworkingProjectNetworkCreate](../interfaces/_api_.networkingprojectnetworkcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Network](../interfaces/_api_.network.md)> |
 `networkingProjectNetworkDelete` | (projectId: string,locationId: string,networkId: string,options?: any) => AxiosPromise\<void> |
 `networkingProjectNetworkEventGet` | (projectId: string,locationId: string,networkId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `networkingProjectNetworkEventList` | (projectId: string,locationId: string,networkId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
@@ -3171,7 +3170,7 @@ ___
 
 ▸ `Const`**NetworkingProjectNetworkApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:55758*
+*Defined in api.ts:56079*
 
 NetworkingProjectNetworkApi - functional programming interface
 
@@ -3187,7 +3186,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`networkingProjectNetworkCreate` | (projectId: string,locationId: string,networkingProjectNetworkCreate: [NetworkingProjectNetworkCreate](../interfaces/_api_.networkingprojectnetworkcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Network](../interfaces/_api_.network.md)>> |
+`networkingProjectNetworkCreate` | (projectId: string,locationId: string,networkingProjectNetworkCreate: [NetworkingProjectNetworkCreate](../interfaces/_api_.networkingprojectnetworkcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Network](../interfaces/_api_.network.md)>> |
 `networkingProjectNetworkDelete` | (projectId: string,locationId: string,networkId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `networkingProjectNetworkEventGet` | (projectId: string,locationId: string,networkId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `networkingProjectNetworkEventList` | (projectId: string,locationId: string,networkId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
@@ -3208,7 +3207,7 @@ ___
 
 ▸ `Const`**ProviderProjectAgentApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:56409*
+*Defined in api.ts:56733*
 
 ProviderProjectAgentApi - axios parameter creator
 
@@ -3224,7 +3223,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`providerProjectAgentCreate` | (projectId: string,locationId: string,providerProjectAgentCreate: [ProviderProjectAgentCreate](../interfaces/_api_.providerprojectagentcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create agent  **`summary`** Create provider/agent  **`throws`** {RequiredError}  |
+`providerProjectAgentCreate` | (projectId: string,locationId: string,providerProjectAgentCreate: [ProviderProjectAgentCreate](../interfaces/_api_.providerprojectagentcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create agent  **`summary`** Create provider/agent  **`throws`** {RequiredError}  |
 `providerProjectAgentCredentialCreate` | (projectId: string,locationId: string,agentId: string,agentCredential: [AgentCredential](../interfaces/_api_.agentcredential.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create provider/agent.credential  **`summary`** Create provider/agent.credential  **`throws`** {RequiredError}  |
 `providerProjectAgentCredentialDelete` | (projectId: string,locationId: string,agentId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete provider/agent.credential  **`summary`** Delete provider/agent.credential  **`throws`** {RequiredError}  |
 `providerProjectAgentCredentialGet` | (projectId: string,locationId: string,agentId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get provider/agent.credential  **`summary`** Get provider/agent.credential  **`throws`** {RequiredError}  |
@@ -3238,7 +3237,7 @@ Name | Type | Description |
 `providerProjectAgentEventGet` | (projectId: string,locationId: string,agentId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get provider/agent.event  **`summary`** Get provider/agent.event  **`throws`** {RequiredError}  |
 `providerProjectAgentEventList` | (projectId: string,locationId: string,agentId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List provider/agent.event  **`summary`** List provider/agent.event  **`throws`** {RequiredError}  |
 `providerProjectAgentGet` | (projectId: string,locationId: string,agentId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single agent  **`summary`** Get provider/agent  **`throws`** {RequiredError}  |
-`providerProjectAgentInspect` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action inspect  **`summary`** Inspect provider/agent  **`throws`** {RequiredError}  |
+`providerProjectAgentInspect` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action inspect  **`summary`** Inspect provider/agent  **`throws`** {RequiredError}  |
 `providerProjectAgentList` | (projectId: string,locationId: string,name?: string,enabledServices?: string,tagValue?: string,tagKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List agent  **`summary`** List provider/agent  **`throws`** {RequiredError}  |
 `providerProjectAgentMetricGet` | (projectId: string,locationId: string,agentId: string,metricId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get provider/agent.metric  **`summary`** Get provider/agent.metric  **`throws`** {RequiredError}  |
 `providerProjectAgentMetricList` | (projectId: string,locationId: string,agentId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List provider/agent.metric  **`summary`** List provider/agent.metric  **`throws`** {RequiredError}  |
@@ -3250,14 +3249,14 @@ Name | Type | Description |
 `providerProjectAgentResourceRecreate` | (projectId: string,locationId: string,agentId: string,resourceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action recreate  **`summary`** Recreate provider/agent.resource  **`throws`** {RequiredError}  |
 `providerProjectAgentServiceGet` | (projectId: string,locationId: string,agentId: string,serviceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get provider/agent.service  **`summary`** Get provider/agent.service  **`throws`** {RequiredError}  |
 `providerProjectAgentServiceList` | (projectId: string,locationId: string,agentId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List provider/agent.service  **`summary`** List provider/agent.service  **`throws`** {RequiredError}  |
-`providerProjectAgentStart` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start provider/agent  **`throws`** {RequiredError}  |
-`providerProjectAgentSuspend` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action suspend  **`summary`** Suspend provider/agent  **`throws`** {RequiredError}  |
+`providerProjectAgentStart` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start provider/agent  **`throws`** {RequiredError}  |
+`providerProjectAgentSuspend` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action suspend  **`summary`** Suspend provider/agent  **`throws`** {RequiredError}  |
 `providerProjectAgentTagCreate` | (projectId: string,locationId: string,agentId: string,tag: [Tag](../interfaces/_api_.tag.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create provider/agent.tag  **`summary`** Create provider/agent.tag  **`throws`** {RequiredError}  |
 `providerProjectAgentTagDelete` | (projectId: string,locationId: string,agentId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete provider/agent.tag  **`summary`** Delete provider/agent.tag  **`throws`** {RequiredError}  |
 `providerProjectAgentTagGet` | (projectId: string,locationId: string,agentId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get provider/agent.tag  **`summary`** Get provider/agent.tag  **`throws`** {RequiredError}  |
 `providerProjectAgentTagList` | (projectId: string,locationId: string,agentId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List provider/agent.tag  **`summary`** List provider/agent.tag  **`throws`** {RequiredError}  |
 `providerProjectAgentTagPut` | (projectId: string,locationId: string,agentId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace provider/agent.tag  **`summary`** Replace provider/agent.tag  **`throws`** {RequiredError}  |
-`providerProjectAgentTransfer` | (projectId: string,locationId: string,agentId: string,providerProjectAgentTransfer: [ProviderProjectAgentTransfer](../interfaces/_api_.providerprojectagenttransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer provider/agent  **`throws`** {RequiredError}  |
+`providerProjectAgentTransfer` | (projectId: string,locationId: string,agentId: string,providerProjectAgentTransfer: [ProviderProjectAgentTransfer](../interfaces/_api_.providerprojectagenttransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer provider/agent  **`throws`** {RequiredError}  |
 `providerProjectAgentUpdate` | (projectId: string,locationId: string,agentId: string,providerProjectAgentUpdate: [ProviderProjectAgentUpdate](../interfaces/_api_.providerprojectagentupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified agent  **`summary`** Update provider/agent  **`throws`** {RequiredError}  |
 
 ___
@@ -3266,7 +3265,7 @@ ___
 
 ▸ `Const`**ProviderProjectAgentApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:59528*
+*Defined in api.ts:59882*
 
 ProviderProjectAgentApi - factory interface
 
@@ -3284,7 +3283,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`providerProjectAgentCreate` | (projectId: string,locationId: string,providerProjectAgentCreate: [ProviderProjectAgentCreate](../interfaces/_api_.providerprojectagentcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
+`providerProjectAgentCreate` | (projectId: string,locationId: string,providerProjectAgentCreate: [ProviderProjectAgentCreate](../interfaces/_api_.providerprojectagentcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
 `providerProjectAgentCredentialCreate` | (projectId: string,locationId: string,agentId: string,agentCredential: [AgentCredential](../interfaces/_api_.agentcredential.md),options?: any) => AxiosPromise\<[AgentCredential](../interfaces/_api_.agentcredential.md)> |
 `providerProjectAgentCredentialDelete` | (projectId: string,locationId: string,agentId: string,credentialId: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
 `providerProjectAgentCredentialGet` | (projectId: string,locationId: string,agentId: string,credentialId: string,options?: any) => AxiosPromise\<[AgentCredential](../interfaces/_api_.agentcredential.md)> |
@@ -3298,7 +3297,7 @@ Name | Type |
 `providerProjectAgentEventGet` | (projectId: string,locationId: string,agentId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `providerProjectAgentEventList` | (projectId: string,locationId: string,agentId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
 `providerProjectAgentGet` | (projectId: string,locationId: string,agentId: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
-`providerProjectAgentInspect` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
+`providerProjectAgentInspect` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
 `providerProjectAgentList` | (projectId: string,locationId: string,name?: string,enabledServices?: string,tagValue?: string,tagKey?: string,options?: any) => AxiosPromise\<Array\<[Agent](../interfaces/_api_.agent.md)>> |
 `providerProjectAgentMetricGet` | (projectId: string,locationId: string,agentId: string,metricId: string,options?: any) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)> |
 `providerProjectAgentMetricList` | (projectId: string,locationId: string,agentId: string,options?: any) => AxiosPromise\<Array\<[Metric](../interfaces/_api_.metric.md)>> |
@@ -3310,14 +3309,14 @@ Name | Type |
 `providerProjectAgentResourceRecreate` | (projectId: string,locationId: string,agentId: string,resourceId: string,options?: any) => AxiosPromise\<[ProviderAgentResource](../interfaces/_api_.provideragentresource.md)> |
 `providerProjectAgentServiceGet` | (projectId: string,locationId: string,agentId: string,serviceId: string,options?: any) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)> |
 `providerProjectAgentServiceList` | (projectId: string,locationId: string,agentId: string,options?: any) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
-`providerProjectAgentStart` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
-`providerProjectAgentSuspend` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
+`providerProjectAgentStart` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
+`providerProjectAgentSuspend` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
 `providerProjectAgentTagCreate` | (projectId: string,locationId: string,agentId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `providerProjectAgentTagDelete` | (projectId: string,locationId: string,agentId: string,tagId: string,options?: any) => AxiosPromise\<void> |
 `providerProjectAgentTagGet` | (projectId: string,locationId: string,agentId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `providerProjectAgentTagList` | (projectId: string,locationId: string,agentId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `providerProjectAgentTagPut` | (projectId: string,locationId: string,agentId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`providerProjectAgentTransfer` | (projectId: string,locationId: string,agentId: string,providerProjectAgentTransfer: [ProviderProjectAgentTransfer](../interfaces/_api_.providerprojectagenttransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
+`providerProjectAgentTransfer` | (projectId: string,locationId: string,agentId: string,providerProjectAgentTransfer: [ProviderProjectAgentTransfer](../interfaces/_api_.providerprojectagenttransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
 `providerProjectAgentUpdate` | (projectId: string,locationId: string,agentId: string,providerProjectAgentUpdate: [ProviderProjectAgentUpdate](../interfaces/_api_.providerprojectagentupdate.md),options?: any) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)> |
 
 ___
@@ -3326,7 +3325,7 @@ ___
 
 ▸ `Const`**ProviderProjectAgentApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:58923*
+*Defined in api.ts:59272*
 
 ProviderProjectAgentApi - functional programming interface
 
@@ -3342,7 +3341,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`providerProjectAgentCreate` | (projectId: string,locationId: string,providerProjectAgentCreate: [ProviderProjectAgentCreate](../interfaces/_api_.providerprojectagentcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
+`providerProjectAgentCreate` | (projectId: string,locationId: string,providerProjectAgentCreate: [ProviderProjectAgentCreate](../interfaces/_api_.providerprojectagentcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
 `providerProjectAgentCredentialCreate` | (projectId: string,locationId: string,agentId: string,agentCredential: [AgentCredential](../interfaces/_api_.agentcredential.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[AgentCredential](../interfaces/_api_.agentcredential.md)>> |
 `providerProjectAgentCredentialDelete` | (projectId: string,locationId: string,agentId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
 `providerProjectAgentCredentialGet` | (projectId: string,locationId: string,agentId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[AgentCredential](../interfaces/_api_.agentcredential.md)>> |
@@ -3356,7 +3355,7 @@ Name | Type |
 `providerProjectAgentEventGet` | (projectId: string,locationId: string,agentId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `providerProjectAgentEventList` | (projectId: string,locationId: string,agentId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
 `providerProjectAgentGet` | (projectId: string,locationId: string,agentId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
-`providerProjectAgentInspect` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
+`providerProjectAgentInspect` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
 `providerProjectAgentList` | (projectId: string,locationId: string,name?: string,enabledServices?: string,tagValue?: string,tagKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Agent](../interfaces/_api_.agent.md)>>> |
 `providerProjectAgentMetricGet` | (projectId: string,locationId: string,agentId: string,metricId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)>> |
 `providerProjectAgentMetricList` | (projectId: string,locationId: string,agentId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Metric](../interfaces/_api_.metric.md)>>> |
@@ -3368,14 +3367,14 @@ Name | Type |
 `providerProjectAgentResourceRecreate` | (projectId: string,locationId: string,agentId: string,resourceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ProviderAgentResource](../interfaces/_api_.provideragentresource.md)>> |
 `providerProjectAgentServiceGet` | (projectId: string,locationId: string,agentId: string,serviceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `providerProjectAgentServiceList` | (projectId: string,locationId: string,agentId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>>> |
-`providerProjectAgentStart` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
-`providerProjectAgentSuspend` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
+`providerProjectAgentStart` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
+`providerProjectAgentSuspend` | (projectId: string,locationId: string,agentId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
 `providerProjectAgentTagCreate` | (projectId: string,locationId: string,agentId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `providerProjectAgentTagDelete` | (projectId: string,locationId: string,agentId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `providerProjectAgentTagGet` | (projectId: string,locationId: string,agentId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `providerProjectAgentTagList` | (projectId: string,locationId: string,agentId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `providerProjectAgentTagPut` | (projectId: string,locationId: string,agentId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`providerProjectAgentTransfer` | (projectId: string,locationId: string,agentId: string,providerProjectAgentTransfer: [ProviderProjectAgentTransfer](../interfaces/_api_.providerprojectagenttransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
+`providerProjectAgentTransfer` | (projectId: string,locationId: string,agentId: string,providerProjectAgentTransfer: [ProviderProjectAgentTransfer](../interfaces/_api_.providerprojectagenttransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
 `providerProjectAgentUpdate` | (projectId: string,locationId: string,agentId: string,providerProjectAgentUpdate: [ProviderProjectAgentUpdate](../interfaces/_api_.providerprojectagentupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Agent](../interfaces/_api_.agent.md)>> |
 
 ___
@@ -3384,7 +3383,7 @@ ___
 
 ▸ `Const`**RecoveryProjectBackupApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:60528*
+*Defined in api.ts:60892*
 
 RecoveryProjectBackupApi - axios parameter creator
 
@@ -3400,11 +3399,11 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`recoveryProjectBackupCreate` | (projectId: string,locationId: string,recoveryProjectBackupCreate: [RecoveryProjectBackupCreate](../interfaces/_api_.recoveryprojectbackupcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create backup  **`summary`** Create recovery/backup  **`throws`** {RequiredError}  |
+`recoveryProjectBackupCreate` | (projectId: string,locationId: string,recoveryProjectBackupCreate: [RecoveryProjectBackupCreate](../interfaces/_api_.recoveryprojectbackupcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create backup  **`summary`** Create recovery/backup  **`throws`** {RequiredError}  |
 `recoveryProjectBackupDelete` | (projectId: string,locationId: string,backupId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete backup  **`summary`** Delete recovery/backup  **`throws`** {RequiredError}  |
 `recoveryProjectBackupEventGet` | (projectId: string,locationId: string,backupId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get recovery/backup.event  **`summary`** Get recovery/backup.event  **`throws`** {RequiredError}  |
 `recoveryProjectBackupEventList` | (projectId: string,locationId: string,backupId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List recovery/backup.event  **`summary`** List recovery/backup.event  **`throws`** {RequiredError}  |
-`recoveryProjectBackupExport` | (projectId: string,locationId: string,backupId: string,recoveryProjectBackupExport: [RecoveryProjectBackupExport](../interfaces/_api_.recoveryprojectbackupexport.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action export  **`summary`** Export recovery/backup  **`throws`** {RequiredError}  |
+`recoveryProjectBackupExport` | (projectId: string,locationId: string,backupId: string,recoveryProjectBackupExport: [RecoveryProjectBackupExport](../interfaces/_api_.recoveryprojectbackupexport.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action export  **`summary`** Export recovery/backup  **`throws`** {RequiredError}  |
 `recoveryProjectBackupGet` | (projectId: string,locationId: string,backupId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single backup  **`summary`** Get recovery/backup  **`throws`** {RequiredError}  |
 `recoveryProjectBackupList` | (projectId: string,locationId: string,name?: string,source?: string,tagValue?: string,tagKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List backup  **`summary`** List recovery/backup  **`throws`** {RequiredError}  |
 `recoveryProjectBackupMetricGet` | (projectId: string,locationId: string,backupId: string,metricId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get recovery/backup.metric  **`summary`** Get recovery/backup.metric  **`throws`** {RequiredError}  |
@@ -3425,7 +3424,7 @@ ___
 
 ▸ `Const`**RecoveryProjectBackupApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:62149*
+*Defined in api.ts:62525*
 
 RecoveryProjectBackupApi - factory interface
 
@@ -3443,11 +3442,11 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`recoveryProjectBackupCreate` | (projectId: string,locationId: string,recoveryProjectBackupCreate: [RecoveryProjectBackupCreate](../interfaces/_api_.recoveryprojectbackupcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Backup](../interfaces/_api_.backup.md)> |
+`recoveryProjectBackupCreate` | (projectId: string,locationId: string,recoveryProjectBackupCreate: [RecoveryProjectBackupCreate](../interfaces/_api_.recoveryprojectbackupcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Backup](../interfaces/_api_.backup.md)> |
 `recoveryProjectBackupDelete` | (projectId: string,locationId: string,backupId: string,options?: any) => AxiosPromise\<void> |
 `recoveryProjectBackupEventGet` | (projectId: string,locationId: string,backupId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `recoveryProjectBackupEventList` | (projectId: string,locationId: string,backupId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
-`recoveryProjectBackupExport` | (projectId: string,locationId: string,backupId: string,recoveryProjectBackupExport: [RecoveryProjectBackupExport](../interfaces/_api_.recoveryprojectbackupexport.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Backup](../interfaces/_api_.backup.md)> |
+`recoveryProjectBackupExport` | (projectId: string,locationId: string,backupId: string,recoveryProjectBackupExport: [RecoveryProjectBackupExport](../interfaces/_api_.recoveryprojectbackupexport.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Backup](../interfaces/_api_.backup.md)> |
 `recoveryProjectBackupGet` | (projectId: string,locationId: string,backupId: string,options?: any) => AxiosPromise\<[Backup](../interfaces/_api_.backup.md)> |
 `recoveryProjectBackupList` | (projectId: string,locationId: string,name?: string,source?: string,tagValue?: string,tagKey?: string,options?: any) => AxiosPromise\<Array\<[Backup](../interfaces/_api_.backup.md)>> |
 `recoveryProjectBackupMetricGet` | (projectId: string,locationId: string,backupId: string,metricId: string,options?: any) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)> |
@@ -3468,7 +3467,7 @@ ___
 
 ▸ `Const`**RecoveryProjectBackupApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:61833*
+*Defined in api.ts:62207*
 
 RecoveryProjectBackupApi - functional programming interface
 
@@ -3484,11 +3483,11 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`recoveryProjectBackupCreate` | (projectId: string,locationId: string,recoveryProjectBackupCreate: [RecoveryProjectBackupCreate](../interfaces/_api_.recoveryprojectbackupcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Backup](../interfaces/_api_.backup.md)>> |
+`recoveryProjectBackupCreate` | (projectId: string,locationId: string,recoveryProjectBackupCreate: [RecoveryProjectBackupCreate](../interfaces/_api_.recoveryprojectbackupcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Backup](../interfaces/_api_.backup.md)>> |
 `recoveryProjectBackupDelete` | (projectId: string,locationId: string,backupId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `recoveryProjectBackupEventGet` | (projectId: string,locationId: string,backupId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `recoveryProjectBackupEventList` | (projectId: string,locationId: string,backupId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
-`recoveryProjectBackupExport` | (projectId: string,locationId: string,backupId: string,recoveryProjectBackupExport: [RecoveryProjectBackupExport](../interfaces/_api_.recoveryprojectbackupexport.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Backup](../interfaces/_api_.backup.md)>> |
+`recoveryProjectBackupExport` | (projectId: string,locationId: string,backupId: string,recoveryProjectBackupExport: [RecoveryProjectBackupExport](../interfaces/_api_.recoveryprojectbackupexport.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Backup](../interfaces/_api_.backup.md)>> |
 `recoveryProjectBackupGet` | (projectId: string,locationId: string,backupId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Backup](../interfaces/_api_.backup.md)>> |
 `recoveryProjectBackupList` | (projectId: string,locationId: string,name?: string,source?: string,tagValue?: string,tagKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Backup](../interfaces/_api_.backup.md)>>> |
 `recoveryProjectBackupMetricGet` | (projectId: string,locationId: string,backupId: string,metricId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)>> |
@@ -3509,7 +3508,7 @@ ___
 
 ▸ `Const`**RecoveryProjectPlanApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:62673*
+*Defined in api.ts:63053*
 
 RecoveryProjectPlanApi - axios parameter creator
 
@@ -3525,15 +3524,12 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`recoveryProjectPlanCreate` | (projectId: string,locationId: string,recoveryProjectPlanCreate: [RecoveryProjectPlanCreate](../interfaces/_api_.recoveryprojectplancreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create plan  **`summary`** Create recovery/plan  **`throws`** {RequiredError}  |
+`recoveryProjectPlanCreate` | (projectId: string,locationId: string,recoveryProjectPlanCreate: [RecoveryProjectPlanCreate](../interfaces/_api_.recoveryprojectplancreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create plan  **`summary`** Create recovery/plan  **`throws`** {RequiredError}  |
 `recoveryProjectPlanDelete` | (projectId: string,locationId: string,planId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete plan  **`summary`** Delete recovery/plan  **`throws`** {RequiredError}  |
 `recoveryProjectPlanEventGet` | (projectId: string,locationId: string,planId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get recovery/plan.event  **`summary`** Get recovery/plan.event  **`throws`** {RequiredError}  |
 `recoveryProjectPlanEventList` | (projectId: string,locationId: string,planId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List recovery/plan.event  **`summary`** List recovery/plan.event  **`throws`** {RequiredError}  |
 `recoveryProjectPlanGet` | (projectId: string,locationId: string,planId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single plan  **`summary`** Get recovery/plan  **`throws`** {RequiredError}  |
 `recoveryProjectPlanList` | (projectId: string,locationId: string,name?: string,tagValue?: string,tagKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List plan  **`summary`** List recovery/plan  **`throws`** {RequiredError}  |
-`recoveryProjectPlanMetricGet` | (projectId: string,locationId: string,planId: string,metricId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get recovery/plan.metric  **`summary`** Get recovery/plan.metric  **`throws`** {RequiredError}  |
-`recoveryProjectPlanMetricList` | (projectId: string,locationId: string,planId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List recovery/plan.metric  **`summary`** List recovery/plan.metric  **`throws`** {RequiredError}  |
-`recoveryProjectPlanMetricPointList` | (projectId: string,locationId: string,planId: string,metricId: string,interval?: string,timespan?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List recovery/plan.point  **`summary`** List recovery/plan.point  **`throws`** {RequiredError}  |
 `recoveryProjectPlanServiceGet` | (projectId: string,locationId: string,planId: string,serviceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get recovery/plan.service  **`summary`** Get recovery/plan.service  **`throws`** {RequiredError}  |
 `recoveryProjectPlanServiceList` | (projectId: string,locationId: string,planId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List recovery/plan.service  **`summary`** List recovery/plan.service  **`throws`** {RequiredError}  |
 `recoveryProjectPlanTagCreate` | (projectId: string,locationId: string,planId: string,tag: [Tag](../interfaces/_api_.tag.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create recovery/plan.tag  **`summary`** Create recovery/plan.tag  **`throws`** {RequiredError}  |
@@ -3549,7 +3545,7 @@ ___
 
 ▸ `Const`**RecoveryProjectPlanApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:64187*
+*Defined in api.ts:64307*
 
 RecoveryProjectPlanApi - factory interface
 
@@ -3567,15 +3563,12 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`recoveryProjectPlanCreate` | (projectId: string,locationId: string,recoveryProjectPlanCreate: [RecoveryProjectPlanCreate](../interfaces/_api_.recoveryprojectplancreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Plan](../interfaces/_api_.plan.md)> |
+`recoveryProjectPlanCreate` | (projectId: string,locationId: string,recoveryProjectPlanCreate: [RecoveryProjectPlanCreate](../interfaces/_api_.recoveryprojectplancreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Plan](../interfaces/_api_.plan.md)> |
 `recoveryProjectPlanDelete` | (projectId: string,locationId: string,planId: string,options?: any) => AxiosPromise\<void> |
 `recoveryProjectPlanEventGet` | (projectId: string,locationId: string,planId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `recoveryProjectPlanEventList` | (projectId: string,locationId: string,planId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
 `recoveryProjectPlanGet` | (projectId: string,locationId: string,planId: string,options?: any) => AxiosPromise\<[Plan](../interfaces/_api_.plan.md)> |
 `recoveryProjectPlanList` | (projectId: string,locationId: string,name?: string,tagValue?: string,tagKey?: string,options?: any) => AxiosPromise\<Array\<[Plan](../interfaces/_api_.plan.md)>> |
-`recoveryProjectPlanMetricGet` | (projectId: string,locationId: string,planId: string,metricId: string,options?: any) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)> |
-`recoveryProjectPlanMetricList` | (projectId: string,locationId: string,planId: string,options?: any) => AxiosPromise\<Array\<[Metric](../interfaces/_api_.metric.md)>> |
-`recoveryProjectPlanMetricPointList` | (projectId: string,locationId: string,planId: string,metricId: string,interval?: string,timespan?: string,options?: any) => AxiosPromise\<Array\<[Point](../interfaces/_api_.point.md)>> |
 `recoveryProjectPlanServiceGet` | (projectId: string,locationId: string,planId: string,serviceId: string,options?: any) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)> |
 `recoveryProjectPlanServiceList` | (projectId: string,locationId: string,planId: string,options?: any) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `recoveryProjectPlanTagCreate` | (projectId: string,locationId: string,planId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
@@ -3591,7 +3584,7 @@ ___
 
 ▸ `Const`**RecoveryProjectPlanApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:63890*
+*Defined in api.ts:64061*
 
 RecoveryProjectPlanApi - functional programming interface
 
@@ -3607,15 +3600,12 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`recoveryProjectPlanCreate` | (projectId: string,locationId: string,recoveryProjectPlanCreate: [RecoveryProjectPlanCreate](../interfaces/_api_.recoveryprojectplancreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Plan](../interfaces/_api_.plan.md)>> |
+`recoveryProjectPlanCreate` | (projectId: string,locationId: string,recoveryProjectPlanCreate: [RecoveryProjectPlanCreate](../interfaces/_api_.recoveryprojectplancreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Plan](../interfaces/_api_.plan.md)>> |
 `recoveryProjectPlanDelete` | (projectId: string,locationId: string,planId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `recoveryProjectPlanEventGet` | (projectId: string,locationId: string,planId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `recoveryProjectPlanEventList` | (projectId: string,locationId: string,planId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
 `recoveryProjectPlanGet` | (projectId: string,locationId: string,planId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Plan](../interfaces/_api_.plan.md)>> |
 `recoveryProjectPlanList` | (projectId: string,locationId: string,name?: string,tagValue?: string,tagKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Plan](../interfaces/_api_.plan.md)>>> |
-`recoveryProjectPlanMetricGet` | (projectId: string,locationId: string,planId: string,metricId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)>> |
-`recoveryProjectPlanMetricList` | (projectId: string,locationId: string,planId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Metric](../interfaces/_api_.metric.md)>>> |
-`recoveryProjectPlanMetricPointList` | (projectId: string,locationId: string,planId: string,metricId: string,interval?: string,timespan?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Point](../interfaces/_api_.point.md)>>> |
 `recoveryProjectPlanServiceGet` | (projectId: string,locationId: string,planId: string,serviceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `recoveryProjectPlanServiceList` | (projectId: string,locationId: string,planId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>>> |
 `recoveryProjectPlanTagCreate` | (projectId: string,locationId: string,planId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
@@ -3631,7 +3621,7 @@ ___
 
 ▸ `Const`**StorageProjectBucketApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:64679*
+*Defined in api.ts:64715*
 
 StorageProjectBucketApi - axios parameter creator
 
@@ -3653,7 +3643,7 @@ Name | Type | Description |
 `storageProjectBucketObjectDownload` | (projectId: string,locationId: string,bucketId: string,objectId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action download  **`summary`** Download storage/bucket.object  **`throws`** {RequiredError}  |
 `storageProjectBucketObjectGet` | (projectId: string,locationId: string,bucketId: string,objectId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/bucket.object  **`summary`** Get storage/bucket.object  **`throws`** {RequiredError}  |
 `storageProjectBucketObjectList` | (projectId: string,locationId: string,bucketId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/bucket.object  **`summary`** List storage/bucket.object  **`throws`** {RequiredError}  |
-`storageProjectBucketUpload` | (projectId: string,locationId: string,bucketId: string,storageProjectBucketUpload: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action upload  **`summary`** Upload storage/bucket  **`throws`** {RequiredError}  |
+`storageProjectBucketUpload` | (projectId: string,locationId: string,bucketId: string,storageProjectBucketUpload: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action upload  **`summary`** Upload storage/bucket  **`throws`** {RequiredError}  |
 
 ___
 
@@ -3661,7 +3651,7 @@ ___
 
 ▸ `Const`**StorageProjectBucketApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:65292*
+*Defined in api.ts:65334*
 
 StorageProjectBucketApi - factory interface
 
@@ -3685,7 +3675,7 @@ Name | Type |
 `storageProjectBucketObjectDownload` | (projectId: string,locationId: string,bucketId: string,objectId: string,options?: any) => AxiosPromise\<void> |
 `storageProjectBucketObjectGet` | (projectId: string,locationId: string,bucketId: string,objectId: string,options?: any) => AxiosPromise\<[StorageObject](../interfaces/_api_.storageobject.md)> |
 `storageProjectBucketObjectList` | (projectId: string,locationId: string,bucketId: string,options?: any) => AxiosPromise\<Array\<[StorageObject](../interfaces/_api_.storageobject.md)>> |
-`storageProjectBucketUpload` | (projectId: string,locationId: string,bucketId: string,storageProjectBucketUpload: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Bucket](../interfaces/_api_.bucket.md)> |
+`storageProjectBucketUpload` | (projectId: string,locationId: string,bucketId: string,storageProjectBucketUpload: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Bucket](../interfaces/_api_.bucket.md)> |
 
 ___
 
@@ -3693,7 +3683,7 @@ ___
 
 ▸ `Const`**StorageProjectBucketApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:65167*
+*Defined in api.ts:65208*
 
 StorageProjectBucketApi - functional programming interface
 
@@ -3715,7 +3705,7 @@ Name | Type |
 `storageProjectBucketObjectDownload` | (projectId: string,locationId: string,bucketId: string,objectId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `storageProjectBucketObjectGet` | (projectId: string,locationId: string,bucketId: string,objectId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[StorageObject](../interfaces/_api_.storageobject.md)>> |
 `storageProjectBucketObjectList` | (projectId: string,locationId: string,bucketId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[StorageObject](../interfaces/_api_.storageobject.md)>>> |
-`storageProjectBucketUpload` | (projectId: string,locationId: string,bucketId: string,storageProjectBucketUpload: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Bucket](../interfaces/_api_.bucket.md)>> |
+`storageProjectBucketUpload` | (projectId: string,locationId: string,bucketId: string,storageProjectBucketUpload: [StorageProjectBucketUpload](../interfaces/_api_.storageprojectbucketupload.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Bucket](../interfaces/_api_.bucket.md)>> |
 
 ___
 
@@ -3723,7 +3713,7 @@ ___
 
 ▸ `Const`**StorageProjectDiskApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:65500*
+*Defined in api.ts:65544*
 
 StorageProjectDiskApi - axios parameter creator
 
@@ -3739,10 +3729,10 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`storageProjectDiskCreate` | (projectId: string,locationId: string,storageProjectDiskCreate: [StorageProjectDiskCreate](../interfaces/_api_.storageprojectdiskcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create disk  **`summary`** Create storage/disk  **`throws`** {RequiredError}  |
+`storageProjectDiskCreate` | (projectId: string,locationId: string,storageProjectDiskCreate: [StorageProjectDiskCreate](../interfaces/_api_.storageprojectdiskcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create disk  **`summary`** Create storage/disk  **`throws`** {RequiredError}  |
 `storageProjectDiskDelete` | (projectId: string,locationId: string,diskId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete disk  **`summary`** Delete storage/disk  **`throws`** {RequiredError}  |
-`storageProjectDiskDetach` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action detach  **`summary`** Detach storage/disk  **`throws`** {RequiredError}  |
-`storageProjectDiskDownload` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action download  **`summary`** Download storage/disk  **`throws`** {RequiredError}  |
+`storageProjectDiskDetach` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action detach  **`summary`** Detach storage/disk  **`throws`** {RequiredError}  |
+`storageProjectDiskDownload` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action download  **`summary`** Download storage/disk  **`throws`** {RequiredError}  |
 `storageProjectDiskEventGet` | (projectId: string,locationId: string,diskId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/disk.event  **`summary`** Get storage/disk.event  **`throws`** {RequiredError}  |
 `storageProjectDiskEventList` | (projectId: string,locationId: string,diskId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/disk.event  **`summary`** List storage/disk.event  **`throws`** {RequiredError}  |
 `storageProjectDiskGet` | (projectId: string,locationId: string,diskId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single disk  **`summary`** Get storage/disk  **`throws`** {RequiredError}  |
@@ -3750,7 +3740,7 @@ Name | Type | Description |
 `storageProjectDiskMetricGet` | (projectId: string,locationId: string,diskId: string,metricId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/disk.metric  **`summary`** Get storage/disk.metric  **`throws`** {RequiredError}  |
 `storageProjectDiskMetricList` | (projectId: string,locationId: string,diskId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/disk.metric  **`summary`** List storage/disk.metric  **`throws`** {RequiredError}  |
 `storageProjectDiskMetricPointList` | (projectId: string,locationId: string,diskId: string,metricId: string,interval?: string,timespan?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/disk.point  **`summary`** List storage/disk.point  **`throws`** {RequiredError}  |
-`storageProjectDiskResize` | (projectId: string,locationId: string,diskId: string,storageProjectDiskResize: [StorageProjectDiskResize](../interfaces/_api_.storageprojectdiskresize.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action resize  **`summary`** Resize storage/disk  **`throws`** {RequiredError}  |
+`storageProjectDiskResize` | (projectId: string,locationId: string,diskId: string,storageProjectDiskResize: [StorageProjectDiskResize](../interfaces/_api_.storageprojectdiskresize.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action resize  **`summary`** Resize storage/disk  **`throws`** {RequiredError}  |
 `storageProjectDiskServiceGet` | (projectId: string,locationId: string,diskId: string,serviceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/disk.service  **`summary`** Get storage/disk.service  **`throws`** {RequiredError}  |
 `storageProjectDiskServiceList` | (projectId: string,locationId: string,diskId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/disk.service  **`summary`** List storage/disk.service  **`throws`** {RequiredError}  |
 `storageProjectDiskTagCreate` | (projectId: string,locationId: string,diskId: string,tag: [Tag](../interfaces/_api_.tag.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create storage/disk.tag  **`summary`** Create storage/disk.tag  **`throws`** {RequiredError}  |
@@ -3758,7 +3748,7 @@ Name | Type | Description |
 `storageProjectDiskTagGet` | (projectId: string,locationId: string,diskId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/disk.tag  **`summary`** Get storage/disk.tag  **`throws`** {RequiredError}  |
 `storageProjectDiskTagList` | (projectId: string,locationId: string,diskId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/disk.tag  **`summary`** List storage/disk.tag  **`throws`** {RequiredError}  |
 `storageProjectDiskTagPut` | (projectId: string,locationId: string,diskId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace storage/disk.tag  **`summary`** Replace storage/disk.tag  **`throws`** {RequiredError}  |
-`storageProjectDiskTransfer` | (projectId: string,locationId: string,diskId: string,storageProjectDiskTransfer: [StorageProjectDiskTransfer](../interfaces/_api_.storageprojectdisktransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer storage/disk  **`throws`** {RequiredError}  |
+`storageProjectDiskTransfer` | (projectId: string,locationId: string,diskId: string,storageProjectDiskTransfer: [StorageProjectDiskTransfer](../interfaces/_api_.storageprojectdisktransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer storage/disk  **`throws`** {RequiredError}  |
 `storageProjectDiskUpdate` | (projectId: string,locationId: string,diskId: string,storageProjectDiskUpdate: [StorageProjectDiskUpdate](../interfaces/_api_.storageprojectdiskupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified disk  **`summary`** Update storage/disk  **`throws`** {RequiredError}  |
 
 ___
@@ -3767,7 +3757,7 @@ ___
 
 ▸ `Const`**StorageProjectDiskApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:67394*
+*Defined in api.ts:67468*
 
 StorageProjectDiskApi - factory interface
 
@@ -3785,10 +3775,10 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`storageProjectDiskCreate` | (projectId: string,locationId: string,storageProjectDiskCreate: [StorageProjectDiskCreate](../interfaces/_api_.storageprojectdiskcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
+`storageProjectDiskCreate` | (projectId: string,locationId: string,storageProjectDiskCreate: [StorageProjectDiskCreate](../interfaces/_api_.storageprojectdiskcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
 `storageProjectDiskDelete` | (projectId: string,locationId: string,diskId: string,options?: any) => AxiosPromise\<void> |
-`storageProjectDiskDetach` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
-`storageProjectDiskDownload` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<void> |
+`storageProjectDiskDetach` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
+`storageProjectDiskDownload` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<void> |
 `storageProjectDiskEventGet` | (projectId: string,locationId: string,diskId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `storageProjectDiskEventList` | (projectId: string,locationId: string,diskId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
 `storageProjectDiskGet` | (projectId: string,locationId: string,diskId: string,options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
@@ -3796,7 +3786,7 @@ Name | Type |
 `storageProjectDiskMetricGet` | (projectId: string,locationId: string,diskId: string,metricId: string,options?: any) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)> |
 `storageProjectDiskMetricList` | (projectId: string,locationId: string,diskId: string,options?: any) => AxiosPromise\<Array\<[Metric](../interfaces/_api_.metric.md)>> |
 `storageProjectDiskMetricPointList` | (projectId: string,locationId: string,diskId: string,metricId: string,interval?: string,timespan?: string,options?: any) => AxiosPromise\<Array\<[Point](../interfaces/_api_.point.md)>> |
-`storageProjectDiskResize` | (projectId: string,locationId: string,diskId: string,storageProjectDiskResize: [StorageProjectDiskResize](../interfaces/_api_.storageprojectdiskresize.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
+`storageProjectDiskResize` | (projectId: string,locationId: string,diskId: string,storageProjectDiskResize: [StorageProjectDiskResize](../interfaces/_api_.storageprojectdiskresize.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
 `storageProjectDiskServiceGet` | (projectId: string,locationId: string,diskId: string,serviceId: string,options?: any) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)> |
 `storageProjectDiskServiceList` | (projectId: string,locationId: string,diskId: string,options?: any) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `storageProjectDiskTagCreate` | (projectId: string,locationId: string,diskId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
@@ -3804,7 +3794,7 @@ Name | Type |
 `storageProjectDiskTagGet` | (projectId: string,locationId: string,diskId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `storageProjectDiskTagList` | (projectId: string,locationId: string,diskId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `storageProjectDiskTagPut` | (projectId: string,locationId: string,diskId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`storageProjectDiskTransfer` | (projectId: string,locationId: string,diskId: string,storageProjectDiskTransfer: [StorageProjectDiskTransfer](../interfaces/_api_.storageprojectdisktransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
+`storageProjectDiskTransfer` | (projectId: string,locationId: string,diskId: string,storageProjectDiskTransfer: [StorageProjectDiskTransfer](../interfaces/_api_.storageprojectdisktransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
 `storageProjectDiskUpdate` | (projectId: string,locationId: string,diskId: string,storageProjectDiskUpdate: [StorageProjectDiskUpdate](../interfaces/_api_.storageprojectdiskupdate.md),options?: any) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)> |
 
 ___
@@ -3813,7 +3803,7 @@ ___
 
 ▸ `Const`**StorageProjectDiskApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:67026*
+*Defined in api.ts:67095*
 
 StorageProjectDiskApi - functional programming interface
 
@@ -3829,10 +3819,10 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`storageProjectDiskCreate` | (projectId: string,locationId: string,storageProjectDiskCreate: [StorageProjectDiskCreate](../interfaces/_api_.storageprojectdiskcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
+`storageProjectDiskCreate` | (projectId: string,locationId: string,storageProjectDiskCreate: [StorageProjectDiskCreate](../interfaces/_api_.storageprojectdiskcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
 `storageProjectDiskDelete` | (projectId: string,locationId: string,diskId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
-`storageProjectDiskDetach` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
-`storageProjectDiskDownload` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
+`storageProjectDiskDetach` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
+`storageProjectDiskDownload` | (projectId: string,locationId: string,diskId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `storageProjectDiskEventGet` | (projectId: string,locationId: string,diskId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `storageProjectDiskEventList` | (projectId: string,locationId: string,diskId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
 `storageProjectDiskGet` | (projectId: string,locationId: string,diskId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
@@ -3840,7 +3830,7 @@ Name | Type |
 `storageProjectDiskMetricGet` | (projectId: string,locationId: string,diskId: string,metricId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)>> |
 `storageProjectDiskMetricList` | (projectId: string,locationId: string,diskId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Metric](../interfaces/_api_.metric.md)>>> |
 `storageProjectDiskMetricPointList` | (projectId: string,locationId: string,diskId: string,metricId: string,interval?: string,timespan?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Point](../interfaces/_api_.point.md)>>> |
-`storageProjectDiskResize` | (projectId: string,locationId: string,diskId: string,storageProjectDiskResize: [StorageProjectDiskResize](../interfaces/_api_.storageprojectdiskresize.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
+`storageProjectDiskResize` | (projectId: string,locationId: string,diskId: string,storageProjectDiskResize: [StorageProjectDiskResize](../interfaces/_api_.storageprojectdiskresize.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
 `storageProjectDiskServiceGet` | (projectId: string,locationId: string,diskId: string,serviceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `storageProjectDiskServiceList` | (projectId: string,locationId: string,diskId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>>> |
 `storageProjectDiskTagCreate` | (projectId: string,locationId: string,diskId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
@@ -3848,7 +3838,7 @@ Name | Type |
 `storageProjectDiskTagGet` | (projectId: string,locationId: string,diskId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `storageProjectDiskTagList` | (projectId: string,locationId: string,diskId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `storageProjectDiskTagPut` | (projectId: string,locationId: string,diskId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`storageProjectDiskTransfer` | (projectId: string,locationId: string,diskId: string,storageProjectDiskTransfer: [StorageProjectDiskTransfer](../interfaces/_api_.storageprojectdisktransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
+`storageProjectDiskTransfer` | (projectId: string,locationId: string,diskId: string,storageProjectDiskTransfer: [StorageProjectDiskTransfer](../interfaces/_api_.storageprojectdisktransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
 `storageProjectDiskUpdate` | (projectId: string,locationId: string,diskId: string,storageProjectDiskUpdate: [StorageProjectDiskUpdate](../interfaces/_api_.storageprojectdiskupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Disk](../interfaces/_api_.disk.md)>> |
 
 ___
@@ -3857,7 +3847,7 @@ ___
 
 ▸ `Const`**StorageProjectImageApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:68004*
+*Defined in api.ts:68088*
 
 StorageProjectImageApi - axios parameter creator
 
@@ -3873,7 +3863,7 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`storageProjectImageCreate` | (projectId: string,locationId: string,storageProjectImageCreate: [StorageProjectImageCreate](../interfaces/_api_.storageprojectimagecreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create image  **`summary`** Create storage/image  **`throws`** {RequiredError}  |
+`storageProjectImageCreate` | (projectId: string,locationId: string,storageProjectImageCreate: [StorageProjectImageCreate](../interfaces/_api_.storageprojectimagecreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create image  **`summary`** Create storage/image  **`throws`** {RequiredError}  |
 `storageProjectImageDelete` | (projectId: string,locationId: string,imageId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete image  **`summary`** Delete storage/image  **`throws`** {RequiredError}  |
 `storageProjectImageDiskList` | (projectId: string,locationId: string,imageId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/image.disk  **`summary`** List storage/image.disk  **`throws`** {RequiredError}  |
 `storageProjectImageEventGet` | (projectId: string,locationId: string,imageId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/image.event  **`summary`** Get storage/image.event  **`throws`** {RequiredError}  |
@@ -3887,7 +3877,7 @@ Name | Type | Description |
 `storageProjectImageTagGet` | (projectId: string,locationId: string,imageId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/image.tag  **`summary`** Get storage/image.tag  **`throws`** {RequiredError}  |
 `storageProjectImageTagList` | (projectId: string,locationId: string,imageId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/image.tag  **`summary`** List storage/image.tag  **`throws`** {RequiredError}  |
 `storageProjectImageTagPut` | (projectId: string,locationId: string,imageId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace storage/image.tag  **`summary`** Replace storage/image.tag  **`throws`** {RequiredError}  |
-`storageProjectImageTransfer` | (projectId: string,locationId: string,imageId: string,storageProjectImageTransfer: [StorageProjectImageTransfer](../interfaces/_api_.storageprojectimagetransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer storage/image  **`throws`** {RequiredError}  |
+`storageProjectImageTransfer` | (projectId: string,locationId: string,imageId: string,storageProjectImageTransfer: [StorageProjectImageTransfer](../interfaces/_api_.storageprojectimagetransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer storage/image  **`throws`** {RequiredError}  |
 `storageProjectImageUpdate` | (projectId: string,locationId: string,imageId: string,storageProjectImageUpdate: [StorageProjectImageUpdate](../interfaces/_api_.storageprojectimageupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified image  **`summary`** Update storage/image  **`throws`** {RequiredError}  |
 
 ___
@@ -3896,7 +3886,7 @@ ___
 
 ▸ `Const`**StorageProjectImageApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:69433*
+*Defined in api.ts:69529*
 
 StorageProjectImageApi - factory interface
 
@@ -3914,7 +3904,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`storageProjectImageCreate` | (projectId: string,locationId: string,storageProjectImageCreate: [StorageProjectImageCreate](../interfaces/_api_.storageprojectimagecreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Image](../interfaces/_api_.image.md)> |
+`storageProjectImageCreate` | (projectId: string,locationId: string,storageProjectImageCreate: [StorageProjectImageCreate](../interfaces/_api_.storageprojectimagecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Image](../interfaces/_api_.image.md)> |
 `storageProjectImageDelete` | (projectId: string,locationId: string,imageId: string,options?: any) => AxiosPromise\<void> |
 `storageProjectImageDiskList` | (projectId: string,locationId: string,imageId: string,options?: any) => AxiosPromise\<Array\<[Disk](../interfaces/_api_.disk.md)>> |
 `storageProjectImageEventGet` | (projectId: string,locationId: string,imageId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
@@ -3928,7 +3918,7 @@ Name | Type |
 `storageProjectImageTagGet` | (projectId: string,locationId: string,imageId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `storageProjectImageTagList` | (projectId: string,locationId: string,imageId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `storageProjectImageTagPut` | (projectId: string,locationId: string,imageId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`storageProjectImageTransfer` | (projectId: string,locationId: string,imageId: string,storageProjectImageTransfer: [StorageProjectImageTransfer](../interfaces/_api_.storageprojectimagetransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Image](../interfaces/_api_.image.md)> |
+`storageProjectImageTransfer` | (projectId: string,locationId: string,imageId: string,storageProjectImageTransfer: [StorageProjectImageTransfer](../interfaces/_api_.storageprojectimagetransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Image](../interfaces/_api_.image.md)> |
 `storageProjectImageUpdate` | (projectId: string,locationId: string,imageId: string,storageProjectImageUpdate: [StorageProjectImageUpdate](../interfaces/_api_.storageprojectimageupdate.md),options?: any) => AxiosPromise\<[Image](../interfaces/_api_.image.md)> |
 
 ___
@@ -3937,7 +3927,7 @@ ___
 
 ▸ `Const`**StorageProjectImageApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:69154*
+*Defined in api.ts:69248*
 
 StorageProjectImageApi - functional programming interface
 
@@ -3953,7 +3943,7 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`storageProjectImageCreate` | (projectId: string,locationId: string,storageProjectImageCreate: [StorageProjectImageCreate](../interfaces/_api_.storageprojectimagecreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Image](../interfaces/_api_.image.md)>> |
+`storageProjectImageCreate` | (projectId: string,locationId: string,storageProjectImageCreate: [StorageProjectImageCreate](../interfaces/_api_.storageprojectimagecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Image](../interfaces/_api_.image.md)>> |
 `storageProjectImageDelete` | (projectId: string,locationId: string,imageId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `storageProjectImageDiskList` | (projectId: string,locationId: string,imageId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Disk](../interfaces/_api_.disk.md)>>> |
 `storageProjectImageEventGet` | (projectId: string,locationId: string,imageId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
@@ -3967,7 +3957,7 @@ Name | Type |
 `storageProjectImageTagGet` | (projectId: string,locationId: string,imageId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `storageProjectImageTagList` | (projectId: string,locationId: string,imageId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `storageProjectImageTagPut` | (projectId: string,locationId: string,imageId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`storageProjectImageTransfer` | (projectId: string,locationId: string,imageId: string,storageProjectImageTransfer: [StorageProjectImageTransfer](../interfaces/_api_.storageprojectimagetransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Image](../interfaces/_api_.image.md)>> |
+`storageProjectImageTransfer` | (projectId: string,locationId: string,imageId: string,storageProjectImageTransfer: [StorageProjectImageTransfer](../interfaces/_api_.storageprojectimagetransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Image](../interfaces/_api_.image.md)>> |
 `storageProjectImageUpdate` | (projectId: string,locationId: string,imageId: string,storageProjectImageUpdate: [StorageProjectImageUpdate](../interfaces/_api_.storageprojectimageupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Image](../interfaces/_api_.image.md)>> |
 
 ___
@@ -3976,7 +3966,7 @@ ___
 
 ▸ `Const`**StorageProjectIsoApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:69895*
+*Defined in api.ts:69995*
 
 StorageProjectIsoApi - axios parameter creator
 
@@ -3992,9 +3982,9 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`storageProjectIsoCreate` | (projectId: string,locationId: string,storageProjectIsoCreate: [StorageProjectIsoCreate](../interfaces/_api_.storageprojectisocreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create iso  **`summary`** Create storage/iso  **`throws`** {RequiredError}  |
+`storageProjectIsoCreate` | (projectId: string,locationId: string,storageProjectIsoCreate: [StorageProjectIsoCreate](../interfaces/_api_.storageprojectisocreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create iso  **`summary`** Create storage/iso  **`throws`** {RequiredError}  |
 `storageProjectIsoDelete` | (projectId: string,locationId: string,isoId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete iso  **`summary`** Delete storage/iso  **`throws`** {RequiredError}  |
-`storageProjectIsoDetach` | (projectId: string,locationId: string,isoId: string,storageProjectIsoDetach: [StorageProjectIsoDetach](../interfaces/_api_.storageprojectisodetach.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action detach  **`summary`** Detach storage/iso  **`throws`** {RequiredError}  |
+`storageProjectIsoDetach` | (projectId: string,locationId: string,isoId: string,storageProjectIsoDetach: [StorageProjectIsoDetach](../interfaces/_api_.storageprojectisodetach.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action detach  **`summary`** Detach storage/iso  **`throws`** {RequiredError}  |
 `storageProjectIsoEventGet` | (projectId: string,locationId: string,isoId: string,eventId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/iso.event  **`summary`** Get storage/iso.event  **`throws`** {RequiredError}  |
 `storageProjectIsoEventList` | (projectId: string,locationId: string,isoId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/iso.event  **`summary`** List storage/iso.event  **`throws`** {RequiredError}  |
 `storageProjectIsoGet` | (projectId: string,locationId: string,isoId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single iso  **`summary`** Get storage/iso  **`throws`** {RequiredError}  |
@@ -4006,7 +3996,7 @@ Name | Type | Description |
 `storageProjectIsoTagGet` | (projectId: string,locationId: string,isoId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/iso.tag  **`summary`** Get storage/iso.tag  **`throws`** {RequiredError}  |
 `storageProjectIsoTagList` | (projectId: string,locationId: string,isoId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/iso.tag  **`summary`** List storage/iso.tag  **`throws`** {RequiredError}  |
 `storageProjectIsoTagPut` | (projectId: string,locationId: string,isoId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace storage/iso.tag  **`summary`** Replace storage/iso.tag  **`throws`** {RequiredError}  |
-`storageProjectIsoTransfer` | (projectId: string,locationId: string,isoId: string,storageProjectIsoTransfer: [StorageProjectIsoTransfer](../interfaces/_api_.storageprojectisotransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer storage/iso  **`throws`** {RequiredError}  |
+`storageProjectIsoTransfer` | (projectId: string,locationId: string,isoId: string,storageProjectIsoTransfer: [StorageProjectIsoTransfer](../interfaces/_api_.storageprojectisotransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer storage/iso  **`throws`** {RequiredError}  |
 `storageProjectIsoUpdate` | (projectId: string,locationId: string,isoId: string,storageProjectIsoUpdate: [StorageProjectIsoUpdate](../interfaces/_api_.storageprojectisoupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified iso  **`summary`** Update storage/iso  **`throws`** {RequiredError}  |
 
 ___
@@ -4015,7 +4005,7 @@ ___
 
 ▸ `Const`**StorageProjectIsoApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:71345*
+*Defined in api.ts:71463*
 
 StorageProjectIsoApi - factory interface
 
@@ -4033,9 +4023,9 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`storageProjectIsoCreate` | (projectId: string,locationId: string,storageProjectIsoCreate: [StorageProjectIsoCreate](../interfaces/_api_.storageprojectisocreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)> |
+`storageProjectIsoCreate` | (projectId: string,locationId: string,storageProjectIsoCreate: [StorageProjectIsoCreate](../interfaces/_api_.storageprojectisocreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)> |
 `storageProjectIsoDelete` | (projectId: string,locationId: string,isoId: string,options?: any) => AxiosPromise\<void> |
-`storageProjectIsoDetach` | (projectId: string,locationId: string,isoId: string,storageProjectIsoDetach: [StorageProjectIsoDetach](../interfaces/_api_.storageprojectisodetach.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)> |
+`storageProjectIsoDetach` | (projectId: string,locationId: string,isoId: string,storageProjectIsoDetach: [StorageProjectIsoDetach](../interfaces/_api_.storageprojectisodetach.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)> |
 `storageProjectIsoEventGet` | (projectId: string,locationId: string,isoId: string,eventId: string,options?: any) => AxiosPromise\<[Event](../interfaces/_api_.event.md)> |
 `storageProjectIsoEventList` | (projectId: string,locationId: string,isoId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
 `storageProjectIsoGet` | (projectId: string,locationId: string,isoId: string,options?: any) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)> |
@@ -4047,7 +4037,7 @@ Name | Type |
 `storageProjectIsoTagGet` | (projectId: string,locationId: string,isoId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `storageProjectIsoTagList` | (projectId: string,locationId: string,isoId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `storageProjectIsoTagPut` | (projectId: string,locationId: string,isoId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`storageProjectIsoTransfer` | (projectId: string,locationId: string,isoId: string,storageProjectIsoTransfer: [StorageProjectIsoTransfer](../interfaces/_api_.storageprojectisotransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)> |
+`storageProjectIsoTransfer` | (projectId: string,locationId: string,isoId: string,storageProjectIsoTransfer: [StorageProjectIsoTransfer](../interfaces/_api_.storageprojectisotransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)> |
 `storageProjectIsoUpdate` | (projectId: string,locationId: string,isoId: string,storageProjectIsoUpdate: [StorageProjectIsoUpdate](../interfaces/_api_.storageprojectisoupdate.md),options?: any) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)> |
 
 ___
@@ -4056,7 +4046,7 @@ ___
 
 ▸ `Const`**StorageProjectIsoApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:71064*
+*Defined in api.ts:71179*
 
 StorageProjectIsoApi - functional programming interface
 
@@ -4072,9 +4062,9 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`storageProjectIsoCreate` | (projectId: string,locationId: string,storageProjectIsoCreate: [StorageProjectIsoCreate](../interfaces/_api_.storageprojectisocreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)>> |
+`storageProjectIsoCreate` | (projectId: string,locationId: string,storageProjectIsoCreate: [StorageProjectIsoCreate](../interfaces/_api_.storageprojectisocreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)>> |
 `storageProjectIsoDelete` | (projectId: string,locationId: string,isoId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
-`storageProjectIsoDetach` | (projectId: string,locationId: string,isoId: string,storageProjectIsoDetach: [StorageProjectIsoDetach](../interfaces/_api_.storageprojectisodetach.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)>> |
+`storageProjectIsoDetach` | (projectId: string,locationId: string,isoId: string,storageProjectIsoDetach: [StorageProjectIsoDetach](../interfaces/_api_.storageprojectisodetach.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)>> |
 `storageProjectIsoEventGet` | (projectId: string,locationId: string,isoId: string,eventId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Event](../interfaces/_api_.event.md)>> |
 `storageProjectIsoEventList` | (projectId: string,locationId: string,isoId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
 `storageProjectIsoGet` | (projectId: string,locationId: string,isoId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)>> |
@@ -4086,7 +4076,7 @@ Name | Type |
 `storageProjectIsoTagGet` | (projectId: string,locationId: string,isoId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `storageProjectIsoTagList` | (projectId: string,locationId: string,isoId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `storageProjectIsoTagPut` | (projectId: string,locationId: string,isoId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`storageProjectIsoTransfer` | (projectId: string,locationId: string,isoId: string,storageProjectIsoTransfer: [StorageProjectIsoTransfer](../interfaces/_api_.storageprojectisotransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)>> |
+`storageProjectIsoTransfer` | (projectId: string,locationId: string,isoId: string,storageProjectIsoTransfer: [StorageProjectIsoTransfer](../interfaces/_api_.storageprojectisotransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)>> |
 `storageProjectIsoUpdate` | (projectId: string,locationId: string,isoId: string,storageProjectIsoUpdate: [StorageProjectIsoUpdate](../interfaces/_api_.storageprojectisoupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Iso](../interfaces/_api_.iso.md)>> |
 
 ___
@@ -4095,7 +4085,7 @@ ___
 
 ▸ `Const`**StorageProjectVaultApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:71811*
+*Defined in api.ts:71935*
 
 StorageProjectVaultApi - axios parameter creator
 
@@ -4113,7 +4103,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `storageProjectVaultConnectGet` | (projectId: string,locationId: string,vaultId: string,connectId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/vault.connect  **`summary`** Get storage/vault.connect  **`throws`** {RequiredError}  |
 `storageProjectVaultConnectList` | (projectId: string,locationId: string,vaultId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/vault.connect  **`summary`** List storage/vault.connect  **`throws`** {RequiredError}  |
-`storageProjectVaultCreate` | (projectId: string,locationId: string,storageProjectVaultCreate: [StorageProjectVaultCreate](../interfaces/_api_.storageprojectvaultcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create vault  **`summary`** Create storage/vault  **`throws`** {RequiredError}  |
+`storageProjectVaultCreate` | (projectId: string,locationId: string,storageProjectVaultCreate: [StorageProjectVaultCreate](../interfaces/_api_.storageprojectvaultcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create vault  **`summary`** Create storage/vault  **`throws`** {RequiredError}  |
 `storageProjectVaultCredentialCreate` | (projectId: string,locationId: string,vaultId: string,vaultCredential: [VaultCredential](../interfaces/_api_.vaultcredential.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create storage/vault.credential  **`summary`** Create storage/vault.credential  **`throws`** {RequiredError}  |
 `storageProjectVaultCredentialDelete` | (projectId: string,locationId: string,vaultId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete storage/vault.credential  **`summary`** Delete storage/vault.credential  **`throws`** {RequiredError}  |
 `storageProjectVaultCredentialGet` | (projectId: string,locationId: string,vaultId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/vault.credential  **`summary`** Get storage/vault.credential  **`throws`** {RequiredError}  |
@@ -4124,15 +4114,15 @@ Name | Type | Description |
 `storageProjectVaultEventList` | (projectId: string,locationId: string,vaultId: string,$limit?: number,$skip?: number,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/vault.event  **`summary`** List storage/vault.event  **`throws`** {RequiredError}  |
 `storageProjectVaultGet` | (projectId: string,locationId: string,vaultId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single vault  **`summary`** Get storage/vault  **`throws`** {RequiredError}  |
 `storageProjectVaultList` | (projectId: string,locationId: string,name?: string,tagValue?: string,tagKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List vault  **`summary`** List storage/vault  **`throws`** {RequiredError}  |
-`storageProjectVaultResize` | (projectId: string,locationId: string,vaultId: string,storageProjectVaultResize: [StorageProjectVaultResize](../interfaces/_api_.storageprojectvaultresize.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action resize  **`summary`** Resize storage/vault  **`throws`** {RequiredError}  |
+`storageProjectVaultResize` | (projectId: string,locationId: string,vaultId: string,storageProjectVaultResize: [StorageProjectVaultResize](../interfaces/_api_.storageprojectvaultresize.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action resize  **`summary`** Resize storage/vault  **`throws`** {RequiredError}  |
 `storageProjectVaultServiceGet` | (projectId: string,locationId: string,vaultId: string,serviceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/vault.service  **`summary`** Get storage/vault.service  **`throws`** {RequiredError}  |
 `storageProjectVaultServiceList` | (projectId: string,locationId: string,vaultId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/vault.service  **`summary`** List storage/vault.service  **`throws`** {RequiredError}  |
 `storageProjectVaultSnapshotCreate` | (projectId: string,locationId: string,vaultId: string,storageProjectVaultSnapshotCreate: [StorageProjectVaultSnapshotCreate](../interfaces/_api_.storageprojectvaultsnapshotcreate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create storage/vault.snapshot  **`summary`** Create storage/vault.snapshot  **`throws`** {RequiredError}  |
 `storageProjectVaultSnapshotDelete` | (projectId: string,locationId: string,vaultId: string,snapshotId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete storage/vault.snapshot  **`summary`** Delete storage/vault.snapshot  **`throws`** {RequiredError}  |
 `storageProjectVaultSnapshotGet` | (projectId: string,locationId: string,vaultId: string,snapshotId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/vault.snapshot  **`summary`** Get storage/vault.snapshot  **`throws`** {RequiredError}  |
 `storageProjectVaultSnapshotList` | (projectId: string,locationId: string,vaultId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List storage/vault.snapshot  **`summary`** List storage/vault.snapshot  **`throws`** {RequiredError}  |
-`storageProjectVaultStart` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start storage/vault  **`throws`** {RequiredError}  |
-`storageProjectVaultStop` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action stop  **`summary`** Stop storage/vault  **`throws`** {RequiredError}  |
+`storageProjectVaultStart` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start storage/vault  **`throws`** {RequiredError}  |
+`storageProjectVaultStop` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action stop  **`summary`** Stop storage/vault  **`throws`** {RequiredError}  |
 `storageProjectVaultTagCreate` | (projectId: string,locationId: string,vaultId: string,tag: [Tag](../interfaces/_api_.tag.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create storage/vault.tag  **`summary`** Create storage/vault.tag  **`throws`** {RequiredError}  |
 `storageProjectVaultTagDelete` | (projectId: string,locationId: string,vaultId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete storage/vault.tag  **`summary`** Delete storage/vault.tag  **`throws`** {RequiredError}  |
 `storageProjectVaultTagGet` | (projectId: string,locationId: string,vaultId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get storage/vault.tag  **`summary`** Get storage/vault.tag  **`throws`** {RequiredError}  |
@@ -4146,7 +4136,7 @@ ___
 
 ▸ `Const`**StorageProjectVaultApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:74314*
+*Defined in api.ts:74462*
 
 StorageProjectVaultApi - factory interface
 
@@ -4166,7 +4156,7 @@ Name | Type |
 ------ | ------ |
 `storageProjectVaultConnectGet` | (projectId: string,locationId: string,vaultId: string,connectId: string,options?: any) => AxiosPromise\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)> |
 `storageProjectVaultConnectList` | (projectId: string,locationId: string,vaultId: string,options?: any) => AxiosPromise\<Array\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)>> |
-`storageProjectVaultCreate` | (projectId: string,locationId: string,storageProjectVaultCreate: [StorageProjectVaultCreate](../interfaces/_api_.storageprojectvaultcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)> |
+`storageProjectVaultCreate` | (projectId: string,locationId: string,storageProjectVaultCreate: [StorageProjectVaultCreate](../interfaces/_api_.storageprojectvaultcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)> |
 `storageProjectVaultCredentialCreate` | (projectId: string,locationId: string,vaultId: string,vaultCredential: [VaultCredential](../interfaces/_api_.vaultcredential.md),options?: any) => AxiosPromise\<[VaultCredential](../interfaces/_api_.vaultcredential.md)> |
 `storageProjectVaultCredentialDelete` | (projectId: string,locationId: string,vaultId: string,credentialId: string,options?: any) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)> |
 `storageProjectVaultCredentialGet` | (projectId: string,locationId: string,vaultId: string,credentialId: string,options?: any) => AxiosPromise\<[VaultCredential](../interfaces/_api_.vaultcredential.md)> |
@@ -4177,15 +4167,15 @@ Name | Type |
 `storageProjectVaultEventList` | (projectId: string,locationId: string,vaultId: string,$limit?: number,$skip?: number,options?: any) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>> |
 `storageProjectVaultGet` | (projectId: string,locationId: string,vaultId: string,options?: any) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)> |
 `storageProjectVaultList` | (projectId: string,locationId: string,name?: string,tagValue?: string,tagKey?: string,options?: any) => AxiosPromise\<Array\<[Vault](../interfaces/_api_.vault.md)>> |
-`storageProjectVaultResize` | (projectId: string,locationId: string,vaultId: string,storageProjectVaultResize: [StorageProjectVaultResize](../interfaces/_api_.storageprojectvaultresize.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)> |
+`storageProjectVaultResize` | (projectId: string,locationId: string,vaultId: string,storageProjectVaultResize: [StorageProjectVaultResize](../interfaces/_api_.storageprojectvaultresize.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)> |
 `storageProjectVaultServiceGet` | (projectId: string,locationId: string,vaultId: string,serviceId: string,options?: any) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)> |
 `storageProjectVaultServiceList` | (projectId: string,locationId: string,vaultId: string,options?: any) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `storageProjectVaultSnapshotCreate` | (projectId: string,locationId: string,vaultId: string,storageProjectVaultSnapshotCreate: [StorageProjectVaultSnapshotCreate](../interfaces/_api_.storageprojectvaultsnapshotcreate.md),options?: any) => AxiosPromise\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)> |
 `storageProjectVaultSnapshotDelete` | (projectId: string,locationId: string,vaultId: string,snapshotId: string,options?: any) => AxiosPromise\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)> |
 `storageProjectVaultSnapshotGet` | (projectId: string,locationId: string,vaultId: string,snapshotId: string,options?: any) => AxiosPromise\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)> |
 `storageProjectVaultSnapshotList` | (projectId: string,locationId: string,vaultId: string,options?: any) => AxiosPromise\<Array\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)>> |
-`storageProjectVaultStart` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)> |
-`storageProjectVaultStop` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)> |
+`storageProjectVaultStart` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)> |
+`storageProjectVaultStop` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)> |
 `storageProjectVaultTagCreate` | (projectId: string,locationId: string,vaultId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `storageProjectVaultTagDelete` | (projectId: string,locationId: string,vaultId: string,tagId: string,options?: any) => AxiosPromise\<void> |
 `storageProjectVaultTagGet` | (projectId: string,locationId: string,vaultId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
@@ -4199,7 +4189,7 @@ ___
 
 ▸ `Const`**StorageProjectVaultApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:73831*
+*Defined in api.ts:73975*
 
 StorageProjectVaultApi - functional programming interface
 
@@ -4217,7 +4207,7 @@ Name | Type |
 ------ | ------ |
 `storageProjectVaultConnectGet` | (projectId: string,locationId: string,vaultId: string,connectId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)>> |
 `storageProjectVaultConnectList` | (projectId: string,locationId: string,vaultId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)>>> |
-`storageProjectVaultCreate` | (projectId: string,locationId: string,storageProjectVaultCreate: [StorageProjectVaultCreate](../interfaces/_api_.storageprojectvaultcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)>> |
+`storageProjectVaultCreate` | (projectId: string,locationId: string,storageProjectVaultCreate: [StorageProjectVaultCreate](../interfaces/_api_.storageprojectvaultcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)>> |
 `storageProjectVaultCredentialCreate` | (projectId: string,locationId: string,vaultId: string,vaultCredential: [VaultCredential](../interfaces/_api_.vaultcredential.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[VaultCredential](../interfaces/_api_.vaultcredential.md)>> |
 `storageProjectVaultCredentialDelete` | (projectId: string,locationId: string,vaultId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)>> |
 `storageProjectVaultCredentialGet` | (projectId: string,locationId: string,vaultId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[VaultCredential](../interfaces/_api_.vaultcredential.md)>> |
@@ -4228,15 +4218,15 @@ Name | Type |
 `storageProjectVaultEventList` | (projectId: string,locationId: string,vaultId: string,$limit?: number,$skip?: number,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Event](../interfaces/_api_.event.md)>>> |
 `storageProjectVaultGet` | (projectId: string,locationId: string,vaultId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)>> |
 `storageProjectVaultList` | (projectId: string,locationId: string,name?: string,tagValue?: string,tagKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Vault](../interfaces/_api_.vault.md)>>> |
-`storageProjectVaultResize` | (projectId: string,locationId: string,vaultId: string,storageProjectVaultResize: [StorageProjectVaultResize](../interfaces/_api_.storageprojectvaultresize.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)>> |
+`storageProjectVaultResize` | (projectId: string,locationId: string,vaultId: string,storageProjectVaultResize: [StorageProjectVaultResize](../interfaces/_api_.storageprojectvaultresize.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)>> |
 `storageProjectVaultServiceGet` | (projectId: string,locationId: string,vaultId: string,serviceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `storageProjectVaultServiceList` | (projectId: string,locationId: string,vaultId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>>> |
 `storageProjectVaultSnapshotCreate` | (projectId: string,locationId: string,vaultId: string,storageProjectVaultSnapshotCreate: [StorageProjectVaultSnapshotCreate](../interfaces/_api_.storageprojectvaultsnapshotcreate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)>> |
 `storageProjectVaultSnapshotDelete` | (projectId: string,locationId: string,vaultId: string,snapshotId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)>> |
 `storageProjectVaultSnapshotGet` | (projectId: string,locationId: string,vaultId: string,snapshotId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)>> |
 `storageProjectVaultSnapshotList` | (projectId: string,locationId: string,vaultId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[StorageSnapshot](../interfaces/_api_.storagesnapshot.md)>>> |
-`storageProjectVaultStart` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)>> |
-`storageProjectVaultStop` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)>> |
+`storageProjectVaultStart` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)>> |
+`storageProjectVaultStop` | (projectId: string,locationId: string,vaultId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Vault](../interfaces/_api_.vault.md)>> |
 `storageProjectVaultTagCreate` | (projectId: string,locationId: string,vaultId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `storageProjectVaultTagDelete` | (projectId: string,locationId: string,vaultId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `storageProjectVaultTagGet` | (projectId: string,locationId: string,vaultId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
@@ -4250,7 +4240,7 @@ ___
 
 ▸ `Const`**SupportProjectTicketApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:75112*
+*Defined in api.ts:75268*
 
 SupportProjectTicketApi - axios parameter creator
 
@@ -4266,8 +4256,8 @@ Name | Type |
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`supportProjectTicketClose` | (projectId: string,ticketId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action close  **`summary`** Close support/ticket  **`throws`** {RequiredError}  |
-`supportProjectTicketCreate` | (projectId: string,supportProjectTicketCreate: [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create ticket  **`summary`** Create support/ticket  **`throws`** {RequiredError}  |
+`supportProjectTicketClose` | (projectId: string,ticketId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action close  **`summary`** Close support/ticket  **`throws`** {RequiredError}  |
+`supportProjectTicketCreate` | (projectId: string,supportProjectTicketCreate: [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create ticket  **`summary`** Create support/ticket  **`throws`** {RequiredError}  |
 `supportProjectTicketGet` | (projectId: string,ticketId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns a single ticket  **`summary`** Get support/ticket  **`throws`** {RequiredError}  |
 `supportProjectTicketList` | (projectId: string,state?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List ticket  **`summary`** List support/ticket  **`throws`** {RequiredError}  |
 `supportProjectTicketMessageCreate` | (projectId: string,ticketId: string,supportMessage: [SupportMessage](../interfaces/_api_.supportmessage.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create support/ticket.message  **`summary`** Create support/ticket.message  **`throws`** {RequiredError}  |
@@ -4280,7 +4270,7 @@ ___
 
 ▸ `Const`**SupportProjectTicketApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:75682*
+*Defined in api.ts:75850*
 
 SupportProjectTicketApi - factory interface
 
@@ -4298,8 +4288,8 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`supportProjectTicketClose` | (projectId: string,ticketId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Ticket](../interfaces/_api_.ticket.md)> |
-`supportProjectTicketCreate` | (projectId: string,supportProjectTicketCreate: [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Ticket](../interfaces/_api_.ticket.md)> |
+`supportProjectTicketClose` | (projectId: string,ticketId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Ticket](../interfaces/_api_.ticket.md)> |
+`supportProjectTicketCreate` | (projectId: string,supportProjectTicketCreate: [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Ticket](../interfaces/_api_.ticket.md)> |
 `supportProjectTicketGet` | (projectId: string,ticketId: string,options?: any) => AxiosPromise\<[Ticket](../interfaces/_api_.ticket.md)> |
 `supportProjectTicketList` | (projectId: string,state?: string,options?: any) => AxiosPromise\<Array\<[Ticket](../interfaces/_api_.ticket.md)>> |
 `supportProjectTicketMessageCreate` | (projectId: string,ticketId: string,supportMessage: [SupportMessage](../interfaces/_api_.supportmessage.md),options?: any) => AxiosPromise\<[SupportMessage](../interfaces/_api_.supportmessage.md)> |
@@ -4312,7 +4302,7 @@ ___
 
 ▸ `Const`**SupportProjectTicketApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:75564*
+*Defined in api.ts:75730*
 
 SupportProjectTicketApi - functional programming interface
 
@@ -4328,8 +4318,8 @@ Name | Type |
 
 Name | Type |
 ------ | ------ |
-`supportProjectTicketClose` | (projectId: string,ticketId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ticket](../interfaces/_api_.ticket.md)>> |
-`supportProjectTicketCreate` | (projectId: string,supportProjectTicketCreate: [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ticket](../interfaces/_api_.ticket.md)>> |
+`supportProjectTicketClose` | (projectId: string,ticketId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ticket](../interfaces/_api_.ticket.md)>> |
+`supportProjectTicketCreate` | (projectId: string,supportProjectTicketCreate: [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ticket](../interfaces/_api_.ticket.md)>> |
 `supportProjectTicketGet` | (projectId: string,ticketId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Ticket](../interfaces/_api_.ticket.md)>> |
 `supportProjectTicketList` | (projectId: string,state?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Ticket](../interfaces/_api_.ticket.md)>>> |
 `supportProjectTicketMessageCreate` | (projectId: string,ticketId: string,supportMessage: [SupportMessage](../interfaces/_api_.supportmessage.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[SupportMessage](../interfaces/_api_.supportmessage.md)>> |
@@ -4342,7 +4332,7 @@ ___
 
 ▸ `Const`**VmhostProjectInstanceApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:75876*
+*Defined in api.ts:76048*
 
 VmhostProjectInstanceApi - axios parameter creator
 
@@ -4376,7 +4366,7 @@ ___
 
 ▸ `Const`**VmhostProjectInstanceApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:76843*
+*Defined in api.ts:77015*
 
 VmhostProjectInstanceApi - factory interface
 
@@ -4412,7 +4402,7 @@ ___
 
 ▸ `Const`**VmhostProjectInstanceApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:76650*
+*Defined in api.ts:76822*
 
 VmhostProjectInstanceApi - functional programming interface
 
@@ -4446,7 +4436,7 @@ ___
 
 ▸ `Const`**WebsiteProjectInstanceApiAxiosParamCreator**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:77163*
+*Defined in api.ts:77335*
 
 WebsiteProjectInstanceApi - axios parameter creator
 
@@ -4464,7 +4454,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `websiteProjectInstanceConnectGet` | (projectId: string,locationId: string,instanceId: string,connectId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get website/instance.connect  **`summary`** Get website/instance.connect  **`throws`** {RequiredError}  |
 `websiteProjectInstanceConnectList` | (projectId: string,locationId: string,instanceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List website/instance.connect  **`summary`** List website/instance.connect  **`throws`** {RequiredError}  |
-`websiteProjectInstanceCreate` | (projectId: string,locationId: string,websiteProjectInstanceCreate: [WebsiteProjectInstanceCreate](../interfaces/_api_.websiteprojectinstancecreate.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create instance  **`summary`** Create website/instance  **`throws`** {RequiredError}  |
+`websiteProjectInstanceCreate` | (projectId: string,locationId: string,websiteProjectInstanceCreate: [WebsiteProjectInstanceCreate](../interfaces/_api_.websiteprojectinstancecreate.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create instance  **`summary`** Create website/instance  **`throws`** {RequiredError}  |
 `websiteProjectInstanceCredentialCreate` | (projectId: string,locationId: string,instanceId: string,websiteCredential: [WebsiteCredential](../interfaces/_api_.websitecredential.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create website/instance.credential  **`summary`** Create website/instance.credential  **`throws`** {RequiredError}  |
 `websiteProjectInstanceCredentialDelete` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete website/instance.credential  **`summary`** Delete website/instance.credential  **`throws`** {RequiredError}  |
 `websiteProjectInstanceCredentialGet` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get website/instance.credential  **`summary`** Get website/instance.credential  **`throws`** {RequiredError}  |
@@ -4493,26 +4483,25 @@ Name | Type | Description |
 `websiteProjectInstanceMetricGet` | (projectId: string,locationId: string,instanceId: string,metricId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get website/instance.metric  **`summary`** Get website/instance.metric  **`throws`** {RequiredError}  |
 `websiteProjectInstanceMetricList` | (projectId: string,locationId: string,instanceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List website/instance.metric  **`summary`** List website/instance.metric  **`throws`** {RequiredError}  |
 `websiteProjectInstanceMetricPointList` | (projectId: string,locationId: string,instanceId: string,metricId: string,interval?: string,timespan?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List website/instance.point  **`summary`** List website/instance.point  **`throws`** {RequiredError}  |
-`websiteProjectInstanceRestart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action restart  **`summary`** Restart website/instance  **`throws`** {RequiredError}  |
+`websiteProjectInstanceRestart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action restart  **`summary`** Restart website/instance  **`throws`** {RequiredError}  |
 `websiteProjectInstanceServiceGet` | (projectId: string,locationId: string,instanceId: string,serviceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get website/instance.service  **`summary`** Get website/instance.service  **`throws`** {RequiredError}  |
 `websiteProjectInstanceServiceList` | (projectId: string,locationId: string,instanceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List website/instance.service  **`summary`** List website/instance.service  **`throws`** {RequiredError}  |
-`websiteProjectInstanceSideappCreate` | (projectId: string,locationId: string,instanceId: string,websiteSideapp: [WebsiteSideapp](../interfaces/_api_.websitesideapp.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create website/instance.sideapp  **`summary`** Create website/instance.sideapp  **`throws`** {RequiredError}  |
-`websiteProjectInstanceSideappDelete` | (projectId: string,locationId: string,instanceId: string,sideappId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete website/instance.sideapp  **`summary`** Delete website/instance.sideapp  **`throws`** {RequiredError}  |
 `websiteProjectInstanceSideappGet` | (projectId: string,locationId: string,instanceId: string,sideappId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get website/instance.sideapp  **`summary`** Get website/instance.sideapp  **`throws`** {RequiredError}  |
 `websiteProjectInstanceSideappList` | (projectId: string,locationId: string,instanceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List website/instance.sideapp  **`summary`** List website/instance.sideapp  **`throws`** {RequiredError}  |
+`websiteProjectInstanceSideappOpen` | (projectId: string,locationId: string,instanceId: string,sideappId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action open  **`summary`** Open website/instance.sideapp  **`throws`** {RequiredError}  |
 `websiteProjectInstanceSnapshotCreate` | (projectId: string,locationId: string,instanceId: string,websiteSnapshot: [WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create website/instance.snapshot  **`summary`** Create website/instance.snapshot  **`throws`** {RequiredError}  |
 `websiteProjectInstanceSnapshotDelete` | (projectId: string,locationId: string,instanceId: string,snapshotId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete website/instance.snapshot  **`summary`** Delete website/instance.snapshot  **`throws`** {RequiredError}  |
 `websiteProjectInstanceSnapshotDownload` | (projectId: string,locationId: string,instanceId: string,snapshotId: string,websiteProjectInstanceSnapshotDownload: [WebsiteProjectInstanceSnapshotDownload](../interfaces/_api_.websiteprojectinstancesnapshotdownload.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action download  **`summary`** Download website/instance.snapshot  **`throws`** {RequiredError}  |
 `websiteProjectInstanceSnapshotGet` | (projectId: string,locationId: string,instanceId: string,snapshotId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get website/instance.snapshot  **`summary`** Get website/instance.snapshot  **`throws`** {RequiredError}  |
 `websiteProjectInstanceSnapshotList` | (projectId: string,locationId: string,instanceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List website/instance.snapshot  **`summary`** List website/instance.snapshot  **`throws`** {RequiredError}  |
-`websiteProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start website/instance  **`throws`** {RequiredError}  |
-`websiteProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action stop  **`summary`** Stop website/instance  **`throws`** {RequiredError}  |
+`websiteProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action start  **`summary`** Start website/instance  **`throws`** {RequiredError}  |
+`websiteProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action stop  **`summary`** Stop website/instance  **`throws`** {RequiredError}  |
 `websiteProjectInstanceTagCreate` | (projectId: string,locationId: string,instanceId: string,tag: [Tag](../interfaces/_api_.tag.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Create website/instance.tag  **`summary`** Create website/instance.tag  **`throws`** {RequiredError}  |
 `websiteProjectInstanceTagDelete` | (projectId: string,locationId: string,instanceId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Delete website/instance.tag  **`summary`** Delete website/instance.tag  **`throws`** {RequiredError}  |
 `websiteProjectInstanceTagGet` | (projectId: string,locationId: string,instanceId: string,tagId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Get website/instance.tag  **`summary`** Get website/instance.tag  **`throws`** {RequiredError}  |
 `websiteProjectInstanceTagList` | (projectId: string,locationId: string,instanceId: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | List website/instance.tag  **`summary`** List website/instance.tag  **`throws`** {RequiredError}  |
 `websiteProjectInstanceTagPut` | (projectId: string,locationId: string,instanceId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Replace website/instance.tag  **`summary`** Replace website/instance.tag  **`throws`** {RequiredError}  |
-`websiteProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,websiteProjectInstanceTransfer: [WebsiteProjectInstanceTransfer](../interfaces/_api_.websiteprojectinstancetransfer.md),xIdempotencyKey?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer website/instance  **`throws`** {RequiredError}  |
+`websiteProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,websiteProjectInstanceTransfer: [WebsiteProjectInstanceTransfer](../interfaces/_api_.websiteprojectinstancetransfer.md),xIdempotencyKey?: string,xDryRun?: string,options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | action transfer  **`summary`** Transfer website/instance  **`throws`** {RequiredError}  |
 `websiteProjectInstanceUpdate` | (projectId: string,locationId: string,instanceId: string,websiteProjectInstanceUpdate: [WebsiteProjectInstanceUpdate](../interfaces/_api_.websiteprojectinstanceupdate.md),options: any) => Promise\<[RequestArgs](../interfaces/_base_.requestargs.md)> | Returns modified instance  **`summary`** Update website/instance  **`throws`** {RequiredError}  |
 
 ___
@@ -4521,7 +4510,7 @@ ___
 
 ▸ `Const`**WebsiteProjectInstanceApiFactory**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md), `basePath?`: string, `axios?`: AxiosInstance): object
 
-*Defined in api.ts:81755*
+*Defined in api.ts:81862*
 
 WebsiteProjectInstanceApi - factory interface
 
@@ -4541,7 +4530,7 @@ Name | Type |
 ------ | ------ |
 `websiteProjectInstanceConnectGet` | (projectId: string,locationId: string,instanceId: string,connectId: string,options?: any) => AxiosPromise\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)> |
 `websiteProjectInstanceConnectList` | (projectId: string,locationId: string,instanceId: string,options?: any) => AxiosPromise\<Array\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)>> |
-`websiteProjectInstanceCreate` | (projectId: string,locationId: string,websiteProjectInstanceCreate: [WebsiteProjectInstanceCreate](../interfaces/_api_.websiteprojectinstancecreate.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
+`websiteProjectInstanceCreate` | (projectId: string,locationId: string,websiteProjectInstanceCreate: [WebsiteProjectInstanceCreate](../interfaces/_api_.websiteprojectinstancecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
 `websiteProjectInstanceCredentialCreate` | (projectId: string,locationId: string,instanceId: string,websiteCredential: [WebsiteCredential](../interfaces/_api_.websitecredential.md),options?: any) => AxiosPromise\<[WebsiteCredential](../interfaces/_api_.websitecredential.md)> |
 `websiteProjectInstanceCredentialDelete` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
 `websiteProjectInstanceCredentialGet` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options?: any) => AxiosPromise\<[WebsiteCredential](../interfaces/_api_.websitecredential.md)> |
@@ -4570,26 +4559,25 @@ Name | Type |
 `websiteProjectInstanceMetricGet` | (projectId: string,locationId: string,instanceId: string,metricId: string,options?: any) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)> |
 `websiteProjectInstanceMetricList` | (projectId: string,locationId: string,instanceId: string,options?: any) => AxiosPromise\<Array\<[Metric](../interfaces/_api_.metric.md)>> |
 `websiteProjectInstanceMetricPointList` | (projectId: string,locationId: string,instanceId: string,metricId: string,interval?: string,timespan?: string,options?: any) => AxiosPromise\<Array\<[Point](../interfaces/_api_.point.md)>> |
-`websiteProjectInstanceRestart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
+`websiteProjectInstanceRestart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
 `websiteProjectInstanceServiceGet` | (projectId: string,locationId: string,instanceId: string,serviceId: string,options?: any) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)> |
 `websiteProjectInstanceServiceList` | (projectId: string,locationId: string,instanceId: string,options?: any) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
-`websiteProjectInstanceSideappCreate` | (projectId: string,locationId: string,instanceId: string,websiteSideapp: [WebsiteSideapp](../interfaces/_api_.websitesideapp.md),options?: any) => AxiosPromise\<[WebsiteSideapp](../interfaces/_api_.websitesideapp.md)> |
-`websiteProjectInstanceSideappDelete` | (projectId: string,locationId: string,instanceId: string,sideappId: string,options?: any) => AxiosPromise\<void> |
 `websiteProjectInstanceSideappGet` | (projectId: string,locationId: string,instanceId: string,sideappId: string,options?: any) => AxiosPromise\<[WebsiteSideapp](../interfaces/_api_.websitesideapp.md)> |
 `websiteProjectInstanceSideappList` | (projectId: string,locationId: string,instanceId: string,options?: any) => AxiosPromise\<Array\<[WebsiteSideapp](../interfaces/_api_.websitesideapp.md)>> |
+`websiteProjectInstanceSideappOpen` | (projectId: string,locationId: string,instanceId: string,sideappId: string,options?: any) => AxiosPromise\<void> |
 `websiteProjectInstanceSnapshotCreate` | (projectId: string,locationId: string,instanceId: string,websiteSnapshot: [WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md),options?: any) => AxiosPromise\<[WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md)> |
 `websiteProjectInstanceSnapshotDelete` | (projectId: string,locationId: string,instanceId: string,snapshotId: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
 `websiteProjectInstanceSnapshotDownload` | (projectId: string,locationId: string,instanceId: string,snapshotId: string,websiteProjectInstanceSnapshotDownload: [WebsiteProjectInstanceSnapshotDownload](../interfaces/_api_.websiteprojectinstancesnapshotdownload.md),options?: any) => AxiosPromise\<void> |
 `websiteProjectInstanceSnapshotGet` | (projectId: string,locationId: string,instanceId: string,snapshotId: string,options?: any) => AxiosPromise\<[WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md)> |
 `websiteProjectInstanceSnapshotList` | (projectId: string,locationId: string,instanceId: string,options?: any) => AxiosPromise\<Array\<[WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md)>> |
-`websiteProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
-`websiteProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
+`websiteProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
+`websiteProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
 `websiteProjectInstanceTagCreate` | (projectId: string,locationId: string,instanceId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `websiteProjectInstanceTagDelete` | (projectId: string,locationId: string,instanceId: string,tagId: string,options?: any) => AxiosPromise\<void> |
 `websiteProjectInstanceTagGet` | (projectId: string,locationId: string,instanceId: string,tagId: string,options?: any) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)> |
 `websiteProjectInstanceTagList` | (projectId: string,locationId: string,instanceId: string,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
 `websiteProjectInstanceTagPut` | (projectId: string,locationId: string,instanceId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>> |
-`websiteProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,websiteProjectInstanceTransfer: [WebsiteProjectInstanceTransfer](../interfaces/_api_.websiteprojectinstancetransfer.md),xIdempotencyKey?: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
+`websiteProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,websiteProjectInstanceTransfer: [WebsiteProjectInstanceTransfer](../interfaces/_api_.websiteprojectinstancetransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
 `websiteProjectInstanceUpdate` | (projectId: string,locationId: string,instanceId: string,websiteProjectInstanceUpdate: [WebsiteProjectInstanceUpdate](../interfaces/_api_.websiteprojectinstanceupdate.md),options?: any) => AxiosPromise\<[Website](../interfaces/_api_.website.md)> |
 
 ___
@@ -4598,7 +4586,7 @@ ___
 
 ▸ `Const`**WebsiteProjectInstanceApiFp**(`configuration?`: [Configuration](../classes/_configuration_.configuration.md)): object
 
-*Defined in api.ts:80868*
+*Defined in api.ts:80987*
 
 WebsiteProjectInstanceApi - functional programming interface
 
@@ -4616,7 +4604,7 @@ Name | Type |
 ------ | ------ |
 `websiteProjectInstanceConnectGet` | (projectId: string,locationId: string,instanceId: string,connectId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)>> |
 `websiteProjectInstanceConnectList` | (projectId: string,locationId: string,instanceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceConnect](../interfaces/_api_.resourceconnect.md)>>> |
-`websiteProjectInstanceCreate` | (projectId: string,locationId: string,websiteProjectInstanceCreate: [WebsiteProjectInstanceCreate](../interfaces/_api_.websiteprojectinstancecreate.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
+`websiteProjectInstanceCreate` | (projectId: string,locationId: string,websiteProjectInstanceCreate: [WebsiteProjectInstanceCreate](../interfaces/_api_.websiteprojectinstancecreate.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
 `websiteProjectInstanceCredentialCreate` | (projectId: string,locationId: string,instanceId: string,websiteCredential: [WebsiteCredential](../interfaces/_api_.websitecredential.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[WebsiteCredential](../interfaces/_api_.websitecredential.md)>> |
 `websiteProjectInstanceCredentialDelete` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
 `websiteProjectInstanceCredentialGet` | (projectId: string,locationId: string,instanceId: string,credentialId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[WebsiteCredential](../interfaces/_api_.websitecredential.md)>> |
@@ -4645,24 +4633,23 @@ Name | Type |
 `websiteProjectInstanceMetricGet` | (projectId: string,locationId: string,instanceId: string,metricId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Metric](../interfaces/_api_.metric.md)>> |
 `websiteProjectInstanceMetricList` | (projectId: string,locationId: string,instanceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Metric](../interfaces/_api_.metric.md)>>> |
 `websiteProjectInstanceMetricPointList` | (projectId: string,locationId: string,instanceId: string,metricId: string,interval?: string,timespan?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Point](../interfaces/_api_.point.md)>>> |
-`websiteProjectInstanceRestart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
+`websiteProjectInstanceRestart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
 `websiteProjectInstanceServiceGet` | (projectId: string,locationId: string,instanceId: string,serviceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[ResourceService](../interfaces/_api_.resourceservice.md)>> |
 `websiteProjectInstanceServiceList` | (projectId: string,locationId: string,instanceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[ResourceService](../interfaces/_api_.resourceservice.md)>>> |
-`websiteProjectInstanceSideappCreate` | (projectId: string,locationId: string,instanceId: string,websiteSideapp: [WebsiteSideapp](../interfaces/_api_.websitesideapp.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[WebsiteSideapp](../interfaces/_api_.websitesideapp.md)>> |
-`websiteProjectInstanceSideappDelete` | (projectId: string,locationId: string,instanceId: string,sideappId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `websiteProjectInstanceSideappGet` | (projectId: string,locationId: string,instanceId: string,sideappId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[WebsiteSideapp](../interfaces/_api_.websitesideapp.md)>> |
 `websiteProjectInstanceSideappList` | (projectId: string,locationId: string,instanceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[WebsiteSideapp](../interfaces/_api_.websitesideapp.md)>>> |
+`websiteProjectInstanceSideappOpen` | (projectId: string,locationId: string,instanceId: string,sideappId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `websiteProjectInstanceSnapshotCreate` | (projectId: string,locationId: string,instanceId: string,websiteSnapshot: [WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md)>> |
 `websiteProjectInstanceSnapshotDelete` | (projectId: string,locationId: string,instanceId: string,snapshotId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
 `websiteProjectInstanceSnapshotDownload` | (projectId: string,locationId: string,instanceId: string,snapshotId: string,websiteProjectInstanceSnapshotDownload: [WebsiteProjectInstanceSnapshotDownload](../interfaces/_api_.websiteprojectinstancesnapshotdownload.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `websiteProjectInstanceSnapshotGet` | (projectId: string,locationId: string,instanceId: string,snapshotId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md)>> |
 `websiteProjectInstanceSnapshotList` | (projectId: string,locationId: string,instanceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[WebsiteSnapshot](../interfaces/_api_.websitesnapshot.md)>>> |
-`websiteProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
-`websiteProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
+`websiteProjectInstanceStart` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
+`websiteProjectInstanceStop` | (projectId: string,locationId: string,instanceId: string,xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
 `websiteProjectInstanceTagCreate` | (projectId: string,locationId: string,instanceId: string,tag: [Tag](../interfaces/_api_.tag.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `websiteProjectInstanceTagDelete` | (projectId: string,locationId: string,instanceId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<void>> |
 `websiteProjectInstanceTagGet` | (projectId: string,locationId: string,instanceId: string,tagId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Tag](../interfaces/_api_.tag.md)>> |
 `websiteProjectInstanceTagList` | (projectId: string,locationId: string,instanceId: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
 `websiteProjectInstanceTagPut` | (projectId: string,locationId: string,instanceId: string,tag: Array\<[Tag](../interfaces/_api_.tag.md)>,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<Array\<[Tag](../interfaces/_api_.tag.md)>>> |
-`websiteProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,websiteProjectInstanceTransfer: [WebsiteProjectInstanceTransfer](../interfaces/_api_.websiteprojectinstancetransfer.md),xIdempotencyKey?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
+`websiteProjectInstanceTransfer` | (projectId: string,locationId: string,instanceId: string,websiteProjectInstanceTransfer: [WebsiteProjectInstanceTransfer](../interfaces/_api_.websiteprojectinstancetransfer.md),xIdempotencyKey?: string,xDryRun?: string,options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |
 `websiteProjectInstanceUpdate` | (projectId: string,locationId: string,instanceId: string,websiteProjectInstanceUpdate: [WebsiteProjectInstanceUpdate](../interfaces/_api_.websiteprojectinstanceupdate.md),options?: any) => Promise\<(axios?: AxiosInstance,basePath?: string) => AxiosPromise\<[Website](../interfaces/_api_.website.md)>> |

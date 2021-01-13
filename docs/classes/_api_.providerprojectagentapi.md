@@ -118,9 +118,9 @@ ___
 
 ### providerProjectAgentCreate
 
-▸ **providerProjectAgentCreate**(`projectId`: string, `locationId`: string, `providerProjectAgentCreate`: [ProviderProjectAgentCreate](../interfaces/_api_.providerprojectagentcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
+▸ **providerProjectAgentCreate**(`projectId`: string, `locationId`: string, `providerProjectAgentCreate`: [ProviderProjectAgentCreate](../interfaces/_api_.providerprojectagentcreate.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
 
-*Defined in api.ts:60007*
+*Defined in api.ts:60367*
 
 Create agent
 
@@ -138,6 +138,7 @@ Name | Type | Description |
 `locationId` | string | Location Id |
 `providerProjectAgentCreate` | [ProviderProjectAgentCreate](../interfaces/_api_.providerprojectagentcreate.md) |  |
 `xIdempotencyKey?` | string | - |
+`xDryRun?` | string | - |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
@@ -148,7 +149,7 @@ ___
 
 ▸ **providerProjectAgentCredentialCreate**(`projectId`: string, `locationId`: string, `agentId`: string, `agentCredential`: [AgentCredential](../interfaces/_api_.agentcredential.md), `options?`: any): Promise\<AxiosResponse\<[AgentCredential](../interfaces/_api_.agentcredential.md)>>
 
-*Defined in api.ts:60022*
+*Defined in api.ts:60382*
 
 Create provider/agent.credential
 
@@ -176,7 +177,7 @@ ___
 
 ▸ **providerProjectAgentCredentialDelete**(`projectId`: string, `locationId`: string, `agentId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
 
-*Defined in api.ts:60037*
+*Defined in api.ts:60397*
 
 Delete provider/agent.credential
 
@@ -204,7 +205,7 @@ ___
 
 ▸ **providerProjectAgentCredentialGet**(`projectId`: string, `locationId`: string, `agentId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[AgentCredential](../interfaces/_api_.agentcredential.md)>>
 
-*Defined in api.ts:60052*
+*Defined in api.ts:60412*
 
 Get provider/agent.credential
 
@@ -232,7 +233,7 @@ ___
 
 ▸ **providerProjectAgentCredentialList**(`projectId`: string, `locationId`: string, `agentId`: string, `options?`: any): Promise\<AxiosResponse\<[AgentCredential](../interfaces/_api_.agentcredential.md)[]>>
 
-*Defined in api.ts:60066*
+*Defined in api.ts:60426*
 
 List provider/agent.credential
 
@@ -259,7 +260,7 @@ ___
 
 ▸ **providerProjectAgentCredentialPatch**(`projectId`: string, `locationId`: string, `agentId`: string, `credentialId`: string, `providerProjectAgentCredentialPatch`: [ProviderProjectAgentCredentialPatch](../interfaces/_api_.providerprojectagentcredentialpatch.md), `options?`: any): Promise\<AxiosResponse\<[AgentCredential](../interfaces/_api_.agentcredential.md)>>
 
-*Defined in api.ts:60082*
+*Defined in api.ts:60442*
 
 Update provider/agent.credential
 
@@ -288,7 +289,7 @@ ___
 
 ▸ **providerProjectAgentDelete**(`projectId`: string, `locationId`: string, `agentId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:60096*
+*Defined in api.ts:60456*
 
 Delete agent
 
@@ -315,7 +316,7 @@ ___
 
 ▸ **providerProjectAgentEnabledServiceCreate**(`projectId`: string, `locationId`: string, `agentId`: string, `enabledService`: [EnabledService](../interfaces/_api_.enabledservice.md), `options?`: any): Promise\<AxiosResponse\<[EnabledService](../interfaces/_api_.enabledservice.md)>>
 
-*Defined in api.ts:60111*
+*Defined in api.ts:60471*
 
 Create provider/agent.enabledService
 
@@ -343,7 +344,7 @@ ___
 
 ▸ **providerProjectAgentEnabledServiceDelete**(`projectId`: string, `locationId`: string, `agentId`: string, `enabledServiceId`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
 
-*Defined in api.ts:60126*
+*Defined in api.ts:60486*
 
 Delete provider/agent.enabledService
 
@@ -371,7 +372,7 @@ ___
 
 ▸ **providerProjectAgentEnabledServiceGet**(`projectId`: string, `locationId`: string, `agentId`: string, `enabledServiceId`: string, `options?`: any): Promise\<AxiosResponse\<[EnabledService](../interfaces/_api_.enabledservice.md)>>
 
-*Defined in api.ts:60141*
+*Defined in api.ts:60501*
 
 Get provider/agent.enabledService
 
@@ -399,7 +400,7 @@ ___
 
 ▸ **providerProjectAgentEnabledServiceList**(`projectId`: string, `locationId`: string, `agentId`: string, `options?`: any): Promise\<AxiosResponse\<[EnabledService](../interfaces/_api_.enabledservice.md)[]>>
 
-*Defined in api.ts:60155*
+*Defined in api.ts:60515*
 
 List provider/agent.enabledService
 
@@ -426,7 +427,7 @@ ___
 
 ▸ **providerProjectAgentEventGet**(`projectId`: string, `locationId`: string, `agentId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:60170*
+*Defined in api.ts:60530*
 
 Get provider/agent.event
 
@@ -454,7 +455,7 @@ ___
 
 ▸ **providerProjectAgentEventList**(`projectId`: string, `locationId`: string, `agentId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:60186*
+*Defined in api.ts:60546*
 
 List provider/agent.event
 
@@ -483,7 +484,7 @@ ___
 
 ▸ **providerProjectAgentGet**(`projectId`: string, `locationId`: string, `agentId`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
 
-*Defined in api.ts:60200*
+*Defined in api.ts:60560*
 
 Returns a single agent
 
@@ -508,9 +509,9 @@ ___
 
 ### providerProjectAgentInspect
 
-▸ **providerProjectAgentInspect**(`projectId`: string, `locationId`: string, `agentId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
+▸ **providerProjectAgentInspect**(`projectId`: string, `locationId`: string, `agentId`: string, `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
 
-*Defined in api.ts:60215*
+*Defined in api.ts:60576*
 
 action inspect
 
@@ -528,6 +529,7 @@ Name | Type | Description |
 `locationId` | string | Location Id |
 `agentId` | string | Agent Id |
 `xIdempotencyKey?` | string | - |
+`xDryRun?` | string | - |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
@@ -538,7 +540,7 @@ ___
 
 ▸ **providerProjectAgentList**(`projectId`: string, `locationId`: string, `name?`: string, `enabledServices?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)[]>>
 
-*Defined in api.ts:60232*
+*Defined in api.ts:60593*
 
 List agent
 
@@ -568,7 +570,7 @@ ___
 
 ▸ **providerProjectAgentMetricGet**(`projectId`: string, `locationId`: string, `agentId`: string, `metricId`: string, `options?`: any): Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)>>
 
-*Defined in api.ts:60247*
+*Defined in api.ts:60608*
 
 Get provider/agent.metric
 
@@ -596,7 +598,7 @@ ___
 
 ▸ **providerProjectAgentMetricList**(`projectId`: string, `locationId`: string, `agentId`: string, `options?`: any): Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)[]>>
 
-*Defined in api.ts:60261*
+*Defined in api.ts:60622*
 
 List provider/agent.metric
 
@@ -623,7 +625,7 @@ ___
 
 ▸ **providerProjectAgentMetricPointList**(`projectId`: string, `locationId`: string, `agentId`: string, `metricId`: string, `interval?`: string, `timespan?`: string, `options?`: any): Promise\<AxiosResponse\<[Point](../interfaces/_api_.point.md)[]>>
 
-*Defined in api.ts:60278*
+*Defined in api.ts:60639*
 
 List provider/agent.point
 
@@ -653,7 +655,7 @@ ___
 
 ▸ **providerProjectAgentResourceEventList**(`projectId`: string, `locationId`: string, `agentId`: string, `resourceId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[ProviderAgentResourceEvent](../interfaces/_api_.provideragentresourceevent.md)[]>>
 
-*Defined in api.ts:60295*
+*Defined in api.ts:60656*
 
 List provider/agent.event
 
@@ -683,7 +685,7 @@ ___
 
 ▸ **providerProjectAgentResourceGet**(`projectId`: string, `locationId`: string, `agentId`: string, `resourceId`: string, `options?`: any): Promise\<AxiosResponse\<[ProviderAgentResource](../interfaces/_api_.provideragentresource.md)>>
 
-*Defined in api.ts:60310*
+*Defined in api.ts:60671*
 
 Get provider/agent.resource
 
@@ -711,7 +713,7 @@ ___
 
 ▸ **providerProjectAgentResourceInspect**(`projectId`: string, `locationId`: string, `agentId`: string, `resourceId`: string, `options?`: any): Promise\<AxiosResponse\<any>>
 
-*Defined in api.ts:60325*
+*Defined in api.ts:60686*
 
 action inspect
 
@@ -739,7 +741,7 @@ ___
 
 ▸ **providerProjectAgentResourceList**(`projectId`: string, `locationId`: string, `agentId`: string, `options?`: any): Promise\<AxiosResponse\<[ProviderAgentResource](../interfaces/_api_.provideragentresource.md)[]>>
 
-*Defined in api.ts:60339*
+*Defined in api.ts:60700*
 
 List provider/agent.resource
 
@@ -766,7 +768,7 @@ ___
 
 ▸ **providerProjectAgentResourceRecreate**(`projectId`: string, `locationId`: string, `agentId`: string, `resourceId`: string, `options?`: any): Promise\<AxiosResponse\<[ProviderAgentResource](../interfaces/_api_.provideragentresource.md)>>
 
-*Defined in api.ts:60354*
+*Defined in api.ts:60715*
 
 action recreate
 
@@ -794,7 +796,7 @@ ___
 
 ▸ **providerProjectAgentServiceGet**(`projectId`: string, `locationId`: string, `agentId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:60369*
+*Defined in api.ts:60730*
 
 Get provider/agent.service
 
@@ -822,7 +824,7 @@ ___
 
 ▸ **providerProjectAgentServiceList**(`projectId`: string, `locationId`: string, `agentId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:60383*
+*Defined in api.ts:60744*
 
 List provider/agent.service
 
@@ -847,9 +849,9 @@ ___
 
 ### providerProjectAgentStart
 
-▸ **providerProjectAgentStart**(`projectId`: string, `locationId`: string, `agentId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
+▸ **providerProjectAgentStart**(`projectId`: string, `locationId`: string, `agentId`: string, `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
 
-*Defined in api.ts:60398*
+*Defined in api.ts:60760*
 
 action start
 
@@ -867,6 +869,7 @@ Name | Type | Description |
 `locationId` | string | Location Id |
 `agentId` | string | Agent Id |
 `xIdempotencyKey?` | string | - |
+`xDryRun?` | string | - |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
@@ -875,9 +878,9 @@ ___
 
 ### providerProjectAgentSuspend
 
-▸ **providerProjectAgentSuspend**(`projectId`: string, `locationId`: string, `agentId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
+▸ **providerProjectAgentSuspend**(`projectId`: string, `locationId`: string, `agentId`: string, `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
 
-*Defined in api.ts:60413*
+*Defined in api.ts:60776*
 
 action suspend
 
@@ -895,6 +898,7 @@ Name | Type | Description |
 `locationId` | string | Location Id |
 `agentId` | string | Agent Id |
 `xIdempotencyKey?` | string | - |
+`xDryRun?` | string | - |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
@@ -905,7 +909,7 @@ ___
 
 ▸ **providerProjectAgentTagCreate**(`projectId`: string, `locationId`: string, `agentId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:60428*
+*Defined in api.ts:60791*
 
 Create provider/agent.tag
 
@@ -933,7 +937,7 @@ ___
 
 ▸ **providerProjectAgentTagDelete**(`projectId`: string, `locationId`: string, `agentId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:60443*
+*Defined in api.ts:60806*
 
 Delete provider/agent.tag
 
@@ -961,7 +965,7 @@ ___
 
 ▸ **providerProjectAgentTagGet**(`projectId`: string, `locationId`: string, `agentId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:60458*
+*Defined in api.ts:60821*
 
 Get provider/agent.tag
 
@@ -989,7 +993,7 @@ ___
 
 ▸ **providerProjectAgentTagList**(`projectId`: string, `locationId`: string, `agentId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:60472*
+*Defined in api.ts:60835*
 
 List provider/agent.tag
 
@@ -1016,7 +1020,7 @@ ___
 
 ▸ **providerProjectAgentTagPut**(`projectId`: string, `locationId`: string, `agentId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:60487*
+*Defined in api.ts:60850*
 
 Replace provider/agent.tag
 
@@ -1042,9 +1046,9 @@ ___
 
 ### providerProjectAgentTransfer
 
-▸ **providerProjectAgentTransfer**(`projectId`: string, `locationId`: string, `agentId`: string, `providerProjectAgentTransfer`: [ProviderProjectAgentTransfer](../interfaces/_api_.providerprojectagenttransfer.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
+▸ **providerProjectAgentTransfer**(`projectId`: string, `locationId`: string, `agentId`: string, `providerProjectAgentTransfer`: [ProviderProjectAgentTransfer](../interfaces/_api_.providerprojectagenttransfer.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
 
-*Defined in api.ts:60503*
+*Defined in api.ts:60867*
 
 action transfer
 
@@ -1063,6 +1067,7 @@ Name | Type | Description |
 `agentId` | string | Agent Id |
 `providerProjectAgentTransfer` | [ProviderProjectAgentTransfer](../interfaces/_api_.providerprojectagenttransfer.md) |  |
 `xIdempotencyKey?` | string | - |
+`xDryRun?` | string | - |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
@@ -1073,7 +1078,7 @@ ___
 
 ▸ **providerProjectAgentUpdate**(`projectId`: string, `locationId`: string, `agentId`: string, `providerProjectAgentUpdate`: [ProviderProjectAgentUpdate](../interfaces/_api_.providerprojectagentupdate.md), `options?`: any): Promise\<AxiosResponse\<[Agent](../interfaces/_api_.agent.md)>>
 
-*Defined in api.ts:60518*
+*Defined in api.ts:60882*
 
 Returns modified agent
 

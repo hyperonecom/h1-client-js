@@ -301,7 +301,6 @@
 * [RecoveryProjectPlanApiFp](_index_.md#recoveryprojectplanapifp)
 * [RecoveryProjectPlanCreate](_index_.md#recoveryprojectplancreate)
 * [RecoveryProjectPlanCreateRetention](_index_.md#recoveryprojectplancreateretention)
-* [RecoveryProjectPlanCreateRetentionCountEnum](_index_.md#recoveryprojectplancreateretentioncountenum)
 * [RecoveryProjectPlanCreateRetentionIntervalEnum](_index_.md#recoveryprojectplancreateretentionintervalenum)
 * [RecoveryProjectPlanCreateWindow](_index_.md#recoveryprojectplancreatewindow)
 * [RecoveryProjectPlanCreateWindowIntervalEnum](_index_.md#recoveryprojectplancreatewindowintervalenum)
@@ -2180,12 +2179,6 @@ ___
 ### RecoveryProjectPlanCreateRetention
 
 Re-exports: [RecoveryProjectPlanCreateRetention](../interfaces/_api_.recoveryprojectplancreateretention.md)
-
-___
-
-### RecoveryProjectPlanCreateRetentionCountEnum
-
-Re-exports: [RecoveryProjectPlanCreateRetentionCountEnum](../enums/_api_.recoveryprojectplancreateretentioncountenum.md)
 
 ___
 

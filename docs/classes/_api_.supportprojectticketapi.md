@@ -90,9 +90,9 @@ ___
 
 ### supportProjectTicketClose
 
-▸ **supportProjectTicketClose**(`projectId`: string, `ticketId`: string, `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
+▸ **supportProjectTicketClose**(`projectId`: string, `ticketId`: string, `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
 
-*Defined in api.ts:75785*
+*Defined in api.ts:75956*
 
 action close
 
@@ -109,6 +109,7 @@ Name | Type | Description |
 `projectId` | string | Project Id |
 `ticketId` | string | Ticket Id |
 `xIdempotencyKey?` | string | - |
+`xDryRun?` | string | - |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
@@ -117,9 +118,9 @@ ___
 
 ### supportProjectTicketCreate
 
-▸ **supportProjectTicketCreate**(`projectId`: string, `supportProjectTicketCreate`: [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md), `xIdempotencyKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
+▸ **supportProjectTicketCreate**(`projectId`: string, `supportProjectTicketCreate`: [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
 
-*Defined in api.ts:75799*
+*Defined in api.ts:75971*
 
 Create ticket
 
@@ -136,6 +137,7 @@ Name | Type | Description |
 `projectId` | string | Project Id |
 `supportProjectTicketCreate` | [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md) |  |
 `xIdempotencyKey?` | string | - |
+`xDryRun?` | string | - |
 `options?` | any | - |
 
 **Returns:** Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
@@ -146,7 +148,7 @@ ___
 
 ▸ **supportProjectTicketGet**(`projectId`: string, `ticketId`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
 
-*Defined in api.ts:75812*
+*Defined in api.ts:75984*
 
 Returns a single ticket
 
@@ -172,7 +174,7 @@ ___
 
 ▸ **supportProjectTicketList**(`projectId`: string, `state?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)[]>>
 
-*Defined in api.ts:75825*
+*Defined in api.ts:75997*
 
 List ticket
 
@@ -198,7 +200,7 @@ ___
 
 ▸ **supportProjectTicketMessageCreate**(`projectId`: string, `ticketId`: string, `supportMessage`: [SupportMessage](../interfaces/_api_.supportmessage.md), `options?`: any): Promise\<AxiosResponse\<[SupportMessage](../interfaces/_api_.supportmessage.md)>>
 
-*Defined in api.ts:75839*
+*Defined in api.ts:76011*
 
 Create support/ticket.message
 
@@ -225,7 +227,7 @@ ___
 
 ▸ **supportProjectTicketMessageGet**(`projectId`: string, `ticketId`: string, `messageId`: string, `options?`: any): Promise\<AxiosResponse\<[SupportMessage](../interfaces/_api_.supportmessage.md)>>
 
-*Defined in api.ts:75853*
+*Defined in api.ts:76025*
 
 Get support/ticket.message
 
@@ -252,7 +254,7 @@ ___
 
 ▸ **supportProjectTicketMessageList**(`projectId`: string, `ticketId`: string, `options?`: any): Promise\<AxiosResponse\<[SupportMessage](../interfaces/_api_.supportmessage.md)[]>>
 
-*Defined in api.ts:75866*
+*Defined in api.ts:76038*
 
 List support/ticket.message
 
