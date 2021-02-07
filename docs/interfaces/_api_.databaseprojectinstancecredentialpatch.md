@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:1464*
+*Defined in api.ts:1466*
 
 **`memberof`** DatabaseProjectInstanceCredentialPatch

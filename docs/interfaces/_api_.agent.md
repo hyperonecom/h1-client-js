@@ -35,7 +35,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:69*
+*Defined in api.ts:71*
 
 **`memberof`** Agent
 
@@ -45,7 +45,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:63*
+*Defined in api.ts:65*
 
 **`memberof`** Agent
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:45*
+*Defined in api.ts:47*
 
 **`memberof`** Agent
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:33*
+*Defined in api.ts:35*
 
 **`memberof`** Agent
 
@@ -75,7 +75,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:57*
+*Defined in api.ts:59*
 
 **`memberof`** Agent
 
@@ -85,7 +85,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:51*
+*Defined in api.ts:53*
 
 **`memberof`** Agent
 
@@ -95,7 +95,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:39*
+*Defined in api.ts:41*
 
 **`memberof`** Agent
 
@@ -105,7 +105,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:81*
+*Defined in api.ts:83*
 
 **`memberof`** Agent
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **state**: [AgentStateEnum](../enums/_api_.agentstateenum.md)
 
-*Defined in api.ts:75*
+*Defined in api.ts:77*
 
 **`memberof`** Agent
 
@@ -125,7 +125,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:99*
+*Defined in api.ts:101*
 
 **`memberof`** Agent
 
@@ -135,7 +135,7 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:93*
+*Defined in api.ts:95*
 
 **`memberof`** Agent
 
@@ -145,6 +145,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:87*
+*Defined in api.ts:89*
 
 **`memberof`** Agent

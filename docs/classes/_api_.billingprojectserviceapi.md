@@ -87,7 +87,7 @@ ___
 
 ▸ **billingProjectServiceGet**(`projectId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[Service](../interfaces/_api_.service.md)>>
 
-*Defined in api.ts:10345*
+*Defined in api.ts:9967*
 
 Returns a single service
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **billingProjectServiceList**(`projectId`: string, `kind?`: string, `name?`: string, `type?`: string, `options?`: any): Promise\<AxiosResponse\<[Service](../interfaces/_api_.service.md)[]>>
 
-*Defined in api.ts:10360*
+*Defined in api.ts:9982*
 
 List service
 

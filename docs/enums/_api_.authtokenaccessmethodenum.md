@@ -22,7 +22,7 @@
 
 •  **All**: {} = "ALL"
 
-*Defined in api.ts:307*
+*Defined in api.ts:309*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **Delete**: {} = "DELETE"
 
-*Defined in api.ts:311*
+*Defined in api.ts:313*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **Get**: {} = "GET"
 
-*Defined in api.ts:308*
+*Defined in api.ts:310*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Patch**: {} = "PATCH"
 
-*Defined in api.ts:310*
+*Defined in api.ts:312*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Post**: {} = "POST"
 
-*Defined in api.ts:309*
+*Defined in api.ts:311*

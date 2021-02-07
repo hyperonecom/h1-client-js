@@ -32,7 +32,7 @@
 
 • `Optional` **charges**: Array\<[BillingCharges](_api_.billingcharges.md)>
 
-*Defined in api.ts:470*
+*Defined in api.ts:472*
 
 **`memberof`** Billing
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:422*
+*Defined in api.ts:424*
 
 **`memberof`** Billing
 
@@ -52,7 +52,7 @@ ___
 
 • `Optional` **oneTime**: boolean
 
-*Defined in api.ts:452*
+*Defined in api.ts:454*
 
 **`memberof`** Billing
 
@@ -62,7 +62,7 @@ ___
 
 • `Optional` **period**: string
 
-*Defined in api.ts:428*
+*Defined in api.ts:430*
 
 **`memberof`** Billing
 
@@ -72,7 +72,7 @@ ___
 
 • `Optional` **price**: number
 
-*Defined in api.ts:434*
+*Defined in api.ts:436*
 
 **`memberof`** Billing
 
@@ -82,7 +82,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:446*
+*Defined in api.ts:448*
 
 **`memberof`** Billing
 
@@ -92,7 +92,7 @@ ___
 
 • `Optional` **quantity**: number
 
-*Defined in api.ts:440*
+*Defined in api.ts:442*
 
 **`memberof`** Billing
 
@@ -102,7 +102,7 @@ ___
 
 • `Optional` **resource**: [BillingResource](_api_.billingresource.md)
 
-*Defined in api.ts:464*
+*Defined in api.ts:466*
 
 **`memberof`** Billing
 
@@ -112,6 +112,6 @@ ___
 
 • `Optional` **service**: [BillingService](_api_.billingservice.md)
 
-*Defined in api.ts:458*
+*Defined in api.ts:460*
 
 **`memberof`** Billing

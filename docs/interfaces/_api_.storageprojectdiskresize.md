@@ -24,6 +24,6 @@
 
 •  **size**: number
 
-*Defined in api.ts:6606*
+*Defined in api.ts:6608*
 
 **`memberof`** StorageProjectDiskResize

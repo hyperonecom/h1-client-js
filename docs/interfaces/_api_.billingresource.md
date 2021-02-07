@@ -27,7 +27,7 @@
 
 • `Optional` **deleted**: boolean
 
-*Defined in api.ts:697*
+*Defined in api.ts:699*
 
 **`memberof`** BillingResource
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:679*
+*Defined in api.ts:681*
 
 **`memberof`** BillingResource
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:691*
+*Defined in api.ts:693*
 
 **`memberof`** BillingResource
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:685*
+*Defined in api.ts:687*
 
 **`memberof`** BillingResource

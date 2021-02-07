@@ -25,7 +25,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1250*
+*Defined in api.ts:1252*
 
 **`memberof`** ContainerRepository
 
@@ -35,6 +35,6 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:1256*
+*Defined in api.ts:1258*
 
 **`memberof`** ContainerRepository

@@ -26,7 +26,7 @@
 
 • `Optional` **city**: string
 
-*Defined in api.ts:548*
+*Defined in api.ts:550*
 
 **`memberof`** BillingAddress1
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **street**: string
 
-*Defined in api.ts:560*
+*Defined in api.ts:562*
 
 **`memberof`** BillingAddress1
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **zipcode**: string
 
-*Defined in api.ts:554*
+*Defined in api.ts:556*
 
 **`memberof`** BillingAddress1

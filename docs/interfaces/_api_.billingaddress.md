@@ -27,7 +27,7 @@
 
 •  **city**: string
 
-*Defined in api.ts:489*
+*Defined in api.ts:491*
 
 **`memberof`** BillingAddress
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **country**: [BillingAddressCountryEnum](../enums/_api_.billingaddresscountryenum.md)
 
-*Defined in api.ts:483*
+*Defined in api.ts:485*
 
 **`memberof`** BillingAddress
 
@@ -47,7 +47,7 @@ ___
 
 •  **street**: string
 
-*Defined in api.ts:495*
+*Defined in api.ts:497*
 
 **`memberof`** BillingAddress
 
@@ -57,6 +57,6 @@ ___
 
 •  **zipcode**: string
 
-*Defined in api.ts:501*
+*Defined in api.ts:503*
 
 **`memberof`** BillingAddress

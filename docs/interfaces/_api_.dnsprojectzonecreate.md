@@ -28,7 +28,7 @@
 
 •  **dnsName**: string
 
-*Defined in api.ts:1646*
+*Defined in api.ts:1648*
 
 **`memberof`** DnsProjectZoneCreate
 
@@ -38,7 +38,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:1634*
+*Defined in api.ts:1636*
 
 **`memberof`** DnsProjectZoneCreate
 
@@ -48,7 +48,7 @@ ___
 
 •  **service**: string
 
-*Defined in api.ts:1640*
+*Defined in api.ts:1642*
 
 **`memberof`** DnsProjectZoneCreate
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **source**: [ZoneSource](_api_.zonesource.md)
 
-*Defined in api.ts:1652*
+*Defined in api.ts:1654*
 
 **`memberof`** DnsProjectZoneCreate
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:1658*
+*Defined in api.ts:1660*
 
 **`memberof`** DnsProjectZoneCreate

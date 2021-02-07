@@ -36,7 +36,7 @@
 
 • `Optional` **bankAccount**: string
 
-*Defined in api.ts:5076*
+*Defined in api.ts:5078*
 
 **`memberof`** Project
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **billing**: [ProjectBilling](_api_.projectbilling.md)
 
-*Defined in api.ts:5082*
+*Defined in api.ts:5084*
 
 **`memberof`** Project
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:5052*
+*Defined in api.ts:5054*
 
 **`memberof`** Project
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5046*
+*Defined in api.ts:5048*
 
 **`memberof`** Project
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:5028*
+*Defined in api.ts:5030*
 
 **`memberof`** Project
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5016*
+*Defined in api.ts:5018*
 
 **`memberof`** Project
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:5040*
+*Defined in api.ts:5042*
 
 **`memberof`** Project
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:5034*
+*Defined in api.ts:5036*
 
 **`memberof`** Project
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5022*
+*Defined in api.ts:5024*
 
 **`memberof`** Project
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **organisation**: string
 
-*Defined in api.ts:5064*
+*Defined in api.ts:5066*
 
 **`memberof`** Project
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **state**: [ProjectStateEnum](../enums/_api_.projectstateenum.md)
 
-*Defined in api.ts:5058*
+*Defined in api.ts:5060*
 
 **`memberof`** Project
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5088*
+*Defined in api.ts:5090*
 
 **`memberof`** Project
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:5070*
+*Defined in api.ts:5072*
 
 **`memberof`** Project

@@ -24,6 +24,6 @@
 
 • `Optional` **protocol**: [ComputeProjectVmConnectOpenProtocolEnum](../enums/_api_.computeprojectvmconnectopenprotocolenum.md)
 
-*Defined in api.ts:833*
+*Defined in api.ts:835*
 
 **`memberof`** ComputeProjectVmConnectOpen

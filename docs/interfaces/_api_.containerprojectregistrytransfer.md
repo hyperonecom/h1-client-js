@@ -24,6 +24,6 @@
 
 •  **project**: string
 
-*Defined in api.ts:1224*
+*Defined in api.ts:1226*
 
 **`memberof`** ContainerProjectRegistryTransfer

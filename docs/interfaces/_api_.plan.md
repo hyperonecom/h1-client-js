@@ -36,7 +36,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4648*
+*Defined in api.ts:4650*
 
 **`memberof`** Plan
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:4642*
+*Defined in api.ts:4644*
 
 **`memberof`** Plan
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:4624*
+*Defined in api.ts:4626*
 
 **`memberof`** Plan
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4612*
+*Defined in api.ts:4614*
 
 **`memberof`** Plan
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:4636*
+*Defined in api.ts:4638*
 
 **`memberof`** Plan
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:4630*
+*Defined in api.ts:4632*
 
 **`memberof`** Plan
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4618*
+*Defined in api.ts:4620*
 
 **`memberof`** Plan
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:4660*
+*Defined in api.ts:4662*
 
 **`memberof`** Plan
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **retention**: Array\<[PlanRetention](_api_.planretention.md)>
 
-*Defined in api.ts:4678*
+*Defined in api.ts:4680*
 
 **`memberof`** Plan
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **state**: [PlanStateEnum](../enums/_api_.planstateenum.md)
 
-*Defined in api.ts:4654*
+*Defined in api.ts:4656*
 
 **`memberof`** Plan
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4684*
+*Defined in api.ts:4686*
 
 **`memberof`** Plan
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4666*
+*Defined in api.ts:4668*
 
 **`memberof`** Plan
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **window**: Array\<[PlanWindow](_api_.planwindow.md)>
 
-*Defined in api.ts:4672*
+*Defined in api.ts:4674*
 
 **`memberof`** Plan

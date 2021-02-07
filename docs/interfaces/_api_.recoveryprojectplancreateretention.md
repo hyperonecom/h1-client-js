@@ -25,7 +25,7 @@
 
 •  **count**: number
 
-*Defined in api.ts:5573*
+*Defined in api.ts:5575*
 
 **`memberof`** RecoveryProjectPlanCreateRetention
 
@@ -35,6 +35,6 @@ ___
 
 •  **interval**: [RecoveryProjectPlanCreateRetentionIntervalEnum](../enums/_api_.recoveryprojectplancreateretentionintervalenum.md)
 
-*Defined in api.ts:5567*
+*Defined in api.ts:5569*
 
 **`memberof`** RecoveryProjectPlanCreateRetention

@@ -35,7 +35,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:771*
+*Defined in api.ts:773*
 
 **`memberof`** Bucket
 
@@ -45,7 +45,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:765*
+*Defined in api.ts:767*
 
 **`memberof`** Bucket
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:747*
+*Defined in api.ts:749*
 
 **`memberof`** Bucket
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:735*
+*Defined in api.ts:737*
 
 **`memberof`** Bucket
 
@@ -75,7 +75,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:759*
+*Defined in api.ts:761*
 
 **`memberof`** Bucket
 
@@ -85,7 +85,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:753*
+*Defined in api.ts:755*
 
 **`memberof`** Bucket
 
@@ -95,7 +95,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:741*
+*Defined in api.ts:743*
 
 **`memberof`** Bucket
 
@@ -105,7 +105,7 @@ ___
 
 • `Optional` **organisation**: string
 
-*Defined in api.ts:789*
+*Defined in api.ts:791*
 
 **`memberof`** Bucket
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:783*
+*Defined in api.ts:785*
 
 **`memberof`** Bucket
 
@@ -125,7 +125,7 @@ ___
 
 • `Optional` **sizeUsed**: number
 
-*Defined in api.ts:801*
+*Defined in api.ts:803*
 
 **`memberof`** Bucket
 
@@ -135,7 +135,7 @@ ___
 
 • `Optional` **state**: string
 
-*Defined in api.ts:777*
+*Defined in api.ts:779*
 
 **`memberof`** Bucket
 
@@ -145,6 +145,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:795*
+*Defined in api.ts:797*
 
 **`memberof`** Bucket

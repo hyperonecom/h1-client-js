@@ -31,7 +31,7 @@
 
 • `Optional` **accessKeyId**: string
 
-*Defined in api.ts:6886*
+*Defined in api.ts:6888*
 
 **`memberof`** StorageS3credential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **bucket**: string
 
-*Defined in api.ts:6922*
+*Defined in api.ts:6924*
 
 **`memberof`** StorageS3credential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **endpoint**: string
 
-*Defined in api.ts:6904*
+*Defined in api.ts:6906*
 
 **`memberof`** StorageS3credential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **key**: string
 
-*Defined in api.ts:6928*
+*Defined in api.ts:6930*
 
 **`memberof`** StorageS3credential
 
@@ -71,7 +71,7 @@ ___
 
 • `Optional` **location**: string
 
-*Defined in api.ts:6916*
+*Defined in api.ts:6918*
 
 **`memberof`** StorageS3credential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **region**: string
 
-*Defined in api.ts:6910*
+*Defined in api.ts:6912*
 
 **`memberof`** StorageS3credential
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **secretAccessKey**: string
 
-*Defined in api.ts:6898*
+*Defined in api.ts:6900*
 
 **`memberof`** StorageS3credential
 
@@ -101,6 +101,6 @@ ___
 
 • `Optional` **sessionToken**: string
 
-*Defined in api.ts:6892*
+*Defined in api.ts:6894*
 
 **`memberof`** StorageS3credential

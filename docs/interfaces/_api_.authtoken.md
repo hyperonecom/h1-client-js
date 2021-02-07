@@ -31,7 +31,7 @@
 
 • `Optional` **access**: Array\<[AuthTokenAccess](_api_.authtokenaccess.md)>
 
-*Defined in api.ts:262*
+*Defined in api.ts:264*
 
 **`memberof`** AuthToken
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **clientIp**: string
 
-*Defined in api.ts:274*
+*Defined in api.ts:276*
 
 **`memberof`** AuthToken
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:250*
+*Defined in api.ts:252*
 
 **`memberof`** AuthToken
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:256*
+*Defined in api.ts:258*
 
 **`memberof`** AuthToken
 
@@ -71,7 +71,7 @@ ___
 
 • `Optional` **expiry**: string
 
-*Defined in api.ts:244*
+*Defined in api.ts:246*
 
 **`memberof`** AuthToken
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:238*
+*Defined in api.ts:240*
 
 **`memberof`** AuthToken
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:268*
+*Defined in api.ts:270*
 
 **`memberof`** AuthToken
 
@@ -101,6 +101,6 @@ ___
 
 • `Optional` **userAgent**: string
 
-*Defined in api.ts:280*
+*Defined in api.ts:282*
 
 **`memberof`** AuthToken

@@ -25,7 +25,7 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:1490*
+*Defined in api.ts:1492*
 
 **`memberof`** DatabaseProjectInstanceUpdate
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **plan**: string
 
-*Defined in api.ts:1496*
+*Defined in api.ts:1498*
 
 **`memberof`** DatabaseProjectInstanceUpdate
