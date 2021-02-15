@@ -36,7 +36,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:3221*
+*Defined in api.ts:3258*
 
 **`memberof`** Iso
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:3215*
+*Defined in api.ts:3252*
 
 **`memberof`** Iso
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:3197*
+*Defined in api.ts:3234*
 
 **`memberof`** Iso
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:3185*
+*Defined in api.ts:3222*
 
 **`memberof`** Iso
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **metadata**: [IsoMetadata](_api_.isometadata.md)
 
-*Defined in api.ts:3251*
+*Defined in api.ts:3288*
 
 **`memberof`** Iso
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:3209*
+*Defined in api.ts:3246*
 
 **`memberof`** Iso
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:3203*
+*Defined in api.ts:3240*
 
 **`memberof`** Iso
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:3191*
+*Defined in api.ts:3228*
 
 **`memberof`** Iso
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:3233*
+*Defined in api.ts:3270*
 
 **`memberof`** Iso
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in api.ts:3245*
+*Defined in api.ts:3282*
 
 **`memberof`** Iso
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **state**: [IsoStateEnum](../enums/_api_.isostateenum.md)
 
-*Defined in api.ts:3227*
+*Defined in api.ts:3264*
 
 **`memberof`** Iso
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:3257*
+*Defined in api.ts:3294*
 
 **`memberof`** Iso
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:3239*
+*Defined in api.ts:3276*
 
 **`memberof`** Iso

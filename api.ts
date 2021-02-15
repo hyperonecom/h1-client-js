@@ -1826,12 +1826,6 @@ export interface Event {
      * @type {string}
      * @memberof Event
      */
-    createdBy?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Event
-     */
     createdOn?: string;
     /**
      * 
@@ -1844,7 +1838,7 @@ export interface Event {
      * @type {string}
      * @memberof Event
      */
-    stage?: string;
+    createdBy?: string;
     /**
      * 
      * @type {string}
@@ -1858,6 +1852,49 @@ export interface Event {
     * @enum {string}
     */
 export enum EventStateEnum {
+    Pending = 'pending',
+    Processing = 'processing',
+    Finished = 'finished',
+    Error = 'error'
+}
+
+/**
+ * 
+ * @export
+ * @interface EventBase
+ */
+export interface EventBase {
+    /**
+     * 
+     * @type {string}
+     * @memberof EventBase
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EventBase
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EventBase
+     */
+    createdOn?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EventBase
+     */
+    state?: EventBaseStateEnum;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum EventBaseStateEnum {
     Pending = 'pending',
     Processing = 'processing',
     Finished = 'finished',
@@ -4158,7 +4195,7 @@ export interface NetworkingProjectNetadpUpdate {
      * @type {string}
      * @memberof NetworkingProjectNetadpUpdate
      */
-    firewall?: string;
+    firewall?: string | null;
 }
 /**
  * 
@@ -5621,12 +5658,6 @@ export interface RecoveryProjectPlanUpdate {
      * @memberof RecoveryProjectPlanUpdate
      */
     name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof RecoveryProjectPlanUpdate
-     */
-    plan?: string;
 }
 /**
  * 
@@ -17808,6 +17839,162 @@ export const DatabaseProjectInstanceApiAxiosParamCreator = function (configurati
             };
         },
         /**
+         * Get database/instance.metric
+         * @summary Get database/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        databaseProjectInstanceMetricGet: async (projectId: string, locationId: string, instanceId: string, metricId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricGet', 'locationId', locationId)
+            // verify required parameter 'instanceId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricGet', 'instanceId', instanceId)
+            // verify required parameter 'metricId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricGet', 'metricId', metricId)
+            const localVarPath = `/database/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"instanceId"}}`, encodeURIComponent(String(instanceId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List database/instance.metric
+         * @summary List database/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        databaseProjectInstanceMetricList: async (projectId: string, locationId: string, instanceId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricList', 'locationId', locationId)
+            // verify required parameter 'instanceId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricList', 'instanceId', instanceId)
+            const localVarPath = `/database/{locationId}/project/{projectId}/instance/{instanceId}/metric`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"instanceId"}}`, encodeURIComponent(String(instanceId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List database/instance.point
+         * @summary List database/instance.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        databaseProjectInstanceMetricPointList: async (projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricPointList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricPointList', 'locationId', locationId)
+            // verify required parameter 'instanceId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricPointList', 'instanceId', instanceId)
+            // verify required parameter 'metricId' is not null or undefined
+            assertParamExists('databaseProjectInstanceMetricPointList', 'metricId', metricId)
+            const localVarPath = `/database/{locationId}/project/{projectId}/instance/{instanceId}/metric/{metricId}/point`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"instanceId"}}`, encodeURIComponent(String(instanceId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (interval !== undefined) {
+                localVarQueryParameter['interval'] = interval;
+            }
+
+            if (timespan !== undefined) {
+                localVarQueryParameter['timespan'] = timespan;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get database/instance.service
          * @summary Get database/instance.service
          * @param {string} projectId Project Id
@@ -18572,6 +18759,49 @@ export const DatabaseProjectInstanceApiFp = function(configuration?: Configurati
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Get database/instance.metric
+         * @summary Get database/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async databaseProjectInstanceMetricGet(projectId: string, locationId: string, instanceId: string, metricId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Metric>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.databaseProjectInstanceMetricGet(projectId, locationId, instanceId, metricId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List database/instance.metric
+         * @summary List database/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async databaseProjectInstanceMetricList(projectId: string, locationId: string, instanceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Metric>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.databaseProjectInstanceMetricList(projectId, locationId, instanceId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List database/instance.point
+         * @summary List database/instance.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async databaseProjectInstanceMetricPointList(projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Point>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.databaseProjectInstanceMetricPointList(projectId, locationId, instanceId, metricId, interval, timespan, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Get database/instance.service
          * @summary Get database/instance.service
          * @param {string} projectId Project Id
@@ -18905,6 +19135,46 @@ export const DatabaseProjectInstanceApiFactory = function (configuration?: Confi
          */
         databaseProjectInstanceList(projectId: string, locationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any): AxiosPromise<Array<Database>> {
             return localVarFp.databaseProjectInstanceList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get database/instance.metric
+         * @summary Get database/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        databaseProjectInstanceMetricGet(projectId: string, locationId: string, instanceId: string, metricId: string, options?: any): AxiosPromise<Metric> {
+            return localVarFp.databaseProjectInstanceMetricGet(projectId, locationId, instanceId, metricId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List database/instance.metric
+         * @summary List database/instance.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        databaseProjectInstanceMetricList(projectId: string, locationId: string, instanceId: string, options?: any): AxiosPromise<Array<Metric>> {
+            return localVarFp.databaseProjectInstanceMetricList(projectId, locationId, instanceId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List database/instance.point
+         * @summary List database/instance.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} instanceId Instance Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        databaseProjectInstanceMetricPointList(projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Point>> {
+            return localVarFp.databaseProjectInstanceMetricPointList(projectId, locationId, instanceId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
         },
         /**
          * Get database/instance.service
@@ -19254,6 +19524,52 @@ export class DatabaseProjectInstanceApi extends BaseAPI {
      */
     public databaseProjectInstanceList(projectId: string, locationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any) {
         return DatabaseProjectInstanceApiFp(this.configuration).databaseProjectInstanceList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get database/instance.metric
+     * @summary Get database/instance.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} instanceId Instance Id
+     * @param {string} metricId metricId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DatabaseProjectInstanceApi
+     */
+    public databaseProjectInstanceMetricGet(projectId: string, locationId: string, instanceId: string, metricId: string, options?: any) {
+        return DatabaseProjectInstanceApiFp(this.configuration).databaseProjectInstanceMetricGet(projectId, locationId, instanceId, metricId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List database/instance.metric
+     * @summary List database/instance.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} instanceId Instance Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DatabaseProjectInstanceApi
+     */
+    public databaseProjectInstanceMetricList(projectId: string, locationId: string, instanceId: string, options?: any) {
+        return DatabaseProjectInstanceApiFp(this.configuration).databaseProjectInstanceMetricList(projectId, locationId, instanceId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List database/instance.point
+     * @summary List database/instance.point
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} instanceId Instance Id
+     * @param {string} metricId metricId
+     * @param {string} [interval] interval
+     * @param {string} [timespan] timespan
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DatabaseProjectInstanceApi
+     */
+    public databaseProjectInstanceMetricPointList(projectId: string, locationId: string, instanceId: string, metricId: string, interval?: string, timespan?: string, options?: any) {
+        return DatabaseProjectInstanceApiFp(this.configuration).databaseProjectInstanceMetricPointList(projectId, locationId, instanceId, metricId, interval, timespan, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -49155,7 +49471,7 @@ export const ProviderProjectAgentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async providerProjectAgentInspect(projectId: string, locationId: string, agentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Agent>> {
+        async providerProjectAgentInspect(projectId: string, locationId: string, agentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectAgentInspect(projectId, locationId, agentId, xIdempotencyKey, xDryRun, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -49647,7 +49963,7 @@ export const ProviderProjectAgentApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        providerProjectAgentInspect(projectId: string, locationId: string, agentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any): AxiosPromise<Agent> {
+        providerProjectAgentInspect(projectId: string, locationId: string, agentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any): AxiosPromise<object> {
             return localVarFp.providerProjectAgentInspect(projectId, locationId, agentId, xIdempotencyKey, xDryRun, options).then((request) => request(axios, basePath));
         },
         /**

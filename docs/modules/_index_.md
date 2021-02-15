@@ -102,6 +102,8 @@
 * [Domain](_index_.md#domain)
 * [EnabledService](_index_.md#enabledservice)
 * [Event](_index_.md#event)
+* [EventBase](_index_.md#eventbase)
+* [EventBaseStateEnum](_index_.md#eventbasestateenum)
 * [EventStateEnum](_index_.md#eventstateenum)
 * [Firewall](_index_.md#firewall)
 * [FirewallStateEnum](_index_.md#firewallstateenum)
@@ -985,6 +987,18 @@ ___
 ### Event
 
 Re-exports: [Event](../interfaces/_api_.event.md)
+
+___
+
+### EventBase
+
+Re-exports: [EventBase](../interfaces/_api_.eventbase.md)
+
+___
+
+### EventBaseStateEnum
+
+Re-exports: [EventBaseStateEnum](../enums/_api_.eventbasestateenum.md)
 
 ___
 

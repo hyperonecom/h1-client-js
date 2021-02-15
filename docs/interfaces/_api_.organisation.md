@@ -34,7 +34,7 @@
 
 • `Optional` **bankAccount**: string
 
-*Defined in api.ts:4400*
+*Defined in api.ts:4437*
 
 **`memberof`** Organisation
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **billing**: [OrganisationBilling](_api_.organisationbilling.md)
 
-*Defined in api.ts:4394*
+*Defined in api.ts:4431*
 
 **`memberof`** Organisation
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4376*
+*Defined in api.ts:4413*
 
 **`memberof`** Organisation
 
@@ -64,7 +64,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:4370*
+*Defined in api.ts:4407*
 
 **`memberof`** Organisation
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:4352*
+*Defined in api.ts:4389*
 
 **`memberof`** Organisation
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4340*
+*Defined in api.ts:4377*
 
 **`memberof`** Organisation
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:4364*
+*Defined in api.ts:4401*
 
 **`memberof`** Organisation
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:4358*
+*Defined in api.ts:4395*
 
 **`memberof`** Organisation
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4346*
+*Defined in api.ts:4383*
 
 **`memberof`** Organisation
 
@@ -124,7 +124,7 @@ ___
 
 • `Optional` **state**: [OrganisationStateEnum](../enums/_api_.organisationstateenum.md)
 
-*Defined in api.ts:4382*
+*Defined in api.ts:4419*
 
 **`memberof`** Organisation
 
@@ -134,6 +134,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4388*
+*Defined in api.ts:4425*
 
 **`memberof`** Organisation

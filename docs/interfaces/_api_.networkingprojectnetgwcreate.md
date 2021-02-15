@@ -26,7 +26,7 @@
 
 • `Optional` **\_public**: [NetgwPublic](_api_.netgwpublic.md)
 
-*Defined in api.ts:4193*
+*Defined in api.ts:4230*
 
 **`memberof`** NetworkingProjectNetgwCreate
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4187*
+*Defined in api.ts:4224*
 
 **`memberof`** NetworkingProjectNetgwCreate
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4199*
+*Defined in api.ts:4236*
 
 **`memberof`** NetworkingProjectNetgwCreate

@@ -29,7 +29,7 @@
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5274*
+*Defined in api.ts:5311*
 
 **`memberof`** ProviderAgentResource
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5256*
+*Defined in api.ts:5293*
 
 **`memberof`** ProviderAgentResource
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5262*
+*Defined in api.ts:5299*
 
 **`memberof`** ProviderAgentResource
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:5280*
+*Defined in api.ts:5317*
 
 **`memberof`** ProviderAgentResource
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **resource**: string
 
-*Defined in api.ts:5286*
+*Defined in api.ts:5323*
 
 **`memberof`** ProviderAgentResource
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **state**: string
 
-*Defined in api.ts:5268*
+*Defined in api.ts:5305*
 
 **`memberof`** ProviderAgentResource

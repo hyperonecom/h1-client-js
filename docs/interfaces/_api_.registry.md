@@ -36,7 +36,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:5678*
+*Defined in api.ts:5709*
 
 **`memberof`** Registry
 
@@ -46,7 +46,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5672*
+*Defined in api.ts:5703*
 
 **`memberof`** Registry
 
@@ -56,7 +56,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:5654*
+*Defined in api.ts:5685*
 
 **`memberof`** Registry
 
@@ -66,7 +66,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:5708*
+*Defined in api.ts:5739*
 
 **`memberof`** Registry
 
@@ -76,7 +76,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5642*
+*Defined in api.ts:5673*
 
 **`memberof`** Registry
 
@@ -86,7 +86,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:5666*
+*Defined in api.ts:5697*
 
 **`memberof`** Registry
 
@@ -96,7 +96,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:5660*
+*Defined in api.ts:5691*
 
 **`memberof`** Registry
 
@@ -106,7 +106,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5648*
+*Defined in api.ts:5679*
 
 **`memberof`** Registry
 
@@ -116,7 +116,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:5690*
+*Defined in api.ts:5721*
 
 **`memberof`** Registry
 
@@ -126,7 +126,7 @@ ___
 
 • `Optional` **sizeUsed**: number
 
-*Defined in api.ts:5702*
+*Defined in api.ts:5733*
 
 **`memberof`** Registry
 
@@ -136,7 +136,7 @@ ___
 
 • `Optional` **state**: [RegistryStateEnum](../enums/_api_.registrystateenum.md)
 
-*Defined in api.ts:5684*
+*Defined in api.ts:5715*
 
 **`memberof`** Registry
 
@@ -146,7 +146,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:5714*
+*Defined in api.ts:5745*
 
 **`memberof`** Registry
 
@@ -156,6 +156,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:5696*
+*Defined in api.ts:5727*
 
 **`memberof`** Registry

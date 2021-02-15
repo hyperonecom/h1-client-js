@@ -28,7 +28,7 @@
 
 • `Optional` **actor**: Array\<[IamProjectPolicyCreateActor](_api_.iamprojectpolicycreateactor.md)>
 
-*Defined in api.ts:2236*
+*Defined in api.ts:2273*
 
 **`memberof`** IamProjectPolicyCreate
 
@@ -38,7 +38,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:2218*
+*Defined in api.ts:2255*
 
 **`memberof`** IamProjectPolicyCreate
 
@@ -48,7 +48,7 @@ ___
 
 •  **resource**: string
 
-*Defined in api.ts:2230*
+*Defined in api.ts:2267*
 
 **`memberof`** IamProjectPolicyCreate
 
@@ -58,7 +58,7 @@ ___
 
 •  **role**: string
 
-*Defined in api.ts:2224*
+*Defined in api.ts:2261*
 
 **`memberof`** IamProjectPolicyCreate
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2242*
+*Defined in api.ts:2279*
 
 **`memberof`** IamProjectPolicyCreate

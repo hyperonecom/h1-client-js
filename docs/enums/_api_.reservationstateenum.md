@@ -22,7 +22,7 @@
 
 •  **Attached**: {} = "Attached"
 
-*Defined in api.ts:5988*
+*Defined in api.ts:6019*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 •  **Billing**: {} = "Billing"
 
-*Defined in api.ts:5990*
+*Defined in api.ts:6021*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 •  **Detached**: {} = "Detached"
 
-*Defined in api.ts:5987*
+*Defined in api.ts:6018*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 •  **Expired**: {} = "Expired"
 
-*Defined in api.ts:5989*
+*Defined in api.ts:6020*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 •  **Unknown**: {} = "Unknown"
 
-*Defined in api.ts:5991*
+*Defined in api.ts:6022*

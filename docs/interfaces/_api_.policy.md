@@ -37,7 +37,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:4811*
+*Defined in api.ts:4848*
 
 **`memberof`** Policy
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:4805*
+*Defined in api.ts:4842*
 
 **`memberof`** Policy
 
@@ -57,7 +57,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:4787*
+*Defined in api.ts:4824*
 
 **`memberof`** Policy
 
@@ -67,7 +67,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4775*
+*Defined in api.ts:4812*
 
 **`memberof`** Policy
 
@@ -77,7 +77,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:4799*
+*Defined in api.ts:4836*
 
 **`memberof`** Policy
 
@@ -87,7 +87,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:4793*
+*Defined in api.ts:4830*
 
 **`memberof`** Policy
 
@@ -97,7 +97,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:4781*
+*Defined in api.ts:4818*
 
 **`memberof`** Policy
 
@@ -107,7 +107,7 @@ ___
 
 • `Optional` **organisation**: string
 
-*Defined in api.ts:4829*
+*Defined in api.ts:4866*
 
 **`memberof`** Policy
 
@@ -117,7 +117,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:4823*
+*Defined in api.ts:4860*
 
 **`memberof`** Policy
 
@@ -127,7 +127,7 @@ ___
 
 • `Optional` **resource**: string
 
-*Defined in api.ts:4847*
+*Defined in api.ts:4884*
 
 **`memberof`** Policy
 
@@ -137,7 +137,7 @@ ___
 
 • `Optional` **role**: string
 
-*Defined in api.ts:4841*
+*Defined in api.ts:4878*
 
 **`memberof`** Policy
 
@@ -147,7 +147,7 @@ ___
 
 • `Optional` **state**: [PolicyStateEnum](../enums/_api_.policystateenum.md)
 
-*Defined in api.ts:4817*
+*Defined in api.ts:4854*
 
 **`memberof`** Policy
 
@@ -157,7 +157,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4853*
+*Defined in api.ts:4890*
 
 **`memberof`** Policy
 
@@ -167,6 +167,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4835*
+*Defined in api.ts:4872*
 
 **`memberof`** Policy

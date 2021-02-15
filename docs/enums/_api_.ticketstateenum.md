@@ -19,7 +19,7 @@
 
 •  **Closed**: {} = "closed"
 
-*Defined in api.ts:7193*
+*Defined in api.ts:7224*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 •  **Open**: {} = "open"
 
-*Defined in api.ts:7192*
+*Defined in api.ts:7223*

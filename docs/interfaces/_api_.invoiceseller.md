@@ -26,7 +26,7 @@
 
 • `Optional` **address**: [InvoiceSellerAddress](_api_.invoiceselleraddress.md)
 
-*Defined in api.ts:2990*
+*Defined in api.ts:3027*
 
 **`memberof`** InvoiceSeller
 
@@ -36,7 +36,7 @@ ___
 
 •  **company**: string
 
-*Defined in api.ts:2984*
+*Defined in api.ts:3021*
 
 **`memberof`** InvoiceSeller
 
@@ -46,6 +46,6 @@ ___
 
 •  **nip**: string
 
-*Defined in api.ts:2996*
+*Defined in api.ts:3033*
 
 **`memberof`** InvoiceSeller

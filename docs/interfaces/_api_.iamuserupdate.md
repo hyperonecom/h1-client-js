@@ -27,7 +27,7 @@
 
 • `Optional` **familyName**: string
 
-*Defined in api.ts:2489*
+*Defined in api.ts:2526*
 
 **`memberof`** IamUserUpdate
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **firstName**: string
 
-*Defined in api.ts:2483*
+*Defined in api.ts:2520*
 
 **`memberof`** IamUserUpdate
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **lang**: [IamUserUpdateLangEnum](../enums/_api_.iamuserupdatelangenum.md)
 
-*Defined in api.ts:2495*
+*Defined in api.ts:2532*
 
 **`memberof`** IamUserUpdate
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **phone**: string
 
-*Defined in api.ts:2477*
+*Defined in api.ts:2514*
 
 **`memberof`** IamUserUpdate

@@ -116,7 +116,7 @@ ___
 
 ▸ **computeProjectVmConnectGet**(`projectId`: string, `locationId`: string, `vmId`: string, `connectId`: string, `options?`: any): Promise\<AxiosResponse\<[Connect](../interfaces/_api_.connect.md)>>
 
-*Defined in api.ts:13737*
+*Defined in api.ts:13768*
 
 Get compute/vm.connect
 
@@ -144,7 +144,7 @@ ___
 
 ▸ **computeProjectVmConnectList**(`projectId`: string, `locationId`: string, `vmId`: string, `options?`: any): Promise\<AxiosResponse\<[Connect](../interfaces/_api_.connect.md)[]>>
 
-*Defined in api.ts:13751*
+*Defined in api.ts:13782*
 
 List compute/vm.connect
 
@@ -171,7 +171,7 @@ ___
 
 ▸ **computeProjectVmConnectOpen**(`projectId`: string, `locationId`: string, `vmId`: string, `connectId`: string, `computeProjectVmConnectOpen`: [ComputeProjectVmConnectOpen](../interfaces/_api_.computeprojectvmconnectopen.md), `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:13767*
+*Defined in api.ts:13798*
 
 action open
 
@@ -200,7 +200,7 @@ ___
 
 ▸ **computeProjectVmCreate**(`projectId`: string, `locationId`: string, `computeProjectVmCreate`: [ComputeProjectVmCreate](../interfaces/_api_.computeprojectvmcreate.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Vm](../interfaces/_api_.vm.md)>>
 
-*Defined in api.ts:13783*
+*Defined in api.ts:13814*
 
 Create vm
 
@@ -229,7 +229,7 @@ ___
 
 ▸ **computeProjectVmDelete**(`projectId`: string, `locationId`: string, `vmId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:13797*
+*Defined in api.ts:13828*
 
 Delete vm
 
@@ -256,7 +256,7 @@ ___
 
 ▸ **computeProjectVmDiskCreate**(`projectId`: string, `locationId`: string, `vmId`: string, `computeProjectVmDiskCreate`: [ComputeProjectVmDiskCreate](../interfaces/_api_.computeprojectvmdiskcreate.md), `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)>>
 
-*Defined in api.ts:13812*
+*Defined in api.ts:13843*
 
 Create compute/vm.disk
 
@@ -284,7 +284,7 @@ ___
 
 ▸ **computeProjectVmDiskList**(`projectId`: string, `locationId`: string, `vmId`: string, `options?`: any): Promise\<AxiosResponse\<[Disk](../interfaces/_api_.disk.md)[]>>
 
-*Defined in api.ts:13826*
+*Defined in api.ts:13857*
 
 List compute/vm.disk
 
@@ -311,7 +311,7 @@ ___
 
 ▸ **computeProjectVmEventGet**(`projectId`: string, `locationId`: string, `vmId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:13841*
+*Defined in api.ts:13872*
 
 Get compute/vm.event
 
@@ -339,7 +339,7 @@ ___
 
 ▸ **computeProjectVmEventList**(`projectId`: string, `locationId`: string, `vmId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:13857*
+*Defined in api.ts:13888*
 
 List compute/vm.event
 
@@ -368,7 +368,7 @@ ___
 
 ▸ **computeProjectVmFlavour**(`projectId`: string, `locationId`: string, `vmId`: string, `computeProjectVmFlavour`: [ComputeProjectVmFlavour](../interfaces/_api_.computeprojectvmflavour.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Vm](../interfaces/_api_.vm.md)>>
 
-*Defined in api.ts:13874*
+*Defined in api.ts:13905*
 
 action flavour
 
@@ -398,7 +398,7 @@ ___
 
 ▸ **computeProjectVmGet**(`projectId`: string, `locationId`: string, `vmId`: string, `options?`: any): Promise\<AxiosResponse\<[Vm](../interfaces/_api_.vm.md)>>
 
-*Defined in api.ts:13888*
+*Defined in api.ts:13919*
 
 Returns a single vm
 
@@ -425,7 +425,7 @@ ___
 
 ▸ **computeProjectVmIsoCreate**(`projectId`: string, `locationId`: string, `vmId`: string, `computeProjectVmIsoCreate`: [ComputeProjectVmIsoCreate](../interfaces/_api_.computeprojectvmisocreate.md), `options?`: any): Promise\<AxiosResponse\<[Iso](../interfaces/_api_.iso.md)>>
 
-*Defined in api.ts:13903*
+*Defined in api.ts:13934*
 
 Create compute/vm.iso
 
@@ -453,7 +453,7 @@ ___
 
 ▸ **computeProjectVmIsoList**(`projectId`: string, `locationId`: string, `vmId`: string, `options?`: any): Promise\<AxiosResponse\<[Iso](../interfaces/_api_.iso.md)[]>>
 
-*Defined in api.ts:13917*
+*Defined in api.ts:13948*
 
 List compute/vm.iso
 
@@ -480,7 +480,7 @@ ___
 
 ▸ **computeProjectVmList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Vm](../interfaces/_api_.vm.md)[]>>
 
-*Defined in api.ts:13933*
+*Defined in api.ts:13964*
 
 List vm
 
@@ -509,7 +509,7 @@ ___
 
 ▸ **computeProjectVmMetricGet**(`projectId`: string, `locationId`: string, `vmId`: string, `metricId`: string, `options?`: any): Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)>>
 
-*Defined in api.ts:13948*
+*Defined in api.ts:13979*
 
 Get compute/vm.metric
 
@@ -537,7 +537,7 @@ ___
 
 ▸ **computeProjectVmMetricList**(`projectId`: string, `locationId`: string, `vmId`: string, `options?`: any): Promise\<AxiosResponse\<[Metric](../interfaces/_api_.metric.md)[]>>
 
-*Defined in api.ts:13962*
+*Defined in api.ts:13993*
 
 List compute/vm.metric
 
@@ -564,7 +564,7 @@ ___
 
 ▸ **computeProjectVmMetricPointList**(`projectId`: string, `locationId`: string, `vmId`: string, `metricId`: string, `interval?`: string, `timespan?`: string, `options?`: any): Promise\<AxiosResponse\<[Point](../interfaces/_api_.point.md)[]>>
 
-*Defined in api.ts:13979*
+*Defined in api.ts:14010*
 
 List compute/vm.point
 
@@ -594,7 +594,7 @@ ___
 
 ▸ **computeProjectVmPasswordReset**(`projectId`: string, `locationId`: string, `vmId`: string, `computeProjectVmPasswordReset`: [ComputeProjectVmPasswordReset](../interfaces/_api_.computeprojectvmpasswordreset.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Vm](../interfaces/_api_.vm.md)>>
 
-*Defined in api.ts:13996*
+*Defined in api.ts:14027*
 
 action password_reset
 
@@ -624,7 +624,7 @@ ___
 
 ▸ **computeProjectVmRestart**(`projectId`: string, `locationId`: string, `vmId`: string, `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Vm](../interfaces/_api_.vm.md)>>
 
-*Defined in api.ts:14012*
+*Defined in api.ts:14043*
 
 action restart
 
@@ -653,7 +653,7 @@ ___
 
 ▸ **computeProjectVmSerialport**(`projectId`: string, `locationId`: string, `vmId`: string, `computeProjectVmSerialport`: [ComputeProjectVmSerialport](../interfaces/_api_.computeprojectvmserialport.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<any>>
 
-*Defined in api.ts:14029*
+*Defined in api.ts:14060*
 
 action serialport
 
@@ -683,7 +683,7 @@ ___
 
 ▸ **computeProjectVmServiceGet**(`projectId`: string, `locationId`: string, `vmId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:14044*
+*Defined in api.ts:14075*
 
 Get compute/vm.service
 
@@ -711,7 +711,7 @@ ___
 
 ▸ **computeProjectVmServiceList**(`projectId`: string, `locationId`: string, `vmId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:14058*
+*Defined in api.ts:14089*
 
 List compute/vm.service
 
@@ -738,7 +738,7 @@ ___
 
 ▸ **computeProjectVmStart**(`projectId`: string, `locationId`: string, `vmId`: string, `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Vm](../interfaces/_api_.vm.md)>>
 
-*Defined in api.ts:14074*
+*Defined in api.ts:14105*
 
 action start
 
@@ -767,7 +767,7 @@ ___
 
 ▸ **computeProjectVmStop**(`projectId`: string, `locationId`: string, `vmId`: string, `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Vm](../interfaces/_api_.vm.md)>>
 
-*Defined in api.ts:14090*
+*Defined in api.ts:14121*
 
 action stop
 
@@ -796,7 +796,7 @@ ___
 
 ▸ **computeProjectVmTagCreate**(`projectId`: string, `locationId`: string, `vmId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:14105*
+*Defined in api.ts:14136*
 
 Create compute/vm.tag
 
@@ -824,7 +824,7 @@ ___
 
 ▸ **computeProjectVmTagDelete**(`projectId`: string, `locationId`: string, `vmId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:14120*
+*Defined in api.ts:14151*
 
 Delete compute/vm.tag
 
@@ -852,7 +852,7 @@ ___
 
 ▸ **computeProjectVmTagGet**(`projectId`: string, `locationId`: string, `vmId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:14135*
+*Defined in api.ts:14166*
 
 Get compute/vm.tag
 
@@ -880,7 +880,7 @@ ___
 
 ▸ **computeProjectVmTagList**(`projectId`: string, `locationId`: string, `vmId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:14149*
+*Defined in api.ts:14180*
 
 List compute/vm.tag
 
@@ -907,7 +907,7 @@ ___
 
 ▸ **computeProjectVmTagPut**(`projectId`: string, `locationId`: string, `vmId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:14164*
+*Defined in api.ts:14195*
 
 Replace compute/vm.tag
 
@@ -935,7 +935,7 @@ ___
 
 ▸ **computeProjectVmTurnoff**(`projectId`: string, `locationId`: string, `vmId`: string, `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Vm](../interfaces/_api_.vm.md)>>
 
-*Defined in api.ts:14180*
+*Defined in api.ts:14211*
 
 action turnoff
 
@@ -964,7 +964,7 @@ ___
 
 ▸ **computeProjectVmUpdate**(`projectId`: string, `locationId`: string, `vmId`: string, `computeProjectVmUpdate`: [ComputeProjectVmUpdate](../interfaces/_api_.computeprojectvmupdate.md), `options?`: any): Promise\<AxiosResponse\<[Vm](../interfaces/_api_.vm.md)>>
 
-*Defined in api.ts:14195*
+*Defined in api.ts:14226*
 
 Returns modified vm
 

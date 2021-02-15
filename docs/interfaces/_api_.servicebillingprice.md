@@ -27,7 +27,7 @@
 
 • `Optional` **EUR**: number
 
-*Defined in api.ts:6433*
+*Defined in api.ts:6464*
 
 **`memberof`** ServiceBillingPrice
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **GBP**: number
 
-*Defined in api.ts:6445*
+*Defined in api.ts:6476*
 
 **`memberof`** ServiceBillingPrice
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **PLN**: number
 
-*Defined in api.ts:6427*
+*Defined in api.ts:6458*
 
 **`memberof`** ServiceBillingPrice
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **USD**: number
 
-*Defined in api.ts:6439*
+*Defined in api.ts:6470*
 
 **`memberof`** ServiceBillingPrice

@@ -40,7 +40,7 @@
 
 • `Optional` **assigned**: string
 
-*Defined in api.ts:3693*
+*Defined in api.ts:3730*
 
 **`memberof`** Netadp
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:3639*
+*Defined in api.ts:3676*
 
 **`memberof`** Netadp
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:3633*
+*Defined in api.ts:3670*
 
 **`memberof`** Netadp
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **firewall**: string
 
-*Defined in api.ts:3687*
+*Defined in api.ts:3724*
 
 **`memberof`** Netadp
 
@@ -80,7 +80,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:3615*
+*Defined in api.ts:3652*
 
 **`memberof`** Netadp
 
@@ -90,7 +90,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:3675*
+*Defined in api.ts:3712*
 
 **`memberof`** Netadp
 
@@ -100,7 +100,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:3603*
+*Defined in api.ts:3640*
 
 **`memberof`** Netadp
 
@@ -110,7 +110,7 @@ ___
 
 • `Optional` **macaddress**: string
 
-*Defined in api.ts:3663*
+*Defined in api.ts:3700*
 
 **`memberof`** Netadp
 
@@ -120,7 +120,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:3627*
+*Defined in api.ts:3664*
 
 **`memberof`** Netadp
 
@@ -130,7 +130,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:3621*
+*Defined in api.ts:3658*
 
 **`memberof`** Netadp
 
@@ -140,7 +140,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:3609*
+*Defined in api.ts:3646*
 
 **`memberof`** Netadp
 
@@ -150,7 +150,7 @@ ___
 
 • `Optional` **network**: string
 
-*Defined in api.ts:3681*
+*Defined in api.ts:3718*
 
 **`memberof`** Netadp
 
@@ -160,7 +160,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:3651*
+*Defined in api.ts:3688*
 
 **`memberof`** Netadp
 
@@ -170,7 +170,7 @@ ___
 
 • `Optional` **speed**: number
 
-*Defined in api.ts:3669*
+*Defined in api.ts:3706*
 
 **`memberof`** Netadp
 
@@ -180,7 +180,7 @@ ___
 
 • `Optional` **state**: [NetadpStateEnum](../enums/_api_.netadpstateenum.md)
 
-*Defined in api.ts:3645*
+*Defined in api.ts:3682*
 
 **`memberof`** Netadp
 
@@ -190,7 +190,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:3699*
+*Defined in api.ts:3736*
 
 **`memberof`** Netadp
 
@@ -200,6 +200,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:3657*
+*Defined in api.ts:3694*
 
 **`memberof`** Netadp

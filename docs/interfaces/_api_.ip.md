@@ -40,7 +40,7 @@
 
 • `Optional` **address**: string
 
-*Defined in api.ts:3100*
+*Defined in api.ts:3137*
 
 **`memberof`** Ip
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **associated**: [IpAssociated](_api_.ipassociated.md)
 
-*Defined in api.ts:3130*
+*Defined in api.ts:3167*
 
 **`memberof`** Ip
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:3076*
+*Defined in api.ts:3113*
 
 **`memberof`** Ip
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:3070*
+*Defined in api.ts:3107*
 
 **`memberof`** Ip
 
@@ -80,7 +80,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:3052*
+*Defined in api.ts:3089*
 
 **`memberof`** Ip
 
@@ -90,7 +90,7 @@ ___
 
 • `Optional` **fqdn**: string
 
-*Defined in api.ts:3106*
+*Defined in api.ts:3143*
 
 **`memberof`** Ip
 
@@ -100,7 +100,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:3040*
+*Defined in api.ts:3077*
 
 **`memberof`** Ip
 
@@ -110,7 +110,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:3064*
+*Defined in api.ts:3101*
 
 **`memberof`** Ip
 
@@ -120,7 +120,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:3058*
+*Defined in api.ts:3095*
 
 **`memberof`** Ip
 
@@ -130,7 +130,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:3046*
+*Defined in api.ts:3083*
 
 **`memberof`** Ip
 
@@ -140,7 +140,7 @@ ___
 
 • `Optional` **network**: string
 
-*Defined in api.ts:3112*
+*Defined in api.ts:3149*
 
 **`memberof`** Ip
 
@@ -150,7 +150,7 @@ ___
 
 • `Optional` **persistent**: boolean
 
-*Defined in api.ts:3124*
+*Defined in api.ts:3161*
 
 **`memberof`** Ip
 
@@ -160,7 +160,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:3088*
+*Defined in api.ts:3125*
 
 **`memberof`** Ip
 
@@ -170,7 +170,7 @@ ___
 
 • `Optional` **ptrRecord**: string
 
-*Defined in api.ts:3118*
+*Defined in api.ts:3155*
 
 **`memberof`** Ip
 
@@ -180,7 +180,7 @@ ___
 
 • `Optional` **state**: [IpStateEnum](../enums/_api_.ipstateenum.md)
 
-*Defined in api.ts:3082*
+*Defined in api.ts:3119*
 
 **`memberof`** Ip
 
@@ -190,7 +190,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:3136*
+*Defined in api.ts:3173*
 
 **`memberof`** Ip
 
@@ -200,6 +200,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:3094*
+*Defined in api.ts:3131*
 
 **`memberof`** Ip

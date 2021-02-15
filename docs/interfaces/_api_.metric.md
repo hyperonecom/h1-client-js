@@ -27,7 +27,7 @@
 
 • `Optional` **dimension**: Array\<[MetricDimension](_api_.metricdimension.md)>
 
-*Defined in api.ts:3571*
+*Defined in api.ts:3608*
 
 **`memberof`** Metric
 
@@ -37,7 +37,7 @@ ___
 
 •  **id**: string
 
-*Defined in api.ts:3553*
+*Defined in api.ts:3590*
 
 **`memberof`** Metric
 
@@ -47,7 +47,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:3559*
+*Defined in api.ts:3596*
 
 **`memberof`** Metric
 
@@ -57,6 +57,6 @@ ___
 
 •  **unit**: string
 
-*Defined in api.ts:3565*
+*Defined in api.ts:3602*
 
 **`memberof`** Metric

@@ -33,7 +33,7 @@
 
 • `Optional` **\_\_array\_\_**: [ProformaArray](_api_.proformaarray.md)
 
-*Defined in api.ts:4931*
+*Defined in api.ts:4968*
 
 **`memberof`** Proforma
 
@@ -43,7 +43,7 @@ ___
 
 • `Optional` **buyer**: [InvoiceBuyer](_api_.invoicebuyer.md)
 
-*Defined in api.ts:4895*
+*Defined in api.ts:4932*
 
 **`memberof`** Proforma
 
@@ -53,7 +53,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4877*
+*Defined in api.ts:4914*
 
 **`memberof`** Proforma
 
@@ -63,7 +63,7 @@ ___
 
 • `Optional` **invoiceNo**: string
 
-*Defined in api.ts:4883*
+*Defined in api.ts:4920*
 
 **`memberof`** Proforma
 
@@ -73,7 +73,7 @@ ___
 
 • `Optional` **issueDate**: string
 
-*Defined in api.ts:4901*
+*Defined in api.ts:4938*
 
 **`memberof`** Proforma
 
@@ -83,7 +83,7 @@ ___
 
 • `Optional` **items**: Array\<[InvoiceItems](_api_.invoiceitems.md)>
 
-*Defined in api.ts:4907*
+*Defined in api.ts:4944*
 
 **`memberof`** Proforma
 
@@ -93,7 +93,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:4919*
+*Defined in api.ts:4956*
 
 **`memberof`** Proforma
 
@@ -103,7 +103,7 @@ ___
 
 • `Optional` **seller**: [ProformaSeller](_api_.proformaseller.md)
 
-*Defined in api.ts:4889*
+*Defined in api.ts:4926*
 
 **`memberof`** Proforma
 
@@ -113,7 +113,7 @@ ___
 
 • `Optional` **summary**: string
 
-*Defined in api.ts:4913*
+*Defined in api.ts:4950*
 
 **`memberof`** Proforma
 
@@ -123,6 +123,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:4925*
+*Defined in api.ts:4962*
 
 **`memberof`** Proforma

@@ -28,7 +28,7 @@
 
 • `Optional` **description**: string
 
-*Defined in api.ts:2306*
+*Defined in api.ts:2343*
 
 **`memberof`** IamProjectRoleCreate
 
@@ -38,7 +38,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:2294*
+*Defined in api.ts:2331*
 
 **`memberof`** IamProjectRoleCreate
 
@@ -48,7 +48,7 @@ ___
 
 • `Optional` **permission**: Array\<[IamPermission](_api_.iampermission.md)>
 
-*Defined in api.ts:2312*
+*Defined in api.ts:2349*
 
 **`memberof`** IamProjectRoleCreate
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **service**: string
 
-*Defined in api.ts:2300*
+*Defined in api.ts:2337*
 
 **`memberof`** IamProjectRoleCreate
 
@@ -68,6 +68,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2318*
+*Defined in api.ts:2355*
 
 **`memberof`** IamProjectRoleCreate

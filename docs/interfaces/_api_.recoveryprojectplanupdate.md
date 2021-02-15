@@ -17,7 +17,6 @@
 ### Properties
 
 * [name](_api_.recoveryprojectplanupdate.md#name)
-* [plan](_api_.recoveryprojectplanupdate.md#plan)
 
 ## Properties
 
@@ -25,16 +24,6 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5623*
-
-**`memberof`** RecoveryProjectPlanUpdate
-
-___
-
-### plan
-
-• `Optional` **plan**: string
-
-*Defined in api.ts:5629*
+*Defined in api.ts:5660*
 
 **`memberof`** RecoveryProjectPlanUpdate

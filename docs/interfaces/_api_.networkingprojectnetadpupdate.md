@@ -22,8 +22,8 @@
 
 ### firewall
 
-• `Optional` **firewall**: string
+• `Optional` **firewall**: string \| null
 
-*Defined in api.ts:4161*
+*Defined in api.ts:4198*
 
 **`memberof`** NetworkingProjectNetadpUpdate

@@ -21,7 +21,6 @@
 * [id](_api_.event.md#id)
 * [name](_api_.event.md#name)
 * [resource](_api_.event.md#resource)
-* [stage](_api_.event.md#stage)
 * [state](_api_.event.md#state)
 
 ## Properties
@@ -30,7 +29,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:1829*
+*Defined in api.ts:1841*
 
 **`memberof`** Event
 
@@ -40,7 +39,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:1835*
+*Defined in api.ts:1829*
 
 **`memberof`** Event
 
@@ -70,16 +69,6 @@ ___
 
 • `Optional` **resource**: string
 
-*Defined in api.ts:1853*
-
-**`memberof`** Event
-
-___
-
-### stage
-
-• `Optional` **stage**: string
-
 *Defined in api.ts:1847*
 
 **`memberof`** Event
@@ -90,6 +79,6 @@ ___
 
 • `Optional` **state**: [EventStateEnum](../enums/_api_.eventstateenum.md)
 
-*Defined in api.ts:1841*
+*Defined in api.ts:1835*
 
 **`memberof`** Event

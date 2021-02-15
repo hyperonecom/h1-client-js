@@ -27,7 +27,7 @@
 
 •  **name**: string
 
-*Defined in api.ts:2640*
+*Defined in api.ts:2677*
 
 **`memberof`** InsightProjectJournalCreate
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **retention**: number
 
-*Defined in api.ts:2652*
+*Defined in api.ts:2689*
 
 **`memberof`** InsightProjectJournalCreate
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **service**: string
 
-*Defined in api.ts:2646*
+*Defined in api.ts:2683*
 
 **`memberof`** InsightProjectJournalCreate
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:2658*
+*Defined in api.ts:2695*
 
 **`memberof`** InsightProjectJournalCreate
