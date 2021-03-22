@@ -60,7 +60,7 @@ ___
 
 ▸ `Const`**createRequestFunction**(`axiosArgs`: [RequestArgs](../interfaces/_base_.requestargs.md), `globalAxios`: AxiosInstance, `BASE_PATH`: string, `configuration?`: [Configuration](../classes/_configuration_.configuration.md)): (Anonymous function)
 
-*Defined in common.ts:126*
+*Defined in common.ts:133*
 
 **`export`** 
 
@@ -81,7 +81,7 @@ ___
 
 ▸ `Const`**serializeDataIfNeeded**(`value`: any, `requestOptions`: any, `configuration?`: [Configuration](../classes/_configuration_.configuration.md)): any
 
-*Defined in common.ts:104*
+*Defined in common.ts:111*
 
 **`export`** 
 
@@ -199,7 +199,7 @@ ___
 
 ▸ `Const`**toPathString**(`url`: URL): string
 
-*Defined in common.ts:118*
+*Defined in common.ts:125*
 
 **`export`** 
 
