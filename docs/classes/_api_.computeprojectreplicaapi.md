@@ -98,7 +98,7 @@ ___
 
 ▸ **computeProjectReplicaCreate**(`projectId`: string, `locationId`: string, `computeProjectReplicaCreate`: [ComputeProjectReplicaCreate](../interfaces/_api_.computeprojectreplicacreate.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Replica](../interfaces/_api_.replica.md)>>
 
-*Defined in api.ts:11061*
+*Defined in api.ts:11430*
 
 Create replica
 
@@ -127,7 +127,7 @@ ___
 
 ▸ **computeProjectReplicaDelete**(`projectId`: string, `locationId`: string, `replicaId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:11075*
+*Defined in api.ts:11444*
 
 Delete replica
 
@@ -154,7 +154,7 @@ ___
 
 ▸ **computeProjectReplicaEventGet**(`projectId`: string, `locationId`: string, `replicaId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:11090*
+*Defined in api.ts:11459*
 
 Get compute/replica.event
 
@@ -182,7 +182,7 @@ ___
 
 ▸ **computeProjectReplicaEventList**(`projectId`: string, `locationId`: string, `replicaId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:11106*
+*Defined in api.ts:11475*
 
 List compute/replica.event
 
@@ -211,7 +211,7 @@ ___
 
 ▸ **computeProjectReplicaGet**(`projectId`: string, `locationId`: string, `replicaId`: string, `options?`: any): Promise\<AxiosResponse\<[Replica](../interfaces/_api_.replica.md)>>
 
-*Defined in api.ts:11120*
+*Defined in api.ts:11489*
 
 Returns a single replica
 
@@ -238,7 +238,7 @@ ___
 
 ▸ **computeProjectReplicaList**(`projectId`: string, `locationId`: string, `name?`: string, `options?`: any): Promise\<AxiosResponse\<[Replica](../interfaces/_api_.replica.md)[]>>
 
-*Defined in api.ts:11134*
+*Defined in api.ts:11503*
 
 List replica
 
@@ -265,7 +265,7 @@ ___
 
 ▸ **computeProjectReplicaServiceGet**(`projectId`: string, `locationId`: string, `replicaId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:11149*
+*Defined in api.ts:11518*
 
 Get compute/replica.service
 
@@ -293,7 +293,7 @@ ___
 
 ▸ **computeProjectReplicaServiceList**(`projectId`: string, `locationId`: string, `replicaId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:11163*
+*Defined in api.ts:11532*
 
 List compute/replica.service
 
@@ -320,7 +320,7 @@ ___
 
 ▸ **computeProjectReplicaTagCreate**(`projectId`: string, `locationId`: string, `replicaId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:11178*
+*Defined in api.ts:11547*
 
 Create compute/replica.tag
 
@@ -348,7 +348,7 @@ ___
 
 ▸ **computeProjectReplicaTagDelete**(`projectId`: string, `locationId`: string, `replicaId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:11193*
+*Defined in api.ts:11562*
 
 Delete compute/replica.tag
 
@@ -376,7 +376,7 @@ ___
 
 ▸ **computeProjectReplicaTagGet**(`projectId`: string, `locationId`: string, `replicaId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:11208*
+*Defined in api.ts:11577*
 
 Get compute/replica.tag
 
@@ -404,7 +404,7 @@ ___
 
 ▸ **computeProjectReplicaTagList**(`projectId`: string, `locationId`: string, `replicaId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:11222*
+*Defined in api.ts:11591*
 
 List compute/replica.tag
 
@@ -431,7 +431,7 @@ ___
 
 ▸ **computeProjectReplicaTagPut**(`projectId`: string, `locationId`: string, `replicaId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:11237*
+*Defined in api.ts:11606*
 
 Replace compute/replica.tag
 

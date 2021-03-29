@@ -35,7 +35,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:7010*
+*Defined in api.ts:7379*
 
 **`memberof`** StorageSnapshot
 
@@ -45,7 +45,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:7004*
+*Defined in api.ts:7373*
 
 **`memberof`** StorageSnapshot
 
@@ -55,7 +55,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:6986*
+*Defined in api.ts:7355*
 
 **`memberof`** StorageSnapshot
 
@@ -65,7 +65,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6974*
+*Defined in api.ts:7343*
 
 **`memberof`** StorageSnapshot
 
@@ -75,7 +75,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:6998*
+*Defined in api.ts:7367*
 
 **`memberof`** StorageSnapshot
 
@@ -85,7 +85,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:6992*
+*Defined in api.ts:7361*
 
 **`memberof`** StorageSnapshot
 
@@ -95,7 +95,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:6980*
+*Defined in api.ts:7349*
 
 **`memberof`** StorageSnapshot
 
@@ -105,7 +105,7 @@ ___
 
 • `Optional` **organisation**: string
 
-*Defined in api.ts:7028*
+*Defined in api.ts:7397*
 
 **`memberof`** StorageSnapshot
 
@@ -115,7 +115,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:7022*
+*Defined in api.ts:7391*
 
 **`memberof`** StorageSnapshot
 
@@ -125,7 +125,7 @@ ___
 
 • `Optional` **sizeUsed**: number
 
-*Defined in api.ts:7040*
+*Defined in api.ts:7409*
 
 **`memberof`** StorageSnapshot
 
@@ -135,7 +135,7 @@ ___
 
 • `Optional` **state**: string
 
-*Defined in api.ts:7016*
+*Defined in api.ts:7385*
 
 **`memberof`** StorageSnapshot
 
@@ -145,6 +145,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:7034*
+*Defined in api.ts:7403*
 
 **`memberof`** StorageSnapshot

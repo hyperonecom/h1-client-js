@@ -24,6 +24,6 @@
 
 • `Optional` **name**: string
 
-*Defined in api.ts:6906*
+*Defined in api.ts:7275*
 
 **`memberof`** StorageProjectVaultUpdate

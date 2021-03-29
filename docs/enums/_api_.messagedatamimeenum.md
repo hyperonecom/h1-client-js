@@ -20,7 +20,7 @@
 
 •  **ImageJpeg**: {} = "image/jpeg"
 
-*Defined in api.ts:3576*
+*Defined in api.ts:3722*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 •  **ImagePng**: {} = "image/png"
 
-*Defined in api.ts:3575*
+*Defined in api.ts:3721*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 •  **TextPlain**: {} = "text/plain"
 
-*Defined in api.ts:3574*
+*Defined in api.ts:3720*

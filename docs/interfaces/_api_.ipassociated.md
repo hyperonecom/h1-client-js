@@ -26,7 +26,7 @@
 
 • `Optional` **fip**: string
 
-*Defined in api.ts:3203*
+*Defined in api.ts:3349*
 
 **`memberof`** IpAssociated
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **ip**: string
 
-*Defined in api.ts:3197*
+*Defined in api.ts:3343*
 
 **`memberof`** IpAssociated
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **netadp**: string
 
-*Defined in api.ts:3209*
+*Defined in api.ts:3355*
 
 **`memberof`** IpAssociated

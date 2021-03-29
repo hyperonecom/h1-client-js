@@ -28,7 +28,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1718*
+*Defined in api.ts:1864*
 
 **`memberof`** DnsRecordset
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:1724*
+*Defined in api.ts:1870*
 
 use \'@\' to reference the zone origin
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **record**: Array\<[DnsRecord](_api_.dnsrecord.md)>
 
-*Defined in api.ts:1742*
+*Defined in api.ts:1888*
 
 **`memberof`** DnsRecordset
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **ttl**: number
 
-*Defined in api.ts:1736*
+*Defined in api.ts:1882*
 
 **`memberof`** DnsRecordset
 
@@ -70,6 +70,6 @@ ___
 
 •  **type**: [DnsRecordsetTypeEnum](../enums/_api_.dnsrecordsettypeenum.md)
 
-*Defined in api.ts:1730*
+*Defined in api.ts:1876*
 
 **`memberof`** DnsRecordset

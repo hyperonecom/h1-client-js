@@ -25,7 +25,7 @@
 
 • `Optional` **filename**: string
 
-*Defined in api.ts:3333*
+*Defined in api.ts:3479*
 
 **`memberof`** IsoMetadataSource
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in api.ts:3339*
+*Defined in api.ts:3485*
 
 **`memberof`** IsoMetadataSource

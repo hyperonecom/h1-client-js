@@ -92,7 +92,7 @@ ___
 
 ▸ **supportProjectTicketClose**(`projectId`: string, `ticketId`: string, `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
 
-*Defined in api.ts:62859*
+*Defined in api.ts:67992*
 
 action close
 
@@ -120,7 +120,7 @@ ___
 
 ▸ **supportProjectTicketCreate**(`projectId`: string, `supportProjectTicketCreate`: [SupportProjectTicketCreate](../interfaces/_api_.supportprojectticketcreate.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
 
-*Defined in api.ts:62874*
+*Defined in api.ts:68007*
 
 Create ticket
 
@@ -148,7 +148,7 @@ ___
 
 ▸ **supportProjectTicketGet**(`projectId`: string, `ticketId`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)>>
 
-*Defined in api.ts:62887*
+*Defined in api.ts:68020*
 
 Returns a single ticket
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **supportProjectTicketList**(`projectId`: string, `state?`: string, `options?`: any): Promise\<AxiosResponse\<[Ticket](../interfaces/_api_.ticket.md)[]>>
 
-*Defined in api.ts:62900*
+*Defined in api.ts:68033*
 
 List ticket
 
@@ -200,7 +200,7 @@ ___
 
 ▸ **supportProjectTicketMessageCreate**(`projectId`: string, `ticketId`: string, `supportMessage`: [SupportMessage](../interfaces/_api_.supportmessage.md), `options?`: any): Promise\<AxiosResponse\<[SupportMessage](../interfaces/_api_.supportmessage.md)>>
 
-*Defined in api.ts:62914*
+*Defined in api.ts:68047*
 
 Create support/ticket.message
 
@@ -227,7 +227,7 @@ ___
 
 ▸ **supportProjectTicketMessageGet**(`projectId`: string, `ticketId`: string, `messageId`: string, `options?`: any): Promise\<AxiosResponse\<[SupportMessage](../interfaces/_api_.supportmessage.md)>>
 
-*Defined in api.ts:62928*
+*Defined in api.ts:68061*
 
 Get support/ticket.message
 
@@ -254,7 +254,7 @@ ___
 
 ▸ **supportProjectTicketMessageList**(`projectId`: string, `ticketId`: string, `options?`: any): Promise\<AxiosResponse\<[SupportMessage](../interfaces/_api_.supportmessage.md)[]>>
 
-*Defined in api.ts:62941*
+*Defined in api.ts:68074*
 
 List support/ticket.message
 

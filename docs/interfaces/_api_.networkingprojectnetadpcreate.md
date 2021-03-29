@@ -28,7 +28,7 @@
 
 • `Optional` **firewall**: string
 
-*Defined in api.ts:4173*
+*Defined in api.ts:4319*
 
 **`memberof`** NetworkingProjectNetadpCreate
 
@@ -38,7 +38,7 @@ ___
 
 • `Optional` **ip**: Array\<string>
 
-*Defined in api.ts:4179*
+*Defined in api.ts:4325*
 
 **`memberof`** NetworkingProjectNetadpCreate
 
@@ -48,7 +48,7 @@ ___
 
 •  **network**: string
 
-*Defined in api.ts:4167*
+*Defined in api.ts:4313*
 
 **`memberof`** NetworkingProjectNetadpCreate
 
@@ -58,7 +58,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:4185*
+*Defined in api.ts:4331*
 
 **`memberof`** NetworkingProjectNetadpCreate
 
@@ -68,6 +68,6 @@ ___
 
 •  **vm**: string
 
-*Defined in api.ts:4161*
+*Defined in api.ts:4307*
 
 **`memberof`** NetworkingProjectNetadpCreate

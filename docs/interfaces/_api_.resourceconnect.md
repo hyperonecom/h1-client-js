@@ -29,7 +29,7 @@
 
 • `Optional` **example**: string
 
-*Defined in api.ts:6066*
+*Defined in api.ts:6435*
 
 **`memberof`** ResourceConnect
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **host**: string
 
-*Defined in api.ts:6060*
+*Defined in api.ts:6429*
 
 **`memberof`** ResourceConnect
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6036*
+*Defined in api.ts:6405*
 
 **`memberof`** ResourceConnect
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:6042*
+*Defined in api.ts:6411*
 
 **`memberof`** ResourceConnect
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **type**: string
 
-*Defined in api.ts:6048*
+*Defined in api.ts:6417*
 
 **`memberof`** ResourceConnect
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **username**: string
 
-*Defined in api.ts:6054*
+*Defined in api.ts:6423*
 
 **`memberof`** ResourceConnect

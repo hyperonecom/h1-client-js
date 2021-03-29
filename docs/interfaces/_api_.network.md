@@ -40,7 +40,7 @@
 
 • `Optional` **address**: string
 
-*Defined in api.ts:3946*
+*Defined in api.ts:4092*
 
 **`memberof`** Network
 
@@ -50,7 +50,7 @@ ___
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:3922*
+*Defined in api.ts:4068*
 
 **`memberof`** Network
 
@@ -60,7 +60,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:3916*
+*Defined in api.ts:4062*
 
 **`memberof`** Network
 
@@ -70,7 +70,7 @@ ___
 
 • `Optional` **dns**: [NetworkDns](_api_.networkdns.md)
 
-*Defined in api.ts:3964*
+*Defined in api.ts:4110*
 
 **`memberof`** Network
 
@@ -80,7 +80,7 @@ ___
 
 • `Optional` **firewall**: string
 
-*Defined in api.ts:3976*
+*Defined in api.ts:4122*
 
 **`memberof`** Network
 
@@ -90,7 +90,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:3898*
+*Defined in api.ts:4044*
 
 **`memberof`** Network
 
@@ -100,7 +100,7 @@ ___
 
 • `Optional` **gateway**: string
 
-*Defined in api.ts:3952*
+*Defined in api.ts:4098*
 
 **`memberof`** Network
 
@@ -110,7 +110,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:3886*
+*Defined in api.ts:4032*
 
 **`memberof`** Network
 
@@ -120,7 +120,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:3910*
+*Defined in api.ts:4056*
 
 **`memberof`** Network
 
@@ -130,7 +130,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:3904*
+*Defined in api.ts:4050*
 
 **`memberof`** Network
 
@@ -140,7 +140,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:3892*
+*Defined in api.ts:4038*
 
 **`memberof`** Network
 
@@ -150,7 +150,7 @@ ___
 
 • `Optional` **netgw**: string
 
-*Defined in api.ts:3970*
+*Defined in api.ts:4116*
 
 **`memberof`** Network
 
@@ -160,7 +160,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:3934*
+*Defined in api.ts:4080*
 
 **`memberof`** Network
 
@@ -170,7 +170,7 @@ ___
 
 • `Optional` **state**: [NetworkStateEnum](../enums/_api_.networkstateenum.md)
 
-*Defined in api.ts:3928*
+*Defined in api.ts:4074*
 
 **`memberof`** Network
 
@@ -180,7 +180,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:3982*
+*Defined in api.ts:4128*
 
 **`memberof`** Network
 
@@ -190,7 +190,7 @@ ___
 
 • `Optional` **type**: [NetworkTypeEnum](../enums/_api_.networktypeenum.md)
 
-*Defined in api.ts:3958*
+*Defined in api.ts:4104*
 
 **`memberof`** Network
 
@@ -200,6 +200,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:3940*
+*Defined in api.ts:4086*
 
 **`memberof`** Network

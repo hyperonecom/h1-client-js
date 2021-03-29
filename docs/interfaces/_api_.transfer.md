@@ -26,7 +26,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7238*
+*Defined in api.ts:7607*
 
 **`memberof`** Transfer
 
@@ -36,7 +36,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:7244*
+*Defined in api.ts:7613*
 
 **`memberof`** Transfer
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **state**: string
 
-*Defined in api.ts:7250*
+*Defined in api.ts:7619*
 
 **`memberof`** Transfer

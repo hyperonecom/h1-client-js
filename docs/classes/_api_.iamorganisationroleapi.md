@@ -104,7 +104,7 @@ ___
 
 ▸ **iamOrganisationRoleCreate**(`organisationId`: string, `iamProjectRoleCreate`: [IamProjectRoleCreate](../interfaces/_api_.iamprojectrolecreate.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Role](../interfaces/_api_.role.md)>>
 
-*Defined in api.ts:27509*
+*Defined in api.ts:27878*
 
 Create role
 
@@ -132,7 +132,7 @@ ___
 
 ▸ **iamOrganisationRoleDelete**(`organisationId`: string, `roleId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:27522*
+*Defined in api.ts:27891*
 
 Delete role
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **iamOrganisationRoleEventGet**(`organisationId`: string, `roleId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:27536*
+*Defined in api.ts:27905*
 
 Get iam/role.event
 
@@ -185,7 +185,7 @@ ___
 
 ▸ **iamOrganisationRoleEventList**(`organisationId`: string, `roleId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:27551*
+*Defined in api.ts:27920*
 
 List iam/role.event
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **iamOrganisationRoleGet**(`organisationId`: string, `roleId`: string, `options?`: any): Promise\<AxiosResponse\<[Role](../interfaces/_api_.role.md)>>
 
-*Defined in api.ts:27564*
+*Defined in api.ts:27933*
 
 Returns a single role
 
@@ -239,7 +239,7 @@ ___
 
 ▸ **iamOrganisationRoleList**(`organisationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Role](../interfaces/_api_.role.md)[]>>
 
-*Defined in api.ts:27579*
+*Defined in api.ts:27948*
 
 List role
 
@@ -267,7 +267,7 @@ ___
 
 ▸ **iamOrganisationRolePermissionCreate**(`organisationId`: string, `roleId`: string, `iamPermission`: [IamPermission](../interfaces/_api_.iampermission.md), `options?`: any): Promise\<AxiosResponse\<[IamPermission](../interfaces/_api_.iampermission.md)>>
 
-*Defined in api.ts:27593*
+*Defined in api.ts:27962*
 
 Create iam/role.permission
 
@@ -294,7 +294,7 @@ ___
 
 ▸ **iamOrganisationRolePermissionDelete**(`organisationId`: string, `roleId`: string, `permissionId`: string, `options?`: any): Promise\<AxiosResponse\<[IamPermission](../interfaces/_api_.iampermission.md)>>
 
-*Defined in api.ts:27607*
+*Defined in api.ts:27976*
 
 Delete iam/role.permission
 
@@ -321,7 +321,7 @@ ___
 
 ▸ **iamOrganisationRolePermissionGet**(`organisationId`: string, `roleId`: string, `permissionId`: string, `options?`: any): Promise\<AxiosResponse\<[IamPermission](../interfaces/_api_.iampermission.md)>>
 
-*Defined in api.ts:27621*
+*Defined in api.ts:27990*
 
 Get iam/role.permission
 
@@ -348,7 +348,7 @@ ___
 
 ▸ **iamOrganisationRolePermissionList**(`organisationId`: string, `roleId`: string, `options?`: any): Promise\<AxiosResponse\<[IamPermission](../interfaces/_api_.iampermission.md)[]>>
 
-*Defined in api.ts:27634*
+*Defined in api.ts:28003*
 
 List iam/role.permission
 
@@ -374,7 +374,7 @@ ___
 
 ▸ **iamOrganisationRolePermissionPut**(`organisationId`: string, `roleId`: string, `iamPermission`: Array\<[IamPermission](../interfaces/_api_.iampermission.md)>, `options?`: any): Promise\<AxiosResponse\<[IamPermission](../interfaces/_api_.iampermission.md)[]>>
 
-*Defined in api.ts:27648*
+*Defined in api.ts:28017*
 
 Replace iam/role.permission
 
@@ -401,7 +401,7 @@ ___
 
 ▸ **iamOrganisationRoleServiceGet**(`organisationId`: string, `roleId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:27662*
+*Defined in api.ts:28031*
 
 Get iam/role.service
 
@@ -428,7 +428,7 @@ ___
 
 ▸ **iamOrganisationRoleServiceList**(`organisationId`: string, `roleId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:27675*
+*Defined in api.ts:28044*
 
 List iam/role.service
 
@@ -454,7 +454,7 @@ ___
 
 ▸ **iamOrganisationRoleTagCreate**(`organisationId`: string, `roleId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:27689*
+*Defined in api.ts:28058*
 
 Create iam/role.tag
 
@@ -481,7 +481,7 @@ ___
 
 ▸ **iamOrganisationRoleTagDelete**(`organisationId`: string, `roleId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:27703*
+*Defined in api.ts:28072*
 
 Delete iam/role.tag
 
@@ -508,7 +508,7 @@ ___
 
 ▸ **iamOrganisationRoleTagGet**(`organisationId`: string, `roleId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:27717*
+*Defined in api.ts:28086*
 
 Get iam/role.tag
 
@@ -535,7 +535,7 @@ ___
 
 ▸ **iamOrganisationRoleTagList**(`organisationId`: string, `roleId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:27730*
+*Defined in api.ts:28099*
 
 List iam/role.tag
 
@@ -561,7 +561,7 @@ ___
 
 ▸ **iamOrganisationRoleTagPut**(`organisationId`: string, `roleId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:27744*
+*Defined in api.ts:28113*
 
 Replace iam/role.tag
 
@@ -588,7 +588,7 @@ ___
 
 ▸ **iamOrganisationRoleUpdate**(`organisationId`: string, `roleId`: string, `iamProjectRoleUpdate`: [IamProjectRoleUpdate](../interfaces/_api_.iamprojectroleupdate.md), `options?`: any): Promise\<AxiosResponse\<[Role](../interfaces/_api_.role.md)>>
 
-*Defined in api.ts:27758*
+*Defined in api.ts:28127*
 
 Returns modified role
 

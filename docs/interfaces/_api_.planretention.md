@@ -26,7 +26,7 @@
 
 • `Optional` **count**: number
 
-*Defined in api.ts:4761*
+*Defined in api.ts:4907*
 
 **`memberof`** PlanRetention
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4749*
+*Defined in api.ts:4895*
 
 **`memberof`** PlanRetention
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **interval**: string
 
-*Defined in api.ts:4755*
+*Defined in api.ts:4901*
 
 **`memberof`** PlanRetention

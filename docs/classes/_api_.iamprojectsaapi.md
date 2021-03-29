@@ -104,7 +104,7 @@ ___
 
 ▸ **iamProjectSaCreate**(`projectId`: string, `iamProjectSaCreate`: [IamProjectSaCreate](../interfaces/_api_.iamprojectsacreate.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Sa](../interfaces/_api_.sa.md)>>
 
-*Defined in api.ts:35554*
+*Defined in api.ts:35923*
 
 Create sa
 
@@ -132,7 +132,7 @@ ___
 
 ▸ **iamProjectSaCredentialCreate**(`projectId`: string, `saId`: string, `saCredential`: [SaCredential](../interfaces/_api_.sacredential.md), `options?`: any): Promise\<AxiosResponse\<[SaCredential](../interfaces/_api_.sacredential.md)>>
 
-*Defined in api.ts:35568*
+*Defined in api.ts:35937*
 
 Create iam/sa.credential
 
@@ -159,7 +159,7 @@ ___
 
 ▸ **iamProjectSaCredentialDelete**(`projectId`: string, `saId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[Sa](../interfaces/_api_.sa.md)>>
 
-*Defined in api.ts:35582*
+*Defined in api.ts:35951*
 
 Delete iam/sa.credential
 
@@ -186,7 +186,7 @@ ___
 
 ▸ **iamProjectSaCredentialGet**(`projectId`: string, `saId`: string, `credentialId`: string, `options?`: any): Promise\<AxiosResponse\<[SaCredential](../interfaces/_api_.sacredential.md)>>
 
-*Defined in api.ts:35596*
+*Defined in api.ts:35965*
 
 Get iam/sa.credential
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **iamProjectSaCredentialList**(`projectId`: string, `saId`: string, `options?`: any): Promise\<AxiosResponse\<[SaCredential](../interfaces/_api_.sacredential.md)[]>>
 
-*Defined in api.ts:35609*
+*Defined in api.ts:35978*
 
 List iam/sa.credential
 
@@ -239,7 +239,7 @@ ___
 
 ▸ **iamProjectSaCredentialPatch**(`projectId`: string, `saId`: string, `credentialId`: string, `iamProjectSaCredentialPatch`: [IamProjectSaCredentialPatch](../interfaces/_api_.iamprojectsacredentialpatch.md), `options?`: any): Promise\<AxiosResponse\<[SaCredential](../interfaces/_api_.sacredential.md)>>
 
-*Defined in api.ts:35624*
+*Defined in api.ts:35993*
 
 Update iam/sa.credential
 
@@ -267,7 +267,7 @@ ___
 
 ▸ **iamProjectSaDelete**(`projectId`: string, `saId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:35637*
+*Defined in api.ts:36006*
 
 Delete sa
 
@@ -293,7 +293,7 @@ ___
 
 ▸ **iamProjectSaEventGet**(`projectId`: string, `saId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:35651*
+*Defined in api.ts:36020*
 
 Get iam/sa.event
 
@@ -320,7 +320,7 @@ ___
 
 ▸ **iamProjectSaEventList**(`projectId`: string, `saId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:35666*
+*Defined in api.ts:36035*
 
 List iam/sa.event
 
@@ -348,7 +348,7 @@ ___
 
 ▸ **iamProjectSaGet**(`projectId`: string, `saId`: string, `options?`: any): Promise\<AxiosResponse\<[Sa](../interfaces/_api_.sa.md)>>
 
-*Defined in api.ts:35679*
+*Defined in api.ts:36048*
 
 Returns a single sa
 
@@ -374,7 +374,7 @@ ___
 
 ▸ **iamProjectSaList**(`projectId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Sa](../interfaces/_api_.sa.md)[]>>
 
-*Defined in api.ts:35694*
+*Defined in api.ts:36063*
 
 List sa
 
@@ -402,7 +402,7 @@ ___
 
 ▸ **iamProjectSaServiceGet**(`projectId`: string, `saId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:35708*
+*Defined in api.ts:36077*
 
 Get iam/sa.service
 
@@ -429,7 +429,7 @@ ___
 
 ▸ **iamProjectSaServiceList**(`projectId`: string, `saId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:35721*
+*Defined in api.ts:36090*
 
 List iam/sa.service
 
@@ -455,7 +455,7 @@ ___
 
 ▸ **iamProjectSaTagCreate**(`projectId`: string, `saId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:35735*
+*Defined in api.ts:36104*
 
 Create iam/sa.tag
 
@@ -482,7 +482,7 @@ ___
 
 ▸ **iamProjectSaTagDelete**(`projectId`: string, `saId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:35749*
+*Defined in api.ts:36118*
 
 Delete iam/sa.tag
 
@@ -509,7 +509,7 @@ ___
 
 ▸ **iamProjectSaTagGet**(`projectId`: string, `saId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:35763*
+*Defined in api.ts:36132*
 
 Get iam/sa.tag
 
@@ -536,7 +536,7 @@ ___
 
 ▸ **iamProjectSaTagList**(`projectId`: string, `saId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:35776*
+*Defined in api.ts:36145*
 
 List iam/sa.tag
 
@@ -562,7 +562,7 @@ ___
 
 ▸ **iamProjectSaTagPut**(`projectId`: string, `saId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:35790*
+*Defined in api.ts:36159*
 
 Replace iam/sa.tag
 
@@ -589,7 +589,7 @@ ___
 
 ▸ **iamProjectSaUpdate**(`projectId`: string, `saId`: string, `iamProjectSaUpdate`: [IamProjectSaUpdate](../interfaces/_api_.iamprojectsaupdate.md), `options?`: any): Promise\<AxiosResponse\<[Sa](../interfaces/_api_.sa.md)>>
 
-*Defined in api.ts:35804*
+*Defined in api.ts:36173*
 
 Returns modified sa
 

@@ -31,7 +31,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:7955*
+*Defined in api.ts:8324*
 
 **`memberof`** WebsiteCredential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:7961*
+*Defined in api.ts:8330*
 
 **`memberof`** WebsiteCredential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **fingerprint**: string
 
-*Defined in api.ts:7979*
+*Defined in api.ts:8348*
 
 **`memberof`** WebsiteCredential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:7943*
+*Defined in api.ts:8312*
 
 **`memberof`** WebsiteCredential
 
@@ -71,7 +71,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:7949*
+*Defined in api.ts:8318*
 
 **`memberof`** WebsiteCredential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **token**: string
 
-*Defined in api.ts:7985*
+*Defined in api.ts:8354*
 
 **`memberof`** WebsiteCredential
 
@@ -91,7 +91,7 @@ ___
 
 •  **type**: [WebsiteCredentialTypeEnum](../enums/_api_.websitecredentialtypeenum.md)
 
-*Defined in api.ts:7967*
+*Defined in api.ts:8336*
 
 **`memberof`** WebsiteCredential
 
@@ -101,6 +101,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:7973*
+*Defined in api.ts:8342*
 
 **`memberof`** WebsiteCredential

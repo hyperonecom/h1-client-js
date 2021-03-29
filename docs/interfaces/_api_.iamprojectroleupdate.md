@@ -25,7 +25,7 @@
 
 • `Optional` **description**: string
 
-*Defined in api.ts:2374*
+*Defined in api.ts:2520*
 
 **`memberof`** IamProjectRoleUpdate
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:2368*
+*Defined in api.ts:2514*
 
 **`memberof`** IamProjectRoleUpdate

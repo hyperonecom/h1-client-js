@@ -29,7 +29,7 @@
 
 • `Optional` **controllerLocation**: number
 
-*Defined in api.ts:2019*
+*Defined in api.ts:2165*
 
 **`memberof`** Hdd
 
@@ -39,7 +39,7 @@ ___
 
 • `Optional` **controllerNumber**: string
 
-*Defined in api.ts:2013*
+*Defined in api.ts:2159*
 
 **`memberof`** Hdd
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **controllerType**: string
 
-*Defined in api.ts:2007*
+*Defined in api.ts:2153*
 
 **`memberof`** Hdd
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **disk**: string
 
-*Defined in api.ts:2025*
+*Defined in api.ts:2171*
 
 **`memberof`** Hdd
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:2031*
+*Defined in api.ts:2177*
 
 **`memberof`** Hdd
 
@@ -79,6 +79,6 @@ ___
 
 • `Optional` **maximumIOPS**: number
 
-*Defined in api.ts:2001*
+*Defined in api.ts:2147*
 
 **`memberof`** Hdd

@@ -25,7 +25,7 @@
 
 • `Optional` **id**: string
 
-*Defined in api.ts:4774*
+*Defined in api.ts:4920*
 
 **`memberof`** PlanWindow
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **interval**: string
 
-*Defined in api.ts:4780*
+*Defined in api.ts:4926*
 
 **`memberof`** PlanWindow

@@ -34,7 +34,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:1951*
+*Defined in api.ts:2097*
 
 **`memberof`** Firewall
 
@@ -44,7 +44,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:1945*
+*Defined in api.ts:2091*
 
 **`memberof`** Firewall
 
@@ -54,7 +54,7 @@ ___
 
 • `Optional` **flavour**: string
 
-*Defined in api.ts:1927*
+*Defined in api.ts:2073*
 
 **`memberof`** Firewall
 
@@ -64,7 +64,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1915*
+*Defined in api.ts:2061*
 
 **`memberof`** Firewall
 
@@ -74,7 +74,7 @@ ___
 
 • `Optional` **modifiedBy**: string
 
-*Defined in api.ts:1939*
+*Defined in api.ts:2085*
 
 **`memberof`** Firewall
 
@@ -84,7 +84,7 @@ ___
 
 • `Optional` **modifiedOn**: string
 
-*Defined in api.ts:1933*
+*Defined in api.ts:2079*
 
 **`memberof`** Firewall
 
@@ -94,7 +94,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:1921*
+*Defined in api.ts:2067*
 
 **`memberof`** Firewall
 
@@ -104,7 +104,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:1963*
+*Defined in api.ts:2109*
 
 **`memberof`** Firewall
 
@@ -114,7 +114,7 @@ ___
 
 • `Optional` **state**: [FirewallStateEnum](../enums/_api_.firewallstateenum.md)
 
-*Defined in api.ts:1957*
+*Defined in api.ts:2103*
 
 **`memberof`** Firewall
 
@@ -124,7 +124,7 @@ ___
 
 • `Optional` **tag**: Array\<[Tag](_api_.tag.md)>
 
-*Defined in api.ts:1975*
+*Defined in api.ts:2121*
 
 **`memberof`** Firewall
 
@@ -134,6 +134,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:1969*
+*Defined in api.ts:2115*
 
 **`memberof`** Firewall

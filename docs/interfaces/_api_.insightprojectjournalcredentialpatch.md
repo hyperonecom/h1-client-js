@@ -24,6 +24,6 @@
 
 •  **name**: string
 
-*Defined in api.ts:2708*
+*Defined in api.ts:2854*
 
 **`memberof`** InsightProjectJournalCredentialPatch

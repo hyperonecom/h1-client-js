@@ -39,7 +39,7 @@
 
 • `Optional` **\_\_array\_\_**: string
 
-*Defined in api.ts:2868*
+*Defined in api.ts:3014*
 
 **`memberof`** Invoice
 
@@ -49,7 +49,7 @@ ___
 
 • `Optional` **additionalInfo**: string
 
-*Defined in api.ts:2784*
+*Defined in api.ts:2930*
 
 **`memberof`** Invoice
 
@@ -59,7 +59,7 @@ ___
 
 • `Optional` **buyer**: [InvoiceBuyer](_api_.invoicebuyer.md)
 
-*Defined in api.ts:2832*
+*Defined in api.ts:2978*
 
 **`memberof`** Invoice
 
@@ -69,7 +69,7 @@ ___
 
 • `Optional` **corrections**: Array\<string>
 
-*Defined in api.ts:2790*
+*Defined in api.ts:2936*
 
 **`memberof`** Invoice
 
@@ -79,7 +79,7 @@ ___
 
 • `Optional` **duplicate**: [InvoiceDuplicate](_api_.invoiceduplicate.md)
 
-*Defined in api.ts:2856*
+*Defined in api.ts:3002*
 
 **`memberof`** Invoice
 
@@ -89,7 +89,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:2778*
+*Defined in api.ts:2924*
 
 **`memberof`** Invoice
 
@@ -99,7 +99,7 @@ ___
 
 • `Optional` **invoiceInfo**: string
 
-*Defined in api.ts:2796*
+*Defined in api.ts:2942*
 
 **`memberof`** Invoice
 
@@ -109,7 +109,7 @@ ___
 
 • `Optional` **invoiceNo**: string
 
-*Defined in api.ts:2802*
+*Defined in api.ts:2948*
 
 **`memberof`** Invoice
 
@@ -119,7 +119,7 @@ ___
 
 • `Optional` **issueDate**: string
 
-*Defined in api.ts:2808*
+*Defined in api.ts:2954*
 
 **`memberof`** Invoice
 
@@ -129,7 +129,7 @@ ___
 
 • `Optional` **items**: Array\<[InvoiceItems](_api_.invoiceitems.md)>
 
-*Defined in api.ts:2826*
+*Defined in api.ts:2972*
 
 **`memberof`** Invoice
 
@@ -139,7 +139,7 @@ ___
 
 • `Optional` **payments**: Array\<string>
 
-*Defined in api.ts:2814*
+*Defined in api.ts:2960*
 
 **`memberof`** Invoice
 
@@ -149,7 +149,7 @@ ___
 
 • `Optional` **project**: string
 
-*Defined in api.ts:2850*
+*Defined in api.ts:2996*
 
 **`memberof`** Invoice
 
@@ -159,7 +159,7 @@ ___
 
 • `Optional` **seller**: [InvoiceSeller](_api_.invoiceseller.md)
 
-*Defined in api.ts:2820*
+*Defined in api.ts:2966*
 
 **`memberof`** Invoice
 
@@ -169,7 +169,7 @@ ___
 
 • `Optional` **summary**: string
 
-*Defined in api.ts:2844*
+*Defined in api.ts:2990*
 
 **`memberof`** Invoice
 
@@ -179,7 +179,7 @@ ___
 
 • `Optional` **type**: [InvoiceTypeEnum](../enums/_api_.invoicetypeenum.md)
 
-*Defined in api.ts:2838*
+*Defined in api.ts:2984*
 
 **`memberof`** Invoice
 
@@ -189,6 +189,6 @@ ___
 
 • `Optional` **uri**: string
 
-*Defined in api.ts:2862*
+*Defined in api.ts:3008*
 
 **`memberof`** Invoice

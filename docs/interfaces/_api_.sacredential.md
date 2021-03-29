@@ -31,7 +31,7 @@
 
 • `Optional` **createdBy**: string
 
-*Defined in api.ts:6308*
+*Defined in api.ts:6677*
 
 **`memberof`** SaCredential
 
@@ -41,7 +41,7 @@ ___
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:6314*
+*Defined in api.ts:6683*
 
 **`memberof`** SaCredential
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **fingerprint**: string
 
-*Defined in api.ts:6332*
+*Defined in api.ts:6701*
 
 **`memberof`** SaCredential
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6296*
+*Defined in api.ts:6665*
 
 **`memberof`** SaCredential
 
@@ -71,7 +71,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:6302*
+*Defined in api.ts:6671*
 
 **`memberof`** SaCredential
 
@@ -81,7 +81,7 @@ ___
 
 • `Optional` **token**: string
 
-*Defined in api.ts:6338*
+*Defined in api.ts:6707*
 
 **`memberof`** SaCredential
 
@@ -91,7 +91,7 @@ ___
 
 •  **type**: [SaCredentialTypeEnum](../enums/_api_.sacredentialtypeenum.md)
 
-*Defined in api.ts:6320*
+*Defined in api.ts:6689*
 
 **`memberof`** SaCredential
 
@@ -101,6 +101,6 @@ ___
 
 •  **value**: string
 
-*Defined in api.ts:6326*
+*Defined in api.ts:6695*
 
 **`memberof`** SaCredential

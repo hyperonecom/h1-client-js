@@ -27,7 +27,7 @@
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:6570*
+*Defined in api.ts:6939*
 
 **`memberof`** StorageObject
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:6552*
+*Defined in api.ts:6921*
 
 **`memberof`** StorageObject
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:6558*
+*Defined in api.ts:6927*
 
 **`memberof`** StorageObject
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **size**: number
 
-*Defined in api.ts:6564*
+*Defined in api.ts:6933*
 
 **`memberof`** StorageObject

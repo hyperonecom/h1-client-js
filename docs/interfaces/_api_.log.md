@@ -26,7 +26,7 @@
 
 •  **id**: string
 
-*Defined in api.ts:3520*
+*Defined in api.ts:3666*
 
 **`memberof`** Log
 
@@ -36,7 +36,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:3526*
+*Defined in api.ts:3672*
 
 **`memberof`** Log
 
@@ -46,6 +46,6 @@ ___
 
 •  **type**: [LogTypeEnum](../enums/_api_.logtypeenum.md)
 
-*Defined in api.ts:3532*
+*Defined in api.ts:3678*
 
 **`memberof`** Log

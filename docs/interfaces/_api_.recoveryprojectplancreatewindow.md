@@ -24,6 +24,6 @@
 
 •  **interval**: [RecoveryProjectPlanCreateWindowIntervalEnum](../enums/_api_.recoveryprojectplancreatewindowintervalenum.md)
 
-*Defined in api.ts:5636*
+*Defined in api.ts:6005*
 
 **`memberof`** RecoveryProjectPlanCreateWindow

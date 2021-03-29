@@ -27,7 +27,7 @@
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:5354*
+*Defined in api.ts:5500*
 
 **`memberof`** ProviderAgentResourceEvent
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:5336*
+*Defined in api.ts:5482*
 
 **`memberof`** ProviderAgentResourceEvent
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:5342*
+*Defined in api.ts:5488*
 
 **`memberof`** ProviderAgentResourceEvent
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **state**: [ProviderAgentResourceEventStateEnum](../enums/_api_.provideragentresourceeventstateenum.md)
 
-*Defined in api.ts:5348*
+*Defined in api.ts:5494*
 
 **`memberof`** ProviderAgentResourceEvent

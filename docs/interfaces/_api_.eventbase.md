@@ -27,7 +27,7 @@
 
 • `Optional` **createdOn**: string
 
-*Defined in api.ts:1884*
+*Defined in api.ts:2030*
 
 **`memberof`** EventBase
 
@@ -37,7 +37,7 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1872*
+*Defined in api.ts:2018*
 
 **`memberof`** EventBase
 
@@ -47,7 +47,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:1878*
+*Defined in api.ts:2024*
 
 **`memberof`** EventBase
 
@@ -57,6 +57,6 @@ ___
 
 • `Optional` **state**: [EventBaseStateEnum](../enums/_api_.eventbasestateenum.md)
 
-*Defined in api.ts:1890*
+*Defined in api.ts:2036*
 
 **`memberof`** EventBase

@@ -1500,6 +1500,152 @@ export interface DatabaseProjectInstanceUpdate {
 /**
  * 
  * @export
+ * @interface Development
+ */
+export interface Development {
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    flavour?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    modifiedOn?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    modifiedBy?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    createdOn?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    createdBy?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    state?: DevelopmentStateEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    project?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    uri?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Development
+     */
+    fqdn?: string;
+    /**
+     * 
+     * @type {Array<Tag>}
+     * @memberof Development
+     */
+    tag?: Array<Tag>;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum DevelopmentStateEnum {
+    Online = 'Online',
+    Unknown = 'Unknown',
+    Processing = 'Processing',
+    NotCreated = 'NotCreated'
+}
+
+/**
+ * 
+ * @export
+ * @interface DevelopmentCredential
+ */
+export interface DevelopmentCredential {
+    /**
+     * 
+     * @type {string}
+     * @memberof DevelopmentCredential
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DevelopmentCredential
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DevelopmentCredential
+     */
+    createdBy?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DevelopmentCredential
+     */
+    createdOn?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DevelopmentCredential
+     */
+    type: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DevelopmentCredential
+     */
+    value: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DevelopmentCredential
+     */
+    fingerprint?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DevelopmentCredential
+     */
+    token?: string;
+}
+/**
+ * 
+ * @export
  * @interface Disk
  */
 export interface Disk {
@@ -5368,6 +5514,96 @@ export enum ProviderAgentResourceEventStateEnum {
 /**
  * 
  * @export
+ * @interface ProviderEnv
+ */
+export interface ProviderEnv {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderEnv
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderEnv
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderEnv
+     */
+    value: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProviderLink
+ */
+export interface ProviderLink {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderLink
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderLink
+     */
+    actor: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderLink
+     */
+    purpose: ProviderLinkPurposeEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderLink
+     */
+    resource: string;
+}
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ProviderLinkPurposeEnum {
+    Logs = 'logs'
+}
+
+/**
+ * 
+ * @export
+ * @interface ProviderLog
+ */
+export interface ProviderLog {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderLog
+     */
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderLog
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderLog
+     */
+    type: string;
+}
+/**
+ * 
+ * @export
  * @interface ProviderProjectAgentCreate
  */
 export interface ProviderProjectAgentCreate {
@@ -5428,6 +5664,139 @@ export interface ProviderProjectAgentUpdate {
      * @memberof ProviderProjectAgentUpdate
      */
     name?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProviderProjectDevelopmentCreate
+ */
+export interface ProviderProjectDevelopmentCreate {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderProjectDevelopmentCreate
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderProjectDevelopmentCreate
+     */
+    service: string;
+    /**
+     * 
+     * @type {Array<ProviderEnv>}
+     * @memberof ProviderProjectDevelopmentCreate
+     */
+    env?: Array<ProviderEnv>;
+    /**
+     * 
+     * @type {Array<Tag>}
+     * @memberof ProviderProjectDevelopmentCreate
+     */
+    tag?: Array<Tag>;
+}
+/**
+ * 
+ * @export
+ * @interface ProviderProjectDevelopmentCredentialPatch
+ */
+export interface ProviderProjectDevelopmentCredentialPatch {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderProjectDevelopmentCredentialPatch
+     */
+    name: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProviderProjectDevelopmentSnapshotDownload
+ */
+export interface ProviderProjectDevelopmentSnapshotDownload {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderProjectDevelopmentSnapshotDownload
+     */
+    incremental?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProviderProjectDevelopmentTransfer
+ */
+export interface ProviderProjectDevelopmentTransfer {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderProjectDevelopmentTransfer
+     */
+    project: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProviderProjectDevelopmentUpdate
+ */
+export interface ProviderProjectDevelopmentUpdate {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderProjectDevelopmentUpdate
+     */
+    name?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProviderSideapp
+ */
+export interface ProviderSideapp {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderSideapp
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderSideapp
+     */
+    name: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProviderSnapshot
+ */
+export interface ProviderSnapshot {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderSnapshot
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderSnapshot
+     */
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProviderSnapshot
+     */
+    creation?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ProviderSnapshot
+     */
+    used?: number;
 }
 /**
  * 
@@ -50771,6 +51140,4770 @@ export class ProviderProjectAgentApi extends BaseAPI {
      */
     public providerProjectAgentUpdate(projectId: string, locationId: string, agentId: string, providerProjectAgentUpdate: ProviderProjectAgentUpdate, options?: any) {
         return ProviderProjectAgentApiFp(this.configuration).providerProjectAgentUpdate(projectId, locationId, agentId, providerProjectAgentUpdate, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+/**
+ * ProviderProjectDevelopmentApi - axios parameter creator
+ * @export
+ */
+export const ProviderProjectDevelopmentApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Get provider/development.connect
+         * @summary Get provider/development.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} connectId connectId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentConnectGet: async (projectId: string, locationId: string, developmentId: string, connectId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentConnectGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentConnectGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentConnectGet', 'developmentId', developmentId)
+            // verify required parameter 'connectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentConnectGet', 'connectId', connectId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/connect/{connectId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"connectId"}}`, encodeURIComponent(String(connectId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.connect
+         * @summary List provider/development.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentConnectList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentConnectList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentConnectList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentConnectList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/connect`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create development
+         * @summary Create provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {ProviderProjectDevelopmentCreate} providerProjectDevelopmentCreate 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCreate: async (projectId: string, locationId: string, providerProjectDevelopmentCreate: ProviderProjectDevelopmentCreate, xIdempotencyKey?: string, xDryRun?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCreate', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCreate', 'locationId', locationId)
+            // verify required parameter 'providerProjectDevelopmentCreate' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCreate', 'providerProjectDevelopmentCreate', providerProjectDevelopmentCreate)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
+                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
+            }
+
+            if (xDryRun !== undefined && xDryRun !== null) {
+                localVarHeaderParameter['x-dry-run'] = String(xDryRun);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(providerProjectDevelopmentCreate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create provider/development.credential
+         * @summary Create provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {DevelopmentCredential} developmentCredential 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCredentialCreate: async (projectId: string, locationId: string, developmentId: string, developmentCredential: DevelopmentCredential, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialCreate', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialCreate', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialCreate', 'developmentId', developmentId)
+            // verify required parameter 'developmentCredential' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialCreate', 'developmentCredential', developmentCredential)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/credential`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(developmentCredential, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete provider/development.credential
+         * @summary Delete provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} credentialId credentialId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCredentialDelete: async (projectId: string, locationId: string, developmentId: string, credentialId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialDelete', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialDelete', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialDelete', 'developmentId', developmentId)
+            // verify required parameter 'credentialId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialDelete', 'credentialId', credentialId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/credential/{credentialId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"credentialId"}}`, encodeURIComponent(String(credentialId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.credential
+         * @summary Get provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} credentialId credentialId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCredentialGet: async (projectId: string, locationId: string, developmentId: string, credentialId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialGet', 'developmentId', developmentId)
+            // verify required parameter 'credentialId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialGet', 'credentialId', credentialId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/credential/{credentialId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"credentialId"}}`, encodeURIComponent(String(credentialId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.credential
+         * @summary List provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCredentialList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/credential`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Update provider/development.credential
+         * @summary Update provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} credentialId credentialId
+         * @param {ProviderProjectDevelopmentCredentialPatch} providerProjectDevelopmentCredentialPatch 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCredentialPatch: async (projectId: string, locationId: string, developmentId: string, credentialId: string, providerProjectDevelopmentCredentialPatch: ProviderProjectDevelopmentCredentialPatch, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialPatch', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialPatch', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialPatch', 'developmentId', developmentId)
+            // verify required parameter 'credentialId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialPatch', 'credentialId', credentialId)
+            // verify required parameter 'providerProjectDevelopmentCredentialPatch' is not null or undefined
+            assertParamExists('providerProjectDevelopmentCredentialPatch', 'providerProjectDevelopmentCredentialPatch', providerProjectDevelopmentCredentialPatch)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/credential/{credentialId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"credentialId"}}`, encodeURIComponent(String(credentialId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(providerProjectDevelopmentCredentialPatch, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete development
+         * @summary Delete provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentDelete: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDelete', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDelete', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDelete', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create provider/development.domain
+         * @summary Create provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {Domain} domain 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentDomainCreate: async (projectId: string, locationId: string, developmentId: string, domain: Domain, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainCreate', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainCreate', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainCreate', 'developmentId', developmentId)
+            // verify required parameter 'domain' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainCreate', 'domain', domain)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/domain`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(domain, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete provider/development.domain
+         * @summary Delete provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} domainId domainId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentDomainDelete: async (projectId: string, locationId: string, developmentId: string, domainId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainDelete', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainDelete', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainDelete', 'developmentId', developmentId)
+            // verify required parameter 'domainId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainDelete', 'domainId', domainId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/domain/{domainId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"domainId"}}`, encodeURIComponent(String(domainId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.domain
+         * @summary Get provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} domainId domainId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentDomainGet: async (projectId: string, locationId: string, developmentId: string, domainId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainGet', 'developmentId', developmentId)
+            // verify required parameter 'domainId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainGet', 'domainId', domainId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/domain/{domainId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"domainId"}}`, encodeURIComponent(String(domainId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.domain
+         * @summary List provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentDomainList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentDomainList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/domain`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create provider/development.env
+         * @summary Create provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderEnv} providerEnv 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEnvCreate: async (projectId: string, locationId: string, developmentId: string, providerEnv: ProviderEnv, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvCreate', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvCreate', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvCreate', 'developmentId', developmentId)
+            // verify required parameter 'providerEnv' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvCreate', 'providerEnv', providerEnv)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/env`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(providerEnv, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete provider/development.env
+         * @summary Delete provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} envId envId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEnvDelete: async (projectId: string, locationId: string, developmentId: string, envId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvDelete', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvDelete', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvDelete', 'developmentId', developmentId)
+            // verify required parameter 'envId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvDelete', 'envId', envId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/env/{envId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"envId"}}`, encodeURIComponent(String(envId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.env
+         * @summary Get provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} envId envId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEnvGet: async (projectId: string, locationId: string, developmentId: string, envId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvGet', 'developmentId', developmentId)
+            // verify required parameter 'envId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvGet', 'envId', envId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/env/{envId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"envId"}}`, encodeURIComponent(String(envId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.env
+         * @summary List provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEnvList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEnvList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/env`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.event
+         * @summary Get provider/development.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} eventId eventId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEventGet: async (projectId: string, locationId: string, developmentId: string, eventId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEventGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEventGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEventGet', 'developmentId', developmentId)
+            // verify required parameter 'eventId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEventGet', 'eventId', eventId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/event/{eventId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"eventId"}}`, encodeURIComponent(String(eventId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.event
+         * @summary List provider/development.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {number} [$limit] $limit
+         * @param {number} [$skip] $skip
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEventList: async (projectId: string, locationId: string, developmentId: string, $limit?: number, $skip?: number, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEventList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEventList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentEventList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/event`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if ($limit !== undefined) {
+                localVarQueryParameter['$limit'] = $limit;
+            }
+
+            if ($skip !== undefined) {
+                localVarQueryParameter['$skip'] = $skip;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Returns a single development
+         * @summary Get provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentGet: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentGet', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create provider/development.link
+         * @summary Create provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderLink} providerLink 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLinkCreate: async (projectId: string, locationId: string, developmentId: string, providerLink: ProviderLink, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkCreate', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkCreate', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkCreate', 'developmentId', developmentId)
+            // verify required parameter 'providerLink' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkCreate', 'providerLink', providerLink)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/link`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(providerLink, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete provider/development.link
+         * @summary Delete provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} linkId linkId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLinkDelete: async (projectId: string, locationId: string, developmentId: string, linkId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkDelete', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkDelete', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkDelete', 'developmentId', developmentId)
+            // verify required parameter 'linkId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkDelete', 'linkId', linkId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/link/{linkId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"linkId"}}`, encodeURIComponent(String(linkId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.link
+         * @summary Get provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} linkId linkId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLinkGet: async (projectId: string, locationId: string, developmentId: string, linkId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkGet', 'developmentId', developmentId)
+            // verify required parameter 'linkId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkGet', 'linkId', linkId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/link/{linkId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"linkId"}}`, encodeURIComponent(String(linkId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.link
+         * @summary List provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLinkList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLinkList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/link`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List development
+         * @summary List provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} [name] Filter by name
+         * @param {string} [tagValue] Filter by tag.value
+         * @param {string} [tagKey] Filter by tag.key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentList: async (projectId: string, locationId: string, name?: string, tagValue?: string, tagKey?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentList', 'locationId', locationId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (name !== undefined) {
+                localVarQueryParameter['name'] = name;
+            }
+
+            if (tagValue !== undefined) {
+                localVarQueryParameter['tag.value'] = tagValue;
+            }
+
+            if (tagKey !== undefined) {
+                localVarQueryParameter['tag.key'] = tagKey;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.log
+         * @summary Get provider/development.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} logId logId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLogGet: async (projectId: string, locationId: string, developmentId: string, logId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogGet', 'developmentId', developmentId)
+            // verify required parameter 'logId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogGet', 'logId', logId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/log/{logId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"logId"}}`, encodeURIComponent(String(logId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.log
+         * @summary List provider/development.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLogList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/log`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * action read
+         * @summary Read provider/development.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} logId logId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLogRead: async (projectId: string, locationId: string, developmentId: string, logId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogRead', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogRead', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogRead', 'developmentId', developmentId)
+            // verify required parameter 'logId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentLogRead', 'logId', logId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/log/{logId}/actions/read`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"logId"}}`, encodeURIComponent(String(logId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.metric
+         * @summary Get provider/development.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentMetricGet: async (projectId: string, locationId: string, developmentId: string, metricId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricGet', 'developmentId', developmentId)
+            // verify required parameter 'metricId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricGet', 'metricId', metricId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/metric/{metricId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.metric
+         * @summary List provider/development.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentMetricList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/metric`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.point
+         * @summary List provider/development.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentMetricPointList: async (projectId: string, locationId: string, developmentId: string, metricId: string, interval?: string, timespan?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricPointList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricPointList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricPointList', 'developmentId', developmentId)
+            // verify required parameter 'metricId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentMetricPointList', 'metricId', metricId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/metric/{metricId}/point`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"metricId"}}`, encodeURIComponent(String(metricId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (interval !== undefined) {
+                localVarQueryParameter['interval'] = interval;
+            }
+
+            if (timespan !== undefined) {
+                localVarQueryParameter['timespan'] = timespan;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * action restart
+         * @summary Restart provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentRestart: async (projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentRestart', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentRestart', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentRestart', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/actions/restart`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
+                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
+            }
+
+            if (xDryRun !== undefined && xDryRun !== null) {
+                localVarHeaderParameter['x-dry-run'] = String(xDryRun);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.service
+         * @summary Get provider/development.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} serviceId serviceId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentServiceGet: async (projectId: string, locationId: string, developmentId: string, serviceId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentServiceGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentServiceGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentServiceGet', 'developmentId', developmentId)
+            // verify required parameter 'serviceId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentServiceGet', 'serviceId', serviceId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/service/{serviceId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"serviceId"}}`, encodeURIComponent(String(serviceId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.service
+         * @summary List provider/development.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentServiceList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentServiceList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentServiceList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentServiceList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/service`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.sideapp
+         * @summary Get provider/development.sideapp
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} sideappId sideappId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSideappGet: async (projectId: string, locationId: string, developmentId: string, sideappId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappGet', 'developmentId', developmentId)
+            // verify required parameter 'sideappId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappGet', 'sideappId', sideappId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp/{sideappId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"sideappId"}}`, encodeURIComponent(String(sideappId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.sideapp
+         * @summary List provider/development.sideapp
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSideappList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * action open
+         * @summary Open provider/development.sideapp
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} sideappId sideappId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSideappOpen: async (projectId: string, locationId: string, developmentId: string, sideappId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappOpen', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappOpen', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappOpen', 'developmentId', developmentId)
+            // verify required parameter 'sideappId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSideappOpen', 'sideappId', sideappId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/sideapp/{sideappId}/actions/open`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"sideappId"}}`, encodeURIComponent(String(sideappId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create provider/development.snapshot
+         * @summary Create provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderSnapshot} providerSnapshot 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSnapshotCreate: async (projectId: string, locationId: string, developmentId: string, providerSnapshot: ProviderSnapshot, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotCreate', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotCreate', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotCreate', 'developmentId', developmentId)
+            // verify required parameter 'providerSnapshot' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotCreate', 'providerSnapshot', providerSnapshot)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(providerSnapshot, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete provider/development.snapshot
+         * @summary Delete provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} snapshotId snapshotId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSnapshotDelete: async (projectId: string, locationId: string, developmentId: string, snapshotId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotDelete', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotDelete', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotDelete', 'developmentId', developmentId)
+            // verify required parameter 'snapshotId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotDelete', 'snapshotId', snapshotId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"snapshotId"}}`, encodeURIComponent(String(snapshotId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * action download
+         * @summary Download provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} snapshotId snapshotId
+         * @param {ProviderProjectDevelopmentSnapshotDownload} providerProjectDevelopmentSnapshotDownload 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSnapshotDownload: async (projectId: string, locationId: string, developmentId: string, snapshotId: string, providerProjectDevelopmentSnapshotDownload: ProviderProjectDevelopmentSnapshotDownload, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotDownload', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotDownload', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotDownload', 'developmentId', developmentId)
+            // verify required parameter 'snapshotId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotDownload', 'snapshotId', snapshotId)
+            // verify required parameter 'providerProjectDevelopmentSnapshotDownload' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotDownload', 'providerProjectDevelopmentSnapshotDownload', providerProjectDevelopmentSnapshotDownload)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId}/actions/download`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"snapshotId"}}`, encodeURIComponent(String(snapshotId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(providerProjectDevelopmentSnapshotDownload, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.snapshot
+         * @summary Get provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} snapshotId snapshotId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSnapshotGet: async (projectId: string, locationId: string, developmentId: string, snapshotId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotGet', 'developmentId', developmentId)
+            // verify required parameter 'snapshotId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotGet', 'snapshotId', snapshotId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot/{snapshotId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"snapshotId"}}`, encodeURIComponent(String(snapshotId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.snapshot
+         * @summary List provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSnapshotList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentSnapshotList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/snapshot`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * action start
+         * @summary Start provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentStart: async (projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentStart', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentStart', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentStart', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/actions/start`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
+                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
+            }
+
+            if (xDryRun !== undefined && xDryRun !== null) {
+                localVarHeaderParameter['x-dry-run'] = String(xDryRun);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * action stop
+         * @summary Stop provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentStop: async (projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentStop', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentStop', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentStop', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/actions/stop`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
+                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
+            }
+
+            if (xDryRun !== undefined && xDryRun !== null) {
+                localVarHeaderParameter['x-dry-run'] = String(xDryRun);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create provider/development.tag
+         * @summary Create provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {Tag} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTagCreate: async (projectId: string, locationId: string, developmentId: string, tag: Tag, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagCreate', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagCreate', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagCreate', 'developmentId', developmentId)
+            // verify required parameter 'tag' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagCreate', 'tag', tag)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/tag`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(tag, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Delete provider/development.tag
+         * @summary Delete provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTagDelete: async (projectId: string, locationId: string, developmentId: string, tagId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagDelete', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagDelete', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagDelete', 'developmentId', developmentId)
+            // verify required parameter 'tagId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagDelete', 'tagId', tagId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/tag/{tagId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"tagId"}}`, encodeURIComponent(String(tagId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get provider/development.tag
+         * @summary Get provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTagGet: async (projectId: string, locationId: string, developmentId: string, tagId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagGet', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagGet', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagGet', 'developmentId', developmentId)
+            // verify required parameter 'tagId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagGet', 'tagId', tagId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/tag/{tagId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)))
+                .replace(`{${"tagId"}}`, encodeURIComponent(String(tagId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List provider/development.tag
+         * @summary List provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTagList: async (projectId: string, locationId: string, developmentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagList', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagList', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagList', 'developmentId', developmentId)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/tag`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Replace provider/development.tag
+         * @summary Replace provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {Array<Tag>} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTagPut: async (projectId: string, locationId: string, developmentId: string, tag: Array<Tag>, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagPut', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagPut', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagPut', 'developmentId', developmentId)
+            // verify required parameter 'tag' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTagPut', 'tag', tag)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/tag`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(tag, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * action transfer
+         * @summary Transfer provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderProjectDevelopmentTransfer} providerProjectDevelopmentTransfer 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTransfer: async (projectId: string, locationId: string, developmentId: string, providerProjectDevelopmentTransfer: ProviderProjectDevelopmentTransfer, xIdempotencyKey?: string, xDryRun?: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTransfer', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTransfer', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTransfer', 'developmentId', developmentId)
+            // verify required parameter 'providerProjectDevelopmentTransfer' is not null or undefined
+            assertParamExists('providerProjectDevelopmentTransfer', 'providerProjectDevelopmentTransfer', providerProjectDevelopmentTransfer)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}/actions/transfer`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (xIdempotencyKey !== undefined && xIdempotencyKey !== null) {
+                localVarHeaderParameter['x-idempotency-key'] = String(xIdempotencyKey);
+            }
+
+            if (xDryRun !== undefined && xDryRun !== null) {
+                localVarHeaderParameter['x-dry-run'] = String(xDryRun);
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(providerProjectDevelopmentTransfer, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Returns modified development
+         * @summary Update provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderProjectDevelopmentUpdate} providerProjectDevelopmentUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentUpdate: async (projectId: string, locationId: string, developmentId: string, providerProjectDevelopmentUpdate: ProviderProjectDevelopmentUpdate, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentUpdate', 'projectId', projectId)
+            // verify required parameter 'locationId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentUpdate', 'locationId', locationId)
+            // verify required parameter 'developmentId' is not null or undefined
+            assertParamExists('providerProjectDevelopmentUpdate', 'developmentId', developmentId)
+            // verify required parameter 'providerProjectDevelopmentUpdate' is not null or undefined
+            assertParamExists('providerProjectDevelopmentUpdate', 'providerProjectDevelopmentUpdate', providerProjectDevelopmentUpdate)
+            const localVarPath = `/provider/{locationId}/project/{projectId}/development/{developmentId}`
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)))
+                .replace(`{${"locationId"}}`, encodeURIComponent(String(locationId)))
+                .replace(`{${"developmentId"}}`, encodeURIComponent(String(developmentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(providerProjectDevelopmentUpdate, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * ProviderProjectDevelopmentApi - functional programming interface
+ * @export
+ */
+export const ProviderProjectDevelopmentApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = ProviderProjectDevelopmentApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * Get provider/development.connect
+         * @summary Get provider/development.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} connectId connectId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentConnectGet(projectId: string, locationId: string, developmentId: string, connectId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResourceConnect>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentConnectGet(projectId, locationId, developmentId, connectId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.connect
+         * @summary List provider/development.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentConnectList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ResourceConnect>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentConnectList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Create development
+         * @summary Create provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {ProviderProjectDevelopmentCreate} providerProjectDevelopmentCreate 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentCreate(projectId: string, locationId: string, providerProjectDevelopmentCreate: ProviderProjectDevelopmentCreate, xIdempotencyKey?: string, xDryRun?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Development>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentCreate(projectId, locationId, providerProjectDevelopmentCreate, xIdempotencyKey, xDryRun, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Create provider/development.credential
+         * @summary Create provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {DevelopmentCredential} developmentCredential 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentCredentialCreate(projectId: string, locationId: string, developmentId: string, developmentCredential: DevelopmentCredential, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DevelopmentCredential>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentCredentialCreate(projectId, locationId, developmentId, developmentCredential, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete provider/development.credential
+         * @summary Delete provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} credentialId credentialId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentCredentialDelete(projectId: string, locationId: string, developmentId: string, credentialId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Development>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentCredentialDelete(projectId, locationId, developmentId, credentialId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.credential
+         * @summary Get provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} credentialId credentialId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentCredentialGet(projectId: string, locationId: string, developmentId: string, credentialId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DevelopmentCredential>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentCredentialGet(projectId, locationId, developmentId, credentialId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.credential
+         * @summary List provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentCredentialList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<DevelopmentCredential>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentCredentialList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Update provider/development.credential
+         * @summary Update provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} credentialId credentialId
+         * @param {ProviderProjectDevelopmentCredentialPatch} providerProjectDevelopmentCredentialPatch 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentCredentialPatch(projectId: string, locationId: string, developmentId: string, credentialId: string, providerProjectDevelopmentCredentialPatch: ProviderProjectDevelopmentCredentialPatch, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DevelopmentCredential>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentCredentialPatch(projectId, locationId, developmentId, credentialId, providerProjectDevelopmentCredentialPatch, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete development
+         * @summary Delete provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentDelete(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentDelete(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Create provider/development.domain
+         * @summary Create provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {Domain} domain 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentDomainCreate(projectId: string, locationId: string, developmentId: string, domain: Domain, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Domain>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentDomainCreate(projectId, locationId, developmentId, domain, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete provider/development.domain
+         * @summary Delete provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} domainId domainId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentDomainDelete(projectId: string, locationId: string, developmentId: string, domainId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentDomainDelete(projectId, locationId, developmentId, domainId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.domain
+         * @summary Get provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} domainId domainId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentDomainGet(projectId: string, locationId: string, developmentId: string, domainId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Domain>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentDomainGet(projectId, locationId, developmentId, domainId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.domain
+         * @summary List provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentDomainList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Domain>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentDomainList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Create provider/development.env
+         * @summary Create provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderEnv} providerEnv 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentEnvCreate(projectId: string, locationId: string, developmentId: string, providerEnv: ProviderEnv, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProviderEnv>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentEnvCreate(projectId, locationId, developmentId, providerEnv, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete provider/development.env
+         * @summary Delete provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} envId envId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentEnvDelete(projectId: string, locationId: string, developmentId: string, envId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentEnvDelete(projectId, locationId, developmentId, envId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.env
+         * @summary Get provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} envId envId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentEnvGet(projectId: string, locationId: string, developmentId: string, envId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProviderEnv>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentEnvGet(projectId, locationId, developmentId, envId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.env
+         * @summary List provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentEnvList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ProviderEnv>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentEnvList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.event
+         * @summary Get provider/development.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} eventId eventId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentEventGet(projectId: string, locationId: string, developmentId: string, eventId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Event>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentEventGet(projectId, locationId, developmentId, eventId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.event
+         * @summary List provider/development.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {number} [$limit] $limit
+         * @param {number} [$skip] $skip
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentEventList(projectId: string, locationId: string, developmentId: string, $limit?: number, $skip?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Event>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentEventList(projectId, locationId, developmentId, $limit, $skip, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Returns a single development
+         * @summary Get provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentGet(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Development>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentGet(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Create provider/development.link
+         * @summary Create provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderLink} providerLink 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentLinkCreate(projectId: string, locationId: string, developmentId: string, providerLink: ProviderLink, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProviderLink>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentLinkCreate(projectId, locationId, developmentId, providerLink, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete provider/development.link
+         * @summary Delete provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} linkId linkId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentLinkDelete(projectId: string, locationId: string, developmentId: string, linkId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentLinkDelete(projectId, locationId, developmentId, linkId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.link
+         * @summary Get provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} linkId linkId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentLinkGet(projectId: string, locationId: string, developmentId: string, linkId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProviderLink>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentLinkGet(projectId, locationId, developmentId, linkId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.link
+         * @summary List provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentLinkList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ProviderLink>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentLinkList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List development
+         * @summary List provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} [name] Filter by name
+         * @param {string} [tagValue] Filter by tag.value
+         * @param {string} [tagKey] Filter by tag.key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentList(projectId: string, locationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Development>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentList(projectId, locationId, name, tagValue, tagKey, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.log
+         * @summary Get provider/development.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} logId logId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentLogGet(projectId: string, locationId: string, developmentId: string, logId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProviderLog>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentLogGet(projectId, locationId, developmentId, logId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.log
+         * @summary List provider/development.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentLogList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ProviderLog>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentLogList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * action read
+         * @summary Read provider/development.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} logId logId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentLogRead(projectId: string, locationId: string, developmentId: string, logId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentLogRead(projectId, locationId, developmentId, logId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.metric
+         * @summary Get provider/development.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentMetricGet(projectId: string, locationId: string, developmentId: string, metricId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Metric>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentMetricGet(projectId, locationId, developmentId, metricId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.metric
+         * @summary List provider/development.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentMetricList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Metric>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentMetricList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.point
+         * @summary List provider/development.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentMetricPointList(projectId: string, locationId: string, developmentId: string, metricId: string, interval?: string, timespan?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Point>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentMetricPointList(projectId, locationId, developmentId, metricId, interval, timespan, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * action restart
+         * @summary Restart provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentRestart(projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Development>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentRestart(projectId, locationId, developmentId, xIdempotencyKey, xDryRun, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.service
+         * @summary Get provider/development.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} serviceId serviceId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentServiceGet(projectId: string, locationId: string, developmentId: string, serviceId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ResourceService>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentServiceGet(projectId, locationId, developmentId, serviceId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.service
+         * @summary List provider/development.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentServiceList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ResourceService>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentServiceList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.sideapp
+         * @summary Get provider/development.sideapp
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} sideappId sideappId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentSideappGet(projectId: string, locationId: string, developmentId: string, sideappId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProviderSideapp>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentSideappGet(projectId, locationId, developmentId, sideappId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.sideapp
+         * @summary List provider/development.sideapp
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentSideappList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ProviderSideapp>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentSideappList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * action open
+         * @summary Open provider/development.sideapp
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} sideappId sideappId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentSideappOpen(projectId: string, locationId: string, developmentId: string, sideappId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentSideappOpen(projectId, locationId, developmentId, sideappId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Create provider/development.snapshot
+         * @summary Create provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderSnapshot} providerSnapshot 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentSnapshotCreate(projectId: string, locationId: string, developmentId: string, providerSnapshot: ProviderSnapshot, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProviderSnapshot>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentSnapshotCreate(projectId, locationId, developmentId, providerSnapshot, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete provider/development.snapshot
+         * @summary Delete provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} snapshotId snapshotId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentSnapshotDelete(projectId: string, locationId: string, developmentId: string, snapshotId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Development>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentSnapshotDelete(projectId, locationId, developmentId, snapshotId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * action download
+         * @summary Download provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} snapshotId snapshotId
+         * @param {ProviderProjectDevelopmentSnapshotDownload} providerProjectDevelopmentSnapshotDownload 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentSnapshotDownload(projectId: string, locationId: string, developmentId: string, snapshotId: string, providerProjectDevelopmentSnapshotDownload: ProviderProjectDevelopmentSnapshotDownload, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentSnapshotDownload(projectId, locationId, developmentId, snapshotId, providerProjectDevelopmentSnapshotDownload, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.snapshot
+         * @summary Get provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} snapshotId snapshotId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentSnapshotGet(projectId: string, locationId: string, developmentId: string, snapshotId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProviderSnapshot>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentSnapshotGet(projectId, locationId, developmentId, snapshotId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.snapshot
+         * @summary List provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentSnapshotList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<ProviderSnapshot>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentSnapshotList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * action start
+         * @summary Start provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentStart(projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Development>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentStart(projectId, locationId, developmentId, xIdempotencyKey, xDryRun, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * action stop
+         * @summary Stop provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentStop(projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Development>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentStop(projectId, locationId, developmentId, xIdempotencyKey, xDryRun, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Create provider/development.tag
+         * @summary Create provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {Tag} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentTagCreate(projectId: string, locationId: string, developmentId: string, tag: Tag, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Tag>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentTagCreate(projectId, locationId, developmentId, tag, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Delete provider/development.tag
+         * @summary Delete provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentTagDelete(projectId: string, locationId: string, developmentId: string, tagId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentTagDelete(projectId, locationId, developmentId, tagId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get provider/development.tag
+         * @summary Get provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentTagGet(projectId: string, locationId: string, developmentId: string, tagId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Tag>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentTagGet(projectId, locationId, developmentId, tagId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * List provider/development.tag
+         * @summary List provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentTagList(projectId: string, locationId: string, developmentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Tag>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentTagList(projectId, locationId, developmentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Replace provider/development.tag
+         * @summary Replace provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {Array<Tag>} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentTagPut(projectId: string, locationId: string, developmentId: string, tag: Array<Tag>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Tag>>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentTagPut(projectId, locationId, developmentId, tag, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * action transfer
+         * @summary Transfer provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderProjectDevelopmentTransfer} providerProjectDevelopmentTransfer 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentTransfer(projectId: string, locationId: string, developmentId: string, providerProjectDevelopmentTransfer: ProviderProjectDevelopmentTransfer, xIdempotencyKey?: string, xDryRun?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Development>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentTransfer(projectId, locationId, developmentId, providerProjectDevelopmentTransfer, xIdempotencyKey, xDryRun, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Returns modified development
+         * @summary Update provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderProjectDevelopmentUpdate} providerProjectDevelopmentUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async providerProjectDevelopmentUpdate(projectId: string, locationId: string, developmentId: string, providerProjectDevelopmentUpdate: ProviderProjectDevelopmentUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Development>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.providerProjectDevelopmentUpdate(projectId, locationId, developmentId, providerProjectDevelopmentUpdate, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+    }
+};
+
+/**
+ * ProviderProjectDevelopmentApi - factory interface
+ * @export
+ */
+export const ProviderProjectDevelopmentApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = ProviderProjectDevelopmentApiFp(configuration)
+    return {
+        /**
+         * Get provider/development.connect
+         * @summary Get provider/development.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} connectId connectId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentConnectGet(projectId: string, locationId: string, developmentId: string, connectId: string, options?: any): AxiosPromise<ResourceConnect> {
+            return localVarFp.providerProjectDevelopmentConnectGet(projectId, locationId, developmentId, connectId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.connect
+         * @summary List provider/development.connect
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentConnectList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<ResourceConnect>> {
+            return localVarFp.providerProjectDevelopmentConnectList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create development
+         * @summary Create provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {ProviderProjectDevelopmentCreate} providerProjectDevelopmentCreate 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCreate(projectId: string, locationId: string, providerProjectDevelopmentCreate: ProviderProjectDevelopmentCreate, xIdempotencyKey?: string, xDryRun?: string, options?: any): AxiosPromise<Development> {
+            return localVarFp.providerProjectDevelopmentCreate(projectId, locationId, providerProjectDevelopmentCreate, xIdempotencyKey, xDryRun, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create provider/development.credential
+         * @summary Create provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {DevelopmentCredential} developmentCredential 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCredentialCreate(projectId: string, locationId: string, developmentId: string, developmentCredential: DevelopmentCredential, options?: any): AxiosPromise<DevelopmentCredential> {
+            return localVarFp.providerProjectDevelopmentCredentialCreate(projectId, locationId, developmentId, developmentCredential, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete provider/development.credential
+         * @summary Delete provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} credentialId credentialId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCredentialDelete(projectId: string, locationId: string, developmentId: string, credentialId: string, options?: any): AxiosPromise<Development> {
+            return localVarFp.providerProjectDevelopmentCredentialDelete(projectId, locationId, developmentId, credentialId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.credential
+         * @summary Get provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} credentialId credentialId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCredentialGet(projectId: string, locationId: string, developmentId: string, credentialId: string, options?: any): AxiosPromise<DevelopmentCredential> {
+            return localVarFp.providerProjectDevelopmentCredentialGet(projectId, locationId, developmentId, credentialId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.credential
+         * @summary List provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCredentialList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<DevelopmentCredential>> {
+            return localVarFp.providerProjectDevelopmentCredentialList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Update provider/development.credential
+         * @summary Update provider/development.credential
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} credentialId credentialId
+         * @param {ProviderProjectDevelopmentCredentialPatch} providerProjectDevelopmentCredentialPatch 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentCredentialPatch(projectId: string, locationId: string, developmentId: string, credentialId: string, providerProjectDevelopmentCredentialPatch: ProviderProjectDevelopmentCredentialPatch, options?: any): AxiosPromise<DevelopmentCredential> {
+            return localVarFp.providerProjectDevelopmentCredentialPatch(projectId, locationId, developmentId, credentialId, providerProjectDevelopmentCredentialPatch, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete development
+         * @summary Delete provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentDelete(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.providerProjectDevelopmentDelete(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create provider/development.domain
+         * @summary Create provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {Domain} domain 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentDomainCreate(projectId: string, locationId: string, developmentId: string, domain: Domain, options?: any): AxiosPromise<Domain> {
+            return localVarFp.providerProjectDevelopmentDomainCreate(projectId, locationId, developmentId, domain, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete provider/development.domain
+         * @summary Delete provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} domainId domainId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentDomainDelete(projectId: string, locationId: string, developmentId: string, domainId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.providerProjectDevelopmentDomainDelete(projectId, locationId, developmentId, domainId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.domain
+         * @summary Get provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} domainId domainId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentDomainGet(projectId: string, locationId: string, developmentId: string, domainId: string, options?: any): AxiosPromise<Domain> {
+            return localVarFp.providerProjectDevelopmentDomainGet(projectId, locationId, developmentId, domainId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.domain
+         * @summary List provider/development.domain
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentDomainList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<Domain>> {
+            return localVarFp.providerProjectDevelopmentDomainList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create provider/development.env
+         * @summary Create provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderEnv} providerEnv 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEnvCreate(projectId: string, locationId: string, developmentId: string, providerEnv: ProviderEnv, options?: any): AxiosPromise<ProviderEnv> {
+            return localVarFp.providerProjectDevelopmentEnvCreate(projectId, locationId, developmentId, providerEnv, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete provider/development.env
+         * @summary Delete provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} envId envId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEnvDelete(projectId: string, locationId: string, developmentId: string, envId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.providerProjectDevelopmentEnvDelete(projectId, locationId, developmentId, envId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.env
+         * @summary Get provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} envId envId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEnvGet(projectId: string, locationId: string, developmentId: string, envId: string, options?: any): AxiosPromise<ProviderEnv> {
+            return localVarFp.providerProjectDevelopmentEnvGet(projectId, locationId, developmentId, envId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.env
+         * @summary List provider/development.env
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEnvList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<ProviderEnv>> {
+            return localVarFp.providerProjectDevelopmentEnvList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.event
+         * @summary Get provider/development.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} eventId eventId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEventGet(projectId: string, locationId: string, developmentId: string, eventId: string, options?: any): AxiosPromise<Event> {
+            return localVarFp.providerProjectDevelopmentEventGet(projectId, locationId, developmentId, eventId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.event
+         * @summary List provider/development.event
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {number} [$limit] $limit
+         * @param {number} [$skip] $skip
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentEventList(projectId: string, locationId: string, developmentId: string, $limit?: number, $skip?: number, options?: any): AxiosPromise<Array<Event>> {
+            return localVarFp.providerProjectDevelopmentEventList(projectId, locationId, developmentId, $limit, $skip, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns a single development
+         * @summary Get provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentGet(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Development> {
+            return localVarFp.providerProjectDevelopmentGet(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create provider/development.link
+         * @summary Create provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderLink} providerLink 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLinkCreate(projectId: string, locationId: string, developmentId: string, providerLink: ProviderLink, options?: any): AxiosPromise<ProviderLink> {
+            return localVarFp.providerProjectDevelopmentLinkCreate(projectId, locationId, developmentId, providerLink, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete provider/development.link
+         * @summary Delete provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} linkId linkId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLinkDelete(projectId: string, locationId: string, developmentId: string, linkId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.providerProjectDevelopmentLinkDelete(projectId, locationId, developmentId, linkId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.link
+         * @summary Get provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} linkId linkId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLinkGet(projectId: string, locationId: string, developmentId: string, linkId: string, options?: any): AxiosPromise<ProviderLink> {
+            return localVarFp.providerProjectDevelopmentLinkGet(projectId, locationId, developmentId, linkId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.link
+         * @summary List provider/development.link
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLinkList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<ProviderLink>> {
+            return localVarFp.providerProjectDevelopmentLinkList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List development
+         * @summary List provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} [name] Filter by name
+         * @param {string} [tagValue] Filter by tag.value
+         * @param {string} [tagKey] Filter by tag.key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentList(projectId: string, locationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any): AxiosPromise<Array<Development>> {
+            return localVarFp.providerProjectDevelopmentList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.log
+         * @summary Get provider/development.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} logId logId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLogGet(projectId: string, locationId: string, developmentId: string, logId: string, options?: any): AxiosPromise<ProviderLog> {
+            return localVarFp.providerProjectDevelopmentLogGet(projectId, locationId, developmentId, logId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.log
+         * @summary List provider/development.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLogList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<ProviderLog>> {
+            return localVarFp.providerProjectDevelopmentLogList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action read
+         * @summary Read provider/development.log
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} logId logId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentLogRead(projectId: string, locationId: string, developmentId: string, logId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.providerProjectDevelopmentLogRead(projectId, locationId, developmentId, logId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.metric
+         * @summary Get provider/development.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} metricId metricId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentMetricGet(projectId: string, locationId: string, developmentId: string, metricId: string, options?: any): AxiosPromise<Metric> {
+            return localVarFp.providerProjectDevelopmentMetricGet(projectId, locationId, developmentId, metricId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.metric
+         * @summary List provider/development.metric
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentMetricList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<Metric>> {
+            return localVarFp.providerProjectDevelopmentMetricList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.point
+         * @summary List provider/development.point
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} metricId metricId
+         * @param {string} [interval] interval
+         * @param {string} [timespan] timespan
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentMetricPointList(projectId: string, locationId: string, developmentId: string, metricId: string, interval?: string, timespan?: string, options?: any): AxiosPromise<Array<Point>> {
+            return localVarFp.providerProjectDevelopmentMetricPointList(projectId, locationId, developmentId, metricId, interval, timespan, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action restart
+         * @summary Restart provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentRestart(projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any): AxiosPromise<Development> {
+            return localVarFp.providerProjectDevelopmentRestart(projectId, locationId, developmentId, xIdempotencyKey, xDryRun, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.service
+         * @summary Get provider/development.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} serviceId serviceId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentServiceGet(projectId: string, locationId: string, developmentId: string, serviceId: string, options?: any): AxiosPromise<ResourceService> {
+            return localVarFp.providerProjectDevelopmentServiceGet(projectId, locationId, developmentId, serviceId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.service
+         * @summary List provider/development.service
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentServiceList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<ResourceService>> {
+            return localVarFp.providerProjectDevelopmentServiceList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.sideapp
+         * @summary Get provider/development.sideapp
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} sideappId sideappId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSideappGet(projectId: string, locationId: string, developmentId: string, sideappId: string, options?: any): AxiosPromise<ProviderSideapp> {
+            return localVarFp.providerProjectDevelopmentSideappGet(projectId, locationId, developmentId, sideappId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.sideapp
+         * @summary List provider/development.sideapp
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSideappList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<ProviderSideapp>> {
+            return localVarFp.providerProjectDevelopmentSideappList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action open
+         * @summary Open provider/development.sideapp
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} sideappId sideappId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSideappOpen(projectId: string, locationId: string, developmentId: string, sideappId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.providerProjectDevelopmentSideappOpen(projectId, locationId, developmentId, sideappId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create provider/development.snapshot
+         * @summary Create provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderSnapshot} providerSnapshot 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSnapshotCreate(projectId: string, locationId: string, developmentId: string, providerSnapshot: ProviderSnapshot, options?: any): AxiosPromise<ProviderSnapshot> {
+            return localVarFp.providerProjectDevelopmentSnapshotCreate(projectId, locationId, developmentId, providerSnapshot, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete provider/development.snapshot
+         * @summary Delete provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} snapshotId snapshotId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSnapshotDelete(projectId: string, locationId: string, developmentId: string, snapshotId: string, options?: any): AxiosPromise<Development> {
+            return localVarFp.providerProjectDevelopmentSnapshotDelete(projectId, locationId, developmentId, snapshotId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action download
+         * @summary Download provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} snapshotId snapshotId
+         * @param {ProviderProjectDevelopmentSnapshotDownload} providerProjectDevelopmentSnapshotDownload 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSnapshotDownload(projectId: string, locationId: string, developmentId: string, snapshotId: string, providerProjectDevelopmentSnapshotDownload: ProviderProjectDevelopmentSnapshotDownload, options?: any): AxiosPromise<void> {
+            return localVarFp.providerProjectDevelopmentSnapshotDownload(projectId, locationId, developmentId, snapshotId, providerProjectDevelopmentSnapshotDownload, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.snapshot
+         * @summary Get provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} snapshotId snapshotId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSnapshotGet(projectId: string, locationId: string, developmentId: string, snapshotId: string, options?: any): AxiosPromise<ProviderSnapshot> {
+            return localVarFp.providerProjectDevelopmentSnapshotGet(projectId, locationId, developmentId, snapshotId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.snapshot
+         * @summary List provider/development.snapshot
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentSnapshotList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<ProviderSnapshot>> {
+            return localVarFp.providerProjectDevelopmentSnapshotList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action start
+         * @summary Start provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentStart(projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any): AxiosPromise<Development> {
+            return localVarFp.providerProjectDevelopmentStart(projectId, locationId, developmentId, xIdempotencyKey, xDryRun, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action stop
+         * @summary Stop provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentStop(projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any): AxiosPromise<Development> {
+            return localVarFp.providerProjectDevelopmentStop(projectId, locationId, developmentId, xIdempotencyKey, xDryRun, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create provider/development.tag
+         * @summary Create provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {Tag} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTagCreate(projectId: string, locationId: string, developmentId: string, tag: Tag, options?: any): AxiosPromise<Tag> {
+            return localVarFp.providerProjectDevelopmentTagCreate(projectId, locationId, developmentId, tag, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Delete provider/development.tag
+         * @summary Delete provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTagDelete(projectId: string, locationId: string, developmentId: string, tagId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.providerProjectDevelopmentTagDelete(projectId, locationId, developmentId, tagId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get provider/development.tag
+         * @summary Get provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {string} tagId tagId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTagGet(projectId: string, locationId: string, developmentId: string, tagId: string, options?: any): AxiosPromise<Tag> {
+            return localVarFp.providerProjectDevelopmentTagGet(projectId, locationId, developmentId, tagId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List provider/development.tag
+         * @summary List provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTagList(projectId: string, locationId: string, developmentId: string, options?: any): AxiosPromise<Array<Tag>> {
+            return localVarFp.providerProjectDevelopmentTagList(projectId, locationId, developmentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Replace provider/development.tag
+         * @summary Replace provider/development.tag
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {Array<Tag>} tag 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTagPut(projectId: string, locationId: string, developmentId: string, tag: Array<Tag>, options?: any): AxiosPromise<Array<Tag>> {
+            return localVarFp.providerProjectDevelopmentTagPut(projectId, locationId, developmentId, tag, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * action transfer
+         * @summary Transfer provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderProjectDevelopmentTransfer} providerProjectDevelopmentTransfer 
+         * @param {string} [xIdempotencyKey] Idempotency key
+         * @param {string} [xDryRun] Dry run
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentTransfer(projectId: string, locationId: string, developmentId: string, providerProjectDevelopmentTransfer: ProviderProjectDevelopmentTransfer, xIdempotencyKey?: string, xDryRun?: string, options?: any): AxiosPromise<Development> {
+            return localVarFp.providerProjectDevelopmentTransfer(projectId, locationId, developmentId, providerProjectDevelopmentTransfer, xIdempotencyKey, xDryRun, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Returns modified development
+         * @summary Update provider/development
+         * @param {string} projectId Project Id
+         * @param {string} locationId Location Id
+         * @param {string} developmentId Development Id
+         * @param {ProviderProjectDevelopmentUpdate} providerProjectDevelopmentUpdate 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        providerProjectDevelopmentUpdate(projectId: string, locationId: string, developmentId: string, providerProjectDevelopmentUpdate: ProviderProjectDevelopmentUpdate, options?: any): AxiosPromise<Development> {
+            return localVarFp.providerProjectDevelopmentUpdate(projectId, locationId, developmentId, providerProjectDevelopmentUpdate, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * ProviderProjectDevelopmentApi - object-oriented interface
+ * @export
+ * @class ProviderProjectDevelopmentApi
+ * @extends {BaseAPI}
+ */
+export class ProviderProjectDevelopmentApi extends BaseAPI {
+    /**
+     * Get provider/development.connect
+     * @summary Get provider/development.connect
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} connectId connectId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentConnectGet(projectId: string, locationId: string, developmentId: string, connectId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentConnectGet(projectId, locationId, developmentId, connectId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.connect
+     * @summary List provider/development.connect
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentConnectList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentConnectList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create development
+     * @summary Create provider/development
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {ProviderProjectDevelopmentCreate} providerProjectDevelopmentCreate 
+     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {string} [xDryRun] Dry run
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentCreate(projectId: string, locationId: string, providerProjectDevelopmentCreate: ProviderProjectDevelopmentCreate, xIdempotencyKey?: string, xDryRun?: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentCreate(projectId, locationId, providerProjectDevelopmentCreate, xIdempotencyKey, xDryRun, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create provider/development.credential
+     * @summary Create provider/development.credential
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {DevelopmentCredential} developmentCredential 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentCredentialCreate(projectId: string, locationId: string, developmentId: string, developmentCredential: DevelopmentCredential, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentCredentialCreate(projectId, locationId, developmentId, developmentCredential, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete provider/development.credential
+     * @summary Delete provider/development.credential
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} credentialId credentialId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentCredentialDelete(projectId: string, locationId: string, developmentId: string, credentialId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentCredentialDelete(projectId, locationId, developmentId, credentialId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.credential
+     * @summary Get provider/development.credential
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} credentialId credentialId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentCredentialGet(projectId: string, locationId: string, developmentId: string, credentialId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentCredentialGet(projectId, locationId, developmentId, credentialId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.credential
+     * @summary List provider/development.credential
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentCredentialList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentCredentialList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Update provider/development.credential
+     * @summary Update provider/development.credential
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} credentialId credentialId
+     * @param {ProviderProjectDevelopmentCredentialPatch} providerProjectDevelopmentCredentialPatch 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentCredentialPatch(projectId: string, locationId: string, developmentId: string, credentialId: string, providerProjectDevelopmentCredentialPatch: ProviderProjectDevelopmentCredentialPatch, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentCredentialPatch(projectId, locationId, developmentId, credentialId, providerProjectDevelopmentCredentialPatch, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete development
+     * @summary Delete provider/development
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentDelete(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentDelete(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create provider/development.domain
+     * @summary Create provider/development.domain
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {Domain} domain 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentDomainCreate(projectId: string, locationId: string, developmentId: string, domain: Domain, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentDomainCreate(projectId, locationId, developmentId, domain, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete provider/development.domain
+     * @summary Delete provider/development.domain
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} domainId domainId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentDomainDelete(projectId: string, locationId: string, developmentId: string, domainId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentDomainDelete(projectId, locationId, developmentId, domainId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.domain
+     * @summary Get provider/development.domain
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} domainId domainId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentDomainGet(projectId: string, locationId: string, developmentId: string, domainId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentDomainGet(projectId, locationId, developmentId, domainId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.domain
+     * @summary List provider/development.domain
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentDomainList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentDomainList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create provider/development.env
+     * @summary Create provider/development.env
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {ProviderEnv} providerEnv 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentEnvCreate(projectId: string, locationId: string, developmentId: string, providerEnv: ProviderEnv, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentEnvCreate(projectId, locationId, developmentId, providerEnv, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete provider/development.env
+     * @summary Delete provider/development.env
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} envId envId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentEnvDelete(projectId: string, locationId: string, developmentId: string, envId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentEnvDelete(projectId, locationId, developmentId, envId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.env
+     * @summary Get provider/development.env
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} envId envId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentEnvGet(projectId: string, locationId: string, developmentId: string, envId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentEnvGet(projectId, locationId, developmentId, envId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.env
+     * @summary List provider/development.env
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentEnvList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentEnvList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.event
+     * @summary Get provider/development.event
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} eventId eventId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentEventGet(projectId: string, locationId: string, developmentId: string, eventId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentEventGet(projectId, locationId, developmentId, eventId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.event
+     * @summary List provider/development.event
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {number} [$limit] $limit
+     * @param {number} [$skip] $skip
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentEventList(projectId: string, locationId: string, developmentId: string, $limit?: number, $skip?: number, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentEventList(projectId, locationId, developmentId, $limit, $skip, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns a single development
+     * @summary Get provider/development
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentGet(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentGet(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create provider/development.link
+     * @summary Create provider/development.link
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {ProviderLink} providerLink 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentLinkCreate(projectId: string, locationId: string, developmentId: string, providerLink: ProviderLink, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentLinkCreate(projectId, locationId, developmentId, providerLink, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete provider/development.link
+     * @summary Delete provider/development.link
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} linkId linkId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentLinkDelete(projectId: string, locationId: string, developmentId: string, linkId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentLinkDelete(projectId, locationId, developmentId, linkId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.link
+     * @summary Get provider/development.link
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} linkId linkId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentLinkGet(projectId: string, locationId: string, developmentId: string, linkId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentLinkGet(projectId, locationId, developmentId, linkId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.link
+     * @summary List provider/development.link
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentLinkList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentLinkList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List development
+     * @summary List provider/development
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} [name] Filter by name
+     * @param {string} [tagValue] Filter by tag.value
+     * @param {string} [tagKey] Filter by tag.key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentList(projectId: string, locationId: string, name?: string, tagValue?: string, tagKey?: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentList(projectId, locationId, name, tagValue, tagKey, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.log
+     * @summary Get provider/development.log
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} logId logId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentLogGet(projectId: string, locationId: string, developmentId: string, logId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentLogGet(projectId, locationId, developmentId, logId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.log
+     * @summary List provider/development.log
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentLogList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentLogList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action read
+     * @summary Read provider/development.log
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} logId logId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentLogRead(projectId: string, locationId: string, developmentId: string, logId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentLogRead(projectId, locationId, developmentId, logId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.metric
+     * @summary Get provider/development.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} metricId metricId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentMetricGet(projectId: string, locationId: string, developmentId: string, metricId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentMetricGet(projectId, locationId, developmentId, metricId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.metric
+     * @summary List provider/development.metric
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentMetricList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentMetricList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.point
+     * @summary List provider/development.point
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} metricId metricId
+     * @param {string} [interval] interval
+     * @param {string} [timespan] timespan
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentMetricPointList(projectId: string, locationId: string, developmentId: string, metricId: string, interval?: string, timespan?: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentMetricPointList(projectId, locationId, developmentId, metricId, interval, timespan, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action restart
+     * @summary Restart provider/development
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {string} [xDryRun] Dry run
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentRestart(projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentRestart(projectId, locationId, developmentId, xIdempotencyKey, xDryRun, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.service
+     * @summary Get provider/development.service
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} serviceId serviceId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentServiceGet(projectId: string, locationId: string, developmentId: string, serviceId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentServiceGet(projectId, locationId, developmentId, serviceId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.service
+     * @summary List provider/development.service
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentServiceList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentServiceList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.sideapp
+     * @summary Get provider/development.sideapp
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} sideappId sideappId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentSideappGet(projectId: string, locationId: string, developmentId: string, sideappId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentSideappGet(projectId, locationId, developmentId, sideappId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.sideapp
+     * @summary List provider/development.sideapp
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentSideappList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentSideappList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action open
+     * @summary Open provider/development.sideapp
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} sideappId sideappId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentSideappOpen(projectId: string, locationId: string, developmentId: string, sideappId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentSideappOpen(projectId, locationId, developmentId, sideappId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create provider/development.snapshot
+     * @summary Create provider/development.snapshot
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {ProviderSnapshot} providerSnapshot 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentSnapshotCreate(projectId: string, locationId: string, developmentId: string, providerSnapshot: ProviderSnapshot, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentSnapshotCreate(projectId, locationId, developmentId, providerSnapshot, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete provider/development.snapshot
+     * @summary Delete provider/development.snapshot
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} snapshotId snapshotId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentSnapshotDelete(projectId: string, locationId: string, developmentId: string, snapshotId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentSnapshotDelete(projectId, locationId, developmentId, snapshotId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action download
+     * @summary Download provider/development.snapshot
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} snapshotId snapshotId
+     * @param {ProviderProjectDevelopmentSnapshotDownload} providerProjectDevelopmentSnapshotDownload 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentSnapshotDownload(projectId: string, locationId: string, developmentId: string, snapshotId: string, providerProjectDevelopmentSnapshotDownload: ProviderProjectDevelopmentSnapshotDownload, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentSnapshotDownload(projectId, locationId, developmentId, snapshotId, providerProjectDevelopmentSnapshotDownload, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.snapshot
+     * @summary Get provider/development.snapshot
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} snapshotId snapshotId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentSnapshotGet(projectId: string, locationId: string, developmentId: string, snapshotId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentSnapshotGet(projectId, locationId, developmentId, snapshotId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.snapshot
+     * @summary List provider/development.snapshot
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentSnapshotList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentSnapshotList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action start
+     * @summary Start provider/development
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {string} [xDryRun] Dry run
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentStart(projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentStart(projectId, locationId, developmentId, xIdempotencyKey, xDryRun, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action stop
+     * @summary Stop provider/development
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {string} [xDryRun] Dry run
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentStop(projectId: string, locationId: string, developmentId: string, xIdempotencyKey?: string, xDryRun?: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentStop(projectId, locationId, developmentId, xIdempotencyKey, xDryRun, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create provider/development.tag
+     * @summary Create provider/development.tag
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {Tag} tag 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentTagCreate(projectId: string, locationId: string, developmentId: string, tag: Tag, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentTagCreate(projectId, locationId, developmentId, tag, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Delete provider/development.tag
+     * @summary Delete provider/development.tag
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} tagId tagId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentTagDelete(projectId: string, locationId: string, developmentId: string, tagId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentTagDelete(projectId, locationId, developmentId, tagId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get provider/development.tag
+     * @summary Get provider/development.tag
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {string} tagId tagId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentTagGet(projectId: string, locationId: string, developmentId: string, tagId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentTagGet(projectId, locationId, developmentId, tagId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List provider/development.tag
+     * @summary List provider/development.tag
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentTagList(projectId: string, locationId: string, developmentId: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentTagList(projectId, locationId, developmentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Replace provider/development.tag
+     * @summary Replace provider/development.tag
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {Array<Tag>} tag 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentTagPut(projectId: string, locationId: string, developmentId: string, tag: Array<Tag>, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentTagPut(projectId, locationId, developmentId, tag, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * action transfer
+     * @summary Transfer provider/development
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {ProviderProjectDevelopmentTransfer} providerProjectDevelopmentTransfer 
+     * @param {string} [xIdempotencyKey] Idempotency key
+     * @param {string} [xDryRun] Dry run
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentTransfer(projectId: string, locationId: string, developmentId: string, providerProjectDevelopmentTransfer: ProviderProjectDevelopmentTransfer, xIdempotencyKey?: string, xDryRun?: string, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentTransfer(projectId, locationId, developmentId, providerProjectDevelopmentTransfer, xIdempotencyKey, xDryRun, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Returns modified development
+     * @summary Update provider/development
+     * @param {string} projectId Project Id
+     * @param {string} locationId Location Id
+     * @param {string} developmentId Development Id
+     * @param {ProviderProjectDevelopmentUpdate} providerProjectDevelopmentUpdate 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProviderProjectDevelopmentApi
+     */
+    public providerProjectDevelopmentUpdate(projectId: string, locationId: string, developmentId: string, providerProjectDevelopmentUpdate: ProviderProjectDevelopmentUpdate, options?: any) {
+        return ProviderProjectDevelopmentApiFp(this.configuration).providerProjectDevelopmentUpdate(projectId, locationId, developmentId, providerProjectDevelopmentUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -24,6 +24,6 @@
 
 • `Optional` **earlyAdopter**: boolean
 
-*Defined in api.ts:5243*
+*Defined in api.ts:5389*
 
 **`memberof`** ProjectFeature

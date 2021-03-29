@@ -26,7 +26,7 @@
 
 • `Optional` **image**: string
 
-*Defined in api.ts:8162*
+*Defined in api.ts:8531*
 
 **`memberof`** WebsiteProjectInstanceUpdate
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:8156*
+*Defined in api.ts:8525*
 
 **`memberof`** WebsiteProjectInstanceUpdate
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **plan**: string
 
-*Defined in api.ts:8168*
+*Defined in api.ts:8537*
 
 **`memberof`** WebsiteProjectInstanceUpdate

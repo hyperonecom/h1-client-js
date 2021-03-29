@@ -24,6 +24,6 @@
 
 •  **payment**: string
 
-*Defined in api.ts:2140*
+*Defined in api.ts:2286*
 
 **`memberof`** IamOrganisationTransferAccept

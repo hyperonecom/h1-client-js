@@ -24,6 +24,6 @@
 
 •  **size**: number
 
-*Defined in api.ts:6880*
+*Defined in api.ts:7249*
 
 **`memberof`** StorageProjectVaultResize

@@ -25,7 +25,7 @@
 
 •  **content**: string
 
-*Defined in api.ts:1705*
+*Defined in api.ts:1851*
 
 Template string: - {{REQUEST_IP}} is replaced by the requester ip address.
 
@@ -37,6 +37,6 @@ ___
 
 • `Optional` **id**: string
 
-*Defined in api.ts:1699*
+*Defined in api.ts:1845*
 
 **`memberof`** DnsRecord

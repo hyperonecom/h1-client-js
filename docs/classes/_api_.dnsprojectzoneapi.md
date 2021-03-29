@@ -109,7 +109,7 @@ ___
 
 ▸ **dnsProjectZoneCreate**(`projectId`: string, `locationId`: string, `dnsProjectZoneCreate`: [DnsProjectZoneCreate](../interfaces/_api_.dnsprojectzonecreate.md), `xIdempotencyKey?`: string, `xDryRun?`: string, `options?`: any): Promise\<AxiosResponse\<[Zone](../interfaces/_api_.zone.md)>>
 
-*Defined in api.ts:21681*
+*Defined in api.ts:22050*
 
 Create zone
 
@@ -138,7 +138,7 @@ ___
 
 ▸ **dnsProjectZoneDelete**(`projectId`: string, `locationId`: string, `zoneId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:21695*
+*Defined in api.ts:22064*
 
 Delete zone
 
@@ -165,7 +165,7 @@ ___
 
 ▸ **dnsProjectZoneEventGet**(`projectId`: string, `locationId`: string, `zoneId`: string, `eventId`: string, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)>>
 
-*Defined in api.ts:21710*
+*Defined in api.ts:22079*
 
 Get dns/zone.event
 
@@ -193,7 +193,7 @@ ___
 
 ▸ **dnsProjectZoneEventList**(`projectId`: string, `locationId`: string, `zoneId`: string, `$limit?`: number, `$skip?`: number, `options?`: any): Promise\<AxiosResponse\<[Event](../interfaces/_api_.event.md)[]>>
 
-*Defined in api.ts:21726*
+*Defined in api.ts:22095*
 
 List dns/zone.event
 
@@ -222,7 +222,7 @@ ___
 
 ▸ **dnsProjectZoneGet**(`projectId`: string, `locationId`: string, `zoneId`: string, `options?`: any): Promise\<AxiosResponse\<[Zone](../interfaces/_api_.zone.md)>>
 
-*Defined in api.ts:21740*
+*Defined in api.ts:22109*
 
 Returns a single zone
 
@@ -249,7 +249,7 @@ ___
 
 ▸ **dnsProjectZoneList**(`projectId`: string, `locationId`: string, `name?`: string, `tagValue?`: string, `tagKey?`: string, `options?`: any): Promise\<AxiosResponse\<[Zone](../interfaces/_api_.zone.md)[]>>
 
-*Defined in api.ts:21756*
+*Defined in api.ts:22125*
 
 List zone
 
@@ -278,7 +278,7 @@ ___
 
 ▸ **dnsProjectZoneRecordsetCreate**(`projectId`: string, `locationId`: string, `zoneId`: string, `dnsRecordset`: [DnsRecordset](../interfaces/_api_.dnsrecordset.md), `options?`: any): Promise\<AxiosResponse\<[DnsRecordset](../interfaces/_api_.dnsrecordset.md)>>
 
-*Defined in api.ts:21771*
+*Defined in api.ts:22140*
 
 Create dns/zone.recordset
 
@@ -306,7 +306,7 @@ ___
 
 ▸ **dnsProjectZoneRecordsetDelete**(`projectId`: string, `locationId`: string, `zoneId`: string, `recordsetId`: string, `options?`: any): Promise\<AxiosResponse\<[Zone](../interfaces/_api_.zone.md)>>
 
-*Defined in api.ts:21786*
+*Defined in api.ts:22155*
 
 Delete dns/zone.recordset
 
@@ -334,7 +334,7 @@ ___
 
 ▸ **dnsProjectZoneRecordsetGet**(`projectId`: string, `locationId`: string, `zoneId`: string, `recordsetId`: string, `options?`: any): Promise\<AxiosResponse\<[DnsRecordset](../interfaces/_api_.dnsrecordset.md)>>
 
-*Defined in api.ts:21801*
+*Defined in api.ts:22170*
 
 Get dns/zone.recordset
 
@@ -362,7 +362,7 @@ ___
 
 ▸ **dnsProjectZoneRecordsetList**(`projectId`: string, `locationId`: string, `zoneId`: string, `options?`: any): Promise\<AxiosResponse\<[DnsRecordset](../interfaces/_api_.dnsrecordset.md)[]>>
 
-*Defined in api.ts:21815*
+*Defined in api.ts:22184*
 
 List dns/zone.recordset
 
@@ -389,7 +389,7 @@ ___
 
 ▸ **dnsProjectZoneRecordsetPatch**(`projectId`: string, `locationId`: string, `zoneId`: string, `recordsetId`: string, `dnsProjectZoneRecordsetPatch`: [DnsProjectZoneRecordsetPatch](../interfaces/_api_.dnsprojectzonerecordsetpatch.md), `options?`: any): Promise\<AxiosResponse\<[DnsRecordset](../interfaces/_api_.dnsrecordset.md)>>
 
-*Defined in api.ts:21831*
+*Defined in api.ts:22200*
 
 Update dns/zone.recordset
 
@@ -418,7 +418,7 @@ ___
 
 ▸ **dnsProjectZoneRecordsetRecordCreate**(`projectId`: string, `locationId`: string, `zoneId`: string, `recordsetId`: string, `dnsRecord`: [DnsRecord](../interfaces/_api_.dnsrecord.md), `options?`: any): Promise\<AxiosResponse\<[DnsRecord](../interfaces/_api_.dnsrecord.md)>>
 
-*Defined in api.ts:21847*
+*Defined in api.ts:22216*
 
 Create dns/zone.record
 
@@ -447,7 +447,7 @@ ___
 
 ▸ **dnsProjectZoneRecordsetRecordDelete**(`projectId`: string, `locationId`: string, `zoneId`: string, `recordsetId`: string, `recordId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:21863*
+*Defined in api.ts:22232*
 
 Delete dns/zone.record
 
@@ -476,7 +476,7 @@ ___
 
 ▸ **dnsProjectZoneRecordsetRecordGet**(`projectId`: string, `locationId`: string, `zoneId`: string, `recordsetId`: string, `recordId`: string, `options?`: any): Promise\<AxiosResponse\<[DnsRecord](../interfaces/_api_.dnsrecord.md)>>
 
-*Defined in api.ts:21879*
+*Defined in api.ts:22248*
 
 Get dns/zone.record
 
@@ -505,7 +505,7 @@ ___
 
 ▸ **dnsProjectZoneRecordsetRecordList**(`projectId`: string, `locationId`: string, `zoneId`: string, `recordsetId`: string, `options?`: any): Promise\<AxiosResponse\<[DnsRecord](../interfaces/_api_.dnsrecord.md)[]>>
 
-*Defined in api.ts:21894*
+*Defined in api.ts:22263*
 
 List dns/zone.record
 
@@ -533,7 +533,7 @@ ___
 
 ▸ **dnsProjectZoneRecordsetRecordPut**(`projectId`: string, `locationId`: string, `zoneId`: string, `recordsetId`: string, `dnsRecord`: Array\<[DnsRecord](../interfaces/_api_.dnsrecord.md)>, `options?`: any): Promise\<AxiosResponse\<[DnsRecord](../interfaces/_api_.dnsrecord.md)[]>>
 
-*Defined in api.ts:21910*
+*Defined in api.ts:22279*
 
 Replace dns/zone.record
 
@@ -562,7 +562,7 @@ ___
 
 ▸ **dnsProjectZoneServiceGet**(`projectId`: string, `locationId`: string, `zoneId`: string, `serviceId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)>>
 
-*Defined in api.ts:21925*
+*Defined in api.ts:22294*
 
 Get dns/zone.service
 
@@ -590,7 +590,7 @@ ___
 
 ▸ **dnsProjectZoneServiceList**(`projectId`: string, `locationId`: string, `zoneId`: string, `options?`: any): Promise\<AxiosResponse\<[ResourceService](../interfaces/_api_.resourceservice.md)[]>>
 
-*Defined in api.ts:21939*
+*Defined in api.ts:22308*
 
 List dns/zone.service
 
@@ -617,7 +617,7 @@ ___
 
 ▸ **dnsProjectZoneTagCreate**(`projectId`: string, `locationId`: string, `zoneId`: string, `tag`: [Tag](../interfaces/_api_.tag.md), `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:21954*
+*Defined in api.ts:22323*
 
 Create dns/zone.tag
 
@@ -645,7 +645,7 @@ ___
 
 ▸ **dnsProjectZoneTagDelete**(`projectId`: string, `locationId`: string, `zoneId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<void>>
 
-*Defined in api.ts:21969*
+*Defined in api.ts:22338*
 
 Delete dns/zone.tag
 
@@ -673,7 +673,7 @@ ___
 
 ▸ **dnsProjectZoneTagGet**(`projectId`: string, `locationId`: string, `zoneId`: string, `tagId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)>>
 
-*Defined in api.ts:21984*
+*Defined in api.ts:22353*
 
 Get dns/zone.tag
 
@@ -701,7 +701,7 @@ ___
 
 ▸ **dnsProjectZoneTagList**(`projectId`: string, `locationId`: string, `zoneId`: string, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:21998*
+*Defined in api.ts:22367*
 
 List dns/zone.tag
 
@@ -728,7 +728,7 @@ ___
 
 ▸ **dnsProjectZoneTagPut**(`projectId`: string, `locationId`: string, `zoneId`: string, `tag`: Array\<[Tag](../interfaces/_api_.tag.md)>, `options?`: any): Promise\<AxiosResponse\<[Tag](../interfaces/_api_.tag.md)[]>>
 
-*Defined in api.ts:22013*
+*Defined in api.ts:22382*
 
 Replace dns/zone.tag
 
@@ -756,7 +756,7 @@ ___
 
 ▸ **dnsProjectZoneUpdate**(`projectId`: string, `locationId`: string, `zoneId`: string, `dnsProjectZoneUpdate`: [DnsProjectZoneUpdate](../interfaces/_api_.dnsprojectzoneupdate.md), `options?`: any): Promise\<AxiosResponse\<[Zone](../interfaces/_api_.zone.md)>>
 
-*Defined in api.ts:22028*
+*Defined in api.ts:22397*
 
 Returns modified zone
 

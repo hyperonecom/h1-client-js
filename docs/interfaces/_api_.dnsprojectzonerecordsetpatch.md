@@ -24,6 +24,6 @@
 
 • `Optional` **ttl**: number
 
-*Defined in api.ts:1673*
+*Defined in api.ts:1819*
 
 **`memberof`** DnsProjectZoneRecordsetPatch

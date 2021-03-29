@@ -25,7 +25,7 @@
 
 • `Optional` **billing**: [OrganisationBilling1](_api_.organisationbilling1.md)
 
-*Defined in api.ts:2159*
+*Defined in api.ts:2305*
 
 **`memberof`** IamOrganisationUpdate
 
@@ -35,6 +35,6 @@ ___
 
 • `Optional` **name**: string
 
-*Defined in api.ts:2153*
+*Defined in api.ts:2299*
 
 **`memberof`** IamOrganisationUpdate

@@ -30,7 +30,7 @@
 
 •  **brutto**: string
 
-*Defined in api.ts:2990*
+*Defined in api.ts:3136*
 
 **`memberof`** InvoiceItems
 
@@ -40,7 +40,7 @@ ___
 
 •  **name**: string
 
-*Defined in api.ts:2972*
+*Defined in api.ts:3118*
 
 **`memberof`** InvoiceItems
 
@@ -50,7 +50,7 @@ ___
 
 •  **netto**: string
 
-*Defined in api.ts:2984*
+*Defined in api.ts:3130*
 
 **`memberof`** InvoiceItems
 
@@ -60,7 +60,7 @@ ___
 
 •  **price**: string
 
-*Defined in api.ts:2978*
+*Defined in api.ts:3124*
 
 **`memberof`** InvoiceItems
 
@@ -70,7 +70,7 @@ ___
 
 •  **quantity**: number
 
-*Defined in api.ts:3008*
+*Defined in api.ts:3154*
 
 **`memberof`** InvoiceItems
 
@@ -80,7 +80,7 @@ ___
 
 •  **vatAmount**: string
 
-*Defined in api.ts:2996*
+*Defined in api.ts:3142*
 
 **`memberof`** InvoiceItems
 
@@ -90,6 +90,6 @@ ___
 
 •  **vatRate**: string
 
-*Defined in api.ts:3002*
+*Defined in api.ts:3148*
 
 **`memberof`** InvoiceItems

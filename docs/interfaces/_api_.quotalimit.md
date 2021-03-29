@@ -26,7 +26,7 @@
 
 • `Optional` **effective**: number
 
-*Defined in api.ts:5492*
+*Defined in api.ts:5861*
 
 **`memberof`** QuotaLimit
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **platform**: number
 
-*Defined in api.ts:5480*
+*Defined in api.ts:5849*
 
 **`memberof`** QuotaLimit
 
@@ -46,6 +46,6 @@ ___
 
 • `Optional` **user**: number
 
-*Defined in api.ts:5486*
+*Defined in api.ts:5855*
 
 **`memberof`** QuotaLimit
